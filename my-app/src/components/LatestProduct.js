@@ -13,6 +13,7 @@ function LatestProduct(props) {
             <img src={props.imageUrl} alt={props.name} />
             <h3>{props.name}</h3>
             <img src="" alt="" />
+            <p>STAR COMPONENT SOON</p>
             <p><span>${props.newPrice} </span><span>${props.oldPrice}</span></p>
         </div>
     )

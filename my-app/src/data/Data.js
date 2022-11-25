@@ -1,4 +1,3 @@
-
 export const stockData = [
     {
         id: 1,
@@ -66,4 +65,28 @@ export const stockItem = [
         newPrice: "15.99",
         oldPrice: "20.99",
     },
+];
+
+export const stockCustomer = [
+    {
+        id: 21,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        avatarUrl: require('../images/pic-1.png'),
+        imageUrl: require('../images/quote-img.png'),
+        name: "John Deo",
+    },
+    {
+        id: 22,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        avatarUrl: require('../images/pic-2.png'),
+        imageUrl: require('../images/quote-img.png'),
+        name: "John Deo",
+    },
+    {
+        id: 23,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        avatarUrl: require('../images/pic-3.png'),
+        imageUrl: require('../images/quote-img.png'),
+        name: "John Deo",
+    }
 ];
