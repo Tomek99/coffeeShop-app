@@ -1,0 +1,29 @@
+div.ProductsSection {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   color:#fff;
+
+   div.itemSection {
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+
+    div.singleItemSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        div.iconSection{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+
+        }
+    }
+   }
+}

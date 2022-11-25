@@ -1,0 +1,10 @@
+header {
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    span {
+        text-transform: uppercase;
+        color: var(--main-color);
+    }
+}
