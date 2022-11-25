@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/MenuSection.scss'
 import { stockData } from "../data/Data"
 import Header from './Header'
+import MenuProduct from './MenuProduct'
 
 
 
@@ -13,12 +14,13 @@ function MenuSection() {
                 {
                     stockData.map((item) => {
                         return (
-                            <div key={item.id}>
-                                <img src={item.imageName} alt={item.name} />
-                                <p>{item.name}</p>
-                                <p><span> ${item.newPrice}</span><span> ${item.oldPrice}</span></p>
-                                <button type='button' className='btn1'>Add To Cart</button>
-                            </div>
+                            <MenuProduct
+                                id={item.id}
+                                imageUrl={item.imageUrl}
+                                name={item.name}
+                                newPrice={item.newPrice}
+                                oldPrice={item.oldPrice}
+                            />
                         )
                     })
                 }
