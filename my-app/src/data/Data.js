@@ -90,3 +90,27 @@ export const stockCustomer = [
         name: "John Deo",
     }
 ];
+
+export const stockBlog = [
+    {
+        id: 31,
+        imageUrl: require("../images/blog-1.jpeg"),
+        title: "Tasty And Refreshing Coffee",
+        addedBy: "By Admin / 1st May, 2021",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        id: 32,
+        imageUrl: require("../images/blog-2.jpeg"),
+        title: "Tasty And Refreshing Coffee",
+        addedBy: "By Admin / 1st May, 2021",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        id: 33,
+        imageUrl: require("../images/blog-3.jpeg"),
+        title: "Tasty And Refreshing Coffee",
+        addedBy: "By Admin / 1st May, 2021",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+];
