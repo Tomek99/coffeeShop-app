@@ -2,7 +2,7 @@ import React from 'react'
 
 function MenuProduct(props) {
     return (
-        <div key={props.id}>
+        <div key={props.id} >
             <img src={props.imageUrl} alt={props.name} />
             <p>{props.name}</p>
             <p><span> ${props.newPrice}</span><span> ${props.oldPrice}</span></p>

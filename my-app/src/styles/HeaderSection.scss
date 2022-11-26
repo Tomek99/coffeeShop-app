@@ -5,8 +5,9 @@ div.divHeader {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--bg);
-    
+    background-color: var(--black);
+    border-bottom: var(--border);
+
     div.logo {
         cursor: pointer;
     }

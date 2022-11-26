@@ -1,15 +1,16 @@
 import React from 'react'
 import '../styles/FooterSection.scss'
-import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin, BsYoutube } from 'react-icons/bs';
+import { BsTwitter, BsInstagram, BsLinkedin, BsYoutube } from 'react-icons/bs';
+import { ImFacebook } from 'react-icons/im';
 function FooterSection() {
     return (
         <div className='FooterSection'>
             <div className='socialMedia'>
-                <a href='#'><BsFacebook /></a>
-                <a href='#'><BsTwitter /></a>
-                <a href='#'><BsInstagram /></a>
-                <a href='#'><BsLinkedin /></a>
-                <a href='#'><BsYoutube /></a>
+                <a href='https://www.facebook.com/'><ImFacebook /></a>
+                <a href='https://twitter.com/'><BsTwitter /></a>
+                <a href='https://www.instagram.com/'><BsInstagram /></a>
+                <a href='https://www.linkedin.com/'><BsLinkedin /></a>
+                <a href='https://www.youtube.com/?gl=PL'><BsYoutube /></a>
             </div>
             <div>
                 <ul className='navBar'>

@@ -5,8 +5,8 @@ function CustomerReview(props) {
         <div key={props.id} className="singleCustomer">
             <img src={props.imageUrl} alt="quote" />
             <p>{props.text}</p>
-            <img src={props.avatarUrl} alt="" />
-            <p>{props.name}</p>
+            <img src={props.avatarUrl} alt="" className="avatar" />
+            <p className='name'>{props.name}</p>
             <p>STAR COMPONENT SOON</p>
         </div>
     )

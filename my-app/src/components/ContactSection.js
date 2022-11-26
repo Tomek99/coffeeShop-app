@@ -1,16 +1,19 @@
 import React from 'react'
 import '../styles/ContactSection.scss'
 import Header from './Header'
-
+import Map from './Map';
+import ContactForm from './ContactForm'
 
 function ContactSection() {
-    const apiCode = 'AIzaSyDbM0YXlgeR75jBGqykBoocBryTXO2Qma4';
-
 
     return (
         <div className='ContactSection' id='contactSection'>
             <Header firstWord="contact" secondWord="us" />
+            <div className='mapForm'>
+                <Map />
+                <ContactForm />
 
+            </div>
         </div>
     )
 }
