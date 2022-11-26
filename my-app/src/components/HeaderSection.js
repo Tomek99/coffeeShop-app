@@ -17,7 +17,7 @@ function Header() {
         <>
             <div className='divHeader'>
                 <div className='logo'>
-                    <img src={Logo} alt="" />
+                    <a href="#homeSection"><img src={Logo} alt="" /></a>
                 </div>
                 <div>
                     <ul className='navBar'>

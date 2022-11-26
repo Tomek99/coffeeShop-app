@@ -8,7 +8,6 @@ div.AboutSection {
       flex-basis: 49%;
     }
     div.div-row {
-        flex-basis: 50%;
         max-width: 1620px;
         display: flex;
         flex-direction: row;
@@ -18,7 +17,6 @@ div.AboutSection {
         gap: 15px;
         background-color: var(--black);
         color:#eee;
-        margin: 0 10% 0 10%;
 
         div {
             flex-basis: 50%;
