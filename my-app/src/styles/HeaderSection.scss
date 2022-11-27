@@ -36,6 +36,7 @@ div.divHeader {
     ul.navBar {
         display: flex;
         flex-direction: row;
+        align-items: center;
         list-style-type: none;
         gap: 20px;
         font-size: 2rem;
@@ -84,8 +85,29 @@ div.divHeader {
         gap: 10px;
 
         ul.navBar {
+         
             flex-direction: column !important;
+
         }
+
+    }
+}
+@media screen and (max-width: 800px) {
+    div.menuHamburger {
+        display: block !important;
+        position: absolute;
+    }
+
+    .bar {
+        flex-direction: column !important;
+        gap: 10px;
+
+        div.hideBar {
+       
+            ul.navBar {
+                flex-direction: column !important;
+            }
+         }
 
     }
 }
