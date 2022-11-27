@@ -1,5 +1,5 @@
-import { React, useState } from 'react'
-import { Formik, Form, Field } from 'formik';
+import { React } from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 
@@ -35,10 +35,13 @@ function ContactForm() {
             onSubmit={onSubmit}
         >
             <Form>
-                <Field type="text" name="name" placeholder="name" />
+                <Field type="text" name="name" placeholder="Name" />
+                <ErrorMessage name="name" />
                 <Field type="email" name="email" placeholder="Email" />
-                <Field type="text" name="phoneNumber" placeholder="phonenumber" />
-                <button type="submit">Submit</button>
+                <ErrorMessage name="email" />
+                <Field type="text" name="phoneNumber" placeholder="Number" />
+                <ErrorMessage name="phoneNumber" />
+                <button type="submit">Contact Now</button>
             </Form>
         </Formik>
 

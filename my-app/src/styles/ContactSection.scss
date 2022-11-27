@@ -6,9 +6,10 @@ div.ContactSection {
     color: #fff;
 
     div.mapForm {
-        width: 900px;
+        max-width: 900px;
         display: flex;
         flex-direction: row;
+        
         gap: 10px;
         background-color: var(--black);
 
@@ -17,6 +18,34 @@ div.ContactSection {
            height: 450px;
         }
 
+        form {
+
+                input {
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    // background: url(images/comment-author.gif) no-repeat scroll 7px 7px;
+                    // padding-left:30px;
+                }
+
+                button {
+                    align-self: center;
+                    background-color: var(--main-color);
+                    color: white;
+                    padding: 7px 25px;
+                    margin: 8px 0;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                    letter-spacing: 0.1rem;
+                }
+           }
 
     }
 }
