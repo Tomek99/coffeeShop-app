@@ -13,7 +13,7 @@ function FooterSection() {
                 <a href='https://www.youtube.com/?gl=PL'><BsYoutube /></a>
             </div>
             <div>
-                <ul className='navBar'>
+                <ul className='navBarFooter'>
                     <li><a href='#homeSection'>Home</a></li>
                     <li><a href='#aboutSection'>About</a></li>
                     <li><a href='#menuSection'>Menu</a></li>

@@ -2,11 +2,32 @@ div.divHeader {
     position: sticky;
     top:0;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     background-color: var(--black);
     border-bottom: var(--border);
+
+    div.menuHamburger {
+        display: none;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+
+        button {
+            cursor: pointer;
+            font-size: 2.5rem;
+            padding: 1rem;
+            color: #fff;
+            background-color: var(--main-color);
+        }
+    }
+
+    div.bar {
+        max-width: 1620px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
 
     div.logo {
         cursor: pointer;
@@ -48,5 +69,23 @@ div.divHeader {
             background-color: transparent;
             cursor: pointer;
         }
+    }
+}
+}
+
+@media screen and (max-width: 800px) {
+    div.menuHamburger {
+        display: block !important;
+        position: absolute;
+    }
+
+    .bar {
+        flex-direction: column !important;
+        gap: 10px;
+
+        ul.navBar {
+            flex-direction: column !important;
+        }
+
     }
 }

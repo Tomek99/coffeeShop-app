@@ -29,7 +29,7 @@ div.FooterSection {
         }
     }
 
-    div>ul.navBar {
+    div>ul.navBarFooter {
         display: flex;
         font-size: 2rem;
         gap: 10px;
@@ -54,5 +54,15 @@ div.FooterSection {
         span {
             color: var(--main-color);
         }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    ul.navBarFooter {
+       max-width: 600px !important;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
     }
 }

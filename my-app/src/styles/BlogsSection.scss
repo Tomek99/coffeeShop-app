@@ -6,10 +6,9 @@ div.BlogsSectionn {
     color: #fff;
 
     div.blogs {
-       max-width: 900px;
+        max-width: 900px;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         gap: 10px;
@@ -77,3 +76,12 @@ div.BlogsSectionn {
     }
 
 }
+
+@media screen and (max-width: 800px) {
+    div.blogs {
+       max-width: 600px !important;
+       flex-direction: column !important;
+
+    }
+}
+

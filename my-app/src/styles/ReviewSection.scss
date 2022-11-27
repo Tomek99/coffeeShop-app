@@ -15,7 +15,6 @@ div.ReviewSection {
             display: flex;
             flex-direction: column;
             gap:10px;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             border: var(--border);
@@ -40,5 +39,13 @@ div.ReviewSection {
                 font-weight: bold;
             }
         }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    div.customerReview {
+        max-width: 600px !important;
+       flex-direction: column !important;
+
     }
 }

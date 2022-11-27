@@ -4,12 +4,12 @@ div.ContactSection {
     align-items: center;
     justify-content: center;
     color: #fff;
-
+    overflow: hidden;
     div.mapForm {
         max-width: 900px;
         display: flex;
         flex-direction: row;
-        
+        position:  relative !important;
         gap: 10px;
         background-color: var(--black);
 
