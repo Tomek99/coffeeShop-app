@@ -39,7 +39,7 @@ function Header() {
                         </ul>
                     </div>
 
-                    <div className='buttonsNextToEO' style={{ display: isMenuOpen ? 'none' : 'block' }}>
+                    <div className='buttonsNextToEO' style={{ display: isMenuOpen ? 'none' : 'flex' }}>
 
                         <button type="button" onClick={handleSearch}><BsSearch size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
 
