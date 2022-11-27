@@ -1,10 +1,10 @@
 div.HomeSection {
     display: flex;
     flex-direction: column;
-    background-image: url('../images/home-img.jpeg');
+    background-image: url("../images/home-img.jpeg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
     height: 100vh;
 
     div {
@@ -14,7 +14,7 @@ div.HomeSection {
         margin-left: 10%;
         color: #fff;
         gap: 20px 0;
-        
+
         header {
             text-transform: uppercase;
             font-weight: bold;
@@ -25,17 +25,17 @@ div.HomeSection {
             font-size: 1.5rem;
             font-weight: lighter;
         }
-        
+
         button {
-           align-self: flex-start;
-           background-color: var(--main-color);
-           color: #fff;
-           font-size: 1.7rem;
-           padding: 12px 35px 12px 35px;
-           cursor: pointer;
+            align-self: flex-start;
+            background-color: var(--main-color);
+            color: #fff;
+            font-size: 1.7rem;
+            padding: 12px 35px 12px 35px;
+            cursor: pointer;
         }
-        button:hover{
-            letter-spacing: .1rem;
+        button:hover {
+            letter-spacing: 0.1rem;
         }
     }
 }

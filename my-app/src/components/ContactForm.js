@@ -40,7 +40,7 @@ function ContactForm() {
             <Form>
                 <Field type="text" name="name" placeholder="Name" />
                 <ErrMessage name="name" />
-                <Field type="text" name="email" placeholder="Email" novalidate />
+                <Field type="text" name="email" placeholder="Email" />
                 <ErrMessage name="email" />
                 <Field type="text" name="phoneNumber" placeholder="Number" />
                 <ErrMessage name="phoneNumber" />

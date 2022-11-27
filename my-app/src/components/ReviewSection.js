@@ -1,15 +1,17 @@
 import React from 'react'
 import '../styles/ReviewSection.scss'
 import Header from './Header'
-import { stockCustomer } from '../data/Data'
+import StockCustomer from '../data/StockCustomer.json'
 import CustomerReview from './CustomerReview'
+import StockBlog from '../data/StockBlog.json';
 
 function ReviewSection() {
+    console.log(StockBlog.map((item) => item.imageUrl));
     return (
         <div className='ReviewSection' id='reviewSection'>
             <Header firstWord="customer's" secondWord="review" />
             <div className='customerReview'>
-                {stockCustomer.map((item) =>
+                {StockCustomer.map((item) =>
                     <CustomerReview
                         id={item.id}
                         imageUrl={item.imageUrl}

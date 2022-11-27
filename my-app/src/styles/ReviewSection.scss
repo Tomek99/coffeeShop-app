@@ -1,26 +1,27 @@
 div.ReviewSection {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
+
     div.customerReview {
         max-width: 900px;
         display: flex;
         flex-direction: row;
-        gap:10px;
-    
+        gap: 10px;
+
         div.singleCustomer {
             padding: 20px;
             display: flex;
             flex-direction: column;
-            gap:10px;
+            gap: 10px;
             align-items: center;
             justify-content: center;
             border: var(--border);
             text-align: center;
             background-color: var(--black);
-            
+
             p:nth-of-type(1) {
                 font-size: 1.5rem;
                 line-height: 2.2rem;
@@ -45,7 +46,6 @@ div.ReviewSection {
 @media screen and (max-width: 800px) {
     div.customerReview {
         max-width: 600px !important;
-       flex-direction: column !important;
-
+        flex-direction: column !important;
     }
 }

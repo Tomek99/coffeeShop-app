@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function LatestBlog(props) {
     return (
         <div key={props.key} className="singleBlog">

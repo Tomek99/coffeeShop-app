@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/MenuSection.scss'
-import { stockData } from "../data/Data"
+import StockMenu from '../data/StockMenu.json'
 import Header from './Header'
 import MenuProduct from './MenuProduct'
 
@@ -12,7 +12,7 @@ function MenuSection() {
             <Header firstWord="our" secondWord="menu" />
             <div className='itemsProduct'>
                 {
-                    stockData.map((item) => {
+                    StockMenu.map((item) => {
                         return (
                             <MenuProduct
                                 id={item.id}
