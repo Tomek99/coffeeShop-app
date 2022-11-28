@@ -3,10 +3,10 @@ import '../styles/ReviewSection.scss'
 import Header from './Header'
 import StockCustomer from '../data/StockCustomer.json'
 import CustomerReview from './CustomerReview'
-import StockBlog from '../data/StockBlog.json';
+import Blog from '../data/blog.json';
 
 function ReviewSection() {
-    console.log(StockBlog.map((item) => item.imageUrl));
+    console.log(Blog.map((item) => item.imageUrl));
     return (
         <div className='ReviewSection' id='reviewSection'>
             <Header firstWord="customer's" secondWord="review" />

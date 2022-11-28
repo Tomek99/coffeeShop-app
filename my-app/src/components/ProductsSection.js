@@ -2,14 +2,14 @@ import React from 'react'
 import '../styles/ProductsSection.scss'
 import LatestProduct from './LatestProduct';
 import Header from './Header';
-import StockItem from '../data/StockItem.json';
+import Product from '../data/product.json';
 
 function ProductsSection() {
     return (
         <div className='ProductsSection' id='productsSection'>
             <Header firstWord="Latest" secondWord="Products" />
             <div className='itemSection'>
-                {StockItem.map((item) =>
+                {Product.map((item) =>
                     <LatestProduct
                         id={item.id}
                         name={item.name}
