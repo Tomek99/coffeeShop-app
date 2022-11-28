@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import '../styles/HeaderSection.scss'
-import Logo from '../images/logo.png'
 import { BsCartFill, BsSearch } from 'react-icons/bs'
 import PopupSearch from './PopupSearch';
 
@@ -25,7 +24,7 @@ function Header() {
                 <div className='menuHamburger'><button type='button' onClick={unfoldMenu}>X</button></div>
                 <div className='bar' >
                     <div className='logo'>
-                        <a href="#homeSection"><img src={Logo} alt="" /></a>
+                        <a href="#homeSection"><img src="/images/logo.png" alt="" /></a>
                     </div>
                     <div className="hideBar" style={{ display: isMenuOpen ? 'none' : 'block' }}>
                         <ul className='navBar'>

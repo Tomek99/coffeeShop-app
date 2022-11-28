@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/ReviewSection.scss'
 import Header from './Header'
-import StockCustomer from '../data/StockCustomer.json'
+import Customer from '../data/customer.json'
 import CustomerReview from './CustomerReview'
 import Blog from '../data/blog.json';
 
@@ -11,7 +11,7 @@ function ReviewSection() {
         <div className='ReviewSection' id='reviewSection'>
             <Header firstWord="customer's" secondWord="review" />
             <div className='customerReview'>
-                {StockCustomer.map((item) =>
+                {Customer.map((item) =>
                     <CustomerReview
                         id={item.id}
                         imageUrl={item.imageUrl}
