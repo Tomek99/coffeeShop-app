@@ -1,4 +1,4 @@
-div.divHeader {
+.divHeader {
     position: sticky;
     top: 0;
     display: flex;
@@ -6,6 +6,7 @@ div.divHeader {
     align-items: center;
     background-color: var(--black);
     border-bottom: var(--border);
+    z-index: 99;
 
     div.menuHamburger {
         display: none;

@@ -12,6 +12,7 @@ export default function Map() {
 
 function ReturnMap() {
     return <GoogleMap
+
         zoom={12}
         center={{ lat: 50.018611, lng: 22.679722 }}
         mapContainerClassName="map-container">
