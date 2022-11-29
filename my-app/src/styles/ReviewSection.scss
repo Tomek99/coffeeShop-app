@@ -43,9 +43,22 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .customerReview {
-        max-width: 600px !important;
+        max-width: 560px !important;
+        flex-direction: column !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .customerReview {
+        max-width: 400px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .customerReview {
+        max-width: 270px !important;
         flex-direction: column !important;
     }
 }
