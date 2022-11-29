@@ -5,42 +5,45 @@ import PopupSearch from '../PopupSearch/PopupSearch';
 
 
 function Header() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isMenuOpen, setMenuOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
+    const [isNavigationOpen, setNavigationOpen] = useState(false);
+    let setClass = isNavigationOpen ? 'navMenu active' : 'navMenu';
+    // const handleSearch = () => {
+    //     setIsOpen(!isOpen);
+    // }
 
-    const handleSearch = () => {
-        setIsOpen(!isOpen);
-    }
-
-    const unfoldMenu = () => {
-        setMenuOpen(!isMenuOpen);
-        console.log(isMenuOpen);
+    const handleNavigation = () => {
+        setNavigationOpen(!isNavigationOpen);
+        console.log(isNavigationOpen);
     }
 
 
     return (
         <>
             <div className='HeaderSection'>
-                <div className='menuHamburger'><button type='button' onClick={unfoldMenu}>X</button></div>
-                <div className='bar' >
+                <div className={isNavigationOpen ? 'hamburger active' : 'hamburger'} onClick={handleNavigation}>
+                    <span className='bar'></span>
+                    <span className='bar'></span>
+                    <span className='bar'></span>
+                </div>
+                <div className='navBar' >
                     <div className='logo'>
                         <a href="#homeSection"><img src="/images/logo.png" alt="" /></a>
                     </div>
-                    <div className="hideBar" style={{ display: isMenuOpen ? 'none' : 'block' }}>
-                        <ul className='navBar'>
-                            <li><a href='#homeSection'>Home</a></li>
-                            <li><a href='#aboutSection'>About</a></li>
-                            <li><a href='#menuSection'>Menu</a></li>
-                            <li><a href='#productsSection'>Products</a></li>
-                            <li><a href='#reviewSection'>Review</a></li>
-                            <li><a href='#contactSection'>Contact</a></li>
-                            <li><a href='#blogsSection'>Blogs</a></li>
+                    <nav >
+                        <ul className={setClass} >
+                            <li className='nav-item'><a href='#homeSection' className='nav-link'>Home</a></li>
+                            <li className='nav-item'><a href='#aboutSection' className='nav-link'>About</a></li>
+                            <li className='nav-item'><a href='#menuSection' className='nav-link'>Menu</a></li>
+                            <li className='nav-item'><a href='#productsSection' className='nav-link'>Products</a></li>
+                            <li className='nav-item'><a href='#reviewSection' className='nav-link'>Review</a></li>
+                            <li className='nav-item'><a href='#contactSection' className='nav-link'>Contact</a></li>
+                            <li className='nav-item'><a href='#blogsSection' className='nav-link'>Blogs</a></li>
                         </ul>
-                    </div>
+                    </nav>
+                    <div className='buttonsNextToEO'>
 
-                    <div className='buttonsNextToEO' style={{ display: isMenuOpen ? 'none' : 'flex' }}>
-
-                        <button type="button" onClick={handleSearch}><BsSearch size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
+                        <button type="button" ><BsSearch size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
 
                         <button type="button"><BsCartFill size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
                     </div>

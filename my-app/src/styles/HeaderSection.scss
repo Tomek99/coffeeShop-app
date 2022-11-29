@@ -8,22 +8,25 @@
     border-bottom: var(--border);
     z-index: 99;
 
-    .menuHamburger {
+    .hamburger {
         display: none;
+        cursor: pointer;
         position: absolute;
         top: 15px;
         left: 15px;
 
-        button {
-            cursor: pointer;
-            font-size: 2.5rem;
-            padding: 1rem;
-            color: #fff;
-            background-color: var(--main-color);
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: #fff;
         }
     }
 
-    .bar {
+    .navBar {
         max-width: 1620px;
         width: 100%;
         display: flex;
@@ -34,7 +37,7 @@
             cursor: pointer;
         }
 
-        .navBar {
+        .navMenu {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -74,35 +77,38 @@
     }
 }
 
-@media screen and (max-width: 800px) {
-    .menuHamburger {
+@media screen and (max-width: 900px) {
+    .hamburger {
         display: block !important;
-        position: absolute;
     }
 
-    .bar {
-        flex-direction: column !important;
-        gap: 10px;
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 
-        ul.navBar {
-            flex-direction: column !important;
+    .navMenu {
+        position: fixed;
+        left: -100%;
+        top: 82px;
+        flex-direction: column !important;
+        background-color: var(--bg);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        border-bottom: var(--border);
+
+        .nav-item {
+            margin: 16px;
         }
     }
-}
-@media screen and (max-width: 800px) {
-    .menuHamburger {
-        display: block !important;
-        position: absolute;
-    }
 
-    .bar {
-        flex-direction: column !important;
-        gap: 10px;
-
-        .hideBar {
-            .navBar {
-                flex-direction: column !important;
-            }
-        }
+    .navMenu.active {
+        left: 0;
     }
 }
