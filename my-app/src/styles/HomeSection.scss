@@ -7,7 +7,7 @@
     background-size: cover;
     height: 100vh;
 
-    div {
+    .textAreaHome {
         display: flex;
         flex-direction: column;
         margin-top: 10%;
@@ -36,6 +36,19 @@
         }
         button:hover {
             letter-spacing: 0.1rem;
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    .HomeSection {
+        justify-content: center;
+        .textAreaHome {
+            header {
+                font-size: 4rem !important;
+            }
+
+            p {
+            }
         }
     }
 }
