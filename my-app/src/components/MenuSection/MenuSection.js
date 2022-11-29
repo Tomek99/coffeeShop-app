@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/MenuSection.scss'
-import Menu from '../data/menu.json'
-import Header from './Header'
-import MenuProduct from './MenuProduct'
+import '../../styles/MenuSection.scss'
+import Menu from '../../data/menu.json'
+import Header from '../Header/Header'
+import MenuProduct from '../MenuProudct/MenuProduct'
 
 
 

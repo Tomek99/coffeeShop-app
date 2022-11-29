@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/ProductsSection.scss'
-import LatestProduct from './LatestProduct';
-import Header from './Header';
-import Product from '../data/product.json';
+import '../../styles/ProductsSection.scss'
+import LatestProduct from '../LatestProduct/LatestProduct';
+import Header from '../Header/Header';
+import Product from '../../data/product.json';
 
 function ProductsSection() {
     return (

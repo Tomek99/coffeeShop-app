@@ -1,6 +1,6 @@
 import React from 'react'
-import '../styles/HomeSection.scss'
-import '../styles/HomeSection.scss'
+import '../../styles/HomeSection.scss'
+
 function HomeSection() {
     return (
         <div className='HomeSection' id='homeSection'>

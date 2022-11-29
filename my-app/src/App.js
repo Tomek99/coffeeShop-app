@@ -1,13 +1,13 @@
 import './App.css';
-import HeaderSection from './components/HeaderSection';
-import HomeSection from './components/HomeSection';
-import AboutSection from './components/AboutSection';
-import MenuSection from './components/MenuSection';
-import ProductsSection from './components/ProductsSection';
-import ReviewSection from './components/ReviewSection';
-import ContactSection from './components/ContactSection';
-import BlogsSection from './components/BlogsSection';
-import FooterSection from './components/FooterSection';
+import HeaderSection from './components/HeaderSection/HeaderSection';
+import HomeSection from './components/HomeSection/HomeSection';
+import AboutSection from './components/AboutSection/AboutSection';
+import MenuSection from './components/MenuSection/MenuSection';
+import ProductsSection from './components/ProductsSection/ProductsSection';
+import ReviewSection from './components/ReviewSection/ReviewSection';
+import ContactSection from './components/ContactSection/ContactSection';
+import BlogsSection from './components/BlogsSection/BlogsSection';
+import FooterSection from './components/FooterSection/FooterSection';
 
 function App() {
     return (

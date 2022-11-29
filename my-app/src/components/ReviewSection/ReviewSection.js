@@ -1,9 +1,9 @@
 import React from 'react'
-import '../styles/ReviewSection.scss'
-import Header from './Header'
-import Customer from '../data/customer.json'
-import CustomerReview from './CustomerReview'
-import Blog from '../data/blog.json';
+import '../../styles/ReviewSection.scss'
+import Header from '../Header/Header'
+import Customer from '../../data/customer.json'
+import CustomerReview from '../CustomerReview/CustomerReview'
+import Blog from '../../data/blog.json';
 
 function ReviewSection() {
     console.log(Blog.map((item) => item.imageUrl));

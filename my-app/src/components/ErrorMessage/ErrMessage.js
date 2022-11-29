@@ -1,6 +1,6 @@
 import React from 'react'
 import { ErrorMessage } from 'formik';
-import '../styles/ErrMessage.scss'
+import '../../styles/ErrMessage.scss'
 
 function ErrMessage(pros) {
     return (

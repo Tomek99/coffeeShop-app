@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/BlogsSection.scss'
-import Header from './Header'
-import LatestBlog from './LatestBlog'
-import Blog from '../data/blog.json';
+import '../../styles/BlogsSection.scss'
+import Header from '../Header/Header'
+import LatestBlog from '../LatestBlog/LatestBlog'
+import Blog from '../../data/blog.json';
 
 function BlogsSection() {
     return (

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import '../styles/HeaderSection.scss'
+import '../../styles/HeaderSection.scss'
 import { BsCartFill, BsSearch } from 'react-icons/bs'
-import PopupSearch from './PopupSearch';
+import PopupSearch from '../PopupSearch/PopupSearch';
 
 
 function Header() {

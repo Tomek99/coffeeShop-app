@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import ErrMessage from './ErrMessage';
+import ErrMessage from '../ErrorMessage/ErrMessage';
 
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;

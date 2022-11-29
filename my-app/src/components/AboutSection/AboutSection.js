@@ -1,7 +1,7 @@
 import React from 'react'
-import '../styles/AboutSection.scss'
-import Header from './Header'
-import ContactForm from './ContactForm'
+import '../../styles/AboutSection.scss'
+import Header from '../Header/Header'
+import ContactForm from '../ContactForm/ContactForm'
 function AboutSection() {
     return (
         <div className='AboutSection' id='aboutSection' >

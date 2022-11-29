@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/PopupSearch.scss'
+import '../../styles/PopupSearch.scss'
 
 function Popup(props) {
     return (
