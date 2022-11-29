@@ -1,4 +1,4 @@
-div.FooterSection {
+.FooterSection {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +7,7 @@ div.FooterSection {
     color: #fff;
     background-color: var(--black);
 
-    div.socialMedia {
+    .socialMedia {
         display: flex;
         gap: 10px;
         font-size: 2.5rem;

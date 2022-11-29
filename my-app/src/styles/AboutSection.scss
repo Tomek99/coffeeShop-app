@@ -1,14 +1,14 @@
-div.AboutSection {
+.AboutSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #fff;
 
     img {
-      width: 100%;
-      flex-basis: 49%;
+        width: 100%;
+        flex-basis: 49%;
     }
-    div.div-row {
+    .div-row {
         max-width: 1620px;
         display: flex;
         flex-direction: row;
@@ -17,7 +17,7 @@ div.AboutSection {
         flex-wrap: wrap;
         gap: 15px;
         background-color: var(--black);
-        color:#eee;
+        color: #eee;
 
         div {
             flex-basis: 50%;
@@ -30,7 +30,7 @@ div.AboutSection {
             p {
                 margin-right: 30px;
                 font-size: 1.7rem;
-                color:#ccc;
+                color: #ccc;
                 line-height: 1.5;
             }
 
@@ -43,10 +43,8 @@ div.AboutSection {
                 cursor: pointer;
             }
             button:hover {
-                letter-spacing: .1rem;
+                letter-spacing: 0.1rem;
             }
         }
-
     }
-    
 }

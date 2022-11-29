@@ -20,7 +20,7 @@ function Header() {
 
     return (
         <>
-            <div className='divHeader'>
+            <div className='HeaderSection'>
                 <div className='menuHamburger'><button type='button' onClick={unfoldMenu}>X</button></div>
                 <div className='bar' >
                     <div className='logo'>

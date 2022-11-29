@@ -1,11 +1,11 @@
-div.BlogsSectionn {
+.BlogsSectionn {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #fff;
 
-    div.blogs {
+    .blogs {
         max-width: 900px;
         display: flex;
         flex-direction: row;
@@ -13,7 +13,7 @@ div.BlogsSectionn {
         justify-content: center;
         gap: 10px;
 
-        div.singleBlog {
+        .singleBlog {
             flex-basis: 32.4%;
             display: flex;
             flex-direction: column;
@@ -21,22 +21,21 @@ div.BlogsSectionn {
             gap: 10px;
             border: var(--border);
             overflow: hidden;
-           
-            div.zoomImage{
+
+            .zoomImage {
                 overflow: hidden;
                 img {
                     width: 100%;
-              
                 }
             }
 
-            div.textSection {
+            .textSection {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap:10px;
+                gap: 10px;
                 margin: 10px;
-                
+
                 h2 {
                     font-size: 2rem;
                     cursor: pointer;
@@ -49,9 +48,9 @@ div.BlogsSectionn {
                 h4 {
                     font-size: 1.6rem;
                     font-weight: 400;
-                    color:var(--main-color)
+                    color: var(--main-color);
                 }
-                
+
                 p {
                     font-size: 1.3rem;
                     color: #ccc;
@@ -64,24 +63,21 @@ div.BlogsSectionn {
                     padding: 6px 17.5px 6px 17.5px;
                     cursor: pointer;
                 }
-                button:hover{
-                    letter-spacing: .1rem;
+                button:hover {
+                    letter-spacing: 0.1rem;
                 }
             }
         }
 
-        div.singleBlog:hover img {
+        .singleBlog:hover img {
             transform: scale(1.1);
         }
     }
-
 }
 
 @media screen and (max-width: 800px) {
-    div.blogs {
-       max-width: 600px !important;
-       flex-direction: column !important;
-
+    .blogs {
+        max-width: 600px !important;
+        flex-direction: column !important;
     }
 }
-

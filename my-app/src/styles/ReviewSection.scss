@@ -1,17 +1,17 @@
-div.ReviewSection {
+.ReviewSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
 
-    div.customerReview {
+    .customerReview {
         max-width: 900px;
         display: flex;
         flex-direction: row;
         gap: 10px;
 
-        div.singleCustomer {
+        .singleCustomer {
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -28,14 +28,14 @@ div.ReviewSection {
                 color: #ccc;
             }
 
-            img.avatar {
+            .avatar {
                 height: 7rem;
                 width: 7rem;
                 border-radius: 50%;
                 object-fit: cover;
             }
 
-            p.name {
+            .name {
                 font-size: 1.7rem;
                 font-weight: bold;
             }
@@ -44,7 +44,7 @@ div.ReviewSection {
 }
 
 @media screen and (max-width: 800px) {
-    div.customerReview {
+    .customerReview {
         max-width: 600px !important;
         flex-direction: column !important;
     }

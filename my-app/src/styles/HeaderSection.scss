@@ -1,4 +1,4 @@
-.divHeader {
+.HeaderSection {
     position: sticky;
     top: 0;
     display: flex;
@@ -8,7 +8,7 @@
     border-bottom: var(--border);
     z-index: 99;
 
-    div.menuHamburger {
+    .menuHamburger {
         display: none;
         position: absolute;
         top: 15px;
@@ -23,18 +23,18 @@
         }
     }
 
-    div.bar {
+    .bar {
         max-width: 1620px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
 
-        div.logo {
+        .logo {
             cursor: pointer;
         }
 
-        ul.navBar {
+        .navBar {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -62,7 +62,7 @@
             }
         }
 
-        div.buttonsNextToEO {
+        .buttonsNextToEO {
             display: flex;
             gap: 10px;
 
@@ -75,7 +75,7 @@
 }
 
 @media screen and (max-width: 800px) {
-    div.menuHamburger {
+    .menuHamburger {
         display: block !important;
         position: absolute;
     }
@@ -90,7 +90,7 @@
     }
 }
 @media screen and (max-width: 800px) {
-    div.menuHamburger {
+    .menuHamburger {
         display: block !important;
         position: absolute;
     }
@@ -99,8 +99,8 @@
         flex-direction: column !important;
         gap: 10px;
 
-        div.hideBar {
-            ul.navBar {
+        .hideBar {
+            .navBar {
                 flex-direction: column !important;
             }
         }
