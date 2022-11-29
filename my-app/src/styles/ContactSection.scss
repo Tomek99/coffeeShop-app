@@ -8,8 +8,11 @@
 
     .mapForm {
         max-width: 900px;
+        width: 100%;
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
         gap: 10px;
         background-color: var(--black);
 
@@ -19,6 +22,16 @@
         }
 
         form {
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                text-transform: uppercase;
+                font-size: 3.5rem;
+                text-align: center;
+                font-weight: bold;
+            }
             input {
                 width: 100%;
                 padding: 12px 20px;
@@ -27,8 +40,10 @@
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 box-sizing: border-box;
-                // background: url(images/comment-author.gif) no-repeat scroll 7px 7px;
-                // padding-left:30px;
+                background: transparent;
+                border: var(--border);
+                color: #fff;
+                border-radius: 0;
             }
 
             button {
@@ -45,5 +60,25 @@
                 letter-spacing: 0.1rem;
             }
         }
+    }
+}
+@media screen and (max-width: 800px) {
+    .mapForm {
+        flex-wrap: wrap;
+
+        form {
+            flex-basis: 80% !important;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .mapForm {
+        flex-wrap: wrap;
+    }
+
+    .map-container {
+        width: 350px !important;
+        height: 350px !important;
     }
 }
