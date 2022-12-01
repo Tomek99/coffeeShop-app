@@ -1,9 +1,44 @@
 .popup-box {
-    .box {
-        position: absolute;
-        top: 400px;
-        width: 90%;
-        height: 200px;
-        background-color: #fff;
+    display: none;
+    top: 60px;
+    position: absolute;
+    transform: translateX(-90%);
+
+    input {
+        width: 500px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: var(--border);
+        color: var(--black);
+        border-radius: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+.popup-box.active {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .popup-box {
+        transform: translateX(-75%);
+
+        input {
+            width: 400px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .popup-box {
+        transform: translateX(-75%);
+
+        input {
+            width: 300px;
+        }
     }
 }

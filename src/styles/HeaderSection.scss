@@ -65,8 +65,9 @@
             }
         }
 
-        .buttonsNextToEO {
+        .btn-section {
             display: flex;
+            position: relative;
             gap: 10px;
 
             button {
