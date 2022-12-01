@@ -12,7 +12,7 @@ function LatestProduct(props) {
             </div>
             <img src={props.imageUrl} alt={props.name} />
             <h3>{props.name}</h3>
-            <p>STAR COMPONENT SOON</p>
+            <p>STAR COMPONENT SOONfff</p>
             <p className="price"><span>${props.newPrice} </span><span className='oldPrice'>${props.oldPrice}</span></p>
         </div>
     )

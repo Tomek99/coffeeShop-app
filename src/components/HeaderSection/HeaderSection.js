@@ -2,10 +2,10 @@ import React, { useRef, useState } from 'react'
 import '../../styles/HeaderSection.scss'
 import { BsCartFill, BsSearch } from 'react-icons/bs'
 import PopupSearch from '../PopupSearch/PopupSearch';
-
+import PopupBasket from '../PopupBasket/PopupBasket'
 
 function Header() {
-    // const [isOpen, setIsOpen] = useState(false);
+    const [isBasketOpen, setBasketOpen] = useState(false);
     const [isNavigationOpen, setNavigationOpen] = useState(false);
     let setClass = isNavigationOpen ? 'navMenu active' : 'navMenu';
     // const handleSearch = () => {
@@ -14,9 +14,14 @@ function Header() {
 
     const handleNavigation = () => {
         setNavigationOpen(!isNavigationOpen);
-        console.log(isNavigationOpen);
+        setBasketOpen(false);
     }
 
+    const handleBasket = () => {
+        setBasketOpen(!isBasketOpen);
+        setNavigationOpen(false);
+        console.log("test")
+    }
 
     return (
         <>
@@ -45,7 +50,8 @@ function Header() {
 
                         <button type="button" ><BsSearch size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
 
-                        <button type="button"><BsCartFill size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
+                        <button type="button" onClick={handleBasket}><BsCartFill size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
+                        <PopupBasket isBasketOpen={isBasketOpen} />
                     </div>
                 </div>
             </div>

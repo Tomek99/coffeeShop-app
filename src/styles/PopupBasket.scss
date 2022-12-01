@@ -1,0 +1,63 @@
+.PopupBasket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    color: var(--bg);
+    right: -100%;
+    top: 83px;
+    width: 250px;
+    height: 400px;
+    padding: 10px;
+    background-color: #fff;
+    transition: 0.3s;
+    gap: 10px;
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        overflow: hidden;
+        gap: 10px;
+        height: 250px;
+        padding-top: 30px;
+        overflow: scroll;
+        overflow-x: hidden;
+
+        .singleProduct {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 10px;
+            img {
+                width: 25%;
+            }
+            button {
+                align-self: flex-start;
+            }
+        }
+    }
+
+    .products::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+    .btn-buyProducts {
+        align-self: stretch;
+        background-color: var(--main-color) !important;
+        color: #fff;
+        font-size: 1.3rem;
+        padding: 10px 0 10px 0;
+        cursor: pointer;
+    }
+    .btn-buyProducts:hover {
+        letter-spacing: 0.1rem;
+    }
+}
+
+.PopupBasket.active {
+    right: 0;
+}
