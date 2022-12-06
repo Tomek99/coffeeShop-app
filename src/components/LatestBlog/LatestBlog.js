@@ -2,8 +2,10 @@ import React from 'react'
 
 
 function LatestBlog(props) {
+
+
     return (
-        <div key={props.key} className="singleBlog">
+        <div key={props.id} className="singleBlog">
             <div className='zoomImage'>
                 <img src={props.url} alt={props.title} />
             </div>

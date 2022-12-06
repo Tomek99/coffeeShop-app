@@ -6,7 +6,7 @@ import MenuProduct from '../MenuProudct/MenuProduct'
 
 
 
-function MenuSection() {
+function MenuSection(props) {
     return (
         <div className='MenuSection' id='menuSection'>
             <Header firstWord="our" secondWord="menu" />
@@ -20,6 +20,8 @@ function MenuSection() {
                                 name={item.name}
                                 newPrice={item.newPrice}
                                 oldPrice={item.oldPrice}
+                                addItem={props.addItem}
+                                basketItems={props.basketItems}
                             />
                         )
                     })

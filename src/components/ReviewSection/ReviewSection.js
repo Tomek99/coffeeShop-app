@@ -3,10 +3,9 @@ import '../../styles/ReviewSection.scss'
 import Header from '../Header/Header'
 import Customer from '../../data/customer.json'
 import CustomerReview from '../CustomerReview/CustomerReview'
-import Blog from '../../data/blog.json';
+
 
 function ReviewSection() {
-    console.log(Blog.map((item) => item.imageUrl));
     return (
         <div className='ReviewSection' id='reviewSection'>
             <Header firstWord="customer's" secondWord="review" />

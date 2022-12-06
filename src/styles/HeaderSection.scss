@@ -33,8 +33,13 @@
         align-items: center;
         justify-content: space-around;
 
-        .logo {
+        div {
             cursor: pointer;
+
+            img.logo {
+                width: 100%;
+                margin: 5px 0 5px 0;
+            }
         }
 
         .navMenu {
@@ -96,7 +101,7 @@
     .navMenu {
         position: fixed;
         left: -100%;
-        top: 82px;
+        top: 76px;
         flex-direction: column !important;
         background-color: var(--bg);
         width: 40%;
@@ -112,5 +117,13 @@
 
     .navMenu.active {
         left: 0;
+    }
+
+    img.logo {
+        width: 80% !important;
+    }
+
+    .PopupBasket {
+        top: 76px !important;
     }
 }

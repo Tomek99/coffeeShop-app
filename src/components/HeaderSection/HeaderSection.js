@@ -4,7 +4,7 @@ import { BsCartFill, BsSearch } from 'react-icons/bs'
 import PopupSearch from '../PopupSearch/PopupSearch';
 import PopupBasket from '../PopupBasket/PopupBasket'
 
-function Header() {
+function Header(props) {
     const [isBasketOpen, setBasketOpen] = useState(false);
     const [isNavigationOpen, setNavigationOpen] = useState(false);
     const [isSearchOpen, setSearchOpen] = useState(false);
@@ -36,8 +36,8 @@ function Header() {
                     <span className='bar'></span>
                 </div>
                 <div className='navBar' >
-                    <div className='logo'>
-                        <a href="#homeSection"><img src="/images/logo.png" alt="" /></a>
+                    <div>
+                        <a href="#homeSection"><img src="/images/logo.png" className="logo" alt="" /></a>
                     </div>
                     <nav >
                         <ul className={isNavigationOpen ? 'navMenu active' : 'navMenu'} >
@@ -52,12 +52,27 @@ function Header() {
                     </nav>
 
                     <div className='btn-section'>
-                        <PopupBasket isBasketOpen={isBasketOpen} />
+                        <PopupBasket
+                            isBasketOpen={isBasketOpen}
+                            basketItems={props.basketItems}
+                            deleteItem={props.deleteItem}
+                        />
 
-                        <button type="button" onClick={handleSearch} ><BsSearch size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
+                        <button
+                            type="button"
+                            onClick={handleSearch} >
+                            <BsSearch
+                                size={30}
+                                color={"#fff"}
+                                onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} />
+                        </button>
                         <PopupSearch isSearchOpen={isSearchOpen} />
 
-                        <button type="button" onClick={handleBasket}><BsCartFill size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} /></button>
+                        <button
+                            type="button"
+                            onClick={handleBasket}>
+                            <BsCartFill size={30} color={"#fff"} onMouseOver={({ target }) => target.style.color = "d3ad7f"} onMouseOut={({ target }) => target.style.color = "#fff"} />
+                        </button>
                     </div>
                 </div>
             </div>

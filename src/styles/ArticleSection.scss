@@ -1,0 +1,12 @@
+.ArticleSection {
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bc);
+    color: #fff;
+    .btn-return {
+        cursor: pointer;
+    }
+}

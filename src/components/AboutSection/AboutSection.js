@@ -2,7 +2,7 @@ import React from 'react'
 import '../../styles/AboutSection.scss'
 import Header from '../Header/Header'
 
-function AboutSection() {
+function AboutSection(props) {
     return (
         <div className='AboutSection' id='aboutSection' >
             <Header firstWord="about" secondWord="us" />
@@ -15,7 +15,7 @@ function AboutSection() {
                     <br />
                     <p>Lorfffem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
                     <br />
-                    <button type='button'>Learn More</button>
+                    <button type='button' >Learn More</button>
                 </div>
             </div>
         </div>

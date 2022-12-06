@@ -1,50 +1,24 @@
 import React from 'react'
 import '../../styles/PopupBasket.scss'
+import BasketList from './BasketList/BasketList'
 
-function PopupBasket(pros) {
+function PopupBasket(props) {
     return (
-        <div className={pros.isBasketOpen ? "PopupBasket active" : "PopupBasket"}>
+        <div className={props.isBasketOpen ? "PopupBasket active" : "PopupBasket"}>
             <div className='products'>
-                <div className='singleProduct'>
-                    <img src="./images/cart-item-1.png" alt="" />
-                    <div>
-                        <h2>Cart item 01</h2>
-                        <p>$15. 99/-</p>
-                    </div>
-                    <button type='button'>X</button>
-                </div>
-                <div className='singleProduct'>
-                    <img src="./images/cart-item-2.png" alt="" />
-                    <div>
-                        <h2>Cart item 02</h2>
-                        <p>$15. 99/-</p>
-                    </div>
-                    <button type='button'>X</button>
-                </div>
-                <div className='singleProduct'>
-                    <img src="./images/cart-item-3.png" alt="" />
-                    <div>
-                        <h2>Cart item 03</h2>
-                        <p>$15. 99/-</p>
-                    </div>
-                    <button type='button'>X</button>
-                </div >
-                <div className='singleProduct'>
-                    <img src="./images/cart-item-4.png" alt="" />
-                    <div>
-                        <h2>Cart item 04</h2>
-                        <p>$15. 99/-</p>
-                    </div>
-                    <button type='button'>X</button>
-                </div>
-                <div className='singleProduct'>
-                    <img src="./images/cart-item-4.png" alt="" />
-                    <div>
-                        <h2>Cart item 04</h2>
-                        <p>$15. 99/-</p>
-                    </div>
-                    <button type='button'>X</button>
-                </div>
+                {
+                    props.basketItems.map(item => (
+                        <BasketList
+                            id={item.id}
+                            name={item.name}
+                            newPrice={item.newPrice}
+                            oldPrice={item.oldPrice}
+                            imageUrl={item.imageUrl}
+                            deleteItem={props.deleteItem}
+                        />
+                    ))
+
+                }
             </div>
             <button type='button' className='btn-buyProducts'>Checkout now</button>
         </div>

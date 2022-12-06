@@ -4,7 +4,7 @@ import LatestProduct from '../LatestProduct/LatestProduct';
 import Header from '../Header/Header';
 import Product from '../../data/product.json';
 
-function ProductsSection() {
+function ProductsSection(props) {
     return (
         <div className='ProductsSection' id='productsSection'>
             <Header firstWord="Latest" secondWord="Products" />
@@ -16,6 +16,7 @@ function ProductsSection() {
                         imageUrl={item.imageUrl}
                         newPrice={item.newPrice}
                         oldPrice={item.oldPrice}
+                        addItem={props.addItem}
                     />
                 )}
             </div>
