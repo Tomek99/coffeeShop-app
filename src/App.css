@@ -8,9 +8,10 @@
   border: none;
   text-decoration: none;
   text-transform: capitalize;
-  transition: .2s linear;
+  transition: .2s linear; /* Usunąć !!!! */
   font-family: 'Roboto', sans-serif;
 }
+
 
 :root {
   --main-color: #d3ad7f;

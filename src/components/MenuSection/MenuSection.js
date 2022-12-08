@@ -15,7 +15,7 @@ function MenuSection(props) {
                     Menu.map((item) => {
                         return (
                             <MenuProduct
-                                id={item.id}
+                                idProduct={item.id}
                                 imageUrl={item.imageUrl}
                                 name={item.name}
                                 newPrice={item.newPrice}

@@ -10,7 +10,8 @@ function App() {
 
 
     const addItem = (item) => {
-        setBasketItem([...basketItems, item])
+
+        if (isRepeat(item.idProduct)) setBasketItem([...basketItems, item])
 
         setBasketPrice(prevPrice => ({
             ...prevPrice,
@@ -18,22 +19,30 @@ function App() {
             save: Math.round((prevPrice.save + (item.oldPrice - item.newPrice)) * 100) / 100
 
         }))
-
-        console.log(basketPrice.currentPrice)
-
-
     }
 
     const deleteItem = (id, newPrice, oldPrice) => {
-        const newArray = basketItems.filter(item => item.id !== id);
-        setBasketItem(newArray)
+        const basetList = basketItems.filter(item => item.idProduct !== id);
+        const findItem = basketItems.filter(item => item.idProduct === id);
+
+        setBasketItem(basetList)
 
         setBasketPrice(prevPrice => ({
             ...prevPrice,
-            currentPrice: Math.round((prevPrice.currentPrice - newPrice) * 100) / 100,
-            save: Math.round((prevPrice.save - (oldPrice - newPrice)) * 100) / 100
+            currentPrice: Math.round((prevPrice.currentPrice - newPrice * findItem[0].quantity) * 100) / 100,
+            save: Math.round(((prevPrice.save - (oldPrice - newPrice) * findItem[0].quantity)) * 100) / 100
         }))
+    }
 
+    const isRepeat = (idProduct) => {
+
+        for (let i = 0; i < basketItems.length; i++) {
+            if (basketItems[i].idProduct === idProduct) {
+                basketItems[i].quantity += 1;
+                return false
+            }
+        }
+        return true;
     }
     // console.log(basketItems);
     // useEffect(() => {

@@ -1,21 +1,25 @@
 import React from 'react'
-import nextId from "react-id-generator";
+
 function MenuProduct(props) {
+    const { idProduct, imageUrl, name, newPrice, oldPrice, addItem } = props
+
     const handleItem = () => {
+
         const productDetails = {
-            id: nextId(),
-            imageUrl: props.imageUrl,
-            name: props.name,
-            newPrice: props.newPrice,
-            oldPrice: props.oldPrice
+            idProduct: idProduct,
+            quantity: 1,
+            imageUrl: imageUrl,
+            name: name,
+            newPrice: newPrice,
+            oldPrice: oldPrice
         }
-        props.addItem(productDetails)
+        addItem(productDetails)
     }
     return (
-        <div key={props.id} className="singleProduct">
-            <img src={props.imageUrl} alt={props.name} />
-            <p>{props.name}</p>
-            <p><span> ${props.newPrice}</span><span> ${props.oldPrice}</span></p>
+        <div key={idProduct} className="singleProduct">
+            <img src={imageUrl} alt={name} />
+            <p>{name}</p>
+            <p><span> ${newPrice}</span><span> ${oldPrice}</span></p>
             <button onClick={handleItem} type='button' className='btn1'>Add To Cart</button>
         </div>
     )

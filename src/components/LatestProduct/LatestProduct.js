@@ -1,30 +1,31 @@
 import React from 'react'
 import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from 'react-icons/bs';
-import nextId from "react-id-generator";
 
 function LatestProduct(props) {
+    const { imageUrl, name, newPrice, oldPrice, idProduct, addItem } = props
 
     const handleItem = () => {
         const productDetails = {
-            id: nextId(),
-            imageUrl: props.imageUrl,
-            name: props.name,
-            newPrice: props.newPrice,
-            oldPrice: props.oldPrice
+            idProduct: idProduct,
+            quantity: 1,
+            imageUrl: imageUrl,
+            name: name,
+            newPrice: newPrice,
+            oldPrice: oldPrice
         }
-        props.addItem(productDetails)
+        addItem(productDetails)
     }
     return (
-        <div key={props.id} className="singleItemSection">
+        <div key={idProduct} className="singleItemSection">
             <div className='iconSection'>
                 <button type="button"><BsFillEyeFill /></button>
                 <button type="button" onClick={handleItem}><BsCartFill /></button>
                 <button type="button"><BsFillHeartFill /></button>
             </div>
-            <img src={props.imageUrl} alt={props.name} />
-            <h3>{props.name}</h3>
+            <img src={imageUrl} alt={name} />
+            <h3>{name}</h3>
             <p>STAR COMPONENT SOONfff</p>
-            <p className="price"><span>${props.newPrice} </span><span className='oldPrice'>${props.oldPrice}</span></p>
+            <p className="price"><span>${newPrice} </span><span className='oldPrice'>${oldPrice}</span></p>
         </div>
     )
 }

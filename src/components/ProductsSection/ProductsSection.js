@@ -11,7 +11,7 @@ function ProductsSection(props) {
             <div className='itemSection'>
                 {Product.map((item) =>
                     <LatestProduct
-                        id={item.id}
+                        idProduct={item.id}
                         name={item.name}
                         imageUrl={item.imageUrl}
                         newPrice={item.newPrice}
