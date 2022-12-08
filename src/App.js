@@ -6,14 +6,34 @@ import { HeaderSection, HomeSection, AboutSection, MenuSection, ProductsSection,
 function App() {
     // const [backendData, setBackendData] = useState([{}]);
     const [basketItems, setBasketItem] = useState([]);
+    const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 })
+
 
     const addItem = (item) => {
         setBasketItem([...basketItems, item])
+
+        setBasketPrice(prevPrice => ({
+            ...prevPrice,
+            currentPrice: Math.round((prevPrice.currentPrice + item.newPrice) * 100) / 100,
+            save: Math.round((prevPrice.save + (item.oldPrice - item.newPrice)) * 100) / 100
+
+        }))
+
+        console.log(basketPrice.currentPrice)
+
+
     }
 
-    const deleteItem = (id) => {
+    const deleteItem = (id, newPrice, oldPrice) => {
         const newArray = basketItems.filter(item => item.id !== id);
         setBasketItem(newArray)
+
+        setBasketPrice(prevPrice => ({
+            ...prevPrice,
+            currentPrice: Math.round((prevPrice.currentPrice - newPrice) * 100) / 100,
+            save: Math.round((prevPrice.save - (oldPrice - newPrice)) * 100) / 100
+        }))
+
     }
     // console.log(basketItems);
     // useEffect(() => {
@@ -25,7 +45,7 @@ function App() {
 
     return (
         (<section className='columnWeb'>
-            <HeaderSection basketItems={basketItems} deleteItem={deleteItem} />
+            <HeaderSection basketItems={basketItems} deleteItem={deleteItem} basketPrice={basketPrice} />
             <HomeSection />
             <AboutSection />
             <MenuSection addItem={addItem} />

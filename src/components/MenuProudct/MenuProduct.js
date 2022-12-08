@@ -6,7 +6,7 @@ function MenuProduct(props) {
             id: nextId(),
             imageUrl: props.imageUrl,
             name: props.name,
-            newPrice: props.name,
+            newPrice: props.newPrice,
             oldPrice: props.oldPrice
         }
         props.addItem(productDetails)

@@ -10,7 +10,7 @@
     width: 250px;
     height: 400px;
     padding: 10px;
-    background-color: #fff;
+    background: rgb(240, 240, 240);
     transition: 0.3s;
     gap: 10px;
 
@@ -19,32 +19,62 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         overflow: hidden;
         gap: 10px;
+        padding-right: 1px;
         height: 250px;
-        padding-top: 30px;
         overflow: scroll;
         overflow-x: hidden;
 
         .singleProduct {
             display: flex;
             flex-direction: row;
+            width: 220px;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-between;
 
-            gap: 10px;
             img {
                 width: 25%;
+                max-height: 70px;
             }
+
+            div {
+                flex-basis: 120px;
+                p {
+                    .s-p-newPrice {
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                    }
+
+                    .s-p-oldPrice {
+                        color: rgb(170, 170, 170);
+                        text-decoration: line-through;
+                    }
+                }
+            }
+
             button {
-                align-self: flex-start;
+                align-self: flex-end;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 35px;
+                height: 35px;
+                align-self: center;
+                transition: 0s;
+            }
+
+            button:hover {
+                border-radius: 50%;
+                background: rgb(230, 230, 230);
             }
         }
     }
 
     .products::-webkit-scrollbar-track {
-        background: #fff;
+        background: rgb(240, 240, 240);
     }
 
     .btn-buyProducts {
@@ -57,6 +87,33 @@
     }
     .btn-buyProducts:hover {
         letter-spacing: 0.1rem;
+    }
+
+    .summary-price {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 1.3rem;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+        .s-p-save {
+            color: rgb(17, 158, 0);
+
+            .price {
+            }
+        }
+
+        .s-p-total-cost {
+            font-weight: bold;
+
+            .price {
+                align-self: flex-end;
+            }
+        }
     }
 }
 

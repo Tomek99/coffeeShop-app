@@ -56,6 +56,7 @@ function Header(props) {
                             isBasketOpen={isBasketOpen}
                             basketItems={props.basketItems}
                             deleteItem={props.deleteItem}
+                            basketPrice={props.basketPrice}
                         />
 
                         <button
