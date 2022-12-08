@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function CustomerReview(props) {
     return (
@@ -6,10 +6,10 @@ function CustomerReview(props) {
             <img src={props.imageUrl} alt="quote" />
             <p>{props.text}</p>
             <img src={props.avatarUrl} alt="" className="avatar" />
-            <p className='name'>{props.name}</p>
+            <p className="name">{props.name}</p>
             <p>STAR COMPONENT SOON</p>
         </div>
-    )
+    );
 }
 
-export default CustomerReview
+export default CustomerReview;

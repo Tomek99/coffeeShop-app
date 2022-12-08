@@ -1,13 +1,13 @@
-import React from 'react'
-import { ErrorMessage } from 'formik';
-import '../../styles/ErrMessage.scss'
+import React from "react";
+import { ErrorMessage } from "formik";
+import "../../styles/ErrMessage.scss";
 
 function ErrMessage(pros) {
     return (
-        <div className='errorComponent'>
+        <div className="errorComponent">
             <ErrorMessage name={pros.name} />
         </div>
-    )
+    );
 }
 
-export default ErrMessage
+export default ErrMessage;

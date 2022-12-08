@@ -1,49 +1,63 @@
-import './App.css';
-import React, { useEffect, useState } from 'react'
-import { HeaderSection, HomeSection, AboutSection, MenuSection, ProductsSection, ReviewSection, ContactSection, BlogsSection, FooterSection } from './components/index'
-
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import {
+    HeaderSection,
+    HomeSection,
+    AboutSection,
+    MenuSection,
+    ProductsSection,
+    ReviewSection,
+    ContactSection,
+    BlogsSection,
+    FooterSection,
+} from "./components/index";
 
 function App() {
     // const [backendData, setBackendData] = useState([{}]);
     const [basketItems, setBasketItem] = useState([]);
-    const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 })
-
+    const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
 
     const addItem = (item) => {
+        if (isRepeat(item.idProduct)) setBasketItem([...basketItems, item]);
 
-        if (isRepeat(item.idProduct)) setBasketItem([...basketItems, item])
-
-        setBasketPrice(prevPrice => ({
+        setBasketPrice((prevPrice) => ({
             ...prevPrice,
-            currentPrice: Math.round((prevPrice.currentPrice + item.newPrice) * 100) / 100,
-            save: Math.round((prevPrice.save + (item.oldPrice - item.newPrice)) * 100) / 100
-
-        }))
-    }
+            currentPrice:
+                Math.round((prevPrice.currentPrice + item.newPrice) * 100) / 100,
+            save:
+                Math.round((prevPrice.save + (item.oldPrice - item.newPrice)) * 100) /
+                100,
+        }));
+    };
 
     const deleteItem = (id, newPrice, oldPrice) => {
-        const basetList = basketItems.filter(item => item.idProduct !== id);
-        const findItem = basketItems.filter(item => item.idProduct === id);
+        const basketList = basketItems.filter((item) => item.idProduct !== id);
+        const findItem = basketItems.filter((item) => item.idProduct === id);
 
-        setBasketItem(basetList)
+        setBasketItem(basketList);
 
-        setBasketPrice(prevPrice => ({
+        setBasketPrice((prevPrice) => ({
             ...prevPrice,
-            currentPrice: Math.round((prevPrice.currentPrice - newPrice * findItem[0].quantity) * 100) / 100,
-            save: Math.round(((prevPrice.save - (oldPrice - newPrice) * findItem[0].quantity)) * 100) / 100
-        }))
-    }
+            currentPrice:
+                Math.round(
+                    (prevPrice.currentPrice - newPrice * findItem[0].quantity) * 100
+                ) / 100,
+            save:
+                Math.round(
+                    (prevPrice.save - (oldPrice - newPrice) * findItem[0].quantity) * 100
+                ) / 100,
+        }));
+    };
 
     const isRepeat = (idProduct) => {
-
         for (let i = 0; i < basketItems.length; i++) {
             if (basketItems[i].idProduct === idProduct) {
                 basketItems[i].quantity += 1;
-                return false
+                return false;
             }
         }
         return true;
-    }
+    };
     // console.log(basketItems);
     // useEffect(() => {
     //     fetch("http://localhost:5000/api")
@@ -53,8 +67,12 @@ function App() {
     // }, [])
 
     return (
-        (<section className='columnWeb'>
-            <HeaderSection basketItems={basketItems} deleteItem={deleteItem} basketPrice={basketPrice} />
+        <section className="columnWeb">
+            <HeaderSection
+                basketItems={basketItems}
+                deleteItem={deleteItem}
+                basketPrice={basketPrice}
+            />
             <HomeSection />
             <AboutSection />
             <MenuSection addItem={addItem} />
@@ -63,7 +81,7 @@ function App() {
             <ContactSection />
             <BlogsSection />
             <FooterSection />
-        </section>)
+        </section>
     );
 }
 
