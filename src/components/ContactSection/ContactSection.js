@@ -5,15 +5,15 @@ import Map from "../Map/Map";
 import ContactForm from "../ContactForm/ContactForm";
 
 function ContactSection() {
-    return (
-        <div className="ContactSection" id="contactSection">
-            <Header firstWord="contact" secondWord="us" />
-            <div className="mapForm">
-                <Map />
-                <ContactForm />
-            </div>
-        </div>
-    );
+  return (
+    <div className="ContactSection" id="contactSection">
+      <Header firstWord="contact" secondWord="us" />
+      <div className="mapForm">
+        <Map />
+        <ContactForm />
+      </div>
+    </div>
+  );
 }
 
 export default ContactSection;
