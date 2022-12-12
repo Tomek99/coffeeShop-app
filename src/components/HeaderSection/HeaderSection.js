@@ -56,22 +56,22 @@ function Header(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/ArticleAboutUs">
+                <Link className="nav-link" to="/AboutUs">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="AllMenu" className="nav-link">
+                <Link to="Menu" className="nav-link">
                   Menu
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="AllProducts">
+                <Link className="nav-link" to="Products">
                   Products
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="AllReviews">
+                <Link className="nav-link" to="Reviews">
                   Review
                 </Link>
               </li>
@@ -81,7 +81,7 @@ function Header(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="AllArticles">
+                <Link className="nav-link" to="Articles">
                   Blogs
                 </Link>
               </li>

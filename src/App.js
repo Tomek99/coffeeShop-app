@@ -2,11 +2,11 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import AllArticles from "./pages/AllArticles/AllArticles";
-import AllProducts from "./pages/AllProducts/AllProducts";
-import AllMenu from "./pages/AllMenu/AllMenu";
-import AllReviews from "./pages/AllReviews/AllReviews";
-import ArticleAboutUs from "./pages/ArticleAboutUs/ArticleAboutUs";
+import Articles from "./pages/Articles/Articles";
+import Products from "./pages/Products/Products";
+import Menu from "./pages/Menu/Menu";
+import Reviews from "./pages/Reviews/Reviews";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import {
   HeaderSection,
   ContactSection,
@@ -77,12 +77,12 @@ function App() {
               />
             }
           />
-          <Route path="/ArticleAboutUs" element={<ArticleAboutUs />} />
-          <Route path="/AllMenu" element={<AllMenu />} />
-          <Route path="/AllProducts" element={<AllProducts />} />
-          <Route path="/AllReviews" element={<AllReviews />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/Menu" element={<Menu />} />
+          <Route path="/Products" element={<Products />} />
+          <Route path="/Reviews" element={<Reviews />} />
           <Route path="/Contact" element={<ContactSection />} />
-          <Route path="/AllArticles" element={<AllArticles />} />
+          <Route path="/Articles" element={<Articles />} />
         </Routes>
         <FooterSection />
       </Router>
