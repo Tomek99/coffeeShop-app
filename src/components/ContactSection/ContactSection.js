@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/ContactSection.scss";
+import "./ContactSection.scss";
 import Header from "../Header/Header";
 import Map from "../Map/Map";
 import ContactForm from "../ContactForm/ContactForm";

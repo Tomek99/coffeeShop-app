@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/PopupSearch.scss";
+import "./PopupSearch.scss";
 
 function Popup(props) {
   const isSearchOpen = props.isSearchOpen;

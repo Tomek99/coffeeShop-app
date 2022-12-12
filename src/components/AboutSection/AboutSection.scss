@@ -21,6 +21,7 @@
 
         .textArea {
             flex-basis: 50%;
+
             h1 {
                 margin-top: 50px;
                 margin-bottom: 10px;
@@ -34,7 +35,7 @@
                 line-height: 1.5;
             }
 
-            button {
+            a {
                 align-self: flex-start;
                 background-color: var(--main-color);
                 color: #fff;
@@ -42,7 +43,8 @@
                 padding: 12px 35px 12px 35px;
                 cursor: pointer;
             }
-            button:hover {
+
+            a:hover {
                 letter-spacing: 0.1rem;
             }
         }

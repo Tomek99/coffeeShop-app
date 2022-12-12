@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/ReviewSection.scss";
+import "./ReviewSection.scss";
 import Header from "../Header/Header";
 import Customer from "../../data/customer.json";
 import CustomerReview from "../CustomerReview/CustomerReview";

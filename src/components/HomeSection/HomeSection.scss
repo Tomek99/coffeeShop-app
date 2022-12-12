@@ -1,7 +1,7 @@
 .HomeSection {
     display: flex;
     flex-direction: column;
-    background-image: url("../../public/images/home-img.jpeg");
+    background-image: url("../../../public/images/home-img.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -26,7 +26,7 @@
             font-weight: lighter;
         }
 
-        button {
+        a {
             align-self: flex-start;
             background-color: var(--main-color);
             color: #fff;
@@ -34,7 +34,7 @@
             padding: 12px 35px 12px 35px;
             cursor: pointer;
         }
-        button:hover {
+        a:hover {
             letter-spacing: 0.1rem;
         }
     }

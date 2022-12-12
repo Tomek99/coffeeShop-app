@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/HomeSection.scss";
+import "./HomeSection.scss";
 
 function HomeSection() {
   return (
@@ -13,7 +13,7 @@ function HomeSection() {
           Lorem ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit,
           <br /> Consequuntur? Et Veritatis Velit Nesciunt Odio!
         </p>
-        <button type="button">Get It Now</button>
+        <a href="#menuSection">Get It Now</a>
       </div>
     </div>
   );

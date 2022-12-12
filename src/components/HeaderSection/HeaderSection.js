@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
-import "../../styles/HeaderSection.scss";
+
+import { Link } from "react-router-dom";
+import "./HeaderSection.scss";
 import { BsCartFill, BsSearch } from "react-icons/bs";
 import PopupSearch from "../PopupSearch/PopupSearch";
 import PopupBasket from "../PopupBasket/PopupBasket";
@@ -41,45 +43,47 @@ function Header(props) {
         <div className="navBar">
           <div>
             <a href="#homeSection">
-              <img src="/images/logo.png" className="logo" alt="" />
+              <Link to="/">
+                <img src="/images/logo.png" className="logo" alt="" />
+              </Link>
             </a>
           </div>
           <nav>
             <ul className={isNavigationOpen ? "navMenu active" : "navMenu"}>
               <li className="nav-item">
-                <a href="#homeSection" className="nav-link">
+                <Link className="nav-link" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#aboutSection" className="nav-link">
+                <Link className="nav-link" to="/ArticleAboutUs">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#menuSection" className="nav-link">
+                <Link to="AllMenu" className="nav-link">
                   Menu
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#productsSection" className="nav-link">
+                <Link className="nav-link" to="AllProducts">
                   Products
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#reviewSection" className="nav-link">
+                <Link className="nav-link" to="AllReviews">
                   Review
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#contactSection" className="nav-link">
+                <Link className="nav-link" to="Contact">
                   Contact
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#blogsSection" className="nav-link">
+                <Link className="nav-link" to="AllArticles">
                   Blogs
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

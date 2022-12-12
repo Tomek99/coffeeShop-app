@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/PopupBasket.scss";
+import "./PopupBasket.scss";
 import BasketList from "./BasketList/BasketList";
 
 function PopupBasket(props) {

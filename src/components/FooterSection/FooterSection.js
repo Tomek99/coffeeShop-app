@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/FooterSection.scss";
+import "./FooterSection.scss";
 import { BsTwitter, BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
 import { ImFacebook } from "react-icons/im";
 function FooterSection() {
