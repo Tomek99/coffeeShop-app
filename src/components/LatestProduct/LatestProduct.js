@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
+import styles from "./LatestProduct.module.scss";
 
 function LatestProduct(props) {
   const { imageUrl, name, newPrice, oldPrice, idProduct, addItem } = props;
@@ -16,8 +17,8 @@ function LatestProduct(props) {
     addItem(productDetails);
   };
   return (
-    <div key={idProduct} className="singleItemSection">
-      <div className="iconSection">
+    <div key={idProduct} className={styles.singleItemSection}>
+      <div className={styles.iconSection}>
         <button type="button">
           <BsFillEyeFill />
         </button>
@@ -31,9 +32,9 @@ function LatestProduct(props) {
       <img src={imageUrl} alt={name} />
       <h3>{name}</h3>
       <p>STAR COMPONENT SOONfff</p>
-      <p className="price">
+      <p className={styles.price}>
         <span>${newPrice} </span>
-        <span className="oldPrice">${oldPrice}</span>
+        <span className={styles.oldPrice}>${oldPrice}</span>
       </p>
     </div>
   );

@@ -1,14 +1,14 @@
 import React from "react";
-import "./BlogsSection.scss";
-import Header from "../Header/Header";
+import styles from "./BlogsSection.module.scss";
+import HeaderSection from "../HeaderSection/HeaderSection";
 import LatestBlog from "../LatestBlog/LatestBlog";
 import Blog from "../../data/blog.json";
 
 function BlogsSection(props) {
   return (
-    <div className="BlogsSectionn" id="blogsSection">
-      <Header firstWord="our" secondWord="blogs" />
-      <div className="blogs">
+    <div className={styles.BlogsSection} id="blogsSection">
+      <HeaderSection firstWord="our" secondWord="blogs" />
+      <div className={styles.blogs}>
         {Blog.map((item) => (
           <LatestBlog
             url={item.imageUrl}

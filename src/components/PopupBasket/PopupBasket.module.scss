@@ -1,0 +1,73 @@
+.PopupBasket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    color: var(--bg);
+    right: -100%;
+    top: 90px;
+    width: 250px;
+    height: 400px;
+    padding: 10px;
+    background: rgb(240, 240, 240);
+    gap: 10px;
+
+    .products {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        gap: 10px;
+        padding-right: 1px;
+        height: 250px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    .products::-webkit-scrollbar-track {
+        background: rgb(240, 240, 240);
+    }
+
+    .btnBuyProducts {
+        align-self: stretch;
+        background-color: var(--main-color) !important;
+        color: #fff;
+        font-size: 1.3rem;
+        padding: 10px 0 10px 0;
+        cursor: pointer;
+    }
+    .btnBuyProducts:hover {
+        letter-spacing: 0.1rem;
+    }
+
+    .summaryPrice {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 1.3rem;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+        .singleProductSave {
+            color: rgb(17, 158, 0);
+        }
+
+        .singleProductTotalCost {
+            font-weight: bold;
+
+            .price {
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+.PopupBasket.active {
+    right: 0;
+}

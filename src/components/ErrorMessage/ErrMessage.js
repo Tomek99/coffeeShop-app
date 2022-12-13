@@ -1,10 +1,10 @@
 import React from "react";
 import { ErrorMessage } from "formik";
-import "./ErrMessage.scss";
+import styles from "./ErrMessage.module.scss";
 
 function ErrMessage(pros) {
   return (
-    <div className="errorComponent">
+    <div className={styles.errorComponent}>
       <ErrorMessage name={pros.name} />
     </div>
   );

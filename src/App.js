@@ -7,11 +7,7 @@ import Products from "./pages/Products/Products";
 import Menu from "./pages/Menu/Menu";
 import Reviews from "./pages/Reviews/Reviews";
 import AboutUs from "./pages/AboutUs/AboutUs";
-import {
-  HeaderSection,
-  ContactSection,
-  FooterSection,
-} from "./components/index";
+import { NavigationBar, ContactSection, Footer } from "./components/index";
 function App() {
   const [basketItems, setBasketItem] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
@@ -61,7 +57,7 @@ function App() {
   return (
     <section className="columnWeb">
       <Router>
-        <HeaderSection
+        <NavigationBar
           basketItems={basketItems}
           deleteItem={deleteItem}
           basketPrice={basketPrice}
@@ -77,14 +73,14 @@ function App() {
               />
             }
           />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/Menu" element={<Menu />} />
-          <Route path="/Products" element={<Products />} />
-          <Route path="/Reviews" element={<Reviews />} />
-          <Route path="/Contact" element={<ContactSection />} />
-          <Route path="/Articles" element={<Articles />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/contact" element={<ContactSection />} />
+          <Route path="/articles" element={<Articles />} />
         </Routes>
-        <FooterSection />
+        <Footer />
       </Router>
     </section>
   );

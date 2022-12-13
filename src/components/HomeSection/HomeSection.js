@@ -1,10 +1,10 @@
 import React from "react";
-import "./HomeSection.scss";
+import styles from "./HomeSection.module.scss";
 
 function HomeSection() {
   return (
-    <div className="HomeSection" id="homeSection">
-      <div className="textAreaHome">
+    <div className={styles.HomeSection} id="homeSection">
+      <div className={styles.textAreaHome}>
         <header>
           fresh coffee in <br />
           the morning

@@ -1,14 +1,20 @@
 import React from "react";
-import "./PopupBasket.scss";
+import styles from "./PopupBasket.module.scss";
 import BasketList from "./BasketList/BasketList";
 
 function PopupBasket(props) {
   const { isBasketOpen, basketPrice, basketItems, deleteItem } = props;
 
   return (
-    <div className={isBasketOpen ? "PopupBasket active" : "PopupBasket"}>
+    <div
+      className={
+        isBasketOpen
+          ? `${styles.PopupBasket} ${styles.active}`
+          : styles.PopupBasket
+      }
+    >
       {basketPrice.currentPrice !== 0 ? (
-        <div className="products">
+        <div className={styles.products}>
           {basketItems.map((item) => (
             <BasketList
               id={item.idProduct}
@@ -23,23 +29,23 @@ function PopupBasket(props) {
         </div>
       ) : (
         <div
-          className="products"
+          className={styles.products}
           style={{ fontSize: "2rem", textTransform: "none" }}
         >
           Your basket is empty
         </div>
       )}
-      <button type="button" className="btn-buyProducts">
+      <button type="button" className={styles.btnBuyProducts}>
         Checkout now
       </button>
-      <div className="summary-price">
-        <div className="s-p-save">
+      <div className={styles.summaryPrice}>
+        <div className={styles.singleProductSave}>
           <span>Save: </span>
-          <span className=".price">{basketPrice.save}$</span>
+          <span className={styles.price}>{basketPrice.save}$</span>
         </div>
-        <div className="s-p-total-cost">
+        <div className={styles.singleProductTotalCost}>
           <span>Total cost: </span>
-          <span className=".price">{basketPrice.currentPrice}$</span>
+          <span className={styles.price}>{basketPrice.currentPrice}$</span>
         </div>
       </div>
     </div>

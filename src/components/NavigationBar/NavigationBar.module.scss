@@ -1,4 +1,4 @@
-.HeaderSection {
+.NavigationBar {
     position: sticky;
     top: 0;
     display: flex;
@@ -68,12 +68,12 @@
             }
         }
 
-        .btn-section {
+        .btnSection {
             display: flex;
             position: relative;
             gap: 10px;
 
-            button {
+            .btnDisplay {
                 background-color: transparent;
                 cursor: pointer;
             }
@@ -108,7 +108,7 @@
         border-bottom: var(--border);
         border-right: var(--border);
 
-        .nav-item {
+        .navItem {
             margin: 16px;
         }
     }

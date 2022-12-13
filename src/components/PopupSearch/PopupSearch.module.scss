@@ -1,4 +1,4 @@
-.popup-box {
+.popupBox {
     display: none;
     top: 60px;
     position: absolute;
@@ -19,12 +19,12 @@
         font-weight: bold;
     }
 }
-.popup-box.active {
+.popupBox.active {
     display: block;
 }
 
 @media (max-width: 900px) {
-    .popup-box {
+    .popupBox {
         transform: translateX(-75%);
 
         input {
@@ -34,7 +34,7 @@
 }
 
 @media (max-width: 500px) {
-    .popup-box {
+    .popupBox {
         transform: translateX(-75%);
 
         input {

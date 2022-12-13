@@ -1,0 +1,50 @@
+.singleProduct {
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        width: 25%;
+        max-height: 70px;
+        cursor: pointer;
+    }
+
+    .productDetails {
+        transition-property: none !important;
+        h2 {
+            cursor: pointer;
+        }
+
+        flex-basis: 120px;
+        p {
+            .singleProductNewPrice {
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
+
+            .singleProductOldPrice {
+                color: rgb(170, 170, 170);
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    .btnDeleteProduct {
+        cursor: pointer;
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        align-self: center;
+    }
+
+    .btnDeleteProduct:hover {
+        border-radius: 50%;
+        background: rgb(230, 230, 230);
+    }
+}

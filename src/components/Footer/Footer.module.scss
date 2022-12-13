@@ -6,12 +6,13 @@
     gap: 15px;
     color: #fff;
     background-color: var(--black);
+    border-top: var(--border);
 
     .socialMedia {
         display: flex;
         gap: 10px;
         font-size: 2.5rem;
-
+        margin-top: 10px;
         a {
             display: flex;
             justify-content: center;

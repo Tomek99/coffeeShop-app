@@ -1,4 +1,6 @@
 import React from "react";
+import ButtonMenu from "../Buttons/ButtonMenu";
+import styles from "./MenuProduct.module.scss";
 
 function MenuProduct(props) {
   const { idProduct, imageUrl, name, newPrice, oldPrice, addItem } = props;
@@ -15,16 +17,14 @@ function MenuProduct(props) {
     addItem(productDetails);
   };
   return (
-    <div key={idProduct} className="singleProduct">
+    <div key={idProduct} className={styles.singleProduct}>
       <img src={imageUrl} alt={name} />
       <p>{name}</p>
       <p>
         <span> ${newPrice}</span>
         <span> ${oldPrice}</span>
       </p>
-      <button onClick={handleItem} type="button" className="btn1">
-        Add To Cart
-      </button>
+      <ButtonMenu handleItem={handleItem} text="add to cart" />
     </div>
   );
 }

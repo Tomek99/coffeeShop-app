@@ -1,14 +1,14 @@
 import React from "react";
-import "./AboutSection.scss";
-import Header from "../Header/Header";
+import styles from "./AboutSection.module.scss";
+import HeaderSection from "../HeaderSection/HeaderSection";
 import { Link } from "react-router-dom";
 function AboutSection() {
   return (
-    <div className="AboutSection" id="aboutSection">
-      <Header firstWord="about" secondWord="us" />
-      <div className="div-row">
+    <div className={styles.AboutSection} id="aboutSection">
+      <HeaderSection firstWord="about" secondWord="us" />
+      <div className={styles.divRow}>
         <img src="/images/about-img.jpeg" alt="AboutImg" />
-        <div className="textArea">
+        <div className={styles.textArea}>
           <h1>what makes our coffee special?</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -1,14 +1,11 @@
 import React from "react";
 import {
-  HeaderSection,
   HomeSection,
   AboutSection,
   MenuSection,
   ProductsSection,
   ReviewSection,
-  ContactSection,
   BlogsSection,
-  FooterSection,
 } from "../../components/index";
 
 function Home(props) {

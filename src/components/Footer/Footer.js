@@ -1,11 +1,12 @@
 import React from "react";
-import "./FooterSection.scss";
+import { Link } from "react-router-dom";
+import styles from "./Footer.module.scss";
 import { BsTwitter, BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
 import { ImFacebook } from "react-icons/im";
 function FooterSection() {
   return (
-    <div className="FooterSection">
-      <div className="socialMedia">
+    <div className={styles.FooterSection}>
+      <div className={styles.socialMedia}>
         <a href="https://www.facebook.com/">
           <ImFacebook />
         </a>
@@ -23,27 +24,27 @@ function FooterSection() {
         </a>
       </div>
       <div>
-        <ul className="navBarFooter">
+        <ul className={styles.navBarFooter}>
           <li>
-            <a href="#homeSection">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#aboutSection">About</a>
+            <Link to="/about-us">About</Link>
           </li>
           <li>
-            <a href="#menuSection">Menu</a>
+            <Link to="menu">Menu</Link>
           </li>
           <li>
-            <a href="#productsSection">Products</a>
+            <Link to="products">Products</Link>
           </li>
           <li>
-            <a href="#reviewSection">Review</a>
+            <Link to="reviews">Review</Link>
           </li>
           <li>
-            <a href="#contactSection">Contact</a>
+            <Link to="contact">Contact</Link>
           </li>
           <li>
-            <a href="#blogsSection">Blogs</a>
+            <Link to="articles">Blogs</Link>
           </li>
         </ul>
       </div>

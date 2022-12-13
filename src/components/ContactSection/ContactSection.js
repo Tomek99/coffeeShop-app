@@ -1,14 +1,14 @@
 import React from "react";
-import "./ContactSection.scss";
-import Header from "../Header/Header";
+import styles from "./ContactSection.module.scss";
+import HeaderSection from "../HeaderSection/HeaderSection";
 import Map from "../Map/Map";
 import ContactForm from "../ContactForm/ContactForm";
 
 function ContactSection() {
   return (
-    <div className="ContactSection" id="contactSection">
-      <Header firstWord="contact" secondWord="us" />
-      <div className="mapForm">
+    <div className={styles.ContactSection} id="contactSection">
+      <HeaderSection firstWord="contact" secondWord="us" />
+      <div className={styles.mapForm}>
         <Map />
         <ContactForm />
       </div>

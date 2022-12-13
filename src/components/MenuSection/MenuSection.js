@@ -1,14 +1,14 @@
 import React from "react";
-import "./MenuSection.scss";
+import styles from "./MenuSection.module.scss";
 import Menu from "../../data/menu.json";
-import Header from "../Header/Header";
+import HeaderSection from "../HeaderSection/HeaderSection";
 import MenuProduct from "../MenuProudct/MenuProduct";
 
 function MenuSection(props) {
   return (
-    <div className="MenuSection" id="menuSection">
-      <Header firstWord="our" secondWord="menu" />
-      <div className="itemsProduct">
+    <div className={styles.MenuSection} id="menuSection">
+      <HeaderSection firstWord="our" secondWord="menu" />
+      <div className={styles.itemsProduct}>
         {Menu.map((item) => {
           return (
             <MenuProduct

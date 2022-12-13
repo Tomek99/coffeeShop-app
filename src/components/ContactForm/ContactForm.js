@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Formik, Form, Field } from "formik";
+import styles from "./ContactForm.module.scss";
 import * as Yup from "yup";
 import ErrMessage from "../ErrorMessage/ErrMessage";
 import emailjs from "@emailjs/browser";
@@ -40,7 +41,7 @@ function ContactForm() {
       validateOnChange={false}
       validateOnBlur={false}
     >
-      <Form>
+      <Form className={styles.formContact}>
         <p>get in touch</p>
         <Field type="text" name="name" placeholder="name" />
         <ErrMessage name="name" />
