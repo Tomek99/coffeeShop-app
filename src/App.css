@@ -7,7 +7,7 @@
   outline: none;
   border: none;
   text-decoration: none;
-  transition: 0.3s linear;
+  transition: 0.3s linear; /* DO usunięcia */
   text-transform: capitalize;
   font-family: "Roboto", sans-serif;
 }

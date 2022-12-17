@@ -9,7 +9,7 @@ function BlogsSection(props) {
     <div className={styles.BlogsSection} id="blogsSection">
       <HeaderSection firstWord="our" secondWord="blogs" />
       <div className={styles.blogs}>
-        {Blog.map((item) => (
+        {Blog.slice(0, 3).map((item) => (
           <LatestBlog
             url={item.imageUrl}
             id={item.id}

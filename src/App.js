@@ -1,12 +1,15 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Articles from "./pages/Articles/Articles";
-import Products from "./pages/Products/Products";
-import Menu from "./pages/Menu/Menu";
-import Reviews from "./pages/Reviews/Reviews";
-import AboutUs from "./pages/AboutUs/AboutUs";
+import {
+  Home,
+  Articles,
+  Products,
+  Menu,
+  Reviews,
+  AboutUs,
+} from "./pages/index";
+
 import { NavigationBar, ContactSection, Footer } from "./components/index";
 function App() {
   const [basketItems, setBasketItem] = useState([]);
@@ -56,32 +59,30 @@ function App() {
 
   return (
     <section className="columnWeb">
-      <Router>
-        <NavigationBar
-          basketItems={basketItems}
-          deleteItem={deleteItem}
-          basketPrice={basketPrice}
+      <NavigationBar
+        basketItems={basketItems}
+        deleteItem={deleteItem}
+        basketPrice={basketPrice}
+      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              addItem={addItem}
+              basketItems={basketItems}
+              basketPrice={basketPrice}
+            />
+          }
         />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                addItem={addItem}
-                basketItems={basketItems}
-                basketPrice={basketPrice}
-              />
-            }
-          />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/contact" element={<ContactSection />} />
-          <Route path="/articles" element={<Articles />} />
-        </Routes>
-        <Footer />
-      </Router>
+        <Route path="/about-us/*" element={<AboutUs />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/products" element={<Products addItem={addItem} />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/contact" element={<ContactSection />} />
+        <Route path="/articles" element={<Articles />} />
+      </Routes>
+      <Footer />
     </section>
   );
 }

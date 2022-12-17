@@ -1,0 +1,11 @@
+.VideoDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .test {
+        width: 750px;
+        height: 500px;
+    }
+}

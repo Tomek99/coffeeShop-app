@@ -9,7 +9,7 @@ function ReviewSection() {
     <div className={styles.ReviewSection} id="reviewSection">
       <HeaderSection firstWord="customer's" secondWord="review" />
       <div className={styles.customerReview}>
-        {Customer.map((item) => (
+        {Customer.slice(0, 3).map((item) => (
           <CustomerReview
             id={item.id}
             imageUrl={item.imageUrl}

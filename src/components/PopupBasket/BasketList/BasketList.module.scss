@@ -12,8 +12,8 @@
     }
 
     .productDetails {
-        transition-property: none !important;
         h2 {
+            transition: none !important;
             cursor: pointer;
         }
 

@@ -9,19 +9,29 @@ function MenuSection(props) {
     <div className={styles.MenuSection} id="menuSection">
       <HeaderSection firstWord="our" secondWord="menu" />
       <div className={styles.itemsProduct}>
-        {Menu.map((item) => {
-          return (
-            <MenuProduct
-              idProduct={item.id}
-              imageUrl={item.imageUrl}
-              name={item.name}
-              newPrice={item.newPrice}
-              oldPrice={item.oldPrice}
-              addItem={props.addItem}
-              basketItems={props.basketItems}
-            />
-          );
-        })}
+        {props.isTrue
+          ? Menu.slice(0, 3).map((item) => (
+              <MenuProduct
+                idProduct={item.id}
+                imageUrl={item.imageUrl}
+                name={item.name}
+                newPrice={item.newPrice}
+                oldPrice={item.oldPrice}
+                addItem={props.addItem}
+                basketItems={props.basketItems}
+              />
+            ))
+          : Menu.map((item) => (
+              <MenuProduct
+                idProduct={item.id}
+                imageUrl={item.imageUrl}
+                name={item.name}
+                newPrice={item.newPrice}
+                oldPrice={item.oldPrice}
+                addItem={props.addItem}
+                basketItems={props.basketItems}
+              />
+            ))}
       </div>
     </div>
   );

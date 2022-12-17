@@ -1,0 +1,17 @@
+[
+    {
+        "id": "p1",
+        "title": "Home-Image1",
+        "url": "/images/home-img1.jpeg"
+    },
+    {
+        "id": "p2",
+        "title": "Home-Image2",
+        "url": "/images/home-img2.jpeg"
+    },
+    {
+        "id": "p3",
+        "title": "Home-Image3",
+        "url": "/images/home-img3.jpeg"
+    }
+]

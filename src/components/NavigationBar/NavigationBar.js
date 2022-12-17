@@ -5,8 +5,21 @@ import styles from "./NavigationBar.module.scss";
 import { BsCartFill, BsSearch } from "react-icons/bs";
 import PopupSearch from "../PopupSearch/PopupSearch";
 import PopupBasket from "../PopupBasket/PopupBasket";
+import NavListElement from "../NavListElement/NavListElement";
 
 function Header(props) {
+  const navBarList = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about-us" },
+    { name: "Menu", path: "/menu" },
+    { name: "Products", path: "/products" },
+    { name: "Review", path: "/review" },
+    { name: "Contact", path: "/contact" },
+    { name: "Blogs", path: "/Blogs" },
+  ];
+
+  const iconStyles = {};
+
   const [isBasketOpen, setBasketOpen] = useState(false);
   const [isNavigationOpen, setNavigationOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
@@ -60,27 +73,14 @@ function Header(props) {
                   : styles.navMenu
               }
             >
-              <li className={styles.navItem}>
-                <Link to="/">Home</Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link to="/about-us">About</Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link to="menu">Menu</Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link to="products">Products</Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link to="reviews">Review</Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link to="contact">Contact</Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link to="articles">Blogs</Link>
-              </li>
+              {navBarList.map((item) => (
+                <NavListElement
+                  isLink={true}
+                  name={item.name}
+                  path={item.path}
+                  style={styles.navItem}
+                />
+              ))}
             </ul>
           </nav>
 

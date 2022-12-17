@@ -13,8 +13,8 @@ function Home(props) {
     <>
       <HomeSection />
       <AboutSection />
-      <MenuSection addItem={props.addItem} />
-      <ProductsSection addItem={props.addItem} />
+      <MenuSection addItem={props.addItem} isTrue={true} />
+      <ProductsSection addItem={props.addItem} isTrue={true} />
       <ReviewSection />
       <BlogsSection />
     </>

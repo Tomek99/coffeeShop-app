@@ -1,7 +1,7 @@
 {
   "name": "coffee-shop",
   "version": "0.1.0",
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5000/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
@@ -23,9 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js src/**/*.jsx"
+    "server": "nodemon index.js --ignore client"
   },
   "eslintConfig": {
     "extends": [

@@ -9,16 +9,27 @@ function ProductsSection(props) {
     <div className={styles.ProductsSection} id="productsSection">
       <HeaderSection firstWord="Latest" secondWord="Products" />
       <div className={styles.itemSection}>
-        {Product.map((item) => (
-          <LatestProduct
-            idProduct={item.id}
-            name={item.name}
-            imageUrl={item.imageUrl}
-            newPrice={item.newPrice}
-            oldPrice={item.oldPrice}
-            addItem={props.addItem}
-          />
-        ))}
+        {props.isTrue
+          ? Product.slice(0, 3).map((item) => (
+              <LatestProduct
+                idProduct={item.id}
+                name={item.name}
+                imageUrl={item.imageUrl}
+                newPrice={item.newPrice}
+                oldPrice={item.oldPrice}
+                addItem={props.addItem}
+              />
+            ))
+          : Product.map((item) => (
+              <LatestProduct
+                idProduct={item.id}
+                name={item.name}
+                imageUrl={item.imageUrl}
+                newPrice={item.newPrice}
+                oldPrice={item.oldPrice}
+                addItem={props.addItem}
+              />
+            ))}
       </div>
     </div>
   );
