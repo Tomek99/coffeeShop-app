@@ -1,31 +1,35 @@
 import React from "react";
 import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 
 function LatestProduct(props) {
-  const { imageUrl, name, newPrice, oldPrice, idProduct, addItem } = props;
+  const { imageUrl, name, newPrice, oldPrice, idProduct, addItem, isHome } =
+    props;
 
+  const productDetails = {
+    idProduct: idProduct,
+    quantity: 1,
+    imageUrl: imageUrl,
+    name: name,
+    newPrice: newPrice,
+    oldPrice: oldPrice,
+  };
   const handleItem = () => {
-    const productDetails = {
-      idProduct: idProduct,
-      quantity: 1,
-      imageUrl: imageUrl,
-      name: name,
-      newPrice: newPrice,
-      oldPrice: oldPrice,
-    };
     addItem(productDetails);
   };
+
   return (
     <div key={idProduct} className={styles.singleItemSection}>
       <div className={styles.iconSection}>
-        <button type="button">
+        <Link to={isHome ? `products/${idProduct}` : idProduct}>
           <BsFillEyeFill />
-        </button>
-        <button type="button" onClick={handleItem}>
+        </Link>
+
+        <button onClick={handleItem}>
           <BsCartFill />
         </button>
-        <button type="button">
+        <button>
           <BsFillHeartFill />
         </button>
       </div>

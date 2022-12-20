@@ -4,7 +4,7 @@ import { ProductsSection } from "../../components";
 function Products(props) {
   return (
     <>
-      <ProductsSection addItem={props.addItem} isTrue={false} />
+      <ProductsSection addItem={props.addItem} isTrue={false} isHome={false} />
     </>
   );
 }

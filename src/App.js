@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import Product from "./data/product.json";
 import {
   Home,
   Articles,
@@ -10,7 +11,16 @@ import {
   AboutUs,
 } from "./pages/index";
 
-import { NavigationBar, ContactSection, Footer } from "./components/index";
+import {
+  NavigationBar,
+  ContactSection,
+  Footer,
+  AboutCs,
+  FAQ,
+  OurTeam,
+  ProductDetails,
+} from "./components/index";
+
 function App() {
   const [basketItems, setBasketItem] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
@@ -75,13 +85,20 @@ function App() {
             />
           }
         />
-        {<Route path="/about-us/*" element={<AboutUs />} />}
-        <Route path="/menu" element={<Menu addItem={addItem} />} />
-        <Route path="/products" element={<Products addItem={addItem} />} />
-        <Route path="/reviews" element={<Reviews />} />
-        <Route path="/contact" element={<ContactSection />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/blog" element={<Articles />} />
+        <Route path="about-us" element={<AboutUs />}>
+          <Route exact path={"about-coffee-shop"} element={<AboutCs />} />
+          <Route path={"our-team"} element={<OurTeam />} />
+          <Route path={"FAQ"} element={<FAQ />} />
+          <Route path={"*"} element={<AboutCs />} />
+        </Route>
+
+        <Route path="menu" element={<Menu addItem={addItem} />} />
+        <Route path="products/" element={<Products addItem={addItem} />} />
+        <Route path="products/:id" element={<ProductDetails />} />
+        <Route path="reviews" element={<Reviews />} />
+        <Route path="contact" element={<ContactSection />} />
+        <Route path="articles" element={<Articles />} />
+        <Route path="blog" element={<Articles />} />
       </Routes>
 
       <Footer />

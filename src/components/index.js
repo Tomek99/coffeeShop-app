@@ -12,3 +12,4 @@ export { default as FAQ } from "./FAQ/FAQ";
 export { default as OurTeam } from "./OurTeam/OurTeam";
 export { default as AboutUsNavList } from "./AboutUsNavList/AboutUsNavList";
 export { default as BeansVideo } from "./BeansVideo/BeansVideo";
+export { default as ProductDetails } from "./ProductDetails/ProductDetails";

@@ -18,6 +18,7 @@ function ProductsSection(props) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 addItem={props.addItem}
+                isHome={props.isHome}
               />
             ))
           : Product.map((item) => (
@@ -28,6 +29,7 @@ function ProductsSection(props) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 addItem={props.addItem}
+                isHome={props.isHome}
               />
             ))}
       </div>

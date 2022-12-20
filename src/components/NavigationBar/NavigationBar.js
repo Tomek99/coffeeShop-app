@@ -10,7 +10,7 @@ import NavListElement from "../NavListElement/NavListElement";
 function Header(props) {
   const navBarList = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about-us" },
+    { name: "About", path: "/about-us/about-coffee-shop" },
     { name: "Menu", path: "/menu" },
     { name: "Products", path: "/products" },
     { name: "Review", path: "/reviews" },
