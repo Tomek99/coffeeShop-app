@@ -7,6 +7,7 @@
 
     .blogs {
         max-width: 900px;
+        flex-wrap: wrap;
         display: flex;
         flex-direction: row;
         align-items: center;

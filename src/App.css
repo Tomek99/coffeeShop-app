@@ -28,6 +28,7 @@ html {
 
 body {
   background: var(--bg);
+  overflow: hidden;
 }
 
 section.columnWeb {

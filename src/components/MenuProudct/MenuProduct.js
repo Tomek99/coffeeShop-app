@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonMenu from "../Buttons/ButtonMenu";
+import Button from "../Buttons/Button";
 import styles from "./MenuProduct.module.scss";
 
 function MenuProduct(props) {
@@ -24,7 +24,7 @@ function MenuProduct(props) {
         <span> ${newPrice}</span>
         <span> ${oldPrice}</span>
       </p>
-      <ButtonMenu handleItem={handleItem} text="add to cart" />
+      <Button handleItem={handleItem} text="add to cart" isTrue={true} />
     </div>
   );
 }

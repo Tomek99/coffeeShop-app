@@ -19,5 +19,47 @@
         "avatarUrl": "images/pic-3.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo"
+    },
+    {
+        "id": 24,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        "avatarUrl": "images/pic-1.png",
+        "imageUrl": "images/quote-img.png",
+        "name": "John Deo"
+    },
+    {
+        "id": 25,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        "avatarUrl": "images/pic-2.png",
+        "imageUrl": "images/quote-img.png",
+        "name": "John Deo"
+    },
+    {
+        "id": 26,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        "avatarUrl": "images/pic-3.png",
+        "imageUrl": "images/quote-img.png",
+        "name": "John Deo"
+    },
+    {
+        "id": 27,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        "avatarUrl": "images/pic-1.png",
+        "imageUrl": "images/quote-img.png",
+        "name": "John Deo"
+    },
+    {
+        "id": 28,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        "avatarUrl": "images/pic-2.png",
+        "imageUrl": "images/quote-img.png",
+        "name": "John Deo"
+    },
+    {
+        "id": 29,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
+        "avatarUrl": "images/pic-3.png",
+        "imageUrl": "images/quote-img.png",
+        "name": "John Deo"
     }
 ]

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Buttons/ButtonBlogs";
+import Button from "../Buttons/Button";
 import styles from "./LatestBlog.module.scss";
 
 function LatestBlog(props) {
@@ -12,7 +12,7 @@ function LatestBlog(props) {
         <h2>{props.title}</h2>
         <h4>{props.addedBy}</h4>
         <p>{props.text}</p>
-        <Button text="read more" />
+        <Button text="read more" isTrue={false} />
       </div>
     </div>
   );

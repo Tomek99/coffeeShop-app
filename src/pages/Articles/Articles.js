@@ -1,7 +1,11 @@
 import React from "react";
-
-function AllBlogs() {
-  return <div>AllBlogs</div>;
+import { BlogsSection } from "../../components";
+function Articles() {
+  return (
+    <>
+      <BlogsSection isTrue={false} />
+    </>
+  );
 }
 
-export default AllBlogs;
+export default Articles;

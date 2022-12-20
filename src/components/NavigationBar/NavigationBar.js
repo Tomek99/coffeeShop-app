@@ -13,12 +13,10 @@ function Header(props) {
     { name: "About", path: "/about-us" },
     { name: "Menu", path: "/menu" },
     { name: "Products", path: "/products" },
-    { name: "Review", path: "/review" },
+    { name: "Review", path: "/reviews" },
     { name: "Contact", path: "/contact" },
-    { name: "Blogs", path: "/Blogs" },
+    { name: "Blog", path: "/blog" },
   ];
-
-  const iconStyles = {};
 
   const [isBasketOpen, setBasketOpen] = useState(false);
   const [isNavigationOpen, setNavigationOpen] = useState(false);
@@ -59,11 +57,9 @@ function Header(props) {
         </div>
         <div className={styles.navBar}>
           <div>
-            <a href="#homeSection">
-              <Link to="/">
-                <img src="/images/logo.png" className={styles.logo} alt="" />
-              </Link>
-            </a>
+            <Link to="/">
+              <img src="/images/logo.png" className={styles.logo} alt="" />
+            </Link>
           </div>
           <nav>
             <ul

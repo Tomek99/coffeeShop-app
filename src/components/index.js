@@ -10,6 +10,5 @@ export { default as Footer } from "./Footer/Footer";
 export { default as AboutCs } from "./AboutCS/AboutCs";
 export { default as FAQ } from "./FAQ/FAQ";
 export { default as OurTeam } from "./OurTeam/OurTeam";
-export { default as RewardCS } from "./RewardCS/RewardCS";
 export { default as AboutUsNavList } from "./AboutUsNavList/AboutUsNavList";
 export { default as BeansVideo } from "./BeansVideo/BeansVideo";

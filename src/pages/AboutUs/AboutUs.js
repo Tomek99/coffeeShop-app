@@ -5,7 +5,6 @@ import {
   AboutCs,
   FAQ,
   OurTeam,
-  RewardCS,
   BeansVideo,
 } from "../../components/index";
 
@@ -16,9 +15,8 @@ function AboutUs() {
       <BeansVideo />
       <AboutUsNavList />
       <Routes>
-        <Route path={"about-coffee-shop"} element={<AboutCs />} />
+        <Route exact path={"about-coffee-shop"} element={<AboutCs />} />
         <Route path={"our-team"} element={<OurTeam />} />
-        <Route path={"reward-coffee-shop"} element={<RewardCS />} />
         <Route path={"FAQ"} element={<FAQ />} />
         <Route path={"*"} element={<AboutCs />} />
       </Routes>

@@ -1,28 +1,12 @@
 
 /* BTN 1*/
-.btnMenu {
+.btn {
     background-color: var(--main-color);
     color: #fff;
     font-size: 1.7rem;
-    padding: 12px 35px 12px 35px;
     cursor: pointer;
 }
 
-.btnMenu:hover {
+.btn:hover {
     letter-spacing: 0.1rem;
 }
-
-/* BTN 2 */
-.btnBlogs {
-    background-color: var(--main-color);
-    color: #fff;
-    font-size: 1.6rem;
-    padding: 6px 17.5px 6px 17.5px;
-    cursor: pointer;
-}
-
-.btnBlogs:hover {
-    letter-spacing: 0.1rem;
-}
-
-/* BTN 3 */

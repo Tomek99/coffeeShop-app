@@ -1,7 +1,12 @@
 import React from "react";
+import { ReviewSection } from "../../components/index";
 
-function AllReviews() {
-  return <div>AllReviews</div>;
+function Reviews() {
+  return (
+    <>
+      <ReviewSection />
+    </>
+  );
 }
 
-export default AllReviews;
+export default Reviews;

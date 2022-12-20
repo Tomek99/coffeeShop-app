@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import {
   Home,
   Articles,
@@ -75,13 +75,15 @@ function App() {
             />
           }
         />
-        <Route path="/about-us/*" element={<AboutUs />} />
-        <Route path="/menu" element={<Menu />} />
+        {<Route path="/about-us/*" element={<AboutUs />} />}
+        <Route path="/menu" element={<Menu addItem={addItem} />} />
         <Route path="/products" element={<Products addItem={addItem} />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<ContactSection />} />
         <Route path="/articles" element={<Articles />} />
+        <Route path="/blog" element={<Articles />} />
       </Routes>
+
       <Footer />
     </section>
   );

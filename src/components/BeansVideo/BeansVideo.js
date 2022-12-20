@@ -10,7 +10,7 @@ function BeansVideo() {
         loop
         autoPlay
         muted
-        controlslist="nodownload"
+        controlsList="nodownload"
       >
         <source src="./videos/beans.mp4" type="video/mp4"></source>
       </video>

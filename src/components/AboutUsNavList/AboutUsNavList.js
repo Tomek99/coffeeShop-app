@@ -6,7 +6,6 @@ function AboutUsNavList() {
   const navBarList = [
     { name: "about us", path: "about-coffee-shop" },
     { name: "our team", path: "our-team" },
-    { name: "reward coffee shop", path: "reward-coffee-shop" },
     { name: "FAQ", path: "FAQ" },
   ];
   return (

@@ -1,12 +1,12 @@
 import React from "react";
 import { MenuSection } from "../../components";
 
-function AllMenu() {
+function Menu(props) {
   return (
     <>
-      <MenuSection isTrue={false} />
+      <MenuSection isTrue={false} addItem={props.addItem} />
     </>
   );
 }
 
-export default AllMenu;
+export default Menu;

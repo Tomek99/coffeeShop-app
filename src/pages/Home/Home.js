@@ -15,8 +15,8 @@ function Home(props) {
       <AboutSection />
       <MenuSection addItem={props.addItem} isTrue={true} />
       <ProductsSection addItem={props.addItem} isTrue={true} />
-      <ReviewSection />
-      <BlogsSection />
+      <ReviewSection isTrue={true} />
+      <BlogsSection isTrue={true} />
     </>
   );
 }

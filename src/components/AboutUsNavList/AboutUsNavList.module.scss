@@ -5,11 +5,13 @@
     .navListElements {
         display: flex;
         justify-content: space-evenly;
+        flex-wrap: wrap;
         align-items: center;
+        list-style: none;
         max-width: 600px;
         flex-basis: 100%;
         font-size: 2rem;
-
+        margin: 10px;
         a {
             color: #fff;
         }
@@ -34,5 +36,11 @@
             bottom: 0;
             left: 0;
         }
+    }
+}
+
+@media (max-width: 500px) {
+    .navListElements {
+        max-width: 300px !important;
     }
 }

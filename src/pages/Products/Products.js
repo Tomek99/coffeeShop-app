@@ -1,7 +1,7 @@
 import React from "react";
 import { ProductsSection } from "../../components";
 
-function AllProducts(props) {
+function Products(props) {
   return (
     <>
       <ProductsSection addItem={props.addItem} isTrue={false} />
@@ -9,4 +9,4 @@ function AllProducts(props) {
   );
 }
 
-export default AllProducts;
+export default Products;
