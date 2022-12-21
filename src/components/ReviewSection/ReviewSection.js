@@ -13,6 +13,7 @@ function ReviewSection(props) {
           ? Customer.slice(0, 3).map((item) => (
               <CustomerReview
                 id={item.id}
+                key={item.id}
                 imageUrl={item.imageUrl}
                 avatarUrl={item.avatarUrl}
                 name={item.name}
@@ -23,6 +24,7 @@ function ReviewSection(props) {
           : Customer.map((item) => (
               <CustomerReview
                 id={item.id}
+                key={item.id}
                 imageUrl={item.imageUrl}
                 avatarUrl={item.avatarUrl}
                 name={item.name}

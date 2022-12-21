@@ -15,6 +15,7 @@ function OurTeam() {
         {Member.map((item) => (
           <Team
             id={item.id}
+            key={item.id}
             url={item.url}
             name={item.name}
             position={item.position}

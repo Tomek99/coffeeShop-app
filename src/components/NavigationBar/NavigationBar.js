@@ -7,15 +7,15 @@ import PopupSearch from "../PopupSearch/PopupSearch";
 import PopupBasket from "../PopupBasket/PopupBasket";
 import NavListElement from "../NavListElement/NavListElement";
 
-function Header(props) {
+function NavigationBar(props) {
   const navBarList = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about-us/about-coffee-shop" },
-    { name: "Menu", path: "/menu" },
-    { name: "Products", path: "/products" },
-    { name: "Review", path: "/reviews" },
-    { name: "Contact", path: "/contact" },
-    { name: "Blog", path: "/blog" },
+    { name: "About", path: "about-us" },
+    { name: "Menu", path: "menu" },
+    { name: "Products", path: "products" },
+    { name: "Review", path: "reviews" },
+    { name: "Contact", path: "contact" },
+    { name: "Blog", path: "blog" },
   ];
 
   const [isBasketOpen, setBasketOpen] = useState(false);
@@ -72,6 +72,7 @@ function Header(props) {
               {navBarList.map((item) => (
                 <NavListElement
                   isLink={true}
+                  key={item.name}
                   name={item.name}
                   path={item.path}
                   style={styles.navItem}
@@ -113,4 +114,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default NavigationBar;

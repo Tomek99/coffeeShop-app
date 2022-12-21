@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuSection } from "../../components";
+import { BeansVideo, MenuSection } from "../../components";
 
 function Menu(props) {
   return (

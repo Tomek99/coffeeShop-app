@@ -4,55 +4,63 @@
         "imageUrl": "images/product-1.png",
         "name": "Fresh Cofee",
         "newPrice": 15.99,
-        "oldPrice": 20.99
+        "oldPrice": 20.99,
+        "origin": "Mexico"
     },
     {
         "id": "12",
         "imageUrl": "images/product-2.png",
         "name": "Fresh Cofee",
         "newPrice": 15.99,
-        "oldPrice": 20.99
+        "oldPrice": 20.99,
+        "origin": "Mexico"
     },
     {
         "id": "14",
         "imageUrl": "images/product-3.png",
         "name": "Fresh Cofee",
         "newPrice": 15.99,
-        "oldPrice": 20.99
+        "oldPrice": 20.99,
+        "origin": "Mexico"
     },
     {
         "id": "15",
         "imageUrl": "images/product-1.png",
         "name": "Fresh Cofee",
         "newPrice": 15.99,
-        "oldPrice": 20.99
+        "oldPrice": 20.99,
+        "origin": "Mexico"
     },
     {
         "id": "16",
         "imageUrl": "images/product-2.png",
         "name": "Fresh Cofee",
         "newPrice": 15.99,
-        "oldPrice": 20.99
+        "oldPrice": 20.99,
+        "origin": "Mexico"
     },
     {
         "id": "17",
         "imageUrl": "images/product-3.png",
         "name": "Fresh Cofee",
         "newPrice": 15.99,
-        "oldPrice": 20.99
+        "oldPrice": 20.99,
+        "origin": "Mexico"
     },
     {
         "id": "18",
         "imageUrl": "images/product-1.png",
         "name": "Fresh Cofee",
         "newPrice": 15.99,
-        "oldPrice": 20.99
+        "oldPrice": 20.99,
+        "origin": "Mexico"
     },
     {
         "id": "19",
         "imageUrl": "images/product-2.png",
         "name": "Fresh Cofee",
         "newPrice": 15.99,
-        "oldPrice": 20.99
+        "oldPrice": 20.99,
+        "origin": "Mexico"
     }
 ]

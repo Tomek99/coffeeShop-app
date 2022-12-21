@@ -10,7 +10,6 @@ function Team(props) {
 
   const showDetails = () => {
     setActive(!isActive);
-    console.log(isActive);
   };
   return (
     <>

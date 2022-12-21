@@ -6,7 +6,7 @@ function AboutUsNavList() {
   const navBarList = [
     { name: "about us", path: "about-coffee-shop" },
     { name: "our team", path: "our-team" },
-    { name: "FAQ", path: "FAQ" },
+    { name: "FAQ", path: "faq" },
   ];
   return (
     <nav className={styles.AboutUsNavList}>
@@ -14,6 +14,7 @@ function AboutUsNavList() {
         {navBarList.map((item) => (
           <NavListElement
             isLink={false}
+            key={item.name}
             name={item.name}
             path={item.path}
             activeStyle={styles.activeStyle}

@@ -3,15 +3,17 @@ import Button from "../Buttons/Button";
 import styles from "./LatestBlog.module.scss";
 
 function LatestBlog(props) {
+  const { id, url, title, addedBy, text } = props;
+
   return (
-    <div key={props.id} className={styles.singleBlog}>
+    <div key={id} className={styles.singleBlog}>
       <div className={styles.zoomImage}>
-        <img src={props.url} alt={props.title} />
+        <img src={url} alt={title} />
       </div>
       <div className={styles.textSection}>
-        <h2>{props.title}</h2>
-        <h4>{props.addedBy}</h4>
-        <p>{props.text}</p>
+        <h2>{title}</h2>
+        <h4>{addedBy}</h4>
+        <p>{text}</p>
         <Button text="read more" isTrue={false} />
       </div>
     </div>

@@ -13,6 +13,7 @@ function ProductsSection(props) {
           ? Product.slice(0, 3).map((item) => (
               <LatestProduct
                 idProduct={item.id}
+                key={item.id}
                 name={item.name}
                 imageUrl={item.imageUrl}
                 newPrice={item.newPrice}
@@ -24,6 +25,7 @@ function ProductsSection(props) {
           : Product.map((item) => (
               <LatestProduct
                 idProduct={item.id}
+                key={item.id}
                 name={item.name}
                 imageUrl={item.imageUrl}
                 newPrice={item.newPrice}

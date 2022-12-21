@@ -13,6 +13,7 @@ function BlogsSection(props) {
           ? Blog.slice(0, 3).map((item) => (
               <LatestBlog
                 url={item.imageUrl}
+                key={item.id}
                 id={item.id}
                 title={item.title}
                 text={item.text.slice(0, 55)}
@@ -23,6 +24,7 @@ function BlogsSection(props) {
           : Blog.map((item) => (
               <LatestBlog
                 url={item.imageUrl}
+                key={item.id}
                 id={item.id}
                 title={item.title}
                 text={item.text.slice(0, 55)}

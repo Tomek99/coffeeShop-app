@@ -8,7 +8,7 @@ function BasketList(props) {
 
   return (
     <div className={styles.singleProduct} key={id}>
-      <img src={imageUrl} alt={name} />
+      <img src={"/" + imageUrl} alt={name} />
       <div className={styles.productDetails}>
         <h2>{name}</h2>
         <p>

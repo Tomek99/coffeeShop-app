@@ -1,7 +1,8 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Product from "./data/product.json";
+import ProductData from "./data/product.json";
+
 import {
   Home,
   Articles,
@@ -82,19 +83,25 @@ function App() {
               addItem={addItem}
               basketItems={basketItems}
               basketPrice={basketPrice}
+              productData={ProductData}
             />
           }
         />
         <Route path="about-us" element={<AboutUs />}>
-          <Route exact path={"about-coffee-shop"} element={<AboutCs />} />
-          <Route path={"our-team"} element={<OurTeam />} />
-          <Route path={"FAQ"} element={<FAQ />} />
-          <Route path={"*"} element={<AboutCs />} />
+          <Route path="about-coffee-shop" element={<AboutCs />} />
+          <Route path="our-team" element={<OurTeam />} />
+          <Route path="faq" element={<FAQ />} />
+          <Route path="*" element={<AboutCs />} />
         </Route>
-
         <Route path="menu" element={<Menu addItem={addItem} />} />
-        <Route path="products/" element={<Products addItem={addItem} />} />
-        <Route path="products/:id" element={<ProductDetails />} />
+        <Route
+          path="products/"
+          element={<Products addItem={addItem} />}
+        ></Route>
+        <Route
+          path="products/:id"
+          element={<ProductDetails productData={ProductData} />}
+        />
         <Route path="reviews" element={<Reviews />} />
         <Route path="contact" element={<ContactSection />} />
         <Route path="articles" element={<Articles />} />
