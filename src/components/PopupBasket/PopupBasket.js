@@ -17,7 +17,8 @@ function PopupBasket(props) {
         <div className={styles.products}>
           {basketItems.map((item) => (
             <BasketList
-              id={item.idProduct}
+              id={item.id}
+              key={item.id}
               name={item.name}
               newPrice={item.newPrice}
               oldPrice={item.oldPrice}

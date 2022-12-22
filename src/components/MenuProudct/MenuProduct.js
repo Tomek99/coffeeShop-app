@@ -4,12 +4,12 @@ import Button from "../Buttons/Button";
 import styles from "./MenuProduct.module.scss";
 
 function MenuProduct(props) {
-  const { idProduct, imageUrl, name, newPrice, oldPrice, addItem } = props;
+  const { id, imageUrl, name, newPrice, oldPrice, addItem, quantity } = props;
 
   const handleItem = () => {
     const productDetails = {
-      idProduct: idProduct,
-      quantity: 1,
+      id: id,
+      quantity: quantity,
       imageUrl: imageUrl,
       name: name,
       newPrice: newPrice,
@@ -18,7 +18,7 @@ function MenuProduct(props) {
     addItem(productDetails);
   };
   return (
-    <div key={idProduct} className={styles.singleProduct}>
+    <div key={id} className={styles.singleProduct}>
       <img src={imageUrl} alt={name} />
       <p>{name}</p>
       <p>

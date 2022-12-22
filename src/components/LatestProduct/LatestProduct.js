@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 
 function LatestProduct(props) {
-  const { imageUrl, name, newPrice, oldPrice, idProduct, addItem, isHome } =
+  const { imageUrl, name, newPrice, oldPrice, id, addItem, isHome, quantity } =
     props;
 
   const productDetails = {
-    idProduct: idProduct,
-    quantity: 1,
+    id: id,
+    quantity: quantity,
     imageUrl: imageUrl,
     name: name,
     newPrice: newPrice,
@@ -20,9 +20,9 @@ function LatestProduct(props) {
   };
 
   return (
-    <div key={idProduct} className={styles.singleItemSection}>
+    <div key={id} className={styles.singleItemSection}>
       <div className={styles.iconSection}>
-        <Link to={isHome ? `products/${idProduct}` : idProduct}>
+        <Link to={isHome ? `products/${id}` : id}>
           <BsFillEyeFill />
         </Link>
 

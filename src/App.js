@@ -27,21 +27,27 @@ function App() {
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
 
   const addItem = (item) => {
-    if (isRepeat(item.idProduct)) setBasketItem([...basketItems, item]);
+    if (isRepeat(item)) {
+      setBasketItem([...basketItems, item]);
+    }
 
     setBasketPrice((prevPrice) => ({
       ...prevPrice,
       currentPrice:
-        Math.round((prevPrice.currentPrice + item.newPrice) * 100) / 100,
+        Math.round(
+          (prevPrice.currentPrice + item.newPrice * item.quantity) * 100
+        ) / 100,
       save:
-        Math.round((prevPrice.save + (item.oldPrice - item.newPrice)) * 100) /
-        100,
+        Math.round(
+          (prevPrice.save + (item.oldPrice - item.newPrice) * item.quantity) *
+            100
+        ) / 100,
     }));
   };
 
   const deleteItem = (id, newPrice, oldPrice) => {
-    const basketList = basketItems.filter((item) => item.idProduct !== id);
-    const findItem = basketItems.filter((item) => item.idProduct === id);
+    const basketList = basketItems.filter((item) => item.id !== id);
+    const findItem = basketItems.filter((item) => item.id === id);
 
     setBasketItem(basketList);
 
@@ -58,10 +64,13 @@ function App() {
     }));
   };
 
-  const isRepeat = (idProduct) => {
-    for (let i = 0; i < basketItems.length; i++) {
-      if (basketItems[i].idProduct === idProduct) {
-        basketItems[i].quantity += 1;
+  const isRepeat = (item) => {
+    let newArr = [...basketItems];
+    console.log(item);
+    for (let i = 0; i < newArr.length; i++) {
+      if (newArr[i].id === item.id) {
+        newArr[i].quantity = newArr[i].quantity + item.quantity;
+        setBasketItem(newArr);
         return false;
       }
     }
@@ -96,11 +105,13 @@ function App() {
         <Route path="menu" element={<Menu addItem={addItem} />} />
         <Route
           path="products/"
-          element={<Products addItem={addItem} />}
+          element={<Products addItem={addItem} productData={ProductData} />}
         ></Route>
         <Route
           path="products/:id"
-          element={<ProductDetails productData={ProductData} />}
+          element={
+            <ProductDetails addItem={addItem} productData={ProductData} />
+          }
         />
         <Route path="reviews" element={<Reviews />} />
         <Route path="contact" element={<ContactSection />} />

@@ -18,6 +18,8 @@
         padding: 0 10px;
 
         .productDetailsImage {
+            display: flex;
+            align-items: center;
             img {
                 max-width: 500px;
                 width: 100%;
@@ -28,12 +30,13 @@
         .productDetailsContent {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 50px;
+
             h1 {
                 font-size: 3rem;
             }
             p {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
                 font-weight: 300;
             }
             .productDetailsContentButtons {
@@ -44,24 +47,36 @@
                 .productQuantity {
                     display: flex;
                     flex-direction: row;
+
                     input {
+                        background: #1c1c2f;
                         text-align: center;
-                        font-size: 1.5rem;
+                        font-size: 1.7rem;
                         width: 50px;
+                        color: #fff;
                     }
-                    .btnProductQuantity {
+                    .btnProductQuantity,
+                    .btnAddToBasket {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        font-size: 2.5rem;
+                        font-size: 1.7rem;
                         padding: 10px;
-                        background: var(--main-color);
+                        background: #1c1c2f;
                         color: #fff;
                         text-transform: none;
                         cursor: pointer;
                     }
 
+                    .btnAddToBasket {
+                        margin-left: 10px;
+                        padding: 10px 40px;
+                        background-color: var(--main-color);
+                    }
                     .btnProductQuantity:hover {
+                        background: #252542;
+                    }
+                    .btnAddToBasket:hover {
                         background-color: #ce9754;
                     }
 
@@ -72,6 +87,18 @@
 
                 .wishList {
                     align-self: flex-end;
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.7rem;
+                    padding: 5px 24px;
+                    text-transform: none;
+                    background-color: #1c1c2f;
+                    color: #fff;
+                    cursor: pointer;
+                }
+
+                .wishList:hover {
+                    background-color: #252542;
                 }
             }
         }

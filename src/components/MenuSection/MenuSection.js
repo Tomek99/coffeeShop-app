@@ -12,24 +12,26 @@ function MenuSection(props) {
         {props.isTrue
           ? Menu.slice(0, 3).map((item) => (
               <MenuProduct
-                idProduct={item.id}
+                id={item.id}
                 key={item.id}
                 imageUrl={item.imageUrl}
                 name={item.name}
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
+                quantity={item.quantity}
                 addItem={props.addItem}
                 basketItems={props.basketItems}
               />
             ))
           : Menu.map((item) => (
               <MenuProduct
-                idProduct={item.id}
+                id={item.id}
                 key={item.id}
                 imageUrl={item.imageUrl}
                 name={item.name}
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
+                quantity={item.quantity}
                 addItem={props.addItem}
                 basketItems={props.basketItems}
               />
