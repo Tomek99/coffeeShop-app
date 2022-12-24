@@ -5,18 +5,18 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import ExtraDetails from "./ExtraDetails/ExtraDetails";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-function ProductDetails(props) {
+function ProductDetails({ addItem, productData }) {
   const [quantity, setQuantity] = useState(1);
   const productId = useParams();
 
-  const thisProduct = props.productData.find(
-    (item) => item.id === productId.id
-  );
+  const thisProduct = productData.find((item) => item.id === productId.id);
+  console.log(productData[0]);
 
-  const handleItem = () => {
+  const onClickAddToBasket = () => {
     thisProduct.quantity = quantity;
-    props.addItem(thisProduct);
+    addItem(thisProduct);
   };
 
   const increaseAmount = () => {
@@ -59,7 +59,10 @@ function ProductDetails(props) {
               >
                 <FiPlus />
               </button>
-              <button className={styles.btnAddToBasket} onClick={handleItem}>
+              <button
+                className={styles.btnAddToBasket}
+                onClick={onClickAddToBasket}
+              >
                 Add to basket
               </button>
             </div>
@@ -74,4 +77,8 @@ function ProductDetails(props) {
   );
 }
 
+ProductDetails.propTypes = {
+  addItem: PropTypes.func,
+  productData: PropTypes.array,
+};
 export default ProductDetails;

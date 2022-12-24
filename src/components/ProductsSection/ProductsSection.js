@@ -2,14 +2,15 @@ import React from "react";
 import styles from "./ProductsSection.module.scss";
 import LatestProduct from "../LatestProduct/LatestProduct";
 import HeaderSection from "../HeaderSection/HeaderSection";
+import PropTypes from "prop-types";
 
-function ProductsSection(props) {
+function ProductsSection({ isTrue, productData, addItem, isHome }) {
   return (
     <div className={styles.ProductsSection} id="productsSection">
       <HeaderSection firstWord="Latest" secondWord="Products" />
       <div className={styles.itemSection}>
-        {props.isTrue
-          ? props.productData
+        {isTrue
+          ? productData
               .slice(0, 3)
               .map((item) => (
                 <LatestProduct
@@ -20,11 +21,11 @@ function ProductsSection(props) {
                   newPrice={item.newPrice}
                   oldPrice={item.oldPrice}
                   quantity={item.quantity}
-                  addItem={props.addItem}
-                  isHome={props.isHome}
+                  addItem={addItem}
+                  isHome={isHome}
                 />
               ))
-          : props.productData.map((item) => (
+          : productData.map((item) => (
               <LatestProduct
                 id={item.id}
                 key={item.id}
@@ -33,8 +34,8 @@ function ProductsSection(props) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 quantity={item.quantity}
-                addItem={props.addItem}
-                isHome={props.isHome}
+                addItem={addItem}
+                isHome={isHome}
               />
             ))}
       </div>
@@ -42,4 +43,10 @@ function ProductsSection(props) {
   );
 }
 
+ProductsSection.propTypes = {
+  isTrue: PropTypes.bool,
+  isHome: PropTypes.bool,
+  addItem: PropTypes.func,
+  productData: PropTypes.array,
+};
 export default ProductsSection;

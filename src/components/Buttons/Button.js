@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./Button.module.css";
+import PropTypes from "prop-types";
 
-function Button(props) {
-  const { handleItem, text, isTrue } = props;
-
+function Button({ handleItem, text, isTrue }) {
   const btnMenu = { padding: "12px 35px 12px 35px" };
   const btnArticle = { padding: "6px 17.5px 6px 17.5px" };
 
@@ -17,5 +16,11 @@ function Button(props) {
     </button>
   );
 }
+
+Button.propTypes = {
+  handleItem: PropTypes.func,
+  text: PropTypes.string,
+  isTrue: PropTypes.bool,
+};
 
 export default Button;

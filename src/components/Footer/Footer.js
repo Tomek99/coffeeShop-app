@@ -4,48 +4,39 @@ import styles from "./Footer.module.scss";
 import { BsTwitter, BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
 import { ImFacebook } from "react-icons/im";
 function FooterSection() {
+  const navBarList = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "about-us" },
+    { name: "Menu", path: "menu" },
+    { name: "Products", path: "products" },
+    { name: "Review", path: "reviews" },
+    { name: "Contact", path: "contact" },
+    { name: "Blog", path: "blog" },
+  ];
+
+  const hrefLinks = [
+    { name: <ImFacebook />, url: "https://www.facebook.com/" },
+    { name: <BsTwitter />, url: "https://www.facebook.com/" },
+    { name: <BsInstagram />, url: "https://www.facebook.com/" },
+    { name: <BsLinkedin />, url: "https://www.facebook.com/" },
+    { name: <BsYoutube />, url: "https://www.facebook.com/" },
+  ];
   return (
     <div className={styles.FooterSection}>
       <div className={styles.socialMedia}>
-        <a href="https://www.facebook.com/">
-          <ImFacebook />
-        </a>
-        <a href="https://twitter.com/">
-          <BsTwitter />
-        </a>
-        <a href="https://www.instagram.com/">
-          <BsInstagram />
-        </a>
-        <a href="https://www.linkedin.com/">
-          <BsLinkedin />
-        </a>
-        <a href="https://www.youtube.com/?gl=PL">
-          <BsYoutube />
-        </a>
+        {hrefLinks.map((item, index) => (
+          <a key={index} href={item.url}>
+            {item.name}
+          </a>
+        ))}
       </div>
       <div>
         <ul className={styles.navBarFooter}>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about-us">About</Link>
-          </li>
-          <li>
-            <Link to="menu">Menu</Link>
-          </li>
-          <li>
-            <Link to="products">Products</Link>
-          </li>
-          <li>
-            <Link to="reviews">Review</Link>
-          </li>
-          <li>
-            <Link to="contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="articles">Blogs</Link>
-          </li>
+          {navBarList.map((item) => (
+            <li key={item.name}>
+              <Link to={item.path}>{item.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
       <p>

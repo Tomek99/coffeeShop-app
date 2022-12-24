@@ -24,16 +24,20 @@ html {
   overflow-x: hidden;
   scroll-padding-top: 9rem;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   background: var(--bg);
+  min-height: 100%;
+  position: relative;
 }
 
 section.columnWeb {
   display: flex;
   flex-direction: column;
   gap: 20px 0px;
+  margin-bottom: 30px;
 }
 
 /* width */

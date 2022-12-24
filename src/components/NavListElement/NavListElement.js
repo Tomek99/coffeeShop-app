@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function NavListElement(props) {
-  const { isLink, name, path, activeStyle, style } = props;
+function NavListElement({ isLink, name, path, activeStyle, style }) {
   return (
     <li className={style} key={name}>
       {isLink ? (
@@ -19,4 +19,11 @@ function NavListElement(props) {
   );
 }
 
+NavListElement.propTypes = {
+  isLink: PropTypes.bool,
+  name: PropTypes.string,
+  path: PropTypes.string,
+  activeStyle: PropTypes.string,
+  style: PropTypes.string,
+};
 export default NavListElement;

@@ -3,13 +3,14 @@ import styles from "./MenuSection.module.scss";
 import Menu from "../../data/menu.json";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import MenuProduct from "../MenuProudct/MenuProduct";
+import PropTypes from "prop-types";
 
-function MenuSection(props) {
+function MenuSection({ isTrue, addItem, basketItems }) {
   return (
     <div className={styles.MenuSection} id="menuSection">
       <HeaderSection firstWord="our" secondWord="menu" />
       <div className={styles.itemsProduct}>
-        {props.isTrue
+        {isTrue
           ? Menu.slice(0, 3).map((item) => (
               <MenuProduct
                 id={item.id}
@@ -19,8 +20,8 @@ function MenuSection(props) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 quantity={item.quantity}
-                addItem={props.addItem}
-                basketItems={props.basketItems}
+                addItem={addItem}
+                basketItems={basketItems}
               />
             ))
           : Menu.map((item) => (
@@ -32,8 +33,8 @@ function MenuSection(props) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 quantity={item.quantity}
-                addItem={props.addItem}
-                basketItems={props.basketItems}
+                addItem={addItem}
+                basketItems={basketItems}
               />
             ))}
       </div>
@@ -41,4 +42,9 @@ function MenuSection(props) {
   );
 }
 
+MenuSection.propTypes = {
+  isTrue: PropTypes.bool,
+  addItem: PropTypes.func,
+  basketItems: PropTypes.func,
+};
 export default MenuSection;

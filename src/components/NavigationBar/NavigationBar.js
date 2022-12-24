@@ -6,8 +6,9 @@ import { BsCartFill, BsSearch } from "react-icons/bs";
 import PopupSearch from "../PopupSearch/PopupSearch";
 import PopupBasket from "../PopupBasket/PopupBasket";
 import NavListElement from "../NavListElement/NavListElement";
+import PropTypes from "prop-types";
 
-function NavigationBar(props) {
+function NavigationBar({ basketItems, deleteItem, basketPrice }) {
   const navBarList = [
     { name: "Home", path: "/" },
     { name: "About", path: "about-us" },
@@ -84,9 +85,10 @@ function NavigationBar(props) {
           <div className={styles.btnSection}>
             <PopupBasket
               isBasketOpen={isBasketOpen}
-              basketItems={props.basketItems}
-              deleteItem={props.deleteItem}
-              basketPrice={props.basketPrice}
+              basketItems={basketItems}
+              deleteItem={deleteItem}
+              basketPrice={basketPrice}
+              handleBasket={handleBasket}
             />
 
             <button className={styles.btnDisplay} onClick={handleSearch}>
@@ -114,4 +116,9 @@ function NavigationBar(props) {
   );
 }
 
+NavigationBar.propTypes = {
+  basketItems: PropTypes.array,
+  deleteItem: PropTypes.func,
+  basketPrice: PropTypes.object,
+};
 export default NavigationBar;

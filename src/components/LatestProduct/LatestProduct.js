@@ -2,6 +2,7 @@ import React from "react";
 import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
+import PropTypes from "prop-types";
 
 function LatestProduct(props) {
   const { imageUrl, name, newPrice, oldPrice, id, addItem, isHome, quantity } =
@@ -44,4 +45,14 @@ function LatestProduct(props) {
   );
 }
 
+LatestProduct.propTypes = {
+  id: PropTypes.string,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  newPrice: PropTypes.number,
+  oldPrice: PropTypes.number,
+  addItem: PropTypes.func,
+  isHome: PropTypes.bool,
+  quantity: PropTypes.number,
+};
 export default LatestProduct;

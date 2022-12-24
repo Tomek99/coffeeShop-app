@@ -2,12 +2,14 @@ import React from "react";
 import styles from "./PopupMemberDetails.module.scss";
 import { GrClose, GrTwitter } from "react-icons/gr";
 import { VscChromeClose } from "react-icons/vsc";
+import PropTypes from "prop-types";
+
 function PopupMemberDetails(props) {
-  const { id, url, name, position, text, showDetails } = props;
+  const { id, url, name, position, text, showDetails, isActive } = props;
   return (
     <div
       className={
-        props.isActive
+        isActive
           ? `${styles.PopupMemberDetails} ${styles.active}`
           : styles.PopupMemberDetails
       }
@@ -36,4 +38,13 @@ function PopupMemberDetails(props) {
   );
 }
 
+PopupMemberDetails.propTypes = {
+  id: PropTypes.number,
+  url: PropTypes.string,
+  name: PropTypes.string,
+  position: PropTypes.string,
+  text: PropTypes.string,
+  showDetails: PropTypes.func,
+  isActive: PropTypes.bool,
+};
 export default PopupMemberDetails;

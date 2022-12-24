@@ -6,10 +6,10 @@ import styles from "./ExtraDetails.module.scss";
 import ReviewProduct from "./ReviewProduct/ReviewProduct";
 
 function ExtraDetails() {
-  const [pageNumber, setPageNumber] = useState(0);
+  const [tabNumber, setTabNumber] = useState(0);
 
-  const handlePageNumber = (pageNumber) => {
-    setPageNumber(pageNumber);
+  const switchTab = (tabNumber) => {
+    setTabNumber(tabNumber);
   };
 
   // const handleClick = (event) => {
@@ -24,41 +24,38 @@ function ExtraDetails() {
     <div className={styles.ExtraDetails}>
       <div className={styles.ExtraDetailsBtn}>
         <button
-          className={pageNumber === 0 ? styles.btn : null}
+          className={tabNumber === 0 ? styles.btn : null}
           onClick={() => {
-            handlePageNumber(0);
+            switchTab(0);
           }}
         >
           Description
         </button>
         <button
-          className={pageNumber === 1 ? styles.btn : null}
+          className={tabNumber === 1 ? styles.btn : null}
           onClick={() => {
-            handlePageNumber(1);
+            switchTab(1);
           }}
         >
           Additional information
         </button>
         <button
-          className={pageNumber === 2 ? styles.btn : null}
+          className={tabNumber === 2 ? styles.btn : null}
           onClick={() => {
-            handlePageNumber(2);
+            switchTab(2);
           }}
         >
           Review product
         </button>
       </div>
       {(() => {
-        switch (pageNumber) {
-          case 0:
-            return <Description />;
+        switch (tabNumber) {
           case 1:
             return <Additionalinformation />;
           case 2:
             return <ReviewProduct />;
-
           default:
-            return null;
+            return <Description />;
         }
       })()}
     </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./PopupSearch.module.scss";
+import PropTypes from "prop-types";
 
-function Popup(props) {
-  const isSearchOpen = props.isSearchOpen;
+function Popup({ isSearchOpen }) {
   return (
     <div
       className={
@@ -13,5 +13,9 @@ function Popup(props) {
     </div>
   );
 }
+
+Popup.propTypes = {
+  isSearchOpen: PropTypes.bool,
+};
 
 export default Popup;

@@ -3,9 +3,9 @@ import styles from "./TeamMember.module.scss";
 import { BsArrowRight } from "react-icons/bs";
 import { useState } from "react";
 import PopupMemberDetails from "../PopupMemberDetails/PopupMemberDetails";
+import PropTypes from "prop-types";
 
-function Team(props) {
-  const { id, url, name, position, text } = props;
+function Team({ id, url, name, position, text }) {
   const [isActive, setActive] = useState(false);
 
   const showDetails = () => {
@@ -39,4 +39,11 @@ function Team(props) {
   );
 }
 
+Team.propTypes = {
+  id: PropTypes.number,
+  url: PropTypes.string,
+  name: PropTypes.string,
+  position: PropTypes.string,
+  text: PropTypes.string,
+};
 export default Team;

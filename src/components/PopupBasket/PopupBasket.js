@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./PopupBasket.module.scss";
 import BasketList from "./BasketList/BasketList";
+import PropTypes from "prop-types";
 
 function PopupBasket(props) {
-  const { isBasketOpen, basketPrice, basketItems, deleteItem } = props;
-
+  const { isBasketOpen, basketPrice, basketItems, deleteItem, handleBasket } =
+    props;
   return (
     <div
       className={
@@ -13,6 +14,14 @@ function PopupBasket(props) {
           : styles.PopupBasket
       }
     >
+      <div className={styles.btnDiv}>
+        <span>Basket 5</span>
+        <div onClick={handleBasket}>
+          <span>-</span>
+          <span>-</span>
+          <span>-</span>
+        </div>
+      </div>
       {basketPrice.currentPrice !== 0 ? (
         <div className={styles.products}>
           {basketItems.map((item) => (
@@ -52,5 +61,13 @@ function PopupBasket(props) {
     </div>
   );
 }
+
+PopupBasket.propTypes = {
+  isBasketOpen: PropTypes.bool,
+  basketItems: PropTypes.array,
+  deleteItem: PropTypes.func,
+  handleBasket: PropTypes.func,
+  basketPrice: PropTypes.object,
+};
 
 export default PopupBasket;

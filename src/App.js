@@ -1,16 +1,9 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import ProductData from "./data/product.json";
+import productData from "./data/product.json";
 
-import {
-  Home,
-  Articles,
-  Products,
-  Menu,
-  Reviews,
-  AboutUs,
-} from "./pages/index";
+import { Home, Articles, Products, Menu, Reviews, AboutUs } from "./pages";
 
 import {
   NavigationBar,
@@ -20,15 +13,26 @@ import {
   FAQ,
   OurTeam,
   ProductDetails,
-} from "./components/index";
+} from "./components";
 
 function App() {
-  const [basketItems, setBasketItem] = useState([]);
+  const [basketItems, setBasketItems] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
 
   const addItem = (item) => {
-    if (isRepeat(item)) {
-      setBasketItem([...basketItems, item]);
+    const newItemIndex = basketItems.findIndex(
+      (element) => element.id === item.id
+    );
+
+    if (newItemIndex === -1) {
+      setBasketItems([...basketItems, { ...item }]);
+    } else {
+      let newArr = [...basketItems];
+
+      newArr[newItemIndex].quantity =
+        newArr[newItemIndex].quantity + item.quantity;
+
+      setBasketItems(newArr);
     }
 
     setBasketPrice((prevPrice) => ({
@@ -49,7 +53,7 @@ function App() {
     const basketList = basketItems.filter((item) => item.id !== id);
     const findItem = basketItems.filter((item) => item.id === id);
 
-    setBasketItem(basketList);
+    setBasketItems(basketList);
 
     setBasketPrice((prevPrice) => ({
       ...prevPrice,
@@ -62,19 +66,6 @@ function App() {
           (prevPrice.save - (oldPrice - newPrice) * findItem[0].quantity) * 100
         ) / 100,
     }));
-  };
-
-  const isRepeat = (item) => {
-    let newArr = [...basketItems];
-    console.log(item);
-    for (let i = 0; i < newArr.length; i++) {
-      if (newArr[i].id === item.id) {
-        newArr[i].quantity = newArr[i].quantity + item.quantity;
-        setBasketItem(newArr);
-        return false;
-      }
-    }
-    return true;
   };
 
   return (
@@ -92,7 +83,7 @@ function App() {
               addItem={addItem}
               basketItems={basketItems}
               basketPrice={basketPrice}
-              productData={ProductData}
+              productData={productData}
             />
           }
         />
@@ -105,12 +96,12 @@ function App() {
         <Route path="menu" element={<Menu addItem={addItem} />} />
         <Route
           path="products/"
-          element={<Products addItem={addItem} productData={ProductData} />}
+          element={<Products addItem={addItem} productData={productData} />}
         ></Route>
         <Route
           path="products/:id"
           element={
-            <ProductDetails addItem={addItem} productData={ProductData} />
+            <ProductDetails addItem={addItem} productData={productData} />
           }
         />
         <Route path="reviews" element={<Reviews />} />

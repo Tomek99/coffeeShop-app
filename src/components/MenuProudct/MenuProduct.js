@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import Button from "../Buttons/Button";
 import styles from "./MenuProduct.module.scss";
+import PropTypes from "prop-types";
 
 function MenuProduct(props) {
   const { id, imageUrl, name, newPrice, oldPrice, addItem, quantity } = props;
@@ -29,5 +30,15 @@ function MenuProduct(props) {
     </div>
   );
 }
+
+MenuProduct.propTypes = {
+  id: PropTypes.number,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  newPrice: PropTypes.number,
+  oldPrice: PropTypes.number,
+  addItem: PropTypes.func,
+  quantity: PropTypes.number,
+};
 
 export default MenuProduct;

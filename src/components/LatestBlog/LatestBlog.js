@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Buttons/Button";
 import styles from "./LatestBlog.module.scss";
+import PropTypes from "prop-types";
 
 function LatestBlog(props) {
   const { id, url, title, addedBy, text } = props;
@@ -20,4 +21,11 @@ function LatestBlog(props) {
   );
 }
 
+LatestBlog.propTypes = {
+  id: PropTypes.string,
+  url: PropTypes.string,
+  title: PropTypes.string,
+  addedBy: PropTypes.string,
+  text: PropTypes.string,
+};
 export default LatestBlog;
