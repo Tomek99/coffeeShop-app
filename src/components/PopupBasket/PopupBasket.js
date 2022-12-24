@@ -2,25 +2,35 @@ import React from "react";
 import styles from "./PopupBasket.module.scss";
 import BasketList from "./BasketList/BasketList";
 import PropTypes from "prop-types";
+import { IoCloseSharp } from "react-icons/io5";
 
 function PopupBasket(props) {
-  const { isBasketOpen, basketPrice, basketItems, deleteItem, handleBasket } =
-    props;
+  const {
+    isBasketOpen,
+    basketPrice,
+    basketItems,
+    deleteItem,
+    handleBasket,
+    basketQuantity,
+  } = props;
   return (
     <div
       className={
         isBasketOpen
-          ? `${styles.PopupBasket} ${styles.active}`
-          : styles.PopupBasket
+          ? styles.PopupBasket
+          : `${styles.PopupBasket} ${styles.active}`
       }
     >
-      <div className={styles.btnDiv}>
-        <span>Basket 5</span>
-        <div onClick={handleBasket}>
-          <span>-</span>
-          <span>-</span>
-          <span>-</span>
-        </div>
+      <div className={styles.btnBar}>
+        <span>
+          Basket&nbsp;
+          <span style={{ position: "absolute" }}>
+            {basketQuantity !== 0 && basketQuantity}
+          </span>
+        </span>
+        <button onClick={handleBasket} className={styles.btnHamburger}>
+          <IoCloseSharp className={styles.btnIcon} />
+        </button>
       </div>
       {basketPrice.currentPrice !== 0 ? (
         <div className={styles.products}>
@@ -45,18 +55,17 @@ function PopupBasket(props) {
           Your basket is empty
         </div>
       )}
-      <button type="button" className={styles.btnBuyProducts}>
-        Checkout now
-      </button>
-      <div className={styles.summaryPrice}>
-        <div className={styles.singleProductSave}>
-          <span>Save: </span>
-          <span className={styles.price}>{basketPrice.save}$</span>
-        </div>
-        <div className={styles.singleProductTotalCost}>
-          <span>Total cost: </span>
-          <span className={styles.price}>{basketPrice.currentPrice}$</span>
-        </div>
+
+      <div className={styles.summary}>
+        <button className={styles.btnCheckoutNow}>Checkout now</button>
+        <p className={styles.bill} style={{ color: "rgb(51, 220, 32)" }}>
+          Save: <span className={styles.price}>${basketPrice.save}</span>
+        </p>
+
+        <p className={styles.bill}>
+          Total cost:
+          <span className={styles.price}>${basketPrice.currentPrice}</span>
+        </p>
       </div>
     </div>
   );
@@ -68,6 +77,7 @@ PopupBasket.propTypes = {
   deleteItem: PropTypes.func,
   handleBasket: PropTypes.func,
   basketPrice: PropTypes.object,
+  basketQuantity: PropTypes.number,
 };
 
 export default PopupBasket;

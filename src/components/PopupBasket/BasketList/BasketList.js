@@ -7,13 +7,13 @@ function BasketList(props) {
   const { id, name, imageUrl, newPrice, oldPrice, quantity, deleteItem } =
     props;
   return (
-    <div className={styles.singleProduct} key={id}>
+    <div className={styles.SingleProduct} key={id}>
       <img src={"/" + imageUrl} alt={name} />
       <div className={styles.productDetails}>
         <h2>{name}</h2>
         <p>
-          <span className={styles.singleProductNewPrice}>${newPrice} </span>
-          <span className={styles.singleProductOldPrice}> ${oldPrice}</span>
+          <span className={styles.newPrice}>${newPrice} </span>
+          <span className={styles.oldPrice}> ${oldPrice}</span>
         </p>
       </div>
       <span>{quantity}</span>
@@ -21,7 +21,7 @@ function BasketList(props) {
         className={styles.btnDeleteProduct}
         onClick={() => deleteItem(id, newPrice, oldPrice)}
       >
-        <ImBin size={15} color="var(--main-color)" />
+        <ImBin size={18} />
       </button>
     </div>
   );

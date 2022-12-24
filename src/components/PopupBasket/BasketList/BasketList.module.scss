@@ -1,38 +1,36 @@
-.singleProduct {
+.SingleProduct {
     display: flex;
     flex-direction: row;
-    width: auto;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
+    width: 90%;
+    font-size: 1.4rem;
 
     img {
-        width: auto;
-        max-height: 70px;
-        cursor: pointer;
+        width: 100%;
+        max-width: 70px;
+        height: auto;
     }
 
     .productDetails {
-        h2 {
-            transition: none !important;
-            cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 50%;
+        font-weight: 300;
+
+        .newPrice {
         }
-
-        flex-basis: 120px;
-        p {
-            .singleProductNewPrice {
-                font-size: 1.1rem;
-                font-weight: 400;
-            }
-
-            .singleProductOldPrice {
-                color: rgb(170, 170, 170);
-                text-decoration: line-through;
-            }
+        .oldPrice {
+            font-size: 1.2rem;
+            color: #ccc;
+            text-decoration: line-through;
         }
     }
 
     .btnDeleteProduct {
-        cursor: pointer;
         align-self: flex-end;
         display: flex;
         flex-direction: column;
@@ -41,10 +39,13 @@
         width: 35px;
         height: 35px;
         align-self: center;
+        background-color: transparent;
+        color: #fff;
+        cursor: pointer;
     }
 
     .btnDeleteProduct:hover {
         border-radius: 50%;
-        background: rgb(230, 230, 230);
+        background-color: #434357;
     }
 }

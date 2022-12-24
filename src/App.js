@@ -13,11 +13,13 @@ import {
   FAQ,
   OurTeam,
   ProductDetails,
+  Notifications,
 } from "./components";
 
 function App() {
   const [basketItems, setBasketItems] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
+  const [basketQuantity, setBasketQuantity] = useState(0);
 
   const addItem = (item) => {
     const newItemIndex = basketItems.findIndex(
@@ -34,6 +36,8 @@ function App() {
 
       setBasketItems(newArr);
     }
+
+    setBasketQuantity(basketQuantity + item.quantity);
 
     setBasketPrice((prevPrice) => ({
       ...prevPrice,
@@ -54,6 +58,7 @@ function App() {
     const findItem = basketItems.filter((item) => item.id === id);
 
     setBasketItems(basketList);
+    setBasketQuantity(basketQuantity - findItem[0].quantity);
 
     setBasketPrice((prevPrice) => ({
       ...prevPrice,
@@ -74,6 +79,7 @@ function App() {
         basketItems={basketItems}
         deleteItem={deleteItem}
         basketPrice={basketPrice}
+        basketQuantity={basketQuantity}
       />
       <Routes>
         <Route

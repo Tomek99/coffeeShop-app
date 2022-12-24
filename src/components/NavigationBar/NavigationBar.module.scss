@@ -76,6 +76,21 @@
             .btnDisplay {
                 background-color: transparent;
                 cursor: pointer;
+
+                .quantityProductsInBasket {
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    background-color: var(--main-color);
+                    font-weight: bold;
+                    color: #fff;
+                    position: absolute;
+                    right: -25px;
+                    bottom: 5px;
+                    font-size: 1.5rem;
+                }
             }
         }
     }

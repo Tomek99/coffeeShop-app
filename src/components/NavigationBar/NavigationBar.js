@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
@@ -8,7 +8,9 @@ import PopupBasket from "../PopupBasket/PopupBasket";
 import NavListElement from "../NavListElement/NavListElement";
 import PropTypes from "prop-types";
 
-function NavigationBar({ basketItems, deleteItem, basketPrice }) {
+function NavigationBar(props) {
+  const { basketItems, deleteItem, basketPrice, basketQuantity } = props;
+
   const navBarList = [
     { name: "Home", path: "/" },
     { name: "About", path: "about-us" },
@@ -89,6 +91,7 @@ function NavigationBar({ basketItems, deleteItem, basketPrice }) {
               deleteItem={deleteItem}
               basketPrice={basketPrice}
               handleBasket={handleBasket}
+              basketQuantity={basketQuantity}
             />
 
             <button className={styles.btnDisplay} onClick={handleSearch}>
@@ -108,6 +111,16 @@ function NavigationBar({ basketItems, deleteItem, basketPrice }) {
                 onMouseOver={({ target }) => (target.style.color = "d3ad7f")}
                 onMouseOut={({ target }) => (target.style.color = "#fff")}
               />
+              <span
+                className={styles.quantityProductsInBasket}
+                style={
+                  basketQuantity !== 0
+                    ? { display: "flex" }
+                    : { display: "none" }
+                }
+              >
+                {basketQuantity}
+              </span>
             </button>
           </div>
         </div>
@@ -120,5 +133,6 @@ NavigationBar.propTypes = {
   basketItems: PropTypes.array,
   deleteItem: PropTypes.func,
   basketPrice: PropTypes.object,
+  basketQuantity: PropTypes.number,
 };
 export default NavigationBar;

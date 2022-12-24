@@ -13,3 +13,4 @@ export { default as OurTeam } from "./OurTeam/OurTeam";
 export { default as AboutUsNavList } from "./AboutUsNavList/AboutUsNavList";
 export { default as BeansVideo } from "./BeansVideo/BeansVideo";
 export { default as ProductDetails } from "./ProductDetails/ProductDetails";
+export { default as Notifications } from "./Notifications/Notifications";
