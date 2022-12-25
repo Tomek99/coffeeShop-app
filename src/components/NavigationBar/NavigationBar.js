@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
-import { BsCartFill, BsSearch } from "react-icons/bs";
+import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
+import { FaRegUser } from "react-icons/fa";
 import PopupSearch from "../PopupSearch/PopupSearch";
 import PopupBasket from "../PopupBasket/PopupBasket";
 import NavListElement from "../NavListElement/NavListElement";
@@ -95,22 +96,20 @@ function NavigationBar(props) {
             />
 
             <button className={styles.btnDisplay} onClick={handleSearch}>
-              <BsSearch
-                size={30}
-                color={"#fff"}
-                onMouseOver={({ target }) => (target.style.color = "d3ad7f")}
-                onMouseOut={({ target }) => (target.style.color = "#fff")}
-              />
+              <BsSearch size={30} color={"#fff"} />
             </button>
             <PopupSearch isSearchOpen={isSearchOpen} />
 
+            <button className={styles.btnDisplay}>
+              <BsHeart size={30} color={"#fff"} />
+            </button>
+
+            <button className={styles.btnDisplay}>
+              <FaRegUser size={30} color={"#fff"} />
+            </button>
+
             <button className={styles.btnDisplay} onClick={handleBasket}>
-              <BsCartFill
-                size={30}
-                color={"#fff"}
-                onMouseOver={({ target }) => (target.style.color = "d3ad7f")}
-                onMouseOut={({ target }) => (target.style.color = "#fff")}
-              />
+              <BsCartFill size={30} color={"#fff"} />
               <span
                 className={styles.quantityProductsInBasket}
                 style={

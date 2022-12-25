@@ -9,11 +9,7 @@ import {
   NavigationBar,
   ContactSection,
   Footer,
-  AboutCs,
-  FAQ,
-  OurTeam,
   ProductDetails,
-  Notifications,
 } from "./components";
 
 function App() {

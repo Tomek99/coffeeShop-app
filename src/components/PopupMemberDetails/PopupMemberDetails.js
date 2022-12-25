@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PopupMemberDetails.module.scss";
-import { GrClose, GrTwitter } from "react-icons/gr";
+import { GrTwitter } from "react-icons/gr";
 import { VscChromeClose } from "react-icons/vsc";
 import PropTypes from "prop-types";
 
