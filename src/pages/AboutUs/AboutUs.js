@@ -1,16 +1,34 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import { AboutUsNavList, BeansVideo } from "../../components/index";
+import { useState } from "react";
+import {
+  AboutUsNavList,
+  BeansVideo,
+  OurTeam,
+  FAQ,
+  AboutCs,
+} from "../../components/index";
 
 function AboutUs() {
-  // NESTED ROUTES REACT / OUTLINE WAŻNE
+  const [tabNumber, setTabNumber] = useState(0);
+
+  const switchTab = (tabNumber) => {
+    setTabNumber(tabNumber);
+  };
   return (
     <>
       <BeansVideo />
-      <AboutUsNavList />
-      <Outlet />
+      <AboutUsNavList switchTab={switchTab} tabNumber={tabNumber} />
+      {(() => {
+        switch (tabNumber) {
+          case 1:
+            return <OurTeam />;
+          case 2:
+            return <FAQ />;
+          default:
+            return <AboutCs />;
+        }
+      })()}
     </>
   );
 }
-
 export default AboutUs;

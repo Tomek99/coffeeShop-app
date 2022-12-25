@@ -17,8 +17,8 @@ function PopupBasket(props) {
     <div
       className={
         isBasketOpen
-          ? styles.PopupBasket
-          : `${styles.PopupBasket} ${styles.active}`
+          ? `${styles.PopupBasket} ${styles.active}`
+          : styles.PopupBasket
       }
     >
       <div className={styles.btnBar}>

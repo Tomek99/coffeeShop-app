@@ -1,0 +1,29 @@
+li {
+    position: relative;
+
+    button {
+        color: #fff;
+        font-size: 2rem;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    button:hover {
+        color: var(--main-color);
+    }
+
+    .activeStyle {
+        color: var(--main-color) !important;
+    }
+    .activeStyle::after {
+        color: var(--main-color);
+        display: block;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: var(--main-color);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}

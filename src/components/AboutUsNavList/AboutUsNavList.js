@@ -1,23 +1,25 @@
 import React from "react";
-import NavListElement from "../NavListElement/NavListElement";
+import NavListBtn from "./NavListBtn/NavListBtn";
 import styles from "./AboutUsNavList.module.scss";
+import PropTypes from "prop-types";
 
-function AboutUsNavList() {
+function AboutUsNavList({ switchTab, tabNumber }) {
   const navBarList = [
-    { name: "about us", path: "about-coffee-shop" },
-    { name: "our team", path: "our-team" },
-    { name: "FAQ", path: "faq" },
+    { name: "about us", number: 0 },
+    { name: "our team", number: 1 },
+    { name: "FAQ", number: 2 },
   ];
   return (
     <nav className={styles.AboutUsNavList}>
       <ul className={styles.navListElements}>
         {navBarList.map((item) => (
-          <NavListElement
-            isLink={false}
+          <NavListBtn
+            number={item.number}
             key={item.name}
             name={item.name}
-            path={item.path}
+            switchTab={switchTab}
             activeStyle={styles.activeStyle}
+            tabNumber={tabNumber}
           />
         ))}
       </ul>
@@ -25,4 +27,8 @@ function AboutUsNavList() {
   );
 }
 
+AboutUsNavList.propTypes = {
+  switchTab: PropTypes.func,
+  tabNumber: PropTypes.number,
+};
 export default AboutUsNavList;

@@ -93,12 +93,8 @@ function App() {
             />
           }
         />
-        <Route path="about-us" element={<AboutUs />}>
-          <Route path="about-coffee-shop" element={<AboutCs />} />
-          <Route path="our-team" element={<OurTeam />} />
-          <Route path="faq" element={<FAQ />} />
-          <Route path="*" element={<AboutCs />} />
-        </Route>
+        <Route path="about-us" element={<AboutUs />} />
+
         <Route path="menu" element={<Menu addItem={addItem} />} />
         <Route
           path="products/"
