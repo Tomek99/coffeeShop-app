@@ -10,7 +10,7 @@ import NavListElement from "../NavListElement/NavListElement";
 import PropTypes from "prop-types";
 
 function NavigationBar(props) {
-  const { basketItems, deleteItem, basketPrice, basketQuantity } = props;
+  const { basketItems, basketPrice, basketQuantity } = props;
 
   const navBarList = [
     { name: "Home", path: "/" },
@@ -89,7 +89,6 @@ function NavigationBar(props) {
             <PopupBasket
               isBasketOpen={isBasketOpen}
               basketItems={basketItems}
-              deleteItem={deleteItem}
               basketPrice={basketPrice}
               handleBasket={handleBasket}
               basketQuantity={basketQuantity}
@@ -130,7 +129,6 @@ function NavigationBar(props) {
 
 NavigationBar.propTypes = {
   basketItems: PropTypes.array,
-  deleteItem: PropTypes.func,
   basketPrice: PropTypes.object,
   basketQuantity: PropTypes.number,
 };

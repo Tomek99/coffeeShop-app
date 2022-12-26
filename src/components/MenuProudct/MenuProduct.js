@@ -1,11 +1,22 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { Context } from "../../Contexts/Context";
 import Button from "../Buttons/Button";
 import styles from "./MenuProduct.module.scss";
 import PropTypes from "prop-types";
 
 function MenuProduct(props) {
-  const { id, imageUrl, name, newPrice, oldPrice, addItem, quantity } = props;
+  const { id, imageUrl, name, newPrice, oldPrice, quantity } = props;
+
+  const [
+    basketItems,
+    setBasketItems,
+    basketPrice,
+    setBasketPrice,
+    basketQuantity,
+    setBasketQuantity,
+    addItem,
+    deleteItem,
+  ] = useContext(Context);
 
   const handleItem = () => {
     const productDetails = {
@@ -18,6 +29,7 @@ function MenuProduct(props) {
     };
     addItem(productDetails);
   };
+
   return (
     <div key={id} className={styles.singleProduct}>
       <img src={imageUrl} alt={name} />

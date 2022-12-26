@@ -6,7 +6,6 @@ function Products(props) {
   return (
     <>
       <ProductsSection
-        addItem={props.addItem}
         isTrue={false}
         isHome={false}
         productData={props.productData}

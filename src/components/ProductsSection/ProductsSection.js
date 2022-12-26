@@ -4,7 +4,7 @@ import LatestProduct from "../LatestProduct/LatestProduct";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import PropTypes from "prop-types";
 
-function ProductsSection({ isTrue, productData, addItem, isHome }) {
+function ProductsSection({ isTrue, productData, isHome }) {
   return (
     <div className={styles.ProductsSection} id="productsSection">
       <HeaderSection firstWord="Latest" secondWord="Products" />
@@ -21,7 +21,6 @@ function ProductsSection({ isTrue, productData, addItem, isHome }) {
                   newPrice={item.newPrice}
                   oldPrice={item.oldPrice}
                   quantity={item.quantity}
-                  addItem={addItem}
                   isHome={isHome}
                 />
               ))
@@ -34,7 +33,6 @@ function ProductsSection({ isTrue, productData, addItem, isHome }) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 quantity={item.quantity}
-                addItem={addItem}
                 isHome={isHome}
               />
             ))}
@@ -46,7 +44,6 @@ function ProductsSection({ isTrue, productData, addItem, isHome }) {
 ProductsSection.propTypes = {
   isTrue: PropTypes.bool,
   isHome: PropTypes.bool,
-  addItem: PropTypes.func,
   productData: PropTypes.array,
 };
 export default ProductsSection;

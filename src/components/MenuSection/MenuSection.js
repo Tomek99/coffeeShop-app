@@ -5,7 +5,7 @@ import HeaderSection from "../HeaderSection/HeaderSection";
 import MenuProduct from "../MenuProudct/MenuProduct";
 import PropTypes from "prop-types";
 
-function MenuSection({ isTrue, addItem, basketItems }) {
+function MenuSection({ isTrue, basketItems }) {
   return (
     <div className={styles.MenuSection} id="menuSection">
       <HeaderSection firstWord="our" secondWord="menu" />
@@ -20,7 +20,6 @@ function MenuSection({ isTrue, addItem, basketItems }) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 quantity={item.quantity}
-                addItem={addItem}
                 basketItems={basketItems}
               />
             ))
@@ -33,7 +32,6 @@ function MenuSection({ isTrue, addItem, basketItems }) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 quantity={item.quantity}
-                addItem={addItem}
                 basketItems={basketItems}
               />
             ))}
@@ -44,7 +42,6 @@ function MenuSection({ isTrue, addItem, basketItems }) {
 
 MenuSection.propTypes = {
   isTrue: PropTypes.bool,
-  addItem: PropTypes.func,
   basketItems: PropTypes.func,
 };
 export default MenuSection;

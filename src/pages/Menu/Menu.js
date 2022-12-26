@@ -1,10 +1,10 @@
 import React from "react";
-import { BeansVideo, MenuSection } from "../../components";
+import { MenuSection } from "../../components";
 
-function Menu(props) {
+function Menu() {
   return (
     <>
-      <MenuSection isTrue={false} addItem={props.addItem} />
+      <MenuSection isTrue={false} />
     </>
   );
 }

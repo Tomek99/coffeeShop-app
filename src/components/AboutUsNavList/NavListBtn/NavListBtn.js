@@ -6,7 +6,7 @@ function NavListElement({ name, number, switchTab, tabNumber }) {
   return (
     <li key={name}>
       <button
-        className={tabNumber === number && styles.activeStyle}
+        className={tabNumber === number ? styles.activeStyle : undefined}
         onClick={() => switchTab(number)}
       >
         {name}

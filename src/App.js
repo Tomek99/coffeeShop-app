@@ -1,16 +1,15 @@
 import "./App.css";
 import React, { useState } from "react";
+import { Context } from "./Contexts/Context";
 import { Route, Routes } from "react-router-dom";
-import productData from "./data/product.json";
-
 import { Home, Articles, Products, Menu, Reviews, AboutUs } from "./pages";
-
 import {
   NavigationBar,
   ContactSection,
   Footer,
   ProductDetails,
 } from "./components";
+import productData from "./data/product.json";
 
 function App() {
   const [basketItems, setBasketItems] = useState([]);
@@ -70,46 +69,55 @@ function App() {
   };
 
   return (
-    <section className="columnWeb">
-      <NavigationBar
-        basketItems={basketItems}
-        deleteItem={deleteItem}
-        basketPrice={basketPrice}
-        basketQuantity={basketQuantity}
-      />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              addItem={addItem}
-              basketItems={basketItems}
-              basketPrice={basketPrice}
-              productData={productData}
-            />
-          }
+    <Context.Provider
+      value={[
+        basketItems,
+        setBasketItems,
+        basketPrice,
+        setBasketPrice,
+        basketQuantity,
+        setBasketQuantity,
+        addItem,
+        deleteItem,
+      ]}
+    >
+      <section className="columnWeb">
+        <NavigationBar
+          basketItems={basketItems}
+          basketPrice={basketPrice}
+          basketQuantity={basketQuantity}
         />
-        <Route path="about-us" element={<AboutUs />} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                basketItems={basketItems}
+                basketPrice={basketPrice}
+                productData={productData}
+              />
+            }
+          />
+          <Route path="about-us" element={<AboutUs />} />
 
-        <Route path="menu" element={<Menu addItem={addItem} />} />
-        <Route
-          path="products/"
-          element={<Products addItem={addItem} productData={productData} />}
-        ></Route>
-        <Route
-          path="products/:id"
-          element={
-            <ProductDetails addItem={addItem} productData={productData} />
-          }
-        />
-        <Route path="reviews" element={<Reviews />} />
-        <Route path="contact" element={<ContactSection />} />
-        <Route path="articles" element={<Articles />} />
-        <Route path="blog" element={<Articles />} />
-      </Routes>
+          <Route path="menu" element={<Menu />} />
+          <Route
+            path="products/"
+            element={<Products productData={productData} />}
+          ></Route>
+          <Route
+            path="products/:id"
+            element={<ProductDetails productData={productData} />}
+          />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="contact" element={<ContactSection />} />
+          <Route path="articles" element={<Articles />} />
+          <Route path="blog" element={<Articles />} />
+        </Routes>
 
-      <Footer />
-    </section>
+        <Footer />
+      </section>
+    </Context.Provider>
   );
 }
 

@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./ProductDetalis.module.scss";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import ExtraDetails from "./ExtraDetails/ExtraDetails";
 import { useState } from "react";
+import { Context } from "../../Contexts/Context";
 import PropTypes from "prop-types";
 
-function ProductDetails({ addItem, productData }) {
+function ProductDetails({ productData }) {
   const [quantity, setQuantity] = useState(1);
   const productId = useParams();
 
+  const [
+    basketItems,
+    setBasketItems,
+    basketPrice,
+    setBasketPrice,
+    basketQuantity,
+    setBasketQuantity,
+    addItem,
+    deleteItem,
+  ] = useContext(Context);
+
   const thisProduct = productData.find((item) => item.id === productId.id);
-  console.log(productData[0]);
 
   const onClickAddToBasket = () => {
     thisProduct.quantity = quantity;

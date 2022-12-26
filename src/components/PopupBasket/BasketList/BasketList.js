@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../../Contexts/Context";
 import { ImBin } from "react-icons/im";
 import styles from "./BasketList.module.scss";
 import PropTypes from "prop-types";
 
 function BasketList(props) {
-  const { id, name, imageUrl, newPrice, oldPrice, quantity, deleteItem } =
-    props;
+  const { id, name, imageUrl, newPrice, oldPrice, quantity } = props;
+
+  const [
+    basketItems,
+    setBasketItems,
+    basketPrice,
+    setBasketPrice,
+    basketQuantity,
+    setBasketQuantity,
+    addItem,
+    deleteItem,
+  ] = useContext(Context);
   return (
     <div className={styles.SingleProduct} key={id}>
       <img src={"/" + imageUrl} alt={name} />

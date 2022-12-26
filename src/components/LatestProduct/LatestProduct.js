@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../Contexts/Context";
 import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
 
 function LatestProduct(props) {
-  const { imageUrl, name, newPrice, oldPrice, id, addItem, isHome, quantity } =
-    props;
+  const { imageUrl, name, newPrice, oldPrice, id, isHome, quantity } = props;
+
+  const [
+    basketItems,
+    setBasketItems,
+    basketPrice,
+    setBasketPrice,
+    basketQuantity,
+    setBasketQuantity,
+    addItem,
+    deleteItem,
+  ] = useContext(Context);
 
   const productDetails = {
     id: id,
@@ -16,9 +27,6 @@ function LatestProduct(props) {
     newPrice: newPrice,
     oldPrice: oldPrice,
   };
-  const handleItem = () => {
-    addItem(productDetails);
-  };
 
   return (
     <div key={id} className={styles.singleItemSection}>
@@ -27,7 +35,7 @@ function LatestProduct(props) {
           <BsFillEyeFill />
         </Link>
 
-        <button onClick={handleItem}>
+        <button onClick={() => addItem(productDetails)}>
           <BsCartFill />
         </button>
         <button>

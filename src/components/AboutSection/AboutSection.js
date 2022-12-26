@@ -25,7 +25,7 @@ function AboutSection() {
             eiusmod tempor incididunt ut.
           </p>
           <br />
-          <Link to="/about-us">Learn more</Link>
+          <Link to="about-us">Learn more</Link>
         </div>
       </div>
     </div>

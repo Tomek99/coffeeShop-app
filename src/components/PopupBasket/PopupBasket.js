@@ -9,7 +9,6 @@ function PopupBasket(props) {
     isBasketOpen,
     basketPrice,
     basketItems,
-    deleteItem,
     handleBasket,
     basketQuantity,
   } = props;
@@ -43,7 +42,6 @@ function PopupBasket(props) {
                 newPrice={item.newPrice}
                 oldPrice={item.oldPrice}
                 imageUrl={item.imageUrl}
-                deleteItem={deleteItem}
                 quantity={item.quantity}
               />
             ))}
@@ -76,7 +74,6 @@ function PopupBasket(props) {
 PopupBasket.propTypes = {
   isBasketOpen: PropTypes.bool,
   basketItems: PropTypes.array,
-  deleteItem: PropTypes.func,
   handleBasket: PropTypes.func,
   basketPrice: PropTypes.object,
   basketQuantity: PropTypes.number,
