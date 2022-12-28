@@ -14,3 +14,10 @@ export { default as AboutUsNavList } from "./AboutUsNavList/AboutUsNavList";
 export { default as BeansVideo } from "./BeansVideo/BeansVideo";
 export { default as ProductDetails } from "./ProductDetails/ProductDetails";
 export { default as Notifications } from "./Notifications/Notifications";
+
+export { default as UserOrders } from "./Account/UserOrders/UserOrders";
+export { default as UserProfile } from "./Account/UserProfile/UserProfile";
+export { default as UserReviews } from "./Account/UserReviews/UserReviews";
+export { default as UserSettings } from "./Account/UserSettings/UserSettings";
+export { default as UserReturnComplaint } from "./Account/UserReturnComplaint/UserReturnComplaint";
+export { default as UserWishList } from "./Account/UserWishList/UserWishList";

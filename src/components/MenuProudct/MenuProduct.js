@@ -6,17 +6,7 @@ import PropTypes from "prop-types";
 
 function MenuProduct(props) {
   const { id, imageUrl, name, newPrice, oldPrice, quantity } = props;
-
-  const [
-    basketItems,
-    setBasketItems,
-    basketPrice,
-    setBasketPrice,
-    basketQuantity,
-    setBasketQuantity,
-    addItem,
-    deleteItem,
-  ] = useContext(Context);
+  const { addItem, deleteItem } = useContext(Context);
 
   const handleItem = () => {
     const productDetails = {

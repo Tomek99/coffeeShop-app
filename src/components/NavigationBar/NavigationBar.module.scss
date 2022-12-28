@@ -92,6 +92,10 @@
                     font-size: 1.5rem;
                 }
             }
+
+            .btnDisplayActive:hover + ul {
+                display: flex;
+            }
         }
     }
 }

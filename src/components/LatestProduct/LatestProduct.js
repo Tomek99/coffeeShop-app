@@ -8,16 +8,8 @@ import PropTypes from "prop-types";
 function LatestProduct(props) {
   const { imageUrl, name, newPrice, oldPrice, id, isHome, quantity } = props;
 
-  const [
-    basketItems,
-    setBasketItems,
-    basketPrice,
-    setBasketPrice,
-    basketQuantity,
-    setBasketQuantity,
-    addItem,
-    deleteItem,
-  ] = useContext(Context);
+  const { basketItems, basketPrice, basketQuantity, addItem, deleteItem } =
+    useContext(Context);
 
   const productDetails = {
     id: id,

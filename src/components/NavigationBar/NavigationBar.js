@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
 import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
 import PopupSearch from "../PopupSearch/PopupSearch";
 import PopupBasket from "../PopupBasket/PopupBasket";
+import PopupUserNav from "../PopupUserNav/PopupUserNav";
 import NavListElement from "../NavListElement/NavListElement";
 import PropTypes from "prop-types";
 
@@ -99,13 +99,17 @@ function NavigationBar(props) {
             </button>
             <PopupSearch isSearchOpen={isSearchOpen} />
 
-            <button className={styles.btnDisplay}>
+            <Link to="wish-list" className={styles.btnDisplay}>
               <BsHeart size={30} color={"#fff"} />
-            </button>
+            </Link>
 
-            <button className={styles.btnDisplay}>
+            <Link
+              to="account"
+              className={`${styles.btnDisplay} ${styles.btnDisplayActive}`}
+            >
               <FaRegUser size={30} color={"#fff"} />
-            </button>
+            </Link>
+            <PopupUserNav />
 
             <button className={styles.btnDisplay} onClick={handleBasket}>
               <BsCartFill size={30} color={"#fff"} />

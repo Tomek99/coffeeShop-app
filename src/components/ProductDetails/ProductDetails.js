@@ -12,16 +12,7 @@ function ProductDetails({ productData }) {
   const [quantity, setQuantity] = useState(1);
   const productId = useParams();
 
-  const [
-    basketItems,
-    setBasketItems,
-    basketPrice,
-    setBasketPrice,
-    basketQuantity,
-    setBasketQuantity,
-    addItem,
-    deleteItem,
-  ] = useContext(Context);
+  const { addItem, deleteItem } = useContext(Context);
 
   const thisProduct = productData.find((item) => item.id === productId.id);
 

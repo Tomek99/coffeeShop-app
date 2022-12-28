@@ -25,7 +25,7 @@
 
 @media (max-width: 900px) {
     .popupBox {
-        transform: translateX(-75%);
+        transform: translateX(-55%);
 
         input {
             width: 400px;
@@ -33,9 +33,19 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .popupBox {
-        transform: translateX(-75%);
+        transform: translateX(-55%);
+
+        input {
+            width: 400px;
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .popupBox {
+        transform: translateX(-45%);
 
         input {
             width: 300px;

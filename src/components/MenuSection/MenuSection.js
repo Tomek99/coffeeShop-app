@@ -9,6 +9,7 @@ function MenuSection({ isTrue, basketItems }) {
   return (
     <div className={styles.MenuSection} id="menuSection">
       <HeaderSection firstWord="our" secondWord="menu" />
+
       <div className={styles.itemsProduct}>
         {isTrue
           ? Menu.slice(0, 3).map((item) => (

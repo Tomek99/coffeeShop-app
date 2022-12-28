@@ -21,7 +21,7 @@ function PopupBasket(props) {
             : styles.PopupBasket
         }
       >
-        <div className={styles.btnBar}>
+        <div className={styles.basketBar}>
           <span>
             Basket&nbsp;
             <span style={{ position: "absolute" }}>

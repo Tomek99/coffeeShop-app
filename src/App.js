@@ -8,6 +8,12 @@ import {
   ContactSection,
   Footer,
   ProductDetails,
+  UserOrders,
+  UserProfile,
+  UserReviews,
+  UserSettings,
+  UserWishList,
+  UserReturnComplaint,
 } from "./components";
 import productData from "./data/product.json";
 
@@ -70,16 +76,10 @@ function App() {
 
   return (
     <Context.Provider
-      value={[
-        basketItems,
-        setBasketItems,
-        basketPrice,
-        setBasketPrice,
-        basketQuantity,
-        setBasketQuantity,
+      value={{
         addItem,
         deleteItem,
-      ]}
+      }}
     >
       <section className="columnWeb">
         <NavigationBar
@@ -113,6 +113,17 @@ function App() {
           <Route path="contact" element={<ContactSection />} />
           <Route path="articles" element={<Articles />} />
           <Route path="blog" element={<Articles />} />
+
+          <Route path="account" element={<UserProfile />} />
+          <Route path="orders" element={<UserOrders />} />
+          <Route
+            path="user-return-complaint"
+            element={<UserReturnComplaint />}
+          />
+          <Route path="wish-list" element={<UserWishList />} />
+          <Route path="user-reviews" element={<UserReviews />} />
+          <Route path="" element={<UserSettings />} />
+          <Route path="settings" element={<UserSettings />} />
         </Routes>
 
         <Footer />
