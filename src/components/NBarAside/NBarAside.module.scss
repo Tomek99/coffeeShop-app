@@ -1,0 +1,34 @@
+.basketBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background: #1e1e31;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: var(--border);
+
+    .btnHamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: transparent;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        .btnIcon {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .btnHamburger:hover {
+        background-color: var(--main-color);
+    }
+}

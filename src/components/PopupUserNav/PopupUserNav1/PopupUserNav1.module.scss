@@ -1,0 +1,84 @@
+.PopupUserProfile {
+    display: none;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    gap: 10px;
+    top: 31px;
+    right: 0;
+    position: absolute;
+    background: #1e1e31;
+    padding: 20px 10px 15px 10px;
+    color: #fff;
+    border-radius: 12px;
+    width: 250px;
+    font-size: 1.6rem;
+    list-style: none;
+    z-index: 55;
+
+    .btnSignIn_UpSection {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 10px;
+
+        .btnSignIn_Up {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 0;
+            border-radius: 20px;
+            cursor: pointer;
+
+            a {
+                color: #fff;
+                text-transform: none;
+            }
+
+            &:nth-of-type(1) {
+                background: var(--main-color);
+
+                &:hover {
+                    background-color: #ce9754;
+                }
+            }
+            &:nth-of-type(3) {
+                border: 1px solid #ce9754;
+
+                &:hover {
+                    background-color: #ce9754;
+                }
+            }
+        }
+
+        .infoAcc {
+            align-self: center;
+            text-transform: none;
+        }
+    }
+    .list {
+        padding-top: 10px;
+        border-top: var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        a {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            text-transform: none;
+            color: #fff;
+
+            &:hover {
+                color: var(--main-color);
+            }
+        }
+    }
+
+    &:hover {
+        display: flex;
+    }
+}

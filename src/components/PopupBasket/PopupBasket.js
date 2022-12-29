@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./PopupBasket.module.scss";
 import BasketList from "./BasketList/BasketList";
 import PropTypes from "prop-types";
-import { IoCloseSharp } from "react-icons/io5";
+import NBarAside from "../NBarAside/NBarAside";
 
 function PopupBasket(props) {
   const {
@@ -13,68 +13,60 @@ function PopupBasket(props) {
     basketQuantity,
   } = props;
   return (
-    <>
-      <div
-        className={
-          isBasketOpen
-            ? `${styles.PopupBasket} ${styles.active}`
-            : styles.PopupBasket
-        }
-      >
-        <div className={styles.basketBar}>
-          <span>
-            Basket&nbsp;
-            <span style={{ position: "absolute" }}>
-              {basketQuantity !== 0 && basketQuantity}
-            </span>
-          </span>
-          <button onClick={handleBasket} className={styles.btnHamburger}>
-            <IoCloseSharp className={styles.btnIcon} />
-          </button>
+    <div
+      className={
+        isBasketOpen
+          ? `${styles.PopupBasket} ${styles.active}`
+          : styles.PopupBasket
+      }
+    >
+      <NBarAside
+        basketQuantity={basketQuantity}
+        handleBtn={handleBasket}
+        isAccount={false}
+      />
+      {basketPrice.currentPrice !== 0 ? (
+        <div className={styles.products}>
+          {basketItems.map((item) => (
+            <BasketList
+              id={item.id}
+              key={item.id}
+              name={item.name}
+              newPrice={item.newPrice}
+              oldPrice={item.oldPrice}
+              imageUrl={item.imageUrl}
+              quantity={item.quantity}
+            />
+          ))}
         </div>
-        {basketPrice.currentPrice !== 0 ? (
-          <div className={styles.products}>
-            {basketItems.map((item) => (
-              <BasketList
-                id={item.id}
-                key={item.id}
-                name={item.name}
-                newPrice={item.newPrice}
-                oldPrice={item.oldPrice}
-                imageUrl={item.imageUrl}
-                quantity={item.quantity}
-              />
-            ))}
-          </div>
-        ) : (
-          <div
-            className={styles.products}
-            style={{ fontSize: "2rem", textTransform: "none" }}
-          >
-            Your basket is empty
-          </div>
-        )}
-
-        <div className={styles.summary}>
-          <button className={styles.btnCheckoutNow}>Checkout now</button>
-          <p className={styles.bill} style={{ color: "rgb(51, 220, 32)" }}>
-            Save: <span className={styles.price}>${basketPrice.save}</span>
-          </p>
-
-          <p className={styles.bill}>
-            Total cost:
-            <span className={styles.price}>${basketPrice.currentPrice}</span>
-          </p>
+      ) : (
+        <div
+          className={styles.products}
+          style={{ fontSize: "2rem", textTransform: "none" }}
+        >
+          Your basket is empty
         </div>
+      )}
+
+      <div className={styles.summary}>
+        <button className={styles.btnCheckoutNow}>Checkout now</button>
+        <p className={styles.bill} style={{ color: "rgb(51, 220, 32)" }}>
+          Save: <span className={styles.price}>${basketPrice.save}</span>
+        </p>
+
+        <p className={styles.bill}>
+          Total cost:
+          <span className={styles.price}>${basketPrice.currentPrice}</span>
+        </p>
       </div>
-    </>
+    </div>
   );
 }
 
 PopupBasket.propTypes = {
-  isBasketOpen: PropTypes.bool,
+  isAsideOpen: PropTypes.bool,
   basketItems: PropTypes.array,
-  handleBasket: PropTypes.func,
+  handleAside: PropTypes.func,
   basketPrice: PropTypes.object,
   basketQuantity: PropTypes.number,
 };

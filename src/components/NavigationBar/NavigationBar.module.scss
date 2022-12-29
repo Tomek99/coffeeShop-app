@@ -100,6 +100,18 @@
     }
 }
 
+@media (max-width: 1080px) {
+    .btnDisplayActive {
+        display: none;
+    }
+}
+
+@media (min-width: 1081px) {
+    .btnDisplayActiveAside {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .hamburger {
         display: block !important;

@@ -1,20 +1,20 @@
-.PopupUserProfile {
-    display: none;
+.PopupUserProfile2 {
+    display: flex;
+    position: fixed;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    gap: 10px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: #1e1e31;
-    transform: translate(25%, 99%);
+    width: 400px;
+    height: 100%;
+    top: 0;
+    right: -500px;
     padding: 20px 10px 15px 10px;
     color: #fff;
-    border-radius: 12px;
-    width: 250px;
-    font-size: 1.6rem;
+    background: #1e1e31;
+    border-radius: 0px;
+    font-size: 1.8rem;
     list-style: none;
+    z-index: 55;
 
     .btnSignIn_UpSection {
         display: flex;
@@ -28,7 +28,7 @@
             align-items: center;
             justify-content: center;
             padding: 5px 0;
-            border-radius: 10px;
+            border-radius: 20px;
             cursor: pointer;
 
             a {
@@ -57,12 +57,16 @@
             text-transform: none;
         }
     }
+
     .list {
         padding-top: 10px;
         border-top: var(--border);
         display: flex;
         flex-direction: column;
         gap: 5px;
+        margin-top: 20px;
+        padding-top: 30px;
+        gap: 30px;
 
         a {
             display: flex;
@@ -77,8 +81,13 @@
             }
         }
     }
+}
+.active {
+    right: 0;
+}
 
-    &:hover {
-        display: flex;
+@media (max-width: 520px) {
+    .PopupUserProfile2 {
+        width: 100%;
     }
 }
