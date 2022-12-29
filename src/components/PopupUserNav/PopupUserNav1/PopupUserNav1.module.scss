@@ -25,29 +25,31 @@
 
         .btnSignIn_Up {
             display: flex;
-            align-items: center;
+            align-items: stretch;
             justify-content: center;
             padding: 5px 0;
             border-radius: 20px;
             cursor: pointer;
 
             a {
+                width: 100%;
                 color: #fff;
                 text-transform: none;
+                text-align: center;
             }
 
             &:nth-of-type(1) {
                 background: var(--main-color);
 
                 &:hover {
-                    background-color: #ce9754;
+                    background-color: var(--main-color-darken);
                 }
             }
             &:nth-of-type(3) {
-                border: 1px solid #ce9754;
+                border: 1px solid var(--main-color-darken);
 
                 &:hover {
-                    background-color: #ce9754;
+                    background-color: var(--main-color-darken);
                 }
             }
         }

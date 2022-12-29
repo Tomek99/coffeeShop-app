@@ -21,3 +21,5 @@ export { default as UserReviews } from "./Account/UserReviews/UserReviews";
 export { default as UserSettings } from "./Account/UserSettings/UserSettings";
 export { default as UserReturnComplaint } from "./Account/UserReturnComplaint/UserReturnComplaint";
 export { default as UserWishList } from "./Account/UserWishList/UserWishList";
+export { default as SignIn } from "./SignIn/SignIn";
+export { default as SignUp } from "./SignUp/SignUp";

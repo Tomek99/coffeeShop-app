@@ -26,9 +26,9 @@
             width: 30px;
             height: 30px;
         }
-    }
 
-    .btnHamburger:hover {
-        background-color: var(--main-color);
+        &:hover {
+            background-color: var(--main-color);
+        }
     }
 }

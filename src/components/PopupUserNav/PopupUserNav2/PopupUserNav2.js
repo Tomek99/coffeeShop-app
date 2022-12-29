@@ -36,18 +36,22 @@ function PopupUserNav2({ isAsideOpen, handleAside }) {
         <NBarAside isAccount={true} handleBtn={handleAside} />
         <div className={styles.btnSignIn_UpSection}>
           <li className={styles.btnSignIn_Up}>
-            <Link to="sign-in">Sign in</Link>
+            <Link to="sign-in" onClick={handleAside}>
+              Sign in
+            </Link>
           </li>
 
           <li className={styles.infoAcc}>Don't have an account?</li>
           <li className={styles.btnSignIn_Up}>
-            <Link to="sign-up">Sign up</Link>
+            <Link to="sign-up" onClick={handleAside}>
+              Sign up
+            </Link>
           </li>
         </div>
         <div className={styles.list}>
           {navList.map((item) => (
             <li key={item.name}>
-              <Link to={item.path}>
+              <Link to={item.path} onClick={handleAside}>
                 {item.element} &nbsp;
                 {item.name}
               </Link>

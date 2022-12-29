@@ -17,6 +17,7 @@
   --black: #13131a;
   --bg: #010103;
   --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  --main-color-darken: #ce9754;
 }
 
 html {

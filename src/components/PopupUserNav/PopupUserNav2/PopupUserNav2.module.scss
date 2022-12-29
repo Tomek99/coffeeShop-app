@@ -26,14 +26,16 @@
         .btnSignIn_Up {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: stretch;
             padding: 5px 0;
             border-radius: 20px;
             cursor: pointer;
 
             a {
+                width: 100%;
                 color: #fff;
                 text-transform: none;
+                text-align: center;
             }
 
             &:nth-of-type(1) {

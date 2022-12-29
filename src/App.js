@@ -14,6 +14,8 @@ import {
   UserSettings,
   UserWishList,
   UserReturnComplaint,
+  SignIn,
+  SignUp,
 } from "./components";
 import productData from "./data/product.json";
 
@@ -109,6 +111,8 @@ function App() {
             path="products/:id"
             element={<ProductDetails productData={productData} />}
           />
+          <Route path="sign-in" element={<SignIn />} />
+          <Route path="sign-up" element={<SignUp />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />
           <Route path="articles" element={<Articles />} />

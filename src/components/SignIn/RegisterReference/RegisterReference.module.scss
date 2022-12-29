@@ -1,0 +1,28 @@
+.RegisterReference {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+
+    header {
+        font-size: 3rem;
+    }
+
+    button {
+        align-self: stretch;
+        background-color: transparent;
+        padding: 10px;
+        border-radius: 20px;
+        margin: 0 50px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.8rem;
+        border: var(--border);
+
+        &:hover {
+            background: var(--main-color);
+        }
+    }
+}

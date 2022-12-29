@@ -1,0 +1,24 @@
+.Benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h1,
+    p > span {
+        text-transform: none;
+    }
+
+    h1 {
+        color: var(--main-color);
+        font-size: 2.5rem;
+    }
+
+    p {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        color: #ccc;
+    }
+}
