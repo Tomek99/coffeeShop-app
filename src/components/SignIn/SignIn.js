@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./SignIn.module.scss";
 
 import { Link } from "react-router-dom";
-import Benefits from "./Benefits/Benefits";
+import Benefits from "../Benefits/Benefits";
 import RegisterReference from "./RegisterReference/RegisterReference";
 
 function SignIn() {

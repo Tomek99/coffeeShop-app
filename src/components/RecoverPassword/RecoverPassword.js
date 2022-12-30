@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./RecoverPassword.module.scss";
-import Benefits from "../SignIn/Benefits/Benefits";
+import Benefits from "../Benefits/Benefits";
 
 function RecoverPassword() {
   return (

@@ -43,12 +43,21 @@ function ContactForm() {
     >
       <Form className={styles.formContact}>
         <p>get in touch</p>
-        <Field type="text" name="name" placeholder="name" />
-        <ErrMessage name="name" />
-        <Field type="text" name="email" placeholder="email" />
-        <ErrMessage name="email" />
-        <Field type="text" name="phoneNumber" placeholder="number" />
-        <ErrMessage name="phoneNumber" />
+        <div>
+          <Field type="text" name="name" placeholder="name" />
+          <ErrMessage name="name" />
+        </div>
+
+        <div>
+          <Field type="text" name="email" placeholder="email" />
+          <ErrMessage name="email" />
+        </div>
+
+        <div>
+          <Field type="text" name="phoneNumber" placeholder="number" />
+          <ErrMessage name="phoneNumber" />
+        </div>
+
         <button type="submit">Contact Now</button>
       </Form>
     </Formik>

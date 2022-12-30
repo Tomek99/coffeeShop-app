@@ -9,7 +9,7 @@ function Benefits() {
     <div className={styles.Benefits}>
       <h1>Why you should create an account on cofee shop</h1>
       <p>
-        <TbWind size={50} /> <span>Place an order faster</span>
+        <TbWind size={50} /> <span>Order faster</span>
       </p>
       <p>
         <BsCardChecklist size={50} />

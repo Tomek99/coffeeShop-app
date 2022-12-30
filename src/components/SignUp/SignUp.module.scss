@@ -1,0 +1,97 @@
+.SignUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 2rem;
+
+    .divRow {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1620px;
+        width: 100%;
+        margin: 10px;
+
+        .divLeft {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+
+            .formContainer {
+                border: var(--border);
+                margin-bottom: 5px;
+                border-radius: 16px;
+                background-color: var(--black);
+                padding: 20px;
+
+                header {
+                    font-size: 3rem;
+                    margin-bottom: 20px;
+                }
+                .formInputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .inputText {
+                        width: 100%;
+                        border: var(--border);
+                        border-radius: 16px;
+                        padding: 10px 0px 10px 10px;
+                        background: var(--black);
+                        color: #fff;
+                    }
+
+                    .btnSignUp {
+                        font-size: 1.8rem;
+                        background: var(--main-color);
+                        color: #fff;
+                        cursor: pointer;
+                        border-radius: 16px;
+                        padding: 10px 0px 10px 10px;
+                    }
+                }
+
+                .checkboxGroup {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    h3 {
+                        font-size: 2rem;
+                        color: var(--main-color);
+                    }
+
+                    label {
+                        font-weight: 300;
+                        font-size: 1.5rem;
+                        display: flex;
+                        gap: 5px;
+                        color: #ccc;
+
+                        .inputCheckbox {
+                            border: var(--border);
+                            accent-color: var(--main-color);
+                            width: 18px;
+                            height: 18px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .divSignIn {
+                text-align: center;
+                font-size: 1.5rem;
+                color: #fff;
+                margin-bottom: 20px;
+
+                a {
+                    color: var(--main-color);
+                }
+            }
+        }
+    }
+}
