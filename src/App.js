@@ -16,6 +16,7 @@ import {
   UserReturnComplaint,
   SignIn,
   SignUp,
+  RecoverPassword,
 } from "./components";
 import productData from "./data/product.json";
 
@@ -113,6 +114,7 @@ function App() {
           />
           <Route path="sign-in" element={<SignIn />} />
           <Route path="sign-up" element={<SignUp />} />
+          <Route path="recover-password" element={<RecoverPassword />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />
           <Route path="articles" element={<Articles />} />

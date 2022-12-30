@@ -23,3 +23,4 @@ export { default as UserReturnComplaint } from "./Account/UserReturnComplaint/Us
 export { default as UserWishList } from "./Account/UserWishList/UserWishList";
 export { default as SignIn } from "./SignIn/SignIn";
 export { default as SignUp } from "./SignUp/SignUp";
+export { default as RecoverPassword } from "./RecoverPassword/RecoverPassword";

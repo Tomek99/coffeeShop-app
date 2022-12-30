@@ -9,7 +9,7 @@ function AboutSection() {
       <div className={styles.divRow}>
         <img src="/images/about-img.jpeg" alt="AboutImg" />
         <div className={styles.textArea}>
-          <h1>what makes our coffee special?</h1>
+          <h1>What makes our coffee special?</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
