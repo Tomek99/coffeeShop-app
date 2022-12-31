@@ -22,6 +22,7 @@ function ProductsSection({ isTrue, productData, isHome }) {
                   oldPrice={item.oldPrice}
                   quantity={item.quantity}
                   isHome={isHome}
+                  rate={item.rate}
                 />
               ))
           : productData.map((item) => (
@@ -34,6 +35,7 @@ function ProductsSection({ isTrue, productData, isHome }) {
                 oldPrice={item.oldPrice}
                 quantity={item.quantity}
                 isHome={isHome}
+                rate={item.rate}
               />
             ))}
       </div>

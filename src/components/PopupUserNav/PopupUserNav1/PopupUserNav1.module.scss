@@ -8,7 +8,6 @@
     right: 0;
     position: absolute;
     background: #1e1e31;
-    padding: 20px 10px 15px 10px;
     color: #fff;
     border-radius: 12px;
     width: 250px;
@@ -22,6 +21,7 @@
         align-items: stretch;
         justify-content: center;
         gap: 10px;
+        padding: 30px 15px 5px 15px;
 
         .btnSignIn_Up {
             display: flex;
@@ -66,16 +66,18 @@
         flex-direction: column;
         gap: 5px;
 
-        a {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            text-transform: none;
-            color: #fff;
-
-            &:hover {
-                color: var(--main-color);
+        li {
+            a {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                text-transform: none;
+                color: #fff;
+                padding: 10px;
+                &:hover {
+                    background-color: #151522;
+                }
             }
         }
     }

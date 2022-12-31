@@ -4,62 +4,71 @@
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-1.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "3"
     },
     {
         "id": 22,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-2.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "4"
     },
     {
         "id": 23,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-3.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "5"
     },
     {
         "id": 24,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-1.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "4"
     },
     {
         "id": 25,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-2.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "3"
     },
     {
         "id": 26,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-3.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "4"
     },
     {
         "id": 27,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-1.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "5"
     },
     {
         "id": 28,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-2.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "5"
     },
     {
         "id": 29,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. ",
         "avatarUrl": "images/pic-3.png",
         "imageUrl": "images/quote-img.png",
-        "name": "John Deo"
+        "name": "John Deo",
+        "rate": "4"
     }
 ]

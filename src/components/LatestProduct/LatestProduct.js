@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
 import { Context } from "../../Contexts/Context";
 import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
+
+import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
 
 function LatestProduct(props) {
-  const { imageUrl, name, newPrice, oldPrice, id, isHome, quantity } = props;
+  const { imageUrl, name, newPrice, oldPrice, id, isHome, quantity, rate } =
+    props;
 
-  const { basketItems, basketPrice, basketQuantity, addItem, deleteItem } =
-    useContext(Context);
+  const { addItem, deleteItem } = useContext(Context);
 
+  //Rate !!!!!!!!!!!!!!!!!!!!
   const productDetails = {
     id: id,
     quantity: quantity,
@@ -36,7 +39,19 @@ function LatestProduct(props) {
       </div>
       <img src={imageUrl} alt={name} />
       <h3>{name}</h3>
-      <p>STAR COMPONENT SOONfff</p>
+      <div>
+        <Rating
+          name="read-only"
+          value={rate}
+          size="large"
+          readOnly
+          sx={{
+            ".css-1c99szj-MuiRating-icon": {
+              color: "#ffb74d",
+            },
+          }}
+        />
+      </div>
       <p className={styles.price}>
         <span>${newPrice} </span>
         <span className={styles.oldPrice}>${oldPrice}</span>
@@ -54,5 +69,6 @@ LatestProduct.propTypes = {
   addItem: PropTypes.func,
   isHome: PropTypes.bool,
   quantity: PropTypes.number,
+  rate: PropTypes.number,
 };
 export default LatestProduct;
