@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../../../Contexts/Context";
 import { ImBin } from "react-icons/im";
-import styles from "./BasketList.module.scss";
+import styles from "./CartList.module.scss";
 import PropTypes from "prop-types";
 
 function BasketList(props) {

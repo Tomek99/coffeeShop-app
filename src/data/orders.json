@@ -1,0 +1,146 @@
+[
+    {
+        "idNumber": 700005588909,
+        "date": "15 september 2022",
+        "deliver": "Pickup at InPost Parcel Machine",
+        "dataRecipient": {
+            "fullName": "Tomasz Skupień",
+            "number": "123 123 213",
+            "email": "test@gmail.com"
+        },
+        "CollectionAddress": {
+            "city": "Rokietnica",
+            "postalAdress": "37-562",
+            "extraInfo": "By the Delikatesy Centrum store"
+        },
+        "payment": "blik",
+        "dataInvoice": {
+            "fullName": "Tomasz Skupień",
+            "homeAdress": "595A",
+            "postalAddress": "37-562",
+            "city": "Rokietnica"
+        },
+        "products": [
+            {
+                "id": "424i2wfa",
+                "imageUrl": "images/product-2.png",
+                "name": "Fresh Cofee",
+                "newPrice": 15.99,
+                "oldPrice": 20.99,
+                "quantity": 1,
+                "origin": "Mexico",
+                "rate": "4"
+            },
+            {
+                "id": "424i2wfa",
+                "imageUrl": "images/product-2.png",
+                "name": "Fresh Cofee",
+                "newPrice": 15.99,
+                "oldPrice": 20.99,
+                "quantity": 1,
+                "origin": "Mexico",
+                "rate": "4"
+            }
+        ],
+        "basketPrize": 500,
+        "supplyPrice": 15,
+        "save": 211,
+        "totalCost": 500
+    },
+    {
+        "idNumber": 70042428909,
+        "date": "15 september 2022",
+        "deliver": "Pickup at InPost Parcel Machine",
+        "dataRecipient": {
+            "fullName": "Tomasz Skupień",
+            "number": "123 123 213",
+            "email": "test@gmail.com"
+        },
+        "CollectionAddress": {
+            "city": "Rokietnica",
+            "postalAdress": "37-562",
+            "extraInfo": "By the Delikatesy Centrum store"
+        },
+        "payment": "blik",
+        "dataInvoice": {
+            "fullName": "Tomasz Skupień",
+            "homeAdress": "595A",
+            "postalAddress": "37-562",
+            "city": "Rokietnica"
+        },
+        "products": [
+            {
+                "id": "424i2wfa",
+                "imageUrl": "images/product-2.png",
+                "name": "Fresh Cofee",
+                "newPrice": 15.99,
+                "oldPrice": 20.99,
+                "quantity": 1,
+                "origin": "Mexico",
+                "rate": "4"
+            },
+            {
+                "id": "424i2wfa",
+                "imageUrl": "images/product-2.png",
+                "name": "Fresh Cofee",
+                "newPrice": 15.99,
+                "oldPrice": 20.99,
+                "quantity": 1,
+                "origin": "Mexico",
+                "rate": "4"
+            }
+        ],
+        "basketPrize": 500,
+        "supplyPrice": 15,
+        "save": 211,
+        "totalCost": 500
+    },
+    {
+        "idNumber": 21321321509,
+        "date": "15 september 2022",
+        "deliver": "Pickup at InPost Parcel Machine",
+        "dataRecipient": {
+            "fullName": "Tomasz Skupień",
+            "number": "123 123 213",
+            "email": "test@gmail.com"
+        },
+        "CollectionAddress": {
+            "city": "Rokietnica",
+            "postalAdress": "37-562",
+            "extraInfo": "By the Delikatesy Centrum store"
+        },
+        "payment": "blik",
+        "dataInvoice": {
+            "fullName": "Tomasz Skupień",
+            "homeAdress": "595A",
+            "postalAddress": "37-562",
+            "city": "Rokietnica"
+        },
+        "products": [
+            {
+                "id": "424i2wfa",
+                "imageUrl": "images/product-2.png",
+                "name": "Fresh Cofee",
+                "newPrice": 15.99,
+                "oldPrice": 20.99,
+                "quantity": 1,
+                "origin": "Mexico",
+                "rate": "4"
+            },
+            {
+                "id": "424i2wfa",
+                "imageUrl": "images/product-2.png",
+                "name": "Fresh Cofee",
+                "newPrice": 15.99,
+                "oldPrice": 20.99,
+                "quantity": 1,
+                "origin": "Mexico",
+                "rate": "4"
+            }
+        ],
+        "basketPrize": 500,
+        "supplyPrice": 15,
+        "save": 211,
+        "totalCost": 500
+    }
+]

@@ -4,7 +4,7 @@ import styles from "./NavigationBar.module.scss";
 import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
 import PopupSearch from "../PopupSearch/PopupSearch";
-import PopupBasket from "../PopupBasket/PopupBasket";
+import Cart from "../Cart/Cart";
 import NavListElement from "../NavListElement/NavListElement";
 import PropTypes from "prop-types";
 import PopupUserNav1 from "../PopupUserNav/PopupUserNav1/PopupUserNav1";
@@ -143,7 +143,7 @@ function NavigationBar(props) {
               </span>
             </button>
 
-            <PopupBasket
+            <Cart
               handleBasket={handleBasket}
               isBasketOpen={isBasketOpen}
               basketItems={basketItems}

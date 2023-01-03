@@ -13,7 +13,6 @@ function LatestProduct(props) {
 
   const { addItem, deleteItem } = useContext(Context);
 
-  //Rate !!!!!!!!!!!!!!!!!!!!
   const productDetails = {
     id: id,
     quantity: quantity,

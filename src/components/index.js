@@ -15,12 +15,14 @@ export { default as BeansVideo } from "./BeansVideo/BeansVideo";
 export { default as ProductDetails } from "./ProductDetails/ProductDetails";
 export { default as Notifications } from "./Notifications/Notifications";
 
-export { default as UserOrders } from "./Account/UserOrders/UserOrders";
-export { default as UserProfile } from "./Account/UserProfile/UserProfile";
+export { default as Orders } from "./Account/Orders/Orders";
+
 export { default as UserReviews } from "./Account/UserReviews/UserReviews";
-export { default as UserSettings } from "./Account/UserSettings/UserSettings";
-export { default as UserReturnComplaint } from "./Account/UserReturnComplaint/UserReturnComplaint";
-export { default as UserWishList } from "./Account/UserWishList/UserWishList";
+export { default as Settings } from "./Account/Settings/Settings";
+export { default as ReturnComplaint } from "./Account/ReturnComplaint/ReturnComplaint";
+export { default as WishList } from "./Account/WishList/WishList";
+export { default as UserNavigation } from "./Account/UserNavigation/UserNavigation";
+
 export { default as SignIn } from "./SignIn/SignIn";
 export { default as SignUp } from "./SignUp/SignUp";
 export { default as RecoverPassword } from "./RecoverPassword/RecoverPassword";

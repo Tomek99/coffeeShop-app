@@ -1,0 +1,58 @@
+.UserNavigation {
+    display: flex;
+    flex-direction: column;
+    max-width: 285px;
+    width: 100%;
+    padding-left: 12px;
+    color: #fff;
+    border-right: var(--border);
+    .divGreeting {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+
+        .pName {
+            margin-top: 5px;
+            font-size: 2rem;
+            font-size: bold;
+        }
+    }
+    .navList {
+        display: flex;
+        flex-direction: column;
+
+        .link {
+            display: flex;
+            padding: 12px 16px;
+            gap: 5px;
+            color: #fff;
+            font-size: 1.8rem;
+
+            &:hover {
+                background-color: #2c2c35;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    //divColumn
+    .UserNavigation {
+        border-right: none;
+
+        border-bottom: var(--border);
+        margin-bottom: 20px;
+        max-width: 800px;
+
+        .navList {
+            flex-direction: row !important;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .link {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

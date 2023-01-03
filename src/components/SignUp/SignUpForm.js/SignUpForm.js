@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage, useFormikContext } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ErrMessage from "../../ErrorMessage/ErrMessage";
 import styles from "./SignUpForm.module.scss";
@@ -18,6 +18,7 @@ const initialValues = {
   email: "",
   password: "",
   acceptTerms: false,
+  checkAll: false,
   checked: [],
 };
 
@@ -46,7 +47,7 @@ const fieldData = [
   {
     type: "text",
     name: "firstName",
-    placeholder: "first name",
+    placeholder: "First name",
   },
   {
     type: "text",
@@ -72,67 +73,82 @@ function SignUpForm() {
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
-      <Form className={styles.formInputs}>
-        {fieldData.map((item) => (
-          <div className={styles.formInput} key={item.name}>
-            <Field
-              type={item.type}
-              name={item.name}
-              placeholder={item.placeholder}
-              className={styles.inputText}
-            />
+      {({ setFieldValue, values }) => (
+        <Form className={styles.formInputs}>
+          {fieldData.map((item) => (
+            <div className={styles.formInput} key={item.name}>
+              <Field
+                type={item.type}
+                name={item.name}
+                placeholder={item.placeholder}
+                className={styles.inputText}
+              />
 
-            <ErrMessage name={item.name} />
+              <ErrMessage name={item.name} />
+            </div>
+          ))}
+
+          <div role="group" className={styles.checkboxGroup}>
+            <h3>Formal consents {initialValues.acceptTerms}</h3>
+            <label>
+              <Field
+                type="checkbox"
+                name="checkAll"
+                className={styles.inputCheckbox}
+                onClick={() => {
+                  if (values.checkAll) {
+                    setFieldValue("checked", (values.checked = []));
+                    setFieldValue("acceptTerms", (values.acceptTerms = false));
+                  } else {
+                    setFieldValue(
+                      "checked",
+                      (values.checked = ["Two", "Three"])
+                    );
+                    setFieldValue("acceptTerms", (values.acceptTerms = true));
+                  }
+
+                  console.log(values);
+                }}
+              />
+              Check all
+            </label>
+            <label>
+              <Field
+                type="checkbox"
+                name="acceptTerms"
+                className={styles.inputCheckbox}
+              />
+              Accept Terms & Conditions*
+            </label>
+            <ErrorMessage name="acceptTerms">
+              {(msg) => <div className={styles.checkBoxMessage}>{msg}</div>}
+            </ErrorMessage>
+
+            <label>
+              <Field
+                type="checkbox"
+                name="checked"
+                value="Two"
+                className={styles.inputCheckbox}
+              />
+              I want to receive information about current offers
+              <br /> and special one in the e-mail message.
+            </label>
+            <label>
+              <Field
+                type="checkbox"
+                name="checked"
+                value="Three"
+                className={styles.inputCheckbox}
+              />
+              I want to receive offers matched to my needs.
+            </label>
           </div>
-        ))}
-
-        <div role="group" className={styles.checkboxGroup}>
-          <h3>Formal consents {initialValues.acceptTerms}</h3>
-          <label onClick={() => {}}>
-            <Field
-              type="checkbox"
-              name="checked"
-              value="One"
-              className={styles.inputCheckbox}
-            />
-            Check all
-          </label>
-          <label>
-            <Field
-              type="checkbox"
-              name="acceptTerms"
-              className={styles.inputCheckbox}
-            />
-            Accept Terms & Conditions*
-          </label>
-          <ErrorMessage name="acceptTerms">
-            {(msg) => <div className={styles.checkBoxMessage}>{msg}</div>}
-          </ErrorMessage>
-
-          <label>
-            <Field
-              type="checkbox"
-              name="checked"
-              value="Two"
-              className={styles.inputCheckbox}
-            />
-            I want to receive information about current offers
-            <br /> and special one in the e-mail message.
-          </label>
-          <label>
-            <Field
-              type="checkbox"
-              name="checked"
-              value="Three"
-              className={styles.inputCheckbox}
-            />
-            I want to receive offers matched to my needs.
-          </label>
-        </div>
-        <button type="submit" className={styles.btnSignUp}>
-          Submit
-        </button>
-      </Form>
+          <button type="submit" className={styles.btnSignUp}>
+            Sign up
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 }

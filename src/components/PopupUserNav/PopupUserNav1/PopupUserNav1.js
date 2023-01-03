@@ -2,14 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./PopupUserNav1.module.scss";
 import { BsHeart } from "react-icons/bs";
-import { FaRegUser } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineReviews } from "react-icons/md";
 import { RiFileList3Line } from "react-icons/ri";
 
 function PopupUserNav2() {
   const navList = [
-    { name: "Account", path: "account", element: <FaRegUser size={20} /> },
     { name: "Orders", path: "orders", element: <RiFileList3Line size={20} /> },
     { name: "Wish list", path: "wish-list", element: <BsHeart size={20} /> },
     {

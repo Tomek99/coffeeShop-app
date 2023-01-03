@@ -64,7 +64,6 @@
         border-top: var(--border);
         display: flex;
         flex-direction: column;
-        gap: 5px;
 
         li {
             a {
@@ -74,9 +73,9 @@
                 align-items: center;
                 text-transform: none;
                 color: #fff;
-                padding: 10px;
+                padding: 15px 10px;
                 &:hover {
-                    background-color: #151522;
+                    background-color: var(--blue);
                 }
             }
         }

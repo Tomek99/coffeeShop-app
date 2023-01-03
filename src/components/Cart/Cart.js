@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./PopupBasket.module.scss";
-import BasketList from "./BasketList/BasketList";
+import styles from "./Cart.module.scss";
+import CartList from "./CartList/CartList";
 import PropTypes from "prop-types";
 import NBarAside from "../NBarAside/NBarAside";
 
-function PopupBasket(props) {
+function Cart(props) {
   const {
     isBasketOpen,
     basketPrice,
@@ -28,7 +28,7 @@ function PopupBasket(props) {
       {basketPrice.currentPrice !== 0 ? (
         <div className={styles.products}>
           {basketItems.map((item) => (
-            <BasketList
+            <CartList
               id={item.id}
               key={item.id}
               name={item.name}
@@ -44,7 +44,7 @@ function PopupBasket(props) {
           className={styles.products}
           style={{ fontSize: "2rem", textTransform: "none" }}
         >
-          Your basket is empty
+          Your cart is empty...
         </div>
       )}
 
@@ -63,7 +63,7 @@ function PopupBasket(props) {
   );
 }
 
-PopupBasket.propTypes = {
+Cart.propTypes = {
   isAsideOpen: PropTypes.bool,
   basketItems: PropTypes.array,
   handleAside: PropTypes.func,
@@ -71,4 +71,4 @@ PopupBasket.propTypes = {
   basketQuantity: PropTypes.number,
 };
 
-export default PopupBasket;
+export default Cart;

@@ -8,7 +8,7 @@
     height: 100%;
     top: 0;
     right: -500px;
-    padding: 20px 10px 15px 10px;
+
     color: #fff;
     background: #1e1e31;
     border-radius: 0px;
@@ -21,13 +21,14 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: center;
-        gap: 10px;
+        gap: 15px;
+        padding: 0 20px;
 
         .btnSignIn_Up {
             display: flex;
             align-items: center;
             justify-content: stretch;
-            padding: 5px 0;
+            padding: 10px 0;
             border-radius: 20px;
             cursor: pointer;
 
@@ -61,25 +62,24 @@
     }
 
     .list {
-        padding-top: 10px;
-        border-top: var(--border);
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        padding-top: 10px;
+        border-top: var(--border);
         margin-top: 20px;
-        padding-top: 30px;
-        gap: 30px;
 
-        a {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            text-transform: none;
-            color: #fff;
-
-            &:hover {
-                color: var(--main-color);
+        li {
+            a {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                text-transform: none;
+                color: #fff;
+                padding: 20px 10px;
+                &:hover {
+                    background-color: #151522;
+                }
             }
         }
     }

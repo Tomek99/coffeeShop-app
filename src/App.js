@@ -2,18 +2,25 @@ import "./App.css";
 import React, { useState } from "react";
 import { Context } from "./Contexts/Context";
 import { Route, Routes } from "react-router-dom";
-import { Home, Articles, Products, Menu, Reviews, AboutUs } from "./pages";
+import {
+  Home,
+  Articles,
+  Products,
+  Menu,
+  Reviews,
+  AboutUs,
+  Account,
+} from "./pages";
 import {
   NavigationBar,
   ContactSection,
   Footer,
   ProductDetails,
-  UserOrders,
-  UserProfile,
+  Orders,
   UserReviews,
-  UserSettings,
-  UserWishList,
-  UserReturnComplaint,
+  Settings,
+  WishList,
+  ReturnComplaint,
   SignIn,
   SignUp,
   RecoverPassword,
@@ -112,24 +119,23 @@ function App() {
             path="products/:id"
             element={<ProductDetails productData={productData} />}
           />
-          <Route path="sign-in" element={<SignIn />} />
-          <Route path="sign-up" element={<SignUp />} />
-          <Route path="recover-password" element={<RecoverPassword />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />
           <Route path="articles" element={<Articles />} />
           <Route path="blog" element={<Articles />} />
 
-          <Route path="account" element={<UserProfile />} />
-          <Route path="orders" element={<UserOrders />} />
-          <Route
-            path="user-return-complaint"
-            element={<UserReturnComplaint />}
-          />
-          <Route path="wish-list" element={<UserWishList />} />
-          <Route path="user-reviews" element={<UserReviews />} />
-          <Route path="" element={<UserSettings />} />
-          <Route path="settings" element={<UserSettings />} />
+          <Route path="sign-in" element={<SignIn />} />
+          <Route path="sign-up" element={<SignUp />} />
+          <Route path="recover-password" element={<RecoverPassword />} />
+
+          <Route path="/" element={<Account />}>
+            <Route path="account" />
+            <Route path="orders" element={<Orders />} />
+            <Route path="returns" element={<ReturnComplaint />} />
+            <Route path="wish-list" element={<WishList />} />
+            <Route path="user-reviews" element={<UserReviews />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
         </Routes>
 
         <Footer />
