@@ -13,48 +13,67 @@ function Settings() {
   });
   return (
     <>
-      <header>Account settings</header>
-      <h3>Account data</h3>
-      <div>
+      <header style={{ fontSize: "2.5rem" }}>Account settings</header>
+      <h3 style={{ fontSize: "2rem" }}>Account data</h3>
+      <div className={styles.AccountDataContainer}>
         <AccountData
-          text="Your data"
+          title="Your data"
           content={data.number}
           fullName={data.name}
           btnText="Edit"
         />
         <AccountData
-          text="E-mail address"
+          title="E-mail address"
           content={data.email}
           btnText="Change"
         />
-        <AccountData text="Password" content={data.password} btnText="Change" />
+        <AccountData
+          title="Password"
+          content={data.password}
+          btnText="Change"
+        />
+      </div>
+
+      <div className={styles.extraInfo}>
+        <h2 className={styles.headerTwo}>
+          Your consents and notifications settings
+        </h2>
+        <p className={styles.paragraph}>
+          By checking the boxes, you accept <span>the Privacy Policy</span>
+        </p>
       </div>
       <ConsentForm />
-      <div>
-        <h2>Unsubscribe from product availability notifications</h2>
-        <p>Currently, you are not waiting for any notifications.</p>
+
+      <div className={styles.extraInfo}>
+        <h2 className={styles.headerTwo}>
+          Unsubscribe from product availability notifications
+        </h2>
+        <p className={styles.paragraph}>
+          Currently, you are not waiting for any notifications.
+        </p>
       </div>
-      <div>
-        <h2>Logging out of all devices</h2>
-        <p>
+      <div className={styles.extraInfo}>
+        <h2 className={styles.headerTwo}>Logging out of all devices</h2>
+        <p className={styles.paragraph}>
           Due to this option, you can log out from our website and application
           on all browsers and devices at once - also the account that you are
           using right now.
         </p>
-        <button>Log out me everywhere</button>
+        <button className={styles.btnEdit}>Log out me everywhere</button>
       </div>
-      <div>
-        <h2>Deleting account</h2>
-        <p>
+      <div className={styles.extraInfo}>
+        <h2 className={styles.headerTwo}>Deleting account</h2>
+        <p className={styles.paragraph}>
           If you click on this button, you will delete your account in our
           store. Make sure you definitely want to do this - your account cannot
           be restored.
         </p>
-        <p>
+        <br />
+        <p className={styles.paragraph}>
           If you want to keep your account, but don't want to get messages from
           us - uncheck the consents in the notification settings.
         </p>
-        <button>Delete account</button>
+        <button className={styles.btnEdit}>Delete account</button>
       </div>
       <Support />
     </>

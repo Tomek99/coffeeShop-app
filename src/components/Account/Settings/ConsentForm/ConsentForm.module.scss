@@ -1,0 +1,35 @@
+.ConsentForm {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .inputLabel {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #ccc;
+        font-size: 1.3rem;
+
+        .moreInfo {
+            cursor: pointer;
+            color: var(--main-color);
+        }
+        .bgInput {
+            accent-color: var(--main-color);
+        }
+    }
+
+    .btnSaveConsents {
+        align-self: flex-start;
+        padding: 5px 10px;
+        color: #fff;
+        border-radius: 16px;
+        cursor: pointer;
+        background-color: var(--main-color);
+
+        &:hover {
+            background-color: var(--main-color-darken);
+        }
+    }
+}
