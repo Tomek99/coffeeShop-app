@@ -11,15 +11,13 @@ import Filter from "./Filter/Filter";
 
 function Orders() {
   const navigate = useNavigate();
-
-  const [items, setItems] = useState(orders);
   const [pageNumber, setPageNumber] = useState(0);
 
   const ordersPerPage = 5;
   const pagesVisited = pageNumber * ordersPerPage;
-  const pageCount = Math.round(items.length / ordersPerPage);
+  const pageCount = Math.round(orders.length / ordersPerPage);
 
-  const displayOrders = items
+  const displayOrders = orders
     .slice(pagesVisited, pagesVisited + ordersPerPage)
     .map((item) => <OrderSummary orderDetails={item} key={item.idNumber} />);
 

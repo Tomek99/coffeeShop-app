@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import styles from "./WishProducts.module.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { BsHeart } from "react-icons/bs";
+import AmountProducts from "./AmountProducts/AmountProducts";
+
 function WishProducts({ title }) {
   return (
     <div className={styles.WishProducts}>
@@ -13,14 +15,9 @@ function WishProducts({ title }) {
         </button>
       </div>
       <div className={styles.update}>
-        <p>Just snow {`(last change)`}</p>
+        <p>Just now {`(last change)`}</p>
       </div>
-      <div className={styles.productList}>
-        <span>
-          <BsHeart size={20} />
-        </span>
-        <p>The list is empty - add products</p>
-      </div>
+      <AmountProducts />
     </div>
   );
 }

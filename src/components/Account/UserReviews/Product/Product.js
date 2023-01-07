@@ -21,10 +21,10 @@ function Product() {
         </div>
       </div>
       <div className={styles.divRowSecond}>
-        <button className={styles.btnExtraAction}>
+        <button className={styles.btnDots}>
           <BsThreeDotsVertical size={20} />
         </button>
-        <div>
+        <div className={styles.rating}>
           <Rating
             name="no-value"
             value={null}

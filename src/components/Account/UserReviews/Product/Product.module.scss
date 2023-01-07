@@ -47,7 +47,7 @@
         justify-content: center;
         gap: 10px;
 
-        .btnExtraAction {
+        .btnDots {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -84,4 +84,48 @@
 }
 .Product:nth-last-of-type(1) {
     border-radius: 0 0 12px 12px;
+}
+
+@media (max-width: 720px) {
+    .rating {
+        display: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .Product {
+        flex-direction: column;
+        position: relative;
+        border: none;
+        border-top: var(--border);
+        background-color: transparent;
+
+        &:hover {
+            box-shadow: none;
+        }
+
+        .divRowSecond {
+            flex-direction: column;
+            margin-bottom: 10px;
+
+            .btnDots {
+                top: 10px;
+                right: 0;
+                position: absolute;
+                align-self: flex-end;
+            }
+
+            .btnFeedback {
+                align-self: stretch;
+                margin-left: 70px;
+            }
+        }
+    }
+
+    .Product:nth-of-type(1) {
+        border-radius: 0 0 0 0;
+    }
+    .Product:nth-last-of-type(1) {
+        border-radius: 0 0 0 0;
+    }
 }

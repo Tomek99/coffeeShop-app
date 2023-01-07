@@ -13,11 +13,14 @@ function Review() {
     <div className={styles.Review}>
       <div className={styles.divRow}>
         <div className={styles.firstDiv}>
-          <img
-            src="/images/product-1.png"
-            alt=""
-            className={styles.imgReviewProduct}
-          />
+          <div className={styles.imgAndTitle}>
+            <img
+              src="/images/product-1.png"
+              alt=""
+              className={styles.imgReviewProduct}
+            />
+            <p>Fresh coffee</p>
+          </div>
           <div className={styles.purchaseConfirmed}>
             <span>
               <AiOutlineCheckCircle

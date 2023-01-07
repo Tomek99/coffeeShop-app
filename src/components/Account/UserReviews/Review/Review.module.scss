@@ -13,7 +13,11 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-
+            .imgAndTitle {
+                p {
+                    display: none;
+                }
+            }
             .imgReviewProduct {
                 max-width: 100px;
                 width: 100%;
@@ -61,7 +65,7 @@
                 .comment {
                     font-size: 1.3rem;
                     font-weight: 300;
-                    color: #ccc;
+                    color: #fff;
                 }
             }
 
@@ -101,6 +105,58 @@
             &:hover {
                 background-color: var(--grey);
             }
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .Review {
+        position: relative;
+
+        .divRow {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .firstDiv {
+                align-items: flex-start;
+
+                .imgAndTitle {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    margin-bottom: 5px;
+
+                    .imgReviewProduct {
+                        max-width: 50px;
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    p {
+                        font-size: 1.6rem;
+                        display: block;
+                    }
+                }
+            }
+
+            .secondDiv {
+                margin-top: 5px;
+                .content {
+                    .title {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .thirdDiv {
+        position: absolute;
+        top: 10;
+        right: 0;
+
+        .btnDots {
         }
     }
 }
