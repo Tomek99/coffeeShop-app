@@ -33,7 +33,7 @@
         align-items: center;
         justify-content: space-around;
 
-        div {
+        .divLogo {
             img.logo {
                 width: 100%;
                 margin: 5px 0 5px 0;
@@ -112,7 +112,7 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
     .hamburger {
         display: block !important;
     }
@@ -154,5 +154,13 @@
 
     .PopupBasket {
         top: 76px !important;
+    }
+}
+@media (max-width: 500px) {
+    .divLogo {
+        margin-left: 10px;
+    }
+    .navBar {
+        justify-content: space-evenly !important;
     }
 }

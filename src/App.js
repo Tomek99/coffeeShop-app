@@ -29,6 +29,7 @@ import productData from "./data/product.json";
 
 function App() {
   const [basketItems, setBasketItems] = useState([]);
+  const [wishList, setWishList] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setBasketQuantity] = useState(0);
 
@@ -84,11 +85,16 @@ function App() {
     }));
   };
 
+  const addItemWishList = (item) => {
+    setWishList([...wishList, { ...item }]);
+  };
+
   return (
     <Context.Provider
       value={{
         addItem,
         deleteItem,
+        addItemWishList,
       }}
     >
       <section className="columnWeb">
@@ -112,9 +118,9 @@ function App() {
 
           <Route path="menu" element={<Menu />} />
           <Route
-            path="products/"
+            path="products"
             element={<Products productData={productData} />}
-          ></Route>
+          />
           <Route
             path="products/:id"
             element={<ProductDetails productData={productData} />}

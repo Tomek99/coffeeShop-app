@@ -16,8 +16,10 @@
   --black: #13131a;
   --bg: #010103;
   --blue: #151522;
+  --grey:#323232;
   --border: 0.1rem solid rgba(255, 255, 255, 0.3);
   --main-color-darken: #ce9754;
+  --shadow: rgba(255, 255, 255, 0.491) 0px 2px 4px 0px, rgba(255, 255, 255, 0.496) 0px 0px 2px 1px;
 }
 
 html {

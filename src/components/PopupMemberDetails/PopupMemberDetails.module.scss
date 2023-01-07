@@ -35,8 +35,9 @@
                 color: #fff;
                 font-weight: 1000;
                 font-size: 1.3rem;
-                padding: 1rem 3rem 1rem 1.5rem;
-                border-radius: 2rem;
+                padding: 10px 30px 10px 15px;
+                margin-bottom: 10px;
+                border-radius: 16px;
                 cursor: pointer;
 
                 .btnIconTwitter {
@@ -115,6 +116,19 @@
 }
 
 @media (max-width: 700px) {
+    .memberDetails {
+        flex-direction: column;
+    }
+
+    .PopupMemberDetails.active {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 2.5rem;
+    }
+}
+
+@media (max-width: 375px) {
     .memberDetails {
         flex-direction: column;
     }

@@ -1,0 +1,54 @@
+.OrderSummary {
+    display: flex;
+    gap: 10px;
+    border: var(--border);
+    border-radius: 12px;
+    background-color: var(--black);
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: var(--shadow);
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: var(--grey);
+        padding: 24px;
+        flex-grow: 1;
+        border-radius: 12px 0 0 12px;
+        font-size: 1.3rem;
+    }
+
+    .products {
+        display: flex;
+        gap: 10px;
+        flex-grow: 5;
+        padding: 24px 10px;
+
+        .imgResponsive {
+            max-width: 70px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .btnInvoice {
+        align-self: flex-start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 5px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: #fff;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(49, 49, 49);
+        }
+    }
+}

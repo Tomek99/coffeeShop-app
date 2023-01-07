@@ -1,0 +1,39 @@
+.WishInfo {
+    .mainTittle {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .divInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .divRow {
+            display: flex;
+
+            .number {
+                color: var(--main-color);
+                font-size: 1.6rem;
+            }
+
+            .divColumn {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                max-width: 300px;
+
+                .title {
+                    color: var(--main-color);
+                    font-size: 1.6rem;
+                }
+
+                .text {
+                    color: #ccc;
+                    font-size: 1.3rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

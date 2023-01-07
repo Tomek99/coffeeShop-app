@@ -1,0 +1,19 @@
+.WishFilter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .sort {
+        display: flex;
+        gap: 10px;
+        font-size: 1.3rem;
+        border: var(--border);
+        border-radius: 16px;
+        cursor: pointer;
+        padding: 5px 10px;
+
+        &:hover {
+            background-color: var(--grey);
+        }
+    }
+}

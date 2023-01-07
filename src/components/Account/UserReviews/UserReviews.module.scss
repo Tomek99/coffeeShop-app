@@ -1,12 +1,12 @@
-.UserReviews {
+.divRow {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 20px;
 
-    .divRow {
-        display: flex;
-        max-width: 1024px;
-        width: 100%;
+    h2,
+    span {
+        font-size: 2rem;
+    }
+    span {
+        color: #ccc;
     }
 }

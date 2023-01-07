@@ -15,10 +15,10 @@ function NavigationBar(props) {
 
   const navBarList = [
     { name: "Home", path: "/" },
-    { name: "About", path: "about-us" },
-    { name: "Menu", path: "menu" },
     { name: "Products", path: "products" },
+    { name: "Menu", path: "menu" },
     { name: "Review", path: "reviews" },
+    { name: "About", path: "about-us" },
     { name: "Contact", path: "contact" },
     { name: "Blog", path: "blog" },
   ];
@@ -72,7 +72,7 @@ function NavigationBar(props) {
           <span className={styles.bar}></span>
         </div>
         <div className={styles.navBar}>
-          <div>
+          <div className={styles.divLogo}>
             <Link to="/">
               <img src="/images/logo.png" className={styles.logo} alt="" />
             </Link>

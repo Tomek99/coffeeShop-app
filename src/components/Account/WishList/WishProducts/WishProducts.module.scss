@@ -1,0 +1,51 @@
+.WishProducts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--black);
+    border: var(--border);
+    border-radius: 12px;
+    padding: 16px 24px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: var(--shadow);
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: transparent;
+
+            &:hover {
+                background-color: rgb(49, 49, 49);
+            }
+        }
+    }
+    .update {
+        font-size: 1.3rem;
+        color: #ccc;
+    }
+
+    .productList {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            font-size: 1.3rem;
+            color: #ccc;
+        }
+    }
+}

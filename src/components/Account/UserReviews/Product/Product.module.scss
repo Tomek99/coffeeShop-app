@@ -1,0 +1,87 @@
+.Product {
+    display: flex;
+    justify-content: space-between;
+    border: var(--border);
+    background-color: var(--black);
+    padding: 12px;
+    cursor: pointer;
+    // border-radius: 12px 12px 0 0;
+
+    &:hover {
+        box-shadow: var(--shadow);
+    }
+
+    .divRowFirst {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .divImg {
+            max-width: 60px;
+            height: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .generalInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .showMore {
+                font-size: 1.3rem;
+                font-weight: 300;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .divRowSecond {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        .btnExtraAction {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(49, 49, 49);
+            }
+        }
+
+        .btnFeedback {
+            font-size: 1.3rem;
+            padding: 8px 12px;
+            background-color: transparent;
+            border-radius: 16px;
+            color: #fff;
+            border: var(--border);
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--grey);
+            }
+        }
+    }
+}
+
+.Product:nth-of-type(1) {
+    border-radius: 12px 12px 0 0;
+}
+.Product:nth-last-of-type(1) {
+    border-radius: 0 0 12px 12px;
+}

@@ -16,30 +16,28 @@ function ConsentForm() {
     >
       {({ values, setFieldValue }) => (
         <Form className={styles.ConsentForm}>
-          <label
-            className={styles.inputLabel}
-            onClick={() => {
-              if (values.checked.length !== 0) {
-                setFieldValue("checked", (values.checked = []));
-              } else {
-                setFieldValue(
-                  "checked",
-                  values.checked.push(
-                    ...values.checked,
-                    "One",
-                    "Two",
-                    "Five",
-                    "Three"
-                  )
-                );
-              }
-            }}
-          >
+          <label className={styles.inputLabel}>
             <Field
               type="checkbox"
               name="checked"
               value="Zero"
               className={styles.bgInput}
+              onClick={() => {
+                if (values.checked.length !== 0) {
+                  setFieldValue("checked", (values.checked = []));
+                } else {
+                  setFieldValue(
+                    "checked",
+                    values.checked.push(
+                      ...values.checked,
+                      "One",
+                      "Two",
+                      "Five",
+                      "Three"
+                    )
+                  );
+                }
+              }}
             />
             Check all
           </label>
@@ -50,8 +48,10 @@ function ConsentForm() {
               value="One"
               className={styles.bgInput}
             />
-            I want to receive information about current offers and promotions by
-            email <span className={styles.moreInfo}>More</span>
+            <p>
+              I want to receive information about current offers and promotions
+              by email <span className={styles.moreInfo}>More</span>
+            </p>
           </label>
           <label className={styles.inputLabel}>
             <Field
@@ -60,8 +60,10 @@ function ConsentForm() {
               value="Two"
               className={styles.bgInput}
             />
-            I want to receive information by phone{" "}
-            <span className={styles.moreInfo}>More</span>
+            <p>
+              I want to receive information by phone{" "}
+              <span className={styles.moreInfo}>More</span>
+            </p>{" "}
           </label>
           <label className={styles.inputLabel}>
             <Field
@@ -70,8 +72,10 @@ function ConsentForm() {
               value="Five"
               className={styles.bgInput}
             />
-            I want to recive by phone{" "}
-            <span className={styles.moreInfo}>More</span>
+            <p>
+              I want to recive by phone{" "}
+              <span className={styles.moreInfo}>More</span>
+            </p>
           </label>
           <label className={styles.inputLabel}>
             <Field
@@ -80,8 +84,11 @@ function ConsentForm() {
               value="Three"
               className={styles.bgInput}
             />
-            I want to receive an offer tailored to my needs{" "}
-            <span className={styles.moreInfo}>More</span>
+            <p>
+              {" "}
+              I want to receive an offer tailored to my needs{" "}
+              <span className={styles.moreInfo}>More</span>
+            </p>
           </label>
           <button type="submit" className={styles.btnSaveConsents}>
             Save consents

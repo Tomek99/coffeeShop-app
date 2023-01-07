@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 
 function AboutUsNavList({ switchTab, tabNumber }) {
   const navBarList = [
-    { name: "about us", number: 0 },
-    { name: "our team", number: 1 },
+    { name: "About Us", number: 0 },
+    { name: "Our Team", number: 1 },
     { name: "FAQ", number: 2 },
   ];
   return (
