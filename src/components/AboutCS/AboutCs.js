@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../HeaderSection/HeaderSection";
 import styles from "./AboutCs.module.scss";
 
 function AboutCs() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
   return (
     <div className={styles.AboutCs}>
       <Header firstWord="Our" secondWord="company" />

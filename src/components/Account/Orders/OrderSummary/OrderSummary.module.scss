@@ -23,9 +23,21 @@
 
     .products {
         display: flex;
+        align-items: center;
         flex-grow: 1;
         gap: 10px;
         padding: 24px 10px;
+
+        .hiddenElements {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            font-size: 1.3rem;
+            border: var(--border);
+            border-radius: 4px;
+        }
     }
 
     .btnInvoice {

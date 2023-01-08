@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Support from "../Support/Support";
 import AccountData from "./AccountData/AccountData";
 import ConsentForm from "./ConsentForm/ConsentForm";
@@ -11,6 +11,14 @@ function Settings() {
     email: "test@gmail.com",
     password: "Za@1234a",
   });
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
   return (
     <>
       <header style={{ fontSize: "2.5rem" }}>Account settings</header>

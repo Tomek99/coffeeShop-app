@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./UserReviews.module.scss";
 import Support from "../Support/Support";
 import Review from "./Review/Review";
 import Product from "./Product/Product";
 
 function UserReviews() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
   return (
     <>
       <header style={{ fontSize: "2.5rem" }}>Reviews</header>

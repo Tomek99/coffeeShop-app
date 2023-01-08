@@ -3,7 +3,7 @@ import styles from "./Orders.module.scss";
 import orders from "../../../data/orders.json";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Support from "../Support/Support";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
@@ -29,6 +29,14 @@ function Orders() {
       search: selected !== 0 ? `?page=${selected + 1}` : null,
     });
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
   return (
     <>
       <header style={{ fontSize: "2.5rem" }}>Orders</header>

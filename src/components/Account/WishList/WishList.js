@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./WishList.module.scss";
 import WishFilter from "./WishFilter/WishFilter";
 import WishInfo from "./WishInfo/WishInfo";
@@ -9,6 +9,13 @@ import { Context } from "../../../Contexts/Context";
 import { style } from "@mui/system";
 
 function WishList() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
   const { addItemWishList } = useContext(Context);
   return (
     <>

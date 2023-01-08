@@ -32,8 +32,13 @@ function App() {
   const [wishList, setWishList] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setBasketQuantity] = useState(0);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
-  const addItem = (item) => {
+  function handleSignedIn() {
+    setIsSignedIn(!isSignedIn);
+  }
+
+  function addItem(item) {
     const newItemIndex = basketItems.findIndex(
       (element) => element.id === item.id
     );
@@ -63,9 +68,9 @@ function App() {
             100
         ) / 100,
     }));
-  };
+  }
 
-  const deleteItem = (id, newPrice, oldPrice) => {
+  function deleteItem(id, newPrice, oldPrice) {
     const basketList = basketItems.filter((item) => item.id !== id);
     const findItem = basketItems.filter((item) => item.id === id);
 
@@ -83,11 +88,11 @@ function App() {
           (prevPrice.save - (oldPrice - newPrice) * findItem[0].quantity) * 100
         ) / 100,
     }));
-  };
+  }
 
-  const addItemWishList = (item) => {
+  function addItemWishList(item) {
     setWishList([...wishList, { ...item }]);
-  };
+  }
 
   return (
     <Context.Provider

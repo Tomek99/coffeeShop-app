@@ -9,19 +9,27 @@ function OrderSummary({ orderDetails }) {
   //ADD HIDDEN PRODUCTS IN ORDER COMPONENT !!!
 
   const width = useWindowWidth();
+  let hiddenElements = orderDetails.products.length;
   let items = [...orderDetails.products];
-
-  if (width < 500) {
+  if (width < 370) {
+    items = items.slice(0, 0);
+  } else if (width < 500) {
     items = items.slice(0, 1);
   } else if (width < 700) {
     items = items.slice(0, 2);
   } else if (width < 800) {
     items = items.slice(0, 4);
+  } else if (width < 900) {
+    items = items.slice(0, 6);
   } else if (width < 1000) {
-    items = items.slice(0, 5);
+    items = items.slice(0, 3);
+  } else if (width < 1050) {
+    items = items.slice(0, 4);
   } else {
     items = items.slice(0, 5);
   }
+
+  hiddenElements -= items.length;
   return (
     <div className={styles.OrderSummary} key={orderDetails.idNumber}>
       <div className={styles.details}>
@@ -40,6 +48,12 @@ function OrderSummary({ orderDetails }) {
         {items.map((item) => (
           <ProductsPurchased url={item.imageUrl} />
         ))}
+
+        {hiddenElements !== 0 ? (
+          <div className={styles.hiddenElements}>
+            <span>+{hiddenElements}</span>
+          </div>
+        ) : null}
       </div>
 
       <button className={styles.btnInvoice}>

@@ -7,13 +7,14 @@
     top: 31px;
     right: 0;
     position: absolute;
-    background: #1e1e31;
+    background: var(--black);
     color: #fff;
     border-radius: 12px;
     width: 250px;
     font-size: 1.6rem;
     list-style: none;
     z-index: 55;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 1px, rgba(255, 255, 255, 0.13) 0px 0px 1px 1px;
 
     .btnSignIn_UpSection {
         display: flex;
@@ -74,8 +75,9 @@
                 text-transform: none;
                 color: #fff;
                 padding: 15px 10px;
+
                 &:hover {
-                    background-color: var(--blue);
+                    background-color: var(--grey);
                 }
             }
         }

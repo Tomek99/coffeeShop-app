@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Support from "../Support/Support";
 import styles from "./ReturnComplaint.module.scss";
 
 function ReturnComplaint() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
   return (
     <>
       <header className={styles.header}>Returns and complaints</header>

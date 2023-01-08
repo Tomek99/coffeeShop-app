@@ -10,7 +10,7 @@
     right: -500px;
 
     color: #fff;
-    background: #1e1e31;
+    background: var(--black);
     border-radius: 0px;
     font-size: 1.8rem;
     list-style: none;
@@ -78,7 +78,7 @@
                 color: #fff;
                 padding: 20px 10px;
                 &:hover {
-                    background-color: #151522;
+                    background-color: var(--grey);
                 }
             }
         }

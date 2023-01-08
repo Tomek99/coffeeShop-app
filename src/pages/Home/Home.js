@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HomeSection,
   AboutSection,
@@ -9,6 +9,14 @@ import {
 } from "../../components/index";
 
 function Home(props) {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
+
   return (
     <>
       <HomeSection />
