@@ -1,7 +1,9 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Context } from "./Contexts/Context";
-import { Route, Routes } from "react-router-dom";
+// import { Provider } from "react-redux";
+// import { store } from "./store/store";
+import { Route, Routes, Navigate } from "react-router-dom";
 import {
   Home,
   Articles,
@@ -21,9 +23,10 @@ import {
   Settings,
   WishList,
   ReturnComplaint,
-  SignIn,
+  LogIn,
   SignUp,
   RecoverPassword,
+  Protected,
 } from "./components";
 import productData from "./data/product.json";
 
@@ -32,10 +35,23 @@ function App() {
   const [wishList, setWishList] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setBasketQuantity] = useState(0);
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isLogIn, setIsLogIn] = useState(() => {
+    const storedValue = localStorage.getItem("is-logged");
+    return storedValue === "true" ? true : false;
+  });
 
-  function handleSignedIn() {
-    setIsSignedIn(!isSignedIn);
+  console.log(isLogIn);
+
+  function logIn() {
+    setIsLogIn(true);
+
+    localStorage.setItem("is-logged", true);
+  }
+
+  function logOut() {
+    setIsLogIn(false);
+
+    localStorage.setItem("is-logged", false);
   }
 
   function addItem(item) {
@@ -100,9 +116,14 @@ function App() {
         addItem,
         deleteItem,
         addItemWishList,
+        logIn,
+        logOut,
+        isLogIn,
       }}
     >
       <section className="columnWeb">
+        {/* <Provider store={store}> */}
+
         <NavigationBar
           basketItems={basketItems}
           basketPrice={basketPrice}
@@ -135,11 +156,18 @@ function App() {
           <Route path="articles" element={<Articles />} />
           <Route path="blog" element={<Articles />} />
 
-          <Route path="sign-in" element={<SignIn />} />
+          <Route path="log-in" element={<LogIn />} />
           <Route path="sign-up" element={<SignUp />} />
           <Route path="recover-password" element={<RecoverPassword />} />
 
-          <Route path="/" element={<Account />}>
+          <Route
+            path="/"
+            element={
+              <Protected isLogIn={isLogIn}>
+                <Account />
+              </Protected>
+            }
+          >
             <Route path="account" />
             <Route path="orders" element={<Orders />} />
             <Route path="returns" element={<ReturnComplaint />} />
@@ -150,6 +178,7 @@ function App() {
         </Routes>
 
         <Footer />
+        {/* </Provider> */}
       </section>
     </Context.Provider>
   );

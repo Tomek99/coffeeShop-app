@@ -12,9 +12,11 @@ function ProductDetails({ productData }) {
   const [quantity, setQuantity] = useState(1);
   const productId = useParams();
 
-  const { addItem, deleteItem } = useContext(Context);
+  const { addItem } = useContext(Context);
 
-  const thisProduct = productData.find((item) => item.id === productId.id);
+  const thisProduct = productData.find(
+    (item) => item.id.toString() === productId.id
+  );
 
   const onClickAddToBasket = () => {
     thisProduct.quantity = quantity;

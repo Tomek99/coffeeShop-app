@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./AccountData.module.scss";
 
 function AccountData({ title, btnText, content, fullName }) {
-  console.log(btnText === "Edit");
   return (
     <div className={styles.AccountData}>
       <p className={styles.title}>{title}</p>

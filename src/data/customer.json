@@ -5,7 +5,7 @@
         "avatarUrl": "images/pic-1.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "3"
+        "rate": 3
     },
     {
         "id": 22,
@@ -13,7 +13,7 @@
         "avatarUrl": "images/pic-2.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "4"
+        "rate": 4
     },
     {
         "id": 23,
@@ -21,7 +21,7 @@
         "avatarUrl": "images/pic-3.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "5"
+        "rate": 5
     },
     {
         "id": 24,
@@ -29,7 +29,7 @@
         "avatarUrl": "images/pic-1.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "4"
+        "rate": 4
     },
     {
         "id": 25,
@@ -37,7 +37,7 @@
         "avatarUrl": "images/pic-2.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "3"
+        "rate": 3
     },
     {
         "id": 26,
@@ -45,7 +45,7 @@
         "avatarUrl": "images/pic-3.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "4"
+        "rate": 4
     },
     {
         "id": 27,
@@ -53,7 +53,7 @@
         "avatarUrl": "images/pic-1.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "5"
+        "rate": 5
     },
     {
         "id": 28,
@@ -61,7 +61,7 @@
         "avatarUrl": "images/pic-2.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "5"
+        "rate": 5
     },
     {
         "id": 29,
@@ -69,6 +69,6 @@
         "avatarUrl": "images/pic-3.png",
         "imageUrl": "images/quote-img.png",
         "name": "John Deo",
-        "rate": "4"
+        "rate": 4
     }
 ]

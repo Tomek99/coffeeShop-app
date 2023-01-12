@@ -46,7 +46,7 @@ function OrderSummary({ orderDetails }) {
       </div>
       <div className={styles.products}>
         {items.map((item) => (
-          <ProductsPurchased url={item.imageUrl} />
+          <ProductsPurchased url={item.imageUrl} key={item.imageUrl} />
         ))}
 
         {hiddenElements !== 0 ? (

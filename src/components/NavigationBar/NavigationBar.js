@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
 import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
@@ -9,9 +9,11 @@ import NavListElement from "../NavListElement/NavListElement";
 import PropTypes from "prop-types";
 import PopupUserNav1 from "../PopupUserNav/PopupUserNav1/PopupUserNav1";
 import PopupUserNav2 from "../PopupUserNav/PopupUserNav2/PopupUserNav2";
+import { Context } from "../../Contexts/Context";
 
 function NavigationBar(props) {
   const { basketItems, basketPrice, basketQuantity } = props;
+  const { isLogIn } = useContext(Context);
 
   const navBarList = [
     { name: "Home", path: "/" },
@@ -109,7 +111,7 @@ function NavigationBar(props) {
             </Link>
 
             <Link
-              to="account"
+              to={isLogIn ? "account" : "sign-in"}
               className={`${styles.btnDisplay} ${styles.btnDisplayActive}`}
             >
               <FaRegUser size={30} color={"#fff"} />

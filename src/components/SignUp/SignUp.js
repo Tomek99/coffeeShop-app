@@ -15,7 +15,7 @@ function SignUp() {
           </div>
           <div className={styles.divSignIn}>
             <span>Do you have an account already?</span>
-            <Link to="/sign-in"> Sign in</Link>
+            <Link to="/log-in"> Log in</Link>
           </div>
         </div>
         <Benefits />

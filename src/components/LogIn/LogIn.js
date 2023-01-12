@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
-import styles from "./SignIn.module.scss";
+import styles from "./LogIn.module.scss";
 
 import { Link } from "react-router-dom";
 import Benefits from "../Benefits/Benefits";
 import RegisterReference from "./RegisterReference/RegisterReference";
+import { Context } from "../../Contexts/Context";
 
 function SignIn() {
   const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const { logIn } = useContext(Context);
 
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
@@ -23,7 +25,7 @@ function SignIn() {
     <div className={styles.SignIn}>
       <div className={styles.divRow}>
         <div className={styles.formContainer}>
-          <header>Sign in</header>
+          <header>Log in</header>
           <form onSubmit={handleSubmit} className={styles.formInputs}>
             <div className={styles.inputContainer}>
               <input
@@ -50,7 +52,8 @@ function SignIn() {
               <input
                 type="submit"
                 className={styles.btnSignIn}
-                value="Sign in"
+                value="Log in"
+                onClick={logIn}
               />
             </div>
           </form>

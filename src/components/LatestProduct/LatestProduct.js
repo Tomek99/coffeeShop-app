@@ -11,7 +11,7 @@ function LatestProduct(props) {
   const { imageUrl, name, newPrice, oldPrice, id, isHome, quantity, rate } =
     props;
 
-  const { addItem, deleteItem } = useContext(Context);
+  const { addItem } = useContext(Context);
 
   const productDetails = {
     id: id,
@@ -25,7 +25,7 @@ function LatestProduct(props) {
   return (
     <div key={id} className={styles.singleItemSection}>
       <div className={styles.iconSection}>
-        <Link to={isHome ? `products/${id}` : id}>
+        <Link to={isHome ? `products/${id.toString()}` : id.toString()}>
           <BsFillEyeFill />
         </Link>
 
@@ -60,7 +60,7 @@ function LatestProduct(props) {
 }
 
 LatestProduct.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   imageUrl: PropTypes.string,
   name: PropTypes.string,
   newPrice: PropTypes.number,

@@ -23,6 +23,7 @@ export { default as ReturnComplaint } from "./Account/ReturnComplaint/ReturnComp
 export { default as WishList } from "./Account/WishList/WishList";
 export { default as UserNavigation } from "./Account/UserNavigation/UserNavigation";
 
-export { default as SignIn } from "./SignIn/SignIn";
+export { default as Protected } from "./Protected/Protected";
+export { default as LogIn } from "./LogIn/LogIn";
 export { default as SignUp } from "./SignUp/SignUp";
 export { default as RecoverPassword } from "./RecoverPassword/RecoverPassword";
