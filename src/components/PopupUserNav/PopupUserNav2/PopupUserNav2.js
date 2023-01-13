@@ -8,11 +8,13 @@ import { MdOutlineReviews } from "react-icons/md";
 import { RiFileList3Line } from "react-icons/ri";
 import NBarAside from "../../NBarAside/NBarAside";
 import { Context } from "../../../Contexts/Context";
+import { FaRegUser } from "react-icons/fa";
 
 function PopupUserNav2({ isAsideOpen, handleAside }) {
   const { isLogIn, logOut } = useContext(Context);
 
   const navList = [
+    { name: "Account", path: "account", element: <FaRegUser size={20} /> },
     { name: "Orders", path: "orders", element: <RiFileList3Line size={20} /> },
     { name: "Wish list", path: "wish-list", element: <BsHeart size={20} /> },
     {
@@ -60,7 +62,7 @@ function PopupUserNav2({ isAsideOpen, handleAside }) {
         <div className={styles.list}>
           {navList.map((item) => (
             <li key={item.name}>
-              <Link to={isLogIn ? item.path : "log-in"} onClick={handleAside}>
+              <Link to={item.path} onClick={handleAside}>
                 {item.element} &nbsp;
                 {item.name}
               </Link>

@@ -27,3 +27,4 @@ export { default as Protected } from "./Protected/Protected";
 export { default as LogIn } from "./LogIn/LogIn";
 export { default as SignUp } from "./SignUp/SignUp";
 export { default as RecoverPassword } from "./RecoverPassword/RecoverPassword";
+export { default as BlurScreen } from "./BlurScreen/BlurScreen";

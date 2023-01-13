@@ -1,9 +1,9 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-function Protected({ isLogIn, children }) {
+function Protected({ isLogIn, children, navigate }) {
   if (!isLogIn) {
-    return <Navigate to="/log-in" replace />;
+    return <Navigate to={navigate} replace />;
   }
   return children;
 }

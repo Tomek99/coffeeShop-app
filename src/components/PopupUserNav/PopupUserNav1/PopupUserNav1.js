@@ -48,7 +48,7 @@ function PopupUserNav2() {
       <div className={styles.list}>
         {navList.map((item) => (
           <li key={item.name}>
-            <Link to={isLogIn ? item.path : "log-in"}>
+            <Link to={item.path}>
               {item.element} &nbsp;
               {item.name}
             </Link>

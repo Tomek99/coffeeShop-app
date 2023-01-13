@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { UserNavigation } from "../../components";
+import AccountContent from "../../components/Account/AccountContent/AccountContent";
 import styles from "./Account.module.scss";
 
 function Account() {
+  const location = useLocation();
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -18,7 +21,11 @@ function Account() {
         <UserNavigation />
 
         <div style={{ color: "#fff" }} className={styles.divRight}>
-          <Outlet />
+          {location.pathname.slice(1) === "account" ? (
+            <AccountContent />
+          ) : (
+            <Outlet />
+          )}
         </div>
       </div>
     </div>

@@ -155,14 +155,21 @@ function App() {
           <Route path="articles" element={<Articles />} />
           <Route path="blog" element={<Articles />} />
 
-          <Route path="log-in" element={<LogIn />} />
+          <Route
+            path="log-in"
+            element={
+              <Protected isLogIn={!isLogIn} navigate="/">
+                <LogIn />
+              </Protected>
+            }
+          />
           <Route path="sign-up" element={<SignUp />} />
           <Route path="recover-password" element={<RecoverPassword />} />
 
           <Route
             path="/"
             element={
-              <Protected isLogIn={isLogIn}>
+              <Protected isLogIn={isLogIn} navigate="/log-in">
                 <Account />
               </Protected>
             }
