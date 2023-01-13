@@ -35,12 +35,11 @@ function App() {
   const [wishList, setWishList] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setBasketQuantity] = useState(0);
+
   const [isLogIn, setIsLogIn] = useState(() => {
     const storedValue = localStorage.getItem("is-logged");
     return storedValue === "true" ? true : false;
   });
-
-  console.log(isLogIn);
 
   function logIn() {
     setIsLogIn(true);

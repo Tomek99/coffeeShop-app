@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CustomerReview.module.scss";
-import Rating from "@mui/material/Rating";
 import PropTypes from "prop-types";
+import RatingsStars from "../RatingStars/RatingStars";
 
 function CustomerReview(props) {
   const { id, isTrue, imageUrl, text, avatarUrl, name, rate } = props;
@@ -14,14 +14,7 @@ function CustomerReview(props) {
       <img src={avatarUrl} alt="" className={styles.avatar} />
       <p className={styles.name}>{name}</p>
       <div>
-        <Rating
-          name="read-only"
-          value={rate}
-          readOnly
-          sx={{
-            ".css-1c99szj-MuiRating-icon": { color: "#ffb74d" },
-          }}
-        />
+        <RatingsStars rate={rate} size="medium" />
       </div>
     </div>
   );

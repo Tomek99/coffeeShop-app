@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { Context } from "../../Contexts/Context";
 import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
-
-import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
+import RatingsStars from "../RatingStars/RatingStars";
 
 function LatestProduct(props) {
   const { imageUrl, name, newPrice, oldPrice, id, isHome, quantity, rate } =
@@ -39,17 +38,7 @@ function LatestProduct(props) {
       <img src={imageUrl} alt={name} />
       <h3>{name}</h3>
       <div>
-        <Rating
-          name="read-only"
-          value={rate}
-          size="large"
-          readOnly
-          sx={{
-            ".css-1c99szj-MuiRating-icon": {
-              color: "#ffb74d",
-            },
-          }}
-        />
+        <RatingsStars rate={rate} size="large" />
       </div>
       <p className={styles.price}>
         <span>${newPrice} </span>

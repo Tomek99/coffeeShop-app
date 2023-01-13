@@ -7,6 +7,7 @@ import {
 } from "react-icons/bs";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { Rating } from "@mui/material";
+import RatingsStars from "../../../RatingStars/RatingStars";
 
 function Review() {
   return (
@@ -36,15 +37,7 @@ function Review() {
             <div className={styles.headline}>
               <p className={styles.title}>Fresh Cofee</p>
               <div className={styles.ratingAndData}>
-                <Rating
-                  value={4}
-                  readOnly
-                  sx={{
-                    ".css-1c99szj-MuiRating-icon": {
-                      color: "#ffb74d",
-                    },
-                  }}
-                />
+                <RatingsStars size="medium" rate={4} tab={0} />
                 <span>2 years ago</span>
               </div>
             </div>

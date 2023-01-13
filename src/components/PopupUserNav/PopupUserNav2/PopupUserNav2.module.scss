@@ -2,9 +2,9 @@
     display: flex;
     position: fixed;
     flex-direction: column;
-    justify-content: stretch;
+    justify-content: flex-start;
     align-items: stretch;
-    width: 400px;
+    width: 410px;
     height: 100%;
     top: 0;
     right: -500px;
@@ -80,7 +80,6 @@
         padding-top: 10px;
         border-top: var(--border);
         margin-top: 20px;
-        flex-basis: 100%;
 
         li {
             a {

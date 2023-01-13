@@ -1,8 +1,8 @@
-import { Rating } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Product.module.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import RatingsStars from "../../../RatingStars/RatingStars";
 
 function Product() {
   return (
@@ -25,16 +25,7 @@ function Product() {
           <BsThreeDotsVertical size={20} />
         </button>
         <div className={styles.rating}>
-          <Rating
-            name="no-value"
-            value={null}
-            size="large"
-            sx={{
-              ".css-1c99szj-MuiRating-icon": {
-                color: "#ffb74d",
-              },
-            }}
-          />
+          <RatingsStars size="large" rate={null} name="no-value" tab={1} />
         </div>
 
         <button className={styles.btnFeedback}>Give feedback</button>

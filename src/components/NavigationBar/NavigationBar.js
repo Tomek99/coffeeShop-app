@@ -111,7 +111,7 @@ function NavigationBar(props) {
             </Link>
 
             <Link
-              to={isLogIn ? "account" : "sign-in"}
+              to={isLogIn ? "account" : "log-in"}
               className={`${styles.btnDisplay} ${styles.btnDisplayActive}`}
             >
               <FaRegUser size={30} color={"#fff"} />
