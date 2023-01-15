@@ -12,6 +12,7 @@ import {
   Reviews,
   AboutUs,
   Account,
+  Wish,
 } from "./pages";
 import {
   NavigationBar,
@@ -21,7 +22,6 @@ import {
   Orders,
   UserReviews,
   Settings,
-  WishList,
   ReturnComplaint,
   LogIn,
   SignUp,
@@ -163,8 +163,22 @@ function App() {
               </Protected>
             }
           />
-          <Route path="sign-up" element={<SignUp />} />
-          <Route path="recover-password" element={<RecoverPassword />} />
+          <Route
+            path="sign-up"
+            element={
+              <Protected isLogIn={!isLogIn} navigate="/">
+                <SignUp />
+              </Protected>
+            }
+          />
+          <Route
+            path="recover-password"
+            element={
+              <Protected isLogIn={!isLogIn} navigate="/">
+                <RecoverPassword />
+              </Protected>
+            }
+          />
 
           <Route
             path="/"
@@ -177,10 +191,11 @@ function App() {
             <Route path="account" />
             <Route path="orders" element={<Orders />} />
             <Route path="returns" element={<ReturnComplaint />} />
-            <Route path="wish-list" element={<WishList />} />
             <Route path="user-reviews" element={<UserReviews />} />
             <Route path="settings" element={<Settings />} />
           </Route>
+          <Route path="wish-list" element={<Wish />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
 
         <Footer />

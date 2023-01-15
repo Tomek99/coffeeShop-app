@@ -16,7 +16,6 @@ export { default as ProductDetails } from "./ProductDetails/ProductDetails";
 export { default as Notifications } from "./Notifications/Notifications";
 
 export { default as Orders } from "./Account/Orders/Orders";
-
 export { default as UserReviews } from "./Account/UserReviews/UserReviews";
 export { default as Settings } from "./Account/Settings/Settings";
 export { default as ReturnComplaint } from "./Account/ReturnComplaint/ReturnComplaint";
@@ -27,4 +26,3 @@ export { default as Protected } from "./Protected/Protected";
 export { default as LogIn } from "./LogIn/LogIn";
 export { default as SignUp } from "./SignUp/SignUp";
 export { default as RecoverPassword } from "./RecoverPassword/RecoverPassword";
-export { default as BlurScreen } from "./BlurScreen/BlurScreen";
