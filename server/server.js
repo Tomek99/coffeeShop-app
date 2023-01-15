@@ -1,19 +1,33 @@
-//npm run dev, nodemon, express, cors
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
 
-const cors = require("cors");
-const corsOptions = {
-    origin: '*',
-    credentials: true,            //access-control-allow-credentials:true
-    optionSuccessStatus: 200,
-}
+// import routes
+const authRoute = require("./routes/auth");
 
+const app = express();
 
-const express = require('express')
-const app = express()
+app.use(express.json());
+app.use(express.urlencoded());
 
-app.use(cors(corsOptions)) // Use this after the variable declaration
 app.get("/api", (req, res) => {
-    res.json({ "users": ["userOne", "userTwo", "userThree"] })
-})
+  res.send("Welcome to mongodb ap5");
+});
 
-app.listen(5000, () => (console.log("Server started on port 5000")))
+app.use("/api/auth", authRoute);
+
+mongoose.set("strictQuery", false);
+mongoose
+  .connect(process.env.MONGODB_URL, {
+    dbName: "data",
+  })
+  .then(() => {
+    console.log("Connected to database");
+
+    app.listen(5000, () => {
+      console.log("Server started on port 5000");
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });

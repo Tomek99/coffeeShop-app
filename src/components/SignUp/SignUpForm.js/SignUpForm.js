@@ -5,11 +5,9 @@ import ErrMessage from "../../ErrorMessage/ErrMessage";
 import styles from "./SignUpForm.module.scss";
 
 const onSubmit = (values, { setSubmitting, resetForm }) => {
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
-    setSubmitting(false);
-    resetForm();
-  }, 400);
+  alert(JSON.stringify(values, null, 2));
+  setSubmitting(false);
+  resetForm();
 };
 
 const initialValues = {
