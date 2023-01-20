@@ -1,33 +1,12 @@
-require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
-
-// import routes
-const authRoute = require("./routes/auth");
+const dotenv = require("dotenv").config();
+const port = process.env.PORT || 5000;
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 
-app.get("/api", (req, res) => {
-  res.send("Welcome to mongodb ap5");
-});
+app.use("/api/goals", require("./routes/goalRoutes"));
 
-app.use("/api/auth", authRoute);
-
-mongoose.set("strictQuery", false);
-mongoose
-  .connect(process.env.MONGODB_URL, {
-    dbName: "data",
-  })
-  .then(() => {
-    console.log("Connected to database");
-
-    app.listen(5000, () => {
-      console.log("Server started on port 5000");
-    });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+app.listen(port, () => console.log(`Server started on port ${port}`));
