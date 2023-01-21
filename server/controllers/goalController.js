@@ -1,34 +1,36 @@
+const asyncHandler = require("express-async-handler");
+
 //@desc GET goals
 //@route GET /api/goals
 //@access Private
-const getGoals = (req, res) => {
+const getGoals = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Get goals" });
-};
+});
 
 //@desc Set goals
 //@route POST /api/goals
 //@access Private
-const setGoals = (req, res) => {
+const setGoals = asyncHandler(async (req, res) => {
   if (!req.body.text) {
-    res.status(400).json({ message: "Please add a text field" });
-    throw new Error("Please add a text field");
+    res.status(400);
+    throw new Error("Add textf");
   }
-  res.status(200).json({ message: "Set goals" });
-};
+  res.status(200).json({ message: req.body.text });
+});
 
 //@desc Update goals
 //@route PUT /api/goals
 //@access Private
-const updateGoals = (req, res) => {
+const updateGoals = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Set goals" });
-};
+});
 
 //@desc Delete goals
 //@route DELETE /api/goals
 //@access Private
-const deleteGoals = (req, res) => {
+const deleteGoals = asyncHandler(async (req, res) => {
   res.status(200).json({ message: `Update goal ${req.params.id}` });
-};
+});
 
 module.exports = {
   getGoals,
