@@ -1,8 +1,6 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Context } from "./Contexts/Context";
-// import { Provider } from "react-redux";
-// import { store } from "./store/store";
 import { Route, Routes, Navigate } from "react-router-dom";
 import {
   Home,

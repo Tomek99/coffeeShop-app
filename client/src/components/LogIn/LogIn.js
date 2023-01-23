@@ -6,11 +6,24 @@ import { Link } from "react-router-dom";
 import Benefits from "../Benefits/Benefits";
 import RegisterReference from "./RegisterReference/RegisterReference";
 import { Context } from "../../Contexts/Context";
+import axios from "axios";
 
 function SignIn() {
   const [errorMessages, setErrorMessages] = useState({});
-
   const { logIn } = useContext(Context);
+
+  axios
+    .get("/api/auth/data")
+    .then(function (response) {
+      // handle success
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+    });
 
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (

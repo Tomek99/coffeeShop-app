@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ErrMessage from "../../ErrorMessage/ErrMessage";
 import styles from "./SignUpForm.module.scss";
-
-const onSubmit = (values, { setSubmitting, resetForm }) => {
-  alert(JSON.stringify(values, null, 2));
-  setSubmitting(false);
-  resetForm();
-};
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../../../Contexts/Context";
 
 const initialValues = {
   firstName: "",
@@ -27,7 +24,16 @@ const validationSchema = Yup.object({
   lastName: Yup.string()
     .min(3, "Must be 3 characters or less")
     .required("Required"),
-  email: Yup.string().email("Invalid email address").required("Required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Required")
+    .test("Unique Email", "Email already exists", async (email) => {
+      const { data: success } = await axios.post(
+        "http://localhost:5000/api/goals/register/validEmail",
+        { email: email }
+      );
+      return success;
+    }),
   password: Yup.string()
     .min(8, "Password must be 8 characters long")
     .matches(/[0-9]/, "Password requires a number")
@@ -65,11 +71,36 @@ const fieldData = [
 ];
 
 function SignUpForm() {
+  const { logIn } = useContext(Context);
+  const navigate = useNavigate();
+
+  function navigateSignUp() {
+    navigate("/");
+  }
+
+  function onSubmit(values, { setSubmitting, resetForm }) {
+    axios
+      .post("http://localhost:5000/api/goals", values)
+      .then(() => {
+        alert(JSON.stringify(values, null, 2));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setSubmitting(false);
+    resetForm();
+    logIn();
+    navigateSignUp();
+  }
+
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
+      validateOnChange={false}
+      validateOnBlur={false}
     >
       {({ setFieldValue, values }) => (
         <Form className={styles.formInputs}>
@@ -87,7 +118,7 @@ function SignUpForm() {
           ))}
 
           <div role="group" className={styles.checkboxGroup}>
-            <h3>Formal consents {initialValues.acceptTerms}</h3>
+            <h3>Formal consents</h3>
             <label>
               <Field
                 type="checkbox"
@@ -104,8 +135,6 @@ function SignUpForm() {
                     );
                     setFieldValue("acceptTerms", (values.acceptTerms = true));
                   }
-
-                  console.log(values);
                 }}
               />
               Check all

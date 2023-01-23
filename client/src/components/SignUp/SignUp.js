@@ -10,7 +10,7 @@ function SignUp() {
       <div className={styles.divRow}>
         <div className={styles.divLeft}>
           <div className={styles.formContainer}>
-            <header>Sign up</header>
+            <header>Register in 20 seconds</header>
             <SignUpForm />
           </div>
           <div className={styles.divSignIn}>

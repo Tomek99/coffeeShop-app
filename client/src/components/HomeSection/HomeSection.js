@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import styles from "./HomeSection.module.scss";
 import Photos from "../../data/photos.json";
@@ -19,6 +19,13 @@ function HomeSection() {
   const prev = () => {
     setCurrentIndex((currentIndex - 1 + Photos.length) % Photos.length);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((currentIndex) => (currentIndex + 1) % Photos.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div
