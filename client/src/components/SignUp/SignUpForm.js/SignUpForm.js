@@ -81,9 +81,9 @@ function SignUpForm() {
   function onSubmit(values, { setSubmitting, resetForm }) {
     axios
       .post("http://localhost:5000/api/goals", values)
-      .then(() => {
-        alert(JSON.stringify(values, null, 2));
-      })
+      // .then(() => {
+      //   alert(JSON.stringify(values, null, 2));
+      // })
       .catch((err) => {
         console.log(err);
       });

@@ -6,6 +6,7 @@ const {
   setGoals,
   updateGoals,
   deleteGoals,
+  logIn,
 } = require("../controllers/goalController");
 
 //CRUD CREATE RELOAD UPDATE DELETE
@@ -13,6 +14,8 @@ const {
 router.route("/").get(getGoals).post(setGoals);
 
 router.route("/register/validEmail").post(isUserExist);
+
+router.route("/login").post(logIn);
 
 router.route("/:id").put(updateGoals).delete(deleteGoals);
 

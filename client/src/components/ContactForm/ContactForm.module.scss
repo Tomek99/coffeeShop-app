@@ -2,6 +2,7 @@
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
+    padding: 10px;
 
     p {
         text-transform: uppercase;
@@ -15,12 +16,11 @@
         margin-top: 15px;
         display: inline-block;
         border: 1px solid #ccc;
-        border-radius: 4px;
+        border-radius: 12px;
         box-sizing: border-box;
         background: transparent;
         border: var(--border);
         color: #fff;
-        border-radius: 0;
     }
 
     button {
@@ -30,7 +30,7 @@
         padding: 7px 25px;
         margin: 8px 0;
         border: none;
-        border-radius: 16px;
+        border-radius: 12px;
         cursor: pointer;
     }
 

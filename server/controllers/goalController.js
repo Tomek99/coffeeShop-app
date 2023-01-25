@@ -16,7 +16,19 @@ const isUserExist = asyncHandler(async (req, res) => {
   if (Boolean(user)) {
     return res.status(200).json(false);
   }
-  return res.json(true);
+  return res.status(200).json(true);
+});
+
+const logIn = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email, password });
+
+  if (user) {
+    return res.status(200).json("Correct");
+  }
+
+  return res.status(200).json("Wrong password or email");
 });
 
 //@desc Set goals
@@ -86,4 +98,5 @@ module.exports = {
   setGoals,
   updateGoals,
   deleteGoals,
+  logIn,
 };
