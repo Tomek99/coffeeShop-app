@@ -78,10 +78,18 @@
                     color: #fff;
                     cursor: pointer;
                 }
+                .error {
+                    font-size: 1.2rem;
+                    margin-top: 5px;
+                    margin-left: 5px;
+                    color: rgb(255, 0, 34);
+                    font-weight: 300;
+                }
 
                 .recoverPassword {
                     text-transform: none;
                     font-size: 1.2rem;
+                    margin-left: 5px;
                     color: var(--main-color);
 
                     &:hover {

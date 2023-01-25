@@ -19,6 +19,7 @@ const validationSchema = Yup.object({
 
 function SignIn() {
   const [showPassword, setShowPassowrd] = useState(false);
+  const [error, setError] = useState(null);
   const { logIn } = useContext(Context);
 
   function showPasswordBtn() {
@@ -33,16 +34,17 @@ function SignIn() {
   }
 
   const onSubmit = async (values, { setSubmitting }) => {
+    setError(null);
     let isSuccess = await axios.post(
       "http://localhost:5000/api/goals/login",
       values
     );
 
-    if (isSuccess.data === "Correct") {
+    if (isSuccess.data) {
       logIn();
+    } else {
+      setError("Invalid email or password");
     }
-
-    setSubmitting(false);
   };
   return (
     <div className={styles.SignIn}>
@@ -67,14 +69,22 @@ function SignIn() {
                     id="showPass"
                     placeholder="Password"
                   />
-                  <button onClick={showPasswordBtn}>
+                  <button type="button" onClick={showPasswordBtn}>
                     {showPassword ? "hide" : "show"}
                   </button>
                 </div>
                 <ErrorMessage name="password" />
-                <Link to="/recover-password" className={styles.recoverPassword}>
-                  Don't remember the password?
-                </Link>
+                <div>
+                  {error !== null ? (
+                    <p className={styles.error}>{error}</p>
+                  ) : null}
+                  <Link
+                    to="/recover-password"
+                    className={styles.recoverPassword}
+                  >
+                    Don't remember the password?
+                  </Link>
+                </div>
               </div>
               <div className={styles.inputContainer}>
                 <button type="submit" className={styles.btnSignIn}>

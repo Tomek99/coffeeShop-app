@@ -24,11 +24,10 @@ const logIn = asyncHandler(async (req, res) => {
 
   const user = await User.findOne({ email, password });
 
-  if (user) {
-    return res.status(200).json("Correct");
+  if (!user) {
+    return res.json(false);
   }
-
-  return res.status(200).json("Wrong password or email");
+  return res.status(200).json(user);
 });
 
 //@desc Set goals

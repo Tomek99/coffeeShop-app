@@ -7,6 +7,7 @@ const {
   updateGoals,
   deleteGoals,
   logIn,
+  logInValidation,
 } = require("../controllers/goalController");
 
 //CRUD CREATE RELOAD UPDATE DELETE
