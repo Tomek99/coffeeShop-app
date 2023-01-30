@@ -117,6 +117,9 @@ function App() {
         logIn,
         logOut,
         isLogIn,
+        basketItems,
+        basketPrice,
+        basketQuantity,
       }}
     >
       <section className="columnWeb">

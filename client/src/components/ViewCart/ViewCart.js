@@ -1,24 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./ViewCart.module.scss";
-import { Link } from "react-router-dom";
+import { Context } from "../../Contexts/Context";
+import EmptyCart from "./EmptyCart/EmptyCart";
+import FillCart from "./FillCart/FillCart";
 
 function ViewCart() {
+  const { basketItems, basketQuantity } = useContext(Context);
+
   return (
-    <div>
-      {15 !== 15 ? (
-        <div>
-          <header>Cart</header>
-          <div></div>
-          <div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
+    <div className={styles.ViewCart}>
+      {basketItems.length !== 0 ? (
+        <FillCart basketItems={basketItems} basketQuantity={basketQuantity} />
       ) : (
-        <div>
-          <header>Your cart is empty</header>
-          <Link to="/products">Return to products page</Link>
-        </div>
+        <EmptyCart />
       )}
     </div>
   );

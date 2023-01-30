@@ -1,0 +1,56 @@
+.fillCart {
+    display: flex;
+    max-width: 1280px;
+    width: 100%;
+    justify-content: center;
+
+    .leftColumn {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        gap: 10px;
+
+        .divRow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .cartHeader {
+                font-size: 2.5rem;
+                color: #fff;
+            }
+
+            .buttons {
+                display: flex;
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: 2px;
+                    padding: 10px;
+                    font-size: 1.3rem;
+                    border-radius: 16px;
+                    background-color: transparent;
+                    color: #fff;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--grey);
+                    }
+                }
+            }
+        }
+
+        .items {
+            border-radius: 12px;
+            border: var(--border);
+            background-color: var(--black);
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .fillCart {
+        flex-direction: column;
+    }
+}

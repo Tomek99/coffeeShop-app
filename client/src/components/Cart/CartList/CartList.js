@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 function BasketList(props) {
   const { id, name, imageUrl, newPrice, oldPrice, quantity } = props;
 
-  const { addItem, deleteItem } = useContext(Context);
+  const { deleteItem } = useContext(Context);
   return (
     <div className={styles.SingleProduct} key={id}>
       <img src={"/" + imageUrl} alt={name} />
