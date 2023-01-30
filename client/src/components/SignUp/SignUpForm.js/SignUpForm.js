@@ -42,9 +42,13 @@ const validationSchema = Yup.object({
     .matches(/[A-Z]/, "Password requires an uppercase letter")
     .matches(/[^\w]/, "Password requires a symbol")
     .required("Required"),
-  passwordConfirmation: Yup.string().oneOf(
-    [Yup.ref("password"), null],
-    "Passwords must match"
+  passwordConfirmation: Yup.string().test(
+    "passwords-match",
+    "Passwords must match",
+    function (value) {
+      console.log(this.parent.password);
+      return this.parent.password === value;
+    }
   ),
   acceptTerms: Yup.bool().oneOf(
     [true],
