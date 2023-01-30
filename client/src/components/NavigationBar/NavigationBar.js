@@ -51,7 +51,7 @@ function NavigationBar(props) {
     setBasketOpen(false);
   };
 
-  const handleBasket = () => {
+  const handleCart = () => {
     setBasketOpen(!isBasketOpen);
     setAsideOpen(false);
     setNavigationOpen(false);
@@ -131,7 +131,7 @@ function NavigationBar(props) {
               handleAside={handleAside}
             />
 
-            <button className={styles.btnDisplay} onClick={handleBasket}>
+            <button className={styles.btnDisplay} onClick={handleCart}>
               <BsCartFill size={30} color={"#fff"} />
               <span
                 className={styles.quantityProductsInBasket}
@@ -146,7 +146,7 @@ function NavigationBar(props) {
             </button>
 
             <Cart
-              handleBasket={handleBasket}
+              handleCart={handleCart}
               isBasketOpen={isBasketOpen}
               basketItems={basketItems}
               basketPrice={basketPrice}

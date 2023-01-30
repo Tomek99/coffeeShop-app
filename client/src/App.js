@@ -25,6 +25,7 @@ import {
   SignUp,
   RecoverPassword,
   Protected,
+  ViewCart,
 } from "./components";
 import productData from "./data/product.json";
 
@@ -193,6 +194,7 @@ function App() {
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="wish-list" element={<Wish />} />
+          <Route path="cart" element={<ViewCart />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
 

@@ -12,6 +12,7 @@ const initialValues = {
   lastName: "",
   email: "",
   password: "",
+  passwordConfirmation: "",
   acceptTerms: false,
   checkAll: false,
   checked: [],
@@ -41,6 +42,10 @@ const validationSchema = Yup.object({
     .matches(/[A-Z]/, "Password requires an uppercase letter")
     .matches(/[^\w]/, "Password requires a symbol")
     .required("Required"),
+  passwordConfirmation: Yup.string().oneOf(
+    [Yup.ref("password"), null],
+    "Passwords must match"
+  ),
   acceptTerms: Yup.bool().oneOf(
     [true],
     "Accept Terms & Conditions is required"
@@ -67,6 +72,11 @@ const fieldData = [
     type: "password",
     name: "password",
     placeholder: "Password",
+  },
+  {
+    type: "password",
+    name: "passwordConfirmation",
+    placeholder: "Confirm password",
   },
 ];
 

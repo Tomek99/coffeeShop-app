@@ -3,15 +3,11 @@ import styles from "./Cart.module.scss";
 import CartList from "./CartList/CartList";
 import PropTypes from "prop-types";
 import NBarAside from "../NBarAside/NBarAside";
+import { Link } from "react-router-dom";
 
 function Cart(props) {
-  const {
-    isBasketOpen,
-    basketPrice,
-    basketItems,
-    handleBasket,
-    basketQuantity,
-  } = props;
+  const { isBasketOpen, basketPrice, basketItems, handleCart, basketQuantity } =
+    props;
   return (
     <div
       className={
@@ -22,7 +18,7 @@ function Cart(props) {
     >
       <NBarAside
         basketQuantity={basketQuantity}
-        handleBtn={handleBasket}
+        handleBtn={handleCart}
         isAccount={false}
       />
       {basketPrice.currentPrice !== 0 ? (
@@ -49,7 +45,10 @@ function Cart(props) {
       )}
 
       <div className={styles.summary}>
-        <button className={styles.btnCheckoutNow}>Checkout now</button>
+        <Link className={styles.btnCheckoutNow} to="/cart" onClick={handleCart}>
+          View my cart
+        </Link>
+
         <p className={styles.bill} style={{ color: "rgb(51, 220, 32)" }}>
           Save: <span className={styles.price}>${basketPrice.save}</span>
         </p>
