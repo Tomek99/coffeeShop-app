@@ -33,6 +33,8 @@ function NavigationBar(props) {
 
   const location = useLocation();
 
+  let elementHTML = window.document.getElementsByTagName("html")[0];
+
   const handleSearch = () => {
     setSearchOpen(!isSearchOpen);
     setNavigationOpen(false);
@@ -48,6 +50,9 @@ function NavigationBar(props) {
   };
 
   const handleAside = () => {
+    if (!isAsideOpen) elementHTML.style.overflow = "hidden";
+    else elementHTML.style.overflow = "scroll";
+
     setAsideOpen(!isAsideOpen);
     setNavigationOpen(false);
     setSearchOpen(false);
@@ -55,9 +60,10 @@ function NavigationBar(props) {
   };
 
   const handleCart = (location) => {
-    if (location === "/cart") {
-      return;
-    }
+    if (location === "/cart") return;
+
+    if (!isCartOpen) elementHTML.style.overflow = "hidden";
+    else elementHTML.style.overflow = "scroll";
 
     setCartOpen(!isCartOpen);
     setAsideOpen(false);

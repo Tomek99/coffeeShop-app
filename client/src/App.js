@@ -43,7 +43,6 @@ function App() {
 
   function logIn() {
     setIsLogIn(true);
-
     localStorage.setItem("is-logged", true);
   }
 
