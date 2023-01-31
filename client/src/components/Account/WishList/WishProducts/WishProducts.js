@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 import styles from "./WishProducts.module.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import AmountProducts from "./AmountProducts/AmountProducts";

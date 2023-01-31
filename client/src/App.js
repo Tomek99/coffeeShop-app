@@ -104,6 +104,12 @@ function App() {
     }));
   }
 
+  function clearTheCart() {
+    setBasketItems([]);
+    setBasketQuantity(0);
+    setBasketPrice({ currentPrice: 0, save: 0 });
+  }
+
   function addItemWishList(item) {
     setWishList([...wishList, { ...item }]);
   }
@@ -116,6 +122,7 @@ function App() {
         addItemWishList,
         logIn,
         logOut,
+        clearTheCart,
         isLogIn,
         basketItems,
         basketPrice,
@@ -125,22 +132,9 @@ function App() {
       <section className="columnWeb">
         {/* <Provider store={store}> */}
 
-        <NavigationBar
-          basketItems={basketItems}
-          basketPrice={basketPrice}
-          basketQuantity={basketQuantity}
-        />
+        <NavigationBar basketQuantity={basketQuantity} />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                basketItems={basketItems}
-                basketPrice={basketPrice}
-                productData={productData}
-              />
-            }
-          />
+          <Route path="/" element={<Home productData={productData} />} />
           <Route path="about-us" element={<AboutUs />} />
 
           <Route path="menu" element={<Menu />} />

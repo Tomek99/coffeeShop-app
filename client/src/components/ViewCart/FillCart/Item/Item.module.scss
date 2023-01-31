@@ -92,9 +92,33 @@
                 }
             }
         }
+
+        .btnDots {
+            display: none;
+
+            button {
+                background-color: transparent;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
     }
 }
 
 .Item:nth-last-of-type(1) {
     border-bottom: none;
+}
+
+@media (max-width: 500px) {
+    .Item {
+        padding: 12px 8px !important;
+
+        .buttons {
+            display: none !important;
+        }
+
+        .btnDots {
+            display: block !important;
+        }
+    }
 }

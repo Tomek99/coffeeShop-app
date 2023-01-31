@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Cart.module.scss";
 import CartList from "./CartList/CartList";
 import PropTypes from "prop-types";
 import NBarAside from "../NBarAside/NBarAside";
 import { Link } from "react-router-dom";
+import { Context } from "../../Contexts/Context";
 
-function Cart(props) {
-  const { isBasketOpen, basketPrice, basketItems, handleCart, basketQuantity } =
-    props;
+function Cart({ isBasketOpen, handleCart, basketQuantity }) {
+  const { basketItems, basketPrice } = useContext(Context);
+
   return (
     <div
       className={

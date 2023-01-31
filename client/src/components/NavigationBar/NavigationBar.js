@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
 import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
@@ -12,7 +12,7 @@ import PopupUserNav2 from "../PopupUserNav/PopupUserNav2/PopupUserNav2";
 import { Context } from "../../Contexts/Context";
 
 function NavigationBar(props) {
-  const { basketItems, basketPrice, basketQuantity } = props;
+  const { basketQuantity } = props;
   const { isLogIn } = useContext(Context);
 
   const navBarList = [
@@ -29,6 +29,8 @@ function NavigationBar(props) {
   const [isBasketOpen, setBasketOpen] = useState(false);
   const [isNavigationOpen, setNavigationOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
+
+  const location = useLocation();
 
   const handleSearch = () => {
     setSearchOpen(!isSearchOpen);
@@ -51,7 +53,13 @@ function NavigationBar(props) {
     setBasketOpen(false);
   };
 
-  const handleCart = () => {
+  const handleCart = (location) => {
+    console.log(location);
+    if (location === "/cart") {
+      console.log("WORKING");
+      return;
+    }
+
     setBasketOpen(!isBasketOpen);
     setAsideOpen(false);
     setNavigationOpen(false);
@@ -131,7 +139,10 @@ function NavigationBar(props) {
               handleAside={handleAside}
             />
 
-            <button className={styles.btnDisplay} onClick={handleCart}>
+            <button
+              className={styles.btnDisplay}
+              onClick={() => handleCart(location.pathname)}
+            >
               <BsCartFill size={30} color={"#fff"} />
               <span
                 className={styles.quantityProductsInBasket}
@@ -148,8 +159,6 @@ function NavigationBar(props) {
             <Cart
               handleCart={handleCart}
               isBasketOpen={isBasketOpen}
-              basketItems={basketItems}
-              basketPrice={basketPrice}
               basketQuantity={basketQuantity}
             />
           </div>
@@ -160,8 +169,6 @@ function NavigationBar(props) {
 }
 
 NavigationBar.propTypes = {
-  basketItems: PropTypes.array,
-  basketPrice: PropTypes.object,
   basketQuantity: PropTypes.number,
 };
 export default NavigationBar;

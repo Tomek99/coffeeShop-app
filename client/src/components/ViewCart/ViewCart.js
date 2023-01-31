@@ -5,15 +5,11 @@ import EmptyCart from "./EmptyCart/EmptyCart";
 import FillCart from "./FillCart/FillCart";
 
 function ViewCart() {
-  const { basketItems, basketQuantity } = useContext(Context);
+  const { basketItems } = useContext(Context);
 
   return (
     <div className={styles.ViewCart}>
-      {basketItems.length !== 0 ? (
-        <FillCart basketItems={basketItems} basketQuantity={basketQuantity} />
-      ) : (
-        <EmptyCart />
-      )}
+      {basketItems.length !== 0 ? <FillCart /> : <EmptyCart />}
     </div>
   );
 }
