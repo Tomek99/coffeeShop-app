@@ -4,9 +4,9 @@ import Button from "../Buttons/Button";
 import styles from "./MenuProduct.module.scss";
 import PropTypes from "prop-types";
 
-function MenuProduct(props) {
-  const { id, imageUrl, name, newPrice, oldPrice, quantity } = props;
-  const { addItem, deleteItem } = useContext(Context);
+function MenuProduct({ item }) {
+  const { id, imageUrl, name, newPrice, oldPrice, quantity } = item;
+  const { addItem } = useContext(Context);
 
   const handleItem = () => {
     const productDetails = {

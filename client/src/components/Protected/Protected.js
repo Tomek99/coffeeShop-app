@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Protected({ isLogIn, children, navigate }) {
   if (!isLogIn) {
@@ -8,4 +9,9 @@ function Protected({ isLogIn, children, navigate }) {
   return children;
 }
 
+Protected.propTypes = {
+  isLogIn: PropTypes.bool,
+  children: PropTypes.object,
+  navigate: PropTypes.string,
+};
 export default Protected;

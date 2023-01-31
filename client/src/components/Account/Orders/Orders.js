@@ -19,7 +19,7 @@ function Orders() {
 
   const displayOrders = orders
     .slice(pagesVisited, pagesVisited + ordersPerPage)
-    .map((item) => <OrderSummary orderDetails={item} key={item.idNumber} />);
+    .map((item, index) => <OrderSummary item={item} key={index} />);
 
   const handleChange = ({ selected }) => {
     setPageNumber(selected);

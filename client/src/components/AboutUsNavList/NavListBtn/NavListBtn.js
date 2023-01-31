@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./NavListBtn.module.scss";
 
-function NavListElement({ name, number, switchTab, tabNumber }) {
+function NavListElement({ item, switchTab, tabNumber }) {
+  const { name, number } = item;
   return (
     <li key={name}>
       <button

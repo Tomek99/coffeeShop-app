@@ -27,8 +27,8 @@ function FillCart() {
         <div className={styles.items}>
           {basketItems.map((item, index) => (
             <Item
-              item={item}
               key={index}
+              item={item}
               deleteItem={deleteItem}
               clearTheCart={clearTheCart}
             />

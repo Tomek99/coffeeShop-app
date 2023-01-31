@@ -16,6 +16,7 @@ export { default as ProductDetails } from "./ProductDetails/ProductDetails";
 export { default as Notifications } from "./Notifications/Notifications";
 export { default as ViewCart } from "./ViewCart/ViewCart";
 
+export { default as AccountContent } from "./Account/AccountContent/AccountContent";
 export { default as Orders } from "./Account/Orders/Orders";
 export { default as UserReviews } from "./Account/UserReviews/UserReviews";
 export { default as Settings } from "./Account/Settings/Settings";

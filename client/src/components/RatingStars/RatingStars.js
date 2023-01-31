@@ -1,6 +1,7 @@
 import { Rating } from "@mui/material";
 import styles from "./RatingStars.module.scss";
 import React from "react";
+import PropTypes from "prop-types";
 
 function RatingsStars({ rate, size, tab }) {
   return (
@@ -31,5 +32,9 @@ function RatingsStars({ rate, size, tab }) {
     </>
   );
 }
-
+RatingsStars.propTypes = {
+  rate: PropTypes.number,
+  size: PropTypes.string,
+  tab: PropTypes.number,
+};
 export default RatingsStars;

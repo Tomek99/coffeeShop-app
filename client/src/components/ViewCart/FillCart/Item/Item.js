@@ -4,23 +4,24 @@ import { ImBin } from "react-icons/im";
 import { BsHeart, BsThreeDotsVertical } from "react-icons/bs";
 
 function Item({ item, deleteItem }) {
+  const { name, imageUrl, oldPrice, newPrice, quantity } = item;
   const values = ["1", "2", "3", "4", "5", "6", "7", "8", "+9"];
 
   return (
     <div className={styles.Item}>
       <div className={styles.leftSide}>
-        <img src={item.imageUrl} alt="" />
+        <img src={imageUrl} alt="" />
         <div>
-          <p>{item.name}</p>
+          <p>{name}</p>
         </div>
       </div>
       <div className={styles.rightSide}>
         <div className={styles.price}>
-          <p>${item.oldPrice}</p>
-          <p>${item.newPrice}</p>
+          <p>${oldPrice}</p>
+          <p>${newPrice}</p>
         </div>
         <div className={styles.itemAmount}>
-          <select value={item.quantity}>
+          <select value={quantity}>
             {values.map((value, index) => (
               <option value={value} key={index}>
                 {value}

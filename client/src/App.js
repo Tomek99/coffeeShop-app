@@ -26,6 +26,7 @@ import {
   RecoverPassword,
   Protected,
   ViewCart,
+  AccountContent,
 } from "./components";
 import productData from "./data/product.json";
 
@@ -184,7 +185,7 @@ function App() {
               </Protected>
             }
           >
-            <Route path="account" />
+            <Route path="account" element={<AccountContent />} />
             <Route path="orders" element={<Orders />} />
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />

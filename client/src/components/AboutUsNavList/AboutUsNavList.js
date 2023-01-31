@@ -12,11 +12,10 @@ function AboutUsNavList({ switchTab, tabNumber }) {
   return (
     <nav className={styles.AboutUsNavList}>
       <ul className={styles.navListElements}>
-        {navBarList.map((item) => (
+        {navBarList.map((item, index) => (
           <NavListBtn
-            number={item.number}
-            key={item.name}
-            name={item.name}
+            key={index}
+            item={item}
             switchTab={switchTab}
             activeStyle={styles.activeStyle}
             tabNumber={tabNumber}

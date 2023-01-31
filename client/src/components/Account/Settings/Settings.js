@@ -1,16 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Support from "../Support/Support";
 import AccountData from "./AccountData/AccountData";
 import ConsentForm from "./ConsentForm/ConsentForm";
 import styles from "./Settings.module.scss";
 
 function Settings() {
-  const [data, setData] = useState({
-    name: "Tomasz Skupień",
-    number: "111 222 333",
-    email: "test@gmail.com",
-    password: "Za@1234a",
-  });
+  const data = [
+    {
+      title: "Your data",
+      content: "111 222 333",
+      fullName: "Tomasz Skupień",
+      btnText: "Edit",
+    },
+    {
+      title: "E-mail address",
+      content: "test@gmail.com",
+      btnText: "Change",
+    },
+    {
+      title: "Password",
+      content: "fawfawf",
+      btnText: "Change",
+    },
+  ];
 
   useEffect(() => {
     window.scrollTo({
@@ -24,22 +36,9 @@ function Settings() {
       <header style={{ fontSize: "2.5rem" }}>Account settings</header>
       <h3 style={{ fontSize: "2rem" }}>Account data</h3>
       <div className={styles.AccountDataContainer}>
-        <AccountData
-          title="Your data"
-          content={data.number}
-          fullName={data.name}
-          btnText="Edit"
-        />
-        <AccountData
-          title="E-mail address"
-          content={data.email}
-          btnText="Change"
-        />
-        <AccountData
-          title="Password"
-          content={data.password}
-          btnText="Change"
-        />
+        {data.map((item, index) => (
+          <AccountData item={item} key={index} />
+        ))}
       </div>
 
       <div className={styles.extraInfo}>

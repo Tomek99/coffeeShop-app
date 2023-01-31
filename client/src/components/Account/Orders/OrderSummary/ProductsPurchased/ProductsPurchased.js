@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./ProductsPurchased.module.scss";
+import PropTypes from "prop-types";
+
 function ProductsPurchased({ url }) {
   return (
     <div>
@@ -8,4 +10,7 @@ function ProductsPurchased({ url }) {
   );
 }
 
+ProductsPurchased.propTypes = {
+  url: PropTypes.string,
+};
 export default ProductsPurchased;

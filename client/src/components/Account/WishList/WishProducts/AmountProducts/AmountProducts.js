@@ -28,26 +28,6 @@ const imgList = [
     id: 7,
     url: "/images/product-2.png",
   },
-  //   {
-  //     id: 8,
-  //     url: "/images/product-2.png",
-  //   },
-  //   {
-  //     id: 9,
-  //     url: "/images/product-2.png",
-  //   },
-  //   {
-  //     id: 10,
-  //     url: "/images/product-2.png",
-  //   },
-  //   {
-  //     id: 11,
-  //     url: "/images/product-2.png",
-  //   },
-  //   {
-  //     id: 12,
-  //     url: "/images/product-2.png",
-  //   },
 ];
 function AmountProducts() {
   const width = useWindowWidth();

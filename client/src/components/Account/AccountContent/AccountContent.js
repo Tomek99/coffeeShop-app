@@ -8,7 +8,7 @@ import orders from "../../../data/orders.json";
 function AccountContent() {
   const displayOrders = orders
     .slice(0, 1)
-    .map((item) => <OrderSummary orderDetails={item} key={item.idNumber} />);
+    .map((item, index) => <OrderSummary item={item} key={index} />);
   return (
     <div className={styles.accountContent}>
       <div className={styles.divCol}>

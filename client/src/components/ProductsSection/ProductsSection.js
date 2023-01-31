@@ -12,31 +12,11 @@ function ProductsSection({ isTrue, productData, isHome }) {
         {isTrue
           ? productData
               .slice(0, 3)
-              .map((item) => (
-                <LatestProduct
-                  id={item.id}
-                  key={item.id}
-                  name={item.name}
-                  imageUrl={item.imageUrl}
-                  newPrice={item.newPrice}
-                  oldPrice={item.oldPrice}
-                  quantity={item.quantity}
-                  isHome={isHome}
-                  rate={item.rate}
-                />
+              .map((item, index) => (
+                <LatestProduct key={index} item={item} isHome={isHome} />
               ))
-          : productData.map((item) => (
-              <LatestProduct
-                id={item.id}
-                key={item.id}
-                name={item.name}
-                imageUrl={item.imageUrl}
-                newPrice={item.newPrice}
-                oldPrice={item.oldPrice}
-                quantity={item.quantity}
-                isHome={isHome}
-                rate={item.rate}
-              />
+          : productData.map((item, index) => (
+              <LatestProduct key={index} item={item} isHome={isHome} />
             ))}
       </div>
     </div>

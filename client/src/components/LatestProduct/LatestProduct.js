@@ -6,9 +6,8 @@ import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
-function LatestProduct(props) {
-  const { imageUrl, name, newPrice, oldPrice, id, isHome, quantity, rate } =
-    props;
+function LatestProduct({ item, isHome }) {
+  const { imageUrl, name, newPrice, oldPrice, id, quantity, rate } = item;
 
   const { addItem } = useContext(Context);
 

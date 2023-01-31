@@ -13,29 +13,11 @@ function ReviewSection({ isTrue }) {
         {isTrue
           ? customerData
               .slice(0, 3)
-              .map((item) => (
-                <CustomerReview
-                  id={item.id}
-                  key={item.id}
-                  imageUrl={item.imageUrl}
-                  avatarUrl={item.avatarUrl}
-                  name={item.name}
-                  text={item.text}
-                  isTrue={isTrue}
-                  rate={item.rate}
-                />
+              .map((item, index) => (
+                <CustomerReview key={index} item={item} isTrue={isTrue} />
               ))
-          : customerData.map((item) => (
-              <CustomerReview
-                id={item.id}
-                key={item.id}
-                imageUrl={item.imageUrl}
-                avatarUrl={item.avatarUrl}
-                name={item.name}
-                text={item.text}
-                isTrue={isTrue}
-                rate={item.rate}
-              />
+          : customerData.map((item, index) => (
+              <CustomerReview key={index} item={item} isTrue={isTrue} />
             ))}
       </div>
     </div>

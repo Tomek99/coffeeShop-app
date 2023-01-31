@@ -1,5 +1,5 @@
 import React from "react";
-import Team from "../TeamMember/TeamMember";
+import Team from "./TeamMember/TeamMember";
 import styles from "./OurTeam.module.scss";
 import Member from "../../data/member.json";
 import Header from "../HeaderSection/HeaderSection";
@@ -12,15 +12,8 @@ function OurTeam() {
         unlock great creativity around every turn
       </p>
       <div className={styles.team}>
-        {Member.map((item) => (
-          <Team
-            id={item.id}
-            key={item.id}
-            url={item.url}
-            name={item.name}
-            position={item.position}
-            text={item.text}
-          />
+        {Member.map((item, index) => (
+          <Team key={index} item={item} />
         ))}
       </div>
     </div>

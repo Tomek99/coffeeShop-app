@@ -3,8 +3,8 @@ import styles from "./CustomerReview.module.scss";
 import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
-function CustomerReview(props) {
-  const { id, isTrue, imageUrl, text, avatarUrl, name, rate } = props;
+function CustomerReview({ item, isTrue }) {
+  const { id, imageUrl, text, avatarUrl, name, rate } = item;
   const style = { width: "290px" };
 
   return (

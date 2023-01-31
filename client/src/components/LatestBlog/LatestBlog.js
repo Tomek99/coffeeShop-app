@@ -3,13 +3,13 @@ import Button from "../Buttons/Button";
 import styles from "./LatestBlog.module.scss";
 import PropTypes from "prop-types";
 
-function LatestBlog(props) {
-  const { id, url, title, addedBy, text } = props;
+function LatestBlog({ item, text }) {
+  const { id, imageUrl, title, addedBy } = item;
 
   return (
     <div key={id} className={styles.singleBlog}>
       <div className={styles.zoomImage}>
-        <img src={url} alt={title} />
+        <img src={imageUrl} alt={title} />
       </div>
       <div className={styles.textSection}>
         <h2>{title}</h2>

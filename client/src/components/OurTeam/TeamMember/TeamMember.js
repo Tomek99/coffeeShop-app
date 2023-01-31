@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./TeamMember.module.scss";
 import { BsArrowRight } from "react-icons/bs";
 import { useState } from "react";
-import PopupMemberDetails from "../PopupMemberDetails/PopupMemberDetails";
+import PopupMemberDetails from "./PopupMemberDetails/PopupMemberDetails";
 import PropTypes from "prop-types";
 
-function Team({ id, url, name, position, text }) {
+function Team({ item }) {
+  const { id, url, name, position, text } = item;
   const [isActive, setActive] = useState(false);
 
   const showDetails = () => {

@@ -6,7 +6,6 @@ import {
   BsHandThumbsDown,
 } from "react-icons/bs";
 import { AiOutlineCheckCircle } from "react-icons/ai";
-import { Rating } from "@mui/material";
 import RatingsStars from "../../../RatingStars/RatingStars";
 
 function Review() {

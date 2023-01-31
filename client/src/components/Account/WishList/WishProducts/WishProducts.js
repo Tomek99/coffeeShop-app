@@ -3,7 +3,7 @@ import styles from "./WishProducts.module.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import AmountProducts from "./AmountProducts/AmountProducts";
 
-function WishProducts({ title }) {
+function WishProducts() {
   return (
     <div className={styles.WishProducts}>
       <div className={styles.header}>

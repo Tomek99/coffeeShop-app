@@ -6,8 +6,8 @@ import NBarAside from "../NBarAside/NBarAside";
 import { Link } from "react-router-dom";
 import { Context } from "../../Contexts/Context";
 
-function Cart({ isCartOpen, handleCart, basketQuantity }) {
-  const { basketItems, basketPrice } = useContext(Context);
+function Cart({ isCartOpen, handleCart }) {
+  const { basketItems, basketPrice, basketQuantity } = useContext(Context);
 
   return (
     <div
@@ -24,16 +24,8 @@ function Cart({ isCartOpen, handleCart, basketQuantity }) {
       />
       {basketPrice.currentPrice !== 0 ? (
         <div className={styles.products}>
-          {basketItems.map((item) => (
-            <CartList
-              id={item.id}
-              key={item.id}
-              name={item.name}
-              newPrice={item.newPrice}
-              oldPrice={item.oldPrice}
-              imageUrl={item.imageUrl}
-              quantity={item.quantity}
-            />
+          {basketItems.map((item, index) => (
+            <CartList key={index} item={item} />
           ))}
         </div>
       ) : (

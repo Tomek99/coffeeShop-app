@@ -4,8 +4,8 @@ import { ImBin } from "react-icons/im";
 import styles from "./CartList.module.scss";
 import PropTypes from "prop-types";
 
-function BasketList(props) {
-  const { id, name, imageUrl, newPrice, oldPrice, quantity } = props;
+function BasketList({ item }) {
+  const { id, name, imageUrl, newPrice, oldPrice, quantity } = item;
 
   const { deleteItem } = useContext(Context);
   return (
