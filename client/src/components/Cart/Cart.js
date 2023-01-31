@@ -6,13 +6,13 @@ import NBarAside from "../NBarAside/NBarAside";
 import { Link } from "react-router-dom";
 import { Context } from "../../Contexts/Context";
 
-function Cart({ isBasketOpen, handleCart, basketQuantity }) {
+function Cart({ isCartOpen, handleCart, basketQuantity }) {
   const { basketItems, basketPrice } = useContext(Context);
 
   return (
     <div
       className={
-        isBasketOpen
+        isCartOpen
           ? `${styles.PopupBasket} ${styles.active}`
           : styles.PopupBasket
       }

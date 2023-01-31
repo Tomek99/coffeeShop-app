@@ -133,7 +133,7 @@
         top: 76px;
         flex-direction: column !important;
         background-color: var(--bg);
-        width: 40%;
+        width: 30%;
         text-align: center;
         transition: 0.3s;
         border-bottom: var(--border);
@@ -162,5 +162,9 @@
     }
     .navBar {
         justify-content: space-evenly !important;
+    }
+
+    .navMenu {
+        width: 40%;
     }
 }

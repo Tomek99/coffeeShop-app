@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import PopupUserNav1 from "../PopupUserNav/PopupUserNav1/PopupUserNav1";
 import PopupUserNav2 from "../PopupUserNav/PopupUserNav2/PopupUserNav2";
 import { Context } from "../../Contexts/Context";
+import BlurScreen from "../BlurScreen/BlurScreen";
 
 function NavigationBar(props) {
   const { basketQuantity } = props;
@@ -26,7 +27,7 @@ function NavigationBar(props) {
   ];
 
   const [isAsideOpen, setAsideOpen] = useState(false);
-  const [isBasketOpen, setBasketOpen] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false);
   const [isNavigationOpen, setNavigationOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
 
@@ -36,31 +37,29 @@ function NavigationBar(props) {
     setSearchOpen(!isSearchOpen);
     setNavigationOpen(false);
     setAsideOpen(false);
-    setBasketOpen(false);
+    setCartOpen(false);
   };
 
   const handleNavigation = () => {
     setNavigationOpen(!isNavigationOpen);
     setAsideOpen(false);
     setSearchOpen(false);
-    setBasketOpen(false);
+    setCartOpen(false);
   };
 
   const handleAside = () => {
     setAsideOpen(!isAsideOpen);
     setNavigationOpen(false);
     setSearchOpen(false);
-    setBasketOpen(false);
+    setCartOpen(false);
   };
 
   const handleCart = (location) => {
-    console.log(location);
     if (location === "/cart") {
-      console.log("WORKING");
       return;
     }
 
-    setBasketOpen(!isBasketOpen);
+    setCartOpen(!isCartOpen);
     setAsideOpen(false);
     setNavigationOpen(false);
     setSearchOpen(false);
@@ -158,9 +157,16 @@ function NavigationBar(props) {
 
             <Cart
               handleCart={handleCart}
-              isBasketOpen={isBasketOpen}
+              isCartOpen={isCartOpen}
               basketQuantity={basketQuantity}
             />
+            {isCartOpen || isAsideOpen ? (
+              <BlurScreen
+                isCartOpen={isCartOpen}
+                handleAside={handleAside}
+                handleCart={handleCart}
+              />
+            ) : null}
           </div>
         </div>
       </div>
