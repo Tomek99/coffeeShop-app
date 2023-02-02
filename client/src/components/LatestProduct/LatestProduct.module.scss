@@ -2,17 +2,13 @@
     padding: 10px 55px 10px 55px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     border: var(--border);
     background-color: var(--black);
 
-    img {
-        width: 100%;
-    }
-
-    .iconSection {
+    .iconsSection {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -42,8 +38,20 @@
             background-color: var(--main-color);
         }
     }
-    h3 {
-        font-size: 1.7rem;
+
+    .middleOfproduct {
+        text-align: center;
+        img {
+            max-width: 140px;
+            max-height: 230px;
+            width: 100%;
+        }
+
+        h3 {
+            max-width: 150px;
+            margin: 5px 0;
+            font-size: 1.7rem;
+        }
     }
 
     .price {

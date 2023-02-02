@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./UserNavigation.module.scss";
 
-import { BsHeart, BsBoxSeam } from "react-icons/bs";
+import { BsHeart, BsBoxSeam, BsTruck } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineReviews } from "react-icons/md";
 import { RiFileList3Line } from "react-icons/ri";
@@ -20,6 +20,11 @@ const navList = [
     name: "Reviews",
     path: "/user-reviews",
     element: <MdOutlineReviews size={20} />,
+  },
+  {
+    name: "Order data",
+    path: "/order-data",
+    element: <BsTruck size={20} />,
   },
   {
     name: "Profile seetings",

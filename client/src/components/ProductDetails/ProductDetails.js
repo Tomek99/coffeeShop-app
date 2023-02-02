@@ -14,9 +14,9 @@ function ProductDetails({ productData }) {
 
   const { addItem } = useContext(Context);
 
-  const thisProduct = productData.find(
-    (item) => item.id.toString() === productId.id
-  );
+  const thisProduct = productData.find((item) => {
+    return item._id === productId.id;
+  });
 
   const onClickAddToBasket = () => {
     thisProduct.quantity = quantity;

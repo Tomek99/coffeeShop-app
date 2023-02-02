@@ -19,6 +19,7 @@ export { default as ViewCart } from "./ViewCart/ViewCart";
 export { default as AccountContent } from "./Account/AccountContent/AccountContent";
 export { default as Orders } from "./Account/Orders/Orders";
 export { default as UserReviews } from "./Account/UserReviews/UserReviews";
+export { default as OrderData } from "./Account/OrderData/OrderData";
 export { default as Settings } from "./Account/Settings/Settings";
 export { default as ReturnComplaint } from "./Account/ReturnComplaint/ReturnComplaint";
 export { default as WishList } from "./Account/WishList/WishList";

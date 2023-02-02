@@ -7,12 +7,12 @@ import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
 function LatestProduct({ item, isHome }) {
-  const { imageUrl, name, newPrice, oldPrice, id, quantity, rate } = item;
+  const { imageUrl, name, newPrice, oldPrice, _id, quantity, rate } = item;
 
   const { addItem } = useContext(Context);
-
+  console.log(oldPrice);
   const productDetails = {
-    id: id,
+    id: _id,
     quantity: quantity,
     imageUrl: imageUrl,
     name: name,
@@ -21,9 +21,9 @@ function LatestProduct({ item, isHome }) {
   };
 
   return (
-    <div key={id} className={styles.singleItemSection}>
-      <div className={styles.iconSection}>
-        <Link to={isHome ? `products/${id.toString()}` : id.toString()}>
+    <div key={_id} className={styles.singleItemSection}>
+      <div className={styles.iconsSection}>
+        <Link to={isHome ? `products/${_id}` : _id}>
           <BsFillEyeFill />
         </Link>
 
@@ -34,14 +34,18 @@ function LatestProduct({ item, isHome }) {
           <BsFillHeartFill />
         </button>
       </div>
-      <img src={imageUrl} alt={name} />
-      <h3>{name}</h3>
-      <div>
-        <RatingsStars rate={rate} size="large" />
+      <div className={styles.middleOfproduct}>
+        <img src={imageUrl} alt={name} />
+        <h3>{name}</h3>
+        <div>
+          <RatingsStars rate={rate} size="large" />
+        </div>
       </div>
       <p className={styles.price}>
         <span>${newPrice} </span>
-        <span className={styles.oldPrice}>${oldPrice}</span>
+        <span className={styles.oldPrice}>
+          {oldPrice === null ? null : `$${oldPrice}`}
+        </span>
       </p>
     </div>
   );

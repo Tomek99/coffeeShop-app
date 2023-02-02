@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "./PopupUserNav2.module.scss";
-import { BsHeart } from "react-icons/bs";
+import { BsHeart, BsTruck } from "react-icons/bs";
 
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineReviews } from "react-icons/md";
@@ -21,6 +21,11 @@ function PopupUserNav2({ isAsideOpen, handleAside }) {
       name: "Reviews",
       path: "user-reviews",
       element: <MdOutlineReviews size={20} />,
+    },
+    {
+      name: "Order data",
+      path: "order-data",
+      element: <BsTruck size={20} />,
     },
     {
       name: "Profile seetings",

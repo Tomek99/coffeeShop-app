@@ -1,5 +1,6 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Context } from "./Contexts/Context";
 import { Route, Routes, Navigate } from "react-router-dom";
 import {
@@ -19,6 +20,7 @@ import {
   ProductDetails,
   Orders,
   UserReviews,
+  OrderData,
   Settings,
   ReturnComplaint,
   LogIn,
@@ -28,13 +30,23 @@ import {
   ViewCart,
   AccountContent,
 } from "./components";
-import productData from "./data/product.json";
 
 function App() {
   const [basketItems, setBasketItems] = useState([]);
   const [wishList, setWishList] = useState([]);
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setBasketQuantity] = useState(0);
+  const [products, setProducts] = useState([]);
+  // http://localhost:5000/api/products
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios("http://localhost:5000/api/products");
+      setProducts(result.data);
+    };
+
+    fetchData();
+  }, []);
 
   const [isLogIn, setIsLogIn] = useState(() => {
     const storedValue = localStorage.getItem("is-logged");
@@ -134,17 +146,17 @@ function App() {
 
         <NavigationBar basketQuantity={basketQuantity} />
         <Routes>
-          <Route path="/" element={<Home productData={productData} />} />
+          <Route path="/" element={<Home productData={products} />} />
           <Route path="about-us" element={<AboutUs />} />
 
           <Route path="menu" element={<Menu />} />
           <Route
             path="products"
-            element={<Products productData={productData} />}
+            element={<Products productData={products} />}
           />
           <Route
             path="products/:id"
-            element={<ProductDetails productData={productData} />}
+            element={<ProductDetails productData={products} />}
           />
           <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />
@@ -188,6 +200,7 @@ function App() {
             <Route path="orders" element={<Orders />} />
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />
+            <Route path="order-data" element={<OrderData />} />
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="wish-list" element={<Wish />} />

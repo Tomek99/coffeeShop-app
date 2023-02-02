@@ -5,9 +5,9 @@ const bcrypt = require("bcrypt");
 //@desc GET goals
 //@route GET /api/goals
 //@access Private
-const getGoals = asyncHandler(async (req, res) => {
-  const goals = await User.find();
-  res.status(200).json(goals);
+const getUsers = asyncHandler(async (req, res) => {
+  const users = await User.find();
+  res.status(200).json(users);
 });
 
 const isUserExist = asyncHandler(async (req, res) => {
@@ -33,7 +33,7 @@ const logIn = asyncHandler(async (req, res) => {
 //@desc Set goals
 //@route POST /api/goals
 //@access Private
-const setGoals = asyncHandler(async (req, res) => {
+const setUser = asyncHandler(async (req, res) => {
   const check =
     req.body.firstName &&
     req.body.lastName &&
@@ -54,6 +54,7 @@ const setGoals = asyncHandler(async (req, res) => {
     email: req.body.email,
   });
 
+  console.log(user);
   res.send(user);
 
   res.status(200);
@@ -92,9 +93,9 @@ const deleteGoals = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  getGoals,
+  getUsers,
   isUserExist,
-  setGoals,
+  setUser,
   updateGoals,
   deleteGoals,
   logIn,

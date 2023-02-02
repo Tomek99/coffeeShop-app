@@ -50,8 +50,8 @@ function NavigationBar(props) {
   };
 
   const handleAside = () => {
-    if (!isAsideOpen) elementHTML.style.overflow = "hidden";
-    else elementHTML.style.overflow = "scroll";
+    if (!isAsideOpen) elementHTML.style.overflowY = "hidden";
+    else elementHTML.style.overflowY = "scroll";
 
     setAsideOpen(!isAsideOpen);
     setNavigationOpen(false);
@@ -62,8 +62,8 @@ function NavigationBar(props) {
   const handleCart = (location) => {
     if (location === "/cart") return;
 
-    if (!isCartOpen) elementHTML.style.overflow = "hidden";
-    else elementHTML.style.overflow = "scroll";
+    if (!isCartOpen) elementHTML.style.overflowY = "hidden";
+    else elementHTML.style.overflowY = "scroll";
 
     setCartOpen(!isCartOpen);
     setAsideOpen(false);
