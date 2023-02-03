@@ -7,7 +7,8 @@ import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
 function LatestProduct({ item, isHome }) {
-  const { imageUrl, name, newPrice, oldPrice, _id, quantity, rate } = item;
+  const { imageUrl, name, newPrice, oldPrice, _id, quantity, rate, intensity } =
+    item;
 
   const { addItem } = useContext(Context);
   console.log(oldPrice);
@@ -37,6 +38,9 @@ function LatestProduct({ item, isHome }) {
       <div className={styles.middleOfproduct}>
         <img src={imageUrl} alt={name} />
         <h3>{name}</h3>
+        <p>
+          Intensity <span>{intensity}</span>
+        </p>
         <div>
           <RatingsStars rate={rate} size="large" />
         </div>

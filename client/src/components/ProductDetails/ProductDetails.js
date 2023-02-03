@@ -8,13 +8,13 @@ import { useState } from "react";
 import { Context } from "../../Contexts/Context";
 import PropTypes from "prop-types";
 
-function ProductDetails({ productData }) {
+function ProductDetails({ products }) {
   const [quantity, setQuantity] = useState(1);
   const productId = useParams();
 
   const { addItem } = useContext(Context);
 
-  const thisProduct = productData.find((item) => {
+  const thisProduct = products.find((item) => {
     return item._id === productId.id;
   });
 

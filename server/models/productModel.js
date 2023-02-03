@@ -11,11 +11,11 @@ const productSchema = mongoose.Schema(
       require: [true, "Add name"],
     },
     newPrice: {
-      type: Number,
+      type: String,
       require: [true, "Add newPrice"],
     },
     oldPrice: {
-      type: Number,
+      type: String,
       require: false,
     },
     quantity: {
@@ -25,6 +25,22 @@ const productSchema = mongoose.Schema(
     origin: {
       type: String,
       require: [true, "Add origin"],
+    },
+    brand: {
+      type: String,
+      require: [true, "Add brand"],
+    },
+    intensity: {
+      type: Number,
+      require: [true, "Add intensity"],
+    },
+    type: {
+      type: String,
+      require: [true, "Add type"],
+    },
+    weight: {
+      type: String,
+      require: true,
     },
     rate: {
       type: Number,

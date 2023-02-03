@@ -37,7 +37,6 @@ function App() {
   const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setBasketQuantity] = useState(0);
   const [products, setProducts] = useState([]);
-  // http://localhost:5000/api/products
 
   useEffect(() => {
     const fetchData = async () => {
@@ -139,6 +138,7 @@ function App() {
         basketItems,
         basketPrice,
         basketQuantity,
+        products,
       }}
     >
       <section className="columnWeb">
@@ -146,17 +146,14 @@ function App() {
 
         <NavigationBar basketQuantity={basketQuantity} />
         <Routes>
-          <Route path="/" element={<Home productData={products} />} />
+          <Route path="/" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
 
           <Route path="menu" element={<Menu />} />
-          <Route
-            path="products"
-            element={<Products productData={products} />}
-          />
+          <Route path="products" element={<Products />} />
           <Route
             path="products/:id"
-            element={<ProductDetails productData={products} />}
+            element={<ProductDetails products={products} />}
           />
           <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />

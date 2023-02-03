@@ -22,11 +22,7 @@ function Home(props) {
       <HomeSection />
       <AboutSection />
       <MenuSection isTrue={true} />
-      <ProductsSection
-        isTrue={true}
-        isHome={true}
-        productData={props.productData}
-      />
+      <ProductsSection isTrue={true} isHome={true} firstWord="Latest" />
       <ReviewSection isTrue={true} />
       <BlogsSection isTrue={true} />
     </>

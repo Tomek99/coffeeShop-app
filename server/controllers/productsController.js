@@ -14,6 +14,10 @@ const setProduct = asyncHandler(async (req, res) => {
     oldPrice: req.body.oldPrice,
     quantity: req.body.quantity,
     origin: req.body.origin,
+    intensity: req.body.intensity,
+    type: req.body.type,
+    weight: req.body.weight,
+    brand: req.body.brand,
     rate: req.body.rate,
     available: req.body.available,
   });

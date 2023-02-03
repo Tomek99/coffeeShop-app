@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { ProductsSection } from "../../components";
 
-function Products(props) {
+function Products() {
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -14,8 +14,8 @@ function Products(props) {
       <ProductsSection
         isTrue={false}
         isHome={false}
-        productData={props.productData}
-      />
+        firstWord="Our"
+      ></ProductsSection>
     </>
   );
 }
