@@ -7,19 +7,11 @@ import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
 function LatestProduct({ item, isHome }) {
-  const { imageUrl, name, newPrice, oldPrice, _id, quantity, rate, intensity } =
-    item;
-
-  const { addItem } = useContext(Context);
-  console.log(oldPrice);
-  const productDetails = {
-    id: _id,
-    quantity: quantity,
-    imageUrl: imageUrl,
-    name: name,
-    newPrice: newPrice,
-    oldPrice: oldPrice,
-  };
+  const { imageUrl, name, newPrice, oldPrice, _id, rate, intensity } = item;
+  const { addItem, products } = useContext(Context);
+  let findProduct = products.find((product) => product._id === _id);
+  findProduct.oldPrice = findProduct.oldPrice === null ? 0 : oldPrice;
+  findProduct.quantity = 1;
 
   return (
     <div key={_id} className={styles.singleItemSection}>
@@ -28,7 +20,7 @@ function LatestProduct({ item, isHome }) {
           <BsFillEyeFill />
         </Link>
 
-        <button onClick={() => addItem(productDetails)}>
+        <button onClick={() => addItem(findProduct)}>
           <BsCartFill />
         </button>
         <button>
@@ -48,7 +40,7 @@ function LatestProduct({ item, isHome }) {
       <p className={styles.price}>
         <span>${newPrice} </span>
         <span className={styles.oldPrice}>
-          {oldPrice === null ? null : `$${oldPrice}`}
+          {Boolean(oldPrice) ? `$${oldPrice}` : null}
         </span>
       </p>
     </div>

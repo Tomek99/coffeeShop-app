@@ -1,11 +1,14 @@
 .headerSection {
+    text-align: center;
     font-size: 5rem;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 20px;
 
-    span {
-        text-transform: uppercase;
+    span:nth-of-type(1) {
+        color: #fff;
+    }
+    span:nth-of-type(2) {
         color: var(--main-color);
     }
 }

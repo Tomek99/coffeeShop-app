@@ -4,10 +4,9 @@ import orders from "../../../data/orders.json";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Support from "../Support/Support";
 import { useState, useEffect } from "react";
-import ReactPaginate from "react-paginate";
-import { RiArrowLeftSLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import Filter from "./Filter/Filter";
+import Pagination from "../../Pagination/Pagination";
 
 function Orders() {
   const navigate = useNavigate();
@@ -17,11 +16,7 @@ function Orders() {
   const pagesVisited = pageNumber * ordersPerPage;
   const pageCount = Math.round(orders.length / ordersPerPage);
 
-  const displayOrders = orders
-    .slice(pagesVisited, pagesVisited + ordersPerPage)
-    .map((item, index) => <OrderSummary item={item} key={index} />);
-
-  const handleChange = ({ selected }) => {
+  const handleChangePage = ({ selected }) => {
     setPageNumber(selected);
 
     navigate({
@@ -36,24 +31,19 @@ function Orders() {
       left: 0,
       behavior: "instant",
     });
-  }, []);
+  }, [pageNumber]);
   return (
     <>
       <header style={{ fontSize: "2.5rem" }}>Orders</header>
       <Filter />
-      <div className={styles.divOrders}>{displayOrders}</div>
-      <div className={styles.displayPage}>
-        <ReactPaginate
-          previousLabel={<RiArrowLeftSLine size={25} />}
-          nextLabel="Next "
-          pageCount={pageCount}
-          onPageChange={handleChange}
-          containerClassName={styles.paginationBttns}
-          previousLinkClassName={styles.previousBttn}
-          nextLinkClassName={styles.nextBttn}
-          pageClassName={styles.pageNumbers}
-        ></ReactPaginate>
+      <div className={styles.divOrders}>
+        {orders
+          .slice(pagesVisited, pagesVisited + ordersPerPage)
+          .map((item, index) => (
+            <OrderSummary item={item} key={index} />
+          ))}
       </div>
+      <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
       <Support />
     </>
   );

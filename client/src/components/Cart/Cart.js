@@ -43,12 +43,15 @@ function Cart({ isCartOpen, handleCart }) {
         </Link>
 
         <p className={styles.bill} style={{ color: "rgb(51, 220, 32)" }}>
-          Save: <span className={styles.price}>${basketPrice.save}</span>
+          Save:{" "}
+          <span className={styles.price}>${basketPrice.save.toFixed(2)}</span>
         </p>
 
         <p className={styles.bill}>
           Total cost:
-          <span className={styles.price}>${basketPrice.currentPrice}</span>
+          <span className={styles.price}>
+            ${basketPrice.currentPrice.toFixed(2)}
+          </span>
         </p>
       </div>
     </div>

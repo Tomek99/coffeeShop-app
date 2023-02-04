@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./ProductDetalis.module.scss";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -31,6 +31,14 @@ function ProductDetails({ products }) {
     if (quantity === 1) setQuantity(1);
     else setQuantity(quantity - 1);
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
   return (
     <div className={styles.ProductDetails}>
       <div className={styles.productDetailsSection}>

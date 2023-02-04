@@ -5,23 +5,26 @@ import styles from "./CartList.module.scss";
 import PropTypes from "prop-types";
 
 function BasketList({ item }) {
-  const { id, name, imageUrl, newPrice, oldPrice, quantity } = item;
+  const { _id, name, imageUrl, newPrice, oldPrice, quantity } = item;
 
   const { deleteItem } = useContext(Context);
   return (
-    <div className={styles.SingleProduct} key={id}>
+    <div className={styles.SingleProduct} key={_id}>
       <img src={"/" + imageUrl} alt={name} />
       <div className={styles.productDetails}>
         <h2>{name}</h2>
         <p>
           <span className={styles.newPrice}>${newPrice} </span>
-          <span className={styles.oldPrice}> ${oldPrice}</span>
+          <span className={styles.oldPrice}>
+            {" "}
+            {Boolean(oldPrice) ? oldPrice : null}
+          </span>
         </p>
       </div>
       <span>{quantity}</span>
       <button
         className={styles.btnDeleteProduct}
-        onClick={() => deleteItem(id, newPrice, oldPrice)}
+        onClick={() => deleteItem(_id, newPrice, oldPrice)}
       >
         <ImBin size={18} />
       </button>

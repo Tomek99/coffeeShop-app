@@ -34,8 +34,8 @@ import {
 function App() {
   const [basketItems, setBasketItems] = useState([]);
   const [wishList, setWishList] = useState([]);
-  const [basketPrice, setBasketPrice] = useState({ currentPrice: 0, save: 0 });
-  const [basketQuantity, setBasketQuantity] = useState(0);
+  const [basketPrice, setCartPrice] = useState({ currentPrice: 0, save: 0 });
+  const [basketQuantity, setCartQuantity] = useState(0);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ function App() {
 
   function addItem(item) {
     const newItemIndex = basketItems.findIndex(
-      (element) => element.id === item.id
+      (element) => element._id === item._id
     );
 
     if (newItemIndex === -1) {
@@ -79,46 +79,67 @@ function App() {
       setBasketItems(newArr);
     }
 
-    setBasketQuantity(basketQuantity + item.quantity);
-
-    setBasketPrice((prevPrice) => ({
-      ...prevPrice,
-      currentPrice:
-        Math.round(
-          (prevPrice.currentPrice + item.newPrice * item.quantity) * 100
-        ) / 100,
-      save:
-        Math.round(
-          (prevPrice.save + (item.oldPrice - item.newPrice) * item.quantity) *
-            100
-        ) / 100,
-    }));
+    setCartQuantity(basketQuantity + item.quantity);
+    appendPrice(item.newPrice, item.oldPrice, item.quantity);
   }
 
   function deleteItem(id, newPrice, oldPrice) {
-    const basketList = basketItems.filter((item) => item.id !== id);
-    const findItem = basketItems.filter((item) => item.id === id);
+    const basketList = basketItems.filter((item) => item._id !== id);
+    const findItem = basketItems.filter((item) => item._id === id);
 
     setBasketItems(basketList);
-    setBasketQuantity(basketQuantity - findItem[0].quantity);
+    setCartQuantity(basketQuantity - findItem[0].quantity);
+    subtractPrice(newPrice, oldPrice, findItem[0].quantity);
+  }
 
-    setBasketPrice((prevPrice) => ({
-      ...prevPrice,
-      currentPrice:
-        Math.round(
-          (prevPrice.currentPrice - newPrice * findItem[0].quantity) * 100
-        ) / 100,
-      save:
-        Math.round(
-          (prevPrice.save - (oldPrice - newPrice) * findItem[0].quantity) * 100
-        ) / 100,
-    }));
+  function appendPrice(newPrice, oldPrice, quantity) {
+    if (Boolean(oldPrice)) {
+      setCartPrice((prevPrice) => ({
+        ...prevPrice,
+        currentPrice:
+          Math.round((prevPrice.currentPrice + newPrice * quantity) * 100) /
+          100,
+        save:
+          Math.round(
+            (prevPrice.save + (oldPrice - newPrice) * quantity) * 100
+          ) / 100,
+      }));
+    } else {
+      setCartPrice((prevPrice) => ({
+        ...prevPrice,
+        currentPrice:
+          Math.round((prevPrice.currentPrice + newPrice * quantity) * 100) /
+          100,
+      }));
+    }
+  }
+
+  function subtractPrice(newPrice, oldPrice, quantity) {
+    if (Boolean(oldPrice)) {
+      setCartPrice((prevPrice) => ({
+        ...prevPrice,
+        currentPrice:
+          Math.round((prevPrice.currentPrice - newPrice * quantity) * 100) /
+          100,
+        save:
+          Math.round(
+            (prevPrice.save - (oldPrice - newPrice) * quantity) * 100
+          ) / 100,
+      }));
+    } else {
+      setCartPrice((prevPrice) => ({
+        ...prevPrice,
+        currentPrice:
+          Math.round((prevPrice.currentPrice - newPrice * quantity) * 100) /
+          100,
+      }));
+    }
   }
 
   function clearTheCart() {
     setBasketItems([]);
-    setBasketQuantity(0);
-    setBasketPrice({ currentPrice: 0, save: 0 });
+    setCartQuantity(0);
+    setCartPrice({ currentPrice: 0, save: 0 });
   }
 
   function addItemWishList(item) {

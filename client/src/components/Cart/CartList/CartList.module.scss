@@ -9,7 +9,7 @@
     img {
         width: 100%;
         max-width: 70px;
-        height: auto;
+        max-height: 110px;
     }
 
     .productDetails {
@@ -21,8 +21,11 @@
         width: 50%;
         font-weight: 300;
 
-        .newPrice {
+        h2 {
+            font-size: 1.5rem;
+            text-align: center;
         }
+
         .oldPrice {
             font-size: 1.2rem;
             color: #ccc;
