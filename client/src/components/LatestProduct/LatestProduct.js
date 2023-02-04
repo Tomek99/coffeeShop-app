@@ -9,6 +9,7 @@ import RatingsStars from "../RatingStars/RatingStars";
 function LatestProduct({ item, isHome }) {
   const { imageUrl, name, newPrice, oldPrice, _id, rate, intensity } = item;
   const { addItem, products } = useContext(Context);
+
   let findProduct = products.find((product) => product._id === _id);
   findProduct.oldPrice = findProduct.oldPrice === null ? 0 : oldPrice;
   findProduct.quantity = 1;

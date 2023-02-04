@@ -1,0 +1,20 @@
+[
+    {
+        "title": "fresh coffee in the morning",
+        "text": "Lorem ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit, Consequuntur? Et Veritatis Velit Nesciunt Odio!",
+        "btnText": "get it now",
+        "url": "/images/home-img1.jpeg"
+    },
+    {
+        "title": "product of the month",
+        "text": "Caffè Crema Dolce",
+        "btnText": "get it now",
+        "url": "/images/home-img2.jpeg"
+    },
+    {
+        "title": "beans ground instant coffee",
+        "text": "",
+        "btnText": "Products",
+        "url": "/images/home-img3.jpeg"
+    }
+]
