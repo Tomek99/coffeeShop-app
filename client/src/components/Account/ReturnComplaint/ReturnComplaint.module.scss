@@ -70,9 +70,10 @@
                 padding: 10px 0;
                 border-radius: 20px;
                 color: #fff;
-                cursor: pointer;
                 border: var(--border);
+                transition: 0.3s linear;
                 font-size: 1.3rem;
+                cursor: pointer;
 
                 &:hover {
                     background-color: var(--main-color);

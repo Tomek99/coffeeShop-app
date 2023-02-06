@@ -4,8 +4,7 @@ const {
   getUsers,
   isUserExist,
   setUser,
-  updateGoals,
-  deleteGoals,
+
   logIn,
 } = require("../controllers/usersController");
 
@@ -17,6 +16,6 @@ router.route("/register/validEmail").post(isUserExist);
 
 router.route("/login").post(logIn);
 
-router.route("/:id").put(updateGoals).delete(deleteGoals);
-
 module.exports = router;
+// updateGoals,
+// deleteGoals,

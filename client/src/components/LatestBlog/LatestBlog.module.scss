@@ -6,10 +6,12 @@
     gap: 10px;
     border: var(--border);
     overflow: hidden;
+    transition: 0.3s linear;
 
     .zoomImage {
         overflow: hidden;
         img {
+            transition: 0.3s linear;
             width: 100%;
         }
     }
@@ -22,6 +24,7 @@
         margin: 10px;
 
         h2 {
+            transition: 0.3s linear;
             font-size: 2rem;
             cursor: pointer;
         }

@@ -11,6 +11,7 @@
     z-index: 55;
     background: var(--black);
     color: #fff;
+    transition: 0.3s linear;
 
     .products {
         flex-grow: 1;

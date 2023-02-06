@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
+const Address = require("../models/addressModel");
 const bcrypt = require("bcrypt");
 
 //@desc GET goals
@@ -22,12 +23,14 @@ const isUserExist = asyncHandler(async (req, res) => {
 const logIn = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email, password });
+  const user = await User.findOne({ email });
 
-  if (!user) {
-    return res.json(false);
+  if (user !== null && (await bcrypt.compare(password, user.password))) {
+    return res.status(200).json(user);
+  } else {
+    res.status(400);
+    throw new Error("Wrong password or email");
   }
-  return res.status(200).json(user);
 });
 
 //@desc Set goals
@@ -45,58 +48,29 @@ const setUser = asyncHandler(async (req, res) => {
     throw new Error("Add text");
   }
   const salt = await bcrypt.genSalt(10);
-  const hasshedPassword = await bcrypt.hash(req.body.password, salt);
+  const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
   const user = await User.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    password: hasshedPassword,
     email: req.body.email,
+    password: hashedPassword,
+    number: null,
+    address: await Address.create({
+      addresses: [],
+    }),
   });
 
-  console.log(user);
   res.send(user);
-
   res.status(200);
-});
-
-//@desc Update goals
-//@route PUT /api/goals
-//@access Private
-const updateGoals = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-  if (!user) {
-    res.status(400);
-    throw new Error("User not found");
-  }
-
-  const updatedUser = await User.findByIdAndUpdate(
-    req.params.id,
-    { $set: req.body },
-    { new: true }
-  );
-  res.status(200).json(updatedUser);
-});
-
-//@desc Delete goals
-//@route DELETE /api/goals
-//@access Private
-const deleteGoals = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-  if (!user) {
-    res.status(400);
-    throw new Error("User not found");
-  }
-
-  const deleteUser = await User.findByIdAndDelete(req.params.id, { new: true });
-  res.send(deleteUser);
 });
 
 module.exports = {
   getUsers,
   isUserExist,
   setUser,
-  updateGoals,
-  deleteGoals,
   logIn,
 };
+
+// updateGoals,
+// deleteGoals,

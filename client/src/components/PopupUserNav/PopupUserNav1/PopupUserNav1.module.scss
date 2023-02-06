@@ -46,6 +46,7 @@
             justify-content: center;
             padding: 5px 0;
             border-radius: 20px;
+            transition: 0.3s linear;
             cursor: pointer;
 
             a {
@@ -92,6 +93,7 @@
                 text-transform: none;
                 color: #fff;
                 padding: 15px 10px;
+                transition: 0.3s linear;
 
                 &:hover {
                     background-color: var(--grey);
@@ -117,6 +119,7 @@
             background-color: transparent;
             color: #fff;
             border-radius: 18px;
+            transition: 0.3s linear;
             cursor: pointer;
 
             &:hover {

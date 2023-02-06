@@ -14,6 +14,7 @@
     font-size: 1.6rem;
     list-style: none;
     z-index: 55;
+    transition: 0.3s linear;
 
     .userName {
         padding: 20px 0 0 15px;
@@ -43,6 +44,7 @@
             justify-content: stretch;
             padding: 10px 0;
             border-radius: 20px;
+            transition: 0.3s linear;
             cursor: pointer;
 
             a {
@@ -50,6 +52,7 @@
                 color: #fff;
                 text-transform: none;
                 text-align: center;
+                transition: 0.3s linear;
             }
 
             &:nth-of-type(1) {
@@ -91,6 +94,7 @@
                 text-transform: none;
                 color: #fff;
                 padding: 15px 15px;
+                transition: 0.3s linear;
                 &:hover {
                     background-color: var(--grey);
                 }
@@ -113,6 +117,7 @@
             font-size: 1.6rem;
             color: #fff;
             border-radius: 18px;
+            transition: 0.3s linear;
             cursor: pointer;
 
             &:hover {

@@ -18,10 +18,11 @@
         border-radius: 20px;
         margin: 0 50px;
         text-align: center;
-        cursor: pointer;
         color: #fff;
         font-size: 1.8rem;
         border: var(--border);
+        transition: 0.3s linear;
+        cursor: pointer;
 
         &:hover {
             background: var(--main-color);

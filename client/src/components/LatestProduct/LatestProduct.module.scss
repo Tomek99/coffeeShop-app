@@ -26,6 +26,7 @@
             width: 4.5rem;
             height: 4.5rem;
             border: var(--border);
+            transition: 0.3s linear;
             cursor: pointer;
 
             svg {
@@ -42,6 +43,7 @@
     .middleOfproduct {
         align-self: stretch;
         text-align: center;
+
         img {
             max-width: 140px;
             max-height: 230px;

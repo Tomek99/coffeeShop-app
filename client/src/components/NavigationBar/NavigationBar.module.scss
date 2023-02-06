@@ -51,6 +51,7 @@
             li > a {
                 position: relative;
                 color: #fff;
+                transition: 0.3s linear;
             }
             a:hover {
                 color: var(--main-color);

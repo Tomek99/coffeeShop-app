@@ -8,6 +8,7 @@ import { Context } from "../../Contexts/Context";
 import { Formik, Form, Field } from "formik";
 import ErrorMessage from "../ErrorMessage/ErrMessage";
 import * as Yup from "yup";
+
 import axios from "axios";
 
 const validationSchema = Yup.object({
@@ -36,12 +37,12 @@ function SignIn() {
   const onSubmit = async (values, { setSubmitting }) => {
     setError(null);
     let isSuccess = await axios.post(
-      "http://localhost:5000/api/goals/login",
+      "http://localhost:5000/api/users/login",
       values
     );
 
-    if (isSuccess.data) {
-      logIn();
+    if (isSuccess.status === 200) {
+      logIn(isSuccess.data);
     } else {
       setError("Invalid email or password");
     }

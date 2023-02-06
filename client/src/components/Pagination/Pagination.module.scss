@@ -16,6 +16,7 @@
             padding: 5px;
             background-color: var(--blue);
             border-radius: 50%;
+            transition: 0.3s linear;
             cursor: pointer;
 
             &:hover {
@@ -30,6 +31,7 @@
             padding: 5px 15px;
             border-radius: 16px;
             background-color: var(--blue);
+            transition: 0.3s linear;
             cursor: pointer;
 
             &:hover {
@@ -44,8 +46,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: 0.3s linear;
             cursor: pointer;
-            transition: none;
 
             a {
                 padding: 8px;

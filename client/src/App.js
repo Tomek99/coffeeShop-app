@@ -37,6 +37,15 @@ function App() {
   const [basketPrice, setCartPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setCartQuantity] = useState(0);
   const [products, setProducts] = useState([]);
+  const [user, setUser] = useState(() => {
+    const storeValue = localStorage.getItem("user-data");
+    return typeof storeValue == "string" ? JSON.parse(storeValue) : {};
+  });
+
+  const [isLogIn, setIsLogIn] = useState(() => {
+    const storedValue = localStorage.getItem("is-logged");
+    return storedValue === "true" ? true : false;
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,19 +56,17 @@ function App() {
     fetchData();
   }, []);
 
-  const [isLogIn, setIsLogIn] = useState(() => {
-    const storedValue = localStorage.getItem("is-logged");
-    return storedValue === "true" ? true : false;
-  });
-
-  function logIn() {
+  function logIn(data) {
     setIsLogIn(true);
+    setUser(data);
+    localStorage.setItem("user-data", JSON.stringify(data));
     localStorage.setItem("is-logged", true);
   }
 
   function logOut() {
     setIsLogIn(false);
-
+    setUser({});
+    localStorage.setItem("user-data", {});
     localStorage.setItem("is-logged", false);
   }
 
@@ -160,6 +167,7 @@ function App() {
         basketPrice,
         basketQuantity,
         products,
+        user,
       }}
     >
       <section className="columnWeb">
@@ -218,7 +226,7 @@ function App() {
             <Route path="orders" element={<Orders />} />
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />
-            <Route path="order-data" element={<OrderData />} />
+            <Route path="address" element={<OrderData />} />
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="wish-list" element={<Wish />} />

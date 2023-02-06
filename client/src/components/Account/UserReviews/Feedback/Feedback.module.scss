@@ -4,6 +4,7 @@
     box-shadow: var(--shadow-thin);
     background-color: var(--black);
     padding: 12px;
+    transition: 0.3s linear;
     cursor: pointer;
 
     &:hover {

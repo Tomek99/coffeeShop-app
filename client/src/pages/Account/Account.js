@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { UserNavigation } from "../../components";
+
 import styles from "./Account.module.scss";
 
 function Account() {

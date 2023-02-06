@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import React, { useContext, useState } from "react";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import ErrMessage from "../../ErrorMessage/ErrMessage";
 import styles from "./SignUpForm.module.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../../Contexts/Context";
+import signup_fields from "../../../data/signup_fields.json";
+import CheckBoxGroup from "./CheckBoxGroup/CheckBoxGroup";
 
 const initialValues = {
   firstName: "",
@@ -30,7 +32,7 @@ const validationSchema = Yup.object({
     .required("Required")
     .test("Unique Email", "Email already exists", async (email) => {
       const { data: success } = await axios.post(
-        "http://localhost:5000/api/goals/register/validEmail",
+        "http://localhost:5000/api/users/register/validEmail",
         { email: email }
       );
       return success;
@@ -46,7 +48,6 @@ const validationSchema = Yup.object({
     "passwords-match",
     "Passwords must match",
     function (value) {
-      console.log(this.parent.password);
       return this.parent.password === value;
     }
   ),
@@ -56,56 +57,42 @@ const validationSchema = Yup.object({
   ),
 });
 
-const fieldData = [
-  {
-    type: "text",
-    name: "firstName",
-    placeholder: "First name",
-  },
-  {
-    type: "text",
-    name: "lastName",
-    placeholder: "Last name",
-  },
-  {
-    type: "email",
-    name: "email",
-    placeholder: "E-mail",
-  },
-  {
-    type: "password",
-    name: "password",
-    placeholder: "Password",
-  },
-  {
-    type: "password",
-    name: "passwordConfirmation",
-    placeholder: "Confirm password",
-  },
-];
-
 function SignUpForm() {
+  const [error, setError] = useState(null);
   const { logIn } = useContext(Context);
   const navigate = useNavigate();
 
-  function navigateSignUp() {
+  function navigateToHome() {
     navigate("/");
   }
 
-  function onSubmit(values, { setSubmitting, resetForm }) {
-    axios
-      .post("http://localhost:5000/api/goals", values)
-      // .then(() => {
-      //   alert(JSON.stringify(values, null, 2));
-      // })
-      .catch((err) => {
-        console.log(err);
-      });
+  function handleError(flag) {
+    if (flag) setError();
+    else setError("Someting went wrong, try again");
+  }
 
-    setSubmitting(false);
-    resetForm();
-    logIn();
-    navigateSignUp();
+  async function onSubmit(values, { setSubmitting, resetForm }) {
+    const postData = async () => {
+      try {
+        const response = await axios.post(
+          "http://localhost:5000/api/users",
+          values
+        );
+        if (response.status === 200) return true;
+        return false;
+      } catch (err) {
+        return false;
+      }
+    };
+    const postRequest = postData();
+
+    if (await postRequest) {
+      setSubmitting(false);
+      resetForm();
+      logIn();
+      navigateToHome();
+      handleError(true);
+    } else handleError(false);
   }
 
   return (
@@ -118,7 +105,7 @@ function SignUpForm() {
     >
       {({ setFieldValue, values }) => (
         <Form className={styles.formInputs}>
-          {fieldData.map((item) => (
+          {signup_fields.map((item) => (
             <div className={styles.formInput} key={item.name}>
               <Field
                 type={item.type}
@@ -130,61 +117,8 @@ function SignUpForm() {
               <ErrMessage name={item.name} />
             </div>
           ))}
-
-          <div role="group" className={styles.checkboxGroup}>
-            <h3>Formal consents</h3>
-            <label>
-              <Field
-                type="checkbox"
-                name="checkAll"
-                className={styles.inputCheckbox}
-                onClick={() => {
-                  if (values.checkAll) {
-                    setFieldValue("checked", (values.checked = []));
-                    setFieldValue("acceptTerms", (values.acceptTerms = false));
-                  } else {
-                    setFieldValue(
-                      "checked",
-                      (values.checked = ["Two", "Three"])
-                    );
-                    setFieldValue("acceptTerms", (values.acceptTerms = true));
-                  }
-                }}
-              />
-              Check all
-            </label>
-            <label>
-              <Field
-                type="checkbox"
-                name="acceptTerms"
-                className={styles.inputCheckbox}
-              />
-              Accept Terms & Conditions*
-            </label>
-            <ErrorMessage name="acceptTerms">
-              {(msg) => <div className={styles.checkBoxMessage}>{msg}</div>}
-            </ErrorMessage>
-
-            <label>
-              <Field
-                type="checkbox"
-                name="checked"
-                value="Two"
-                className={styles.inputCheckbox}
-              />
-              I want to receive information about current offers
-              <br /> and special one in the e-mail message.
-            </label>
-            <label>
-              <Field
-                type="checkbox"
-                name="checked"
-                value="Three"
-                className={styles.inputCheckbox}
-              />
-              I want to receive offers matched to my needs.
-            </label>
-          </div>
+          <p className={styles.wrongUrl}>{error}</p>
+          <CheckBoxGroup setFieldValue={setFieldValue} values={values} />
           <button type="submit" className={styles.btnSignUp}>
             Sign up
           </button>

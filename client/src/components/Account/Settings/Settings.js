@@ -1,25 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { Context } from "../../../Contexts/Context";
 import Support from "../Support/Support";
 import AccountData from "./AccountData/AccountData";
 import ConsentForm from "./ConsentForm/ConsentForm";
 import styles from "./Settings.module.scss";
 
 function Settings() {
+  const { user } = useContext(Context);
+
   const data = [
     {
       title: "Your data",
-      content: "111 222 333",
-      fullName: "Tomasz Skupień",
+      content: user.number,
+      fullName: `${user.firstName} ${user.lastName}`,
       btnText: "Edit",
     },
     {
       title: "E-mail address",
-      content: "test@gmail.com",
+      content: user.email,
       btnText: "Change",
     },
     {
       title: "Password",
-      content: "fawfawf",
+      content: user.password.slice(0, 8),
       btnText: "Change",
     },
   ];

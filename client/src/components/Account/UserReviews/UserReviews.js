@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./UserReviews.module.scss";
 import Support from "../Support/Support";
 import Review from "./Review/Review";
-import Product from "./Product/Product";
+import Feedback from "./Feedback/Feedback";
 
 function UserReviews() {
   useEffect(() => {
@@ -20,9 +20,9 @@ function UserReviews() {
         <span>&nbsp;(5)</span>
       </div>
       <div className={styles.divColumn}>
-        <Product />
-        <Product />
-        <Product />
+        <Feedback />
+        <Feedback />
+        <Feedback />
       </div>
       <div className={styles.divRow}>
         <h2>Your reviews</h2>

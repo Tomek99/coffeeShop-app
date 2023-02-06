@@ -10,13 +10,21 @@ const userSchema = mongoose.Schema(
       type: String,
       require: [true, "Please add a text value"],
     },
+    email: {
+      type: String,
+      require: true,
+    },
     password: {
       type: String,
       require: true,
     },
-    email: {
+    number: {
       type: String,
-      require: true,
+      require: false,
+    },
+    address: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Address",
     },
   },
   {

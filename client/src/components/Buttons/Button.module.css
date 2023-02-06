@@ -5,6 +5,8 @@
     color: #fff;
     font-size: 1.7rem;
     cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s linear;
 }
 
 .btn:hover {

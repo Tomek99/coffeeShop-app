@@ -33,8 +33,9 @@
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            cursor: pointer;
+            transition: 0.3s linear;
             background-color: var(--main-color);
+            cursor: pointer;
         }
 
         .iconArrow {

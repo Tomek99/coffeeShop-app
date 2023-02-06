@@ -29,6 +29,7 @@
         }
 
         a:hover svg {
+            transition: 0.3s linear;
             transform: rotate(360deg);
         }
     }
@@ -42,6 +43,7 @@
         li {
             border: var(--border);
             padding: 5px 10px 5px 10px;
+            transition: 0.3s linear;
             a {
                 color: #fff;
             }

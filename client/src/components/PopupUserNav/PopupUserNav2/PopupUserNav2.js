@@ -23,8 +23,8 @@ function PopupUserNav2({ isAsideOpen, handleAside }) {
       element: <MdOutlineReviews size={20} />,
     },
     {
-      name: "Order data",
-      path: "order-data",
+      name: "Address",
+      path: "address",
       element: <BsTruck size={20} />,
     },
     {

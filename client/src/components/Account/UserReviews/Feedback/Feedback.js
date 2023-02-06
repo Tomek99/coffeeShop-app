@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Product.module.scss";
+import styles from "./Feedback.module.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import RatingsStars from "../../../RatingStars/RatingStars";
 
-function Product() {
+function Feedback() {
   return (
     <div className={styles.Product}>
       <div className={styles.divRowFirst}>
@@ -34,4 +34,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default Feedback;

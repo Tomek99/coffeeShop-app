@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./UserNavigation.module.scss";
@@ -7,6 +7,11 @@ import { BsHeart, BsBoxSeam, BsTruck } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineReviews } from "react-icons/md";
 import { RiFileList3Line } from "react-icons/ri";
+import { Context } from "../../../Contexts/Context";
+import user_navigation from "../../../data/user_naviagation.json";
+
+// const navList = user_navigation.map((item) => {
+//   return { ...item, element: JSON.parse(item.element) };
 
 const navList = [
   { name: "Orders", path: "/orders", element: <RiFileList3Line size={20} /> },
@@ -22,8 +27,8 @@ const navList = [
     element: <MdOutlineReviews size={20} />,
   },
   {
-    name: "Order data",
-    path: "/order-data",
+    name: "Address",
+    path: "/address",
     element: <BsTruck size={20} />,
   },
   {
@@ -34,11 +39,12 @@ const navList = [
 ];
 
 function UserNavigation() {
+  const { user } = useContext(Context);
   return (
     <div className={styles.UserNavigation}>
       <div className={styles.divGreeting}>
         <p>Hi,</p>
-        <p className={styles.pName}>Tomasz</p>
+        <p className={styles.pName}>{user.firstName}</p>
       </div>
       <div className={styles.navList}>
         {navList.map((item) => (

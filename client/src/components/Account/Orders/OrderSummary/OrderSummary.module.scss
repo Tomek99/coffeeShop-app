@@ -1,6 +1,6 @@
 .OrderSummary {
     display: flex;
-
+    transition: 0.3s linear;
     gap: 10px;
     border: var(--border);
     border-radius: 12px;
