@@ -37,15 +37,15 @@ function App() {
   const [basketPrice, setCartPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setCartQuantity] = useState(0);
   const [products, setProducts] = useState([]);
-
-  const [user, setUser] = useState(() => {
-    const storeValue = localStorage.getItem("user-data");
-    return typeof storeValue == "string" ? JSON.parse(storeValue) : {};
-  });
-
   const [isLogIn, setIsLogIn] = useState(() => {
     const storedValue = localStorage.getItem("is-logged");
     return storedValue === "true" ? true : false;
+  });
+  const [user, setUser] = useState(() => {
+    const storeValue = localStorage.getItem("user-data");
+    return typeof storeValue == "string" && isLogIn
+      ? JSON.parse(storeValue)
+      : {};
   });
 
   useEffect(() => {
@@ -64,8 +64,7 @@ function App() {
   function logOut() {
     setIsLogIn(false);
     setUser({});
-    localStorage.setItem("user-data", {});
-    localStorage.setItem("is-logged", false);
+    localStorage.clear();
   }
 
   function addItem(item) {

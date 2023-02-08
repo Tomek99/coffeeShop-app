@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../../../Contexts/Context";
 import axios from "axios";
 import AddressItem from "./AddressItem/AddressItem";
-import BtnAddAddress from "./BtnAddAddress/BtnAddAddress";
+import BtnAdd from "./BtnAdd/BtnAdd";
 import styles from "./Address.module.scss";
 import Support from "../Support/Support";
 import { useWindowWidth } from "@react-hook/window-size";
+
 function Address() {
   const { user } = useContext(Context);
   const [address, setAddress] = useState([]);
@@ -30,17 +31,33 @@ function Address() {
       <div className={styles.secondDiv}>
         <h3>Recipient details and delivery addresses</h3>
         <div className={styles.btnHide}>
-          {address.length !== 0 ? <BtnAddAddress /> : null}
+          {address.length !== 0 ? <BtnAdd name="address" /> : null}
         </div>
       </div>
       <div className={styles.thirdDiv}>
         {address.map((item, index) => (
           <AddressItem item={item} key={index} />
         ))}
+        <div>
+          {address.length === 0 || width < 560 ? (
+            <BtnAdd name="address" />
+          ) : null}
+        </div>
       </div>
       <div>
-        {address.length === 0 || width < 560 ? <BtnAddAddress /> : null}
+        <div className={styles.secondDiv}>
+          <h3>Invoice details</h3>
+          <div className={styles.btnHide}>
+            {address.length !== 0 ? <BtnAdd name="invoice" /> : null}
+          </div>
+        </div>
+        <div>
+          {address.length === 0 || width < 560 ? (
+            <BtnAdd name="invoice" />
+          ) : null}
+        </div>
       </div>
+
       <Support />
     </div>
   );

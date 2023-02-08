@@ -11,7 +11,7 @@ import { Context } from "../../../Contexts/Context";
 import { FaRegUser } from "react-icons/fa";
 
 function PopupUserNav2({ isAsideOpen, handleAside }) {
-  const { isLogIn, logOut } = useContext(Context);
+  const { isLogIn, logOut, user } = useContext(Context);
 
   const navList = [
     { name: "Account", path: "account", element: <FaRegUser size={20} /> },
@@ -46,7 +46,7 @@ function PopupUserNav2({ isAsideOpen, handleAside }) {
         {isLogIn ? (
           <div className={styles.userName}>
             <p>Hi,</p>
-            <p>Tomasz</p>
+            <p>{user.firstName}</p>
           </div>
         ) : (
           <div className={styles.btnSignIn_UpSection}>
