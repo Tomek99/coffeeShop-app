@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+/* @import 'node_modules/modern-normalize/modern-normalize.css'; */
 
 * {
   box-sizing: border-box;
@@ -27,16 +28,18 @@ html {
   overflow-x: hidden;
   scroll-padding-top: 9rem;
   scroll-behavior: smooth;
-  /* overflow:hidden; */
-  height: 100%;
 }
 
 body {
   background: var(--bg);
-  min-height: 100%;
-  position: relative;
 }
 
+#root {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}
 section.columnWeb {
   display: flex;
   flex-direction: column;

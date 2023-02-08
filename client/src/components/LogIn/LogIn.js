@@ -36,7 +36,7 @@ function SignIn() {
 
   const onSubmit = async (values, { setSubmitting }) => {
     setError(null);
-    let isSuccess = await axios.post(
+    const isSuccess = await axios.post(
       "http://localhost:5000/api/users/login",
       values
     );

@@ -168,4 +168,14 @@
     .navMenu {
         width: 40%;
     }
+
+    .quantityProductsInBasket {
+        width: 20px !important;
+        height: 20px !important;
+        position: absolute;
+        top: 0;
+        right: 4px !important;
+        bottom: auto !important;
+        font-size: 1.2rem !important;
+    }
 }

@@ -20,11 +20,12 @@ function NavigationBar(props) {
     { name: "Home", path: "/" },
     { name: "Products", path: "products" },
     { name: "Menu", path: "menu" },
-    { name: "Review", path: "reviews" },
     { name: "About", path: "about-us" },
     { name: "Contact", path: "contact" },
     { name: "Blog", path: "blog" },
   ];
+
+  // { name: "Review", path: "reviews" },
 
   const [isAsideOpen, setAsideOpen] = useState(false);
   const [isCartOpen, setCartOpen] = useState(false);
@@ -139,11 +140,6 @@ function NavigationBar(props) {
               <FaRegUser size={30} color={"#fff"} />
             </button>
 
-            <PopupUserNav2
-              isAsideOpen={isAsideOpen}
-              handleAside={handleAside}
-            />
-
             <button
               className={styles.btnDisplay}
               onClick={() => handleCart(location.pathname)}
@@ -160,7 +156,10 @@ function NavigationBar(props) {
                 {basketQuantity}
               </span>
             </button>
-
+            <PopupUserNav2
+              isAsideOpen={isAsideOpen}
+              handleAside={handleAside}
+            />
             <Cart
               handleCart={handleCart}
               isCartOpen={isCartOpen}

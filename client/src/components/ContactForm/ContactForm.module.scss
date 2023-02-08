@@ -45,3 +45,20 @@
         flex-basis: 60% !important;
     }
 }
+@media screen and (max-width: 700px) {
+    .formContact {
+        flex-basis: 70% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .formContact {
+        flex-basis: 80% !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .formContact {
+        flex-basis: 90% !important;
+    }
+}

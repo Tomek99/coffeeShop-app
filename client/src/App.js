@@ -20,7 +20,7 @@ import {
   ProductDetails,
   Orders,
   UserReviews,
-  OrderData,
+  Address,
   Settings,
   ReturnComplaint,
   LogIn,
@@ -37,6 +37,7 @@ function App() {
   const [basketPrice, setCartPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setCartQuantity] = useState(0);
   const [products, setProducts] = useState([]);
+
   const [user, setUser] = useState(() => {
     const storeValue = localStorage.getItem("user-data");
     return typeof storeValue == "string" ? JSON.parse(storeValue) : {};
@@ -48,12 +49,9 @@ function App() {
   });
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios("http://localhost:5000/api/products");
-      setProducts(result.data);
-    };
-
-    fetchData();
+    axios
+      .get("http://localhost:5000/api/products")
+      .then(({ data }) => setProducts(data));
   }, []);
 
   function logIn(data) {
@@ -170,10 +168,9 @@ function App() {
         user,
       }}
     >
+      {" "}
+      <NavigationBar basketQuantity={basketQuantity} />
       <section className="columnWeb">
-        {/* <Provider store={store}> */}
-
-        <NavigationBar basketQuantity={basketQuantity} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
@@ -226,17 +223,15 @@ function App() {
             <Route path="orders" element={<Orders />} />
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />
-            <Route path="address" element={<OrderData />} />
+            <Route path="address" element={<Address />} />
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-
-        <Footer />
-        {/* </Provider> */}
       </section>
+      <Footer />
     </Context.Provider>
   );
 }

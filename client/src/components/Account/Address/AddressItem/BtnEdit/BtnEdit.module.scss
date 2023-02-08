@@ -1,0 +1,13 @@
+.btnEdit {
+    padding: 10px 15px;
+    font-size: 13px;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 18px;
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.3s ease-in-out;
+        background-color: var(--grey);
+    }
+}

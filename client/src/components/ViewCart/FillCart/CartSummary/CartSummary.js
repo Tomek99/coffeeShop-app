@@ -29,11 +29,11 @@ function CartSummary() {
         <div>
           <p>
             <span>Save</span>
-            <span>${basketPrice.save}</span>
+            <span>${basketPrice.save.toFixed(2)}</span>
           </p>
           <p>
             <span>Total cost</span>
-            <span>${basketPrice.currentPrice}</span>
+            <span>${basketPrice.currentPrice.toFixed(2)}</span>
           </p>
         </div>
         <button>Checkout</button>
