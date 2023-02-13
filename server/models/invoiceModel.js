@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 
-const addressSchema = mongoose.Schema(
+const invoiceSchema = new mongoose.Schema(
   {
-    addresses: [
+    invoices: [
       {
-        uniequId: {
+        NIP: {
           type: String,
-          require: true,
-          unique: true,
+          require: false,
         },
         name: {
           type: String,
@@ -17,23 +16,11 @@ const addressSchema = mongoose.Schema(
           type: String,
           require: false,
         },
-        house: {
-          type: String,
-          require: false,
-        },
         ZIP_code: {
           type: String,
           require: false,
         },
         city: {
-          type: String,
-          require: false,
-        },
-        number: {
-          type: String,
-          require: true,
-        },
-        email: {
           type: String,
           require: true,
         },
@@ -45,4 +32,4 @@ const addressSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Address", addressSchema);
+module.exports = mongoose.model("Invoice", invoiceSchema);

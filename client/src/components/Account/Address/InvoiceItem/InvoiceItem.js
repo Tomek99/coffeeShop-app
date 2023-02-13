@@ -1,20 +1,19 @@
 import React from "react";
+import styles from "./InvoiceItem.module.scss";
 import BtnDelete from "../BtnDelete/BtnDelete";
 import BtnEdit from "../BtnEdit/BtnEdit";
 import PropTypes from "prop-types";
-import styles from "./AddressItem.module.scss";
 
-function AddressItem({ item }) {
-  const { name, street, ZIP_code, city, number, email } = item;
+function InvoiceItem({ item }) {
+  const { NIP, name, street, ZIP_code, city } = item;
   return (
     <div className={styles.AddressItem}>
       <div className={styles.content}>
+        <p>{NIP}</p>
         <p className={styles.name}>{name}</p>
         <p>{street}</p>
         <p>{ZIP_code}</p>
         <p>{city}</p>
-        <p>{number}</p>
-        <p>{email}</p>
       </div>
       <div className={styles.buttons}>
         <BtnDelete />
@@ -23,13 +22,12 @@ function AddressItem({ item }) {
     </div>
   );
 }
-AddressItem.propTypes = {
+
+InvoiceItem.propTypes = {
+  NIP: PropTypes.string,
   name: PropTypes.string,
   street: PropTypes.string,
-  ZIP_code: PropTypes.string,
   city: PropTypes.string,
-  number: PropTypes.string,
-  email: PropTypes.string,
+  ZIP_code: PropTypes.string,
 };
-
-export default AddressItem;
+export default InvoiceItem;

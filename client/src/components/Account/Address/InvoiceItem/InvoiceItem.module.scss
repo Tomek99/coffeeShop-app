@@ -1,0 +1,20 @@
+.AddressItem {
+    border: var(--border);
+    border-radius: 8px;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 1.3rem;
+        padding: 16px;
+
+        .name {
+            font-weight: bold;
+        }
+    }
+
+    .buttons {
+        padding: 0 0 12px 4px;
+    }
+}

@@ -29,6 +29,7 @@ import {
   Protected,
   ViewCart,
   AccountContent,
+  OrderDetails,
 } from "./components";
 
 function App() {
@@ -48,12 +49,14 @@ function App() {
       : {};
   });
 
+  /*----------- api request ----------- */
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/products")
       .then(({ data }) => setProducts(data));
   }, []);
 
+  /*----------- login ----------- */
   function logIn(data) {
     setIsLogIn(true);
     setUser(data);
@@ -66,6 +69,8 @@ function App() {
     setUser({});
     localStorage.clear();
   }
+
+  /*----------- cart ----------- */
 
   function addItem(item) {
     const newItemIndex = basketItems.findIndex(
@@ -145,10 +150,13 @@ function App() {
     setCartQuantity(0);
     setCartPrice({ currentPrice: 0, save: 0 });
   }
+  /*----------- wishList ----------- */
 
   function addItemWishList(item) {
     setWishList([...wishList, { ...item }]);
   }
+
+  /*----------- blurScreen ----------- */
 
   return (
     <Context.Provider
@@ -220,6 +228,7 @@ function App() {
           >
             <Route path="account" element={<AccountContent />} />
             <Route path="orders" element={<Orders />} />
+            <Route path="orders/:id" element={<OrderDetails />} />
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />
             <Route path="address" element={<Address />} />

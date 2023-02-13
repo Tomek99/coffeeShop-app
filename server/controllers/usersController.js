@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const Address = require("../models/addressModel");
+const Invoice = require("../models/invoiceModel");
 const bcrypt = require("bcrypt");
 
 //@desc GET goals
@@ -58,6 +59,9 @@ const setUser = asyncHandler(async (req, res) => {
     number: null,
     address: await Address.create({
       addresses: [],
+    }),
+    invoice: await Invoice.create({
+      invoices: [],
     }),
   });
 

@@ -16,6 +16,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/users", require("./routes/usersRoutes"));
 app.use("/api/products", require("./routes/productsRoutes"));
+app.use("/api/addresses", require("./routes/addressesRoutes"));
+app.use("/api/invoices", require("./routes/invoicesRoutes"));
 
 app.use(errorHandler);
 

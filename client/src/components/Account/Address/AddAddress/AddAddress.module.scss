@@ -1,0 +1,45 @@
+.AddAddress {
+    position: fixed;
+    top: 40%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 102;
+    color: #fff;
+    background-color: var(--black);
+    border-radius: 8px;
+    width: 400px;
+
+    .flexBoxDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .headerDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--grey-darken);
+            width: 100%;
+            padding: 10px 15px;
+
+            .headerName {
+                font-size: 2rem;
+            }
+        }
+
+        .columnForm {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 15px 0 15px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .AddData {
+        width: 310px;
+    }
+}

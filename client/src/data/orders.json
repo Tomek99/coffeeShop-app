@@ -1,9 +1,14 @@
 [
     {
         "idNumber": 700005588955,
+        "basketPrize": 500,
+        "supplyPrice": 15,
+        "save": 211,
+        "totalCost": 500,
         "date": "13 september 2022",
         "status": "Completed",
         "deliver": "Pickup at InPost Parcel Machine",
+        "payment": "blik",
         "dataRecipient": {
             "fullName": "Tomasz Skupień",
             "number": "123 123 213",
@@ -14,7 +19,6 @@
             "postalAdress": "37-562",
             "extraInfo": "By the Delikatesy Centrum store"
         },
-        "payment": "blik",
         "dataInvoice": {
             "fullName": "Tomasz Skupień",
             "homeAdress": "595A",
@@ -32,11 +36,7 @@
                 "origin": "Mexico",
                 "rate": "4"
             }
-        ],
-        "basketPrize": 500,
-        "supplyPrice": 15,
-        "save": 211,
-        "totalCost": 500
+        ]
     },
     {
         "idNumber": 700005588909,

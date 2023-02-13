@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./NBarAside.module.scss";
-import { IoCloseSharp } from "react-icons/io5";
+import CloseBtn from "../Buttons/CloseBtn/CloseBtn";
+import PropTypes from "prop-types";
+
 function NBarAside(props) {
   return (
     <div className={styles.basketBar}>
@@ -16,11 +18,11 @@ function NBarAside(props) {
           </span>
         </span>
       )}
-      <button onClick={props.handleBtn} className={styles.btnHamburger}>
-        <IoCloseSharp className={styles.btnIcon} />
-      </button>
+      <CloseBtn handleBtn={props.handleBtn} />
     </div>
   );
 }
-
+NBarAside.propTypes = {
+  handleBtn: PropTypes.func,
+};
 export default NBarAside;

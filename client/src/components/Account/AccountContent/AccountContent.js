@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./AccountContent.module.scss";
 import Support from "../Support/Support";
 import WishProducts from "../WishList/WishProducts/WishProducts";
-import OrderSummary from "../Orders/OrderSummary/OrderSummary";
+import OrderSummary from "../Orders/SingleOrder/SingleOrder";
 import orders from "../../../data/orders.json";
 
 function AccountContent() {

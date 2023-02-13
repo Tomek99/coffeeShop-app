@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../../../Contexts/Context";
 import signup_fields from "../../../data/signup_fields.json";
 import CheckBoxGroup from "./CheckBoxGroup/CheckBoxGroup";
+import FieldComponent from "../../FormikComponents/FieldComponent/FieldComponent";
 
 const initialValues = {
   firstName: "",
@@ -105,17 +106,8 @@ function SignUpForm() {
     >
       {({ setFieldValue, values }) => (
         <Form className={styles.formInputs}>
-          {signup_fields.map((item) => (
-            <div className={styles.formInput} key={item.name}>
-              <Field
-                type={item.type}
-                name={item.name}
-                placeholder={item.placeholder}
-                className={styles.inputText}
-              />
-
-              <ErrMessage name={item.name} />
-            </div>
+          {signup_fields.map((item, index) => (
+            <FieldComponent item={item} key={index} />
           ))}
           <p className={styles.wrongUrl}>{error}</p>
           <CheckBoxGroup setFieldValue={setFieldValue} values={values} />

@@ -10,29 +10,6 @@
     margin-bottom: 20px;
     padding: 0 30px;
     border-bottom: var(--border);
-
-    .btnHamburger {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        background-color: transparent;
-        font-size: 2rem;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        transition: 0.3s linear;
-        cursor: pointer;
-
-        .btnIcon {
-            width: 30px;
-            height: 30px;
-        }
-
-        &:hover {
-            background-color: var(--main-color);
-        }
-    }
 }
 
 @media (max-width: 900px) {

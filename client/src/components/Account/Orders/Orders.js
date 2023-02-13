@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Orders.module.scss";
 import orders from "../../../data/orders.json";
-import OrderSummary from "./OrderSummary/OrderSummary";
+import SingleOrder from "./SingleOrder/SingleOrder";
 import Support from "../Support/Support";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,6 @@ import Pagination from "../../Pagination/Pagination";
 function Orders() {
   const navigate = useNavigate();
   const [pageNumber, setPageNumber] = useState(0);
-
   const ordersPerPage = 5;
   const pagesVisited = pageNumber * ordersPerPage;
   const pageCount = Math.round(orders.length / ordersPerPage);
@@ -40,7 +39,7 @@ function Orders() {
         {orders
           .slice(pagesVisited, pagesVisited + ordersPerPage)
           .map((item, index) => (
-            <OrderSummary item={item} key={index} />
+            <SingleOrder item={item} key={index} />
           ))}
       </div>
       <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
