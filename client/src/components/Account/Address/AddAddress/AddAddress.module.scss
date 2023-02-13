@@ -9,11 +9,11 @@
     border-radius: 8px;
     width: 400px;
 
-    .flexBoxDiv {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+    .GridDiv {
+        display: grid;
+        grid-template-rows: auto 1fr;
         gap: 20px;
+        height: 100%;
 
         .headerDiv {
             display: flex;
@@ -30,10 +30,17 @@
         }
 
         .columnForm {
-            display: flex;
+            display: grid;
             flex-direction: column;
             gap: 20px;
             padding: 0 15px 0 15px;
+
+            .divInputs {
+                display: flex;
+                flex-direction: column;
+                padding: 0 15px 0 15px;
+                gap: 20px;
+            }
         }
     }
 }

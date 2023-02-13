@@ -1,5 +1,6 @@
 .btnDiv {
-    margin-bottom: 20px;
+    align-self: flex-end;
+    margin: 20px 15px;
 
     .btnSave {
         width: 100%;
@@ -9,6 +10,7 @@
         border-radius: 16px;
         padding: 5px 0px;
         transition: 0.3s linear;
+
         cursor: pointer;
 
         &:hover {

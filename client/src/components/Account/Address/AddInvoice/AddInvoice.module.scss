@@ -10,6 +10,8 @@
     width: 400px;
 
     .flexBoxDiv {
+        display: grid;
+        grid-template-rows: auto 1fr;
         height: 100%;
 
         .headerDiv {
@@ -27,17 +29,15 @@
         }
 
         .columnForm {
-            display: flex;
-            flex-direction: column;
-            height: 85%;
+            display: grid;
+            grid-template-rows: auto auto;
             gap: 20px;
-            padding: 0 15px 0 15px;
             margin-top: 20px;
 
             .divInputs {
-                flex-grow: 1;
                 display: flex;
                 flex-direction: column;
+                padding: 0 15px 0 15px;
                 gap: 20px;
             }
         }

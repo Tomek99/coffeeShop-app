@@ -28,7 +28,7 @@ const validationSchema = Yup.object().shape({
 function AddAddress({ handleBlurScreen }) {
   return (
     <div className={styles.AddAddress}>
-      <div className={styles.flexBoxDiv}>
+      <div className={styles.GridDiv}>
         <div className={styles.headerDiv}>
           <header className={styles.headerName}>Add address details </header>
           <CloseBtn handleBtn={handleBlurScreen} />
@@ -38,9 +38,11 @@ function AddAddress({ handleBlurScreen }) {
           validationSchema={validationSchema}
         >
           <Form className={styles.columnForm}>
-            {address_date.map((item, index) => (
-              <FieldComponent item={item} key={index} />
-            ))}
+            <div className={styles.divInputs}>
+              {address_date.map((item, index) => (
+                <FieldComponent item={item} key={index} />
+              ))}
+            </div>
             <SaveBtn />
           </Form>
         </Formik>
