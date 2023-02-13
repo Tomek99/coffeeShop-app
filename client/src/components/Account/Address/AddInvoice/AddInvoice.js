@@ -37,9 +37,11 @@ function AddInvoice({ handleBlurScreen }) {
           validationSchema={validationSchema}
         >
           <Form className={styles.columnForm}>
-            {invoice_date.map((item, index) => (
-              <FieldComponent item={item} key={index} />
-            ))}
+            <div className={styles.divInputs}>
+              {invoice_date.map((item, index) => (
+                <FieldComponent item={item} key={index} />
+              ))}
+            </div>
             <SaveBtn />
           </Form>
         </Formik>

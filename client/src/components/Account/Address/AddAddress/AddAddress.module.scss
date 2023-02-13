@@ -1,6 +1,6 @@
 .AddAddress {
     position: fixed;
-    top: 40%;
+    top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
     z-index: 102;
@@ -39,7 +39,24 @@
 }
 
 @media (max-width: 420px) {
-    .AddData {
-        width: 310px;
+    .AddAddress {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: auto;
+        transform: none;
+
+        .columnForm {
+            gap: 20px !important;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .AddAddress {
+        .columnForm {
+            gap: 15px !important;
+        }
     }
 }

@@ -1,6 +1,6 @@
 .AddInvoice {
     position: fixed;
-    top: 40%;
+    top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
     z-index: 102;
@@ -10,10 +10,7 @@
     width: 400px;
 
     .flexBoxDiv {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        height: 100%;
 
         .headerDiv {
             display: flex;
@@ -32,14 +29,28 @@
         .columnForm {
             display: flex;
             flex-direction: column;
+            height: 85%;
             gap: 20px;
             padding: 0 15px 0 15px;
+            margin-top: 20px;
+
+            .divInputs {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     }
 }
 
 @media (max-width: 420px) {
-    .AddData {
-        width: 310px;
+    .AddInvoice {
+        transform: none;
+        width: auto;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
     }
 }
