@@ -54,7 +54,7 @@ function Address() {
     <AddressContext.Provider value={{ handleBlurScreen }}>
       <div className={styles.Address}>
         <div className={styles.firstDiv}>
-          <header>Ordering details</header>
+          <header>Address details</header>
           <p>
             Here you will find saved addresses and ordering details. Due to this
             you don't have to enter them during the shopping process

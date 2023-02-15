@@ -3,9 +3,9 @@ import BtnDelete from "../../../Buttons/BtnDelete/BtnDelete";
 import BtnEdit from "../../../Buttons/BtnEdit/BtnEdit";
 import PropTypes from "prop-types";
 import styles from "./AddressItem.module.scss";
-import EditData from "../EditData/EditData";
 import DeleteData from "../DeleteData/DeleteData";
 import BlurScreen from "../../BlurScreen/BlurScreen";
+import EditAddress from "./EditAddress/EditAddress";
 
 function AddressItem({ item }) {
   const { name, street, ZIP_code, city, number, email } = item;
@@ -43,7 +43,9 @@ function AddressItem({ item }) {
           <BtnEdit handleShowEdit={handleShowEdit} />
         </div>
       </div>
-      {isVisibleEdit ? <EditData /> : null}
+      {isVisibleEdit ? (
+        <EditAddress userAddress={item} handleBlurScreen={handleBlurScreen} />
+      ) : null}
       {isVisibleDelete ? (
         <DeleteData handleBlurScreen={handleBlurScreen} />
       ) : null}

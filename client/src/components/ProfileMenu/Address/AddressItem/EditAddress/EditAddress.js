@@ -1,13 +1,11 @@
-import React, { useContext } from "react";
-import styles from "./AddAddress.module.scss";
-import { Formik, Form } from "formik";
+import { Form, Formik } from "formik";
+import React from "react";
+import SaveBtn from "../../../../Buttons/SaveBtn/SaveBtn";
+import styles from "./EditAddress.module.scss";
+import FieldComponent from "../../../../FormikComponents/FieldComponent/FieldComponent";
+import address_date from "../../../../../data/address_data.json";
+import CloseBtn from "../../../../Buttons/CloseBtn/CloseBtn";
 import * as Yup from "yup";
-import CloseBtn from "../../../Buttons/CloseBtn/CloseBtn";
-import SaveBtn from "../../../Buttons/SaveBtn/SaveBtn";
-import FieldComponent from "../../../FormikComponents/FieldComponent/FieldComponent";
-import address_date from "../../../../data/address_data.json";
-import { AddressContext } from "../../../../Contexts/AddressContext";
-import PropTypes from "prop-types";
 
 const initialValues = {
   name: "",
@@ -29,17 +27,17 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().email().required("Required"),
 });
 
-function AddAddress() {
-  const { handleBlurScreen } = useContext(AddressContext);
+function EditAddress({ userAddress, handleBlurScreen }) {
+  console.log();
   return (
-    <div className={styles.AddAddress}>
+    <div className={styles.EditAddress}>
       <div className={styles.GridDiv}>
         <div className={styles.headerDiv}>
-          <header className={styles.headerName}>Add address details </header>
+          <header className={styles.headerName}>Edit address details </header>
           <CloseBtn handleBtn={handleBlurScreen} />
         </div>
         <Formik
-          initialValues={initialValues}
+          initialValues={Boolean(userAddress) ? userAddress : initialValues}
           validationSchema={validationSchema}
         >
           <Form className={styles.columnForm}>
@@ -55,7 +53,5 @@ function AddAddress() {
     </div>
   );
 }
-AddAddress.propTypes = {
-  handleBlurScreen: PropTypes.func,
-};
-export default AddAddress;
+
+export default EditAddress;

@@ -1,14 +1,11 @@
-import React, { useContext } from "react";
-import styles from "./AddInvoice.module.scss";
-import { Formik, Form } from "formik";
-import PropTypes from "prop-types";
-import CloseBtn from "../../../Buttons/CloseBtn/CloseBtn";
-import invoice_date from "../../../../data/invoice_data.json";
-import FieldComponent from "../../../FormikComponents/FieldComponent/FieldComponent";
+import { Form, Formik } from "formik";
+import React from "react";
+import CloseBtn from "../../../../Buttons/CloseBtn/CloseBtn";
+import SaveBtn from "../../../../Buttons/SaveBtn/SaveBtn";
+import styles from "./EditInvoice.module.scss";
+import invoice_date from "../../../../../data/invoice_data.json";
+import FieldComponent from "../../../../FormikComponents/FieldComponent/FieldComponent";
 import * as Yup from "yup";
-import SaveBtn from "../../../Buttons/SaveBtn/SaveBtn";
-import { AddressContext } from "../../../../Contexts/AddressContext";
-
 const initialValues = {
   NIP: "",
   name: "",
@@ -25,17 +22,16 @@ const validationSchema = Yup.object().shape({
   city: Yup.string().required("Required"),
 });
 
-function AddInvoice() {
-  const { handleBlurScreen } = useContext(AddressContext);
+function EditInvoice({ handleBlurScreen, userData }) {
   return (
-    <div className={styles.AddInvoice}>
+    <div className={styles.EditInvoice}>
       <div className={styles.flexBoxDiv}>
         <div className={styles.headerDiv}>
           <header className={styles.headerName}>Add invoice details </header>
           <CloseBtn handleBtn={handleBlurScreen} />
         </div>
         <Formik
-          initialValues={initialValues}
+          initialValues={Boolean(userData) ? userData : initialValues}
           validationSchema={validationSchema}
         >
           <Form className={styles.columnForm}>
@@ -44,6 +40,7 @@ function AddInvoice() {
                 <FieldComponent item={item} key={index} />
               ))}
             </div>
+
             <SaveBtn />
           </Form>
         </Formik>
@@ -51,7 +48,5 @@ function AddInvoice() {
     </div>
   );
 }
-AddInvoice.propTypes = {
-  handleBlurScreen: PropTypes.func,
-};
-export default AddInvoice;
+
+export default EditInvoice;

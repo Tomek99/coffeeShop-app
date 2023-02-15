@@ -6,7 +6,6 @@
     z-index: 102;
     color: #fff;
     background-color: var(--black);
-    border-radius: 8px;
     width: 400px;
 
     .GridDiv {
@@ -16,6 +15,7 @@
         height: 100%;
 
         .headerDiv {
+            border-radius: 8px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -31,7 +31,6 @@
 
         .columnForm {
             display: grid;
-            flex-direction: column;
             gap: 10px;
             padding: 0 15px 0 15px;
 

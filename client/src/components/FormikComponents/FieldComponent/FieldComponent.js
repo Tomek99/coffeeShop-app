@@ -18,10 +18,3 @@ function FieldComponent({ item }) {
 }
 
 export default FieldComponent;
-
-// width: 100%;
-// border: var(--border);
-// border-radius: 16px;
-// padding: 10px 0px 10px 10px;
-// background: var(--black);
-// color: #fff;

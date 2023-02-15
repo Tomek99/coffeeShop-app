@@ -10,7 +10,7 @@ function DeleteData({ handleBlurScreen }) {
     <div className={styles.DeleteData}>
       <div className={styles.firstRowDiv}>
         <h3>Are you sure you want to delete this data?</h3>
-        <CloseBtn handleBlurScreen={handleBlurScreen} />
+        <CloseBtn handleBtn={handleBlurScreen} />
       </div>
       <p>
         If you do this, you will not be able to select them when placing a new

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styles from "./InvoiceItem.module.scss";
 import BtnDelete from "../../../Buttons/BtnDelete/BtnDelete";
 import BtnEdit from "../../../Buttons/BtnEdit/BtnEdit";
-import EditData from "../EditData/EditData";
 import DeleteData from "../DeleteData/DeleteData";
 import PropTypes from "prop-types";
 import BlurScreen from "../../BlurScreen/BlurScreen";
+import EditInvoice from "./EditInvoice/EditInvoice";
 
 function InvoiceItem({ item }) {
   const { NIP, name, street, ZIP_code, city } = item;
@@ -42,7 +42,9 @@ function InvoiceItem({ item }) {
           <BtnEdit handleShowEdit={handleShowEdit} />
         </div>
       </div>
-      {isVisibleEdit ? <EditData handleBlurScreen={handleBlurScreen} /> : null}
+      {isVisibleEdit ? (
+        <EditInvoice handleBlurScreen={handleBlurScreen} userData={item} />
+      ) : null}
       {isVisibleDelete ? (
         <DeleteData handleBlurScreen={handleBlurScreen} />
       ) : null}
