@@ -16,15 +16,15 @@ export { default as ProductDetails } from "./ProductDetails/ProductDetails";
 export { default as Notifications } from "./Notifications/Notifications";
 export { default as ViewCart } from "./ViewCart/ViewCart";
 
-export { default as AccountContent } from "./Account/AccountContent/AccountContent";
-export { default as OrderDetails } from "./Account/Orders/SingleOrder/OrderDetails/OrderDetails";
-export { default as Orders } from "./Account/Orders/Orders";
-export { default as UserReviews } from "./Account/UserReviews/UserReviews";
-export { default as Address } from "./Account/Address/Address";
-export { default as Settings } from "./Account/Settings/Settings";
-export { default as ReturnComplaint } from "./Account/ReturnComplaint/ReturnComplaint";
-export { default as WishList } from "./Account/WishList/WishList";
-export { default as UserNavigation } from "./Account/UserNavigation/UserNavigation";
+export { default as AccountContent } from "./ProfileMenu/AccountContent/AccountContent";
+export { default as OrderDetails } from "./ProfileMenu/Orders/SingleOrder/OrderDetails/OrderDetails";
+export { default as Orders } from "./ProfileMenu/Orders/Orders";
+export { default as UserReviews } from "./ProfileMenu/UserReviews/UserReviews";
+export { default as Address } from "./ProfileMenu/Address/Address";
+export { default as Settings } from "./ProfileMenu/Settings/Settings";
+export { default as ReturnComplaint } from "./ProfileMenu/ReturnComplaint/ReturnComplaint";
+export { default as WishList } from "./ProfileMenu/WishList/WishList";
+export { default as UserNavigation } from "./ProfileMenu/UserNavigation/UserNavigation";
 
 export { default as Protected } from "./Protected/Protected";
 export { default as LogIn } from "./LogIn/LogIn";

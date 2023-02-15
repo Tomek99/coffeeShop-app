@@ -1,0 +1,10 @@
+.EditData {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 102;
+    color: #fff;
+    background-color: var(--black);
+    border-radius: 8px;
+}
