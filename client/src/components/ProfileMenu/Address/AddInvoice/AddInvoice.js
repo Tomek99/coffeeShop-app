@@ -27,7 +27,7 @@ const validationSchema = Yup.object().shape({
 });
 
 function AddInvoice({ idInvoices }) {
-  const { handleBlurScreen } = useContext(AddressContext);
+  const { handleBlurScreen, addInvoice } = useContext(AddressContext);
 
   const onSubmit = (values) => {
     const elements = { _id: idInvoices, ...values };
@@ -39,9 +39,9 @@ function AddInvoice({ idInvoices }) {
         );
 
         if (response.status === 200) {
+          addInvoice(response.data.invoices);
           handleBlurScreen();
         }
-        return false;
       } catch (error) {
         console.log(error);
       }

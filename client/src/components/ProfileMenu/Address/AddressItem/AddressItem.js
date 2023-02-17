@@ -44,7 +44,12 @@ function AddressItem({ item, idAddresses }) {
         </div>
       </div>
       {isVisibleEdit ? (
-        <EditAddress userAddress={item} handleBlurScreen={handleBlurScreen} />
+        <EditAddress
+          userAddress={item}
+          handleBlurScreen={handleBlurScreen}
+          idDocuments={idAddresses}
+          idDocument={_id}
+        />
       ) : null}
       {isVisibleDelete ? (
         <DeleteData

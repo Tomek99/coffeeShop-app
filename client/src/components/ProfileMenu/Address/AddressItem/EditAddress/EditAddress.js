@@ -1,11 +1,14 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useContext } from "react";
 import SaveBtn from "../../../../Buttons/SaveBtn/SaveBtn";
 import styles from "./EditAddress.module.scss";
 import FieldComponent from "../../../../FormikComponents/FieldComponent/FieldComponent";
 import address_date from "../../../../../data/address_data.json";
 import CloseBtn from "../../../../Buttons/CloseBtn/CloseBtn";
 import * as Yup from "yup";
+import PropTypes from "prop-types";
+import axios from "axios";
+import { AddressContext } from "../../../../../Contexts/AddressContext";
 
 const initialValues = {
   name: "",
@@ -27,8 +30,29 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().email().required("Required"),
 });
 
-function EditAddress({ userAddress, handleBlurScreen }) {
-  console.log();
+function EditAddress({ userAddress, handleBlurScreen, idDocuments }) {
+  const { editAddress } = useContext(AddressContext);
+
+  const onSubmit = (values) => {
+    const elements = { idDocuments, ...values };
+    const postData = async () => {
+      try {
+        const response = await axios.put(
+          "http://localhost:5000/api/addresses/user-address/edit-address",
+          elements
+        );
+
+        if (response.status === 200) {
+          editAddress(response.data.addresses);
+          handleBlurScreen();
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    postData();
+  };
   return (
     <div className={styles.EditAddress}>
       <div className={styles.GridDiv}>
@@ -39,6 +63,7 @@ function EditAddress({ userAddress, handleBlurScreen }) {
         <Formik
           initialValues={Boolean(userAddress) ? userAddress : initialValues}
           validationSchema={validationSchema}
+          onSubmit={onSubmit}
         >
           <Form className={styles.columnForm}>
             <div className={styles.divInputs}>
@@ -53,5 +78,10 @@ function EditAddress({ userAddress, handleBlurScreen }) {
     </div>
   );
 }
-
+EditAddress.propTypes = {
+  userAddress: PropTypes.object,
+  idDocument: PropTypes.string,
+  idDocuments: PropTypes.string,
+  handleBlurScreen: PropTypes.func,
+};
 export default EditAddress;

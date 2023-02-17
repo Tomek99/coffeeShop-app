@@ -31,7 +31,9 @@ const validationSchema = Yup.object().shape({
 });
 
 function AddAddress({ idAddresses }) {
-  const onSubmit = (values) => {
+  const { addAddress } = useContext(AddressContext);
+
+  const onSubmit = async (values) => {
     const elements = { _id: idAddresses, ...values };
     const postData = async () => {
       try {
@@ -41,6 +43,7 @@ function AddAddress({ idAddresses }) {
         );
 
         if (response.status === 200) {
+          addAddress(response.data.addresses);
           handleBlurScreen();
         }
         return false;

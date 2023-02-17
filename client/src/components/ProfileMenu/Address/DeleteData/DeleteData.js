@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import BtnCancell from "../../../Buttons/BtnCancell/BtnCancell";
 import BtnRemoveData from "../../../Buttons/BtnRemoveData/BtnRemoveData";
 import styles from "./DeleteData.module.scss";
 import CloseBtn from "../../../Buttons/CloseBtn/CloseBtn";
 import axios from "axios";
 import PropTypes from "prop-types";
+import { AddressContext } from "../../../../Contexts/AddressContext";
 
 function DeleteData({
   handleBlurScreen,
@@ -12,20 +13,20 @@ function DeleteData({
   idDocument,
   documentType,
 }) {
+  const { deleteAddress, deleteInvoice } = useContext(AddressContext);
   function deleteDocument() {
     if (documentType === "address") {
       axios
         .put("http://localhost:5000/api/addresses/user-address/deleteAddress", {
           data: { idDocuments, idDocument },
         })
-        .then(() => console.log("Delete successful"));
+        .then(({ data }) => deleteAddress(data.addresses));
     } else {
-      console.log(idDocuments + idDocument);
       axios
         .put("http://localhost:5000/api/invoices/user-invoice/deleteInvoice", {
           data: { idDocuments, idDocument },
         })
-        .then(() => console.log("Delete successful"));
+        .then(({ data }) => deleteInvoice(data.invoices));
     }
 
     handleBlurScreen();

@@ -32,25 +32,62 @@ const setAddress = asyncHandler(async (req, res) => {
   );
   return res.status(200).json(post);
 });
+
 const deleteAddress = asyncHandler(async (req, res) => {
   const { idDocuments, idDocument } = req.body.data;
 
-  const addressesDocument = await Address.findById(idDocuments);
+  const addresses_document = await Address.findById(idDocuments);
 
-  const documentDeleted = addressesDocument.addresses.filter(({ _id }) => {
+  const documentDeleted = addresses_document.addresses.filter(({ _id }) => {
     return _id.toString() !== idDocument;
   });
 
-  const newAddressesDocument = await Address.updateOne(
-    { _id: idDocuments },
+  const new_address = await Address.findByIdAndUpdate(
+    idDocuments,
     {
       $set: {
         addresses: documentDeleted,
       },
-    }
+    },
+    { new: true }
   );
 
-  req.status(200).json(newAddressesDocument);
+  res.status(200).json(new_address);
+});
+
+const editAddress = asyncHandler(async (req, res) => {
+  const find_data = await Address.findById(req.body.idDocuments);
+  const clone = { ...find_data };
+
+  const update_address = clone._doc.addresses.map((item) => {
+    if (item._id.toString() === req.body._id) {
+      const { name, street, house, ZIP_code, city, number, email, _id } =
+        req.body;
+      return {
+        name,
+        street,
+        house,
+        ZIP_code,
+        city,
+        number,
+        email,
+        _id,
+      };
+    } else {
+      return item;
+    }
+  });
+
+  const update_data = await Address.findByIdAndUpdate(
+    req.body.idDocuments,
+    {
+      $set: {
+        addresses: update_address,
+      },
+    },
+    { new: true }
+  );
+  res.status(200).json(update_data);
 });
 
 module.exports = {
@@ -58,4 +95,5 @@ module.exports = {
   setAddress,
   getAddresses,
   deleteAddress,
+  editAddress,
 };

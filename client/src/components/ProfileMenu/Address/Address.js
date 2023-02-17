@@ -30,14 +30,36 @@ function Address() {
         setAddress(data.addresses);
         setIdAddresses(data._id);
       });
+  }, [user.addresses]);
 
+  useEffect(() => {
     axios
       .get(`http://localhost:5000/api/invoices/user-invoice/${user.invoices}`)
       .then(({ data }) => {
         setIdInvoices(data._id);
         setInvoice(data.invoices);
       });
-  }, [user.addresses, user.invoices]);
+  }, [user.invoices]);
+
+  function addAddress(addresses) {
+    setAddress(addresses);
+  }
+  function editAddress(addresses) {
+    setAddress(addresses);
+  }
+  function deleteAddress(addresses) {
+    setAddress(addresses);
+  }
+
+  function addInvoice(invoices) {
+    setInvoice(invoices);
+  }
+  function editInvoice(invoices) {
+    setInvoice(invoices);
+  }
+  function deleteInvoice(invoices) {
+    setInvoice(invoices);
+  }
 
   function handleShowAddress() {
     setVisibleAddress(!isVisibleAddress);
@@ -55,7 +77,17 @@ function Address() {
     setBlurScreen(!blurScreen);
   }
   return (
-    <AddressContext.Provider value={{ handleBlurScreen }}>
+    <AddressContext.Provider
+      value={{
+        handleBlurScreen,
+        addAddress,
+        editAddress,
+        deleteAddress,
+        addInvoice,
+        editInvoice,
+        deleteInvoice,
+      }}
+    >
       <div className={styles.Address}>
         <div className={styles.firstDiv}>
           <header>Address details</header>

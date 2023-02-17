@@ -40,20 +40,50 @@ const deleteInvoice = asyncHandler(async (req, res) => {
     return _id.toString() !== idDocument;
   });
 
-  const newInvoicesDocument = await Invoice.updateOne(
-    { _id: idDocuments },
+  const new_invoice = await Invoice.findByIdAndUpdate(
+    idDocuments,
     {
       $set: {
         invoices: documentDeleted,
       },
-    }
+    },
+    { new: true }
   );
 
-  req.status(200).json(newInvoicesDocument);
+  res.status(200).json(new_invoice);
+});
+
+const editInvoice = asyncHandler(async (req, res) => {
+  const find_user_invoice = await Invoice.findById(req.body.idDocuments);
+
+  const find_and_update_invoice = find_user_invoice.invoices.map((item) => {
+    if (item._id.toString() === req.body._id) {
+      item.NIP = req.body.NIP;
+      item.name = req.body.name;
+      item.street = req.body.street;
+      item.ZIP_code = req.body.ZIP_code;
+      item.city = req.body.city;
+      return item;
+    } else {
+      return item;
+    }
+  });
+
+  const update_data = await Invoice.findByIdAndUpdate(
+    req.body.idDocuments,
+    {
+      $set: {
+        invoices: find_and_update_invoice,
+      },
+    },
+    { new: true }
+  );
+  res.status(200).json(update_data);
 });
 module.exports = {
   getInvoices,
   getInvoice,
   setInvoice,
   deleteInvoice,
+  editInvoice,
 };

@@ -9,7 +9,6 @@ import EditInvoice from "./EditInvoice/EditInvoice";
 
 function InvoiceItem({ item, idInvoices }) {
   const { _id, NIP, name, street, ZIP_code, city } = item;
-
   const [blurScreen, setBlurScreen] = useState(false);
   const [isVisibleEdit, setVisibleEdit] = useState(false);
   const [isVisibleDelete, setVisibleDelete] = useState(false);
@@ -43,7 +42,11 @@ function InvoiceItem({ item, idInvoices }) {
         </div>
       </div>
       {isVisibleEdit ? (
-        <EditInvoice handleBlurScreen={handleBlurScreen} userData={item} />
+        <EditInvoice
+          handleBlurScreen={handleBlurScreen}
+          userData={item}
+          idDocuments={idInvoices}
+        />
       ) : null}
       {isVisibleDelete ? (
         <DeleteData

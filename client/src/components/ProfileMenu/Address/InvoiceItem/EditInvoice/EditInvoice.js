@@ -1,11 +1,13 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useContext } from "react";
 import CloseBtn from "../../../../Buttons/CloseBtn/CloseBtn";
 import SaveBtn from "../../../../Buttons/SaveBtn/SaveBtn";
 import styles from "./EditInvoice.module.scss";
 import invoice_date from "../../../../../data/invoice_data.json";
 import FieldComponent from "../../../../FormikComponents/FieldComponent/FieldComponent";
 import * as Yup from "yup";
+import axios from "axios";
+import { AddressContext } from "../../../../../Contexts/AddressContext";
 const initialValues = {
   NIP: "",
   name: "",
@@ -22,7 +24,29 @@ const validationSchema = Yup.object().shape({
   city: Yup.string().required("Required"),
 });
 
-function EditInvoice({ handleBlurScreen, userData }) {
+function EditInvoice({ handleBlurScreen, userData, idDocuments }) {
+  const { editInvoice } = useContext(AddressContext);
+
+  const onSubmit = async (values) => {
+    const elements = { idDocuments, ...values };
+    const postData = async () => {
+      try {
+        const response = await axios.put(
+          "http://localhost:5000/api/invoices/user-invoice/edit-invoice",
+          elements
+        );
+
+        if (response.status === 200) {
+          editInvoice(response.data.invoices);
+          handleBlurScreen();
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    postData();
+  };
   return (
     <div className={styles.EditInvoice}>
       <div className={styles.flexBoxDiv}>
@@ -33,6 +57,7 @@ function EditInvoice({ handleBlurScreen, userData }) {
         <Formik
           initialValues={Boolean(userData) ? userData : initialValues}
           validationSchema={validationSchema}
+          onSubmit={onSubmit}
         >
           <Form className={styles.columnForm}>
             <div className={styles.divInputs}>

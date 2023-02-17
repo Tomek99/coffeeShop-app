@@ -25,6 +25,7 @@
   --red-darken: rgb(156, 4, 24);
   --shadow: rgba(255, 255, 255, 0.491) 0px 2px 4px 0px, rgba(255, 255, 255, 0.496) 0px 0px 2px 1px;
   --shadow-thin: rgba(255, 255, 255, 0.25) 0px 0px 1px 1px, rgba(255, 255, 255, 0.13) 0px 0px 1px 1px;
+  --blur-screen:rgb(60, 60, 60);
 }
 
 html {
