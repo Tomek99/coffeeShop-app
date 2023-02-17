@@ -8,6 +8,7 @@ import FieldComponent from "../../../FormikComponents/FieldComponent/FieldCompon
 import * as Yup from "yup";
 import SaveBtn from "../../../Buttons/SaveBtn/SaveBtn";
 import { AddressContext } from "../../../../Contexts/AddressContext";
+import axios from "axios";
 
 const initialValues = {
   NIP: "",
@@ -16,7 +17,7 @@ const initialValues = {
   ZIP_code: "",
   city: "",
 };
-
+// http://localhost:5000/api/addresses/user-address
 const validationSchema = Yup.object().shape({
   NIP: Yup.string(),
   name: Yup.string().required("Required"),
@@ -25,8 +26,29 @@ const validationSchema = Yup.object().shape({
   city: Yup.string().required("Required"),
 });
 
-function AddInvoice() {
+function AddInvoice({ idInvoices }) {
   const { handleBlurScreen } = useContext(AddressContext);
+
+  const onSubmit = (values) => {
+    const elements = { _id: idInvoices, ...values };
+    const postData = async () => {
+      try {
+        const response = await axios.post(
+          "http://localhost:5000/api/invoices/user-invoice",
+          elements
+        );
+
+        if (response.status === 200) {
+          handleBlurScreen();
+        }
+        return false;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    postData();
+  };
   return (
     <div className={styles.AddInvoice}>
       <div className={styles.flexBoxDiv}>
@@ -37,6 +59,7 @@ function AddInvoice() {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
+          onSubmit={onSubmit}
         >
           <Form className={styles.columnForm}>
             <div className={styles.divInputs}>

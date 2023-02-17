@@ -7,8 +7,8 @@ import DeleteData from "../DeleteData/DeleteData";
 import BlurScreen from "../../BlurScreen/BlurScreen";
 import EditAddress from "./EditAddress/EditAddress";
 
-function AddressItem({ item }) {
-  const { name, street, ZIP_code, city, number, email } = item;
+function AddressItem({ item, idAddresses }) {
+  const { _id, name, street, ZIP_code, city, number, email } = item;
 
   const [blurScreen, setBlurScreen] = useState(false);
   const [isVisibleEdit, setVisibleEdit] = useState(false);
@@ -47,7 +47,12 @@ function AddressItem({ item }) {
         <EditAddress userAddress={item} handleBlurScreen={handleBlurScreen} />
       ) : null}
       {isVisibleDelete ? (
-        <DeleteData handleBlurScreen={handleBlurScreen} />
+        <DeleteData
+          handleBlurScreen={handleBlurScreen}
+          idDocuments={idAddresses}
+          idDocument={_id}
+          documentType="address"
+        />
       ) : null}
       {isVisibleEdit || isVisibleDelete ? (
         <BlurScreen handleBlurScreen={handleBlurScreen} />
@@ -56,12 +61,14 @@ function AddressItem({ item }) {
   );
 }
 AddressItem.propTypes = {
+  _id: PropTypes.string,
   name: PropTypes.string,
   street: PropTypes.string,
   ZIP_code: PropTypes.string,
   city: PropTypes.string,
   number: PropTypes.string,
   email: PropTypes.string,
+  idAddresses: PropTypes.string,
 };
 
 export default AddressItem;

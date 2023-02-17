@@ -36,15 +36,16 @@ function SignIn() {
 
   const onSubmit = async (values, { setSubmitting }) => {
     setError(null);
-    const isSuccess = await axios.post(
-      "http://localhost:5000/api/users/login",
-      values
-    );
+    try {
+      const isSuccess = await axios.post(
+        "http://localhost:5000/api/users/login",
+        values
+      );
 
-    if (isSuccess.status === 200) {
-      logIn(isSuccess.data);
-    } else {
-      setError("Invalid email or password");
+      if (isSuccess.status === 200) logIn(isSuccess.data);
+      else setError("Invalid email or password");
+    } catch (error) {
+      setError(error.response.data.message);
     }
   };
   return (

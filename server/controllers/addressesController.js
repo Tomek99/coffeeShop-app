@@ -12,7 +12,6 @@ const getAddress = asyncHandler(async (req, res) => {
 });
 
 const setAddress = asyncHandler(async (req, res) => {
-  console.log("HI");
   const { _id, name, street, house, city, number, email, ZIP_code } = req.body;
   const post = await Address.findByIdAndUpdate(
     _id,
@@ -33,9 +32,30 @@ const setAddress = asyncHandler(async (req, res) => {
   );
   return res.status(200).json(post);
 });
+const deleteAddress = asyncHandler(async (req, res) => {
+  const { idDocuments, idDocument } = req.body.data;
+
+  const addressesDocument = await Address.findById(idDocuments);
+
+  const documentDeleted = addressesDocument.addresses.filter(({ _id }) => {
+    return _id.toString() !== idDocument;
+  });
+
+  const newAddressesDocument = await Address.updateOne(
+    { _id: idDocuments },
+    {
+      $set: {
+        addresses: documentDeleted,
+      },
+    }
+  );
+
+  req.status(200).json(newAddressesDocument);
+});
 
 module.exports = {
   getAddress,
   setAddress,
   getAddresses,
+  deleteAddress,
 };

@@ -22,11 +22,11 @@ const userSchema = mongoose.Schema(
       type: String,
       require: false,
     },
-    address: {
+    addresses: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Address",
     },
-    invoice: {
+    invoices: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Invoice",
     },

@@ -13,7 +13,6 @@ const getInvoice = asyncHandler(async (req, res) => {
 
 const setInvoice = asyncHandler(async (req, res) => {
   const { _id, NIP, name, street, ZIP_code, city } = req.body;
-  console.log(_id);
   const post = await Invoice.findByIdAndUpdate(
     _id,
     {
@@ -29,13 +28,32 @@ const setInvoice = asyncHandler(async (req, res) => {
     },
     { new: true }
   );
-  res.status(200).json(post);
-
   return res.status(200).json(post);
 });
 
+const deleteInvoice = asyncHandler(async (req, res) => {
+  const { idDocuments, idDocument } = req.body.data;
+
+  const invociesDocument = await Invoice.findById(idDocuments);
+
+  const documentDeleted = invociesDocument.invoices.filter(({ _id }) => {
+    return _id.toString() !== idDocument;
+  });
+
+  const newInvoicesDocument = await Invoice.updateOne(
+    { _id: idDocuments },
+    {
+      $set: {
+        invoices: documentDeleted,
+      },
+    }
+  );
+
+  req.status(200).json(newInvoicesDocument);
+});
 module.exports = {
   getInvoices,
   getInvoice,
   setInvoice,
+  deleteInvoice,
 };

@@ -86,11 +86,16 @@ function SignUpForm() {
       }
     };
     const postRequest = postData();
+    const userLogin = { email: values.email, password: values.password };
 
     if (await postRequest) {
+      const isSuccess = await axios.post(
+        "http://localhost:5000/api/users/login",
+        userLogin
+      );
       setSubmitting(false);
       resetForm();
-      logIn();
+      logIn(isSuccess.data);
       navigateToHome();
       handleError(true);
     } else handleError(false);

@@ -4,6 +4,11 @@ const invoiceSchema = new mongoose.Schema(
   {
     invoices: [
       {
+        uniequId: {
+          type: String,
+          require: true,
+          unique: true,
+        },
         NIP: {
           type: String,
           require: false,

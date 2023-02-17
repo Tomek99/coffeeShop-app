@@ -17,23 +17,27 @@ function Address() {
   const [blurScreen, setBlurScreen] = useState(false);
   const [isVisibleAddress, setVisibleAddress] = useState(false);
   const [isVisibleInvoice, setVisibleInovice] = useState(false);
+  const [idAddresses, setIdAddresses] = useState(null);
+  const [idInvoices, setIdInvoices] = useState(null);
   const [address, setAddress] = useState([]);
   const [invoice, setInvoice] = useState([]);
   const width = useWindowWidth();
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/addresses/user-address/${user.address}`)
+      .get(`http://localhost:5000/api/addresses/user-address/${user.addresses}`)
       .then(({ data }) => {
         setAddress(data.addresses);
+        setIdAddresses(data._id);
       });
 
     axios
-      .get(`http://localhost:5000/api/invoices/user-invoice/${user.invoice}`)
+      .get(`http://localhost:5000/api/invoices/user-invoice/${user.invoices}`)
       .then(({ data }) => {
+        setIdInvoices(data._id);
         setInvoice(data.invoices);
       });
-  }, [user.address, user.invoice]);
+  }, [user.addresses, user.invoices]);
 
   function handleShowAddress() {
     setVisibleAddress(!isVisibleAddress);
@@ -70,8 +74,9 @@ function Address() {
         </div>
         <div className={styles.thirdDiv}>
           {address.map((item, index) => (
-            <AddressItem item={item} key={index} />
+            <AddressItem item={item} key={index} idAddresses={idAddresses} />
           ))}
+
           <div>
             {address.length === 0 || width < 560 ? (
               <BtnAdd name="address" handleBtn={handleShowAddress} />
@@ -89,7 +94,7 @@ function Address() {
           </div>
           <div className={styles.thirdDiv}>
             {invoice.map((item, index) => (
-              <InvoiceItem item={item} key={index} />
+              <InvoiceItem item={item} key={index} idInvoices={idInvoices} />
             ))}
             <div>
               {invoice.length === 0 || width < 560 ? (
@@ -98,8 +103,8 @@ function Address() {
             </div>
           </div>
         </div>
-        {isVisibleAddress ? <AddAddress /> : null}
-        {isVisibleInvoice ? <AddInvoice /> : null}
+        {isVisibleAddress ? <AddAddress idAddresses={idAddresses} /> : null}
+        {isVisibleInvoice ? <AddInvoice idInvoices={idInvoices} /> : null}
         {isVisibleAddress || isVisibleInvoice ? (
           <BlurScreen handleBlurScreen={handleBlurScreen} />
         ) : null}

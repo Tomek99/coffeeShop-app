@@ -57,10 +57,10 @@ const setUser = asyncHandler(async (req, res) => {
     email: req.body.email,
     password: hashedPassword,
     number: null,
-    address: await Address.create({
+    addresses: await Address.create({
       addresses: [],
     }),
-    invoice: await Invoice.create({
+    invoices: await Invoice.create({
       invoices: [],
     }),
   });

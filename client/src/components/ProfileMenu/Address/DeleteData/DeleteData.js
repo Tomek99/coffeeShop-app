@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BtnCancell from "../../../Buttons/BtnCancell/BtnCancell";
 import BtnRemoveData from "../../../Buttons/BtnRemoveData/BtnRemoveData";
 import styles from "./DeleteData.module.scss";
-import { IoCloseSharp } from "react-icons/io5";
 import CloseBtn from "../../../Buttons/CloseBtn/CloseBtn";
+import axios from "axios";
+import PropTypes from "prop-types";
 
-function DeleteData({ handleBlurScreen }) {
+function DeleteData({
+  handleBlurScreen,
+  idDocuments,
+  idDocument,
+  documentType,
+}) {
+  function deleteDocument() {
+    if (documentType === "address") {
+      axios
+        .put("http://localhost:5000/api/addresses/user-address/deleteAddress", {
+          data: { idDocuments, idDocument },
+        })
+        .then(() => console.log("Delete successful"));
+    } else {
+      console.log(idDocuments + idDocument);
+      axios
+        .put("http://localhost:5000/api/invoices/user-invoice/deleteInvoice", {
+          data: { idDocuments, idDocument },
+        })
+        .then(() => console.log("Delete successful"));
+    }
+
+    handleBlurScreen();
+  }
+
   return (
     <div className={styles.DeleteData}>
       <div className={styles.firstRowDiv}>
@@ -18,10 +43,15 @@ function DeleteData({ handleBlurScreen }) {
       </p>
       <div className={styles.btnsDiv}>
         <BtnCancell handleBlurScreen={handleBlurScreen} />
-        <BtnRemoveData />
+        <BtnRemoveData deleteDocument={deleteDocument} />
       </div>
     </div>
   );
 }
-
+DeleteData.propTypes = {
+  handleBlurScreen: PropTypes.func,
+  idDocuments: PropTypes.string,
+  idDocument: PropTypes.string,
+  documentType: PropTypes.string,
+};
 export default DeleteData;

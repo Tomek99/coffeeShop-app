@@ -7,8 +7,8 @@ import PropTypes from "prop-types";
 import BlurScreen from "../../BlurScreen/BlurScreen";
 import EditInvoice from "./EditInvoice/EditInvoice";
 
-function InvoiceItem({ item }) {
-  const { NIP, name, street, ZIP_code, city } = item;
+function InvoiceItem({ item, idInvoices }) {
+  const { _id, NIP, name, street, ZIP_code, city } = item;
 
   const [blurScreen, setBlurScreen] = useState(false);
   const [isVisibleEdit, setVisibleEdit] = useState(false);
@@ -46,7 +46,12 @@ function InvoiceItem({ item }) {
         <EditInvoice handleBlurScreen={handleBlurScreen} userData={item} />
       ) : null}
       {isVisibleDelete ? (
-        <DeleteData handleBlurScreen={handleBlurScreen} />
+        <DeleteData
+          handleBlurScreen={handleBlurScreen}
+          idDocuments={idInvoices}
+          idDocument={_id}
+          documentType="invoice"
+        />
       ) : null}
       {isVisibleEdit || isVisibleDelete ? (
         <BlurScreen handleBlurScreen={handleBlurScreen} />

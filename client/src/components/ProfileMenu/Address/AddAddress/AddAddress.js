@@ -8,6 +8,7 @@ import FieldComponent from "../../../FormikComponents/FieldComponent/FieldCompon
 import address_date from "../../../../data/address_data.json";
 import { AddressContext } from "../../../../Contexts/AddressContext";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 const initialValues = {
   name: "",
@@ -29,7 +30,28 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().email().required("Required"),
 });
 
-function AddAddress() {
+function AddAddress({ idAddresses }) {
+  const onSubmit = (values) => {
+    const elements = { _id: idAddresses, ...values };
+    const postData = async () => {
+      try {
+        const response = await axios.post(
+          "http://localhost:5000/api/addresses/user-address",
+          elements
+        );
+
+        if (response.status === 200) {
+          handleBlurScreen();
+        }
+        return false;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    postData();
+  };
+
   const { handleBlurScreen } = useContext(AddressContext);
   return (
     <div className={styles.AddAddress}>
@@ -41,6 +63,7 @@ function AddAddress() {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
+          onSubmit={onSubmit}
         >
           <Form className={styles.columnForm}>
             <div className={styles.divInputs}>
@@ -57,5 +80,6 @@ function AddAddress() {
 }
 AddAddress.propTypes = {
   handleBlurScreen: PropTypes.func,
+  idAddresses: PropTypes.string,
 };
 export default AddAddress;
