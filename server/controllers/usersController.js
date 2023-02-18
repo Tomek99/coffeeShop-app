@@ -49,12 +49,13 @@ const setUser = asyncHandler(async (req, res) => {
     throw new Error("Add text");
   }
   const salt = await bcrypt.genSalt(10);
+  const { firstName, lastName, emial } = req.body;
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
   const user = await User.create({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
+    firstName,
+    lastName,
+    emial,
     password: hashedPassword,
     number: null,
     addresses: await Address.create({
@@ -75,6 +76,3 @@ module.exports = {
   setUser,
   logIn,
 };
-
-// updateGoals,
-// deleteGoals,

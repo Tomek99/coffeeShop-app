@@ -18,11 +18,11 @@ const setInvoice = asyncHandler(async (req, res) => {
     {
       $push: {
         invoices: {
-          NIP: NIP,
-          name: name,
-          street: street,
-          ZIP_code: ZIP_code,
-          city: city,
+          NIP,
+          name,
+          street,
+          ZIP_code,
+          city,
         },
       },
     },
@@ -34,9 +34,10 @@ const setInvoice = asyncHandler(async (req, res) => {
 const deleteInvoice = asyncHandler(async (req, res) => {
   const { idDocuments, idDocument } = req.body.data;
 
-  const invociesDocument = await Invoice.findById(idDocuments);
+  const find_data = await Invoice.findById(idDocuments);
+  const clone = { ...find_data };
 
-  const documentDeleted = invociesDocument.invoices.filter(({ _id }) => {
+  const delete_invoice = clone._doc.invoices.filter(({ _id }) => {
     return _id.toString() !== idDocument;
   });
 
@@ -44,7 +45,7 @@ const deleteInvoice = asyncHandler(async (req, res) => {
     idDocuments,
     {
       $set: {
-        invoices: documentDeleted,
+        invoices: delete_invoice,
       },
     },
     { new: true }
@@ -54,16 +55,19 @@ const deleteInvoice = asyncHandler(async (req, res) => {
 });
 
 const editInvoice = asyncHandler(async (req, res) => {
-  const find_user_invoice = await Invoice.findById(req.body.idDocuments);
+  const find_data = await Invoice.findById(req.body.idDocuments);
 
-  const find_and_update_invoice = find_user_invoice.invoices.map((item) => {
+  const update_invoice = find_data.invoices.map((item) => {
     if (item._id.toString() === req.body._id) {
-      item.NIP = req.body.NIP;
-      item.name = req.body.name;
-      item.street = req.body.street;
-      item.ZIP_code = req.body.ZIP_code;
-      item.city = req.body.city;
-      return item;
+      const { NIP, name, street, ZIP_code, city, _id } = req.body;
+      return {
+        NIP,
+        name,
+        street,
+        ZIP_code,
+        city,
+        _id,
+      };
     } else {
       return item;
     }
@@ -73,7 +77,7 @@ const editInvoice = asyncHandler(async (req, res) => {
     req.body.idDocuments,
     {
       $set: {
-        invoices: find_and_update_invoice,
+        invoices: update_invoice,
       },
     },
     { new: true }

@@ -36,9 +36,10 @@ const setAddress = asyncHandler(async (req, res) => {
 const deleteAddress = asyncHandler(async (req, res) => {
   const { idDocuments, idDocument } = req.body.data;
 
-  const addresses_document = await Address.findById(idDocuments);
+  const find_data = await Address.findById(idDocuments);
+  const clone = { ...find_data };
 
-  const documentDeleted = addresses_document.addresses.filter(({ _id }) => {
+  const delete_address = clone._doc.addresses.filter(({ _id }) => {
     return _id.toString() !== idDocument;
   });
 
@@ -46,7 +47,7 @@ const deleteAddress = asyncHandler(async (req, res) => {
     idDocuments,
     {
       $set: {
-        addresses: documentDeleted,
+        addresses: delete_address,
       },
     },
     { new: true }
