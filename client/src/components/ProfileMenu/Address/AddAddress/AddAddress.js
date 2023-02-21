@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import styles from "./AddAddress.module.scss";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import CloseBtn from "../../../Buttons/CloseBtn/CloseBtn";
-import SaveBtn from "../../../Buttons/SaveBtn/SaveBtn";
+import BtnClose from "../../../Buttons/BtnClose/BtnClose";
+import BtnSave from "../../../Buttons/BtnSave/BtnSave";
 import FieldComponent from "../../../FormikComponents/FieldComponent/FieldComponent";
 import address_date from "../../../../data/address_data.json";
 import { AddressContext } from "../../../../Contexts/AddressContext";
@@ -61,7 +61,7 @@ function AddAddress({ idAddresses }) {
       <div className={styles.GridDiv}>
         <div className={styles.headerDiv}>
           <header className={styles.headerName}>Add address details </header>
-          <CloseBtn handleBtn={handleBlurScreen} />
+          <BtnClose handleBtn={handleBlurScreen} />
         </div>
         <Formik
           initialValues={initialValues}
@@ -74,7 +74,7 @@ function AddAddress({ idAddresses }) {
                 <FieldComponent item={item} key={index} />
               ))}
             </div>
-            <SaveBtn />
+            <BtnSave />
           </Form>
         </Formik>
       </div>

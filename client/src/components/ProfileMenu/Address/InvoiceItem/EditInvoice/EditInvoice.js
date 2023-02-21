@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import React, { useContext } from "react";
-import CloseBtn from "../../../../Buttons/CloseBtn/CloseBtn";
-import SaveBtn from "../../../../Buttons/SaveBtn/SaveBtn";
+import BtnClose from "../../../../Buttons/BtnClose/BtnClose";
+import BtnSave from "../../../../Buttons/BtnSave/BtnSave";
 import styles from "./EditInvoice.module.scss";
 import invoice_date from "../../../../../data/invoice_data.json";
 import FieldComponent from "../../../../FormikComponents/FieldComponent/FieldComponent";
@@ -52,7 +52,7 @@ function EditInvoice({ handleBlurScreen, userData, idDocuments }) {
       <div className={styles.flexBoxDiv}>
         <div className={styles.headerDiv}>
           <header className={styles.headerName}>Add invoice details </header>
-          <CloseBtn handleBtn={handleBlurScreen} />
+          <BtnClose handleBtn={handleBlurScreen} />
         </div>
         <Formik
           initialValues={Boolean(userData) ? userData : initialValues}
@@ -66,7 +66,7 @@ function EditInvoice({ handleBlurScreen, userData, idDocuments }) {
               ))}
             </div>
 
-            <SaveBtn />
+            <BtnSave />
           </Form>
         </Formik>
       </div>

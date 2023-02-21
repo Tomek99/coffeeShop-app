@@ -1,9 +1,9 @@
 import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import styles from "./CloseBtn.module.scss";
+import styles from "./BtnClose.module.scss";
 import PropTypes from "prop-types";
 
-function CloseBtn({ handleBtn }) {
+function BtnClose({ handleBtn }) {
   return (
     <button className={styles.btnClose} onClick={handleBtn}>
       <IoCloseSharp size={30} />
@@ -11,8 +11,8 @@ function CloseBtn({ handleBtn }) {
   );
 }
 
-CloseBtn.propTypes = {
+BtnClose.propTypes = {
   handleBtn: PropTypes.func,
 };
 
-export default CloseBtn;
+export default BtnClose;

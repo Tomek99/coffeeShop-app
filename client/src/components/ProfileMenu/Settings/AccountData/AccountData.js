@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./AccountData.module.scss";
 import PropTypes from "prop-types";
 
-function AccountData({ item }) {
-  const { title, btnText, content, fullName } = item;
+function AccountData({ item, handleActive }) {
+  const { title, btnText, content, fullName, active } = item;
   return (
     <div className={styles.AccountData}>
       <p className={styles.title}>{title}</p>
@@ -14,7 +14,9 @@ function AccountData({ item }) {
           ) : null}
           {btnText === "Edit" ? <p>tel. {content}</p> : <p>{content}</p>}
         </div>
-        <button className={styles.btnEdit}>{btnText}</button>
+        <button className={styles.btnEdit} onClick={() => handleActive(active)}>
+          {btnText}
+        </button>
       </div>
     </div>
   );
@@ -25,5 +27,7 @@ AccountData.propTypes = {
   btnText: PropTypes.string,
   content: PropTypes.string,
   fullName: PropTypes.string,
+  active: PropTypes.string,
+  handleActive: PropTypes.func,
 };
 export default AccountData;

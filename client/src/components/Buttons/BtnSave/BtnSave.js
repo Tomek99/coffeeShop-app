@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./SaveBtn.module.scss";
+import styles from "./BtnSave.module.scss";
 
-function SaveBtn() {
+function BtnSave() {
   return (
     <div className={styles.btnDiv}>
       <button type="submit" className={styles.btnSave}>
@@ -11,4 +11,4 @@ function SaveBtn() {
   );
 }
 
-export default SaveBtn;
+export default BtnSave;

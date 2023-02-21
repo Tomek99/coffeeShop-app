@@ -2,9 +2,12 @@ import React from "react";
 import styles from "./BtnEditSettings.module.scss";
 import PropTypes from "prop-types";
 
-function BtnEditSettings({ text, handleBtn }) {
+function BtnEditSettings({ text, handleBtn, userSettings }) {
   return (
-    <button className={styles.btnEdit} onClick={handleBtn}>
+    <button
+      className={styles.btnEdit}
+      onClick={userSettings ? () => handleBtn("deleteAccount") : handleBtn}
+    >
       {text}{" "}
     </button>
   );

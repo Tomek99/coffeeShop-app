@@ -10,10 +10,13 @@ import Information from "./Information/Information";
 import BtnEditSettings from "../../Buttons/BtnEditSettings/BtnEditSettings";
 import BlurScreen from "../BlurScreen/BlurScreen";
 import DeleteAccount from "./DeleteAccount/DeleteAccount";
+import UserData from "./Edit/UserData/UserData";
+import UserEmail from "./Edit/UserEmail/UserEmail";
+import UserPassword from "./Edit/UserPassword/UserPassword";
 
 function Settings() {
   const { user } = useContext(Context);
-  const [isActive, setIsActive] = useState(false);
+  const [tab, setTab] = useState("");
 
   settings_data[0].fullName = `${user.firstName} ${user.lastName}`;
   settings_data[0].content = user.number;
@@ -27,8 +30,8 @@ function Settings() {
     });
   }, []);
 
-  function handleActiveBtn() {
-    setIsActive(!isActive);
+  function handleActive(active) {
+    setTab(active);
   }
 
   return (
@@ -37,7 +40,7 @@ function Settings() {
       <h3 style={{ fontSize: "2rem" }}>Account data</h3>
       <div className={styles.AccountDataContainer}>
         {settings_data.map((item, index) => (
-          <AccountData item={item} key={index} />
+          <AccountData item={item} key={index} handleActive={handleActive} />
         ))}
       </div>
 
@@ -63,15 +66,38 @@ function Settings() {
         paragraph={settings_information[3].paragraph}
         paragraph_2={settings_information[3].paragraph_2}
       >
-        <BtnEditSettings text="Delete account" handleBtn={handleActiveBtn} />
+        <BtnEditSettings
+          text="Delete account"
+          handleBtn={handleActive}
+          userSettings={true}
+        />
       </Information>
       <Support />
-      {isActive ? (
-        <>
-          <DeleteAccount handleActiveBtn={handleActiveBtn} />
-          <BlurScreen handleBlurScreen={handleActiveBtn} />{" "}
-        </>
-      ) : null}
+      {(() => {
+        switch (tab) {
+          case "deleteAccount":
+            return <DeleteAccount handleActive={handleActive} />;
+          case "userData":
+            return <UserData handleActive={handleActive} />;
+          case "userEmail":
+            return <UserEmail handleActive={handleActive} />;
+          case "userPassword":
+            return <UserPassword handleActive={handleActive} />;
+          default:
+            return null;
+        }
+      })()}
+      {(() => {
+        switch (tab) {
+          case "deleteAccount":
+          case "userData":
+          case "userEmail":
+          case "userPassword":
+            return <BlurScreen handleBlurScreen={handleActive} />;
+          default:
+            return null;
+        }
+      })()}
     </>
   );
 }

@@ -1,10 +1,10 @@
 import { Form, Formik } from "formik";
 import React, { useContext } from "react";
-import SaveBtn from "../../../../Buttons/SaveBtn/SaveBtn";
+import BtnSave from "../../../../Buttons/BtnSave/BtnSave";
 import styles from "./EditAddress.module.scss";
 import FieldComponent from "../../../../FormikComponents/FieldComponent/FieldComponent";
 import address_date from "../../../../../data/address_data.json";
-import CloseBtn from "../../../../Buttons/CloseBtn/CloseBtn";
+import BtnClose from "../../../../Buttons/BtnClose/BtnClose";
 import * as Yup from "yup";
 import PropTypes from "prop-types";
 import axios from "axios";
@@ -58,7 +58,7 @@ function EditAddress({ userAddress, handleBlurScreen, idDocuments }) {
       <div className={styles.GridDiv}>
         <div className={styles.headerDiv}>
           <header className={styles.headerName}>Edit address details </header>
-          <CloseBtn handleBtn={handleBlurScreen} />
+          <BtnClose handleBtn={handleBlurScreen} />
         </div>
         <Formik
           initialValues={Boolean(userAddress) ? userAddress : initialValues}
@@ -71,7 +71,7 @@ function EditAddress({ userAddress, handleBlurScreen, idDocuments }) {
                 <FieldComponent item={item} key={index} />
               ))}
             </div>
-            <SaveBtn />
+            <BtnSave />
           </Form>
         </Formik>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./NBarAside.module.scss";
-import CloseBtn from "../Buttons/CloseBtn/CloseBtn";
+import BtnClose from "../Buttons/BtnClose/BtnClose";
 import PropTypes from "prop-types";
 
 function NBarAside(props) {
@@ -18,7 +18,7 @@ function NBarAside(props) {
           </span>
         </span>
       )}
-      <CloseBtn handleBtn={props.handleBtn} />
+      <BtnClose handleBtn={props.handleBtn} />
     </div>
   );
 }

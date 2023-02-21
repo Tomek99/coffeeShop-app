@@ -1,12 +1,12 @@
 import React from "react";
-import ReturnBtn from "../../../../Buttons/ReturnBtn/ReturnBtn";
+import BtnReturn from "../../../../Buttons/BtnReturn/BtnReturn";
 import styles from "./OrderDetails.module.scss";
 
 function OrderDetails() {
   return (
     <div className={styles.OrderDetails}>
       <div className={styles.buttonShowOrders}>
-        <ReturnBtn text="Show all orders" returnPath="/orders" />
+        <BtnReturn text="Show all orders" returnPath="/orders" />
       </div>
       <div>
         <p>fwafawfa</p>
