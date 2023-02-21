@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 import { Context } from "./Contexts/Context";
 import { Route, Routes, Navigate } from "react-router-dom";
 import {
@@ -38,6 +39,8 @@ function App() {
   const [basketPrice, setCartPrice] = useState({ currentPrice: 0, save: 0 });
   const [basketQuantity, setCartQuantity] = useState(0);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const [isLogIn, setIsLogIn] = useState(() => {
     const storedValue = localStorage.getItem("is-logged");
     return storedValue === "true" ? true : false;
@@ -51,9 +54,13 @@ function App() {
 
   /*----------- api request ----------- */
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/products")
-      .then(({ data }) => setProducts(data));
+    setLoading(true);
+    const fetchData = async () => {
+      const products = await axios.get("http://localhost:5000/api/products");
+      setLoading(false);
+      setProducts(products.data);
+    };
+    fetchData();
   }, []);
 
   /*----------- login ----------- */
@@ -173,6 +180,7 @@ function App() {
         basketQuantity,
         products,
         user,
+        loading,
       }}
     >
       {" "}
@@ -184,10 +192,7 @@ function App() {
 
           <Route path="menu" element={<Menu />} />
           <Route path="products" element={<Products />} />
-          <Route
-            path="products/:id"
-            element={<ProductDetails products={products} />}
-          />
+          <Route path="products/:id" element={<ProductDetails />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />
           <Route path="articles" element={<Articles />} />

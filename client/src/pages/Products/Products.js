@@ -10,6 +10,7 @@ function Products() {
   const { products } = useContext(Context);
 
   const navigate = useNavigate();
+
   const [pageNumber, setPageNumber] = useState(0);
 
   const PRODUCTS_PER_PAGE = 12;

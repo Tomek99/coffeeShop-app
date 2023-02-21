@@ -31,7 +31,7 @@ function Item({ item, deleteItem }) {
         </div>
         <div className={styles.buttons}>
           <button
-            onClick={() => deleteItem(item.id, item.newPrice, item.oldPrice)}
+            onClick={() => deleteItem(item._id, item.newPrice, item.oldPrice)}
           >
             <ImBin size={18} />
           </button>
