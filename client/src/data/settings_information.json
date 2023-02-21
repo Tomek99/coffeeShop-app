@@ -1,0 +1,19 @@
+[
+    {
+        "header": "Your consents and notifications settings",
+        "paragraph": "By checking the boxes, you accept the Privacy Policy"
+    },
+    {
+        "header": "Unsubscribe from product availability notifications",
+        "paragraph": " Currently, you are not waiting for any notifications."
+    },
+    {
+        "header": "Logging out of all devices",
+        "paragraph": "Due to this option, you can log out from our website and application on all browsers and devices at once - also the account that you are using right now."
+    },
+    {
+        "header": "Deleting account",
+        "paragraph": "If you click on this button, you will delete your account in  store. Make sure you definitely want to do this - your account cannot    be restored.",
+        "paragraph_2": "If you want to keep your account, but don't want to get messages from us - uncheck the consents in the notification settings."
+    }
+]

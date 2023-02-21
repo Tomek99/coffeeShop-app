@@ -1,6 +1,7 @@
 import React from "react";
 import { Field, Form, Formik } from "formik";
 import styles from "./ConsentForm.module.scss";
+import BtnEditSettings from "../../../Buttons/BtnEditSettings/BtnEditSettings";
 
 const initialValues = {
   checked: [],
@@ -90,9 +91,8 @@ function ConsentForm() {
               <span className={styles.moreInfo}>More</span>
             </p>
           </label>
-          <button type="submit" className={styles.btnSaveConsents}>
-            Save consents
-          </button>
+
+          <BtnEditSettings text="Save consents" />
         </Form>
       )}
     </Formik>

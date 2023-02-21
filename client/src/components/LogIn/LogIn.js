@@ -8,7 +8,7 @@ import { Context } from "../../Contexts/Context";
 import { Formik, Form, Field } from "formik";
 import ErrorMessage from "../ErrorMessage/ErrMessage";
 import * as Yup from "yup";
-
+import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
 const validationSchema = Yup.object({
@@ -18,7 +18,7 @@ const validationSchema = Yup.object({
   ),
 });
 
-function SignIn() {
+function LogIn() {
   const [showPassword, setShowPassowrd] = useState(false);
   const [error, setError] = useState(null);
   const { logIn } = useContext(Context);
@@ -54,7 +54,7 @@ function SignIn() {
         <div className={styles.formContainer}>
           <header>Log in</header>
           <Formik
-            initialValues={{ email: "", password: "" }}
+            initialValues={{ email: "", password: "", loggedDevice: uuidv4() }}
             onSubmit={onSubmit}
             validationSchema={validationSchema}
           >
@@ -105,4 +105,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default LogIn;

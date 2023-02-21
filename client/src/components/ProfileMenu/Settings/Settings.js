@@ -1,31 +1,23 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../../Contexts/Context";
 import Support from "../Support/Support";
 import AccountData from "./AccountData/AccountData";
 import ConsentForm from "./ConsentForm/ConsentForm";
 import styles from "./Settings.module.scss";
+import settings_data from "../../../data/settings_data.json";
+import settings_information from "../../../data/settings_information.json";
+import Information from "./Information/Information";
+import BtnEditSettings from "../../Buttons/BtnEditSettings/BtnEditSettings";
+import BlurScreen from "../BlurScreen/BlurScreen";
+import DeleteAccount from "./DeleteAccount/DeleteAccount";
 
 function Settings() {
   const { user } = useContext(Context);
+  const [isActive, setIsActive] = useState(false);
 
-  const data = [
-    {
-      title: "Your data",
-      content: user.number,
-      fullName: `${user.firstName} ${user.lastName}`,
-      btnText: "Edit",
-    },
-    {
-      title: "E-mail address",
-      content: user.email,
-      btnText: "Change",
-    },
-    {
-      title: "Password",
-      content: user.password.slice(0, 8),
-      btnText: "Change",
-    },
-  ];
+  settings_data[0].fullName = `${user.firstName} ${user.lastName}`;
+  settings_data[0].content = user.number;
+  settings_data[1].content = user.email;
 
   useEffect(() => {
     window.scrollTo({
@@ -34,58 +26,52 @@ function Settings() {
       behavior: "instant",
     });
   }, []);
+
+  function handleActiveBtn() {
+    setIsActive(!isActive);
+  }
+
   return (
     <>
       <header style={{ fontSize: "2.5rem" }}>Account settings</header>
       <h3 style={{ fontSize: "2rem" }}>Account data</h3>
       <div className={styles.AccountDataContainer}>
-        {data.map((item, index) => (
+        {settings_data.map((item, index) => (
           <AccountData item={item} key={index} />
         ))}
       </div>
 
-      <div className={styles.extraInfo}>
-        <h2 className={styles.headerTwo}>
-          Your consents and notifications settings
-        </h2>
-        <p className={styles.paragraph}>
-          By checking the boxes, you accept <span>the Privacy Policy</span>
-        </p>
-      </div>
+      <Information
+        header={settings_information[0].header}
+        paragraph={settings_information[0].paragraph}
+      />
       <ConsentForm />
 
-      <div className={styles.extraInfo}>
-        <h2 className={styles.headerTwo}>
-          Unsubscribe from product availability notifications
-        </h2>
-        <p className={styles.paragraph}>
-          Currently, you are not waiting for any notifications.
-        </p>
-      </div>
-      <div className={styles.extraInfo}>
-        <h2 className={styles.headerTwo}>Logging out of all devices</h2>
-        <p className={styles.paragraph}>
-          Due to this option, you can log out from our website and application
-          on all browsers and devices at once - also the account that you are
-          using right now.
-        </p>
-        <button className={styles.btnEdit}>Log out me everywhere</button>
-      </div>
-      <div className={styles.extraInfo}>
-        <h2 className={styles.headerTwo}>Deleting account</h2>
-        <p className={styles.paragraph}>
-          If you click on this button, you will delete your account in our
-          store. Make sure you definitely want to do this - your account cannot
-          be restored.
-        </p>
-        <br />
-        <p className={styles.paragraph}>
-          If you want to keep your account, but don't want to get messages from
-          us - uncheck the consents in the notification settings.
-        </p>
-        <button className={styles.btnEdit}>Delete account</button>
-      </div>
+      <Information
+        header={settings_information[1].header}
+        paragraph={settings_information[1].paragraph}
+      ></Information>
+      <Information
+        header={settings_information[2].header}
+        paragraph={settings_information[2].paragraph}
+        paragraph_2={settings_information[2].paragraph_2}
+      >
+        <BtnEditSettings text="Log out me everywhere" />
+      </Information>
+      <Information
+        header={settings_information[3].header}
+        paragraph={settings_information[3].paragraph}
+        paragraph_2={settings_information[3].paragraph_2}
+      >
+        <BtnEditSettings text="Delete account" handleBtn={handleActiveBtn} />
+      </Information>
       <Support />
+      {isActive ? (
+        <>
+          <DeleteAccount handleActiveBtn={handleActiveBtn} />
+          <BlurScreen handleBlurScreen={handleActiveBtn} />{" "}
+        </>
+      ) : null}
     </>
   );
 }

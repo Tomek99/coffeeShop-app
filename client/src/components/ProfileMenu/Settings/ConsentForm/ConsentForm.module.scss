@@ -20,17 +20,7 @@
         }
     }
 
-    .btnSaveConsents {
+    button {
         align-self: flex-start;
-        padding: 5px 10px;
-        color: #fff;
-        border-radius: 16px;
-        transition: 0.3s linear;
-        background-color: var(--main-color);
-        cursor: pointer;
-
-        &:hover {
-            background-color: var(--main-color-darken);
-        }
     }
 }

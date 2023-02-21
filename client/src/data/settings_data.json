@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Your data",
+    "content": "",
+    "fullName": "",
+    "btnText": "Edit"
+  },
+  {
+    "title": "E-mail address",
+    "content": "",
+    "btnText": "Change"
+  },
+  {
+    "title": "Password",
+    "content": "••••••••••••••",
+    "btnText": "Change"
+  }
+]

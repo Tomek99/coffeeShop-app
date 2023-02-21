@@ -12,13 +12,7 @@ function AccountData({ item }) {
           {btnText === "Edit" ? (
             <p style={{ fontWeight: "bold" }}>{fullName}</p>
           ) : null}
-          {btnText === "Edit" ? (
-            <p>tel. {content}</p>
-          ) : title === "Password" ? (
-            <p>••••••••••••••</p>
-          ) : (
-            <p>{content}</p>
-          )}
+          {btnText === "Edit" ? <p>tel. {content}</p> : <p>{content}</p>}
         </div>
         <button className={styles.btnEdit}>{btnText}</button>
       </div>
