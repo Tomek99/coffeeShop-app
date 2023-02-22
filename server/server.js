@@ -3,8 +3,9 @@ const colors = require("colors");
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
-var cors = require("cors");
+const cors = require("cors");
 const port = process.env.PORT || 5000;
+const stripe = require("stripe")(process.env.STRIPE_URI);
 
 connectDB();
 
@@ -21,4 +22,8 @@ app.use("/api/invoices", require("./routes/invoicesRoutes"));
 
 app.use(errorHandler);
 
+const storeItems = new Map([
+  [1, { priceInCents: 10000, name: "Learn React Today" }],
+  [2, { priceInCents: 20000, name: "Learn CSS Today" }],
+]);
 app.listen(port, () => console.log(`Server started on port ${port}`));

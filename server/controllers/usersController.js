@@ -57,7 +57,8 @@ const setUser = asyncHandler(async (req, res) => {
     lastName,
     emial,
     password: hashedPassword,
-    number: null,
+    number: "",
+    loggedDevices: [],
     addresses: await Address.create({
       addresses: [],
     }),

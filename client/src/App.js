@@ -34,22 +34,57 @@ import {
 } from "./components";
 
 function App() {
-  const [basketItems, setBasketItems] = useState([]);
+  /*----------- cart ----------- */
+  const [cartItems, setCartItems] = useState(() => {
+    const storedValue = localStorage.getItem("cart");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return [];
+  });
+
   const [wishList, setWishList] = useState([]);
-  const [basketPrice, setCartPrice] = useState({ currentPrice: 0, save: 0 });
-  const [basketQuantity, setCartQuantity] = useState(0);
+
+  const [cartValue, setCartValue] = useState(() => {
+    const storedValue = localStorage.getItem("cart-value");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return 0;
+  });
+  const [cartSave, setCartSave] = useState(() => {
+    const storedValue = localStorage.getItem("cart-save");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return 0;
+  });
+
+  const [cartQuantity, setCartQuantity] = useState(() => {
+    const storedValue = localStorage.getItem("cart-quantity");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart-save", cartSave);
+    localStorage.setItem("cart-value", cartValue);
+    localStorage.setItem("cart-quantity", cartQuantity);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartValue, cartQuantity, cartItems, cartSave]);
+
+  /*----------- products ----------- */
   const [products, setProducts] = useState([]);
+
+  /*----------- loading ----------- */
   const [loading, setLoading] = useState(true);
 
+  /*----------- isLogged ----------- */
   const [isLogIn, setIsLogIn] = useState(() => {
-    const storedValue = localStorage.getItem("is-logged");
-    return storedValue === "true" ? true : false;
+    if (localStorage.getItem("is-logged") !== null) {
+      const storedValue = localStorage.getItem("is-logged");
+      return storedValue === "true" ? true : false;
+    } else return false;
   });
+
   const [user, setUser] = useState(() => {
-    const storeValue = localStorage.getItem("user-data");
-    return typeof storeValue == "string" && isLogIn
-      ? JSON.parse(storeValue)
-      : {};
+    const storedValue = localStorage.getItem("user-data");
+    if (storedValue !== null && isLogIn) return JSON.parse(storedValue);
+    else return {};
   });
 
   /*----------- api request ----------- */
@@ -67,6 +102,7 @@ function App() {
   function logIn(data) {
     setIsLogIn(true);
     setUser(data);
+    localStorage.clear(); // TEST
     localStorage.setItem("user-data", JSON.stringify(data));
     localStorage.setItem("is-logged", true);
   }
@@ -80,82 +116,76 @@ function App() {
   /*----------- cart ----------- */
 
   function addItem(item) {
-    const newItemIndex = basketItems.findIndex(
+    const newItemIndex = cartItems.findIndex(
       (element) => element._id === item._id
     );
 
     if (newItemIndex === -1) {
-      setBasketItems([...basketItems, { ...item }]);
+      setCartItems([...cartItems, { ...item }]);
     } else {
-      let newArr = [...basketItems];
+      let newArr = [...cartItems];
 
       newArr[newItemIndex].quantity =
         newArr[newItemIndex].quantity + item.quantity;
 
-      setBasketItems(newArr);
+      setCartItems(newArr);
     }
 
-    setCartQuantity(basketQuantity + item.quantity);
+    setCartQuantity(cartQuantity + item.quantity);
     appendPrice(item.newPrice, item.oldPrice, item.quantity);
   }
 
   function deleteItem(id, newPrice, oldPrice) {
-    const basketList = basketItems.filter((item) => item._id !== id);
-    const findItem = basketItems.filter((item) => item._id === id);
+    const cartList = cartItems.filter((item) => item._id !== id);
+    const findItem = cartItems.filter((item) => item._id === id);
 
-    setBasketItems(basketList);
-    setCartQuantity(basketQuantity - findItem[0].quantity);
+    setCartItems(cartList);
+    setCartQuantity(cartQuantity - findItem[0].quantity);
     subtractPrice(newPrice, oldPrice, findItem[0].quantity);
   }
 
   function appendPrice(newPrice, oldPrice, quantity) {
-    if (Boolean(oldPrice)) {
-      setCartPrice((prevPrice) => ({
-        ...prevPrice,
-        currentPrice:
-          Math.round((prevPrice.currentPrice + newPrice * quantity) * 100) /
-          100,
-        save:
-          Math.round(
-            (prevPrice.save + (oldPrice - newPrice) * quantity) * 100
-          ) / 100,
-      }));
-    } else {
-      setCartPrice((prevPrice) => ({
-        ...prevPrice,
-        currentPrice:
-          Math.round((prevPrice.currentPrice + newPrice * quantity) * 100) /
-          100,
-      }));
+    setCartValue(
+      Math.round((cartValue + parseFloat(newPrice) * quantity) * 100) / 100
+    );
+
+    if (oldPrice !== 0) {
+      setCartSave(
+        Math.round(
+          (cartSave +
+            (parseFloat(oldPrice) - parseFloat(newPrice)) * quantity) *
+            100
+        ) / 100
+      );
     }
   }
 
   function subtractPrice(newPrice, oldPrice, quantity) {
-    if (Boolean(oldPrice)) {
-      setCartPrice((prevPrice) => ({
-        ...prevPrice,
-        currentPrice:
-          Math.round((prevPrice.currentPrice - newPrice * quantity) * 100) /
-          100,
-        save:
-          Math.round(
-            (prevPrice.save - (oldPrice - newPrice) * quantity) * 100
-          ) / 100,
-      }));
-    } else {
-      setCartPrice((prevPrice) => ({
-        ...prevPrice,
-        currentPrice:
-          Math.round((prevPrice.currentPrice - newPrice * quantity) * 100) /
-          100,
-      }));
+    setCartValue(
+      Math.round((cartValue - parseFloat(newPrice) * quantity) * 100) / 100
+    );
+
+    if (oldPrice !== 0) {
+      setCartSave(
+        Math.round(
+          (cartSave -
+            (parseFloat(oldPrice) - parseFloat(newPrice)) * quantity) *
+            100
+        ) / 100
+      );
     }
   }
 
   function clearTheCart() {
-    setBasketItems([]);
+    setCartItems([]);
     setCartQuantity(0);
-    setCartPrice({ currentPrice: 0, save: 0 });
+    setCartValue(0);
+    setCartSave(0);
+
+    localStorage.setItem("cart", JSON.stringify([]));
+    localStorage.setItem("cart-quantity", 0);
+    localStorage.setItem("cart-value", 0);
+    localStorage.setItem("cart-save", 0);
   }
   /*----------- wishList ----------- */
 
@@ -175,16 +205,17 @@ function App() {
         logOut,
         clearTheCart,
         isLogIn,
-        basketItems,
-        basketPrice,
-        basketQuantity,
+        cartItems,
+        cartValue,
+        cartSave,
+        cartQuantity,
         products,
         user,
         loading,
       }}
     >
       {" "}
-      <NavigationBar basketQuantity={basketQuantity} />
+      <NavigationBar basketQuantity={cartQuantity} />
       <section className="columnWeb">
         <Routes>
           <Route path="/" element={<Home />} />

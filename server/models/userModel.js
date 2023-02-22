@@ -22,6 +22,10 @@ const userSchema = mongoose.Schema(
       type: String,
       require: false,
     },
+    loggedDevices: {
+      type: Array,
+      require: true,
+    },
     addresses: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Address",

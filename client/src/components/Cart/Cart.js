@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../Contexts/Context";
 
 function Cart({ isCartOpen, handleCart }) {
-  const { basketItems, basketPrice, basketQuantity } = useContext(Context);
-
+  const { cartItems, cartValue, cartSave, cartQuantity } = useContext(Context);
   return (
     <div
       className={
@@ -18,13 +17,13 @@ function Cart({ isCartOpen, handleCart }) {
       }
     >
       <NBarAside
-        basketQuantity={basketQuantity}
+        basketQuantity={cartQuantity}
         handleBtn={handleCart}
         isAccount={false}
       />
-      {basketPrice.currentPrice !== 0 ? (
+      {cartItems.length > 0 ? (
         <div className={styles.products}>
-          {basketItems.map((item, index) => (
+          {cartItems.map((item, index) => (
             <CartList key={index} item={item} />
           ))}
         </div>
@@ -43,15 +42,12 @@ function Cart({ isCartOpen, handleCart }) {
         </Link>
 
         <p className={styles.bill} style={{ color: "rgb(51, 220, 32)" }}>
-          Save:{" "}
-          <span className={styles.price}>${basketPrice.save.toFixed(2)}</span>
+          Save: <span className={styles.price}>${cartSave.toFixed(2)}</span>
         </p>
 
         <p className={styles.bill}>
           Total cost:
-          <span className={styles.price}>
-            ${basketPrice.currentPrice.toFixed(2)}
-          </span>
+          <span className={styles.price}>${cartValue.toFixed(2)}</span>
         </p>
       </div>
     </div>

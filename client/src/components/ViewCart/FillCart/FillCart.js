@@ -5,21 +5,17 @@ import Item from "./Item/Item";
 import { ImBin } from "react-icons/im";
 import { BsHeart } from "react-icons/bs";
 import { Context } from "../../../Contexts/Context";
-import { loadStripe } from "@stripe/stripe-js";
 
 function FillCart() {
-  const { basketItems, basketQuantity, deleteItem, clearTheCart } =
+  const { cartItems, cartQuantity, deleteItem, clearTheCart } =
     useContext(Context);
 
-  const stripePromise = loadStripe(
-    "pk_test_51MdvhRCWI60k49nL4d1HBAFAccgtBYjfPC7lLWSptitJW2oHZonWKO3tSQjHKRgebjgJ1QhhNP3WytjcCDzPqX1k00XcKV72iJ"
-  );
   return (
     <div className={styles.fillCart}>
       <div className={styles.leftColumn}>
         <div className={styles.divRow}>
           <header className={styles.cartHeader}>
-            Cart {`(${basketQuantity})`}
+            Cart {`(${cartQuantity})`}
           </header>
           <div className={styles.buttons}>
             <button>
@@ -31,7 +27,7 @@ function FillCart() {
           </div>
         </div>
         <div className={styles.items}>
-          {basketItems.map((item, index) => (
+          {cartItems.map((item, index) => (
             <Item
               key={index}
               item={item}

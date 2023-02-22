@@ -5,7 +5,7 @@ import { Context } from "../../../../Contexts/Context";
 
 function CartSummary() {
   const [hide, setHide] = useState(false);
-  const { basketPrice } = useContext(Context);
+  const { cartValue, cartSave } = useContext(Context);
 
   function handleButton() {
     setHide(!hide);
@@ -29,11 +29,11 @@ function CartSummary() {
         <div>
           <p>
             <span>Save</span>
-            <span>${basketPrice.save.toFixed(2)}</span>
+            <span>${cartSave.toFixed(2)}</span>
           </p>
           <p>
             <span>Total cost</span>
-            <span>${basketPrice.currentPrice.toFixed(2)}</span>
+            <span>${cartValue.toFixed(2)}</span>
           </p>
         </div>
         <button>Checkout</button>

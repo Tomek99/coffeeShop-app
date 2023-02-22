@@ -5,11 +5,10 @@ import EmptyCart from "./EmptyCart/EmptyCart";
 import FillCart from "./FillCart/FillCart";
 
 function ViewCart() {
-  const { basketItems } = useContext(Context);
-
+  const { cartItems } = useContext(Context);
   return (
     <div className={styles.ViewCart}>
-      {basketItems.length !== 0 ? <FillCart /> : <EmptyCart />}
+      {cartItems.length > 0 ? <FillCart /> : <EmptyCart />}
     </div>
   );
 }
