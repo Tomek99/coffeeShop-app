@@ -43,6 +43,8 @@ function App() {
 
   const [wishList, setWishList] = useState([]);
 
+  const [orders, setOrders] = useState([]);
+
   const [cartValue, setCartValue] = useState(() => {
     const storedValue = localStorage.getItem("cart-value");
     if (storedValue !== null) return JSON.parse(storedValue);
@@ -212,6 +214,7 @@ function App() {
         products,
         user,
         loading,
+        orders,
       }}
     >
       {" "}

@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Orders.module.scss";
-import orders from "../../../data/orders.json";
 import SingleOrder from "./SingleOrder/SingleOrder";
 import Support from "../Support/Support";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Filter from "./Filter/Filter";
 import Pagination from "../../Pagination/Pagination";
+import { Context } from "../../../Contexts/Context";
 
 function Orders() {
-  const navigate = useNavigate();
+  const { orders } = useContext(Context);
   const [pageNumber, setPageNumber] = useState(0);
+  const navigate = useNavigate();
   const ordersPerPage = 5;
   const pagesVisited = pageNumber * ordersPerPage;
   const pageCount = Math.round(orders.length / ordersPerPage);
@@ -42,7 +43,9 @@ function Orders() {
             <SingleOrder item={item} key={index} />
           ))}
       </div>
-      <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
+      {orders.length > 5 ? (
+        <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
+      ) : null}
       <Support />
     </>
   );

@@ -1,6 +1,6 @@
 .ViewCart {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
     align-items: center;
 }

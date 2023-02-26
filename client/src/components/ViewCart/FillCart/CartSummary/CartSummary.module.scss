@@ -1,8 +1,9 @@
 .cartSummary {
+    position: sticky;
+    top: 100px;
     align-self: flex-start;
-    flex-basis: 100%;
-    max-width: 320px;
     margin-right: 10px;
+    margin-top: 20px;
     border: var(--border);
     border-radius: 8px;
     color: #fff;
@@ -107,12 +108,17 @@
 @media (max-width: 900px) {
     .cartSummary {
         max-width: 900px;
-        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
         width: 100%;
         z-index: 99;
         border: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .cartSummary {
+        // position: fixed !important;
     }
 }

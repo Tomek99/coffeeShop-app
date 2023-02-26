@@ -36,35 +36,35 @@ function SingleOrder({ item }) {
 
   hiddenElements -= items.length;
   return (
-    <Link to={`${idNumber}`}>
-      <div className={styles.SingleOrder}>
-        <div className={styles.details}>
-          <h2 style={{ color: "#fff" }}>{status}</h2>
-          <div>
-            <p style={{ color: "#ccc", fontWeight: 300, marginBottom: "5px" }}>
-              {date}
-            </p>
-            <p style={{ color: "#ccc", fontWeight: 300 }}>nr {idNumber}</p>
-          </div>
-          <p style={{ color: "#fff", fontWeight: "bold" }}>${totalCost}</p>
+    // <Link to={`${idNumber}`}>
+    <div className={styles.SingleOrder}>
+      <div className={styles.details}>
+        <h2 style={{ color: "#fff" }}>{status}</h2>
+        <div>
+          <p style={{ color: "#ccc", fontWeight: 300, marginBottom: "5px" }}>
+            {date}
+          </p>
+          <p style={{ color: "#ccc", fontWeight: 300 }}>nr {idNumber}</p>
         </div>
-        <div className={styles.products}>
-          {items.map((item, index) => (
-            <ProductsPurchased url={item.imageUrl} key={index} />
-          ))}
-
-          {hiddenElements !== 0 ? (
-            <div className={styles.hiddenElements}>
-              <span>+{hiddenElements}</span>
-            </div>
-          ) : null}
-        </div>
-
-        <button className={styles.btnInvoice}>
-          <BsThreeDotsVertical size={20} />
-        </button>
+        <p style={{ color: "#fff", fontWeight: "bold" }}>${totalCost}</p>
       </div>
-    </Link>
+      <div className={styles.products}>
+        {items.map((item, index) => (
+          <ProductsPurchased url={item.imageUrl} key={index} />
+        ))}
+
+        {hiddenElements !== 0 ? (
+          <div className={styles.hiddenElements}>
+            <span>+{hiddenElements}</span>
+          </div>
+        ) : null}
+      </div>
+
+      <button className={styles.btnInvoice}>
+        <BsThreeDotsVertical size={20} />
+      </button>
+    </div>
+    // </Link>
   );
 }
 SingleOrder.propTypes = {

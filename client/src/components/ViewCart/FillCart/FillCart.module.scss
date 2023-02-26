@@ -1,8 +1,8 @@
 .fillCart {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 400px;
     max-width: 1280px;
     width: 100%;
-    justify-content: center;
 
     .leftColumn {
         flex-grow: 1;
@@ -51,6 +51,12 @@
 
 @media (max-width: 900px) {
     .fillCart {
-        flex-direction: column;
+        grid-template-columns: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .cartHeader {
+        font-size: 2.2rem !important;
     }
 }
