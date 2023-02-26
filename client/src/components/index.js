@@ -25,6 +25,7 @@ export { default as Settings } from "./ProfileMenu/Settings/Settings";
 export { default as ReturnComplaint } from "./ProfileMenu/ReturnComplaint/ReturnComplaint";
 export { default as WishList } from "./ProfileMenu/WishList/WishList";
 export { default as UserNavigation } from "./ProfileMenu/UserNavigation/UserNavigation";
+export { default as Order } from "./Order/Order";
 
 export { default as Protected } from "./Protected/Protected";
 export { default as LogIn } from "./LogIn/LogIn";

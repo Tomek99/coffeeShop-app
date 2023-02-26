@@ -1,31 +1,10 @@
-.header {
-    font-size: 2.5rem;
-}
-
-.firstHeader {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.title {
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 1.6rem;
-    color: var(--main-color);
-}
-
-.paragraph {
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: #ccc;
-}
-
 .firstDiv {
     .rowTwo {
         display: flex;
+        margin-top: 10px;
         gap: 20px;
 
-        .divContent {
+        div {
             background-color: var(--black);
             border: var(--border);
             padding: 20px 10px;
@@ -42,8 +21,8 @@
         display: flex;
         flex-direction: row;
         gap: 20px;
+        margin-top: 10px;
         color: #ccc;
-        flex-direction: row;
     }
 }
 

@@ -2,14 +2,17 @@ import React, { useState, useContext } from "react";
 import styles from "./CartSummary.module.scss";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import { Context } from "../../../../Contexts/Context";
+import { Link } from "react-router-dom";
 
 function CartSummary() {
   const [hide, setHide] = useState(false);
-  const { cartValue, cartSave } = useContext(Context);
+
+  const { cartValue, cartSave, addOrder } = useContext(Context);
 
   function handleButton() {
     setHide(!hide);
   }
+
   return (
     <div className={styles.cartSummary}>
       <div className={styles.discountKey}>
@@ -36,7 +39,9 @@ function CartSummary() {
             <span>${cartValue.toFixed(2)}</span>
           </p>
         </div>
-        <button>Checkout</button>
+        <Link to="/order" onClick={addOrder} className={styles.order}>
+          Checkout
+        </Link>
       </div>
     </div>
   );

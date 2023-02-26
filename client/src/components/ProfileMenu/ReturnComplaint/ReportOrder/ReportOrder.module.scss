@@ -1,0 +1,40 @@
+.ReportOrder {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+    div {
+        height: 100%;
+
+        h4 {
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 1.6rem;
+            color: var(--main-color);
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #ccc;
+        }
+    }
+
+    .btnComplaint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        border-radius: 20px;
+        color: #fff;
+        border: var(--border);
+        transition: 0.3s linear;
+        font-size: 1.3rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--main-color);
+        }
+    }
+}

@@ -17,7 +17,7 @@ function Item({ item, deleteItem }) {
       </div>
       <div className={styles.rightSide}>
         <div className={styles.price}>
-          <p>${oldPrice}</p>
+          <p>{oldPrice !== 0 ? `$${oldPrice}` : null}</p>
           <p>${newPrice}</p>
         </div>
         <div className={styles.itemAmount}>

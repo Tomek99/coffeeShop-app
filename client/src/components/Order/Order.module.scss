@@ -1,0 +1,15 @@
+.Order {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #fff;
+
+    .aa {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        max-width: 1280px;
+        width: 100%;
+    }
+}

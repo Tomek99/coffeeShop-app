@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Filter from "./Filter/Filter";
 import Pagination from "../../Pagination/Pagination";
 import { Context } from "../../../Contexts/Context";
+import HeaderInfo from "../../HeaderInfo/HeaderInfo";
 
 function Orders() {
   const { orders } = useContext(Context);
@@ -34,7 +35,7 @@ function Orders() {
   }, [pageNumber]);
   return (
     <>
-      <header style={{ fontSize: "2.5rem" }}>Orders</header>
+      <HeaderInfo title="Orders" />
       <Filter />
       <div className={styles.divOrders}>
         {orders

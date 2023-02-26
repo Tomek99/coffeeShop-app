@@ -11,6 +11,8 @@ import InvoiceItem from "./InvoiceItem/InvoiceItem";
 import BlurScreen from "../BlurScreen/BlurScreen";
 import AddInvoice from "./AddInvoice/AddInvoice";
 import AddAddress from "./AddAddress/AddAddress";
+import HeaderInfo from "../../HeaderInfo/HeaderInfo";
+import HeadingThree from "../../HeadingThree/HeadingThree";
 
 function Address() {
   const { user } = useContext(Context);
@@ -90,14 +92,14 @@ function Address() {
     >
       <div className={styles.Address}>
         <div className={styles.firstDiv}>
-          <header>Address details</header>
+          <HeaderInfo title="Address details" />
           <p>
             Here you will find saved addresses and ordering details. Due to this
             you don't have to enter them during the shopping process
           </p>
         </div>
         <div className={styles.secondDiv}>
-          <h3>Recipient details and delivery addresses</h3>
+          <HeadingThree title="Recipient details and delivery addresses" />
           <div className={styles.btnHide}>
             {address.length !== 0 ? (
               <BtnAdd name="address" handleBtn={handleShowAddress} />
@@ -117,7 +119,7 @@ function Address() {
         </div>
         <div>
           <div className={styles.secondDiv}>
-            <h3>Invoice details</h3>
+            <HeadingThree title="Invoice details" />
             <div className={styles.btnHide}>
               {invoice.length !== 0 ? (
                 <BtnAdd name="invoice" handleBtn={handleShowInvoice} />

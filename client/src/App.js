@@ -20,6 +20,7 @@ import {
   Footer,
   ProductDetails,
   Orders,
+  Order,
   UserReviews,
   Address,
   Settings,
@@ -34,17 +35,57 @@ import {
 } from "./components";
 
 function App() {
+  /*----------- orders ----------- */
+  const [orders, setOrders] = useState([]);
+
+  /*----------- products ----------- */
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchData = async () => {
+      const products = await axios.get("http://localhost:5000/api/products");
+      setLoading(false);
+      setProducts(products.data);
+    };
+    fetchData();
+  }, []);
+
+  /*----------- login ----------- */
+  const [isLogIn, setIsLogIn] = useState(() => {
+    if (localStorage.getItem("is-logged") !== null) {
+      const storedValue = localStorage.getItem("is-logged");
+      return storedValue === "true" ? true : false;
+    } else return false;
+  });
+
+  const [user, setUser] = useState(() => {
+    const storedValue = localStorage.getItem("user-data");
+    if (storedValue !== null && isLogIn) return JSON.parse(storedValue);
+    else return {};
+  });
+
+  function logIn(data) {
+    setIsLogIn(true);
+    setUser(data);
+    localStorage.clear(); // TEST
+    localStorage.setItem("user-data", JSON.stringify(data));
+    localStorage.setItem("is-logged", true);
+  }
+
+  function logOut() {
+    setIsLogIn(false);
+    setUser({});
+    localStorage.clear();
+  }
+
   /*----------- cart ----------- */
   const [cartItems, setCartItems] = useState(() => {
     const storedValue = localStorage.getItem("cart");
     if (storedValue !== null) return JSON.parse(storedValue);
     else return [];
   });
-
-  const [wishList, setWishList] = useState([]);
-
-  const [orders, setOrders] = useState([]);
-
   const [cartValue, setCartValue] = useState(() => {
     const storedValue = localStorage.getItem("cart-value");
     if (storedValue !== null) return JSON.parse(storedValue);
@@ -61,61 +102,6 @@ function App() {
     if (storedValue !== null) return JSON.parse(storedValue);
     else return 0;
   });
-
-  useEffect(() => {
-    localStorage.setItem("cart-save", cartSave);
-    localStorage.setItem("cart-value", cartValue);
-    localStorage.setItem("cart-quantity", cartQuantity);
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartValue, cartQuantity, cartItems, cartSave]);
-
-  /*----------- products ----------- */
-  const [products, setProducts] = useState([]);
-
-  /*----------- loading ----------- */
-  const [loading, setLoading] = useState(true);
-
-  /*----------- isLogged ----------- */
-  const [isLogIn, setIsLogIn] = useState(() => {
-    if (localStorage.getItem("is-logged") !== null) {
-      const storedValue = localStorage.getItem("is-logged");
-      return storedValue === "true" ? true : false;
-    } else return false;
-  });
-
-  const [user, setUser] = useState(() => {
-    const storedValue = localStorage.getItem("user-data");
-    if (storedValue !== null && isLogIn) return JSON.parse(storedValue);
-    else return {};
-  });
-
-  /*----------- api request ----------- */
-  useEffect(() => {
-    setLoading(true);
-    const fetchData = async () => {
-      const products = await axios.get("http://localhost:5000/api/products");
-      setLoading(false);
-      setProducts(products.data);
-    };
-    fetchData();
-  }, []);
-
-  /*----------- login ----------- */
-  function logIn(data) {
-    setIsLogIn(true);
-    setUser(data);
-    localStorage.clear(); // TEST
-    localStorage.setItem("user-data", JSON.stringify(data));
-    localStorage.setItem("is-logged", true);
-  }
-
-  function logOut() {
-    setIsLogIn(false);
-    setUser({});
-    localStorage.clear();
-  }
-
-  /*----------- cart ----------- */
 
   function addItem(item) {
     const newItemIndex = cartItems.findIndex(
@@ -189,14 +175,61 @@ function App() {
     localStorage.setItem("cart-value", 0);
     localStorage.setItem("cart-save", 0);
   }
+  useEffect(() => {
+    localStorage.setItem("cart-save", cartSave);
+    localStorage.setItem("cart-value", cartValue);
+    localStorage.setItem("cart-quantity", cartQuantity);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartValue, cartQuantity, cartItems, cartSave]);
+
   /*----------- wishList ----------- */
+  const [wishList, setWishList] = useState([]);
 
   function addItemWishList(item) {
     setWishList([...wishList, { ...item }]);
   }
 
-  /*----------- blurScreen ----------- */
+  /*----------- order ----------- */
+  const [order, setOrder] = useState({});
 
+  function addOrder() {
+    const dateObj = new Date();
+    const day = dateObj.getUTCDate();
+    const month = dateObj.getUTCMonth() + 1;
+    const year = dateObj.getUTCFullYear();
+
+    // "idNumber": 700005588955,
+    setOrder({
+      save: cartSave,
+      totalCost: cartValue,
+      supplyPrice: 15,
+      date: `${day} ${month} ${year}`,
+      status: "Completed",
+      deliver: "??????",
+      payment: "??????",
+      recipient: {
+        fullName: "Tomasz Skupień",
+        number: "123 123 213",
+        email: "test@gmail.com",
+      },
+      address: {
+        street: "Rokietnica",
+        house: "3232A",
+        city: "Rokietnica",
+        zip_code: "37-562",
+        extraInfo: "",
+      },
+      invoice: {
+        fullName: "Tomasz Skupień",
+        homeAdress: "595A",
+        postalAddress: "37-562",
+        city: "Rokietnica",
+      },
+      products: cartItems,
+    });
+
+    console.log(order);
+  }
   return (
     <Context.Provider
       value={{
@@ -206,6 +239,7 @@ function App() {
         logIn,
         logOut,
         clearTheCart,
+        addOrder,
         isLogIn,
         cartItems,
         cartValue,
@@ -273,6 +307,15 @@ function App() {
             <Route path="address" element={<Address />} />
             <Route path="settings" element={<Settings />} />
           </Route>
+
+          <Route
+            path="order"
+            element={
+              <Protected isLogIn={cartItems.length} navigate="/cart">
+                <Order />
+              </Protected>
+            }
+          />
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
           <Route path="*" element={<Navigate to="/" replace />} />

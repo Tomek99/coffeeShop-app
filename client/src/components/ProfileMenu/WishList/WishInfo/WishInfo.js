@@ -1,4 +1,5 @@
 import React from "react";
+import HeadingThree from "../../../HeadingThree/HeadingThree";
 import styles from "./WishInfo.module.scss";
 
 const info = [
@@ -21,7 +22,7 @@ const info = [
 function WishInfo() {
   return (
     <div className={styles.WishInfo}>
-      <h2 className={styles.mainTittle}>How to utilize a shopping list?</h2>
+      <HeadingThree title="How to utilize a shopping list?" />
       <div className={styles.divInfo}>
         {info.map((item) => (
           <div key={item.nr} className={styles.divRow}>

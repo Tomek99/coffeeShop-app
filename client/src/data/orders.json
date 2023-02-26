@@ -9,17 +9,19 @@
         "status": "Completed",
         "deliver": "Pickup at InPost Parcel Machine",
         "payment": "blik",
-        "dataRecipient": {
+        "recipient": {
             "fullName": "Tomasz Skupień",
             "number": "123 123 213",
             "email": "test@gmail.com"
         },
-        "CollectionAddress": {
+        "address": {
+            "street": "Rokietnica",
+            "house": "3232A",
             "city": "Rokietnica",
-            "postalAdress": "37-562",
-            "extraInfo": "By the Delikatesy Centrum store"
+            "zip_code": "37-562",
+            "extraInfo": ""
         },
-        "dataInvoice": {
+        "invoice": {
             "fullName": "Tomasz Skupień",
             "homeAdress": "595A",
             "postalAddress": "37-562",

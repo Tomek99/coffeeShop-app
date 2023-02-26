@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./SingleOrder.module.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
 // import Order from "./Orderff/Order";
 import ProductsPurchased from "./ProductsPurchased/ProductsPurchased";
 import { useWindowWidth } from "@react-hook/window-size";
 import PropTypes from "prop-types";
-import { Link, useLocation, useNavigate, redirect } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 function SingleOrder({ item }) {
   //ADD HIDDEN PRODUCTS IN ORDER COMPONENT !!!

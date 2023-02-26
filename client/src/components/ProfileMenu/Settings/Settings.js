@@ -13,6 +13,8 @@ import DeleteAccount from "./DeleteAccount/DeleteAccount";
 import UserData from "./Edit/UserData/UserData";
 import UserEmail from "./Edit/UserEmail/UserEmail";
 import UserPassword from "./Edit/UserPassword/UserPassword";
+import HeadingThree from "../../HeadingThree/HeadingThree";
+import HeaderInfo from "../../HeaderInfo/HeaderInfo";
 
 function Settings() {
   const { user } = useContext(Context);
@@ -36,8 +38,8 @@ function Settings() {
 
   return (
     <>
-      <header style={{ fontSize: "2.5rem" }}>Account settings</header>
-      <h3 style={{ fontSize: "2rem" }}>Account data</h3>
+      <HeaderInfo title="Account settings" />
+      <HeadingThree title="Account data" />
       <div className={styles.AccountDataContainer}>
         {settings_data.map((item, index) => (
           <AccountData item={item} key={index} handleActive={handleActive} />

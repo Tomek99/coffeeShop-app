@@ -4,6 +4,7 @@ import WishFilter from "./WishFilter/WishFilter";
 import WishInfo from "./WishInfo/WishInfo";
 import WishProducts from "./WishProducts/WishProducts";
 import Support from "../Support/Support";
+import HeaderInfo from "../../HeaderInfo/HeaderInfo";
 // import { useContext } from "react";
 // import { Context } from "../../../Contexts/Context";
 
@@ -19,7 +20,7 @@ function WishList() {
   return (
     <>
       <div className={styles.WishListHeader}>
-        <header className={styles.headline}>Shopping lists</header>
+        <HeaderInfo title="Shopping lists" />
         <button className={styles.btnAddList}>+ Add list</button>
       </div>
       <WishFilter />

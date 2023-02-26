@@ -3,6 +3,8 @@ import styles from "./UserReviews.module.scss";
 import Support from "../Support/Support";
 import Review from "./Review/Review";
 import Feedback from "./Feedback/Feedback";
+import HeaderInfo from "../../HeaderInfo/HeaderInfo";
+import HeadingThree from "../../HeadingThree/HeadingThree";
 
 function UserReviews() {
   useEffect(() => {
@@ -14,9 +16,9 @@ function UserReviews() {
   }, []);
   return (
     <>
-      <header style={{ fontSize: "2.5rem" }}>Reviews</header>
+      <HeaderInfo title="Reviews" />
       <div className={styles.divRow}>
-        <h2>Give feedback</h2>
+        <HeadingThree title="Give feedback" />
         <span>&nbsp;(5)</span>
       </div>
       <div className={styles.divColumn}>
@@ -25,7 +27,7 @@ function UserReviews() {
         <Feedback />
       </div>
       <div className={styles.divRow}>
-        <h2>Your reviews</h2>
+        <HeadingThree title="Your reviews" />
         <span>&nbsp;(1)</span>
       </div>
       <div className={styles.divColumn}>
