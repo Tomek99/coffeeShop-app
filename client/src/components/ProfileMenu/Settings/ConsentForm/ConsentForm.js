@@ -2,6 +2,7 @@ import React from "react";
 import { Field, Form, Formik } from "formik";
 import styles from "./ConsentForm.module.scss";
 import BtnEditSettings from "../../../Buttons/BtnEditSettings/BtnEditSettings";
+import BtnMore from "../../../Buttons/BtnMore/BtnMore";
 
 const initialValues = {
   checked: [],
@@ -51,7 +52,7 @@ function ConsentForm() {
             />
             <p>
               I want to receive information about current offers and promotions
-              by email <span className={styles.moreInfo}>More</span>
+              by email <BtnMore />
             </p>
           </label>
           <label className={styles.inputLabel}>
@@ -62,8 +63,7 @@ function ConsentForm() {
               className={styles.bgInput}
             />
             <p>
-              I want to receive information by phone{" "}
-              <span className={styles.moreInfo}>More</span>
+              I want to receive information by phone <BtnMore />
             </p>{" "}
           </label>
           <label className={styles.inputLabel}>
@@ -74,8 +74,7 @@ function ConsentForm() {
               className={styles.bgInput}
             />
             <p>
-              I want to recive by phone{" "}
-              <span className={styles.moreInfo}>More</span>
+              I want to recive by phone <BtnMore />
             </p>
           </label>
           <label className={styles.inputLabel}>
@@ -87,8 +86,7 @@ function ConsentForm() {
             />
             <p>
               {" "}
-              I want to receive an offer tailored to my needs{" "}
-              <span className={styles.moreInfo}>More</span>
+              I want to receive an offer tailored to my needs <BtnMore />
             </p>
           </label>
 

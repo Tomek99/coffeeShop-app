@@ -1,0 +1,99 @@
+.FooterOrder {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0 10px;
+
+    .flexColumn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+        padding: 12px 0 12px;
+        border-top: var(--border);
+
+        .columnLeft {
+            .divAsk {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .divStatue {
+                display: flex;
+                gap: 10px;
+
+                a {
+                    color: #fff;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .columnRight {
+            max-width: 360px;
+            color: #ccc;
+
+            .dataOwner {
+                text-align: right;
+            }
+
+            .moreInfo {
+                position: absolute;
+                text-align: right;
+                margin: 10px 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .flexColumn {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+
+        .columnLeft {
+            .divStatue {
+                margin-top: 5px;
+                justify-content: center;
+            }
+        }
+        .columnRight {
+            margin-top: 10px;
+
+            .dataOwner {
+                text-align: center !important;
+            }
+            .moreInfo {
+                transform: translateX(-20%);
+                text-align: center !important;
+            }
+        }
+    }
+}
+@media (max-width: 750px) {
+    .moreInfo {
+        transform: translateX(-10%) !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .moreInfo {
+        transform: translateX(-5%) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .moreInfo {
+        transform: none !important;
+    }
+}

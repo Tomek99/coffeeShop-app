@@ -6,10 +6,29 @@
     margin-top: 20px;
     color: #fff;
 
-    .aa {
+    .gridTemplate {
         display: grid;
-        grid-template-columns: 1fr 400px;
-        max-width: 1280px;
+        grid-template-columns: 1fr auto;
+        gap: 100px;
+        max-width: 1200px;
         width: 100%;
+
+        .columnLeft {
+            background: brown;
+
+            .cardFeature {
+                margin-top: 20px;
+            }
+        }
+
+        .columnRight {
+            background: brown;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .gridTemplate {
+        grid-template-columns: auto !important;
     }
 }

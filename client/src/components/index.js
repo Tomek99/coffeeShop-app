@@ -1,4 +1,5 @@
 export { default as NavigationBar } from "./NavigationBar/NavigationBar";
+export { default as NavigationBarOrder } from "./NavigationBarOrder/NavigationBarOrder";
 export { default as HomeSection } from "./HomeSection/HomeSection";
 export { default as AboutSection } from "./AboutSection/AboutSection";
 export { default as MenuSection } from "./MenuSection/MenuSection";
@@ -7,6 +8,7 @@ export { default as ReviewSection } from "./ReviewSection/ReviewSection";
 export { default as ContactSection } from "./ContactSection/ContactSection";
 export { default as BlogsSection } from "./BlogsSection/BlogsSection";
 export { default as Footer } from "./Footer/Footer";
+export { default as FooterOrder } from "./FooterOrder/FooterOrder";
 export { default as AboutCs } from "./AboutCS/AboutCs";
 export { default as FAQ } from "./FAQ/FAQ";
 export { default as OurTeam } from "./OurTeam/OurTeam";

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { Context } from "./Contexts/Context";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import {
   Home,
   Articles,
@@ -16,8 +16,10 @@ import {
 } from "./pages";
 import {
   NavigationBar,
+  NavigationBarOrder,
   ContactSection,
   Footer,
+  FooterOrder,
   ProductDetails,
   Orders,
   Order,
@@ -227,9 +229,11 @@ function App() {
       },
       products: cartItems,
     });
-
-    console.log(order);
   }
+
+  /*----------- location ----------- */
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <Context.Provider
       value={{
@@ -251,8 +255,16 @@ function App() {
         orders,
       }}
     >
-      {" "}
-      <NavigationBar basketQuantity={cartQuantity} />
+      {(() => {
+        switch (location.pathname) {
+          case "/order":
+          case "/order/summary":
+            return <NavigationBarOrder />;
+
+          default:
+            return <NavigationBar basketQuantity={cartQuantity} />;
+        }
+      })()}
       <section className="columnWeb">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -321,7 +333,16 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </section>
-      <Footer />
+      {(() => {
+        switch (location.pathname) {
+          case "/order":
+          case "/order/summary":
+            return <FooterOrder />;
+
+          default:
+            return <Footer />;
+        }
+      })()}
     </Context.Provider>
   );
 }

@@ -14,7 +14,12 @@ function ReportOrder({ item }) {
           <p key={index}>{item}</p>
         ))}
       </div>
-      <Link className={styles.btnComplaint}>{btnText}</Link>
+      <Link
+        className={styles.btnComplaint}
+        onClick={() => alert("component under construction")}
+      >
+        {btnText}
+      </Link>
     </div>
   );
 }
