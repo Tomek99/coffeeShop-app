@@ -1,0 +1,14 @@
+[
+    {
+        "genericValue": "carrier",
+        "text": "Carrier – InPost, UPS, FedEx, DTS, PickPack"
+    },
+    {
+        "genericValue": "showroom",
+        "text": "Pickup at coffe-shop showroom"
+    },
+    {
+        "genericValue": "packageLocker",
+        "text": "Package locker"
+    }
+]

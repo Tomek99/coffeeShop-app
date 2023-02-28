@@ -34,6 +34,7 @@ import {
   ViewCart,
   AccountContent,
   OrderDetails,
+  Summary,
 } from "./components";
 
 function App() {
@@ -233,7 +234,6 @@ function App() {
 
   /*----------- location ----------- */
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <Context.Provider
       value={{
@@ -260,7 +260,6 @@ function App() {
           case "/order":
           case "/order/summary":
             return <NavigationBarOrder />;
-
           default:
             return <NavigationBar basketQuantity={cartQuantity} />;
         }
@@ -328,6 +327,8 @@ function App() {
               </Protected>
             }
           />
+          <Route path="order/summary" element={<Summary />} />
+
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
           <Route path="*" element={<Navigate to="/" replace />} />

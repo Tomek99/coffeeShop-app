@@ -5,7 +5,7 @@ function InputRadio({ item, selectedOption, handleInput }) {
   const { genericValue, text } = item;
   return (
     <div>
-      <label for={genericValue}>
+      <label htmlFor={genericValue}>
         <input
           type="radio"
           id={genericValue}

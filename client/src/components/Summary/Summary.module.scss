@@ -1,0 +1,16 @@
+.test {
+    width: 30px;
+    background-color: red;
+
+    &::after {
+        width: 30px;
+        height: 10px;
+        color: yellow;
+
+        content: " | ";
+    }
+
+    &:last-of-type::after {
+        display: none;
+    }
+}

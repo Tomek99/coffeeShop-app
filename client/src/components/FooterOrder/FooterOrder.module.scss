@@ -47,6 +47,7 @@
             }
 
             .moreInfo {
+                max-width: 360px;
                 position: absolute;
                 text-align: right;
                 margin: 10px 5px;
@@ -74,26 +75,8 @@
                 text-align: center !important;
             }
             .moreInfo {
-                transform: translateX(-20%);
                 text-align: center !important;
             }
         }
-    }
-}
-@media (max-width: 750px) {
-    .moreInfo {
-        transform: translateX(-10%) !important;
-    }
-}
-
-@media (max-width: 500px) {
-    .moreInfo {
-        transform: translateX(-5%) !important;
-    }
-}
-
-@media (max-width: 400px) {
-    .moreInfo {
-        transform: none !important;
     }
 }

@@ -10,7 +10,7 @@ function Protected({ isLogIn, children, navigate }) {
 }
 
 Protected.propTypes = {
-  isLogIn: PropTypes.bool,
+  isLogIn: PropTypes.any,
   children: PropTypes.object,
   navigate: PropTypes.string,
 };

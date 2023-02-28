@@ -23,6 +23,7 @@ function ReportOrder({ item }) {
     </div>
   );
 }
+
 ReportOrder.propTypes = {
   title: PropTypes.string,
   btnText: PropTypes.string,

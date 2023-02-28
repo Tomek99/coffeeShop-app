@@ -1,18 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Deliver.module.scss";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import InputRadio from "./InputRadio/InputRadio";
 import PropTypes from "prop-types";
+import input_deliver_data from "../../../../data/input_deliver_data.json";
 
 function Deliver({ handleOptionChange, selectedOption }) {
-  const input_deliver_data = [
-    {
-      genericValue: "carrier",
-      text: "Carrier – InPost, UPS, FedEx, DTS, PickPack",
-    },
-    { genericValue: "showroom", text: "Pickup at coffe-shop showroom" },
-    { genericValue: "packageLocker", text: "Package locker" },
-  ];
   return (
     <div className={styles.Deliver}>
       <HeadingThree title="Deliver" />
