@@ -1,0 +1,21 @@
+.LinkElement {
+    a {
+        color: #fff;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--main-color);
+            transition: all 0.3s ease;
+        }
+
+        &:hover::before {
+            width: 100%;
+        }
+    }
+}
