@@ -1,0 +1,120 @@
+{
+    "company": [
+        {
+            "name": "Products",
+            "path": "/"
+        },
+        {
+            "name": "Blog",
+            "path": "/"
+        },
+        {
+            "name": "About us",
+            "path": "/"
+        },
+        {
+            "name": "Personal pick-up points",
+            "path": "/"
+        },
+        {
+            "name": "Commercial offer",
+            "path": "/"
+        },
+        {
+            "name": "Collaboration",
+            "path": "/"
+        },
+        {
+            "name": "Our partners",
+            "path": "/"
+        }
+    ],
+    "help": [
+        {
+            "name": "Contact",
+            "path": "/"
+        },
+        {
+            "name": "Frequently asked questions",
+            "path": "/"
+        },
+        {
+            "name": "Payment methods",
+            "path": "/"
+        },
+        {
+            "name": "Delivery methods",
+            "path": "/"
+        },
+        {
+            "name": "Complaint",
+            "path": "/"
+        },
+        {
+            "name": "Return",
+            "path": "/"
+        },
+        {
+            "name": "Shop statute",
+            "path": "/"
+        },
+        {
+            "name": "Privacy Policy",
+            "path": "/"
+        }
+    ],
+    "account": [
+        {
+            "name": "My account",
+            "path": "/"
+        },
+        {
+            "name": "Cart",
+            "path": "/"
+        },
+        {
+            "name": "Wish list",
+            "path": "/"
+        },
+        {
+            "name": "Orders",
+            "path": "/"
+        },
+        {
+            "name": "Order tracking ",
+            "path": "/"
+        },
+        {
+            "name": "Return",
+            "path": "/"
+        },
+        {
+            "name": "Addresses",
+            "path": "/"
+        },
+        {
+            "name": "Recover password",
+            "path": "/"
+        }
+    ],
+    "extraInforamation": [
+        {
+            "name": " pon – sob | 10:00 – 20:00"
+        },
+        {
+            "name": "123456789"
+        },
+        {
+            "name": "contact@xyz.com"
+        },
+        {
+            "name": "Litewska 73 | 00-000 Warsaw"
+        },
+        {
+            "name": "00 0000 0000 0000 0000 0000 0000"
+        },
+        {
+            "name": "NIP 0000000000 | BDO 000000000"
+        }
+    ]
+}

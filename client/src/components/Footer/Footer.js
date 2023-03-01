@@ -1,22 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
-import { BsTwitter, BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
-import { ImFacebook } from "react-icons/im";
+import {
+  BsTwitter,
+  BsInstagram,
+  BsLinkedin,
+  BsYoutube,
+  BsFillTelephoneFill,
+} from "react-icons/bs";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { GoMail } from "react-icons/go";
+import { SlCreditCard } from "react-icons/sl";
+import { RiShoppingBagFill } from "react-icons/ri";
+import { ImFacebook, ImLocation2 } from "react-icons/im";
 import LinkElement from "./LinkElement/LinkElement";
 import ParagraphElement from "./ParagraphElement/ParagraphElement";
 import SocialMediaElement from "./SocialMediaElement/SocialMediaElement";
-function Footer() {
-  const navBarList = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "about-us" },
-    { name: "Menu", path: "menu" },
-    { name: "Products", path: "products" },
-    { name: "Review", path: "reviews" },
-    { name: "Contact", path: "contact" },
-    { name: "Blog", path: "blog" },
-  ];
+import footer_data from "../../data/footer_data.json";
 
+function Footer() {
+  console.log(footer_data);
   const socialMedia = [
     { name: <ImFacebook />, url: "https://www.facebook.com/" },
     { name: <BsTwitter />, url: "https://www.facebook.com/" },
@@ -25,36 +27,13 @@ function Footer() {
     { name: <BsYoutube />, url: "https://www.facebook.com/" },
   ];
 
-  const company = [
-    { name: "Products", path: "/" },
-    { name: "Blog", path: "/" },
-    { name: "About us", path: "/" },
-    { name: "Personal pick-up points", path: "/" },
-    { name: "Commercial offer", path: "/" },
-    { name: "Collaboration", path: "/" },
-    { name: "Our partners", path: "/" },
-  ];
-
-  const help = [
-    { name: "Contact", path: "/" },
-    { name: "Frequently asked questions", path: "/" },
-    { name: "Payment methods", path: "/" },
-    { name: "Delivery methods", path: "/" },
-    { name: "Complaint", path: "/" },
-    { name: "Return", path: "/" },
-    { name: "Shop statute", path: "/" },
-    { name: "Privacy Policy", path: "/" },
-  ];
-
-  const account = [
-    { name: "My account", path: "/" },
-    { name: "Cart", path: "/" },
-    { name: "Wish list", path: "/" },
-    { name: "Orders", path: "/" },
-    { name: "Order tracking ", path: "/" },
-    { name: "Return", path: "/" },
-    { name: "Addresses", path: "/" },
-    { name: "Recover password", path: "/" },
+  const extraInformationIcons = [
+    <BsFillTelephoneFill size={20} />,
+    <AiOutlineClockCircle size={20} />,
+    <GoMail size={20} />,
+    <SlCreditCard size={20} />,
+    <RiShoppingBagFill size={20} />,
+    <ImLocation2 size={20} />,
   ];
 
   const extraInforamation = [
@@ -73,7 +52,7 @@ function Footer() {
           <h6>Company</h6>
           <div className={styles.menuContent}>
             <ul className={styles.menu}>
-              {company.map((item, index) => (
+              {footer_data.company.map((item, index) => (
                 <LinkElement item={item} key={index} />
               ))}
             </ul>
@@ -83,7 +62,7 @@ function Footer() {
           <h6>Help</h6>
           <div className={styles.menuContent}>
             <ul className={styles.menu}>
-              {help.map((item, index) => (
+              {footer_data.help.map((item, index) => (
                 <LinkElement item={item} key={index} />
               ))}
             </ul>
@@ -93,7 +72,7 @@ function Footer() {
           <h6>Account</h6>
           <div className={styles.menuContent}>
             <ul className={styles.menu}>
-              {account.map((item, index) => (
+              {footer_data.account.map((item, index) => (
                 <LinkElement item={item} key={index} />
               ))}
             </ul>
@@ -103,8 +82,12 @@ function Footer() {
           <h6>Coffee Shop</h6>
           <div className={styles.menuContent}>
             <div className={styles.menu}>
-              {extraInforamation.map((item, index) => (
-                <ParagraphElement item={item} key={index} />
+              {footer_data.extraInforamation.map((item, index) => (
+                <ParagraphElement
+                  item={item}
+                  key={index}
+                  icon={extraInformationIcons[index]}
+                />
               ))}
             </div>
           </div>

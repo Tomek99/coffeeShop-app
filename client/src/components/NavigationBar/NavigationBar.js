@@ -5,12 +5,13 @@ import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
 import PopupSearch from "../PopupSearch/PopupSearch";
 import Cart from "../Cart/Cart";
-import NavListElement from "../NavListElement/NavListElement";
+import NavListElement from "./NavListElement/NavListElement";
 import PropTypes from "prop-types";
 import PopupUserNav1 from "../PopupUserNav/PopupUserNav1/PopupUserNav1";
 import PopupUserNav2 from "../PopupUserNav/PopupUserNav2/PopupUserNav2";
 import { Context } from "../../Contexts/Context";
 import BlurScreen from "../BlurScreen/BlurScreen";
+import BtnHamburger from "../Buttons/BtnHamburger/BtnHamburger";
 
 function NavigationBar(props) {
   const { basketQuantity } = props;
@@ -75,18 +76,10 @@ function NavigationBar(props) {
   return (
     <>
       <div className={styles.NavigationBar}>
-        <div
-          className={
-            isNavigationOpen
-              ? `${styles.hamburger} ${styles.active}`
-              : styles.hamburger
-          }
-          onClick={handleNavigation}
-        >
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-        </div>
+        <BtnHamburger
+          isActive={isNavigationOpen}
+          handleBtn={handleNavigation}
+        />
         <div className={styles.navBar}>
           <div className={styles.divLogo}>
             <Link to="/">
