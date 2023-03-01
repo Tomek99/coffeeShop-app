@@ -28,8 +28,8 @@ function Footer() {
   ];
 
   const extraInformationIcons = [
-    <BsFillTelephoneFill size={20} />,
     <AiOutlineClockCircle size={20} />,
+    <BsFillTelephoneFill size={20} />,
     <GoMail size={20} />,
     <SlCreditCard size={20} />,
     <RiShoppingBagFill size={20} />,

@@ -36,15 +36,20 @@ function Products() {
   return (
     <div className={styles.Products}>
       <HeaderSection firstWord="our" secondWord="products" />
-      <div className={styles.itemsSection}>
-        {products
-          .slice(pagesVisited, pagesVisited + PRODUCTS_PER_PAGE)
-          .map((item, index) => (
-            <LatestProduct key={index} item={item} />
-          ))}
-      </div>
-      <div className={styles.productPagination}>
-        <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
+      <div className={styles.gridTemplate}>
+        <div className={styles.itemsSection}>
+          {products
+            .slice(pagesVisited, pagesVisited + PRODUCTS_PER_PAGE)
+            .map((item, index) => (
+              <LatestProduct key={index} item={item} />
+            ))}
+        </div>
+        <div className={styles.productPagination}>
+          <Pagination
+            pageCount={pageCount}
+            handleChangePage={handleChangePage}
+          />
+        </div>
       </div>
     </div>
   );

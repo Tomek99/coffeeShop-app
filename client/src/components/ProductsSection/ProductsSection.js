@@ -10,10 +10,12 @@ function ProductsSection() {
   return (
     <div className={styles.ProductsSection} id="productsSection">
       <HeaderSection firstWord="latest" secondWord="products" />
-      <div className={styles.itemSection}>
-        {products.slice(0, 3).map((item, index) => (
-          <LatestProduct key={index} item={item} isHome={true} />
-        ))}
+      <div className={styles.itemsSection}>
+        <div className={styles.gridTemplate}>
+          {products.slice(0, 3).map((item, index) => (
+            <LatestProduct key={index} item={item} isHome={true} />
+          ))}
+        </div>
       </div>
     </div>
   );
