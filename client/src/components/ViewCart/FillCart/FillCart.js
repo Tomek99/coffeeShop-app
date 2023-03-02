@@ -37,8 +37,9 @@ function FillCart() {
           ))}
         </div>
       </div>
-
-      <CartSummary />
+      <div className={styles.cartSummary}>
+        <CartSummary path="/order" text="Checkout" />
+      </div>
     </div>
   );
 }

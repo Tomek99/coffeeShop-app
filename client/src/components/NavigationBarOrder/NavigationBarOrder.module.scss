@@ -12,6 +12,10 @@
         margin: 20px 0 10px;
         border-bottom: var(--border);
 
+        .divImg {
+            margin-left: 20px;
+        }
+
         .navigationDivList {
             margin-left: 25px;
             max-width: 600px;
@@ -31,6 +35,10 @@
         flex-direction: column !important;
         margin: 10px 10px 0 10px !important;
         border-bottom: none !important;
+
+        .divImg {
+            margin-left: 0 !important;
+        }
 
         .navigationDivList {
             margin-left: 0 !important;

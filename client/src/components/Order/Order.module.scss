@@ -3,32 +3,58 @@
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    margin-top: 20px;
+    margin: 20px 10px 0 20px;
     color: #fff;
 
     .gridTemplate {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr 400px;
         gap: 100px;
         max-width: 1200px;
         width: 100%;
 
         .columnLeft {
-            background: brown;
+            padding: 20px;
+            background: var(--black);
+            border-radius: 8px;
 
             .cardFeature {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
                 margin-top: 20px;
             }
         }
 
         .columnRight {
-            background: brown;
+            position: sticky;
+            align-self: start;
+            top: 10px;
+            border: var(--border);
+            background-color: var(--black);
+            border-radius: 8px 4px 8px 8px;
         }
+    }
+}
+@media (max-width: 1100px) {
+    .gridTemplate {
+        gap: 25px !important;
     }
 }
 
 @media (max-width: 900px) {
-    .gridTemplate {
-        grid-template-columns: auto !important;
+    .Order {
+        margin: 0 !important;
+
+        .gridTemplate {
+            grid-template-columns: auto !important;
+
+            .columnRight {
+                border: none !important;
+                border-radius: none !important;
+                position: sticky;
+                bottom: 0;
+            }
+        }
     }
 }

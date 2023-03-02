@@ -1,0 +1,27 @@
+[
+    {
+        "genericValue": "online_payment",
+        "text": "Online payment",
+        "fee": "Free"
+    },
+    {
+        "genericValue": "online_payment_card",
+        "text": "Online payment card",
+        "fee": "Free"
+    },
+    {
+        "genericValue": "blik",
+        "text": "BLIK",
+        "fee": "Free"
+    },
+    {
+        "genericValue": "traditional_payment",
+        "text": "Traditional payment",
+        "fee": "Free"
+    },
+    {
+        "genericValue": "payment_on_delivery",
+        "text": "Payment on delivery",
+        "fee": "Free"
+    }
+]

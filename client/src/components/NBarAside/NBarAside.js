@@ -11,7 +11,7 @@ function NBarAside(props) {
       ) : (
         <span>
           Cart&nbsp;
-          <span style={{ color: "rgb(51, 220, 32)" }}>
+          <span style={{ color: "#38b32a" }}>
             {props.basketQuantity !== 0
               ? `(${props.basketQuantity} items)`
               : null}

@@ -3,8 +3,10 @@ import styles from "./CartSummary.module.scss";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import { Context } from "../../../../Contexts/Context";
 import { Link } from "react-router-dom";
+import BtnNavigateOrder from "../../../Buttons/BtnNavigateOrder/BtnNavigateOrder";
+import BtnActive from "../../../Buttons/BtnActive/BtnActive";
 
-function CartSummary() {
+function CartSummary({ path, text }) {
   const [hide, setHide] = useState(false);
 
   const { cartValue, cartSave, addOrder } = useContext(Context);
@@ -25,12 +27,12 @@ function CartSummary() {
           className={styles.activeKey}
         >
           <input type="text" />
-          <button type="button">Active</button>
+          <BtnActive />
         </div>
       </div>
       <div className={styles.checkout}>
         <div>
-          <p>
+          <p className={styles.save}>
             <span>Save</span>
             <span>${cartSave.toFixed(2)}</span>
           </p>
@@ -39,9 +41,7 @@ function CartSummary() {
             <span>${cartValue.toFixed(2)}</span>
           </p>
         </div>
-        <Link to="/order" onClick={addOrder} className={styles.order}>
-          Checkout
-        </Link>
+        <BtnNavigateOrder onClick={addOrder} text={text} path={path} />
       </div>
     </div>
   );

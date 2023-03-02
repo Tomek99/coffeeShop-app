@@ -47,6 +47,15 @@
             background-color: var(--black);
         }
     }
+
+    .cartSummary {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+        margin-top: 20px;
+        border: var(--border);
+        border-radius: 8px;
+    }
 }
 
 @media (max-width: 900px) {

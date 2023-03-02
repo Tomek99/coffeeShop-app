@@ -3,7 +3,6 @@ import styles from "./ParagraphElement.module.scss";
 
 function ParagraphElement({ item, icon }) {
   const { name } = item;
-  console.log(icon);
   return (
     <div className={styles.ParagraphElement}>
       <p>

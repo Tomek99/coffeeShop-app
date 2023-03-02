@@ -29,7 +29,7 @@ function NavigationBarOrder() {
   return (
     <div className={styles.NavigationBarOrder}>
       <div className={styles.flexDiv}>
-        <Link to="/">
+        <Link to="/" className={styles.divImg}>
           <img src="../images/logo.png" alt="" />
         </Link>
         <div className={styles.navigationDivList}>

@@ -1,0 +1,32 @@
+.DeliverMethod {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: var(--border);
+    padding: 20px;
+
+    .divContent {
+        display: flex;
+        gap: 5px;
+
+        .divText {
+            font-size: 1.3rem;
+
+            .pOne {
+                color: #ccc;
+                margin-bottom: 3px;
+            }
+        }
+
+        .divImg {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .DeliverMethod {
+        display: none;
+    }
+}

@@ -41,7 +41,7 @@ function Cart({ isCartOpen, handleCart }) {
           View my cart
         </Link>
 
-        <p className={styles.bill} style={{ color: "rgb(51, 220, 32)" }}>
+        <p className={styles.bill} style={{ color: "#38b32a" }}>
           Save: <span className={styles.price}>${cartSave.toFixed(2)}</span>
         </p>
 

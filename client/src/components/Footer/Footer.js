@@ -18,7 +18,6 @@ import SocialMediaElement from "./SocialMediaElement/SocialMediaElement";
 import footer_data from "../../data/footer_data.json";
 
 function Footer() {
-  console.log(footer_data);
   const socialMedia = [
     { name: <ImFacebook />, url: "https://www.facebook.com/" },
     { name: <BsTwitter />, url: "https://www.facebook.com/" },
