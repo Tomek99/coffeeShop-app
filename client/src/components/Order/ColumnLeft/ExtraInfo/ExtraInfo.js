@@ -1,13 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import styles from "./ExtraInfo.module.scss";
-import { HiOutlineInformationCircle } from "react-icons/hi";
 import BtnMore from "../../../Buttons/BtnMore/BtnMore";
 import TextareaAutosize from "react-textarea-autosize";
+import ConciseInfo from "./ConciseInfo/ConciseInfo";
 
 function ExtraInfo() {
   const [showComment, setShowComment] = useState(false);
   const [showConsent, setShowConsent] = useState(false);
+
+  const conciseInfo =
+    "We read all points, so if you add them - it might affect the delivery time.";
 
   function handleComment() {
     setShowComment(!showComment);
@@ -28,15 +31,7 @@ function ExtraInfo() {
       <HeadingThree title="Extra information" />
       <div className={styles.divStyle}>
         <h4>Comment on the order</h4>
-        <div className={styles.info}>
-          <span>
-            <HiOutlineInformationCircle size={20} />
-          </span>
-          <p>
-            We read all points, so if you add them - it might affect the
-            delivery time.
-          </p>
-        </div>
+        <ConciseInfo text={conciseInfo} />
         <div className={styles.divContent}>
           <label htmlFor="comment" className={styles.labelCheckBox}>
             <input
