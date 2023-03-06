@@ -1,0 +1,27 @@
+[
+    {
+        "type": "text",
+        "name": "NIP",
+        "placeholder": "NIP"
+    },
+    {
+        "type": "text",
+        "name": "name",
+        "placeholder": "Name"
+    },
+    {
+        "type": "text",
+        "name": "street",
+        "placeholder": "Street"
+    },
+    {
+        "type": "text",
+        "name": "ZIP_code",
+        "placeholder": "Zip code"
+    },
+    {
+        "type": "text",
+        "name": "city",
+        "placeholder": "City"
+    }
+]

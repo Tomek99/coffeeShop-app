@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import ConciseInfo from "../ExtraInfo/ConciseInfo/ConciseInfo";
-import styles from "./Invoice.module.scss";
-import InvoiceForm from "./InvoiceForm/InvoiceForm";
+import styles from "./UserInvoice.module.scss";
+import UserInvoiceForm from "./UserInvoiceForm/UserInvoiceForm";
 
 function Invoice() {
   const [showInvoice, setShowInvoice] = useState(false);
@@ -23,7 +23,7 @@ function Invoice() {
           <span>I would like to provide other invoice details</span>
         </label>
       </div>
-      {showInvoice ? <InvoiceForm /> : null}
+      {showInvoice ? <UserInvoiceForm /> : null}
     </div>
   );
 }

@@ -1,10 +1,9 @@
 import React from "react";
-import styles from "./InvoiceForm.module.scss";
 import * as Yup from "yup";
-
-import invoice_data from "../../../../../data/invoice_data.json";
+import styles from "./CompanyInvoiceForm.module.scss";
 import { Form, Formik } from "formik";
 import FieldComponent from "../../../../FormikComponents/FieldComponent/FieldComponent";
+import company_invoice_data from "../../../../../data/company_invoice_data.json";
 
 const initialValues = {
   NIP: "",
@@ -22,7 +21,7 @@ const validationSchema = Yup.object().shape({
   city: Yup.string().required("Required"),
 });
 
-function InvoiceForm() {
+function CompanyInvoiceForm() {
   return (
     <Formik
       initialValues={initialValues}
@@ -31,7 +30,7 @@ function InvoiceForm() {
     >
       <Form>
         <div className={styles.InvoiceForm}>
-          {invoice_data.map((item, index) => (
+          {company_invoice_data.map((item, index) => (
             <FieldComponent item={item} key={index} />
           ))}
         </div>
@@ -40,4 +39,4 @@ function InvoiceForm() {
   );
 }
 
-export default InvoiceForm;
+export default CompanyInvoiceForm;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Deliver from "./ColumnLeft/Deliver/Deliver";
 import ExtraInfo from "./ColumnLeft/ExtraInfo/ExtraInfo";
-import Invoice from "./ColumnLeft/Invoice/Invoice";
+import UserInvoice from "./ColumnLeft/UserInvoice/UserInvoice";
 import styles from "./Order.module.scss";
 import Payment from "./ColumnLeft/Payment/Payment";
 import Recipient from "./ColumnLeft/Recipient/Recipient";
@@ -42,7 +42,7 @@ function Order() {
             <Shopper handleShopper={handleShopper} shopper={shopper} />
             {shopper === "1" ? <Company /> : null}
             {deliver === "1" ? <Recipient /> : <DeliveryAddress />}
-            {shopper === "0" ? <Invoice /> : null}
+            {shopper === "0" ? <UserInvoice /> : null}
             <Payment handlePayment={handlePayment} payment={payment} />
             <ExtraInfo />
           </div>
