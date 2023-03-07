@@ -18,7 +18,11 @@ function CartSummary({ path, text }) {
   return (
     <div className={styles.cartSummary}>
       <div className={styles.discountKey}>
-        <button className={styles.btnDiscount} onClick={handleButton}>
+        <button
+          type="button"
+          className={styles.btnDiscount}
+          onClick={handleButton}
+        >
           <span>{hide ? "Enter your code" : "Do you have a discount?"} </span>
           {hide ? <SlArrowUp /> : <SlArrowDown />}
         </button>

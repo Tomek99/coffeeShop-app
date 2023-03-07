@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import ConciseInfo from "../ExtraInfo/ConciseInfo/ConciseInfo";
 import styles from "./UserInvoice.module.scss";
-import UserInvoiceForm from "./UserInvoiceForm/UserInvoiceForm";
+import user_invoice_data from "../../../../data/user_invoice_data.json";
+import FieldComponent from "../../../FormikComponents/FieldComponent/FieldComponent";
 
-function Invoice() {
+function UserInvoice() {
   const [showInvoice, setShowInvoice] = useState(false);
 
   function handleInvoiceForm() {
@@ -23,9 +24,15 @@ function Invoice() {
           <span>I would like to provide other invoice details</span>
         </label>
       </div>
-      {showInvoice ? <UserInvoiceForm /> : null}
+      {showInvoice ? (
+        <div className={styles.InvoiceForm}>
+          {user_invoice_data.map((item, index) => (
+            <FieldComponent item={item} key={index} />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
 
-export default Invoice;
+export default UserInvoice;
