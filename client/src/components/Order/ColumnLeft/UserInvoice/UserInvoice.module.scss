@@ -1,0 +1,19 @@
+.invoiceLabel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.3rem;
+    margin-top: 10px;
+
+    input {
+        accent-color: var(--main-color);
+    }
+
+    .InvoiceForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 470px;
+        margin-top: 15px;
+    }
+}

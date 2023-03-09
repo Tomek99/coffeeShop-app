@@ -1,0 +1,129 @@
+.NavigationBar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--black);
+    border-bottom: var(--border);
+    z-index: 99;
+
+    .navBar {
+        max-width: 1620px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .divLogo {
+            img.logo {
+                width: 100%;
+                margin: 5px 0 5px 0;
+            }
+        }
+
+        .navMenu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style-type: none;
+            gap: 20px;
+            font-size: 2rem;
+        }
+
+        .btnSection {
+            display: flex;
+            position: relative;
+            gap: 15px;
+
+            .btnDisplay {
+                background-color: transparent;
+                cursor: pointer;
+
+                .quantityProductsInBasket {
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    background-color: var(--main-color);
+                    font-weight: bold;
+                    color: #fff;
+                    position: absolute;
+                    right: -25px;
+                    bottom: 5px;
+                    font-size: 1.5rem;
+                }
+            }
+
+            .btnDisplayActive:hover + ul {
+                display: flex;
+            }
+        }
+    }
+}
+
+@media (max-width: 1080px) {
+    .btnDisplayActive {
+        display: none;
+    }
+}
+
+@media (min-width: 1081px) {
+    .btnDisplayActiveAside {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .navMenu {
+        position: fixed;
+        left: -100%;
+        top: 76px;
+        flex-direction: column !important;
+        background-color: var(--bg);
+        width: 30%;
+        text-align: center;
+        transition: 0.3s;
+        border-bottom: var(--border);
+        border-right: var(--border);
+
+        .navItem {
+            margin: 16px;
+        }
+    }
+
+    .navMenu.active {
+        left: 0;
+    }
+
+    img.logo {
+        width: 80% !important;
+    }
+
+    .PopupBasket {
+        top: 76px !important;
+    }
+}
+@media (max-width: 500px) {
+    .divLogo {
+        margin-left: 10px;
+    }
+    .navBar {
+        justify-content: space-evenly !important;
+    }
+
+    .navMenu {
+        width: 40%;
+    }
+
+    .quantityProductsInBasket {
+        width: 20px !important;
+        height: 20px !important;
+        position: absolute;
+        top: 0;
+        right: 4px !important;
+        bottom: auto !important;
+        font-size: 1.2rem !important;
+    }
+}

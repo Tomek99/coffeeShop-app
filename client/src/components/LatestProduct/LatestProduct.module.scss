@@ -1,0 +1,95 @@
+.singleItemSection {
+    padding: 20px 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+    gap: 10px;
+    border: var(--border);
+    background-color: var(--black);
+
+    .iconsSection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+
+        button,
+        a {
+            background-color: var(--black);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4.5rem;
+            height: 4.5rem;
+            border: var(--border);
+            transition: 0.3s linear;
+            cursor: pointer;
+
+            svg {
+                font-size: 2rem;
+            }
+        }
+
+        button:hover,
+        a:hover {
+            background-color: var(--main-color);
+        }
+    }
+
+    .middleOfproduct {
+        align-self: stretch;
+        text-align: center;
+
+        img {
+            max-width: 120px;
+            max-height: 210px;
+            width: 100%;
+        }
+
+        h3 {
+            max-width: 250px;
+            margin: 5px 0;
+            font-size: 1.7rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: 1.3rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #ccc;
+            margin-bottom: 5px;
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 25px;
+                width: 25px;
+                border: 0.2rem solid rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .price {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+        color: #fff;
+
+        .oldPrice {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #ccc;
+        }
+    }
+}

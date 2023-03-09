@@ -1,0 +1,33 @@
+.AccountData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.3rem;
+
+    .title {
+        font-weight: bold;
+        color: var(--main-color);
+    }
+
+    .divRowUserData {
+        display: flex;
+        padding: 20px 10px;
+        border: var(--border);
+        border-radius: 8px;
+        background-color: var(--black);
+
+        .line {
+            flex-grow: 1;
+        }
+        .btnEdit {
+            background-color: transparent;
+            cursor: pointer;
+            color: var(--main-color);
+            border-radius: 16px;
+
+            &:hover {
+                color: var(--main-color-darken);
+            }
+        }
+    }
+}

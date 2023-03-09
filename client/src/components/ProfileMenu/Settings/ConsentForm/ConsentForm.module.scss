@@ -1,0 +1,22 @@
+.ConsentForm {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .inputLabel {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #ccc;
+        font-size: 1.3rem;
+
+        .bgInput {
+            accent-color: var(--main-color);
+        }
+    }
+
+    button {
+        align-self: flex-start;
+    }
+}

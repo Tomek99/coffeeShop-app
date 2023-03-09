@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Complaint",
+        "btnText": "Report complaint",
+        "text": [
+            "- For example, the product does not work properly",
+            "- Two years from the date of the defect in the case of warranty or as indicated by the manufacturer in the case of warranty"
+        ]
+    },
+    {
+        "title": "Refund or exchange",
+        "btnText": "Report refund or exchange",
+        "text": [
+            "- No reason for return or exchange",
+            "- Up to 15 days after receiving the shipment, submit a statement of withdrawal from the contract",
+            "- Return the product free of charge at the parcel machine",
+            " - We will refund your money up to 7 days."
+        ]
+    }
+]

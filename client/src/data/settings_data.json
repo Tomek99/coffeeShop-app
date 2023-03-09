@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Your data",
+    "content": "",
+    "fullName": "",
+    "btnText": "Edit",
+    "active": "userData"
+  },
+  {
+    "title": "E-mail address",
+    "content": "",
+    "btnText": "Change",
+    "active": "userEmail"
+  },
+  {
+    "title": "Password",
+    "content": "••••••••••••••",
+    "btnText": "Change",
+    "active": "userPassword"
+  }
+]

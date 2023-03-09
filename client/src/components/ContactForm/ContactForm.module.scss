@@ -1,0 +1,64 @@
+.formContact {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    p {
+        text-transform: uppercase;
+        font-size: 3.5rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    input {
+        width: 100%;
+        padding: 12px 20px;
+        margin-top: 15px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        box-sizing: border-box;
+        background: transparent;
+        border: var(--border);
+        color: #fff;
+    }
+
+    button {
+        align-self: center;
+        background-color: var(--main-color);
+        color: white;
+        padding: 7px 25px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 12px;
+        transition: 0.3s linear;
+        cursor: pointer;
+    }
+
+    button:hover {
+        letter-spacing: 0.1rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .formContact {
+        flex-basis: 60% !important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .formContact {
+        flex-basis: 70% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .formContact {
+        flex-basis: 80% !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .formContact {
+        flex-basis: 90% !important;
+    }
+}

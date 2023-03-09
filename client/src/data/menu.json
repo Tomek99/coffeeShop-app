@@ -1,0 +1,106 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "images/menu-1.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 2,
+        "imageUrl": "images/menu-2.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 3,
+        "imageUrl": "images/menu-3.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 4,
+        "imageUrl": "images/menu-4.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 5,
+        "imageUrl": "images/menu-5.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 6,
+        "imageUrl": "images/menu-6.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 7,
+        "imageUrl": "images/menu-1.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 8,
+        "imageUrl": "images/menu-2.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 9,
+        "imageUrl": "images/menu-3.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 191,
+        "imageUrl": "images/menu-4.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 192,
+        "imageUrl": "images/menu-5.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 193,
+        "imageUrl": "images/menu-6.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    },
+    {
+        "id": 194,
+        "imageUrl": "images/menu-1.png",
+        "name": "Tasty And Health",
+        "newPrice": 15.99,
+        "oldPrice": 20.99,
+        "quantity": 1
+    }
+]

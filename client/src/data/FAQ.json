@@ -1,0 +1,54 @@
+[
+    {
+        "id": 60,
+        "title": "What are the available delivery methods?",
+        "content": "We offer shipping by InPost courier, InPost parcel machine and ORLEN Parcel. Delivery by our driver is possible in and around Krakow. More information on delivery methods can be found here."
+    },
+    {
+        "id": 61,
+        "title": "Where can I pick up my order in person??",
+        "content": "It is possible to pick up your order in person at our outlets, more information and addresses of the outlets can be found here."
+    },
+    {
+        "id": 62,
+        "title": "Do we ship internationally?",
+        "content": "Yes, we offer shipping overseas. Shipping costs depend on the size of the package. The service should be arranged individually by contacting us here."
+    },
+    {
+        "id": 63,
+        "title": "How long do I have to wait for my order?",
+        "content": "Delivery time in Krakow area is 1 business day maximum, while in Krakow area is 2 business days maximum. For InPost Parcel Post and InPost Courier shipping, delivery time is 2 business days maximum, while ORLEN Parcel Post is 3 business days maximum.",
+        "extraContent": "Orders can be tracked here."
+    },
+    {
+        "id": 64,
+        "title": "What payment methods are accepted?",
+        "content": "Our online store is integrated with the PayU platform, which offers payment by Blik code, electronic transfer and other payment services. If you choose the delivery option with cash on delivery, payment is made by card or cash on delivery. We also accept traditional transfers and phone number transfers. More information on payment methods can be found here."
+    },
+    {
+        "id": 65,
+        "title": "Can I receive a VAT invoice?",
+        "content": "Yes, we are VAT payers. To receive an invoice, please check the box I want to receive a VAT invoice during the ordering process. ",
+        "extraContent": "We send the invoice electronically to the e-mail provided."
+    },
+    {
+        "id": 66,
+        "title": "I would like to return my order, what should I do?",
+        "content": "To return your order, please fill out the return form found here."
+    },
+    {
+        "id": 67,
+        "title": "I want to complain about my order, what should I do?",
+        "content": "To return your order, please fill out the complaint form found here."
+    },
+    {
+        "id": 68,
+        "title": "How can I change or cancel my order?",
+        "content": "To cancel or change your order, please contact us here."
+    },
+    {
+        "id": 69,
+        "title": "How can I track my order?",
+        "content": "To track your order, enter your order number and email address here."
+    }
+]

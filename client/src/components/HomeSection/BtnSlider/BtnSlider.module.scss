@@ -1,0 +1,28 @@
+.btnDiv {
+    z-index: 2;
+    .btnArrow {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .btnArrowLeft {
+        left: 0;
+        transform: translate(100%, -100%);
+    }
+    .btnArrowRight {
+        right: 0;
+        transform: translate(-100%, -100%);
+    }
+}
+@media screen and (max-width: 900px) {
+    .btnArrowLeft {
+        left: 0;
+        transform: none !important;
+    }
+    .btnArrowRight {
+        right: 0;
+        transform: none !important;
+    }
+}

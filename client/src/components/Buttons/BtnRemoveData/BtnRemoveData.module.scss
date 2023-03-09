@@ -1,0 +1,19 @@
+.BtnRemoveData {
+    font-size: 13px;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 18px;
+    background-color: var(--red);
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.3s ease-in-out;
+        background-color: var(--red-darken);
+    }
+}
+@media (max-width: 560px) {
+    .btnAdd {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

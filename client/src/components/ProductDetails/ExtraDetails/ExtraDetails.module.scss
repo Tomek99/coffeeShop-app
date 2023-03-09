@@ -1,0 +1,34 @@
+.ExtraDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .ExtraDetailsBtn {
+        display: flex;
+        gap: 20px;
+
+        button {
+            position: relative;
+            color: #fff;
+            background-color: transparent;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .btn {
+            color: var(--main-color);
+        }
+        .btn:hover {
+            color: var(--main-color);
+        }
+        .btn::after {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background: var(--main-color);
+            content: "";
+        }
+    }
+}

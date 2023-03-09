@@ -1,0 +1,38 @@
+.ReviewSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    .customerReview {
+        max-width: 900px;
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .customerReview {
+        max-width: 560px !important;
+        flex-direction: column !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .customerReview {
+        max-width: 400px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .customerReview {
+        max-width: 270px !important;
+        flex-direction: column !important;
+    }
+}

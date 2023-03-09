@@ -1,0 +1,21 @@
+.AboutUsNavList {
+    display: flex;
+    justify-content: center;
+
+    .navListElements {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none;
+        max-width: 600px;
+        flex-basis: 100%;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navListElements {
+        max-width: 300px !important;
+    }
+}

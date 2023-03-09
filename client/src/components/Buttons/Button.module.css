@@ -1,0 +1,14 @@
+
+/* BTN 1*/
+.btn {
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s linear;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}

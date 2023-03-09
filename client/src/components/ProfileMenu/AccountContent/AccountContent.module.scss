@@ -1,0 +1,33 @@
+.accountContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .divCol {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .divRow {
+            display: flex;
+            justify-content: space-between;
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            button {
+                padding: 5px 10px;
+                font-size: 1.4rem;
+                color: #fff;
+                background-color: transparent;
+                border-radius: 12px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--grey);
+                }
+            }
+        }
+    }
+}

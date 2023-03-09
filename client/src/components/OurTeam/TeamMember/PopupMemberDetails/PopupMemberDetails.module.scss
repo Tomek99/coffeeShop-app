@@ -1,0 +1,142 @@
+.PopupMemberDetails {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(5px);
+
+    .memberDetails {
+        display: flex;
+        position: relative;
+        background-color: var(--black);
+        height: 100%;
+        max-height: 450px;
+
+        .imgMemberSection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 30px;
+            background-color: var(--bg);
+
+            .imgMember {
+                max-width: 300px;
+                max-height: 300px;
+            }
+
+            .btnFollowOnTwitter {
+                display: flex;
+                gap: 10px;
+                background-color: var(--main-color);
+                color: #fff;
+                font-weight: 1000;
+                font-size: 1.3rem;
+                padding: 10px 30px 10px 15px;
+                margin-bottom: 10px;
+                border-radius: 16px;
+                cursor: pointer;
+
+                .btnIconTwitter {
+                    font-size: 1.5rem;
+                }
+                span {
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+            }
+            .btnFollowOnTwitter:hover {
+                background-color: #ce9754;
+            }
+        }
+
+        .memberContent {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            background-color: var(--black);
+            gap: 1rem;
+            max-width: 300px;
+            padding: 10px 30px;
+
+            div {
+                h1 {
+                    font-size: 2.5rem;
+                }
+                h3 {
+                    font-size: 1.7rem;
+                    color: var(--main-color);
+                }
+            }
+
+            p {
+                text-align: justify;
+                font-weight: 300;
+                font-size: 1.2rem;
+                height: 300px;
+                padding: 0.5rem;
+                color: #ccc;
+                overflow: scroll;
+                overflow-x: hidden;
+            }
+        }
+
+        .btnClose {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--main-color);
+            top: -1.5rem;
+            right: -1.5rem;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            cursor: pointer;
+
+            .btnIcon {
+                font-size: 2.5rem;
+                color: #fff;
+            }
+        }
+        .btnClose:hover {
+            background-color: #ce9754;
+        }
+    }
+}
+
+.PopupMemberDetails.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    .memberDetails {
+        flex-direction: column;
+    }
+
+    .PopupMemberDetails.active {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 2.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .memberDetails {
+        flex-direction: column;
+    }
+
+    .PopupMemberDetails.active {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 2.5rem;
+    }
+}

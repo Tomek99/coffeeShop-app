@@ -1,0 +1,11 @@
+.OrderDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .buttonShowOrders {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}

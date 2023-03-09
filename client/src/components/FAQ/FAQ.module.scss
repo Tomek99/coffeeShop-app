@@ -1,0 +1,36 @@
+.FAQ {
+    display: flex;
+    flex-direction: column;
+    color: #ccc;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .test {
+        max-width: 700px;
+        margin: 0 10px 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background-color: var(--black);
+
+            h2 {
+                font-size: 1.9rem;
+                color: #fff;
+                text-transform: none;
+            }
+            p {
+                font-size: 1.7rem;
+                text-transform: none;
+                font-weight: 300;
+                text-align: justify;
+                padding: 1px;
+            }
+        }
+    }
+}

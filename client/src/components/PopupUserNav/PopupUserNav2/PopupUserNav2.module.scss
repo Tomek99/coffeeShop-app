@@ -1,0 +1,137 @@
+.PopupUserProfile2 {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 410px;
+    height: 100%;
+    top: 0;
+    right: -500px;
+    color: #fff;
+    background: var(--black);
+    border-radius: 0px;
+    font-size: 1.6rem;
+    list-style: none;
+    z-index: 55;
+    transition: 0.3s linear;
+
+    .userName {
+        padding: 20px 0 0 15px;
+
+        p:nth-of-type(1) {
+            color: #ccc;
+            font-size: 1.4rem;
+        }
+
+        p:nth-of-type(2) {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+    .btnSignIn_UpSection {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 15px;
+        padding: 0 20px;
+
+        .btnSignIn_Up {
+            display: flex;
+            align-items: center;
+            justify-content: stretch;
+            padding: 10px 0;
+            border-radius: 20px;
+            transition: 0.3s linear;
+            cursor: pointer;
+
+            a {
+                width: 100%;
+                color: #fff;
+                text-transform: none;
+                text-align: center;
+                transition: 0.3s linear;
+            }
+
+            &:nth-of-type(1) {
+                background: var(--main-color);
+
+                &:hover {
+                    background-color: #ce9754;
+                }
+            }
+            &:nth-of-type(3) {
+                border: 1px solid #ce9754;
+
+                &:hover {
+                    background-color: #ce9754;
+                }
+            }
+        }
+
+        .infoAcc {
+            align-self: center;
+            text-transform: none;
+        }
+    }
+
+    .list {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        border-top: var(--border);
+        margin-top: 20px;
+
+        li {
+            a {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                text-transform: none;
+                color: #fff;
+                padding: 15px 15px;
+                transition: 0.3s linear;
+                &:hover {
+                    background-color: var(--grey);
+                }
+            }
+        }
+    }
+
+    .divLogOut {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: var(--border);
+        margin-bottom: 10px;
+
+        .btnLogOut {
+            flex-basis: 100%;
+            padding: 8px 0;
+            margin: 3px 20px;
+            background-color: transparent;
+            font-size: 1.6rem;
+            color: #fff;
+            border-radius: 18px;
+            transition: 0.3s linear;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--grey);
+            }
+        }
+    }
+}
+.active {
+    right: 0;
+}
+
+@media (max-width: 600px) {
+    .PopupUserProfile2 {
+        width: 85%;
+    }
+}

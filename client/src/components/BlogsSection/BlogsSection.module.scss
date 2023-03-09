@@ -1,0 +1,29 @@
+.BlogsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    .blogs {
+        max-width: 900px;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .blogs {
+        max-width: 600px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .blogs {
+        max-width: 300px !important;
+    }
+}

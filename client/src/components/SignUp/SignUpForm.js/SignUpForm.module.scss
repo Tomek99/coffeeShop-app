@@ -1,0 +1,19 @@
+.formInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .wrongUrl {
+        font-size: 1.2rem;
+        color: rgb(255, 0, 34);
+    }
+
+    .btnSignUp {
+        font-size: 1.8rem;
+        background: var(--main-color);
+        color: #fff;
+        cursor: pointer;
+        border-radius: 16px;
+        padding: 10px 0px 10px 10px;
+    }
+}

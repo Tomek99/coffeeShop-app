@@ -1,0 +1,13 @@
+.BlurScreen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: var(--blur-screen);
+    will-change: opacity;
+    opacity: 0.64;
+    inset: 0px;
+    transition: opacity 300ms ease 0s;
+    pointer-events: auto;
+}

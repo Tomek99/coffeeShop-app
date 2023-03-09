@@ -1,0 +1,15 @@
+.BtnNavigateOrder {
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border-radius: 16px;
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: rgb(31, 129, 20);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(27, 113, 17);
+    }
+}

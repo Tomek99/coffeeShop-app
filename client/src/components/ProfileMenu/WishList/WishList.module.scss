@@ -1,0 +1,26 @@
+.WishListHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .btnAddList {
+        background-color: transparent;
+        color: #fff;
+        padding: 8px 20px;
+        border: var(--border);
+        font-size: 1.3rem;
+        border-radius: 16px;
+        transition: 0.3s linear;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--grey);
+        }
+    }
+}
+
+.WishListProducts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

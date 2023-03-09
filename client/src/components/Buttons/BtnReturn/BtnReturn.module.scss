@@ -1,0 +1,13 @@
+.ReturnBtn {
+    display: flex;
+    padding: 5px 10px;
+    border-radius: 12px;
+    border: var(--border);
+    font-size: 1.3rem;
+    color: #fff;
+    transition: 0.3s linear;
+
+    &:hover {
+        background-color: var(--grey);
+    }
+}

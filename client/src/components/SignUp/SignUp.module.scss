@@ -1,0 +1,55 @@
+.SignUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 2rem;
+
+    .divRow {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1620px;
+        width: 100%;
+        margin: 10px;
+
+        .divLeft {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+
+            .formContainer {
+                border: var(--border);
+                margin-bottom: 5px;
+                border-radius: 16px;
+                background-color: var(--black);
+                padding: 20px;
+
+                header {
+                    font-size: 3rem;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .divSignIn {
+                text-align: center;
+                font-size: 1.5rem;
+                color: #fff;
+                margin-bottom: 20px;
+
+                a {
+                    color: var(--main-color);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .SignUp {
+        .divRow {
+            flex-direction: column;
+        }
+    }
+}

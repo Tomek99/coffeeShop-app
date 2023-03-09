@@ -1,0 +1,41 @@
+.WishInfo {
+    .divInfo {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        margin-top: 10px;
+
+        .divRow {
+            display: flex;
+
+            .number {
+                color: var(--main-color);
+                font-size: 1.6rem;
+            }
+
+            .divColumn {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                max-width: 300px;
+
+                .title {
+                    color: var(--main-color);
+                    font-size: 1.6rem;
+                }
+
+                .text {
+                    color: #ccc;
+                    font-size: 1.3rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .divInfo {
+        grid-template-columns: 1fr !important;
+    }
+}

@@ -1,0 +1,16 @@
+.BtnActive {
+    padding: 8px 10px;
+    border-radius: 16px;
+    background-color: var(--black);
+    box-shadow: 0 0 0 2px rgb(31, 129, 20);
+
+    font-size: 1.6rem;
+    color: rgb(31, 129, 20);
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        color: #fff;
+        background-color: rgb(31, 129, 20);
+    }
+}
