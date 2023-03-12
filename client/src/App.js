@@ -3,7 +3,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { Context } from "./Contexts/Context";
-import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import {
   Home,
   Articles,
@@ -234,6 +240,14 @@ function App() {
 
   /*----------- location ----------- */
   const location = useLocation();
+
+  /*----------- navigate on Summary ----------- */
+  const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
+
+  function handleUserNavigateToSummary() {
+    setIsUserNavigateToSummary(true);
+  }
+
   return (
     <Context.Provider
       value={{
@@ -323,11 +337,21 @@ function App() {
             path="order"
             element={
               <Protected isLogIn={cartItems.length} navigate="/cart">
-                <Order />
+                <Order
+                  handleUserNavigateToSummary={handleUserNavigateToSummary}
+                />
               </Protected>
             }
           />
-          <Route path="order/summary" element={<Summary />} />
+
+          <Route
+            path="order/summary"
+            element={
+              <Protected isLogIn={isUserNavigateToSummary} navigate="/order">
+                <Summary />
+              </Protected>
+            }
+          />
 
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />

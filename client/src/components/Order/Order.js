@@ -16,7 +16,7 @@ import CartSummary from "../ViewCart/FillCart/CartSummary/CartSummary";
 import { Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
 
-function Order() {
+function Order({ handleUserNavigateToSummary }) {
   /*---------Deliver state---------*/
   const [deliver, setDeliver] = useState("0");
 
@@ -37,7 +37,6 @@ function Order() {
   function handlePayment(e) {
     setPayment(e.target.value);
   }
-  /*---------Initial values---------*/
 
   /*---------Initial values---------*/
 
@@ -129,13 +128,14 @@ function Order() {
   });
 
   let navigate = useNavigate();
+
   const routeChange = () => {
+    handleUserNavigateToSummary();
     navigate("/order/summary");
   };
 
   function onSubmit(values, actions) {
-    alert("HI");
-    // routeChange();
+    routeChange();
   }
 
   return (
