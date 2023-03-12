@@ -3,43 +3,33 @@ import PropTypes from "prop-types";
 import styles from "./InputRadio.module.scss";
 import { Field } from "formik";
 
-function InputRadio({
-  item,
-  option,
-  handleInput,
-  index,
-  icon,
-  handleFieldValue,
-}) {
-  const { genericValue, text, fee } = item;
-  const stringyIndex = JSON.stringify(index);
-
+function InputRadio({ item, index, activeIndex, icon, handleFieldValue }) {
+  const { name, value, fee, id } = item;
   return (
     <div
       className={
-        option === stringyIndex
-          ? `${styles.InputRadioShopper} ${styles.active}`
-          : styles.InputRadioShopper
+        activeIndex === index
+          ? `${styles.divRadio} ${styles.active}`
+          : styles.divRadio
       }
     >
-      <label htmlFor={genericValue} className={styles.labelRadio}>
+      <label htmlFor={id} className={styles.labelRadio}>
         <div className={styles.divInput}>
           <Field
             type="radio"
-            id={genericValue}
-            name={genericValue}
-            value={index}
-            checked={option === stringyIndex}
-            onChange={handleInput}
-            onClick={() => handleFieldValue(genericValue)}
+            id={id}
+            name={name}
+            value={value}
+            // checked={option === stringyIndex}
+            onClick={() => handleFieldValue(id, index)}
             className={
-              option === stringyIndex
+              activeIndex === index
                 ? `${styles.inputRadio} ${styles.activeDot}`
                 : styles.inputRadio
             }
           />
           <div className={styles.divTextDirection}>
-            <span className={styles.textwidth}>{text}</span>
+            <span className={styles.textwidth}>{value}</span>
             {fee ? <span className={styles.fee}>{`(${fee})`}</span> : null}
           </div>
         </div>
@@ -58,3 +48,9 @@ InputRadio.propTypes = {
   icon: PropTypes.object,
 };
 export default InputRadio;
+
+// className={
+//   option === stringyIndex
+//     ? `${styles.InputRadioShopper} ${styles.active}`
+//     : styles.InputRadioShopper
+// }

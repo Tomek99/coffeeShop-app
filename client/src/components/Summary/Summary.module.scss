@@ -1,16 +1,17 @@
-.test {
-    width: 30px;
-    background-color: red;
+.Summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 20px 10px 0 20px;
+    color: #fff;
 
-    &::after {
-        width: 30px;
-        height: 10px;
-        color: yellow;
-
-        content: " | ";
-    }
-
-    &:last-of-type::after {
-        display: none;
+    .gridTemplate {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 1200px;
+        width: 100%;
+        background-color: var(--bg);
     }
 }

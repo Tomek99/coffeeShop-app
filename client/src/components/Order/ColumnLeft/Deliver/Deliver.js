@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Deliver.module.scss";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import PropTypes from "prop-types";
@@ -8,7 +8,9 @@ import { BsTruck, BsShop } from "react-icons/bs";
 import { GiLockers } from "react-icons/gi";
 import { SlLocationPin } from "react-icons/sl";
 
-function Deliver({ handleDeliver, deliver, setFieldValue, values }) {
+function Deliver({ setFieldValue, values }) {
+  const [activeIndex, setActiveIndex] = useState("0");
+
   const icons = [
     <BsTruck size={25} />,
     <BsShop size={25} />,
@@ -16,8 +18,10 @@ function Deliver({ handleDeliver, deliver, setFieldValue, values }) {
     <SlLocationPin size={25} />,
   ];
 
-  function handleFieldValue(genricValue) {
-    if (genricValue !== "showroom") {
+  function handleFieldValue(id, index) {
+    setActiveIndex(index);
+
+    if (id !== "showroom") {
       setFieldValue("activeAddress", true);
     } else {
       setFieldValue("activeAddress", false);
@@ -33,11 +37,9 @@ function Deliver({ handleDeliver, deliver, setFieldValue, values }) {
           <InputRadio
             item={item}
             key={index}
-            handleInput={handleDeliver}
-            option={deliver}
             index={index}
+            activeIndex={activeIndex}
             icon={icons[index]}
-            setFieldValue={setFieldValue}
             handleFieldValue={handleFieldValue}
           />
         ))}

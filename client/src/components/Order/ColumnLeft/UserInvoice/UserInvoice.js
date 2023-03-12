@@ -34,11 +34,16 @@ function UserInvoice({ deliver, setFieldValue }) {
   return (
     <div className={styles.Invoice}>
       <HeadingThree title="Invoice details" />
-      <ConciseInfo text={deliver !== "1" ? conciseInfoOne : conciseInfoTwo} />
+      <ConciseInfo text={deliver ? conciseInfoOne : conciseInfoTwo} />
       <div>
         <label htmlFor="invoice" className={styles.invoiceLabel}>
-          <input id="invoice" type="checkbox" onClick={handleInvoiceForm} />
-          <span>{deliver !== "1" ? radioInputOne : radioInputTwo}</span>
+          <input
+            id="invoice"
+            type="checkbox"
+            name="activeInvoice"
+            onClick={handleInvoiceForm}
+          />
+          <span>{deliver ? radioInputOne : radioInputTwo}</span>
         </label>
       </div>
       {showInvoice ? (

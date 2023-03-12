@@ -1,26 +1,31 @@
 [
     {
-        "genericValue": "online_payment",
-        "text": "Online payment",
+        "id": "online_payment",
+        "name": "payment",
+        "value": "Online payment",
         "fee": "Free"
     },
     {
-        "genericValue": "online_payment_card",
-        "text": "Online payment card",
+        "id": "online_payment_card",
+        "name": "payment",
+        "value": "Online payment card",
         "fee": "Free"
     },
     {
-        "genericValue": "blik",
-        "text": "BLIK",
+        "id": "blik",
+        "name": "payment",
+        "value": "BLIK",
         "fee": "Free"
     },
     {
-        "genericValue": "traditional_payment",
-        "text": "Traditional payment",
+        "id": "traditional_payment",
+        "name": "payment",
+        "value": "Traditional payment",
         "fee": "Free"
     },
     {
-        "genericValue": "payment_on_delivery",
+        "id": "payment_on_delivery",
+        "name": "payment",
         "text": "Payment on delivery",
         "fee": "Free"
     }

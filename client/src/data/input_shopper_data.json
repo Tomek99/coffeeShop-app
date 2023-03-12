@@ -1,10 +1,12 @@
 [
     {
-        "genericValue": "privatePerson",
-        "text": "Private person"
+        "id": "privatePerson",
+        "name": "shopper",
+        "value": "Private person"
     },
     {
-        "genericValue": "company",
-        "text": "Company"
+        "id": "company",
+        "name": "shopper",
+        "value": "Company"
     }
 ]

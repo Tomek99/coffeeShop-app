@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Deliver from "./ColumnLeft/Deliver/Deliver";
 import ExtraInfo from "./ColumnLeft/ExtraInfo/ExtraInfo";
 import UserInvoice from "./ColumnLeft/UserInvoice/UserInvoice";
@@ -15,28 +15,10 @@ import DeliveryAddress from "./ColumnLeft/DeliveryAddress/DeliveryAddress";
 import CartSummary from "../ViewCart/FillCart/CartSummary/CartSummary";
 import { Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../Contexts/Context";
 
 function Order({ handleUserNavigateToSummary }) {
-  /*---------Deliver state---------*/
-  const [deliver, setDeliver] = useState("0");
-
-  function handleDeliver(e) {
-    setDeliver(e.target.value);
-  }
-
-  /*---------Shopper state---------*/
-  const [shopper, setShopper] = useState("0");
-
-  function handleShopper(e) {
-    setShopper(e.target.value);
-  }
-
-  /*---------Payment state---------*/
-  const [payment, setPayment] = useState("0");
-
-  function handlePayment(e) {
-    setPayment(e.target.value);
-  }
+  const { addOrder } = useContext(Context);
 
   /*---------Initial values---------*/
 
@@ -60,6 +42,10 @@ function Order({ handleUserNavigateToSummary }) {
     i_street: "",
     i_ZIP_code: "",
     i_city: "",
+    payment: "",
+    delivery: "",
+    shopper: "",
+    comment: "",
   };
 
   const phoneRegExp = /^(\+48|48)?([1-9]{2})(\d{7})$/;
@@ -136,6 +122,7 @@ function Order({ handleUserNavigateToSummary }) {
 
   function onSubmit(values, actions) {
     routeChange();
+    addOrder(values);
   }
 
   return (
@@ -150,32 +137,24 @@ function Order({ handleUserNavigateToSummary }) {
             <div className={styles.columnLeft}>
               <HeaderInfo title="Deliver and payment" />
               <div className={styles.cardFeature}>
-                <Deliver
-                  handleDeliver={handleDeliver}
-                  deliver={deliver}
-                  setFieldValue={setFieldValue}
-                  values={values}
-                />
-                <Shopper
-                  handleShopper={handleShopper}
-                  shopper={shopper}
-                  setFieldValue={setFieldValue}
-                />
-                {shopper === "1" ? <Company /> : null}
-                {deliver === "1" ? <Recipient /> : <DeliveryAddress />}
-                {shopper === "0" ? (
+                <Deliver setFieldValue={setFieldValue} />
+                <Shopper setFieldValue={setFieldValue} />
+                {values.activeCompany ? <Company /> : null}
+                {values.activeAddress ? <DeliveryAddress /> : <Recipient />}
+                {!values.activeCompany ? (
                   <UserInvoice
-                    deliver={deliver}
+                    deliver={values.activeAddress}
                     setFieldValue={setFieldValue}
                   />
                 ) : null}
-                <Payment handlePayment={handlePayment} payment={payment} />
+
+                <Payment setFieldValue={setFieldValue} />
                 <ExtraInfo />
               </div>
             </div>
             <div className={styles.columnRight}>
               <DisplayProducts />
-              <DeliverMethod deliver={deliver} />
+              {/* <DeliverMethod deliver={deliver} /> */}
               <CartSummary path="/order/summary" text="Summary" />
             </div>
           </Form>

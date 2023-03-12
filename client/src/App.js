@@ -3,13 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { Context } from "./Contexts/Context";
-import {
-  Route,
-  Routes,
-  Navigate,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import {
   Home,
   Articles,
@@ -201,40 +195,20 @@ function App() {
   /*----------- order ----------- */
   const [order, setOrder] = useState({});
 
-  function addOrder() {
-    const dateObj = new Date();
-    const day = dateObj.getUTCDate();
-    const month = dateObj.getUTCMonth() + 1;
-    const year = dateObj.getUTCFullYear();
-
+  function addOrder(order) {
+    // const dateObj = new Date();
+    // const day = dateObj.getUTCDate();
+    // const month = dateObj.getUTCMonth() + 1;
+    // const year = dateObj.getUTCFullYear();
+    // console.log(order);
     // "idNumber": 700005588955,
+    // date: `${day} ${month} ${year}`,
     setOrder({
       save: cartSave,
       totalCost: cartValue,
       supplyPrice: 15,
-      date: `${day} ${month} ${year}`,
-      status: "Completed",
-      deliver: "??????",
-      payment: "??????",
-      recipient: {
-        fullName: "Tomasz Skupień",
-        number: "123 123 213",
-        email: "test@gmail.com",
-      },
-      address: {
-        street: "Rokietnica",
-        house: "3232A",
-        city: "Rokietnica",
-        zip_code: "37-562",
-        extraInfo: "",
-      },
-      invoice: {
-        fullName: "Tomasz Skupień",
-        homeAdress: "595A",
-        postalAddress: "37-562",
-        city: "Rokietnica",
-      },
       products: cartItems,
+      ...order,
     });
   }
 
@@ -267,6 +241,7 @@ function App() {
         user,
         loading,
         orders,
+        order,
       }}
     >
       {(() => {

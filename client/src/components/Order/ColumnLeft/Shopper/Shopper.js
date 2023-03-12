@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import InputRadio from "../InputRadio/InputRadio";
 import styles from "./Shopper.module.scss";
 import input_shopper_data from "../../../../data/input_shopper_data.json";
 import PropTypes from "prop-types";
 
-function Shopper({ handleShopper, shopper, setFieldValue }) {
-  function handleFieldValue(genricValue) {
-    if (genricValue === "company") {
+function Shopper({ setFieldValue }) {
+  const [activeIndex, setActiveIndex] = useState("0");
+
+  function handleFieldValue(id, index) {
+    setActiveIndex(index);
+
+    if (id === "company") {
       setFieldValue("activeCompany", true);
       setFieldValue("activeInvoice", false);
     } else {
@@ -23,9 +27,8 @@ function Shopper({ handleShopper, shopper, setFieldValue }) {
           <InputRadio
             item={item}
             key={index}
-            handleInput={handleShopper}
-            option={shopper}
             index={index}
+            activeIndex={activeIndex}
             handleFieldValue={handleFieldValue}
           />
         ))}
