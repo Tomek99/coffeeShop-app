@@ -23,7 +23,9 @@ function ExtraInfo() {
   const [val, setVal] = useState("");
 
   function handleChange(event) {
-    setVal(event.target.value);
+    if (event.target.value.length <= 1999) {
+      setVal(event.target.value);
+    }
   }
 
   return (
@@ -47,6 +49,7 @@ function ExtraInfo() {
               <TextareaAutosize
                 onChange={handleChange}
                 placeholder="Your comments"
+                value={val}
               />
               <span className={styles.countLength}>{val.length}/1999</span>
             </div>

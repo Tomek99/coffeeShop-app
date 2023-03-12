@@ -1,11 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./InputRadio.module.scss";
+import { Field } from "formik";
 
-function InputRadio({ item, option, handleInput, index, icon }) {
+function InputRadio({
+  item,
+  option,
+  handleInput,
+  index,
+  icon,
+  handleFieldValue,
+}) {
   const { genericValue, text, fee } = item;
-
   const stringyIndex = JSON.stringify(index);
+
   return (
     <div
       className={
@@ -16,13 +24,14 @@ function InputRadio({ item, option, handleInput, index, icon }) {
     >
       <label htmlFor={genericValue} className={styles.labelRadio}>
         <div className={styles.divInput}>
-          <input
+          <Field
             type="radio"
             id={genericValue}
             name={genericValue}
             value={index}
             checked={option === stringyIndex}
             onChange={handleInput}
+            onClick={() => handleFieldValue(genericValue)}
             className={
               option === stringyIndex
                 ? `${styles.inputRadio} ${styles.activeDot}`

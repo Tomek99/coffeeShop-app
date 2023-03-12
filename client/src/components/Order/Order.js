@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Deliver from "./ColumnLeft/Deliver/Deliver";
 import ExtraInfo from "./ColumnLeft/ExtraInfo/ExtraInfo";
 import UserInvoice from "./ColumnLeft/UserInvoice/UserInvoice";
@@ -14,6 +14,7 @@ import Company from "./ColumnLeft/Comapny/Company";
 import DeliveryAddress from "./ColumnLeft/DeliveryAddress/DeliveryAddress";
 import CartSummary from "../ViewCart/FillCart/CartSummary/CartSummary";
 import { Form, Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 function Order() {
   /*---------Deliver state---------*/
@@ -36,25 +37,14 @@ function Order() {
   function handlePayment(e) {
     setPayment(e.target.value);
   }
+  /*---------Initial values---------*/
 
-  /*---------SubmitHanlder state---------*/
-  // const initialValues = {
-  //   NIP: "",
-  //   name: "",
-  //   street: "",
-  //   ZIP_code: "",
-  //   city: "",
-  // };
-
-  // const validationSchema = Yup.object().shape({
-  //   NIP: Yup.string().required("Required"),
-  //   name: Yup.string().required("Required"),
-  //   street: Yup.string().required("Required"),
-  //   ZIP_code: Yup.string().required("Required"),
-  //   city: Yup.string().required("Required"),
-  // });
+  /*---------Initial values---------*/
 
   const initialValues = {
+    activeAddress: true,
+    activeCompany: false,
+    activeInvoice: false,
     name: "",
     street: "",
     house: "",
@@ -62,37 +52,90 @@ function Order() {
     city: "",
     number: "",
     email: "",
+    companyNip: "",
+    comapnyName: "",
+    companyStreet: "",
+    comapnyZIPcode: "",
+    companyCity: "",
+    i_name: "",
+    i_street: "",
+    i_ZIP_code: "",
+    i_city: "",
   };
-  const phoneRegExp =
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+  const phoneRegExp = /^(\+48|48)?([1-9]{2})(\d{7})$/;
 
   const validationSchema = Yup.object().shape({
+    activeAddress: Yup.boolean(),
+    activeCompany: Yup.boolean(),
+    activeInvoice: Yup.boolean(),
     name: Yup.string().required("Required"),
-    street: Yup.string().required("Required"),
-    house: Yup.string().required("Required"),
-    ZIP_code: Yup.string().required("Required"),
-    city: Yup.string().required("Required"),
+    street: Yup.string().when("activeAddress", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    house: Yup.string().when("activeAddress", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    ZIP_code: Yup.string().when("activeAddress", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    city: Yup.string().when("activeAddress", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    email: Yup.string().email().required("Required"),
     number: Yup.string()
       .matches(phoneRegExp, "Phone number is not valid")
       .required("Required"),
-    email: Yup.string().email().required("Required"),
+    companyNip: Yup.string().when("activeCompany", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    comapnyName: Yup.string().when("activeCompany", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    companyStreet: Yup.string().when("activeCompany", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    comapnyZIPcode: Yup.string().when("activeCompany", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    companyCity: Yup.string().when("activeCompany", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    i_name: Yup.string().when("activeInvoice", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    i_street: Yup.string().when("activeInvoice", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    i_ZIP_code: Yup.string().when("activeInvoice", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
+    i_city: Yup.string().when("activeInvoice", {
+      is: true,
+      then: Yup.string().required("Required"),
+    }),
   });
-  // const initialValues = {
-  //   name: "",
-  //   street: "",
-  //   ZIP_code: "",
-  //   city: "",
-  // };
 
-  // const validationSchema = Yup.object().shape({
-  //   name: Yup.string().required("Required"),
-  //   street: Yup.string().required("Required"),
-  //   ZIP_code: Yup.string().required("Required"),
-  //   city: Yup.string().required("Required"),
-  // });
+  let navigate = useNavigate();
+  const routeChange = () => {
+    navigate("/order/summary");
+  };
 
   function onSubmit(values, actions) {
-    alert("HELLLO");
+    alert("HI");
+    // routeChange();
   }
 
   return (
@@ -102,25 +145,41 @@ function Order() {
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        <Form className={styles.gridTemplate}>
-          <div className={styles.columnLeft}>
-            <HeaderInfo title="Deliver and payment" />
-            <div className={styles.cardFeature}>
-              <Deliver handleDeliver={handleDeliver} deliver={deliver} />
-              <Shopper handleShopper={handleShopper} shopper={shopper} />
-              {shopper === "1" ? <Company /> : null}
-              {deliver === "1" ? <Recipient /> : <DeliveryAddress />}
-              {shopper === "0" ? <UserInvoice /> : null}
-              <Payment handlePayment={handlePayment} payment={payment} />
-              <ExtraInfo />
+        {({ values, setFieldValue }) => (
+          <Form className={styles.gridTemplate}>
+            <div className={styles.columnLeft}>
+              <HeaderInfo title="Deliver and payment" />
+              <div className={styles.cardFeature}>
+                <Deliver
+                  handleDeliver={handleDeliver}
+                  deliver={deliver}
+                  setFieldValue={setFieldValue}
+                  values={values}
+                />
+                <Shopper
+                  handleShopper={handleShopper}
+                  shopper={shopper}
+                  setFieldValue={setFieldValue}
+                />
+                {shopper === "1" ? <Company /> : null}
+                {deliver === "1" ? <Recipient /> : <DeliveryAddress />}
+                {shopper === "0" ? (
+                  <UserInvoice
+                    deliver={deliver}
+                    setFieldValue={setFieldValue}
+                  />
+                ) : null}
+                <Payment handlePayment={handlePayment} payment={payment} />
+                <ExtraInfo />
+              </div>
             </div>
-          </div>
-          <div className={styles.columnRight}>
-            <DisplayProducts />
-            <DeliverMethod deliver={deliver} />
-            <CartSummary path="/order/summary" text="Summary" />
-          </div>
-        </Form>
+            <div className={styles.columnRight}>
+              <DisplayProducts />
+              <DeliverMethod deliver={deliver} />
+              <CartSummary path="/order/summary" text="Summary" />
+            </div>
+          </Form>
+        )}
       </Formik>
     </div>
   );

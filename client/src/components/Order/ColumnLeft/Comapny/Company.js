@@ -7,7 +7,7 @@ import FieldComponent from "../../../FormikComponents/FieldComponent/FieldCompon
 function Company() {
   return (
     <div className={styles.Company}>
-      <HeadingThree title="Company details invoice" />
+      <HeadingThree title="Company invoice details" />
       <div className={styles.InvoiceForm}>
         {company_invoice_data.map((item, index) => (
           <FieldComponent item={item} key={index} />

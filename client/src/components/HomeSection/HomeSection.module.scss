@@ -3,7 +3,6 @@
     flex-direction: column;
     position: relative;
     height: 88vh;
-    cursor: grab;
 
     .slider {
         width: 100%;
@@ -47,10 +46,6 @@
             border: var(--border);
         }
     }
-}
-
-.HomeSection:active {
-    cursor: grabbing;
 }
 
 @media screen and (max-width: 450px) {

@@ -1,27 +1,27 @@
 [
     {
         "type": "text",
-        "name": "NIP",
+        "name": "companyNip",
         "placeholder": "NIP"
     },
     {
         "type": "text",
-        "name": "name",
+        "name": "comapnyName",
         "placeholder": "Name"
     },
     {
         "type": "text",
-        "name": "street",
+        "name": "companyStreet",
         "placeholder": "Street"
     },
     {
         "type": "text",
-        "name": "ZIP_code",
+        "name": "comapnyZIPcode",
         "placeholder": "Zip code"
     },
     {
         "type": "text",
-        "name": "city",
+        "name": "companyCity",
         "placeholder": "City"
     }
 ]

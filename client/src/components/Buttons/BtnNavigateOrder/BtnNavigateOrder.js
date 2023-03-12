@@ -4,6 +4,7 @@ import styles from "./BtnNavigateOrder.module.scss";
 
 function BtnNavigateOrder({ addOrder, text, path }) {
   const location = useLocation();
+
   return location.pathname === "/order" ? (
     <button type="submit" className={styles.BtnNavigateOrder}>
       {text}
