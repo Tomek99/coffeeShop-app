@@ -143,7 +143,7 @@ function Order({ handleUserNavigateToSummary }) {
                 {values.activeAddress ? <DeliveryAddress /> : <Recipient />}
                 {!values.activeCompany ? (
                   <UserInvoice
-                    deliver={values.activeAddress}
+                    delivery={values.activeAddress}
                     setFieldValue={setFieldValue}
                   />
                 ) : null}
@@ -154,7 +154,7 @@ function Order({ handleUserNavigateToSummary }) {
             </div>
             <div className={styles.columnRight}>
               <DisplayProducts />
-              {/* <DeliverMethod deliver={deliver} /> */}
+              <DeliverMethod delivery={values.delivery} />
               <CartSummary path="/order/summary" text="Summary" />
             </div>
           </Form>

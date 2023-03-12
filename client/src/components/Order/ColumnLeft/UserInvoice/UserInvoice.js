@@ -5,8 +5,9 @@ import styles from "./UserInvoice.module.scss";
 import user_invoice_data from "../../../../data/user_invoice_data.json";
 import FieldComponent from "../../../FormikComponents/FieldComponent/FieldComponent";
 import PropTypes from "prop-types";
+import { Field } from "formik";
 
-function UserInvoice({ deliver, setFieldValue }) {
+function UserInvoice({ delivery, setFieldValue }) {
   const [showInvoice, setShowInvoice] = useState(false);
 
   function handleInvoiceForm() {
@@ -34,16 +35,16 @@ function UserInvoice({ deliver, setFieldValue }) {
   return (
     <div className={styles.Invoice}>
       <HeadingThree title="Invoice details" />
-      <ConciseInfo text={deliver ? conciseInfoOne : conciseInfoTwo} />
+      <ConciseInfo text={delivery ? conciseInfoOne : conciseInfoTwo} />
       <div>
         <label htmlFor="invoice" className={styles.invoiceLabel}>
-          <input
+          <Field
             id="invoice"
             type="checkbox"
             name="activeInvoice"
             onClick={handleInvoiceForm}
           />
-          <span>{deliver ? radioInputOne : radioInputTwo}</span>
+          <span>{delivery ? radioInputOne : radioInputTwo}</span>
         </label>
       </div>
       {showInvoice ? (
@@ -58,6 +59,6 @@ function UserInvoice({ deliver, setFieldValue }) {
 }
 
 UserInvoice.propTypes = {
-  deliver: PropTypes.string,
+  delivery: PropTypes.bool,
 };
 export default UserInvoice;

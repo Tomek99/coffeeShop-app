@@ -3,7 +3,9 @@ import { BsTruck } from "react-icons/bs";
 import { TfiPackage } from "react-icons/tfi";
 import styles from "./DeliverMethod.module.scss";
 
-function DeliverMethod({ deliver }) {
+function DeliverMethod({ delivery }) {
+  let value = delivery.substr(0, 7).toLowerCase();
+
   return (
     <div className={styles.DeliverMethod}>
       <div className={styles.divContent}>
@@ -15,14 +17,14 @@ function DeliverMethod({ deliver }) {
           <p>
             {" "}
             {(() => {
-              switch (deliver) {
-                case "0":
+              switch (value) {
+                case "carrier":
                   return "Carrier – InPost, UPS, FedEx, DTS, PickPack";
-                case "1":
+                case "pickup ":
                   return "Pickup at coffe-shop showroom";
-                case "2":
+                case "package":
                   return "Package locker";
-                case "3":
+                case "collect":
                   return "Collection at point - Żabka, Poczta Polska and others";
                 default:
                   return null;
