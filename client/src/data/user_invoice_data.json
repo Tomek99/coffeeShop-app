@@ -7,7 +7,7 @@
     {
         "type": "text",
         "name": "i_street",
-        "placeholder": "Street"
+        "placeholder": "Street and number"
     },
     {
         "type": "text",

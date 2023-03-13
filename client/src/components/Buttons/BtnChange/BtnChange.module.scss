@@ -1,0 +1,11 @@
+.BtnMore {
+    color: var(--main-color);
+    background-color: transparent;
+    font-size: 1.3rem;
+    align-self: flex-start;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--main-color-darken);
+    }
+}

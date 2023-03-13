@@ -7,9 +7,14 @@ import InputRadio from "../InputRadio/InputRadio";
 import { BsTruck, BsShop } from "react-icons/bs";
 import { GiLockers } from "react-icons/gi";
 import { SlLocationPin } from "react-icons/sl";
+import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
-function Deliver({ setFieldValue, values }) {
-  const [activeIndex, setActiveIndex] = useState("0");
+function Deliver({ setFieldValue }) {
+  const [activeIndex, setActiveIndex] = useState(() => {
+    const storedValue = localStorage.getItem("DeliveryActiveIndex");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return "";
+  });
 
   const icons = [
     <BsTruck size={25} />,
@@ -20,6 +25,7 @@ function Deliver({ setFieldValue, values }) {
 
   function handleFieldValue(id, index) {
     setActiveIndex(index);
+    localStorage.setItem("DeliveryActiveIndex", index);
 
     if (id !== "showroom") {
       setFieldValue("activeAddress", true);
@@ -30,7 +36,7 @@ function Deliver({ setFieldValue, values }) {
 
   return (
     <div className={styles.Deliver}>
-      <HeadingThree title="Deliver" />
+      <HeadingThree title="Delivery" />
 
       <fieldset className={styles.fieldsetInputs}>
         {input_deliver_data.map((item, index) => (
@@ -44,6 +50,7 @@ function Deliver({ setFieldValue, values }) {
           />
         ))}
       </fieldset>
+      <ErrMessage name="delivery" />
     </div>
   );
 }
@@ -51,6 +58,5 @@ Deliver.propTypes = {
   handleOptionChange: PropTypes.func,
   setFieldValue: PropTypes.func,
   deliver: PropTypes.string,
-  values: PropTypes.object,
 };
 export default Deliver;

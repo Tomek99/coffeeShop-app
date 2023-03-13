@@ -6,7 +6,7 @@
     },
     {
         "type": "text",
-        "name": "comapnyName",
+        "name": "companyName",
         "placeholder": "Name"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
         "type": "text",
-        "name": "comapnyZIPcode",
+        "name": "companyZIPcode",
         "placeholder": "Zip code"
     },
     {

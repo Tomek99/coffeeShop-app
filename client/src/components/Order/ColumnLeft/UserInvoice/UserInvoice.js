@@ -7,22 +7,7 @@ import FieldComponent from "../../../FormikComponents/FieldComponent/FieldCompon
 import PropTypes from "prop-types";
 import { Field } from "formik";
 
-function UserInvoice({ delivery, setFieldValue }) {
-  const [showInvoice, setShowInvoice] = useState(false);
-
-  function handleInvoiceForm() {
-    setShowInvoice(!showInvoice);
-    handleFieldValue();
-  }
-
-  function handleFieldValue() {
-    if (showInvoice !== "showroom") {
-      setFieldValue("activeInvoice", true);
-    } else {
-      setFieldValue("activeInvoice", false);
-    }
-  }
-
+function UserInvoice({ delivery, activeInvoice }) {
   const conciseInfoOne =
     "In our online store, the proof of purchase is an invoice. As a standard, we issue it to the data from the delivery address.";
 
@@ -38,16 +23,11 @@ function UserInvoice({ delivery, setFieldValue }) {
       <ConciseInfo text={delivery ? conciseInfoOne : conciseInfoTwo} />
       <div>
         <label htmlFor="invoice" className={styles.invoiceLabel}>
-          <Field
-            id="invoice"
-            type="checkbox"
-            name="activeInvoice"
-            onClick={handleInvoiceForm}
-          />
+          <Field id="invoice" type="checkbox" name="activeInvoice" />
           <span>{delivery ? radioInputOne : radioInputTwo}</span>
         </label>
       </div>
-      {showInvoice ? (
+      {activeInvoice ? (
         <div className={styles.invoiceForm}>
           {user_invoice_data.map((item, index) => (
             <FieldComponent item={item} key={index} />

@@ -4,13 +4,19 @@ import InputRadio from "../InputRadio/InputRadio";
 import styles from "./Shopper.module.scss";
 import input_shopper_data from "../../../../data/input_shopper_data.json";
 import PropTypes from "prop-types";
+import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
 function Shopper({ setFieldValue }) {
-  const [activeIndex, setActiveIndex] = useState("0");
+  const [activeIndex, setActiveIndex] = useState(() => {
+    const storedValue = localStorage.getItem("shopperActiveIndex");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return "";
+  });
 
   function handleFieldValue(id, index) {
     setActiveIndex(index);
 
+    localStorage.setItem("shopperActiveIndex", index);
     if (id === "company") {
       setFieldValue("activeCompany", true);
       setFieldValue("activeInvoice", false);
@@ -33,6 +39,7 @@ function Shopper({ setFieldValue }) {
           />
         ))}
       </fieldset>
+      <ErrMessage name="shopper" />
     </div>
   );
 }

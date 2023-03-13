@@ -21,11 +21,17 @@ function Order({ handleUserNavigateToSummary }) {
   const { addOrder } = useContext(Context);
 
   /*---------Initial values---------*/
+  const [initialValuesLocal, setInitialValuesLocal] = useState(() => {
+    const storedValue = localStorage.getItem("orderSummary");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return false;
+  });
 
   const initialValues = {
     activeAddress: true,
     activeCompany: false,
     activeInvoice: false,
+    activeComment: false,
     name: "",
     street: "",
     house: "",
@@ -34,9 +40,9 @@ function Order({ handleUserNavigateToSummary }) {
     number: "",
     email: "",
     companyNip: "",
-    comapnyName: "",
+    companyName: "",
     companyStreet: "",
-    comapnyZIPcode: "",
+    companyZIPcode: "",
     companyCity: "",
     i_name: "",
     i_street: "",
@@ -79,7 +85,7 @@ function Order({ handleUserNavigateToSummary }) {
       is: true,
       then: Yup.string().required("Required"),
     }),
-    comapnyName: Yup.string().when("activeCompany", {
+    companyName: Yup.string().when("activeCompany", {
       is: true,
       then: Yup.string().required("Required"),
     }),
@@ -87,7 +93,7 @@ function Order({ handleUserNavigateToSummary }) {
       is: true,
       then: Yup.string().required("Required"),
     }),
-    comapnyZIPcode: Yup.string().when("activeCompany", {
+    companyZIPcode: Yup.string().when("activeCompany", {
       is: true,
       then: Yup.string().required("Required"),
     }),
@@ -111,6 +117,9 @@ function Order({ handleUserNavigateToSummary }) {
       is: true,
       then: Yup.string().required("Required"),
     }),
+    payment: Yup.string().required("Required"),
+    delivery: Yup.string().required("Required"),
+    shopper: Yup.string().required("Required"),
   });
 
   let navigate = useNavigate();
@@ -123,19 +132,20 @@ function Order({ handleUserNavigateToSummary }) {
   function onSubmit(values, actions) {
     routeChange();
     addOrder(values);
+    localStorage.setItem("orderSummary", JSON.stringify(values));
   }
 
   return (
     <div className={styles.Order}>
       <Formik
-        initialValues={initialValues}
+        initialValues={initialValuesLocal || initialValues}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
         {({ values, setFieldValue }) => (
           <Form className={styles.gridTemplate}>
             <div className={styles.columnLeft}>
-              <HeaderInfo title="Deliver and payment" />
+              <HeaderInfo title="Delivery and payment" />
               <div className={styles.cardFeature}>
                 <Deliver setFieldValue={setFieldValue} />
                 <Shopper setFieldValue={setFieldValue} />
@@ -144,12 +154,17 @@ function Order({ handleUserNavigateToSummary }) {
                 {!values.activeCompany ? (
                   <UserInvoice
                     delivery={values.activeAddress}
+                    activeInvoice={values.activeInvoice}
                     setFieldValue={setFieldValue}
                   />
                 ) : null}
 
-                <Payment setFieldValue={setFieldValue} />
-                <ExtraInfo />
+                <Payment />
+                <ExtraInfo
+                  setFieldValue={setFieldValue}
+                  activeComment={values.activeComment}
+                  comment={initialValuesLocal.comment}
+                />
               </div>
             </div>
             <div className={styles.columnRight}>

@@ -1,0 +1,19 @@
+.ItemSummaryDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .divContent {
+        background-color: var(--black);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border: var(--border);
+        border-radius: 8px;
+
+        .divParagraph {
+            font-size: 1.3rem;
+        }
+    }
+}

@@ -26,7 +26,7 @@
     {
         "id": "payment_on_delivery",
         "name": "payment",
-        "text": "Payment on delivery",
+        "value": "Payment on delivery",
         "fee": "Free"
     }
 ]

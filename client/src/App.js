@@ -8,7 +8,6 @@ import {
   Home,
   Articles,
   Products,
-  Menu,
   Reviews,
   AboutUs,
   Account,
@@ -203,12 +202,63 @@ function App() {
     // console.log(order);
     // "idNumber": 700005588955,
     // date: `${day} ${month} ${year}`,
+
+    const address = {
+      name: order.name,
+      street: order.street,
+      house: order.house,
+      ZIP_code: order.ZIP_code,
+      city: order.city,
+      number: order.number,
+      email: order.email,
+    };
+
+    const company = {
+      companyNip: order.companyNip,
+      companyName: order.companyName,
+      companyStreet: order.companyStreet,
+      companyZIPcode: order.companyZIPcode,
+      companyCity: order.companyCity,
+    };
+
+    let invoice = {
+      name: order.i_name,
+      street: order.i_street,
+      ZIP_code: order.i_ZIP_code,
+      city: order.i_city,
+    };
+    if (order.i_name) {
+      invoice = {
+        name: order.i_name,
+        street: order.i_street,
+        ZIP_code: order.i_ZIP_code,
+        city: order.i_city,
+      };
+    } else {
+      invoice = {
+        name: order.name,
+        street: order.street,
+        ZIP_code: order.ZIP_code,
+        city: order.city,
+      };
+    }
+
     setOrder({
       save: cartSave,
       totalCost: cartValue,
       supplyPrice: 15,
       products: cartItems,
-      ...order,
+      address: address,
+      company: company,
+      invoice: invoice,
+      payment: order.payment,
+      delivery: order.delivery,
+      shopper: order.shopper,
+      comment: order.comment,
+      activeAddress: order.activeAddress,
+      activeCompany: order.activeCompany,
+      activeInvoice: order.activeInvoice,
+      activeComment: order.activeComment,
     });
   }
 
@@ -257,8 +307,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
-
-          <Route path="menu" element={<Menu />} />
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetails />} />
           <Route path="reviews" element={<Reviews />} />
@@ -337,6 +385,7 @@ function App() {
         switch (location.pathname) {
           case "/order":
           case "/order/summary":
+          case "/cart":
             return <FooterOrder />;
 
           default:

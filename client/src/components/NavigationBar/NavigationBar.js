@@ -20,7 +20,6 @@ function NavigationBar(props) {
   const navBarList = [
     { name: "Home", path: "/" },
     { name: "Products", path: "products" },
-    { name: "Menu", path: "menu" },
     { name: "About", path: "about-us" },
     { name: "Contact", path: "contact" },
     { name: "Blog", path: "blog" },

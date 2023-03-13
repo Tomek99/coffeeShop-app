@@ -2,7 +2,7 @@ export { default as NavigationBar } from "./NavigationBar/NavigationBar";
 export { default as NavigationBarOrder } from "./NavigationBarOrder/NavigationBarOrder";
 export { default as HomeSection } from "./HomeSection/HomeSection";
 export { default as AboutSection } from "./AboutSection/AboutSection";
-export { default as MenuSection } from "./MenuSection/MenuSection";
+
 export { default as ProductsSection } from "./ProductsSection/ProductsSection";
 export { default as ReviewSection } from "./ReviewSection/ReviewSection";
 export { default as ContactSection } from "./ContactSection/ContactSection";
@@ -17,7 +17,6 @@ export { default as BeansVideo } from "./BeansVideo/BeansVideo";
 export { default as ProductDetails } from "./ProductDetails/ProductDetails";
 export { default as Notifications } from "./Notifications/Notifications";
 export { default as ViewCart } from "./ViewCart/ViewCart";
-
 export { default as AccountContent } from "./ProfileMenu/AccountContent/AccountContent";
 export { default as OrderDetails } from "./ProfileMenu/Orders/SingleOrder/OrderDetails/OrderDetails";
 export { default as Orders } from "./ProfileMenu/Orders/Orders";
@@ -29,7 +28,6 @@ export { default as WishList } from "./ProfileMenu/WishList/WishList";
 export { default as UserNavigation } from "./ProfileMenu/UserNavigation/UserNavigation";
 export { default as Order } from "./Order/Order";
 export { default as Summary } from "./Summary/Summary";
-
 export { default as Protected } from "./Protected/Protected";
 export { default as LogIn } from "./LogIn/LogIn";
 export { default as SignUp } from "./SignUp/SignUp";
