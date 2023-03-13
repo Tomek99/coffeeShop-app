@@ -3,22 +3,20 @@ import styles from "./NBarAside.module.scss";
 import BtnClose from "../Buttons/BtnClose/BtnClose";
 import PropTypes from "prop-types";
 
-function NBarAside(props) {
+function NBarAside({ isAccount, basketQuantity, handleBtn, title }) {
   return (
     <div className={styles.basketBar}>
-      {props.isAccount ? (
+      {isAccount ? (
         <span>Account</span>
       ) : (
         <span>
           Cart&nbsp;
           <span style={{ color: "#38b32a" }}>
-            {props.basketQuantity !== 0
-              ? `(${props.basketQuantity} items)`
-              : null}
+            {basketQuantity !== 0 ? `(${basketQuantity} items)` : null}
           </span>
         </span>
       )}
-      <BtnClose handleBtn={props.handleBtn} />
+      <BtnClose handleBtn={handleBtn} />
     </div>
   );
 }

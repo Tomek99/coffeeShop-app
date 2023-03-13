@@ -1,0 +1,42 @@
+.MobileNavigation {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    list-style-type: none;
+    top: 0;
+    bottom: 0;
+    left: -500px;
+    width: 410px;
+    transition: 0.3s linear;
+    font-size: 2rem;
+    background-color: var(--black);
+    z-index: 99;
+
+    .divList {
+        display: flex;
+        flex-direction: column;
+
+        .linkElement {
+            display: block;
+            padding: 10px;
+            color: #fff;
+
+            &:hover {
+                background-color: var(--grey);
+            }
+        }
+    }
+}
+.active {
+    left: 0;
+}
+
+@media (max-width: 650px) {
+    .active {
+        left: 0;
+    }
+
+    .MobileNavigation {
+        width: 85%;
+    }
+}

@@ -5,26 +5,18 @@ import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
 import PopupSearch from "../PopupSearch/PopupSearch";
 import Cart from "../Cart/Cart";
-import NavListElement from "./NavListElement/NavListElement";
 import PropTypes from "prop-types";
 import PopupUserNav1 from "../PopupUserNav/PopupUserNav1/PopupUserNav1";
 import PopupUserNav2 from "../PopupUserNav/PopupUserNav2/PopupUserNav2";
 import { Context } from "../../Contexts/Context";
 import BlurScreen from "../BlurScreen/BlurScreen";
 import BtnHamburger from "../Buttons/BtnHamburger/BtnHamburger";
+import DesktopNavigation from "./DesktopNavigation/DesktopNavigation";
+import MobileNavigation from "./MobileNavigation/MobileNavigation";
 
 function NavigationBar(props) {
   const { basketQuantity } = props;
   const { isLogIn } = useContext(Context);
-
-  const navBarList = [
-    { name: "Home", path: "/" },
-    { name: "Products", path: "products" },
-    { name: "About", path: "about-us" },
-    { name: "Contact", path: "contact" },
-    { name: "Blog", path: "blog" },
-  ];
-
   // { name: "Review", path: "reviews" },
 
   const [isAsideOpen, setAsideOpen] = useState(false);
@@ -86,25 +78,12 @@ function NavigationBar(props) {
             </Link>
           </div>
           <nav>
-            <ul
-              className={
-                isNavigationOpen
-                  ? `${styles.navMenu} ${styles.active}`
-                  : styles.navMenu
-              }
-            >
-              {navBarList.map((item) => (
-                <NavListElement
-                  isLink={true}
-                  key={item.name}
-                  name={item.name}
-                  path={item.path}
-                  style={styles.navItem}
-                />
-              ))}
-            </ul>
+            <DesktopNavigation />
+            <MobileNavigation
+              handleNavigation={handleNavigation}
+              isNavigationOpen={isNavigationOpen}
+            />
           </nav>
-
           <div className={styles.btnSection}>
             <button className={styles.btnDisplay} onClick={handleSearch}>
               <BsSearch size={30} color={"#fff"} />
@@ -157,11 +136,13 @@ function NavigationBar(props) {
               isCartOpen={isCartOpen}
               basketQuantity={basketQuantity}
             />
-            {isCartOpen || isAsideOpen ? (
+            {isCartOpen || isAsideOpen || isNavigationOpen ? (
               <BlurScreen
                 isCartOpen={isCartOpen}
+                isNavigationOpen={isNavigationOpen}
                 handleAside={handleAside}
                 handleCart={handleCart}
+                handleNavigation={handleNavigation}
               />
             ) : null}
           </div>

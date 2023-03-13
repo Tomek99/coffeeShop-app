@@ -2,9 +2,17 @@ import React from "react";
 import styles from "./BlurScreen.module.scss";
 import PropTypes from "prop-types";
 
-function BlurScreen({ isCartOpen, handleAside, handleCart }) {
+function BlurScreen({
+  isCartOpen,
+  handleAside,
+  handleCart,
+  isNavigationOpen,
+  handleNavigation,
+}) {
   function handleBlurScreen() {
+    console.log(isNavigationOpen);
     if (isCartOpen) handleCart();
+    else if (isNavigationOpen) handleNavigation();
     else handleAside();
   }
 
