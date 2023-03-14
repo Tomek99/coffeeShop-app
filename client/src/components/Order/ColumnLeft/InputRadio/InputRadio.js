@@ -4,7 +4,7 @@ import styles from "./InputRadio.module.scss";
 import { Field } from "formik";
 
 function InputRadio({ item, index, activeIndex, icon, handleFieldValue }) {
-  const { name, value, fee, id } = item;
+  const { name, value, fee, id, url } = item;
   return (
     <div
       className={
@@ -29,12 +29,19 @@ function InputRadio({ item, index, activeIndex, icon, handleFieldValue }) {
             }
           />
           <div className={styles.divTextDirection}>
-            <span className={styles.textwidth}>{value}</span>
+            <span className={styles.textwidth}>{value} </span>
             {fee ? <span className={styles.fee}>{`(${fee})`}</span> : null}
           </div>
         </div>
 
         {icon ? icon : null}
+        {url ? (
+          <img
+            src={url}
+            alt={name}
+            style={{ width: "50px", height: "auto" }}
+          ></img>
+        ) : null}
       </label>
     </div>
   );

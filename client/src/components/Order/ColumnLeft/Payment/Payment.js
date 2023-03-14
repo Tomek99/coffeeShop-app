@@ -3,7 +3,7 @@ import HeadingThree from "../../../HeadingThree/HeadingThree";
 import styles from "./Payment.module.scss";
 import input_payment_data from "../../../../data/input_payment_data.json";
 import InputRadio from "../InputRadio/InputRadio";
-import { RiQuestionMark } from "react-icons/ri";
+
 import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
 function Payment() {
@@ -16,6 +16,7 @@ function Payment() {
     localStorage.setItem("paymentActiveIndex", index);
     setActiveIndex(index);
   }
+
   return (
     <div className={styles.Payment}>
       <HeadingThree title="Payment" />
@@ -27,7 +28,6 @@ function Payment() {
             index={index}
             activeIndex={activeIndex}
             handleFieldValue={handleFieldValue}
-            icon={<RiQuestionMark size={25} />}
           />
         ))}
       </fieldset>

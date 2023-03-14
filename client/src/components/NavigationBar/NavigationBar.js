@@ -35,6 +35,9 @@ function NavigationBar() {
   };
 
   const handleNavigation = () => {
+    if (!isNavigationOpen) elementHTML.style.overflowY = "hidden";
+    else elementHTML.style.overflowY = "scroll";
+
     setNavigationOpen(!isNavigationOpen);
     setAsideOpen(false);
     setSearchOpen(false);

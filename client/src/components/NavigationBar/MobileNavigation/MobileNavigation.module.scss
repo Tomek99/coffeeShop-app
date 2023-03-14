@@ -1,6 +1,6 @@
 .MobileNavigation {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     position: fixed;
     list-style-type: none;
     top: 0;
@@ -18,11 +18,29 @@
 
         .linkElement {
             display: block;
+            text-transform: uppercase;
             padding: 10px 15px;
             color: #fff;
 
             &:hover {
                 background-color: var(--grey);
+            }
+        }
+    }
+
+    .socialMediaMenu {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 15px;
+        gap: 10px;
+
+        li > a {
+            width: 40px;
+            height: 40px;
+
+            svg {
+                width: 20px;
+                height: 20px;
             }
         }
     }

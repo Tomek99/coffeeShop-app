@@ -9,6 +9,7 @@ import { TfiComment } from "react-icons/tfi";
 import { GiLockers } from "react-icons/gi";
 import { SlLocationPin } from "react-icons/sl";
 import styles from "./Summary.module.scss";
+import input_payment_data from "../../data/input_payment_data.json";
 
 function Summary() {
   const { order } = useContext(Context);
@@ -19,6 +20,10 @@ function Summary() {
     <GiLockers size={25} />,
     <SlLocationPin size={25} />,
   ];
+
+  const findUrl = input_payment_data.find(
+    (item) => item.value === order.payment
+  );
 
   return (
     <div className={styles.Summary}>
@@ -80,7 +85,11 @@ function Summary() {
 
           <ItemSummary title="Payment">
             <div className={styles.divFlexRow}>
-              <MdPayment size={25} />
+              <img
+                src={findUrl.url}
+                alt={findUrl.name}
+                style={{ width: "40px" }}
+              />
               <p>{order.payment}</p>
             </div>
           </ItemSummary>
