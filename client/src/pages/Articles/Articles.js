@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BlogsSection } from "../../components";
+
 function Articles() {
   useEffect(() => {
     window.scrollTo({
@@ -9,11 +9,7 @@ function Articles() {
     });
   }, []);
 
-  return (
-    <>
-      <BlogsSection isTrue={false} />
-    </>
-  );
+  return <>{/* <BlogsSection isTrue={false} /> */}</>;
 }
 
 export default Articles;

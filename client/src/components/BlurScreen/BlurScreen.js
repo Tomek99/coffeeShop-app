@@ -10,7 +10,6 @@ function BlurScreen({
   handleNavigation,
 }) {
   function handleBlurScreen() {
-    console.log(isNavigationOpen);
     if (isCartOpen) handleCart();
     else if (isNavigationOpen) handleNavigation();
     else handleAside();

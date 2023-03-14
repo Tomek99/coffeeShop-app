@@ -1,19 +1,11 @@
 import React from "react";
 import NavListElement from "../NavListElement/NavListElement";
 import styles from "./DesktopNavigation.module.scss";
-
+import navigationBarList from "../../../data/navigationBarList.json";
 function DesktopNavigation() {
-  const navBarList = [
-    { name: "Home", path: "/" },
-    { name: "Products", path: "products" },
-    { name: "About", path: "about-us" },
-    { name: "Contact", path: "contact" },
-    { name: "Blog", path: "blog" },
-  ];
-
   return (
     <ul className={styles.DesktopNavigation}>
-      {navBarList.map((item, index) => (
+      {navigationBarList.map((item, index) => (
         <NavListElement
           isLink={true}
           key={index}

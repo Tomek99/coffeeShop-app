@@ -14,9 +14,8 @@ import BtnHamburger from "../Buttons/BtnHamburger/BtnHamburger";
 import DesktopNavigation from "./DesktopNavigation/DesktopNavigation";
 import MobileNavigation from "./MobileNavigation/MobileNavigation";
 
-function NavigationBar(props) {
-  const { basketQuantity } = props;
-  const { isLogIn } = useContext(Context);
+function NavigationBar() {
+  const { isLogIn, cartQuantity } = useContext(Context);
   // { name: "Review", path: "reviews" },
 
   const [isAsideOpen, setAsideOpen] = useState(false);
@@ -119,23 +118,17 @@ function NavigationBar(props) {
               <span
                 className={styles.quantityProductsInBasket}
                 style={
-                  basketQuantity !== 0
-                    ? { display: "flex" }
-                    : { display: "none" }
+                  cartQuantity !== 0 ? { display: "flex" } : { display: "none" }
                 }
               >
-                {basketQuantity}
+                {cartQuantity}
               </span>
             </button>
             <PopupUserNav2
               isAsideOpen={isAsideOpen}
               handleAside={handleAside}
             />
-            <Cart
-              handleCart={handleCart}
-              isCartOpen={isCartOpen}
-              basketQuantity={basketQuantity}
-            />
+            <Cart handleCart={handleCart} isCartOpen={isCartOpen} />
             {isCartOpen || isAsideOpen || isNavigationOpen ? (
               <BlurScreen
                 isCartOpen={isCartOpen}

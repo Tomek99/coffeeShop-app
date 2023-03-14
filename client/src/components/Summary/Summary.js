@@ -4,6 +4,7 @@ import HeaderInfo from "../HeaderInfo/HeaderInfo";
 import ItemSummary from "./ItemSummary/ItemSummary";
 import { FaRegUser } from "react-icons/fa";
 import { BsBuildings, BsTruck, BsShop } from "react-icons/bs";
+import { MdPayment } from "react-icons/md";
 import { TfiComment } from "react-icons/tfi";
 import { GiLockers } from "react-icons/gi";
 import { SlLocationPin } from "react-icons/sl";
@@ -78,7 +79,8 @@ function Summary() {
           )}
 
           <ItemSummary title="Payment">
-            <div>
+            <div className={styles.divFlexRow}>
+              <MdPayment size={25} />
               <p>{order.payment}</p>
             </div>
           </ItemSummary>

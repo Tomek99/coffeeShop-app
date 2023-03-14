@@ -300,7 +300,7 @@ function App() {
           case "/order/summary":
             return <NavigationBarOrder />;
           default:
-            return <NavigationBar basketQuantity={cartQuantity} />;
+            return <NavigationBar />;
         }
       })()}
       <section className="columnWeb">

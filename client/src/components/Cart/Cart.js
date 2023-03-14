@@ -17,9 +17,9 @@ function Cart({ isCartOpen, handleCart }) {
       }
     >
       <NBarAside
-        basketQuantity={cartQuantity}
+        cartQuantity={cartQuantity}
         handleBtn={handleCart}
-        isAccount={false}
+        isCart={true}
       />
       {cartItems.length > 0 ? (
         <div className={styles.products}>

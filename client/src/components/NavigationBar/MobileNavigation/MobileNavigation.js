@@ -2,16 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NBarAside from "../../NBarAside/NBarAside";
 import styles from "./MobileNavigation.module.scss";
+import navigationBarList from "../../../data/navigationBarList.json";
 
 function MobileNavigation({ handleNavigation, isNavigationOpen }) {
-  const navBarList = [
-    { name: "Home", path: "/" },
-    { name: "Products", path: "products" },
-    { name: "About", path: "about-us" },
-    { name: "Contact", path: "contact" },
-    { name: "Blog", path: "blog" },
-  ];
-
   return (
     <ul
       className={
@@ -20,9 +13,13 @@ function MobileNavigation({ handleNavigation, isNavigationOpen }) {
           : styles.MobileNavigation
       }
     >
-      <NBarAside handleBtn={handleNavigation} />
+      <NBarAside
+        handleBtn={handleNavigation}
+        isCart={false}
+        title="Navigation"
+      />
       <div className={styles.divList}>
-        {navBarList.map((item) => (
+        {navigationBarList.map((item) => (
           <li key={item.key}>
             <Link to={item.path} className={styles.linkElement}>
               {item.name}
