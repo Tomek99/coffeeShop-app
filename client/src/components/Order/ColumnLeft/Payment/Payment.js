@@ -3,18 +3,12 @@ import HeadingThree from "../../../HeadingThree/HeadingThree";
 import styles from "./Payment.module.scss";
 import input_payment_data from "../../../../data/input_payment_data.json";
 import InputRadio from "../InputRadio/InputRadio";
-
+import PropTypes from "prop-types";
 import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
-function Payment() {
-  const [activeIndex, setActiveIndex] = useState(() => {
-    const storedValue = localStorage.getItem("paymentActiveIndex");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return 0;
-  });
+function Payment({ activePayment, handlePayment }) {
   function handleFieldValue(id, index) {
-    localStorage.setItem("paymentActiveIndex", index);
-    setActiveIndex(index);
+    handlePayment(index);
   }
 
   return (
@@ -26,7 +20,7 @@ function Payment() {
             item={item}
             key={index}
             index={index}
-            activeIndex={activeIndex}
+            activeIndex={activePayment}
             handleFieldValue={handleFieldValue}
           />
         ))}
@@ -35,5 +29,8 @@ function Payment() {
     </div>
   );
 }
-
+Payment.propTypes = {
+  activePayment: PropTypes.number,
+  handlePayment: PropTypes.func,
+};
 export default Payment;

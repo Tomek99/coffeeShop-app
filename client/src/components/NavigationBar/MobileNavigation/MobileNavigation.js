@@ -31,7 +31,11 @@ function MobileNavigation({ handleNavigation, isNavigationOpen }) {
       <div className={styles.divList}>
         {navigationBarList.map((item, index) => (
           <li key={index}>
-            <Link to={item.path} className={styles.linkElement}>
+            <Link
+              to={item.path}
+              className={styles.linkElement}
+              onClick={handleNavigation}
+            >
               {item.name}
             </Link>
           </li>

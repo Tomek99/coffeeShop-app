@@ -37,7 +37,7 @@ function FillCart() {
           ))}
         </div>
       </div>
-      <div className={styles.cartSummary}>
+      <div className={styles.divSticky}>
         <CartSummary path="/order" text="Checkout" />
       </div>
     </div>

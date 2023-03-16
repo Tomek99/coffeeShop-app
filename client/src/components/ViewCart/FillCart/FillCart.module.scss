@@ -49,12 +49,14 @@
         }
     }
 
-    .cartSummary {
+    .divSticky {
         position: sticky;
+        border: var(--border);
         top: 100px;
+        bottom: 0;
         align-self: start;
         margin-top: 20px;
-        border: var(--border);
+        margin-right: 10px;
         border-radius: 8px;
     }
 }
@@ -62,6 +64,11 @@
 @media (max-width: 900px) {
     .fillCart {
         grid-template-columns: none;
+    }
+
+    .divSticky {
+        border: none !important;
+        margin-right: 0 !important;
     }
 }
 

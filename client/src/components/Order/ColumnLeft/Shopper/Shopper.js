@@ -6,17 +6,11 @@ import input_shopper_data from "../../../../data/input_shopper_data.json";
 import PropTypes from "prop-types";
 import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
-function Shopper({ setFieldValue }) {
-  const [activeIndex, setActiveIndex] = useState(() => {
-    const storedValue = localStorage.getItem("shopperActiveIndex");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return "";
-  });
-
+function Shopper({ setFieldValue, handleShopper, activeShopper }) {
   function handleFieldValue(id, index) {
-    setActiveIndex(index);
+    handleShopper(index);
 
-    localStorage.setItem("shopperActiveIndex", index);
+    // localStorage.setItem("shopperActiveIndex", index);
     if (id === "company") {
       setFieldValue("activeCompany", true);
       setFieldValue("activeInvoice", false);
@@ -34,7 +28,7 @@ function Shopper({ setFieldValue }) {
             item={item}
             key={index}
             index={index}
-            activeIndex={activeIndex}
+            activeIndex={activeShopper}
             handleFieldValue={handleFieldValue}
           />
         ))}
@@ -44,8 +38,8 @@ function Shopper({ setFieldValue }) {
   );
 }
 Shopper.propTypes = {
+  activeShopper: PropTypes.number,
   handleShopper: PropTypes.func,
-  shopper: PropTypes.string,
   setFieldValue: PropTypes.func,
 };
 export default Shopper;

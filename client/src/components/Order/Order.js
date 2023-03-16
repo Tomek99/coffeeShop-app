@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Deliver from "./ColumnLeft/Deliver/Deliver";
 import ExtraInfo from "./ColumnLeft/ExtraInfo/ExtraInfo";
 import UserInvoice from "./ColumnLeft/UserInvoice/UserInvoice";
@@ -19,6 +19,7 @@ import { Context } from "../../Contexts/Context";
 
 function Order({ handleUserNavigateToSummary }) {
   const { addOrder } = useContext(Context);
+  /*---------Field Delivery---------*/
 
   /*---------Initial values---------*/
   const [initialValuesLocal, setInitialValuesLocal] = useState(() => {
@@ -122,17 +123,54 @@ function Order({ handleUserNavigateToSummary }) {
     shopper: Yup.string().required("Required"),
   });
 
+  /*---------Navigate ---------*/
   let navigate = useNavigate();
-
   const routeChange = () => {
     handleUserNavigateToSummary();
     navigate("/order/summary");
   };
 
+  /*---------Active Delivery---------*/
+  const [activeDelivery, setDeliveryActive] = useState(() => {
+    const storedValue = localStorage.getItem("activeDelivery");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return "";
+  });
+
+  function handleDelivery(index) {
+    setDeliveryActive(index);
+  }
+
+  /*---------Active Delivery---------*/
+  const [activeShopper, setActiveShopper] = useState(() => {
+    const storedValue = localStorage.getItem("activeShopper");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return "";
+  });
+
+  function handleShopper(index) {
+    setActiveShopper(index);
+  }
+
+  /*---------Active Delivery---------*/
+  const [activePayment, setActivePayment] = useState(() => {
+    const storedValue = localStorage.getItem("activePayment");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return "";
+  });
+
+  function handlePayment(index) {
+    setActivePayment(index);
+  }
+
   function onSubmit(values, actions) {
     routeChange();
     addOrder(values);
+
     localStorage.setItem("orderSummary", JSON.stringify(values));
+    localStorage.setItem("activeDelivery", activeDelivery);
+    localStorage.setItem("activeShopper", activeShopper);
+    localStorage.setItem("activePayment", activePayment);
   }
 
   return (
@@ -147,8 +185,16 @@ function Order({ handleUserNavigateToSummary }) {
             <div className={styles.columnLeft}>
               <HeaderInfo title="Delivery and payment" />
               <div className={styles.cardFeature}>
-                <Deliver setFieldValue={setFieldValue} />
-                <Shopper setFieldValue={setFieldValue} />
+                <Deliver
+                  activeDelivery={activeDelivery}
+                  handleDelivery={handleDelivery}
+                  setFieldValue={setFieldValue}
+                />
+                <Shopper
+                  setFieldValue={setFieldValue}
+                  handleShopper={handleShopper}
+                  activeShopper={activeShopper}
+                />
                 {values.activeCompany ? <Company /> : null}
                 {values.activeAddress ? <DeliveryAddress /> : <Recipient />}
                 {!values.activeCompany ? (
@@ -159,7 +205,10 @@ function Order({ handleUserNavigateToSummary }) {
                   />
                 ) : null}
 
-                <Payment />
+                <Payment
+                  activePayment={activePayment}
+                  handlePayment={handlePayment}
+                />
                 <ExtraInfo
                   setFieldValue={setFieldValue}
                   activeComment={values.activeComment}

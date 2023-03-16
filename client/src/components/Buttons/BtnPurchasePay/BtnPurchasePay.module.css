@@ -1,0 +1,12 @@
+.BtnPurchasePay {
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 16px;
+    background-color: green;
+    color: #fff;
+    cursor: pointer;
+}
+
+.BtnPurchasePay:hover {
+    background-color: var(--green-darken);
+}

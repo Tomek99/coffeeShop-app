@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Deliver.module.scss";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import PropTypes from "prop-types";
@@ -9,13 +9,7 @@ import { GiLockers } from "react-icons/gi";
 import { SlLocationPin } from "react-icons/sl";
 import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
-function Deliver({ setFieldValue }) {
-  const [activeIndex, setActiveIndex] = useState(() => {
-    const storedValue = localStorage.getItem("DeliveryActiveIndex");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return "";
-  });
-
+function Deliver({ setFieldValue, activeDelivery, handleDelivery }) {
   const icons = [
     <BsTruck size={25} />,
     <BsShop size={25} />,
@@ -24,8 +18,7 @@ function Deliver({ setFieldValue }) {
   ];
 
   function handleFieldValue(id, index) {
-    setActiveIndex(index);
-    localStorage.setItem("DeliveryActiveIndex", index);
+    handleDelivery(index);
 
     if (id !== "showroom") {
       setFieldValue("activeAddress", true);
@@ -44,7 +37,7 @@ function Deliver({ setFieldValue }) {
             item={item}
             key={index}
             index={index}
-            activeIndex={activeIndex}
+            activeIndex={activeDelivery}
             icon={icons[index]}
             handleFieldValue={handleFieldValue}
           />
@@ -55,8 +48,8 @@ function Deliver({ setFieldValue }) {
   );
 }
 Deliver.propTypes = {
-  handleOptionChange: PropTypes.func,
   setFieldValue: PropTypes.func,
-  deliver: PropTypes.string,
+  handleDelivery: PropTypes.func,
+  activeDelivery: PropTypes.number,
 };
 export default Deliver;

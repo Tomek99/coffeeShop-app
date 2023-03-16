@@ -1,5 +1,5 @@
 .BtnMore {
-    cursor: pointer;
     color: var(--main-color);
     background-color: transparent;
+    cursor: pointer;
 }

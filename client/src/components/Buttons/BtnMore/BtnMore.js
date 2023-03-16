@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./BtnMore.module.scss";
+import styles from "./BtnMore.module.css";
 import PropTypes from "prop-types";
 
 function BtnMore({ handleBtn }) {

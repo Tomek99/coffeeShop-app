@@ -21,6 +21,8 @@
   --blue: #151522;
   --grey:#323232;
   --grey-darken:#202029;
+  --green:rgb(31, 129, 20);
+  --green-darken:rgb(27, 113, 17);
   --border: 0.1rem solid rgba(255, 255, 255, 0.3);
   --main-color-darken: #d3a369;
   --red: rgb(180, 3, 28);

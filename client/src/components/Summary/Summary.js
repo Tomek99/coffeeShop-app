@@ -4,12 +4,15 @@ import HeaderInfo from "../HeaderInfo/HeaderInfo";
 import ItemSummary from "./ItemSummary/ItemSummary";
 import { FaRegUser } from "react-icons/fa";
 import { BsBuildings, BsTruck, BsShop } from "react-icons/bs";
-import { MdPayment } from "react-icons/md";
 import { TfiComment } from "react-icons/tfi";
 import { GiLockers } from "react-icons/gi";
 import { SlLocationPin } from "react-icons/sl";
 import styles from "./Summary.module.scss";
 import input_payment_data from "../../data/input_payment_data.json";
+import DeliverMethod from "../Order/ColumnRight/DeliverMethod/DeliverMethod";
+import CartItem from "./CartItem/CartItem";
+import HeadingThree from "../HeadingThree/HeadingThree";
+import CheckoutSummary from "./CheckoutSummary/CheckoutSummary";
 
 function Summary() {
   const { order } = useContext(Context);
@@ -28,8 +31,8 @@ function Summary() {
   return (
     <div className={styles.Summary}>
       <div className={styles.gridTemplate}>
-        <HeaderInfo title="Summary" />
         <div className={styles.divLeft}>
+          <HeaderInfo title="Summary" />
           <ItemSummary title="Delivery">
             <div className={styles.divFlexRow}>
               <BsTruck size={25} />
@@ -105,17 +108,20 @@ function Summary() {
             </ItemSummary>
           ) : null}
 
-          <ItemSummary title="Cart">
-            <div>
+          <div>
+            <HeadingThree title="Cart" />
+            <div className={styles.cartItems}>
               {order.products.map((item, index) => (
-                <p>{item.name}</p>
+                <CartItem item={item} key={index} />
               ))}
             </div>
-          </ItemSummary>
+          </div>
 
           <ItemSummary title="Comment to order">
             <div className={styles.divFlexRow}>
-              <TfiComment size={25} />
+              <span>
+                <TfiComment size={25} />
+              </span>
               {order.activeComment ? (
                 <p>{order.comment}</p>
               ) : (
@@ -123,6 +129,9 @@ function Summary() {
               )}
             </div>
           </ItemSummary>
+        </div>
+        <div className={styles.divRight}>
+          <CheckoutSummary />
         </div>
       </div>
     </div>

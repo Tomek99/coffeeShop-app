@@ -39,9 +39,6 @@ function NavigationBar() {
     else elementHTML.style.overflowY = "scroll";
 
     setNavigationOpen(!isNavigationOpen);
-    setAsideOpen(false);
-    setSearchOpen(false);
-    setCartOpen(false);
   };
 
   const handleAside = () => {
@@ -49,9 +46,6 @@ function NavigationBar() {
     else elementHTML.style.overflowY = "scroll";
 
     setAsideOpen(!isAsideOpen);
-    setNavigationOpen(false);
-    setSearchOpen(false);
-    setCartOpen(false);
   };
 
   const handleCart = (location) => {
@@ -61,9 +55,6 @@ function NavigationBar() {
     else elementHTML.style.overflowY = "scroll";
 
     setCartOpen(!isCartOpen);
-    setAsideOpen(false);
-    setNavigationOpen(false);
-    setSearchOpen(false);
   };
 
   return (

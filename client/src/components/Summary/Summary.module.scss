@@ -8,17 +8,17 @@
 
     .gridTemplate {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 400px;
         gap: 20px;
-        max-width: 1200px;
         width: 100%;
+        max-width: 1200px;
         background-color: var(--bg);
 
         .divLeft {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            max-width: 800px;
+            max-width: 700px;
 
             .divAddress {
                 display: flex;
@@ -35,6 +35,36 @@
                 align-items: center;
                 gap: 5px;
             }
+
+            .cartItems {
+                border: var(--border);
+                background-color: var(--black);
+                border-radius: 8px;
+                margin-top: 10px;
+            }
+        }
+
+        .divRight {
+            align-self: start;
+            position: sticky;
+            top: 10px;
+            border: var(--border);
+            border-radius: 8px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .gridTemplate {
+        grid-template-columns: 1fr !important;
+
+        .divLeft {
+            max-width: none !important;
+        }
+
+        .divRight {
+            bottom: 0;
+            border: none !important;
         }
     }
 }
