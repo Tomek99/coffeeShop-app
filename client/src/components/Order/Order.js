@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import Deliver from "./ColumnLeft/Deliver/Deliver";
+import React, { useContext, useState } from "react";
+import Delivery from "./ColumnLeft/Delivery/Delivery";
 import ExtraInfo from "./ColumnLeft/ExtraInfo/ExtraInfo";
 import UserInvoice from "./ColumnLeft/UserInvoice/UserInvoice";
 import styles from "./Order.module.scss";
@@ -10,7 +10,7 @@ import Shopper from "./ColumnLeft/Shopper/Shopper";
 import DisplayProducts from "./ColumnRight/DisplayProducts/DisplayProducts";
 import DeliverMethod from "./ColumnRight/DeliverMethod/DeliverMethod";
 import HeaderInfo from "../HeaderInfo/HeaderInfo";
-import Company from "./ColumnLeft/Comapny/Company";
+import Company from "./ColumnLeft/Company/Company";
 import DeliveryAddress from "./ColumnLeft/DeliveryAddress/DeliveryAddress";
 import CartSummary from "../ViewCart/FillCart/CartSummary/CartSummary";
 import { Form, Formik } from "formik";
@@ -19,8 +19,6 @@ import { Context } from "../../Contexts/Context";
 
 function Order({ handleUserNavigateToSummary }) {
   const { addOrder } = useContext(Context);
-  /*---------Field Delivery---------*/
-
   /*---------Initial values---------*/
   const [initialValuesLocal, setInitialValuesLocal] = useState(() => {
     const storedValue = localStorage.getItem("orderSummary");
@@ -50,7 +48,9 @@ function Order({ handleUserNavigateToSummary }) {
     i_ZIP_code: "",
     i_city: "",
     payment: "",
+    paymentFee: 0,
     delivery: "",
+    deliveryFee: 0,
     shopper: "",
     comment: "",
   };
@@ -185,7 +185,7 @@ function Order({ handleUserNavigateToSummary }) {
             <div className={styles.columnLeft}>
               <HeaderInfo title="Delivery and payment" />
               <div className={styles.cardFeature}>
-                <Deliver
+                <Delivery
                   activeDelivery={activeDelivery}
                   handleDelivery={handleDelivery}
                   setFieldValue={setFieldValue}
@@ -208,6 +208,7 @@ function Order({ handleUserNavigateToSummary }) {
                 <Payment
                   activePayment={activePayment}
                   handlePayment={handlePayment}
+                  setFieldValue={setFieldValue}
                 />
                 <ExtraInfo
                   setFieldValue={setFieldValue}

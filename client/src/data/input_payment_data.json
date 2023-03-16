@@ -3,35 +3,35 @@
         "id": "online_payment",
         "name": "payment",
         "value": "Online payment",
-        "fee": "Free",
+        "fee": "0.00",
         "url": "/images/payment_icons/dotPay.png"
     },
     {
         "id": "online_payment_card",
         "name": "payment",
         "value": "Online payment card",
-        "fee": "Free",
+        "fee": "0.00",
         "url": "/images/payment_icons/visa.png"
     },
     {
         "id": "blik",
         "name": "payment",
         "value": "BLIK",
-        "fee": "Free",
+        "fee": "0.00",
         "url": "/images/payment_icons/blik.png"
     },
     {
         "id": "traditional_payment",
         "name": "payment",
         "value": "Traditional payment",
-        "fee": "Free",
+        "fee": "0.00",
         "url": "/images/payment_icons/traditionalPayment.png"
     },
     {
         "id": "payment_on_delivery",
         "name": "payment",
         "value": "Payment on delivery",
-        "fee": "Free",
+        "fee": "1.50",
         "url": "/images/payment_icons/paymentOnDelivery.png"
     }
 ]

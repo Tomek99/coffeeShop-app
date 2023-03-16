@@ -3,24 +3,24 @@
         "id": "carrier",
         "name": "delivery",
         "value": "Carrier – InPost, UPS, FedEx, DTS, PickPack",
-        "fee": "$5.00"
+        "fee": "5.00"
     },
     {
         "id": "showroom",
         "name": "delivery",
         "value": "Pickup at coffe-shop showroom",
-        "fee": "Free"
+        "fee": "0.00"
     },
     {
         "id": "packageLocker",
         "name": "delivery",
         "value": "Package locker",
-        "fee": "$4.20"
+        "fee": "4.20"
     },
     {
         "id": "collectionAtPoint",
         "name": "delivery",
         "value": "Collection at point - Żabka, Poczta Polska and others",
-        "fee": "$3.50"
+        "fee": "3.50"
     }
 ]

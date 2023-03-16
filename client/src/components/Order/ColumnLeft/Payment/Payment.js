@@ -6,9 +6,11 @@ import InputRadio from "../InputRadio/InputRadio";
 import PropTypes from "prop-types";
 import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
-function Payment({ activePayment, handlePayment }) {
-  function handleFieldValue(id, index) {
+function Payment({ activePayment, handlePayment, setFieldValue }) {
+  function handleFieldValue(id, index, fee) {
     handlePayment(index);
+
+    setFieldValue("paymentFee", fee);
   }
 
   return (
@@ -32,5 +34,6 @@ function Payment({ activePayment, handlePayment }) {
 Payment.propTypes = {
   activePayment: PropTypes.number,
   handlePayment: PropTypes.func,
+  setFieldValue: PropTypes.func,
 };
 export default Payment;

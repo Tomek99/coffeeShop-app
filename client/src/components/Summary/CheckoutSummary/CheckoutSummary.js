@@ -1,31 +1,31 @@
-import React, { useContext } from "react";
-import { Context } from "../../../Contexts/Context";
+import React from "react";
 import BtnPurchasePay from "../../Buttons/BtnPurchasePay/BtnPurchasePay";
 import styles from "./CheckoutSummary.module.scss";
+import PropTypes from "prop-types";
 
-function CheckoutSummary() {
-  const { cartValue, cartSave } = useContext(Context);
-
-  const price = (cartValue + cartSave).toFixed(2);
+function CheckoutSummary({ deliveryFee, paymentFee, save, cartValue }) {
+  const noPrizeSave = (cartValue + save).toFixed(2);
+  const totalCost =
+    cartValue + parseFloat(paymentFee) + parseFloat(deliveryFee);
   return (
     <div className={styles.CheckoutSummary}>
       <div className={styles.divContent}>
         <div className={styles.divRow}>
           <span style={{ alignSelf: "flex-end" }}>Cart value</span>
           <p className={styles.pCol}>
-            <span className={styles.noDiscount}>${price}</span>
+            <span className={styles.noDiscount}>${noPrizeSave}</span>
             <span>${cartValue}</span>
           </p>
         </div>
         <div className={styles.divRow}>
           <span>Delivery</span>
           <div>
-            <span>$0.00</span>
+            <span>{deliveryFee !== "Free" ? `$${deliveryFee}` : "$0.00"}</span>
           </div>
         </div>
         <div className={styles.divRow}>
           <span>Payment</span>
-          <span>$0.00</span>
+          <span>{paymentFee === "Free" ? "$0.00" : `$${paymentFee}`}</span>
         </div>
       </div>
       <div className={styles.divContent}>
@@ -35,11 +35,11 @@ function CheckoutSummary() {
             style={{ color: "#38b32a", fontWeight: "bold" }}
           >
             <span style={{ marginBottom: "5px" }}>Save</span>
-            <span>${cartSave}</span>
+            <span>${save}</span>
           </div>
           <div className={styles.divRow} style={{ fontWeight: "bold" }}>
             <span>Total cost</span>
-            <span>$</span>
+            <span>${totalCost}</span>
           </div>
         </div>
         <BtnPurchasePay />
@@ -47,5 +47,10 @@ function CheckoutSummary() {
     </div>
   );
 }
-
+CheckoutSummary.propTypes = {
+  deliveryFee: PropTypes.string,
+  paymentFee: PropTypes.string,
+  save: PropTypes.number,
+  cartValue: PropTypes.number,
+};
 export default CheckoutSummary;

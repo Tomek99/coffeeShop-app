@@ -3,27 +3,16 @@ import { Context } from "../../Contexts/Context";
 import HeaderInfo from "../HeaderInfo/HeaderInfo";
 import ItemSummary from "./ItemSummary/ItemSummary";
 import { FaRegUser } from "react-icons/fa";
-import { BsBuildings, BsTruck, BsShop } from "react-icons/bs";
+import { BsBuildings, BsTruck } from "react-icons/bs";
 import { TfiComment } from "react-icons/tfi";
-import { GiLockers } from "react-icons/gi";
-import { SlLocationPin } from "react-icons/sl";
 import styles from "./Summary.module.scss";
 import input_payment_data from "../../data/input_payment_data.json";
-import DeliverMethod from "../Order/ColumnRight/DeliverMethod/DeliverMethod";
 import CartItem from "./CartItem/CartItem";
 import HeadingThree from "../HeadingThree/HeadingThree";
 import CheckoutSummary from "./CheckoutSummary/CheckoutSummary";
 
 function Summary() {
   const { order } = useContext(Context);
-
-  const icons = [
-    <BsTruck size={25} />,
-    <BsShop size={25} />,
-    <GiLockers size={25} />,
-    <SlLocationPin size={25} />,
-  ];
-
   const findUrl = input_payment_data.find(
     (item) => item.value === order.payment
   );
@@ -131,7 +120,12 @@ function Summary() {
           </ItemSummary>
         </div>
         <div className={styles.divRight}>
-          <CheckoutSummary />
+          <CheckoutSummary
+            deliveryFee={order.deliveryFee}
+            paymentFee={order.paymentFee}
+            save={order.save}
+            cartValue={order.cartValue}
+          />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Deliver.module.scss";
+import React, { useState } from "react";
+import styles from "./Delivery.module.scss";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import PropTypes from "prop-types";
 import input_deliver_data from "../../../../data/input_deliver_data.json";
@@ -9,7 +9,7 @@ import { GiLockers } from "react-icons/gi";
 import { SlLocationPin } from "react-icons/sl";
 import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
-function Deliver({ setFieldValue, activeDelivery, handleDelivery }) {
+function Delivery({ setFieldValue, activeDelivery, handleDelivery }) {
   const icons = [
     <BsTruck size={25} />,
     <BsShop size={25} />,
@@ -17,13 +17,15 @@ function Deliver({ setFieldValue, activeDelivery, handleDelivery }) {
     <SlLocationPin size={25} />,
   ];
 
-  function handleFieldValue(id, index) {
+  function handleFieldValue(id, index, fee) {
     handleDelivery(index);
-
+    console.log(fee);
     if (id !== "showroom") {
       setFieldValue("activeAddress", true);
+      setFieldValue("deliveryFee", fee);
     } else {
       setFieldValue("activeAddress", false);
+      setFieldValue("deliveryFee", "0.00");
     }
   }
 
@@ -47,9 +49,9 @@ function Deliver({ setFieldValue, activeDelivery, handleDelivery }) {
     </div>
   );
 }
-Deliver.propTypes = {
+Delivery.propTypes = {
   setFieldValue: PropTypes.func,
   handleDelivery: PropTypes.func,
   activeDelivery: PropTypes.number,
 };
-export default Deliver;
+export default Delivery;

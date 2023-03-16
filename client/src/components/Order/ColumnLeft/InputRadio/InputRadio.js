@@ -21,7 +21,7 @@ function InputRadio({ item, index, activeIndex, icon, handleFieldValue }) {
             name={name}
             value={value}
             // checked={option === stringyIndex}
-            onClick={() => handleFieldValue(id, index)}
+            onClick={() => handleFieldValue(id, index, fee)}
             className={
               activeIndex === index
                 ? `${styles.inputRadio} ${styles.activeDot}`
@@ -30,7 +30,11 @@ function InputRadio({ item, index, activeIndex, icon, handleFieldValue }) {
           />
           <div className={styles.divTextDirection}>
             <span className={styles.textwidth}>{value} </span>
-            {fee ? <span className={styles.fee}>{`(${fee})`}</span> : null}
+            {fee ? (
+              <span className={styles.fee}>
+                {fee !== "0.00" ? `($${fee})` : "(Free)"}
+              </span>
+            ) : null}
           </div>
         </div>
 

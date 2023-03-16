@@ -192,17 +192,13 @@ function App() {
   }
 
   /*----------- order ----------- */
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState(() => {
+    const storedValue = localStorage.getItem("order");
+    if (storedValue !== null) return storedValue;
+    else return {};
+  });
 
   function addOrder(order) {
-    // const dateObj = new Date();
-    // const day = dateObj.getUTCDate();
-    // const month = dateObj.getUTCMonth() + 1;
-    // const year = dateObj.getUTCFullYear();
-    // console.log(order);
-    // "idNumber": 700005588955,
-    // date: `${day} ${month} ${year}`,
-
     const address = {
       name: order.name,
       street: order.street,
@@ -242,24 +238,28 @@ function App() {
         city: order.city,
       };
     }
-
-    setOrder({
+    const orderUpdate = {
       save: cartSave,
-      totalCost: cartValue,
+      cartValue: cartValue,
       supplyPrice: 15,
       products: cartItems,
       address: address,
       company: company,
       invoice: invoice,
       payment: order.payment,
+      paymentFee: order.paymentFee,
       delivery: order.delivery,
+      deliveryFee: order.deliveryFee,
       shopper: order.shopper,
       comment: order.comment,
       activeAddress: order.activeAddress,
       activeCompany: order.activeCompany,
       activeInvoice: order.activeInvoice,
       activeComment: order.activeComment,
-    });
+    };
+
+    setOrder(orderUpdate);
+    localStorage.setItem("order", orderUpdate);
   }
 
   /*----------- location ----------- */
