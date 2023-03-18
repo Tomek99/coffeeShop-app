@@ -19,7 +19,6 @@ function Delivery({ setFieldValue, activeDelivery, handleDelivery }) {
 
   function handleFieldValue(id, index, fee) {
     handleDelivery(index);
-    console.log(fee);
     if (id !== "showroom") {
       setFieldValue("activeAddress", true);
       setFieldValue("deliveryFee", fee);

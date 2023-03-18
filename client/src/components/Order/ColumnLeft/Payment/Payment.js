@@ -9,7 +9,6 @@ import ErrMessage from "../../../ErrorMessage/ErrMessage";
 function Payment({ activePayment, handlePayment, setFieldValue }) {
   function handleFieldValue(id, index, fee) {
     handlePayment(index);
-
     setFieldValue("paymentFee", fee);
   }
 

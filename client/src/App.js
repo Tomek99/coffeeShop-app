@@ -34,6 +34,9 @@ import {
   AccountContent,
   OrderDetails,
   Summary,
+  PaymentSuccess,
+  PaymentCanceled,
+  ProtectedOrder,
 } from "./components";
 
 function App() {
@@ -47,7 +50,9 @@ function App() {
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      const products = await axios.get("http://localhost:5000/api/products");
+      const products = await axios.get(
+        `${process.env.REACT_APP_API_URI}/api/products`
+      );
       setLoading(false);
       setProducts(products.data);
     };
@@ -239,8 +244,13 @@ function App() {
       };
     }
     const orderUpdate = {
+      userId: user._id,
       save: cartSave,
       cartValue: cartValue,
+      totalCost:
+        cartValue +
+        JSON.parse(order.deliveryFee) +
+        JSON.parse(order.paymentFee),
       supplyPrice: 15,
       products: cartItems,
       address: address,
@@ -298,7 +308,10 @@ function App() {
         switch (location.pathname) {
           case "/order":
           case "/order/summary":
+          case "/order/success":
+          case "/order/canceled":
             return <NavigationBarOrder />;
+
           default:
             return <NavigationBar />;
         }
@@ -359,11 +372,15 @@ function App() {
           <Route
             path="order"
             element={
-              <Protected isLogIn={cartItems.length} navigate="/cart">
+              <ProtectedOrder
+                isLogIn={isLogIn}
+                cartItemsLen={cartItems.length}
+                navigate="/log-in"
+              >
                 <Order
                   handleUserNavigateToSummary={handleUserNavigateToSummary}
                 />
-              </Protected>
+              </ProtectedOrder>
             }
           />
 
@@ -376,6 +393,9 @@ function App() {
             }
           />
 
+          <Route path="order/success" element={<PaymentSuccess />} />
+          <Route path="order/canceled" element={<PaymentCanceled />} />
+
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
           <Route path="*" element={<Navigate to="/" replace />} />
@@ -386,6 +406,8 @@ function App() {
           case "/order":
           case "/order/summary":
           case "/cart":
+          case "/order/success":
+          case "/order/canceled":
             return <FooterOrder />;
 
           default:

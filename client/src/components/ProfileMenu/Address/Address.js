@@ -27,7 +27,9 @@ function Address() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/addresses/user-address/${user.addresses}`)
+      .get(
+        `${process.env.REACT_APP_API_URI}/api/addresses/user-address/${user.addresses}`
+      )
       .then(({ data }) => {
         setAddress(data.addresses);
         setIdAddresses(data._id);
@@ -36,7 +38,9 @@ function Address() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/invoices/user-invoice/${user.invoices}`)
+      .get(
+        `${process.env.REACT_APP_API_URI}/api/invoices/user-invoice/${user.invoices}`
+      )
       .then(({ data }) => {
         setIdInvoices(data._id);
         setInvoice(data.invoices);

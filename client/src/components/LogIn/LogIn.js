@@ -38,10 +38,9 @@ function LogIn() {
     setError(null);
     try {
       const isSuccess = await axios.post(
-        "http://localhost:5000/api/users/login",
+        `${process.env.REACT_APP_API_URI}/api/users/login`,
         values
       );
-
       if (isSuccess.status === 200) logIn(isSuccess.data);
       else setError("Invalid email or password");
     } catch (error) {

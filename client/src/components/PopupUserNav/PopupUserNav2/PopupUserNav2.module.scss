@@ -42,12 +42,12 @@
             display: flex;
             align-items: center;
             justify-content: stretch;
-            padding: 10px 0;
             border-radius: 20px;
             transition: 0.3s linear;
             cursor: pointer;
 
             a {
+                padding: 10px 0;
                 width: 100%;
                 color: #fff;
                 text-transform: none;

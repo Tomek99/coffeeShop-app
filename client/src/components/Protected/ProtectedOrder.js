@@ -2,8 +2,8 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Protected({ isLogIn, children, navigate }) {
-  if (!isLogIn) {
+function Protected({ isLogIn, cartItemsLen, children, navigate }) {
+  if (!(isLogIn && cartItemsLen)) {
     return <Navigate to={navigate} replace />;
   }
   return children;

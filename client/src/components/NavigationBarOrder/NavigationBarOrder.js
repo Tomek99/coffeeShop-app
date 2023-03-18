@@ -12,7 +12,10 @@ function NavigationBarOrder() {
       setTab(1);
     } else if (location.pathname === "/order/summary") {
       setTab(2);
-    } else {
+    } else if (
+      location.pathname === "/order/success" ||
+      location.pathname === "/order/canceled"
+    ) {
       setTab(3);
     }
   }, [location, tab]);
