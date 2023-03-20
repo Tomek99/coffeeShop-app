@@ -18,13 +18,13 @@ const setAddress = asyncHandler(async (req, res) => {
     {
       $push: {
         addresses: {
-          name: name,
-          street: street,
-          house: house,
-          ZIP_code: ZIP_code,
-          city: city,
-          number: number,
-          email: email,
+          name,
+          street,
+          house,
+          ZIP_code,
+          city,
+          number,
+          email,
         },
       },
     },

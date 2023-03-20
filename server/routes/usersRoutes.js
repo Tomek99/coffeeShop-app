@@ -4,7 +4,6 @@ const {
   getUsers,
   isUserExist,
   setUser,
-
   logIn,
 } = require("../controllers/usersController");
 
@@ -17,5 +16,3 @@ router.route("/register/validEmail").post(isUserExist);
 router.route("/login").post(logIn);
 
 module.exports = router;
-// updateGoals,
-// deleteGoals,

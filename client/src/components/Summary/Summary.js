@@ -13,7 +13,7 @@ import CheckoutSummary from "./CheckoutSummary/CheckoutSummary";
 
 function Summary() {
   const { order } = useContext(Context);
-  console.log(order);
+
   const findUrl = input_payment_data.find(
     (item) => item.value === order.payment
   );

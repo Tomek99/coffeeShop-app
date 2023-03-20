@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const Address = require("../models/addressModel");
 const Invoice = require("../models/invoiceModel");
+const Order = require("../models/orderModel");
 const bcrypt = require("bcrypt");
 
 //@desc GET goals
@@ -38,37 +39,35 @@ const logIn = asyncHandler(async (req, res) => {
 //@route POST /api/goals
 //@access Private
 const setUser = asyncHandler(async (req, res) => {
-  const check =
-    req.body.firstName &&
-    req.body.lastName &&
-    req.body.email &&
-    req.body.password;
-
-  if (Boolean(!check)) {
-    res.status(400);
-    throw new Error("Add text");
-  }
   const salt = await bcrypt.genSalt(10);
   const { firstName, lastName, email } = req.body;
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-  const user = await User.create({
-    firstName,
-    lastName,
-    email,
-    password: hashedPassword,
-    number: "",
-    loggedDevices: [],
-    addresses: await Address.create({
-      addresses: [],
-    }),
-    invoices: await Invoice.create({
-      invoices: [],
-    }),
-  });
+  try {
+    const user = await User.create({
+      firstName,
+      lastName,
+      email,
+      password: hashedPassword,
+      number: "",
+      loggedDevices: [],
+      orders: await Order.create({
+        orders: [],
+      }),
+      addresses: await Address.create({
+        addresses: [],
+      }),
+      invoices: await Invoice.create({
+        invoices: [],
+      }),
+    });
 
-  res.send(user);
-  res.status(200);
+    res.send(user);
+    res.status(200);
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
 });
 
 module.exports = {
