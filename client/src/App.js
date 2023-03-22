@@ -40,9 +40,6 @@ import {
 } from "./components";
 
 function App() {
-  /*----------- orders ----------- */
-  const [orders, setOrders] = useState([]);
-
   /*----------- products ----------- */
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -245,7 +242,7 @@ function App() {
     }
     const orderUpdate = {
       // userOrdersId: user.orders,
-      userId: user._id,
+      userOrdersId: user.orders,
       save: cartSave,
       cartValue: cartValue,
       totalCost:
@@ -301,7 +298,6 @@ function App() {
         products,
         user,
         loading,
-        orders,
         order,
       }}
     >

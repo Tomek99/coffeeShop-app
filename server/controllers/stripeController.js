@@ -2,39 +2,31 @@ const asyncHandler = require("express-async-handler");
 const stripe = require("stripe")(process.env.STRIPE_URI);
 const DOMAIN_SUCCESS = "http://localhost:3000/order/success";
 const DOMAIN_CANCEL = "http://localhost:3000/order";
+const Order = require("../models/orderModel");
 
 const setPayment = asyncHandler(async (req, res) => {
-  const { products, userId } = req.body;
-
+  const { products, userOrdersId, address } = req.body;
   const line_items = products.map((item) => {
     return {
+      quantity: item.quantity,
       price_data: {
         currency: "usd",
+        unit_amount: item.newPrice * 100,
         product_data: {
           name: item.name,
-          metadata: {
-            id: item._id,
-          },
+          images: ["https://i.imgur.com/EHyR2nP.png"],
         },
-        unit_amount: item.newPrice * 100,
       },
-      quantity: item.quantity,
-    };
-  });
-
-  const name_items = products.map((item) => {
-    return {
-      name: item._id,
     };
   });
 
   try {
     const customer = await stripe.customers.create({
+      email: address.email,
+      phone: address.number,
       metadata: {
-        userId: userId,
-        cart: JSON.stringify(name_items),
+        userOrdersId: userOrdersId,
       },
-      email: "test@gmail.com",
     });
 
     const session = await stripe.checkout.sessions.create({
@@ -52,49 +44,73 @@ const setPayment = asyncHandler(async (req, res) => {
 });
 //---------------------------------------------------------------------------------------------------------
 let endpointSecret;
-endpointSecret =
-  "whsec_626e8828f1ee35210aaa82e13f8c61d6f8029a1f5afc6d038848f97c49717fab";
+endpointSecret = process.env.STRIPE_END_POINT;
 
 const setWebhook = asyncHandler(async (req, res) => {
   const payload = req.rawBody.toString();
-
   const sig = req.headers["stripe-signature"];
 
-  let data;
-  let eventType;
+  let event;
 
-  if (endpointSecret) {
-    let event;
-
-    try {
-      event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
-
-      console.log(event);
-    } catch (err) {
-      console.log(`Webhook Error: ${err.message}`);
-      res.status(400).send(`Webhook Error: ${err.message}`);
-      return;
-    }
-    data = event.data.object;
-    eventType = event.type;
-  } else {
-    data = req.body.data.object;
-    eventType = req.body.type;
+  try {
+    event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
+  } catch (err) {
+    console.log(`Webhook signature verification failed.`, err.message);
+    return response.sendStatus(400);
   }
 
-  // Handle the event
-  if (eventType === "checkout.session.completed") {
-    stripe.customers
-      .retrieve(data.customer)
-      .then((customer) => {
-        console.log(customer);
-        console.log("data:", data);
-      })
-      .catch((err) => console.log(err.message));
+  if (event.type === "checkout.session.completed") {
+    sessionId = event.data.object.id;
+    const sessionWithLineItems = await stripe.checkout.sessions.retrieve(
+      sessionId,
+      {
+        expand: ["line_items"],
+      }
+    );
+    const customer = await stripe.customers.retrieve(
+      sessionWithLineItems.customer
+    );
+
+    const lineItems = sessionWithLineItems.line_items;
+    createOrder(
+      event.data.object,
+      lineItems.data,
+      customer.metadata.userOrdersId
+    );
   }
 
   res.send().end();
 });
+
+// FUL FILL ORDER
+
+const createOrder = async (data, lineItems, userOrdersId) => {
+  const items = lineItems.map((item) => {
+    return {
+      // id: "DO POPRAWY",
+      name: item.description,
+      price: (item.price.unit_amount / 100).toFixed(2),
+      quantity: item.quantity,
+    };
+  });
+
+  const post = await Order.findByIdAndUpdate(
+    userOrdersId,
+    {
+      $push: {
+        orders: {
+          paymentIntentId: data.payment_intent,
+          products: items,
+          subtotal: (data.amount_subtotal / 100).toFixed(2),
+          total: (data.amount_total / 100).toFixed(2),
+          shipping: data.customer_details,
+          payment_status: data.payment_status,
+        },
+      },
+    },
+    { new: true }
+  );
+};
 
 module.exports = {
   setPayment,

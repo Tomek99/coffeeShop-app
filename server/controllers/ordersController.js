@@ -1,19 +1,11 @@
 const asyncHandler = require("express-async-handler");
-const Order = require("../models/productModel");
+const Order = require("../models/orderModel");
 
-const setOrder = asyncHandler(async (req, res) => {
-  const post = await Order.findByIdAndUpdate(
-    _id,
-    {
-      $push: {
-        orders: {},
-      },
-    },
-    { new: true }
-  );
-  return res.status(200).json(post);
+const getOrders = asyncHandler(async (req, res) => {
+  const get_data = await Order.findById(req.params.id);
+  res.status(200).json(get_data);
 });
 
 module.exports = {
-  setOrder,
+  getOrders,
 };

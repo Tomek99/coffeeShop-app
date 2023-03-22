@@ -6,36 +6,36 @@ const addressSchema = mongoose.Schema(
       {
         uniequId: {
           type: String,
-          require: true,
+          required: true,
           unique: true,
         },
         name: {
           type: String,
-          require: true,
+          required: true,
         },
         street: {
           type: String,
-          require: false,
+          required: false,
         },
         house: {
           type: String,
-          require: false,
+          required: false,
         },
         ZIP_code: {
           type: String,
-          require: false,
+          required: false,
         },
         city: {
           type: String,
-          require: false,
+          required: false,
         },
         number: {
           type: String,
-          require: true,
+          required: true,
         },
         email: {
           type: String,
-          require: true,
+          required: true,
         },
       },
     ],

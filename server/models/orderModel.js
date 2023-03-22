@@ -9,61 +9,32 @@ const orderSchema = new mongoose.Schema(
           require: true,
           unique: true,
         },
-        OrderId: { type: String, require: true },
+        userOrderId: { type: String, require: true },
+        paymentIntentId: { type: String },
         products: [
           {
-            id: { type: String },
+            // id: { type: String },
             name: { type: String },
             price: { type: String },
             quantity: { type: Number },
           },
         ],
-        comment: {
-          type: String,
-          required: true,
-        },
-        delivery: {
-          type: String,
-          required: true,
-        },
+        shipping: { type: Object, required: true },
         delivery_status: {
           type: String,
           default: "pending",
-        },
-        deliveryFee: {
-          type: String,
-          required: true,
-        },
-        payment: {
-          type: String,
-          required: true,
-        },
-        paymentFee: {
-          type: String,
-          required: true,
         },
         payment_status: {
           type: String,
           required: true,
         },
-        savedMoney: {
-          type: Number,
-          required: true,
-        },
-        shopper: {
+        subtotal: {
           type: String,
           required: true,
         },
-        supplyPrice: {
-          type: Number,
-          required: true,
-        },
-        cartValue: {
-          type: Number,
-          required: true,
-        },
-        totalCost: {
-          type: Number,
+
+        total: {
+          type: String,
           required: true,
         },
       },
