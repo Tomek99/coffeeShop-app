@@ -4,7 +4,7 @@ import { ImBin } from "react-icons/im";
 import { BsHeart, BsThreeDotsVertical } from "react-icons/bs";
 
 function Item({ item, deleteItem }) {
-  const { name, imageUrl, oldPrice, newPrice, quantity } = item;
+  const { name, imageUrl, oldPrice, price, quantity } = item;
   const values = ["1", "2", "3", "4", "5", "6", "7", "8", "+9"];
 
   return (
@@ -18,7 +18,7 @@ function Item({ item, deleteItem }) {
       <div className={styles.rightSide}>
         <div className={styles.price}>
           <p>{oldPrice !== 0 ? `$${oldPrice}` : null}</p>
-          <p>${newPrice}</p>
+          <p>${price}</p>
         </div>
         <div className={styles.itemAmount}>
           <select value={quantity}>
@@ -30,9 +30,7 @@ function Item({ item, deleteItem }) {
           </select>
         </div>
         <div className={styles.buttons}>
-          <button
-            onClick={() => deleteItem(item._id, item.newPrice, item.oldPrice)}
-          >
+          <button onClick={() => deleteItem(item._id, price, oldPrice)}>
             <ImBin size={18} />
           </button>
           <button>

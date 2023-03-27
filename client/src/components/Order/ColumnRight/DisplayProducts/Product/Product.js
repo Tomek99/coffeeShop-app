@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Product.module.scss";
 
 function Product({ item }) {
-  const { imageUrl, name, quantity, newPrice, oldPrice } = item;
+  const { imageUrl, name, quantity, price, oldPrice } = item;
   return (
     <div className={styles.Product}>
       <img src={imageUrl} alt={name} className={styles.imgSize} />
@@ -16,7 +16,7 @@ function Product({ item }) {
             <span className={styles.oldPrice}>
               {oldPrice ? `$${oldPrice}` : null}
             </span>
-            <span>${newPrice}</span>
+            <span>${price}</span>
           </div>
         </div>
       </div>

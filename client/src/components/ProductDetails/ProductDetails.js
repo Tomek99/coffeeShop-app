@@ -3,7 +3,7 @@ import styles from "./ProductDetalis.module.scss";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useParams } from "react-router-dom";
-import Loader from "../Loader/Loader";
+import ClipLoader from "react-spinners/ClipLoader";
 import ExtraDetails from "./ExtraDetails/ExtraDetails";
 import { useState } from "react";
 import { Context } from "../../Contexts/Context";
@@ -43,17 +43,20 @@ function ProductDetails() {
   return (
     <div className={styles.ProductDetails}>
       {loading ? (
-        <Loader />
+        <div style={{ marginTop: "150px" }}>
+          <ClipLoader color="var(--main-color" size={150} />
+        </div>
       ) : (
         <>
           <div className={styles.productDetailsSection}>
             <div className={styles.productDetailsImage}>
-              <img src={"/" + thisProduct.imageUrl} alt="Img" />
+              <img src={thisProduct.imageUrl} alt="Img" />
             </div>
             <div className={styles.productDetailsContent}>
               <h1>{thisProduct.name}</h1>
               <p>
-                ${thisProduct.newPrice} ${thisProduct.oldPrice}
+                ${thisProduct.newPrice}
+                {thisProduct.oldPrice ? `$${thisProduct.oldPrice}` : null}
               </p>
               <p>country of origin:{thisProduct.origin} </p>
               <p>Weight: 500g</p>

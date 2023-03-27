@@ -13,7 +13,7 @@ const orderSchema = new mongoose.Schema(
         paymentIntentId: { type: String },
         products: [
           {
-            // id: { type: String },
+            id: { type: String },
             name: { type: String },
             price: { type: String },
             quantity: { type: Number },

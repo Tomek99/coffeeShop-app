@@ -28,10 +28,9 @@ function NavigationBar() {
   let elementHTML = window.document.getElementsByTagName("html")[0];
 
   const handleSearch = () => {
+    if (!isSearchOpen) elementHTML.style.overflowY = "hidden";
+    else elementHTML.style.overflowY = "scroll";
     setSearchOpen(!isSearchOpen);
-    setNavigationOpen(false);
-    setAsideOpen(false);
-    setCartOpen(false);
   };
 
   const handleNavigation = () => {
@@ -82,7 +81,10 @@ function NavigationBar() {
               <BsSearch size={30} color={"#fff"} />
             </button>
 
-            <PopupSearch isSearchOpen={isSearchOpen} />
+            <PopupSearch
+              isSearchOpen={isSearchOpen}
+              handleSearch={handleSearch}
+            />
 
             <Link to="wish-list" className={styles.btnDisplay}>
               <BsHeart size={30} color={"#fff"} />
@@ -123,13 +125,15 @@ function NavigationBar() {
               handleAside={handleAside}
             />
             <Cart handleCart={handleCart} isCartOpen={isCartOpen} />
-            {isCartOpen || isAsideOpen || isNavigationOpen ? (
+            {isCartOpen || isAsideOpen || isNavigationOpen || isSearchOpen ? (
               <BlurScreen
                 isCartOpen={isCartOpen}
                 isNavigationOpen={isNavigationOpen}
+                isSearchOpen={isSearchOpen}
                 handleAside={handleAside}
                 handleCart={handleCart}
                 handleNavigation={handleNavigation}
+                handleSearch={handleSearch}
               />
             ) : null}
           </div>

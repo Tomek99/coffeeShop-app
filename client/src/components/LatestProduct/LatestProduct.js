@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
 function LatestProduct({ item, isHome }) {
-  const { imageUrl, name, newPrice, oldPrice, _id, rate, intensity } = item;
+  const { imageUrl, name, price, oldPrice, _id, rate, intensity } = item;
   const { addItem, products } = useContext(Context);
 
   let findProduct = products.find((product) => product._id === _id);
@@ -39,7 +39,7 @@ function LatestProduct({ item, isHome }) {
         </div>
       </div>
       <p className={styles.price}>
-        <span>${newPrice} </span>
+        <span>${price} </span>
         <span className={styles.oldPrice}>
           {Boolean(oldPrice) ? `$${oldPrice}` : null}
         </span>

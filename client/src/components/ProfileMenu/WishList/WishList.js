@@ -5,8 +5,6 @@ import WishInfo from "./WishInfo/WishInfo";
 import WishProducts from "./WishProducts/WishProducts";
 import Support from "../Support/Support";
 import HeaderInfo from "../../HeaderInfo/HeaderInfo";
-// import { useContext } from "react";
-// import { Context } from "../../../Contexts/Context";
 
 function WishList() {
   useEffect(() => {
@@ -16,7 +14,7 @@ function WishList() {
       behavior: "instant",
     });
   }, []);
-  // const { addItemWishList } = useContext(Context);
+
   return (
     <>
       <div className={styles.WishListHeader}>

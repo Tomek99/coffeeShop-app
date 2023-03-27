@@ -1,0 +1,19 @@
+.BtnShipmentHome {
+    align-self: flex-start;
+    font-size: 1.7rem;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    transition: 0.3s linear;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btnPosition {
+  
+}
+
+.BtnShipmentHome:hover {
+
+    letter-spacing: 1px;
+}

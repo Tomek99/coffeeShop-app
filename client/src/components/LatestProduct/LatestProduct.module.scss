@@ -45,7 +45,8 @@
 
         img {
             max-width: 120px;
-            max-height: 210px;
+            height: 210px;
+            object-fit: cover;
             width: 100%;
         }
 

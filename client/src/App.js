@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import { Context } from "./Contexts/Context";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import {
@@ -124,7 +123,7 @@ function App() {
     }
 
     setCartQuantity(cartQuantity + item.quantity);
-    appendPrice(item.newPrice, item.oldPrice, item.quantity);
+    appendPrice(item.price, item.oldPrice, item.quantity);
   }
 
   function deleteItem(id, newPrice, oldPrice) {

@@ -4,14 +4,17 @@ import PropTypes from "prop-types";
 
 function BlurScreen({
   isCartOpen,
+  isSearchOpen,
+  isNavigationOpen,
   handleAside,
   handleCart,
-  isNavigationOpen,
   handleNavigation,
+  handleSearch,
 }) {
   function handleBlurScreen() {
     if (isCartOpen) handleCart();
     else if (isNavigationOpen) handleNavigation();
+    else if (isSearchOpen) handleSearch();
     else handleAside();
   }
 

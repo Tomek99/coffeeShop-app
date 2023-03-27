@@ -15,6 +15,7 @@
     list-style: none;
     z-index: 55;
     transition: 0.3s linear;
+    opacity: 0;
 
     .userName {
         padding: 20px 0 0 15px;
@@ -128,6 +129,7 @@
 }
 .active {
     right: 0;
+    opacity: 1;
 }
 
 @media (max-width: 600px) {

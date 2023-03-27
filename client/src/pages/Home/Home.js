@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import {
   HomeSection,
   AboutSection,
-  MenuSection,
   ProductsSection,
   ReviewSection,
   BlogsSection,
+  ShipmentSection,
 } from "../../components/index";
 
 function Home(props) {
@@ -21,7 +21,8 @@ function Home(props) {
     <>
       <HomeSection />
       <AboutSection />
-      <ProductsSection isTrue={true} isHome={true} firstWord="Latest" />
+      <ProductsSection />
+      <ShipmentSection />
       <ReviewSection isTrue={true} />
       <BlogsSection isTrue={true} />
     </>

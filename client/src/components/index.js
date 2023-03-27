@@ -2,7 +2,7 @@ export { default as NavigationBar } from "./NavigationBar/NavigationBar";
 export { default as NavigationBarOrder } from "./NavigationBarOrder/NavigationBarOrder";
 export { default as HomeSection } from "./HomeSection/HomeSection";
 export { default as AboutSection } from "./AboutSection/AboutSection";
-
+export { default as ShipmentSection } from "./ShipmentSection/ShipmentSection";
 export { default as ProductsSection } from "./ProductsSection/ProductsSection";
 export { default as ReviewSection } from "./ReviewSection/ReviewSection";
 export { default as ContactSection } from "./ContactSection/ContactSection";
