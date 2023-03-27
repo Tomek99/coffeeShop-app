@@ -195,7 +195,7 @@ function App() {
   /*----------- order ----------- */
   const [order, setOrder] = useState(() => {
     const storedValue = localStorage.getItem("order");
-    if (storedValue !== null) return storedValue;
+    if (storedValue !== null) return JSON.parse(storedValue);
     else return {};
   });
 
@@ -266,7 +266,7 @@ function App() {
     };
 
     setOrder(orderUpdate);
-    localStorage.setItem("order", orderUpdate);
+    localStorage.setItem("order", JSON.stringify(orderUpdate));
   }
 
   /*----------- location ----------- */

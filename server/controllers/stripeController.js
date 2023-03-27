@@ -5,16 +5,16 @@ const DOMAIN_CANCEL = "http://localhost:3000/order";
 const Order = require("../models/orderModel");
 
 const setPayment = asyncHandler(async (req, res) => {
-  const { products, userOrdersId, address } = req.body;
+  const { products, userOrdersId, address, imageUrl } = req.body;
   const line_items = products.map((item) => {
     return {
       quantity: item.quantity,
       price_data: {
         currency: "usd",
-        unit_amount: item.newPrice * 100,
+        unit_amount: item.price * 100,
         product_data: {
           name: item.name,
-          images: ["https://i.imgur.com/EHyR2nP.png"],
+          images: [item.imageUrl],
         },
       },
     };
