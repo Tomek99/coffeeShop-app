@@ -9,7 +9,16 @@ function NavListElement({ isLink, name, path }) {
       {isLink ? (
         <Link to={path}>{name}</Link>
       ) : (
-        <NavLink to={path} activeClassName={styles.activeTest}>
+        <NavLink
+          to={path}
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? styles.activeNavLink
+              : styles.navLink
+          }
+        >
           {name}
         </NavLink>
       )}

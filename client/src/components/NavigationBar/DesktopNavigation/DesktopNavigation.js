@@ -7,7 +7,7 @@ function DesktopNavigation() {
     <ul className={styles.DesktopNavigation}>
       {navigationBarList.map((item, index) => (
         <NavListElement
-          isLink={true}
+          isLink={false}
           key={index}
           name={item.name}
           path={item.path}
