@@ -4,6 +4,7 @@ export { default as HomeSection } from "./HomeSection/HomeSection";
 export { default as AboutSection } from "./AboutSection/AboutSection";
 export { default as ShipmentSection } from "./ShipmentSection/ShipmentSection";
 export { default as ProductsSection } from "./ProductsSection/ProductsSection";
+export { default as CareComponent } from "./CareSection/CareSection";
 export { default as ReviewSection } from "./ReviewSection/ReviewSection";
 export { default as ContactSection } from "./ContactSection/ContactSection";
 export { default as BlogsSection } from "./BlogsSection/BlogsSection";

@@ -5,15 +5,9 @@ import { VscChromeClose } from "react-icons/vsc";
 import PropTypes from "prop-types";
 
 function PopupMemberDetails(props) {
-  const { id, url, name, position, text, showDetails, isActive } = props;
+  const { id, url, name, position, text, handleShowMember } = props;
   return (
-    <div
-      className={
-        isActive
-          ? `${styles.PopupMemberDetails} ${styles.active}`
-          : styles.PopupMemberDetails
-      }
-    >
+    <div className={styles.PopupMemberDetails}>
       <div className={styles.memberDetails}>
         <div className={styles.imgMemberSection}>
           <img src={url} alt={id} className={styles.imgMember} />
@@ -30,7 +24,7 @@ function PopupMemberDetails(props) {
           </div>
           <p>{text}</p>
         </div>
-        <button onClick={showDetails} className={styles.btnClose}>
+        <button onClick={() => handleShowMember()} className={styles.btnClose}>
           <VscChromeClose className={styles.btnIcon} />
         </button>
       </div>
@@ -44,7 +38,6 @@ PopupMemberDetails.propTypes = {
   name: PropTypes.string,
   position: PropTypes.string,
   text: PropTypes.string,
-  showDetails: PropTypes.func,
-  isActive: PropTypes.bool,
+  handleShowMember: PropTypes.func,
 };
 export default PopupMemberDetails;

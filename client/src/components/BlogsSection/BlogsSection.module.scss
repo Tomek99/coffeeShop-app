@@ -6,13 +6,13 @@
     color: #fff;
 
     .blogs {
-        max-width: 900px;
+        max-width: 1366px;
+        width: 100%;
         flex-wrap: wrap;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        gap: 10px;
+        justify-content: space-between;
     }
 }
 

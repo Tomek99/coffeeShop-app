@@ -12,7 +12,7 @@ function ProductsSection() {
       <HeaderSection firstWord="latest" secondWord="products" />
       <div className={styles.itemsSection}>
         <div className={styles.gridTemplate}>
-          {products.slice(0, 3).map((item, index) => (
+          {products.slice(0, 4).map((item, index) => (
             <LatestProduct key={index} item={item} isHome={true} />
           ))}
         </div>

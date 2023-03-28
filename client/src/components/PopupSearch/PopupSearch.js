@@ -29,6 +29,7 @@ function PopupSearch({ isSearchOpen, handleSearch }) {
             className={styles.searchInput}
             placeholder="Search for products..."
             value={searchValue}
+            autoComplete="off"
             onChange={(e) => setSearchValue(e.target.value)}
           />
         </label>

@@ -5,20 +5,14 @@ import customerData from "../../data/customer.json";
 import CustomerReview from "../CustomerReview/CustomerReview";
 import PropTypes from "prop-types";
 
-function ReviewSection({ isTrue }) {
+function ReviewSection() {
   return (
     <div className={styles.ReviewSection} id="reviewSection">
       <HeaderSection firstWord="customer's" secondWord="review" />
       <div className={styles.customerReview}>
-        {isTrue
-          ? customerData
-              .slice(0, 3)
-              .map((item, index) => (
-                <CustomerReview key={index} item={item} isTrue={isTrue} />
-              ))
-          : customerData.map((item, index) => (
-              <CustomerReview key={index} item={item} isTrue={isTrue} />
-            ))}
+        {customerData.slice(0, 4).map((item, index) => (
+          <CustomerReview key={index} item={item} />
+        ))}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import {
   ReviewSection,
   BlogsSection,
   ShipmentSection,
+  CareComponent,
 } from "../../components/index";
 
 function Home(props) {
@@ -23,8 +24,9 @@ function Home(props) {
       <AboutSection />
       <ProductsSection />
       <ShipmentSection />
-      <ReviewSection isTrue={true} />
-      <BlogsSection isTrue={true} />
+      <ReviewSection />
+      <CareComponent />
+      <BlogsSection />
     </>
   );
 }

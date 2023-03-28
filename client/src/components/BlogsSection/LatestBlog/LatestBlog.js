@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Buttons/Button";
 import styles from "./LatestBlog.module.scss";
 import PropTypes from "prop-types";
 
@@ -15,7 +14,6 @@ function LatestBlog({ item, text }) {
         <h2>{title}</h2>
         <h4>{addedBy}</h4>
         <p>{text}</p>
-        <Button text="read more" isTrue={false} />
       </div>
     </div>
   );

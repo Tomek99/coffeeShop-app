@@ -1,0 +1,46 @@
+.CareItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        max-width: 210px;
+        height: auto;
+        width: 100%;
+    }
+
+    .wrapperText {
+        text-align: center;
+        font-size: 1.3rem;
+        max-width: 200px;
+        line-height: 1.5;
+
+        h2 {
+            margin-bottom: 5px;
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        p {
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                transition: 0.3s linear;
+                left: 0;
+                bottom: -3px;
+                width: 0;
+                height: 2px;
+                background-color: #000;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+}

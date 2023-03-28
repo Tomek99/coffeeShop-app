@@ -1,42 +1,39 @@
 import React from "react";
 import styles from "./TeamMember.module.scss";
 import { BsArrowRight } from "react-icons/bs";
-import { useState } from "react";
 import PopupMemberDetails from "./PopupMemberDetails/PopupMemberDetails";
 import PropTypes from "prop-types";
 
-function Team({ item }) {
-  const { id, url, name, position, text } = item;
-  const [isActive, setActive] = useState(false);
+function Team({ item, handleShowMember, showMember, id }) {
+  const { url, name, position, text } = item;
 
-  const showDetails = () => {
-    setActive(!isActive);
-  };
   return (
-    <>
-      <div key={id} className={styles.TeamMember}>
-        <div className={styles.memberImg}>
-          <img src={url} alt="" />
+    <div className={styles.TeamMember}>
+      <div className={styles.memberImg}>
+        <img src={url} alt="" />
 
-          <button className={styles.btnArrow} onClick={showDetails}>
-            <BsArrowRight className={styles.iconArrow} />
-          </button>
-        </div>
-        <div className={styles.content} onClick={showDetails}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.position}>{position}</p>
-        </div>
+        <button
+          className={styles.btnArrow}
+          onClick={() => handleShowMember(id)}
+        >
+          <BsArrowRight className={styles.iconArrow} />
+        </button>
+      </div>
+      <div className={styles.content} onClick={() => handleShowMember(id)}>
+        <p className={styles.name}>{name}</p>
+        <p className={styles.position}>{position}</p>
+      </div>
+      {showMember === id ? (
         <PopupMemberDetails
-          isActive={isActive}
           id={id}
           url={url}
           name={name}
           position={position}
           text={text}
-          showDetails={showDetails}
+          handleShowMember={handleShowMember}
         />
-      </div>
-    </>
+      ) : null}
+    </div>
   );
 }
 
@@ -46,5 +43,7 @@ Team.propTypes = {
   name: PropTypes.string,
   position: PropTypes.string,
   text: PropTypes.string,
+  handleShowMember: PropTypes.func,
+  showMember: PropTypes.number,
 };
 export default Team;
