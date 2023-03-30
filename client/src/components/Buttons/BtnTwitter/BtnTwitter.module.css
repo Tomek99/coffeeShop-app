@@ -1,0 +1,25 @@
+.btnTwitter {
+    display: flex;
+    gap: 10px;
+    background-color: #1a8cd8;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    padding: 10px 30px 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.btnTwitter:hover {
+    background-color: #1182cd;
+}
+
+.btnIconTwitter {
+    font-size: 1.5rem;
+}
+
+.btnSpan {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

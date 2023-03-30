@@ -7,7 +7,7 @@ import CareItem from "./CareItem/CareItem";
 function CareSection() {
   return (
     <div className={styles.CareSection}>
-      <HeaderSection firstWord="We" secondWord="care" />
+      <HeaderSection firstWord="We care" secondWord="about you" />
       <div className={styles.careItemsWrapper}>
         {care_data.map((item, index) => (
           <CareItem item={item} key={index} />

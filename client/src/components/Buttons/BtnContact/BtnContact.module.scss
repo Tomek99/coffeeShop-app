@@ -1,0 +1,22 @@
+.BtnContact {
+    align-self: flex-start;
+    background-color: var(--main-color);
+    color: white;
+    padding: 7px 25px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.7rem;
+    transition: 0.3s linear;
+    cursor: pointer;
+}
+
+.BtnContact:hover {
+    background-color: var(--main-color-darken);
+}
+
+@media (max-width: 900px) {
+    .BtnContact {
+        align-self: stretch;
+    }
+}

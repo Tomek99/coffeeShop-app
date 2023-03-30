@@ -121,6 +121,7 @@ function Order({ handleUserNavigateToSummary }) {
     payment: Yup.string().required("Required"),
     delivery: Yup.string().required("Required"),
     shopper: Yup.string().required("Required"),
+    // comment: Yup.string().required("Required"),
   });
 
   /*---------Navigate ---------*/
@@ -213,7 +214,6 @@ function Order({ handleUserNavigateToSummary }) {
                 <ExtraInfo
                   setFieldValue={setFieldValue}
                   activeComment={values.activeComment}
-                  comment={initialValuesLocal.comment}
                 />
               </div>
             </div>

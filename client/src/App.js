@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import axios from "axios";
 import { Context } from "./Contexts/Context";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
@@ -396,6 +397,7 @@ function App() {
           <Route path="cart" element={<ViewCart />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        {/* <MessengerCustomerChat pageId="" appId="" htmlRef="" /> */}
       </section>
       {(() => {
         switch (location.pathname) {

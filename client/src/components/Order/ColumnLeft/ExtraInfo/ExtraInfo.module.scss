@@ -34,38 +34,6 @@
                 font-size: 1.3rem;
                 transition: 0.3s linear;
             }
-
-            .divTextArea {
-                position: relative;
-
-                textarea {
-                    width: 100%;
-                    min-height: 100px;
-                    padding: 10px 10px 30px 10px;
-                    box-sizing: border-box;
-                    border: var(--border);
-                    border-radius: 8px;
-                    color: #fff;
-                    overflow-y: hidden;
-                    background-color: var(--grey);
-                    font-size: 1.3rem;
-                    resize: none;
-                    margin-bottom: 15px;
-                    line-height: 20px;
-
-                    &::placeholder {
-                        color: #ccc;
-                    }
-                }
-
-                .countLength {
-                    position: absolute;
-                    bottom: 25px;
-                    right: 15px;
-                    font-size: 1.3rem;
-                    color: #ccc;
-                }
-            }
         }
     }
 }

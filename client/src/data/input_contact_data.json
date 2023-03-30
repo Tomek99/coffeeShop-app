@@ -1,0 +1,26 @@
+{
+    "contact_form_one": [
+        {
+            "type": "text",
+            "name": "name",
+            "placeholder": "Name and surname"
+        },
+        {
+            "type": "text",
+            "name": "email",
+            "placeholder": "E-mail"
+        }
+    ],
+    "contact_form_two": [
+        {
+            "type": "text",
+            "name": "name",
+            "placeholder": "Name and surname"
+        },
+        {
+            "type": "text",
+            "name": "number",
+            "placeholder": "Phone number"
+        }
+    ]
+}

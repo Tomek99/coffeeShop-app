@@ -35,15 +35,6 @@ function Footer() {
     <ImLocation2 size={20} />,
   ];
 
-  const extraInforamation = [
-    { name: " pon – sob | 10:00 – 20:00" },
-    { name: "123456789" },
-    { name: "contact@xyz.com" },
-    { name: "Litewska 73 | 00-000 Warsaw" },
-    { name: "00 0000 0000 0000 0000 0000 0000" },
-    { name: "NIP 0000000000 | BDO 000000000" },
-  ];
-
   return (
     <div className={styles.Footer}>
       <div className={styles.GridTemplate}>

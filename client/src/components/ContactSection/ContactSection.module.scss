@@ -1,11 +1,50 @@
 .ContactSection {
-    min-height: calc(100vh - 140px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #fff;
     overflow: hidden;
+    margin: 20px 10px 0 10px;
+
+    .openHours {
+        font-size: 2rem;
+    }
+
+    .wrapperDiv {
+        max-width: 1366px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 50px;
+        margin-top: 20px;
+
+        .content {
+            background-color: var(--black);
+            font-size: 1.4rem;
+            padding: 20px;
+
+            .infoItem {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                margin-bottom: 20px;
+
+                .title {
+                    font-weight: 500;
+                    font-size: 1.7rem;
+                    color: var(--main-color);
+                }
+            }
+        }
+
+        .contactFormWrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 20px;
+        }
+    }
 
     .mapForm {
         max-width: 900px;
@@ -33,5 +72,15 @@
     .map-container {
         width: 350px !important;
         height: 350px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .ContactSection {
+        margin: 20px 5px;
+
+        .wrapperDiv {
+            grid-template-columns: 1fr !important;
+        }
     }
 }

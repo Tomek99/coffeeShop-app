@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./PopupMemberDetails.module.scss";
-import { GrTwitter } from "react-icons/gr";
 import { VscChromeClose } from "react-icons/vsc";
 import PropTypes from "prop-types";
+import BtnTwitter from "../../../Buttons/BtnTwitter/BtnTwitter";
 
 function PopupMemberDetails(props) {
   const { id, url, name, position, text, handleShowMember } = props;
@@ -11,11 +11,7 @@ function PopupMemberDetails(props) {
       <div className={styles.memberDetails}>
         <div className={styles.imgMemberSection}>
           <img src={url} alt={id} className={styles.imgMember} />
-          <a href="http://twitter.com" className={styles.btnFollowOnTwitter}>
-            {" "}
-            <GrTwitter className={styles.btnIconTwitter} />
-            <span>Follow on twitter</span>
-          </a>
+          <BtnTwitter />
         </div>
         <div className={styles.memberContent}>
           <div>
