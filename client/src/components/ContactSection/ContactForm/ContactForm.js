@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import styles from "./ContactForm.module.scss";
-import ErrMessage from "../ErrorMessage/ErrMessage";
+import ErrMessage from "../../ErrorMessage/ErrMessage";
 import emailjs from "@emailjs/browser";
-import FieldComponent from "../FormikComponents/FieldComponent/FieldComponent";
-import TextareaCom from "../TextareaCom/TextareaCom";
-import BtnContact from "../Buttons/BtnContact/BtnContact";
+import FieldComponent from "../../FormikComponents/FieldComponent/FieldComponent";
+import TextareaCom from "../../TextareaCom/TextareaCom";
+import BtnContact from "../../Buttons/BtnContact/BtnContact";
 
-const onSubmit = (values, { setSubmitting, resetForm, setFieldValue }) => {
+const onSubmit = (values, { setSubmitting, resetForm }) => {
   setTimeout(() => {
     alert(JSON.stringify(values, null, 2));
     setSubmitting(false);

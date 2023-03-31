@@ -4,8 +4,11 @@
     grid-template-rows: auto 1fr auto;
     justify-items: center;
     gap: 10px;
-    border: var(--border);
+    border-radius: 8px;
     background-color: var(--black);
+    &:hover {
+        box-shadow: var(--shadow-thin);
+    }
 
     .iconsSection {
         display: flex;

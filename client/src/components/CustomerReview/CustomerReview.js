@@ -9,13 +9,14 @@ function CustomerReview({ item }) {
 
   return (
     <div key={id} className={styles.singleCustomer} style={style}>
-      <img src={imageUrl} alt="quote" />
-      <p>{text}</p>
-      <img src={avatarUrl} alt="" className={styles.avatar} />
-      <p className={styles.name}>{name}</p>
       <div>
-        <RatingsStars rate={rate} size="medium" />
+        <img src={avatarUrl} alt="" className={styles.avatar} />
+        <p className={styles.name}>{name}</p>
+        <div>
+          <RatingsStars rate={rate} size="medium" />
+        </div>
       </div>
+      <p>{text}</p>
     </div>
   );
 }

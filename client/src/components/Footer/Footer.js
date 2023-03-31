@@ -30,9 +30,9 @@ function Footer() {
     <AiOutlineClockCircle size={20} />,
     <BsFillTelephoneFill size={20} />,
     <GoMail size={20} />,
+    <ImLocation2 size={20} />,
     <SlCreditCard size={20} />,
     <RiShoppingBagFill size={20} />,
-    <ImLocation2 size={20} />,
   ];
 
   return (

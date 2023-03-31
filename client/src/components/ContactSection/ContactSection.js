@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import styles from "./ContactSection.module.scss";
 import HeaderSection from "../HeaderSection/HeaderSection";
-import Map from "../Map/Map";
-import ContactForm from "../ContactForm/ContactForm";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import Map from "./Map/Map";
+import ContactForm from "./ContactForm/ContactForm";
 import { GoMail } from "react-icons/go";
 import { SlCreditCard } from "react-icons/sl";
 import { RiShoppingBagFill } from "react-icons/ri";
 import { ImLocation2 } from "react-icons/im";
-import { BsFillTelephoneFill } from "react-icons/bs";
+import { BsFillTelephoneFill, BsPerson } from "react-icons/bs";
+
 import contactData from "../../data/input_contact_data.json";
 import * as Yup from "yup";
 
@@ -37,6 +37,20 @@ const validationSchema_two = Yup.object().shape({
     .min(5, "Must be 5 characters or more"),
 });
 
+const initialValues_1 = {
+  name: "",
+  email: "",
+  comment: "",
+};
+
+const initialValues_2 = {
+  name: "",
+  number: "",
+  comment: "",
+};
+
+const accountBank = ["Bank account", "70 1140 2004 0000 3402 8249 4626"];
+
 function ContactSection() {
   useEffect(() => {
     window.scrollTo({
@@ -46,59 +60,50 @@ function ContactSection() {
     });
   }, []);
 
-  const contactInformation = [
-    {
-      title: `Coffee Shop`,
-      text_one: `111 222 333`,
-      text_two: "test@gmail.com",
-      text_three: "Litewska 20 | 00-000 Warsaw",
-    },
-    {
-      title: "Company details",
-      text_one: "Coffee Shop Adam Kowalski",
-      text_two: "Litewska 20 | 00-000 Warsaw",
-      text_three: "NIP 0000000000 | BDO 000000000",
-    },
-  ];
-
-  const initialValues_1 = {
-    name: "",
-    email: "",
-    comment: "",
-  };
-
-  const initialValues_2 = {
-    name: "",
-    number: "",
-    comment: "",
-  };
-
-  const accountBank = ["Bank account", "70 1140 2004 0000 3402 8249 4626"];
-
   return (
     <div className={styles.ContactSection} id="contactSection">
       <HeaderSection firstWord="contact" secondWord="us" />
       <p className={styles.openHours}>
         We are at your service from Monday to Saturday from 10:00 am to 8:00 pm
       </p>
-      {/* <div className={styles.mapForm}>
-        
-        <ContactForm />
-      </div> */}
       <div className={styles.wrapperDiv}>
         <div className={styles.content}>
-          {contactInformation.map((item, index) => (
-            <div key={index} className={styles.infoItem}>
-              <p className={styles.title}>{item.title}</p>
-              <p>{item.text_one}</p>
-              <p>{item.text_two}</p>
-              <p>{item.text_three}</p>
-            </div>
-          ))}
+          <div className={styles.infoItem}>
+            <p className={styles.title}>Coffee Shop</p>
+            <p>
+              {" "}
+              <BsFillTelephoneFill size={20} /> 111 222 333
+            </p>
+            <p>
+              <GoMail size={20} />
+              test@gmail.com
+            </p>
+            <p>
+              <ImLocation2 size={20} />
+              Litewska 20 | 00-000 Warsaw
+            </p>
+          </div>
+          <div className={styles.infoItem}>
+            <p className={styles.title}>Company details</p>
+            <p>
+              <BsPerson size={20} />
+              Coffee Shop Tomasz Skupien
+            </p>
+            <p>
+              <ImLocation2 size={20} />
+              Litewska 20 | 00-000 Warsaw
+            </p>
+            <p>
+              <RiShoppingBagFill size={20} /> NIP 0000000000 | BDO 000000000
+            </p>
+          </div>
+
           <div className={styles.infoItem}>
             <p className={styles.title}>{accountBank[0]}</p>
+
             <p>
-              <SlCreditCard size={25} />
+              {" "}
+              <SlCreditCard size={20} />
               {accountBank[1]}
             </p>
           </div>

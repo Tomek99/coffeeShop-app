@@ -1,0 +1,37 @@
+.BtnRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+   
+}
+
+
+.btnIcon {
+    color: #fff;
+}
+
+.BtnRight:hover {
+    background-color: var(--black);
+}
+
+@media (max-width: 1024px) {
+    .BtnRight {
+        right: -25px;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .BtnRight {
+       display: none;
+    }
+}

@@ -3,7 +3,7 @@ import styles from "./Products.module.scss";
 import HeaderSection from "../../components/HeaderSection/HeaderSection";
 import { Context } from "../../Contexts/Context";
 import LatestProduct from "../../components/LatestProduct/LatestProduct";
-import ClipLoader from "react-spinners/ClipLoader";
+import LoaderSpinner from "../../components/LoaderSpinner/LoaderSpinner";
 import Pagination from "../../components/Pagination/Pagination";
 import { useNavigate } from "react-router-dom";
 
@@ -37,13 +37,7 @@ function Products() {
   return (
     <div className={styles.Products}>
       {loading ? (
-        <ClipLoader
-          color="var(--main-color"
-          loading={loading}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
+        <LoaderSpinner loading={loading} />
       ) : (
         <>
           <HeaderSection firstWord="our" secondWord="products" />

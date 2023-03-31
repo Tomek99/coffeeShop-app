@@ -1,0 +1,36 @@
+.BtnLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s linear;
+    
+}
+.btnIcon {
+    color: #fff;
+}
+
+.BtnLeft:hover {
+    background-color: var(--black);
+}
+
+@media (max-width: 1024px) {
+    .BtnLeft {
+        left: -25px;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .BtnLeft {
+        display: none;
+    }
+}
