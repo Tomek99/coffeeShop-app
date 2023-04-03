@@ -12,7 +12,6 @@
     border-radius: 50%;
     cursor: pointer;
     transition: 0.3s linear;
-    
 }
 .btnIcon {
     color: #fff;
@@ -31,6 +30,7 @@
 
 @media (max-width: 390px) {
     .BtnLeft {
-        display: none;
+        /* display: none; */
+        left: -15px;
     }
 }

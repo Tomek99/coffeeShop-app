@@ -1,4 +1,5 @@
 .singleCustomer {
+    width: 316px;
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -6,8 +7,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-    text-align: start;
     background-color: var(--black);
+
+    cursor: pointer;
 
     &:hover {
         box-shadow: var(--shadow-thin);
@@ -16,7 +18,7 @@
     p:nth-of-type(1) {
         font-size: 1.5rem;
         line-height: 2.2rem;
-        color: #ccc;
+        color: #fff;
     }
 
     .avatar {
@@ -29,5 +31,40 @@
     .name {
         font-size: 1.7rem;
         font-weight: bold;
+    }
+}
+
+@media (max-width: 1380px) {
+    .singleCustomer {
+        width: 326px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .singleCustomer {
+        width: 412px;
+    }
+}
+@media (max-width: 860px) {
+    .singleCustomer {
+        width: 305px;
+    }
+}
+
+@media (max-width: 642px) {
+    .singleCustomer {
+        width: 465px;
+    }
+}
+
+@media (max-width: 480px) {
+    .singleCustomer {
+        width: 410px;
+    }
+}
+
+@media (max-width: 425px) {
+    .singleCustomer {
+        width: 345px;
     }
 }

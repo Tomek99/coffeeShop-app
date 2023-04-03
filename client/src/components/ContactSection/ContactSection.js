@@ -8,7 +8,6 @@ import { SlCreditCard } from "react-icons/sl";
 import { RiShoppingBagFill } from "react-icons/ri";
 import { ImLocation2 } from "react-icons/im";
 import { BsFillTelephoneFill, BsPerson } from "react-icons/bs";
-
 import contactData from "../../data/input_contact_data.json";
 import * as Yup from "yup";
 
@@ -49,7 +48,7 @@ const initialValues_2 = {
   comment: "",
 };
 
-const accountBank = ["Bank account", "70 1140 2004 0000 3402 8249 4626"];
+const accountBank = ["Bank account", "24 2424 2424 2424 2424 2424 2424"];
 
 function ContactSection() {
   useEffect(() => {
@@ -72,7 +71,7 @@ function ContactSection() {
             <p className={styles.title}>Coffee Shop</p>
             <p>
               {" "}
-              <BsFillTelephoneFill size={20} /> 111 222 333
+              <BsFillTelephoneFill size={20} /> 242 242 242
             </p>
             <p>
               <GoMail size={20} />
@@ -80,7 +79,7 @@ function ContactSection() {
             </p>
             <p>
               <ImLocation2 size={20} />
-              Litewska 20 | 00-000 Warsaw
+              Litewska 24 | 24-242 Warsaw
             </p>
           </div>
           <div className={styles.infoItem}>
@@ -91,10 +90,10 @@ function ContactSection() {
             </p>
             <p>
               <ImLocation2 size={20} />
-              Litewska 20 | 00-000 Warsaw
+              Litewska 24 | 24-242 Warsaw
             </p>
             <p>
-              <RiShoppingBagFill size={20} /> NIP 0000000000 | BDO 000000000
+              <RiShoppingBagFill size={20} /> NIP 2424242424 | BDO 242424242
             </p>
           </div>
 

@@ -17,6 +17,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.3",
     "bcrypt": "^5.1.0",
+    "damerau-levenshtein-js": "^1.1.8",
     "dotenv": "^16.0.3",
     "formik": "^2.2.9",
     "modern-normalize": "^1.1.0",

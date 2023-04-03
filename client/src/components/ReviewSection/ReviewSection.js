@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./ReviewSection.module.scss";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import customerData from "../../data/customer.json";
@@ -17,7 +17,7 @@ function ReviewSection() {
       if (!paused) {
         updateIndex(activeIndex + 1);
       }
-    }, 6000);
+    }, 12000);
 
     return () => {
       if (interval) {
@@ -33,13 +33,41 @@ function ReviewSection() {
 
   function updateIndex(newIndex) {
     if (newIndex < 0) {
-      newIndex = 7;
-    } else if (newIndex >= 8) {
+      newIndex = displayElements() - 1;
+    } else if (newIndex >= displayElements()) {
       newIndex = 0;
     }
 
     setActiveIndex(newIndex);
   }
+
+  const [width, setWidth] = useState(0);
+  const carouselRef = useRef(null);
+
+  function displayElements() {
+    if (width >= 1366) {
+      return 3;
+    } else if (width >= 1024) {
+      return 4;
+    } else if (width >= 640) {
+      return 6;
+    } else if (width >= 0) {
+      return 12;
+    }
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(carouselRef.current.offsetWidth);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div
@@ -50,18 +78,20 @@ function ReviewSection() {
     >
       <HeaderSection firstWord="customer's" secondWord="review" />
       <div className={styles.wrapperDiv}>
-        <div className={styles.carouselDiv} {...handlers}>
+        <div className={styles.carouselDiv} {...handlers} ref={carouselRef}>
           <div
             className={styles.innerDiv}
-            style={{ transform: `translateX(-${activeIndex * 6.5}%)` }}
+            style={{ transform: `translateX(-${activeIndex * width}px)` }}
           >
             {customerData.map((item, index) => (
               <CustomerReview key={index} item={item} />
             ))}
           </div>
         </div>
-        <BtnLeft activeIndex={activeIndex} updateIndex={updateIndex} />
-        <BtnRight activeIndex={activeIndex} updateIndex={updateIndex} />
+        <div className={styles.indicators}>
+          <BtnLeft activeIndex={activeIndex} updateIndex={updateIndex} />
+          <BtnRight activeIndex={activeIndex} updateIndex={updateIndex} />
+        </div>
       </div>
     </div>
   );
@@ -71,17 +101,3 @@ ReviewSection.propTypes = {
   isTrue: PropTypes.bool,
 };
 export default ReviewSection;
-{
-  /* <button
-onClick={() => {
-  updateIndex(activeIndex - 1);
-}}
-></button>
-<button
-onClick={() => {
-  updateIndex(activeIndex + 1);
-}}
->
-Prawo
-</button> */
-}

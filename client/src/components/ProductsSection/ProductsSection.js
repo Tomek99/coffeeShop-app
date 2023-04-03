@@ -15,7 +15,7 @@ function ProductsSection() {
         <LoaderSpinner loading={loading} />
       ) : (
         <div className={styles.itemsSection}>
-          <div className={styles.gridTemplate}>
+          <div className={styles.flexTemplate}>
             {products.slice(0, 4).map((item, index) => (
               <LatestProduct key={index} item={item} isHome={true} />
             ))}

@@ -18,17 +18,29 @@
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                gap: 20px;
+                gap: 25px;
                 padding: 5px;
                 transition: transform 0.3s;
             }
         }
+
+        .indicators {
+            display: none;
+        }
+    }
+
+    &:hover .indicators {
+        display: block;
     }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1380px) {
     .carouselDiv {
         max-width: 1024px !important;
+
+        .innerDiv {
+            gap: 15px !important;
+        }
     }
 }
 
@@ -52,6 +64,12 @@
 
 @media (max-width: 480px) {
     .carouselDiv {
-        max-width: 310px !important;
+        max-width: 425px !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .carouselDiv {
+        max-width: 360px !important;
     }
 }

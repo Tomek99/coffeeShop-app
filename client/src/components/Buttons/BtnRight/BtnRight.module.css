@@ -32,6 +32,6 @@
 
 @media (max-width: 390px) {
     .BtnRight {
-       display: none;
+       /* display: none; */
     }
 }

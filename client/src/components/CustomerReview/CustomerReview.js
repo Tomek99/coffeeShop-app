@@ -5,10 +5,9 @@ import RatingsStars from "../RatingStars/RatingStars";
 
 function CustomerReview({ item }) {
   const { id, imageUrl, text, avatarUrl, name, rate } = item;
-  const style = { width: "290px" };
 
   return (
-    <div key={id} className={styles.singleCustomer} style={style}>
+    <div key={id} className={styles.singleCustomer}>
       <div>
         <img src={avatarUrl} alt="" className={styles.avatar} />
         <p className={styles.name}>{name}</p>

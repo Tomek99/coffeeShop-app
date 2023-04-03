@@ -9,7 +9,7 @@ import Pagination from "../../Pagination/Pagination";
 import { Context } from "../../../Contexts/Context";
 import HeaderInfo from "../../HeaderInfo/HeaderInfo";
 import axios from "axios";
-import ClipLoader from "react-spinners/ClipLoader";
+import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 
 function Orders() {
   const { user } = useContext(Context);
@@ -57,13 +57,7 @@ function Orders() {
       <HeaderInfo title="Orders" />
       <Filter />
       {loading ? (
-        <ClipLoader
-          color="var(--main-color)"
-          loading={loading}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
+        <LoaderSpinner loading={loading} />
       ) : (
         <div>
           <div className={styles.divOrders}>
