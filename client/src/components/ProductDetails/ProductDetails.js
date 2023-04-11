@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import styles from "./ProductDetalis.module.scss";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import ExtraDetails from "./ExtraDetails/ExtraDetails";
 import { useState } from "react";
@@ -12,8 +12,20 @@ import PropTypes from "prop-types";
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const productId = useParams();
+  const navigate = useNavigate();
 
   const { addItem, products, loading } = useContext(Context);
+
+  // Protected router if the route is not exist
+  useEffect(() => {
+    const isIdExist = products.find((item) => {
+      return item._id === productId.id;
+    });
+
+    if (!isIdExist) {
+      navigate("/products");
+    }
+  });
 
   const thisProduct = products.find((item) => {
     return item._id === productId.id;
@@ -55,8 +67,8 @@ function ProductDetails() {
             <div className={styles.productDetailsContent}>
               <h1>{thisProduct.name}</h1>
               <p>
-                ${thisProduct.newPrice}
-                {thisProduct.oldPrice ? `$${thisProduct.oldPrice}` : null}
+                ${thisProduct.price}
+                {thisProduct.oldPrice ? ` $${thisProduct.oldPrice}` : null}
               </p>
               <p>country of origin:{thisProduct.origin} </p>
               <p>Weight: 500g</p>
