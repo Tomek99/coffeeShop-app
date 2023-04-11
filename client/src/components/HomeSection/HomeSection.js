@@ -3,6 +3,7 @@ import styles from "./HomeSection.module.scss";
 import dataHomeSlider from "../../data/dataHomeSlider.json";
 import BtnSlider from "./BtnSlider/BtnSlider";
 import Content from "./Content/Content";
+import CarouselDots from "../CarouselDots/CarouselDots";
 
 function HomeSection() {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -55,19 +56,11 @@ function HomeSection() {
       <BtnSlider handlerBtn={preSlide} arrowDirect={"left"} />
       <BtnSlider handlerBtn={nextSlide} arrowDirect={"right"} />
 
-      <div className={styles.containerDots}>
-        {Array.from({ length: dataHomeSlider.length }).map((item, index) => (
-          <span
-            className={
-              index + 1 === slideIndex
-                ? `${styles.spanDot} ${styles.activeDot}`
-                : styles.spanDot
-            }
-            key={index}
-            onClick={() => setSlide(index + 1)}
-          ></span>
-        ))}
-      </div>
+      <CarouselDots
+        carouselLength={dataHomeSlider.length}
+        slideIndex={slideIndex}
+        setSlide={setSlide}
+      />
     </div>
   );
 }

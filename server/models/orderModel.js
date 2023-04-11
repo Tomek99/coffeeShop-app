@@ -1,5 +1,12 @@
 const mongoose = require("mongoose");
 
+let today = new Date();
+const dd = String(today.getDate()).padStart(2, "0");
+const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+const yyyy = today.getFullYear();
+
+today = dd + " " + mm + " " + yyyy;
+
 const orderSchema = new mongoose.Schema(
   {
     orders: [
@@ -15,6 +22,7 @@ const orderSchema = new mongoose.Schema(
           {
             id: { type: String },
             name: { type: String },
+            imageUrl: { type: String },
             price: { type: String },
             quantity: { type: Number },
           },
@@ -36,6 +44,11 @@ const orderSchema = new mongoose.Schema(
         total: {
           type: String,
           required: true,
+        },
+
+        data: {
+          type: String,
+          default: today,
         },
       },
     ],

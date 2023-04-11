@@ -1,8 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("Renders learn react link", () => {
-  render(<App />);
-  const linmkElement = screen.getByText(/fresh coffee in the morning/i);
-  expect(linmkElement).toBeInTheDocument();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  Routes: () => <div data-component="Routes" />,
+  useLocation: () => ({
+    pathname: "",
+  }),
+}));
+
+jest.mock("./components");
+
+test("rendering required component", () => {
+  const { container } = render(<App />);
+  expect(container).toMatchSnapshot();
 });

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CustomerReview.module.scss";
 import PropTypes from "prop-types";
-import RatingsStars from "../RatingStars/RatingStars";
+import RatingsStars from "../../RatingStars/RatingStars";
 
 function CustomerReview({ item }) {
   const { id, imageUrl, text, avatarUrl, name, rate } = item;

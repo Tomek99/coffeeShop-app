@@ -9,10 +9,10 @@ import { redirect } from "react-router-dom";
 
 function SingleOrder({ item }) {
   //ADD HIDDEN PRODUCTS IN ORDER COMPONENT !!!
-  const { idNumber, status, date, totalCost } = item;
+  const { _id, delivery_status, date, total } = item;
   const width = useWindowWidth();
 
-  redirect(`/orders/${idNumber}`);
+  redirect(`/orders/${_id}`);
 
   let hiddenElements = item.products.length;
   let items = [...item.products];
@@ -39,14 +39,14 @@ function SingleOrder({ item }) {
     // <Link to={`${idNumber}`}>
     <div className={styles.SingleOrder}>
       <div className={styles.details}>
-        <h2 style={{ color: "#fff" }}>{status}</h2>
+        <h2 className={styles.headline}>{delivery_status}</h2>
         <div>
           <p style={{ color: "#ccc", fontWeight: 300, marginBottom: "5px" }}>
             {date}
           </p>
-          <p style={{ color: "#ccc", fontWeight: 300 }}>nr {idNumber}</p>
+          <p style={{ color: "#ccc", fontWeight: 300 }}>nr {_id}</p>
         </div>
-        <p style={{ color: "#fff", fontWeight: "bold" }}>${totalCost}</p>
+        <p style={{ color: "#fff", fontWeight: "bold" }}>${total}</p>
       </div>
       <div className={styles.products}>
         {items.map((item, index) => (

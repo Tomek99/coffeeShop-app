@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "./ReviewSection.module.scss";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import customerData from "../../data/customer.json";
-import CustomerReview from "../CustomerReview/CustomerReview";
+import CustomerReview from "./CustomerReview/CustomerReview";
 import { useSwipeable } from "react-swipeable";
 import PropTypes from "prop-types";
 import BtnLeft from "../Buttons/BtnLeft/BtnLeft";
@@ -42,7 +42,7 @@ function ReviewSection() {
   }
 
   const [width, setWidth] = useState(0);
-  const carouselRef = useRef(null);
+  const carouselRef = useRef(0);
 
   function displayElements() {
     if (width >= 1366) {
@@ -75,10 +75,11 @@ function ReviewSection() {
       id="reviewSection"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      {...handlers}
     >
       <HeaderSection firstWord="customer's" secondWord="review" />
       <div className={styles.wrapperDiv}>
-        <div className={styles.carouselDiv} {...handlers} ref={carouselRef}>
+        <div className={styles.carouselDiv} ref={carouselRef}>
           <div
             className={styles.innerDiv}
             style={{ transform: `translateX(-${activeIndex * width}px)` }}

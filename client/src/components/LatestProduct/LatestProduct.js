@@ -15,7 +15,7 @@ function LatestProduct({ item, isHome }) {
   findProduct.quantity = 1;
 
   return (
-    <div key={_id} className={styles.singleItemSection}>
+    <div key={_id} className={styles.LatestProduct}>
       <div className={styles.iconsSection}>
         <Link to={isHome ? `products/${_id}` : _id}>
           <BsFillEyeFill />
@@ -28,10 +28,10 @@ function LatestProduct({ item, isHome }) {
           <BsFillHeartFill />
         </button>
       </div>
-      <div className={styles.middleOfproduct}>
+      <div className={styles.contentWrapper}>
         <img src={imageUrl} alt={name} />
-        <h3>{name}</h3>
-        <p>
+        <h3 className={styles.nameProduct}>{name}</h3>
+        <p className={styles.intensity}>
           Intensity <span>{intensity}</span>
         </p>
         <div>

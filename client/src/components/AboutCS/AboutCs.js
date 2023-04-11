@@ -13,7 +13,7 @@ function AboutCs() {
   return (
     <div className={styles.AboutCs}>
       <Header firstWord="Our" secondWord="company" />
-      <div>
+      <div className={styles.ourCompany}>
         <p>
           The Coffee shop brand has been on the market since 2020. Its priority
           is high product quality going hand in hand with affordable prices and
