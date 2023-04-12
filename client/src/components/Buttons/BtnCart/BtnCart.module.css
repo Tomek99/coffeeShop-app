@@ -1,0 +1,16 @@
+.btnCheckoutNow {
+    align-self: stretch;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.7rem;
+    font-weight: 400;
+    transition: 0.3s linear;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btnCheckoutNow:hover {
+    background-color: var(--main-color-darken);
+}

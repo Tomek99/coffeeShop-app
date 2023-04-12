@@ -41,8 +41,8 @@ function ReviewSection() {
     setActiveIndex(newIndex);
   }
 
-  const [width, setWidth] = useState(0);
-  const carouselRef = useRef(0);
+  const [width, setWidth] = useState();
+  const carouselRef = useRef(null);
 
   function displayElements() {
     if (width >= 1366) {
@@ -68,6 +68,12 @@ function ReviewSection() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (width) {
+      setActiveIndex(0);
+    }
+  }, [width]);
 
   return (
     <div

@@ -40,6 +40,12 @@
   }
 }
 
+@media (max-width: 1366px) {
+  .carouselDiv {
+    max-width: 640px !important;
+  }
+}
+
 @media (max-width: 1280px) {
   .carouselDiv {
     max-width: 640px !important;

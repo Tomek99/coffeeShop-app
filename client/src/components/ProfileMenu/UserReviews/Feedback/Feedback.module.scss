@@ -46,36 +46,6 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-
-        .btnDots {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: transparent;
-            color: #fff;
-            cursor: pointer;
-
-            &:hover {
-                background-color: rgb(49, 49, 49);
-            }
-        }
-
-        .btnFeedback {
-            font-size: 1.3rem;
-            padding: 8px 12px;
-            background-color: transparent;
-            border-radius: 16px;
-            color: #fff;
-            border: var(--border);
-            cursor: pointer;
-
-            &:hover {
-                background-color: var(--grey);
-            }
-        }
     }
 }
 

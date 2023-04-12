@@ -17,7 +17,7 @@ function WishList() {
 
   return (
     <>
-      <div className={styles.WishListHeader}>
+      <div className={styles.WishList}>
         <HeaderInfo title="Shopping lists" />
         <button className={styles.btnAddList}>+ Add list</button>
       </div>

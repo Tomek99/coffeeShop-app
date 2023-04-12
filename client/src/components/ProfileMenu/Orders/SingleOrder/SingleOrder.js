@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "./SingleOrder.module.scss";
-import { BsThreeDotsVertical } from "react-icons/bs";
 // import Order from "./Orderff/Order";
 import ProductsPurchased from "./ProductsPurchased/ProductsPurchased";
 import { useWindowWidth } from "@react-hook/window-size";
 import PropTypes from "prop-types";
-import { redirect } from "react-router-dom";
+import BtnDots from "../../../Buttons/BtnDots/BtnDots";
+// import { redirect } from "react-router-dom";
 
 function SingleOrder({ item }) {
   //ADD HIDDEN PRODUCTS IN ORDER COMPONENT !!!
   const { _id, delivery_status, date, total } = item;
   const width = useWindowWidth();
-
-  redirect(`/orders/${_id}`);
+  console.log(date);
+  // redirect(`/orders/${_id}`); po co?
 
   let hiddenElements = item.products.length;
   let items = [...item.products];
@@ -59,10 +59,7 @@ function SingleOrder({ item }) {
           </div>
         ) : null}
       </div>
-
-      <button className={styles.btnInvoice}>
-        <BsThreeDotsVertical size={20} />
-      </button>
+      <BtnDots />
     </div>
     // </Link>
   );

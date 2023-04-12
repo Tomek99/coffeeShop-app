@@ -45,24 +45,6 @@
             color: #fff;
         }
     }
-
-    .btnInvoice {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 5px;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        color: #fff;
-        background-color: transparent;
-        z-index: 50;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgb(49, 49, 49);
-        }
-    }
 }
 
 @media (max-width: 1280px) {

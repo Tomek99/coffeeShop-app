@@ -5,14 +5,13 @@ import HeaderSection from "../HeaderSection/HeaderSection";
 import { Context } from "../../Contexts/Context";
 import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 import { useSwipeable } from "react-swipeable";
-import CarouselDots from "../CarouselDots/CarouselDots";
+// import CarouselDots from "../CarouselDots/CarouselDots";
 import BtnRight from "../Buttons/BtnRight/BtnRight";
 import BtnLeft from "../Buttons/BtnLeft/BtnLeft";
 
 function ProductsSection() {
   const { products, loading } = useContext(Context);
   const selectedProducts = products.slice(0, 8);
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   function updateIndex(newIndex) {
@@ -21,12 +20,11 @@ function ProductsSection() {
     } else if (newIndex >= displayElements()) {
       newIndex = 0;
     }
-
     setActiveIndex(newIndex);
   }
 
-  const [width, setWidth] = useState(0);
-  const carouselRef = useRef(0);
+  const [width, setWidth] = useState();
+  const testRef = useRef(null);
 
   function displayElements() {
     if (width <= 520) {
@@ -44,17 +42,25 @@ function ProductsSection() {
   });
 
   useEffect(() => {
-    const handleResize = () => {
-      setWidth(carouselRef.current.offsetWidth);
-    };
+    if (!loading) {
+      const handleResize = () => {
+        setWidth(testRef.current.offsetWidth);
+      };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
+      handleResize();
+      window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, [loading]);
+
+  useEffect(() => {
+    if (width) {
+      setActiveIndex(0);
+    }
+  }, [width]);
 
   return (
     <div className={styles.ProductsSection} id="productsSection">
@@ -63,7 +69,7 @@ function ProductsSection() {
         {loading ? (
           <LoaderSpinner loading={loading} />
         ) : (
-          <div className={styles.carouselDiv} ref={carouselRef}>
+          <div className={styles.carouselDiv} ref={testRef}>
             <div
               className={styles.innerDiv}
               style={{

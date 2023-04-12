@@ -1,13 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import styles from "./ProductDetalis.module.scss";
 import { FiPlus, FiMinus } from "react-icons/fi";
-import { AiOutlineHeart } from "react-icons/ai";
 import { useParams, useNavigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import ExtraDetails from "./ExtraDetails/ExtraDetails";
 import { useState } from "react";
 import { Context } from "../../Contexts/Context";
 import PropTypes from "prop-types";
+import BtnAddWishList from "../Buttons/BtnAddWishList/BtnAddWishList";
+import BtnAddCart from "../Buttons/BtnAddCart/BtnAddCart";
+import BtnPlusMinus from "../Buttons/BtnPlusMinus/BtnPlusMinus";
 
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
@@ -16,7 +18,7 @@ function ProductDetails() {
 
   const { addItem, products, loading } = useContext(Context);
 
-  // Protected router if the route is not exist
+  // Protected route if the route is not exist
   useEffect(() => {
     const isIdExist = products.find((item) => {
       return item._id === productId.id;
@@ -31,7 +33,7 @@ function ProductDetails() {
     return item._id === productId.id;
   });
 
-  const onClickAddToBasket = () => {
+  const onClickAddToCart = () => {
     thisProduct.quantity = quantity;
     addItem(thisProduct);
   };
@@ -74,33 +76,34 @@ function ProductDetails() {
               <p>Weight: 500g</p>
               <div className={styles.productDetailsContentButtons}>
                 <div className={styles.productQuantity}>
-                  <button
-                    className={styles.btnProductQuantity}
-                    onClick={decreaseAmount}
-                  >
-                    <FiMinus />
-                  </button>
-                  <input
-                    type="text"
-                    value={quantity > 1 ? quantity : quantity}
-                    readOnly
-                  />
-                  <button
-                    className={styles.btnProductQuantity}
-                    onClick={increaseAmount}
-                  >
-                    <FiPlus />
-                  </button>
-                  <button
-                    className={styles.btnAddToBasket}
-                    onClick={onClickAddToBasket}
-                  >
-                    Add to basket
-                  </button>
+                  <div style={{ display: "flex" }}>
+                    {/* <button
+                      className={styles.btnProductQuantity}
+                      onClick={decreaseAmount}
+                    >
+                     
+                    </button> */}
+                    <BtnPlusMinus handleBtn={decreaseAmount}>
+                      <FiMinus />
+                    </BtnPlusMinus>
+                    <input
+                      type="text"
+                      value={quantity > 1 ? quantity : quantity}
+                      readOnly
+                    />
+                    {/* <button
+                      className={styles.btnProductQuantity}
+                      onClick={increaseAmount}
+                    >
+                    
+                    </button> */}
+                    <BtnPlusMinus handleBtn={increaseAmount}>
+                      <FiPlus />
+                    </BtnPlusMinus>
+                  </div>
+                  <BtnAddCart onClickAddToCart={onClickAddToCart} />
                 </div>
-                <button className={styles.wishList}>
-                  <AiOutlineHeart /> Add to wish list
-                </button>
+                <BtnAddWishList />
               </div>
             </div>
           </div>

@@ -37,21 +37,6 @@
         padding: 40px;
         font-size: 1.5rem;
 
-        .btnCheckoutNow {
-            align-self: stretch;
-            text-align: center;
-            padding: 10px;
-            font-size: 1.7rem;
-            font-weight: bold;
-            background-color: var(--main-color);
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .btnCheckoutNow:hover {
-            background-color: var(--main-color-darken);
-        }
-
         .bill {
             display: flex;
             justify-content: space-between;

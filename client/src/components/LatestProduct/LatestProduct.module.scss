@@ -102,6 +102,13 @@
         }
     }
 }
+
+@media (max-width: 1366px) {
+    .LatestProduct {
+        width: 282px !important;
+    }
+}
+
 @media (max-width: 1280px) {
     .LatestProduct {
         width: 290px !important;
@@ -110,7 +117,7 @@
 
 @media (max-width: 660px) {
     .LatestProduct {
-        width: 290px !important;
+        width: 270px !important;
     }
 }
 

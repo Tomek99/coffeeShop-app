@@ -33,6 +33,12 @@
     }
 }
 
+@media (max-width: 1366px) {
+    .BtnLeft {
+        left: -40px ;
+    }
+}
+
 
 
 @media (max-width: 1280px) {

@@ -3,8 +3,8 @@ import styles from "./Cart.module.scss";
 import CartList from "./CartList/CartList";
 import PropTypes from "prop-types";
 import NBarAside from "../NBarAside/NBarAside";
-import { Link } from "react-router-dom";
 import { Context } from "../../Contexts/Context";
+import BtnCart from "../Buttons/BtnCart/BtnCart";
 
 function Cart({ isCartOpen, handleCart }) {
   const { cartItems, cartValue, cartSave, cartQuantity } = useContext(Context);
@@ -37,9 +37,7 @@ function Cart({ isCartOpen, handleCart }) {
       )}
 
       <div className={styles.summary}>
-        <Link className={styles.btnCheckoutNow} to="/cart" onClick={handleCart}>
-          View my cart
-        </Link>
+        <BtnCart handleCart={handleCart} />
 
         <p className={styles.bill} style={{ color: "#38b32a" }}>
           Save: <span className={styles.price}>${cartSave.toFixed(2)}</span>

@@ -361,7 +361,7 @@ function App() {
           >
             <Route path="account" element={<AccountContent />} />
             <Route path="orders" element={<Orders />} />
-            <Route path="orders/:id" element={<OrderDetails />} />
+            {/* <Route path="orders/:id" element={<OrderDetails />} /> */}
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />
             <Route path="address" element={<Address />} />
@@ -392,7 +392,10 @@ function App() {
             }
           />
 
-          <Route path="order/success" element={<PaymentSuccess />} />
+          <Route
+            path="order/success"
+            element={<PaymentSuccess clearTheCart={clearTheCart} />}
+          />
           <Route path="order/canceled" element={<PaymentCanceled />} />
 
           <Route path="wish-list" element={<Wish />} />
