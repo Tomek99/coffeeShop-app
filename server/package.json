@@ -24,7 +24,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node backend/server.js",
-    "server": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
   },
   "author": "",
   "license": "ISC"
