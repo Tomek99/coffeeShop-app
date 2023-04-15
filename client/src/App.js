@@ -1,6 +1,8 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import MessengerCustomerChat from "react-messenger-customer-chat";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./Contexts/Context";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
@@ -122,7 +124,7 @@ function App() {
 
       setCartItems(newArr);
     }
-
+    notify("Product(s) added to cart!");
     setCartQuantity(cartQuantity + item.quantity);
     appendPrice(item.price, item.oldPrice, item.quantity);
   }
@@ -134,6 +136,7 @@ function App() {
     setCartItems(cartList);
     setCartQuantity(cartQuantity - findItem[0].quantity);
     subtractPrice(newPrice, oldPrice, findItem[0].quantity);
+    notify("Product(s) has been removed!");
   }
 
   function appendPrice(newPrice, oldPrice, quantity) {
@@ -178,6 +181,8 @@ function App() {
     localStorage.setItem("cart-quantity", 0);
     localStorage.setItem("cart-value", 0);
     localStorage.setItem("cart-save", 0);
+
+    notify("Cart has been cleared!");
   }
   useEffect(() => {
     localStorage.setItem("cart-save", cartSave);
@@ -273,7 +278,18 @@ function App() {
   /*----------- location ----------- */
   const location = useLocation();
 
-  /*----------- params ----------- */
+  /*----------- notification ----------- */
+  const notify = (text) =>
+    toast.success(text, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   /*----------- navigate on Summary ----------- */
   const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
@@ -316,6 +332,20 @@ function App() {
         }
       })()}
       <section className="columnWeb">
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          limit={5}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />

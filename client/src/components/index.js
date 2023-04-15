@@ -16,7 +16,6 @@ export { default as OurTeam } from "./OurTeam/OurTeam";
 export { default as AboutUsNavList } from "./AboutUsNavList/AboutUsNavList";
 export { default as BeansVideo } from "./BeansVideo/BeansVideo";
 export { default as ProductDetails } from "./ProductDetails/ProductDetails";
-export { default as Notifications } from "./Notifications/Notifications";
 export { default as ViewCart } from "./ViewCart/ViewCart";
 export { default as AccountContent } from "./ProfileMenu/AccountContent/AccountContent";
 export { default as OrderDetails } from "./ProfileMenu/Orders/SingleOrder/OrderDetails/OrderDetails";

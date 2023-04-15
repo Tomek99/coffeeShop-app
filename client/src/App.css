@@ -77,3 +77,6 @@ section.columnWeb {
   background: #555;
 }
 
+.Toastify__toast-body {
+  font-size: 1.4rem;
+}
