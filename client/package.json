@@ -45,6 +45,8 @@
     "react-textfit": "^1.1.1",
     "react-toastify": "^9.1.2",
     "react-use-error-boundary": "^3.0.0",
+    "react-whatsapp": "^0.3.0",
+    "react-whatsapp-widget": "^2.2.0",
     "redux": "^4.2.0",
     "typo-js": "^1.2.2",
     "uuid": "^9.0.0",

@@ -279,6 +279,7 @@ function App() {
   const location = useLocation();
 
   /*----------- notification ----------- */
+
   const notify = (text) =>
     toast.success(text, {
       position: "top-center",
@@ -332,20 +333,24 @@ function App() {
         }
       })()}
       <section className="columnWeb">
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          limit={5}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          
-        />
+        <div className="absoluteDivApp">
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+          <MessengerCustomerChat
+            pageId="109980154081140"
+            appId="1174144033276048"
+          />
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
@@ -432,7 +437,6 @@ function App() {
           <Route path="cart" element={<ViewCart />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-        {/* <MessengerCustomerChat pageId="" appId="" htmlRef="" /> */}
       </section>
       {(() => {
         switch (location.pathname) {

@@ -80,3 +80,7 @@ section.columnWeb {
 .Toastify__toast-body {
   font-size: 1.4rem;
 }
+
+.absoluteDivApp {
+  position: absolute;
+}

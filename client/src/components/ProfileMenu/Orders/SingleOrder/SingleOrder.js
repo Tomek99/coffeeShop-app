@@ -11,7 +11,7 @@ function SingleOrder({ item }) {
   //ADD HIDDEN PRODUCTS IN ORDER COMPONENT !!!
   const { _id, delivery_status, date, total } = item;
   const width = useWindowWidth();
-  console.log(date);
+  // console.log(date);
   // redirect(`/orders/${_id}`); po co?
 
   let hiddenElements = item.products.length;

@@ -66,7 +66,7 @@ function NavigationBar() {
         <div className={styles.navBar}>
           <div className={styles.divLogo}>
             <Link to="/">
-              <img src="/images/logo.png" className={styles.logo} alt="" />
+              <img src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png" className={styles.logo} alt="Logo" />
             </Link>
           </div>
           <nav>
