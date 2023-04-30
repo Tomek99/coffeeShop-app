@@ -41,6 +41,7 @@ function LogIn() {
         `${process.env.REACT_APP_API_URI}/api/users/login`,
         values
       );
+
       if (isSuccess.status === 200) logIn(isSuccess.data);
       else setError("Invalid email or password");
     } catch (error) {

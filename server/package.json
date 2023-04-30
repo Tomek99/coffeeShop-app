@@ -21,10 +21,9 @@
     "stripe": "^11.15.0",
     "uuid": "^9.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
+    "server": "nodemon backend/server.js"
   },
   "author": "",
   "license": "ISC"

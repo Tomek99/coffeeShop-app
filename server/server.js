@@ -3,7 +3,7 @@ const colors = require("colors");
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
-const cors = require("cors");
+var cors = require("cors");
 const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 
@@ -12,6 +12,7 @@ connectDB();
 const app = express();
 
 app.use(cors());
+
 // app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
@@ -31,5 +32,9 @@ app.use("/api/stripe", require("./routes/stripeRoutes"));
 app.use("/api/orders", require("./routes/ordersRoutes"));
 
 app.use(errorHandler);
+
+app.get("/", (req, res) => {
+  res.send("working!");
+});
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

@@ -1,5 +1,5 @@
 .BtnContact {
-    align-self: flex-start;
+    display: block;
     background-color: var(--main-color);
     color: white;
     padding: 7px 25px;
@@ -17,6 +17,6 @@
 
 @media (max-width: 900px) {
     .BtnContact {
-        align-self: stretch;
+        width: 100%;
     }
 }

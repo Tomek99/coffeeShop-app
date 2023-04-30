@@ -49,11 +49,15 @@ function App() {
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      const products = await axios.get(
-        `${process.env.REACT_APP_API_URI}/api/products`
-      );
-      setLoading(false);
-      setProducts(products.data);
+      try {
+        const products = await axios.get(
+          `${process.env.REACT_APP_API_URI}/api/products`
+        );
+        setLoading(false);
+        setProducts(products.data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchData();
   }, []);
