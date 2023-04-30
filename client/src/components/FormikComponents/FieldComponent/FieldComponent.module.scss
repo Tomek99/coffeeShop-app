@@ -1,13 +1,13 @@
 .inputText {
-    width: 100%;
-    border: var(--border);
-    border-radius: 16px;
-    padding: 10px 0px 10px 10px;
-    background: var(--black);
-    color: #fff;
+  width: 100%;
+  border-bottom: var(--border);
 
-    &::placeholder {
-        color: #ccc;
-        opacity: 0.7;
-    }
+  padding: 10px 0px 10px 10px;
+  background: var(--bg);
+  color: #fff;
+
+  &::placeholder {
+    color: #ccc;
+    opacity: 0.7;
+  }
 }
