@@ -1,69 +1,72 @@
 .ContactSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    overflow: hidden;
-    margin: 20px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  margin: 20px 10px 0 10px;
 
-    .openHours {
-        font-size: 2rem;
-    }
+  .openHours {
+    font-size: 2rem;
+  }
 
-    .wrapperDiv {
-        max-width: 1366px;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 400px 1fr;
-        gap: 50px;
-        margin-top: 20px;
+  .wrapperDiv {
+    max-width: 1366px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 50px;
+    margin-top: 20px;
 
-        .content {
-            background-color: var(--black);
-            font-size: 1.4rem;
-            padding: 20px;
+    .content {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--black);
+      font-size: 1.4rem;
+      padding: 40px;
+      gap: 40px;
 
-            .infoItem {
-                display: flex;
-                flex-direction: column;
-                gap: 25px;
-                margin-bottom: 20px;
+      .infoItem {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
 
-                .title {
-                    font-weight: 500;
-                    font-size: 1.7rem;
-                    color: var(--main-color);
-                }
-
-                p {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                }
-            }
+        .title {
+          font-weight: 500;
+          font-size: 1.7rem;
+          color: var(--main-color);
         }
 
-        .contactFormWrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+        p {
+          display: flex;
+          align-items: center;
+          gap: 10px;
         }
+      }
     }
+
+    .contactFormWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
 }
 
 @media (max-width: 900px) {
-    .ContactSection {
-        margin: 20px 5px;
+  .ContactSection {
+    margin: 20px 5px;
 
-        .wrapperDiv {
-            grid-template-columns: 1fr !important;
+    .wrapperDiv {
+      grid-template-columns: 1fr !important;
 
-            .contactFormWrapper {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-            }
-        }
+      .contactFormWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
     }
+  }
 }

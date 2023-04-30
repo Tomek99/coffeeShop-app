@@ -75,7 +75,33 @@ function ContactSection() {
             </p>
             <p>
               <GoMail size={20} />
-              test@gmail.com
+              test@coffeshop.com
+            </p>
+            <p>
+              <ImLocation2 size={20} />
+              Litewska 24 | 24-242 Warsaw
+            </p>
+          </div>
+          <div className={styles.infoItem}>
+            <p className={styles.title}>Warehouse</p>
+            <p>
+              {" "}
+              <BsFillTelephoneFill size={20} /> 242 242 242
+            </p>
+            <p>
+              <GoMail size={20} />
+              warehouse@coffeshop.com
+            </p>
+          </div>
+          <div className={styles.infoItem}>
+            <p className={styles.title}>Driver</p>
+            <p>
+              {" "}
+              <BsFillTelephoneFill size={20} /> 242 242 242
+            </p>
+            <p>
+              <GoMail size={20} />
+              driver@coffeshop.com
             </p>
             <p>
               <ImLocation2 size={20} />
