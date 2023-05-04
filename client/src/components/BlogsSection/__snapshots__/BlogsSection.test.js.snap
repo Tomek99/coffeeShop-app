@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BlogsSection component 1`] = `
+<div>
+  <div
+    class="BlogsSection"
+    id="blogsSection"
+  >
+    <header
+      class="headerSection"
+    >
+      <span>
+        our
+      </span>
+       
+      <span>
+        news
+      </span>
+    </header>
+    <div
+      class="blogs"
+    >
+      <div
+        class="singleBlog"
+      >
+        <div
+          class="zoomImage"
+        >
+          <img
+            alt="Tasty And Refreshing Coffee"
+            src="images/blog-1.jpeg"
+          />
+        </div>
+        <div
+          class="textSection"
+        >
+          <h2>
+            Tasty And Refreshing Coffee
+          </h2>
+          <h4>
+            By Admin / 1st May, 2021
+          </h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
+        </div>
+      </div>
+      <div
+        class="singleBlog"
+      >
+        <div
+          class="zoomImage"
+        >
+          <img
+            alt="Tasty And Refreshing Coffee"
+            src="images/blog-2.jpeg"
+          />
+        </div>
+        <div
+          class="textSection"
+        >
+          <h2>
+            Tasty And Refreshing Coffee
+          </h2>
+          <h4>
+            By Admin / 2st May, 2021
+          </h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
+        </div>
+      </div>
+      <div
+        class="singleBlog"
+      >
+        <div
+          class="zoomImage"
+        >
+          <img
+            alt="Tasty And Refreshing Coffee"
+            src="images/blog-3.jpeg"
+          />
+        </div>
+        <div
+          class="textSection"
+        >
+          <h2>
+            Tasty And Refreshing Coffee
+          </h2>
+          <h4>
+            By Admin / 3st May, 2021
+          </h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

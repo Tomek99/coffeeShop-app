@@ -12,6 +12,7 @@ function CarouselDots({ carouselLength, setSlide, slideIndex }) {
               ? `${styles.spanDot} ${styles.activeDot}`
               : styles.spanDot
           }
+          data-testid={"span-element"}
           key={index}
           onClick={() => setSlide(index + 1)}
         ></span>

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render BeansVideo component 1`] = `
+<div>
+  <div
+    class="VideoDetails"
+  >
+    <video
+      autoplay=""
+      class="test"
+      controls=""
+      controlslist="nodownload"
+      loop=""
+    >
+      <source
+        src="./videos/beans.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+</div>
+`;

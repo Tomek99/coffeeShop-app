@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render AbousUsNavList component 1`] = `
+<div>
+  <nav
+    class="AboutUsNavList"
+  >
+    <ul
+      class="navListElements"
+    >
+      <li>
+        <button>
+          About Us
+        </button>
+      </li>
+      <li>
+        <button>
+          Our Team
+        </button>
+      </li>
+      <li>
+        <button>
+          FAQ
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

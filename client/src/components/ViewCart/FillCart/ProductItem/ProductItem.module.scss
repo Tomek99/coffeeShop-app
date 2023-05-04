@@ -1,0 +1,100 @@
+.Item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--border);
+  padding: 16px 24px;
+  color: #fff;
+
+  .leftSide {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 100%;
+      max-width: 50px;
+      height: auto;
+    }
+
+    p {
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .rightSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .price {
+      text-align: right;
+
+      p:nth-of-type(1) {
+        color: #ccc;
+        text-decoration: line-through;
+        font-size: 1.3rem;
+      }
+      p:nth-of-type(2) {
+        font-size: 1.4rem;
+      }
+    }
+
+    .selectMate {
+      .dropdownEl {
+      }
+    }
+
+    .buttons {
+      display: flex;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 50%;
+        color: #fff;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--grey);
+        }
+      }
+    }
+
+    .btnDots {
+      display: none;
+
+      button {
+        background-color: transparent;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.Item:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+@media (max-width: 500px) {
+  .Item {
+    padding: 12px 8px !important;
+
+    .buttons {
+      display: none !important;
+    }
+
+    .btnDots {
+      display: block !important;
+    }
+  }
+}

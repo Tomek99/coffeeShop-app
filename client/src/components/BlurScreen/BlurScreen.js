@@ -23,7 +23,11 @@ function BlurScreen({
 
 BlurScreen.propTypes = {
   isCartOpen: PropTypes.bool,
+  isSearchOpen: PropTypes.bool,
+  isNavigationOpen: PropTypes.bool,
   handleAside: PropTypes.func,
   handleCart: PropTypes.func,
+  handleNavigation: PropTypes.func,
+  handleSearch: PropTypes.func,
 };
 export default BlurScreen;

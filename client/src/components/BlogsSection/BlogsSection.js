@@ -11,7 +11,7 @@ function BlogsSection() {
       <HeaderSection firstWord="our" secondWord="news" />
       <div className={styles.blogs}>
         {Blog.slice(0, 3).map((item, index) => (
-          <LatestBlog key={index} item={item} text={item.text.slice(0, 55)} />
+          <LatestBlog key={index} item={item} />
         ))}
       </div>
     </div>

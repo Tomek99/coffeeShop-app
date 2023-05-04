@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LatestBlog component 1`] = `
+<div>
+  <div
+    class="singleBlog"
+  >
+    <div
+      class="zoomImage"
+    >
+      <img
+        alt="Lorem ipsum"
+        src="images/blog-1.jpeg"
+      />
+    </div>
+    <div
+      class="textSection"
+    >
+      <h2>
+        Lorem ipsum
+      </h2>
+      <h4>
+        Tomek S
+      </h4>
+      <p>
+         Lorem ipsum lorem ipsum
+      </p>
+    </div>
+  </div>
+</div>
+`;

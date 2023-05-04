@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NavListBtn 1`] = `
+<div>
+  <li>
+    <button
+      class="activeStyle"
+    >
+      About Us
+    </button>
+  </li>
+</div>
+`;

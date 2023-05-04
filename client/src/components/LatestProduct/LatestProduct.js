@@ -8,11 +8,16 @@ import RatingsStars from "../RatingStars/RatingStars";
 
 function LatestProduct({ item, isHome }) {
   const { imageUrl, name, price, oldPrice, _id, rate, intensity } = item;
-  const { addItem, products } = useContext(Context);
+  const { addItem, products, addWishItem, wishList } = useContext(Context);
 
   let findProduct = products.find((product) => product._id === _id);
   findProduct.oldPrice = findProduct.oldPrice === null ? 0 : oldPrice;
   findProduct.quantity = 1;
+
+  let foundWishProduct = wishList.find((value) => {
+    if (value === _id) return true;
+    return false;
+  });
 
   return (
     <div key={_id} className={styles.LatestProduct}>
@@ -24,7 +29,10 @@ function LatestProduct({ item, isHome }) {
         <button onClick={() => addItem(findProduct)}>
           <BsCartFill />
         </button>
-        <button>
+        <button
+          className={foundWishProduct ? styles.activeBtn : null}
+          onClick={() => addWishItem(_id)}
+        >
           <BsFillHeartFill />
         </button>
       </div>

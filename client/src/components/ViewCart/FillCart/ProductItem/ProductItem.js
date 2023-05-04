@@ -1,12 +1,10 @@
 import React from "react";
-import styles from "./Item.module.scss";
+import styles from "./ProductItem.module.scss";
 import { ImBin } from "react-icons/im";
 import { BsHeart, BsThreeDotsVertical } from "react-icons/bs";
 
-function Item({ item, deleteItem }) {
-  const { name, imageUrl, oldPrice, price, quantity } = item;
-  const values = ["1", "2", "3", "4", "5", "6", "7", "8", "+9"];
-
+function ProductItem({ item, deleteItem, changeProductQuantity }) {
+  const { _id, name, imageUrl, oldPrice, price, quantity } = item;
   return (
     <div className={styles.Item}>
       <div className={styles.leftSide}>
@@ -20,17 +18,21 @@ function Item({ item, deleteItem }) {
           <p>{oldPrice !== 0 ? `$${oldPrice}` : null}</p>
           <p>${price}</p>
         </div>
-        <div className={styles.itemAmount}>
-          <select value={quantity}>
-            {values.map((value, index) => (
-              <option value={value} key={index}>
-                {value}
+        <div className={styles.selectMate}>
+          <select
+            className={styles.dropdownEl}
+            value={quantity}
+            onChange={() => console.log("hi")}
+          >
+            {Array.from({ length: 9 }, (v, i) => (
+              <option key={i} value={i + 1}>
+                {i + 1}
               </option>
             ))}
           </select>
         </div>
         <div className={styles.buttons}>
-          <button onClick={() => deleteItem(item._id, price, oldPrice)}>
+          <button onClick={() => deleteItem(_id, price, oldPrice)}>
             <ImBin size={18} />
           </button>
           <button>
@@ -47,4 +49,4 @@ function Item({ item, deleteItem }) {
   );
 }
 
-export default Item;
+export default ProductItem;

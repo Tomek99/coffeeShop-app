@@ -1,14 +1,19 @@
 import React, { useContext } from "react";
 import CartSummary from "./CartSummary/CartSummary";
 import styles from "./FillCart.module.scss";
-import Item from "./Item/Item";
+import ProductItem from "./ProductItem/ProductItem";
 import { ImBin } from "react-icons/im";
 import { BsHeart } from "react-icons/bs";
 import { Context } from "../../../Contexts/Context";
 
 function FillCart() {
-  const { cartItems, cartQuantity, deleteItem, clearTheCart } =
-    useContext(Context);
+  const {
+    cartItems,
+    cartQuantity,
+    deleteItem,
+    clearTheCart,
+    changeProductQuantity,
+  } = useContext(Context);
 
   return (
     <div className={styles.fillCart}>
@@ -28,11 +33,12 @@ function FillCart() {
         </div>
         <div className={styles.items}>
           {cartItems.map((item, index) => (
-            <Item
+            <ProductItem
               key={index}
               item={item}
               deleteItem={deleteItem}
               clearTheCart={clearTheCart}
+              changeProductQuantity={changeProductQuantity}
             />
           ))}
         </div>

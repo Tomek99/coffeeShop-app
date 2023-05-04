@@ -175,6 +175,13 @@ function App() {
     }
   }
 
+  function changeProductQuantity(id, quantity) {
+    console.log(id);
+    console.log(quantity);
+    // let foundItem = cartItems.find((item) => item._id === id);
+    // console.log(foundItem);
+  }
+
   function clearTheCart() {
     setCartItems([]);
     setCartQuantity(0);
@@ -198,8 +205,15 @@ function App() {
   /*----------- wishList ----------- */
   const [wishList, setWishList] = useState([]);
 
-  function addItemWishList(item) {
-    setWishList([...wishList, { ...item }]);
+  function addWishItem(id) {
+    const foundId = wishList.find((value) => value === id);
+
+    if (!foundId) {
+      setWishList([...wishList, id]);
+    } else {
+      const filteredItems = wishList.filter((value) => value !== id);
+      setWishList(filteredItems);
+    }
   }
 
   /*----------- order ----------- */
@@ -308,16 +322,18 @@ function App() {
       value={{
         addItem,
         deleteItem,
-        addItemWishList,
+        addWishItem,
         logIn,
         logOut,
         clearTheCart,
         addOrder,
+        changeProductQuantity,
         isLogIn,
         cartItems,
         cartValue,
         cartSave,
         cartQuantity,
+        wishList,
         products,
         user,
         loading,

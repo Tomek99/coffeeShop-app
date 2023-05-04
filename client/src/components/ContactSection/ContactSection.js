@@ -3,13 +3,10 @@ import styles from "./ContactSection.module.scss";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import Map from "./Map/Map";
 import ContactForm from "./ContactForm/ContactForm";
-import { GoMail } from "react-icons/go";
-import { SlCreditCard } from "react-icons/sl";
-import { RiShoppingBagFill } from "react-icons/ri";
-import { ImLocation2 } from "react-icons/im";
-import { BsFillTelephoneFill, BsPerson } from "react-icons/bs";
 import contactData from "../../data/input_contact_data.json";
 import * as Yup from "yup";
+import ContactElement from "./ContactElement/ContactElement";
+import dataContact from "../../data/dataContact";
 
 const validationSchema_one = Yup.object().shape({
   name: Yup.string()
@@ -48,8 +45,6 @@ const initialValues_2 = {
   comment: "",
 };
 
-const accountBank = ["Bank account", "24 2424 2424 2424 2424 2424 2424"];
-
 function ContactSection() {
   useEffect(() => {
     window.scrollTo({
@@ -67,71 +62,9 @@ function ContactSection() {
       </p>
       <div className={styles.wrapperDiv}>
         <div className={styles.content}>
-          <div className={styles.infoItem}>
-            <p className={styles.title}>Coffee Shop</p>
-            <p>
-              {" "}
-              <BsFillTelephoneFill size={20} /> 242 242 242
-            </p>
-            <p>
-              <GoMail size={20} />
-              test@coffeshop.com
-            </p>
-            <p>
-              <ImLocation2 size={20} />
-              Litewska 24 | 24-242 Warsaw
-            </p>
-          </div>
-          <div className={styles.infoItem}>
-            <p className={styles.title}>Warehouse</p>
-            <p>
-              {" "}
-              <BsFillTelephoneFill size={20} /> 242 242 242
-            </p>
-            <p>
-              <GoMail size={20} />
-              warehouse@coffeshop.com
-            </p>
-          </div>
-          <div className={styles.infoItem}>
-            <p className={styles.title}>Driver</p>
-            <p>
-              {" "}
-              <BsFillTelephoneFill size={20} /> 242 242 242
-            </p>
-            <p>
-              <GoMail size={20} />
-              driver@coffeshop.com
-            </p>
-            <p>
-              <ImLocation2 size={20} />
-              Litewska 24 | 24-242 Warsaw
-            </p>
-          </div>
-          <div className={styles.infoItem}>
-            <p className={styles.title}>Company details</p>
-            <p>
-              <BsPerson size={20} />
-              Coffee Shop Tomasz Skupien
-            </p>
-            <p>
-              <ImLocation2 size={20} />
-              Litewska 24 | 24-242 Warsaw
-            </p>
-            <p>
-              <RiShoppingBagFill size={20} /> NIP 2424242424 | BDO 242424242
-            </p>
-          </div>
-
-          <div className={styles.infoItem}>
-            <p className={styles.title}>{accountBank[0]}</p>
-
-            <p>
-              {" "}
-              <SlCreditCard size={20} />
-              {accountBank[1]}
-            </p>
-          </div>
+          {dataContact.map((item, index) => (
+            <ContactElement item={item} key={index} />
+          ))}
         </div>
         <div className={styles.contactFormWrapper}>
           <ContactForm
@@ -146,7 +79,6 @@ function ContactSection() {
             validationSchema={validationSchema_two}
             title="Write us a text message"
           />
-
           <div>
             <Map />
           </div>
