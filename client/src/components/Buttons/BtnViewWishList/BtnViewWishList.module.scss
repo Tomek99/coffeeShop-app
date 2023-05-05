@@ -1,0 +1,12 @@
+.BtnViewWishList {
+  background-color: var(--main-color);
+  border-radius: 16px;
+  color: #fff;
+  padding: 8px 40px;
+  transition: 0.3s linear;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--main-color-darken);
+  }
+}

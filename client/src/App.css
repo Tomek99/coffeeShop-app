@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
-
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,26 +9,26 @@
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   /* transition: 0.2s linear; */
- 
-
 }
 
 :root {
   --main-color: #d3ad7f;
   --main-color-darken: #d3a369;
-  --black: #13131a;
-  --bg: #060613;
+  --black: #0e0e13;
+  --bg: #04040b;
   --blue: #151522;
-  --grey:#323232;
-  --grey-darken:#202029;
-  --green:rgb(31, 129, 20);
-  --green-darken:rgb(27, 113, 17);
+  --grey: #323232;
+  --grey-darken: #202029;
+  --green: rgb(31, 129, 20);
+  --green-darken: rgb(27, 113, 17);
   --border: 0.1rem solid rgba(255, 255, 255, 0.3);
   --red: rgb(180, 3, 28);
   --red-darken: rgb(156, 4, 24);
-  --shadow: rgba(255, 255, 255, 0.491) 0px 2px 4px 0px, rgba(255, 255, 255, 0.496) 0px 0px 2px 1px;
-  --shadow-thin: rgba(255, 255, 255, 0.25) 0px 0px 1px 1px, rgba(255, 255, 255, 0.13) 0px 0px 1px 1px;
-  --blur-screen:rgb(60, 60, 60);
+  --shadow: rgba(255, 255, 255, 0.491) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.496) 0px 0px 2px 1px;
+  --shadow-thin: rgba(255, 255, 255, 0.25) 0px 0px 1px 1px,
+    rgba(255, 255, 255, 0.13) 0px 0px 1px 1px;
+  --blur-screen: rgb(60, 60, 60);
 }
 
 html {

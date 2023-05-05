@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./WishList.module.scss";
-import WishFilter from "./WishFilter/WishFilter";
-import WishInfo from "./WishInfo/WishInfo";
+
 import WishProducts from "./WishProducts/WishProducts";
 import Support from "../Support/Support";
 import HeaderInfo from "../../HeaderInfo/HeaderInfo";
+import { Context } from "../../../Contexts/Context";
 
 function WishList() {
   useEffect(() => {
@@ -15,18 +15,34 @@ function WishList() {
     });
   }, []);
 
+  const { wishList, products } = useContext(Context);
+
+  let foundedProducts = [];
+
+  for (let i = 0; i < wishList.length; i++) {
+    const element = wishList[i];
+    for (let j = 0; j < products.length; j++) {
+      if (element === products[j]._id) {
+        foundedProducts.push(products[j]);
+      }
+    }
+  }
   return (
     <>
       <div className={styles.WishList}>
-        <HeaderInfo title="Shopping lists" />
-        <button className={styles.btnAddList}>+ Add list</button>
+        <HeaderInfo title="Wish list" />
       </div>
-      <WishFilter />
+      <div>Products observed</div>
       <div className={styles.WishListProducts}>
-        <WishProducts />
-        <WishProducts />
+        {wishList.length ? (
+          foundedProducts.map((item, index) => (
+            <WishProducts key={index} item={item} />
+          ))
+        ) : (
+          <div>No products added to the wishlist</div>
+        )}
       </div>
-      <WishInfo />
+
       <Support />
     </>
   );

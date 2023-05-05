@@ -1,37 +1,64 @@
 .WishProducts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--black);
+  border: var(--border);
+  border-radius: 12px;
+  padding: 16px 24px;
+  transition: 0.3s linear;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+
+  .responsiveImg {
+    width: 100%;
+    width: 50px;
+    height: 90px;
+  }
+
+  .divContent {
+    flex-grow: 1;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .textContent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      .divPrice {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 10px;
+
+        .oldPrice {
+          color: #ccc;
+          font-size: 1.2rem;
+          text-decoration: line-through;
+        }
+      }
+
+      .available {
+        color: var(--green);
+        border: 1px solid var(--green);
+        border-radius: 16px;
+        padding: 4px 12px;
+      }
+    }
+  }
+
+  .btnSection {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: var(--black);
-    border: var(--border);
-    border-radius: 12px;
-    padding: 16px 24px;
-    transition: 0.3s linear;
-    cursor: pointer;
-
-    &:hover {
-        box-shadow: var(--shadow);
-    }
-
-    .headerWishProduct {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        position: relative;
-
-        h2 {
-            font-size: 1.6rem;
-        }
-
-        div {
-            position: absolute;
-            top: -10px;
-            right: -20px;
-        }
-    }
-
-    .update {
-        font-size: 1.3rem;
-        color: #ccc;
-    }
+    margin-left: 20px;
+  }
 }

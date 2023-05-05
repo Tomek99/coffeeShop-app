@@ -175,13 +175,6 @@ function App() {
     }
   }
 
-  function changeProductQuantity(id, quantity) {
-    console.log(id);
-    console.log(quantity);
-    // let foundItem = cartItems.find((item) => item._id === id);
-    // console.log(foundItem);
-  }
-
   function clearTheCart() {
     setCartItems([]);
     setCartQuantity(0);
@@ -203,16 +196,27 @@ function App() {
   }, [cartValue, cartQuantity, cartItems, cartSave]);
 
   /*----------- wishList ----------- */
-  const [wishList, setWishList] = useState([]);
+  const [wishList, setWishList] = useState(() => {
+    const storedValue = localStorage.getItem("wishList");
+
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return [];
+  });
 
   function addWishItem(id) {
     const foundId = wishList.find((value) => value === id);
 
     if (!foundId) {
       setWishList([...wishList, id]);
+      localStorage.setItem("wishList", JSON.stringify([...wishList, id]));
+
+      notify("Product added to wish list!");
     } else {
       const filteredItems = wishList.filter((value) => value !== id);
       setWishList(filteredItems);
+      localStorage.setItem("wishList", JSON.stringify(filteredItems));
+
+      notify("Product has been deleted!");
     }
   }
 
@@ -327,7 +331,7 @@ function App() {
         logOut,
         clearTheCart,
         addOrder,
-        changeProductQuantity,
+
         isLogIn,
         cartItems,
         cartValue,

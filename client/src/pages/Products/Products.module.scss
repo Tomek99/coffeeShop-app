@@ -1,7 +1,7 @@
 .Products {
   display: grid;
   grid-template-rows: auto 1fr;
-  justify-items: center;
+  justify-content: center;
   margin-top: 20px;
 
   .gridTemplate {

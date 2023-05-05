@@ -13,7 +13,7 @@ function LatestProduct({ item, isHome }) {
   let findProduct = products.find((product) => product._id === _id);
   findProduct.oldPrice = findProduct.oldPrice === null ? 0 : oldPrice;
   findProduct.quantity = 1;
-
+  console.log(wishList);
   let foundWishProduct = wishList.find((value) => {
     if (value === _id) return true;
     return false;

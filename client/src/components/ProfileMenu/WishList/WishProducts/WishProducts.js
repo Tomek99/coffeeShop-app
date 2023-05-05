@@ -1,21 +1,31 @@
 import React from "react";
 import styles from "./WishProducts.module.scss";
-import AmountProducts from "./AmountProducts/AmountProducts";
-import BtnDots from "../../../Buttons/BtnDots/BtnDots";
+import BtnViewWishList from "../../../Buttons/BtnViewWishList/BtnViewWishList";
+import BtnDeleteWishList from "../../../Buttons/BtnDeleteWishList/BtnDeleteWishList";
 
-function WishProducts() {
+function WishProducts({ item }) {
+  const { imageUrl, name, price, oldPrice } = item;
   return (
     <div className={styles.WishProducts}>
-      <div className={styles.headerWishProduct}>
-        <h2>My new phone</h2>
-        <div styles={styles.test}>
-          <BtnDots />
+      <div>
+        <img src={imageUrl} alt={name} className={styles.responsiveImg} />
+      </div>
+      <div className={styles.divContent}>
+        <span>{name}</span>
+        <div className={styles.textContent}>
+          <div className={styles.divPrice}>
+            <span> {`$${price}`}</span>
+            {oldPrice ? (
+              <span className={styles.oldPrice}>${oldPrice}</span>
+            ) : null}
+          </div>
+          <span className={styles.available}>Available</span>
         </div>
       </div>
-      <div className={styles.update}>
-        <p>Just now {`(last change)`}</p>
-      </div>
-      <AmountProducts />
+      <section className={styles.btnSection}>
+        <BtnViewWishList />
+        <BtnDeleteWishList />
+      </section>
     </div>
   );
 }
