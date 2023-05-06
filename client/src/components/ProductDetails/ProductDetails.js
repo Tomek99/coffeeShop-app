@@ -20,14 +20,21 @@ function ProductDetails() {
 
   // Protected route if the route is not exist
   useEffect(() => {
-    const isIdExist = products.find((item) => {
-      return item._id === productId.id;
-    });
-
-    if (!isIdExist) {
-      navigate("/products");
-    }
+    asyncCall();
   });
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function asyncCall() {
+    await sleep();
+
+    await products.find((item) => {
+      if (item._id === productId.id) navigate("/products");
+      return true;
+    });
+  }
 
   const thisProduct = products.find((item) => {
     return item._id === productId.id;

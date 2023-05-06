@@ -41,8 +41,8 @@
         font-weight: 300;
       }
       .productDetailsContentButtons {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
 
         .productQuantity {

@@ -1,9 +1,10 @@
 .BtnAddWishList {
-  justify-self: end;
+  /* justify-self: end; */
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 1.7rem;
-  padding: 5px 26px;
+  padding: 10px 0;
   text-transform: none;
   background-color: var(--black);
   color: #fff;
