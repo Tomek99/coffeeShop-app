@@ -16,7 +16,7 @@ function ProductDetails() {
   const productId = useParams();
   const navigate = useNavigate();
 
-  const { addItem, products, loading } = useContext(Context);
+  const { addItem, products, loading, addWishItem } = useContext(Context);
 
   // Protected route if the route is not exist
   useEffect(() => {
@@ -77,12 +77,6 @@ function ProductDetails() {
               <div className={styles.productDetailsContentButtons}>
                 <div className={styles.productQuantity}>
                   <div style={{ display: "flex" }}>
-                    {/* <button
-                      className={styles.btnProductQuantity}
-                      onClick={decreaseAmount}
-                    >
-                     
-                    </button> */}
                     <BtnPlusMinus handleBtn={decreaseAmount}>
                       <FiMinus />
                     </BtnPlusMinus>
@@ -91,19 +85,13 @@ function ProductDetails() {
                       value={quantity > 1 ? quantity : quantity}
                       readOnly
                     />
-                    {/* <button
-                      className={styles.btnProductQuantity}
-                      onClick={increaseAmount}
-                    >
-                    
-                    </button> */}
                     <BtnPlusMinus handleBtn={increaseAmount}>
                       <FiPlus />
                     </BtnPlusMinus>
                   </div>
                   <BtnAddCart onClickAddToCart={onClickAddToCart} />
                 </div>
-                <BtnAddWishList />
+                <BtnAddWishList handleBtn={addWishItem} id={productId.id} />
               </div>
             </div>
           </div>

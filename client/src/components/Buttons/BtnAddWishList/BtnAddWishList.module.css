@@ -1,16 +1,16 @@
 .BtnAddWishList {
-    justify-self: end;
-    display: flex;
-    align-items: center;
-    font-size: 1.7rem;
-    padding: 5px 26px;
-    text-transform: none;
-    background-color: #1c1c2f;
-    color: #fff;
-    transition: 0.3s linear;
-    cursor: pointer;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  padding: 5px 26px;
+  text-transform: none;
+  background-color: var(--black);
+  color: #fff;
+  transition: 0.3s linear;
+  cursor: pointer;
 }
 
 .BtnAddWishList:hover {
-    background-color: #252542;
+  background-color: var(--light-black);
 }

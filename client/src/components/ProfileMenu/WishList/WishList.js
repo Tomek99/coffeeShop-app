@@ -15,7 +15,7 @@ function WishList() {
     });
   }, []);
 
-  const { wishList, products } = useContext(Context);
+  const { wishList, products, addWishItem } = useContext(Context);
 
   let foundedProducts = [];
 
@@ -32,14 +32,16 @@ function WishList() {
       <div className={styles.WishList}>
         <HeaderInfo title="Wish list" />
       </div>
-      <div>Products observed</div>
+      <h3 className={styles.headline}>Products observed</h3>
       <div className={styles.WishListProducts}>
         {wishList.length ? (
           foundedProducts.map((item, index) => (
-            <WishProducts key={index} item={item} />
+            <WishProducts key={index} item={item} addWishItem={addWishItem} />
           ))
         ) : (
-          <div>No products added to the wishlist</div>
+          <p style={{ fontSize: "1.3rem" }}>
+            No products added to the wishlist
+          </p>
         )}
       </div>
 

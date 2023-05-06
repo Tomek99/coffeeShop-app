@@ -1,17 +1,25 @@
 import React from "react";
 import styles from "./WishProducts.module.scss";
-import BtnViewWishList from "../../../Buttons/BtnViewWishList/BtnViewWishList";
-import BtnDeleteWishList from "../../../Buttons/BtnDeleteWishList/BtnDeleteWishList";
+import BtnsViewDelete from "../../../Buttons/BtnsViewDelete/BtnsViewDelete";
+import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function WishProducts({ item }) {
-  const { imageUrl, name, price, oldPrice } = item;
+function WishProducts({ item, addWishItem }) {
+  const { imageUrl, name, price, oldPrice, _id } = item;
+  const navigate = useNavigate();
+
+  function navigatePage(id) {
+    navigate(`/products/${id}`);
+  }
   return (
     <div className={styles.WishProducts}>
-      <div>
+      <div onClick={() => navigatePage(_id)}>
         <img src={imageUrl} alt={name} className={styles.responsiveImg} />
       </div>
       <div className={styles.divContent}>
-        <span>{name}</span>
+        <span className={styles.name} onClick={() => navigatePage(_id)}>
+          {name}
+        </span>
         <div className={styles.textContent}>
           <div className={styles.divPrice}>
             <span> {`$${price}`}</span>
@@ -23,8 +31,8 @@ function WishProducts({ item }) {
         </div>
       </div>
       <section className={styles.btnSection}>
-        <BtnViewWishList />
-        <BtnDeleteWishList />
+        <BtnsViewDelete tab="show" id={_id} btnHandle={navigatePage} />
+        <BtnsViewDelete tab="delete" id={_id} btnHandle={addWishItem} />
       </section>
     </div>
   );
