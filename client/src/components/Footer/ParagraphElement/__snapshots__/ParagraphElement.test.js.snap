@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ParagraphElement component 1`] = `
+<div>
+  <div
+    class="ParagraphElement"
+  >
+    <p>
+      testIcon
+      test
+    </p>
+  </div>
+</div>
+`;

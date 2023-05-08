@@ -1,5 +1,6 @@
-// import { render, screen } from "@testing-library/react";
-// import App from "./App";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import { MemoryRouter } from "react-router-dom";
 
 // jest.mock("react-router-dom", () => ({
 //   ...jest.requireActual("react-router-dom"),
@@ -11,7 +12,11 @@
 
 // jest.mock("./components");
 
-// test("rendering required component", () => {
-//   const { container } = render(<App />);
-//   expect(container).toMatchSnapshot();
-// });
+test("rendering required component", () => {
+  //   const { container } = render(
+  //     <MemoryRouter>
+  //       <App />
+  //     </MemoryRouter>
+  //   );
+  //   expect(container).toMatchSnapshot();
+});

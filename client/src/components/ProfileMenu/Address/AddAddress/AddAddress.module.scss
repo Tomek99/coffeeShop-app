@@ -1,72 +1,72 @@
 .AddAddress {
-    position: fixed;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    z-index: 102;
-    color: #fff;
-    background-color: var(--black);
-    width: 400px;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  z-index: 102;
+  color: #fff;
+  background-color: var(--bg);
+  border-radius: 8px;
+  width: 400px;
 
-    .GridDiv {
-        display: grid;
-        grid-template-rows: auto 1fr;
-        gap: 20px;
-        height: 100%;
+  .GridDiv {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    height: 100%;
 
-        .headerDiv {
-            border-radius: 8px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--grey-darken);
-            width: 100%;
-            padding: 10px 15px;
+    .headerDiv {
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
 
-            .headerName {
-                font-size: 2rem;
-            }
-        }
+      width: 100%;
+      padding: 10px 15px;
 
-        .columnForm {
-            display: grid;
-            gap: 10px;
-            padding: 0 15px 0 15px;
-
-            .divInputs {
-                display: flex;
-                flex-direction: column;
-                padding: 0 15px 0 15px;
-                gap: 20px;
-            }
-        }
+      .headerName {
+        font-size: 2rem;
+      }
     }
+
+    .columnForm {
+      display: grid;
+      gap: 10px;
+      padding: 0 15px 0 15px;
+
+      .divInputs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
 }
 
 @media (max-width: 420px) {
-    .AddAddress {
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        width: auto;
-        transform: none;
+  .AddAddress {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: auto;
+    transform: none;
 
-        .columnForm {
-            gap: 20px !important;
-        }
+    .columnForm {
+      gap: 20px !important;
     }
+  }
 }
 
 @media (max-width: 320px) {
-    .AddAddress {
-        .columnForm {
-            gap: 15px !important;
+  .AddAddress {
+    .columnForm {
+      gap: 15px !important;
 
-            .divInputs {
-                gap: 10px !important;
-            }
-        }
+      .divInputs {
+        gap: 10px !important;
+      }
     }
+  }
 }

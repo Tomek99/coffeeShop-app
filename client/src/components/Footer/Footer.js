@@ -37,7 +37,7 @@ function Footer() {
 
   return (
     <div className={styles.Footer}>
-      <div className={styles.GridTemplate}>
+      <div className={styles.GridTemplate} data-testid="gridTemplatElements">
         <div className={styles.navMenu}>
           <h6>Company</h6>
           <div className={styles.menuContent}>
@@ -74,7 +74,7 @@ function Footer() {
             <div className={styles.menu}>
               {footer_data.extraInforamation.map((item, index) => (
                 <ParagraphElement
-                  item={item}
+                  text={item.name}
                   key={index}
                   icon={extraInformationIcons[index]}
                 />

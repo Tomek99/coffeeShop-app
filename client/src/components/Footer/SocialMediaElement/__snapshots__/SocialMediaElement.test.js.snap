@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SocialMediaElement component 1`] = `
+<div>
+  <li
+    class="SocialMediaElement"
+  >
+    <a
+      href="www.facebook.com"
+    >
+      test
+    </a>
+  </li>
+</div>
+`;

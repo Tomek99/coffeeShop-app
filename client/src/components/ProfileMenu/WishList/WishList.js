@@ -18,15 +18,11 @@ function WishList() {
   const { wishList, products, addWishItem } = useContext(Context);
 
   let foundedProducts = [];
-
-  for (let i = 0; i < wishList.length; i++) {
-    const element = wishList[i];
-    for (let j = 0; j < products.length; j++) {
-      if (element === products[j]._id) {
-        foundedProducts.push(products[j]);
-      }
-    }
+  for (const element of wishList) {
+    const foundElement = products.find((item) => element === item._id);
+    foundedProducts.push(foundElement);
   }
+
   return (
     <>
       <div className={styles.WishList}>

@@ -1,10 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  GoogleMap,
-  useLoadScript,
-  Marker,
-  InfoWindow,
-} from "@react-google-maps/api";
+import React, { useEffect, useState } from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import styles from "./Map.module.scss";
 
 export default function Map() {
@@ -34,13 +29,7 @@ export default function Map() {
           mapContainerClassName={styles.mapContainer}
         >
           {loadMarker ? (
-            <Marker position={{ lat: 50.018611, lng: 22.679722 }}>
-              {/* <InfoWindow position={{ lat: 50.019611, lng: 22.679722 }}>
-                <div>
-                  <h1>InfoWindow</h1>
-                </div>
-              </InfoWindow> */}
-            </Marker>
+            <Marker position={{ lat: 50.018611, lng: 22.679722 }} />
           ) : null}
         </GoogleMap>
       )}

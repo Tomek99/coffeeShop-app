@@ -8,6 +8,7 @@ import BtnCart from "../Buttons/BtnCart/BtnCart";
 
 function Cart({ isCartOpen, handleCart }) {
   const { cartItems, cartValue, cartSave, cartQuantity } = useContext(Context);
+  console.log(cartItems);
   return (
     <div
       className={

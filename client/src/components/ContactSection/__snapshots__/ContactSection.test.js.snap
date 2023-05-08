@@ -1,0 +1,397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ContactSecton 1`] = `
+<div>
+  <div
+    class="ContactSection"
+    id="contactSection"
+  >
+    <header
+      class="headerSection"
+    >
+      <span>
+        contact
+      </span>
+       
+      <span>
+        us
+      </span>
+    </header>
+    <p
+      class="openHours"
+    >
+      We are at your service from Monday to Saturday from 10:00 am to 8:00 pm
+    </p>
+    <div
+      class="wrapperDiv"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="ContactElement"
+        >
+          <p
+            class="title"
+          >
+            Coffee Shop
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            242 242 242
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 14 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            test@coffeshop.com
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              version="1.1"
+              viewBox="0 0 16 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 0c-2.761 0-5 2.239-5 5 0 5 5 11 5 11s5-6 5-11c0-2.761-2.239-5-5-5zM8 8.063c-1.691 0-3.063-1.371-3.063-3.063s1.371-3.063 3.063-3.063 3.063 1.371 3.063 3.063-1.371 3.063-3.063 3.063zM6.063 5c0-1.070 0.867-1.938 1.938-1.938s1.938 0.867 1.938 1.938c0 1.070-0.867 1.938-1.938 1.938s-1.938-0.867-1.938-1.938z"
+              />
+            </svg>
+            Litewska 24 | 24-242 Warsaw
+          </p>
+        </div>
+        <div
+          class="ContactElement"
+        >
+          <p
+            class="title"
+          >
+            Warehouse
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            242 242 242
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 14 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            warehouse@coffeshop.com
+          </p>
+        </div>
+        <div
+          class="ContactElement"
+        >
+          <p
+            class="title"
+          >
+            Driver
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            242 242 242
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 14 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            test@coffeshop.com
+          </p>
+        </div>
+        <div
+          class="ContactElement"
+        >
+          <p
+            class="title"
+          >
+            Company details
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+              />
+            </svg>
+            Coffee Shop Tomasz Skupien
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              version="1.1"
+              viewBox="0 0 16 16"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 0c-2.761 0-5 2.239-5 5 0 5 5 11 5 11s5-6 5-11c0-2.761-2.239-5-5-5zM8 8.063c-1.691 0-3.063-1.371-3.063-3.063s1.371-3.063 3.063-3.063 3.063 1.371 3.063 3.063-1.371 3.063-3.063 3.063zM6.063 5c0-1.070 0.867-1.938 1.938-1.938s1.938 0.867 1.938 1.938c0 1.070-0.867 1.938-1.938 1.938s-1.938-0.867-1.938-1.938z"
+              />
+            </svg>
+            Litewska 24 | 24-242 Warsaw
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="20"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M12 1a5 5 0 0 1 5 5v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3V6a5 5 0 0 1 5-5zm5 10h-2v1a1 1 0 0 0 1.993.117L17 12v-1zm-8 0H7v1a1 1 0 0 0 1.993.117L9 12v-1zm3-8a3 3 0 0 0-2.995 2.824L9 6v2h6V6a3 3 0 0 0-2.824-2.995L12 3z"
+                />
+              </g>
+            </svg>
+            NIP 2424242424 | BDO 242424242
+          </p>
+        </div>
+        <div
+          class="ContactElement"
+        >
+          <p
+            class="title"
+          >
+            Bank account
+          </p>
+          <p>
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 1024 1024"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M928.144 176H95.856c-53.024 0-96 42.976-96 96v480c0 53.024 42.976 96 96 96h832.288c53.024 0 96-42.976 96-96V272c0-53.024-42.976-96-96-96zM95.856 240h832.288c17.664 0 32 14.336 32 32v64H63.856v-64c0-17.664 14.351-32 32-32zm832.288 544H95.856c-17.664 0-32-14.336-32-32V464h896.288v288c0 17.664-14.352 32-32 32z"
+              />
+            </svg>
+            24 2424 2424 2424 2424 2424 2424
+          </p>
+        </div>
+      </div>
+      <div
+        class="contactFormWrapper"
+      >
+        <form
+          action="#"
+          class="formContact"
+        >
+          <p>
+            Write us an e-mail
+          </p>
+          <div>
+            <input
+              class="inputText"
+              name="name"
+              placeholder="Name and surname"
+              type="text"
+              value=""
+            />
+            <div
+              class="errorComponent"
+            />
+          </div>
+          <div>
+            <input
+              class="inputText"
+              name="email"
+              placeholder="E-mail"
+              type="text"
+              value=""
+            />
+            <div
+              class="errorComponent"
+            />
+          </div>
+          <div>
+            <div
+              class="TextareaCom"
+            >
+              <textarea
+                maxlength="1999"
+                name="comment"
+                placeholder="Your comments"
+              />
+              <span
+                class="countLength"
+              >
+                0
+                /1999
+              </span>
+            </div>
+            <div
+              class="errorComponent"
+            />
+            <button
+              class="BtnContact"
+              type="submit"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+        <form
+          action="#"
+          class="formContact"
+        >
+          <p>
+            Write us a text message
+          </p>
+          <div>
+            <input
+              class="inputText"
+              name="name"
+              placeholder="Name and surname"
+              type="text"
+              value=""
+            />
+            <div
+              class="errorComponent"
+            />
+          </div>
+          <div>
+            <input
+              class="inputText"
+              name="number"
+              placeholder="Phone number"
+              type="text"
+              value=""
+            />
+            <div
+              class="errorComponent"
+            />
+          </div>
+          <div>
+            <div
+              class="TextareaCom"
+            >
+              <textarea
+                maxlength="1999"
+                name="comment"
+                placeholder="Your comments"
+              />
+              <span
+                class="countLength"
+              >
+                0
+                /1999
+              </span>
+            </div>
+            <div
+              class="errorComponent"
+            />
+            <button
+              class="BtnContact"
+              type="submit"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+        <div>
+          <div>
+            <div>
+              Loading...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
