@@ -5,7 +5,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 function BtnDots() {
   return (
     <button className={styles.btnInvoice}>
-      <BsThreeDotsVertical size={20} />
+      <BsThreeDotsVertical size={18} />
     </button>
   );
 }

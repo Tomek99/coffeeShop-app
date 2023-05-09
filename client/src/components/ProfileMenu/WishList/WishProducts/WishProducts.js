@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./WishProducts.module.scss";
 import BtnsViewDelete from "../../../Buttons/BtnsViewDelete/BtnsViewDelete";
-import { redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function WishProducts({ item, addWishItem }) {

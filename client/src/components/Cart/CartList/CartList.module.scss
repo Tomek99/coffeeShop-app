@@ -1,54 +1,54 @@
 .SingleProduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  font-size: 1.4rem;
+
+  img {
+    width: 100%;
+    max-width: 70px;
+    max-height: 110px;
+  }
+
+  .productDetails {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 90%;
-    font-size: 1.4rem;
+    gap: 10px;
+    width: 50%;
+    font-weight: 300;
 
-    img {
-        width: 100%;
-        max-width: 70px;
-        max-height: 110px;
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
     }
 
-    .productDetails {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        width: 50%;
-        font-weight: 300;
-
-        h2 {
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .oldPrice {
-            font-size: 1.2rem;
-            color: #ccc;
-            text-decoration: line-through;
-        }
+    .oldPrice {
+      font-size: 1.2rem;
+      color: #ccc;
+      text-decoration: line-through;
     }
+  }
 
-    .btnDeleteProduct {
-        align-self: flex-end;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 35px;
-        height: 35px;
-        align-self: center;
-        background-color: transparent;
-        color: #fff;
-        cursor: pointer;
-    }
+  .btnDeleteProduct {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    align-self: center;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
 
-    .btnDeleteProduct:hover {
-        border-radius: 50%;
-        background-color: #434357;
-    }
+  .btnDeleteProduct:hover {
+    border-radius: 50%;
+    background-color: #434357;
+  }
 }

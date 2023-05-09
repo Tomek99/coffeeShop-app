@@ -7,13 +7,8 @@ import { BsHeart } from "react-icons/bs";
 import { Context } from "../../../Contexts/Context";
 
 function FillCart() {
-  const {
-    cartItems,
-    cartQuantity,
-    deleteItem,
-    clearTheCart,
-    changeProductQuantity,
-  } = useContext(Context);
+  const { cartItems, cartQuantity, deleteItem, clearTheCart, changeQuantity } =
+    useContext(Context);
 
   return (
     <div className={styles.fillCart}>
@@ -38,7 +33,7 @@ function FillCart() {
               item={item}
               deleteItem={deleteItem}
               clearTheCart={clearTheCart}
-              changeProductQuantity={changeProductQuantity}
+              changeQuantity={changeQuantity}
             />
           ))}
         </div>

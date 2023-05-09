@@ -114,19 +114,19 @@ function App() {
   });
 
   function addItem(item) {
-    const newItemIndex = cartItems.findIndex(
+    const cartItemsCopy = cartItems.map((item) => ({ ...item }));
+
+    const newItemIndex = cartItemsCopy.findIndex(
       (element) => element._id === item._id
     );
 
     if (newItemIndex === -1) {
-      setCartItems([...cartItems, { ...item }]);
+      setCartItems([...cartItemsCopy, { ...item }]);
     } else {
-      let newArr = [...cartItems];
+      cartItemsCopy[newItemIndex].quantity =
+        cartItemsCopy[newItemIndex].quantity + item.quantity;
 
-      newArr[newItemIndex].quantity =
-        newArr[newItemIndex].quantity + item.quantity;
-
-      setCartItems(newArr);
+      setCartItems(cartItemsCopy);
     }
     notify("Product(s) added to cart!");
     setCartQuantity(cartQuantity + item.quantity);
@@ -148,7 +148,7 @@ function App() {
       Math.round((cartValue + parseFloat(newPrice) * quantity) * 100) / 100
     );
 
-    if (oldPrice !== 0) {
+    if (oldPrice) {
       setCartSave(
         Math.round(
           (cartSave +
@@ -164,13 +164,41 @@ function App() {
       Math.round((cartValue - parseFloat(newPrice) * quantity) * 100) / 100
     );
 
-    if (oldPrice !== 0) {
+    if (oldPrice) {
       setCartSave(
         Math.round(
           (cartSave -
             (parseFloat(oldPrice) - parseFloat(newPrice)) * quantity) *
             100
         ) / 100
+      );
+    }
+  }
+
+  function changeQuantity(e, id) {
+    const cartItemsCopy = cartItems.map((item) => ({ ...item }));
+    const foundIndex = cartItemsCopy.findIndex(
+      (item, index) => item._id === id
+    );
+    const previousQuantity = cartItemsCopy[foundIndex].quantity;
+    cartItemsCopy[foundIndex].quantity = parseInt(e.target.value);
+
+    const currentQuantity = cartItemsCopy[foundIndex].quantity;
+    setCartItems(cartItemsCopy);
+    setCartQuantity(cartQuantity + currentQuantity - previousQuantity);
+    // appendPrice(item.price, item.oldPrice, item.quantity);
+
+    if (currentQuantity > previousQuantity) {
+      appendPrice(
+        cartItemsCopy[foundIndex].price,
+        cartItemsCopy[foundIndex].oldPrice,
+        Math.abs(currentQuantity - previousQuantity)
+      );
+    } else if (currentQuantity < previousQuantity) {
+      subtractPrice(
+        cartItemsCopy[foundIndex].price,
+        cartItemsCopy[foundIndex].oldPrice,
+        Math.abs(currentQuantity - previousQuantity)
       );
     }
   }
@@ -331,7 +359,7 @@ function App() {
         logOut,
         clearTheCart,
         addOrder,
-
+        changeQuantity,
         isLogIn,
         cartItems,
         cartValue,
