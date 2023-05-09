@@ -34,7 +34,6 @@ import {
   Protected,
   ViewCart,
   AccountContent,
-  OrderDetails,
   Summary,
   PaymentSuccess,
   PaymentCanceled,
