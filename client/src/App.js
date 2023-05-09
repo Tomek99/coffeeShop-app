@@ -186,7 +186,6 @@ function App() {
     const currentQuantity = cartItemsCopy[foundIndex].quantity;
     setCartItems(cartItemsCopy);
     setCartQuantity(cartQuantity + currentQuantity - previousQuantity);
-    // appendPrice(item.price, item.oldPrice, item.quantity);
 
     if (currentQuantity > previousQuantity) {
       appendPrice(
