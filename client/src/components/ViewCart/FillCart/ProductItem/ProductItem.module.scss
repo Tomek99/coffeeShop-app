@@ -48,7 +48,30 @@
     }
 
     .selectMate {
+      position: relative;
+      border: var(--border);
+      border-radius: 16px;
+
+      &:focus {
+        border-radius: 16px 16px 0 0;
+      }
+
       .dropdownEl {
+        background-color: var(--black);
+        color: #fff;
+        border: none;
+        border-radius: 16px;
+        padding: 6px;
+        cursor: pointer;
+
+        :focus {
+          border-radius: 16px 16px 0 0 !important;
+        }
+
+        option {
+          text-align: center;
+          cursor: pointer;
+        }
       }
     }
 

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LoaderSpinner component 1`] = `
+<div>
+  <span
+    aria-label="Loading Spinner"
+    data-testid="loader"
+    style="width: 150px; height: 150px; border-radius: 100%; border: 2px solid; border-bottom-color: transparent; display: inline-block; animation: react-spinners-ClipLoader-clip 0.75s 0s infinite linear; animation-fill-mode: both;"
+  />
+</div>
+`;

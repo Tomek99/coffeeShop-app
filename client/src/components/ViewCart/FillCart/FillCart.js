@@ -18,9 +18,6 @@ function FillCart() {
             Cart {`(${cartQuantity})`}
           </header>
           <div className={styles.buttons}>
-            <button>
-              <BsHeart size={18} /> <p>Save as list</p>
-            </button>
             <button onClick={clearTheCart}>
               <ImBin size={18} /> <p>Clear the cart</p>
             </button>

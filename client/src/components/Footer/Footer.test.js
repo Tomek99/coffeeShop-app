@@ -1,5 +1,4 @@
 import { render, within, screen } from "@testing-library/react";
-import user from "@testing-library/user-event";
 import Footer from "./Footer";
 import { MemoryRouter } from "react-router-dom";
 

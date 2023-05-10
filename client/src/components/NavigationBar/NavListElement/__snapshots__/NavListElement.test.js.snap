@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NavListElement component 1`] = `
+<div>
+  <li
+    class="NavListElement"
+  >
+    <a
+      href="/test"
+    >
+      test
+    </a>
+  </li>
+</div>
+`;

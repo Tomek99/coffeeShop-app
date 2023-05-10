@@ -34,7 +34,7 @@ function ProductItem({ item, deleteItem, changeQuantity }) {
           >
             {Array.from({ length: 9 }, (v, i) => (
               <option key={i} value={i + 1}>
-                {i + 1}
+                {i + 1 === 9 ? "9+" : i + 1}
               </option>
             ))}
           </select>
@@ -43,12 +43,6 @@ function ProductItem({ item, deleteItem, changeQuantity }) {
           <button onClick={() => deleteItem(_id, price, oldPrice)}>
             <ImBin size={18} />
           </button>
-          <button>
-            <BsHeart size={18} />
-          </button>
-        </div>
-        <div className={styles.btnDisplay}>
-          <BtnDots />
         </div>
       </div>
     </div>

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render FieldComponent component 1`] = `
+<div>
+  <div>
+    <input
+      class="inputText"
+      name="firstName"
+      placeholder="first name"
+      type="text"
+      value=""
+    />
+    <div
+      class="errorComponent"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render FooterOrder component 1`] = `
+<div>
+  <div>
+    <input
+      class="inputText"
+      name="firstName"
+      placeholder="first name"
+      type="text"
+      value=""
+    />
+    <div
+      class="errorComponent"
+    />
+  </div>
+</div>
+`;

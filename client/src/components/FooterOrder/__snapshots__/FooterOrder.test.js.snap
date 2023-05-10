@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render FooterOrder component 1`] = `
+<div>
+  <div
+    class="FooterOrder"
+  >
+    <div
+      class="flexColumn"
+    >
+      <div
+        class="columnLeft"
+      >
+        <div
+          class="divAsk"
+        >
+          <p>
+            Do you have any questions?
+          </p>
+          <p>
+            <span
+              style="display: flex; align-items: center; gap: 5px;"
+            >
+              <svg
+                fill="currentColor"
+                height="20"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"
+                />
+              </svg>
+               24 242 24 24
+            </span>
+          </p>
+        </div>
+        <div
+          class="divStatue"
+        >
+          <a
+            href="/"
+          >
+            Statute
+          </a>
+          <a
+            href="/"
+          >
+            Privacy policy
+          </a>
+        </div>
+      </div>
+      <div
+        class="columnRight"
+      >
+        <p
+          class="dataOwner"
+        >
+          The administrator of your personal data is coffeShop sp. z o.o. based in Jarosław, 25 XYZ St., 00-000 Jaroslaw.
+          <button
+            class="BtnMore"
+            type="button"
+          >
+            More
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

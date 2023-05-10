@@ -22,7 +22,7 @@ function Cart({ isCartOpen, handleCart }) {
         handleBtn={handleCart}
         isCart={true}
       />
-      {cartItems.length > 0 ? (
+      {cartItems.length ? (
         <div className={styles.products}>
           {cartItems.map((item, index) => (
             <CartList key={index} item={item} />

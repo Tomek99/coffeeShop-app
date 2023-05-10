@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../Contexts/Context";
 import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
@@ -8,11 +8,13 @@ import RatingsStars from "../RatingStars/RatingStars";
 
 function LatestProduct({ item }) {
   const { _id, imageUrl, name, price, oldPrice, rate, intensity } = item;
-  const { addItem, products, addWishItem, wishList } = useContext(Context);
-
-  let findProduct = products.find((product) => product._id === _id);
-  findProduct.oldPrice = findProduct.oldPrice === null ? 0 : oldPrice;
-  findProduct.quantity = 1;
+  const { addItem, addWishItem, wishList } = useContext(Context);
+  // products,
+  // let findProduct = products.find((product) => product._id === _id);
+  // findProduct.oldPrice = findProduct.oldPrice === null ? 0 : oldPrice;
+  // findProduct.quantity = 1;
+  // console.log(item);
+  // console.log(findProduct);
 
   let foundWishProduct = wishList.find((value) => {
     if (value === _id) return true;
@@ -31,7 +33,7 @@ function LatestProduct({ item }) {
           <BsFillEyeFill />
         </button>
 
-        <button onClick={() => addItem(findProduct)}>
+        <button onClick={() => addItem(item)}>
           <BsCartFill />
         </button>
         <button
