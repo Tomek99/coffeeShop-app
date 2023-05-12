@@ -27,7 +27,6 @@
     "formik": "^2.2.9",
     "hunspell-spellchecker": "^1.0.2",
     "modern-normalize": "^1.1.0",
-    "node-sass": "^8.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -51,6 +50,8 @@
     "react-whatsapp": "^0.3.0",
     "react-whatsapp-widget": "^2.2.0",
     "redux": "^4.2.0",
+    "style-loader": "^3.3.2",
+    "swiper": "^9.3.1",
     "typo-js": "^1.2.2",
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.4",
@@ -83,6 +84,7 @@
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.5.1",
+    "cypress": "^12.12.0",
     "eslint": "^8.28.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -90,6 +92,8 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "jest-watch-typeahead": "^0.6.5"
+    "jest-watch-typeahead": "^0.6.5",
+    "node-sass": "^8.0.0",
+    "sass-loader": "^13.2.2"
   }
 }

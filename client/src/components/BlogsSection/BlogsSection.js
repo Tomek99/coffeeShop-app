@@ -1,18 +1,41 @@
-import React from "react";
-import styles from "./BlogsSection.module.scss";
+import React, { useRef } from "react";
+import "./BlogsSection.scss";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import LatestBlog from "./LatestBlog/LatestBlog";
-import Blog from "../../data/blog.json";
+import blogs from "../../data/blog.json";
 import PropTypes from "prop-types";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper";
 
 function BlogsSection() {
   return (
-    <div className={styles.BlogsSection} id="blogsSection">
+    <div className="blogsSection" id="blogsSection">
       <HeaderSection firstWord="our" secondWord="news" />
-      <div className={styles.blogs}>
-        {Blog.slice(0, 3).map((item, index) => (
-          <LatestBlog key={index} item={item} />
-        ))}
+      <div className="blogs">
+        <Swiper
+          slidesPerView={"auto"}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 10000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay, Pagination]}
+          className="mySwiper"
+        >
+          {blogs.map((item, index) => (
+            <SwiperSlide style={{ width: "auto" }}>
+              <LatestBlog key={index} item={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
@@ -22,3 +45,11 @@ BlogsSection.propTypes = {
 };
 
 export default BlogsSection;
+
+{
+  /* <div className={styles.blogs}>
+{Blog.slice(0, 3).map((item, index) => (
+  <LatestBlog key={index} item={item} />
+))}
+</div> */
+}
