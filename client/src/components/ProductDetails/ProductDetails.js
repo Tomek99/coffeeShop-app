@@ -10,39 +10,37 @@ import PropTypes from "prop-types";
 import BtnAddWishList from "../Buttons/BtnAddWishList/BtnAddWishList";
 import BtnAddCart from "../Buttons/BtnAddCart/BtnAddCart";
 import BtnPlusMinus from "../Buttons/BtnPlusMinus/BtnPlusMinus";
+import axios from "axios";
+import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const productId = useParams();
   const navigate = useNavigate();
 
-  const { addItem, products, loading, addWishItem } = useContext(Context);
-
+  const { addItem, addWishItem } = useContext(Context);
+  const [productData, setProductData] = useState({});
+  const [loading, setLoading] = useState(true);
   // Protected route if the route is not exist
+
+  console.log("hi");
   useEffect(() => {
-    asyncCall();
-  });
-
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
-  async function asyncCall() {
-    await sleep();
-
-    await products.find((item) => {
-      if (item._id === productId.id) navigate("/products");
-      return true;
-    });
-  }
-
-  const thisProduct = products.find((item) => {
-    return item._id === productId.id;
-  });
+    axios
+      .get(`http://localhost:5000/api/products/product-details/${productId.id}`)
+      .then((response) => {
+        const productDetails = response.data;
+        if (productDetails._id) {
+          setLoading(false);
+          setProductData(response.data);
+        } else {
+          navigate("/products");
+        }
+      });
+  }, [productId, navigate]);
 
   const onClickAddToCart = () => {
-    thisProduct.quantity = quantity;
-    addItem(thisProduct);
+    productData.quantity = quantity;
+    addItem(productData);
   };
 
   const increaseAmount = () => {
@@ -64,22 +62,20 @@ function ProductDetails() {
   return (
     <div className={styles.ProductDetails}>
       {loading ? (
-        <div style={{ marginTop: "150px" }}>
-          <ClipLoader color="var(--main-color" size={150} />
-        </div>
+        <LoaderSpinner loading={loading} />
       ) : (
         <>
           <div className={styles.productDetailsSection}>
             <div className={styles.productDetailsImage}>
-              <img src={thisProduct.imageUrl} alt="Img" />
+              <img src={productData.imageUrl} alt="Img" />
             </div>
             <div className={styles.productDetailsContent}>
-              <h1>{thisProduct.name}</h1>
+              <h1>{productData.name}</h1>
               <p>
-                ${thisProduct.price}
-                {thisProduct.oldPrice ? ` $${thisProduct.oldPrice}` : null}
+                ${productData.price}
+                {productData.oldPrice ? ` $${productData.oldPrice}` : null}
               </p>
-              <p>country of origin:{thisProduct.origin} </p>
+              <p>country of origin:{productData.origin} </p>
               <p>Weight: 500g</p>
               <div className={styles.productDetailsContentButtons}>
                 <div className={styles.productQuantity}>

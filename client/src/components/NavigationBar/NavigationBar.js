@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
 import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
-import PopupSearch from "../PopupSearch/PopupSearch";
+import SearchEngine from "../SearchEngine/SearchEngine";
 import Cart from "../Cart/Cart";
 import PropTypes from "prop-types";
 import PopupUserNav1 from "../PopupUserNav/PopupUserNav1/PopupUserNav1";
@@ -66,7 +66,11 @@ function NavigationBar() {
         <div className={styles.navBar}>
           <div className={styles.divLogo}>
             <Link to="/">
-              <img src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png" className={styles.logo} alt="Logo" />
+              <img
+                src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png"
+                className={styles.logo}
+                alt="Logo"
+              />
             </Link>
           </div>
           <nav>
@@ -81,7 +85,7 @@ function NavigationBar() {
               <BsSearch size={30} color={"#fff"} />
             </button>
 
-            <PopupSearch
+            <SearchEngine
               isSearchOpen={isSearchOpen}
               handleSearch={handleSearch}
             />

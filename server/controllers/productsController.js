@@ -6,6 +6,11 @@ const getProducts = asyncHandler(async (req, res) => {
   res.status(200).json(products);
 });
 
+const getProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findById(req.params.id);
+  res.status(200).send(product);
+});
+
 const setProduct = asyncHandler(async (req, res) => {
   const product = await Product.create({
     imageUrl: req.body.imageUrl,
@@ -29,5 +34,6 @@ const setProduct = asyncHandler(async (req, res) => {
 
 module.exports = {
   getProducts,
+  getProduct,
   setProduct,
 };

@@ -4,27 +4,27 @@ const userSchema = mongoose.Schema(
   {
     firstName: {
       type: String,
-      require: [true, "Please add a text value"],
+      required: [true, "Please add a text value"],
     },
     lastName: {
       type: String,
-      require: [true, "Please add a text value"],
+      required: [true, "Please add a text value"],
     },
     email: {
       type: String,
-      require: true,
+      required: true,
     },
     password: {
       type: String,
-      require: true,
+      required: true,
     },
     number: {
       type: String,
-      require: false,
+      required: false,
     },
     loggedDevices: {
       type: Array,
-      require: true,
+      required: true,
     },
     orders: {
       type: mongoose.Schema.Types.ObjectId,

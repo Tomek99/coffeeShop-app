@@ -1,28 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-import styles from "./PopupSearch.module.scss";
+import styles from "./SearchEngine.module.scss";
 import PropTypes from "prop-types";
 import BtnClose from "../Buttons/BtnClose/BtnClose";
 import { Context } from "../../Contexts/Context";
 import FilterItem from "./FilterItem/FilterItem";
-import Spellchecker from "hunspell-spellchecker";
 
-function PopupSearch({ isSearchOpen, handleSearch }) {
+function SearchEngine({ isSearchOpen, handleSearch }) {
   const { products } = useContext(Context);
   const [filteredList, setFilteredList] = useState([]);
   const [value, setValue] = useState("");
-
-  // const INFNITE_NUMBERS = 12;
-  // const ACCURCY = 0.25;
-  // let products_name = products.map(function (i) {
-  //   return i.name;
-  // });
-
-  // console.log(
-  //   difflb.getCloseMatches("Caffe", products_name, INFNITE_NUMBERS, ACCURCY)
-  // );
-
-  // var is_spelled_correctly = dictionary.check("dog");
-  // console.log(is_spelled_correctly);
 
   function filterBySearch(e) {
     const query = e.target.value;
@@ -82,9 +68,9 @@ function PopupSearch({ isSearchOpen, handleSearch }) {
   );
 }
 
-PopupSearch.propTypes = {
+SearchEngine.propTypes = {
   isSearchOpen: PropTypes.bool,
   handleSearch: PropTypes.func,
 };
 
-export default PopupSearch;
+export default SearchEngine;
