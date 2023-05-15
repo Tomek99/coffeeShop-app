@@ -41,6 +41,9 @@ import {
 } from "./components";
 
 function App() {
+  /*----------- location ----------- */
+  const location = useLocation();
+
   /*----------- products ----------- */
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -78,6 +81,7 @@ function App() {
   function logIn(data) {
     setIsLogIn(true);
     setUser(data);
+    notify("You have been logged in!");
     localStorage.clear(); // TEST
     localStorage.setItem("user-data", JSON.stringify(data));
     localStorage.setItem("is-logged", true);
@@ -86,6 +90,7 @@ function App() {
   function logOut() {
     setIsLogIn(false);
     setUser({});
+    notify("You have been logged out!");
     localStorage.clear();
   }
 
@@ -212,7 +217,11 @@ function App() {
     localStorage.setItem("cart-value", 0);
     localStorage.setItem("cart-save", 0);
 
-    notify("Cart has been cleared!");
+    console.log(window.location.href);
+    console.log(`${process.env.REACT_APP_URI}/order/success`);
+
+    if (window.location.href !== `${process.env.REACT_APP_URI}/order/success`)
+      notify("Cart has been cleared!");
   }
   useEffect(() => {
     localStorage.setItem("cart-save", cartSave);
@@ -322,9 +331,6 @@ function App() {
     setOrder(orderUpdate);
     localStorage.setItem("order", JSON.stringify(orderUpdate));
   }
-
-  /*----------- location ----------- */
-  const location = useLocation();
 
   /*----------- notification ----------- */
 

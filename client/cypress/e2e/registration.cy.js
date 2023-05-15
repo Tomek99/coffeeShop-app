@@ -24,6 +24,5 @@ it("should create new account", () => {
   cy.get(":nth-child(2) > .CheckBoxGroup_inputCheckbox__rw-L1").click();
   cy.get(".SignUpForm_btnSignUp__w9PrY").click({ force: true });
 
-  const isHomePage = "http://localhost:3000/";
-  cy.url().should("eq", isHomePage);
+  cy.get(".Toastify__toast-body > :nth-child(2)").should("exist");
 });

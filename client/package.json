@@ -19,6 +19,7 @@
     "assert": "^2.0.0",
     "axios": "^1.2.3",
     "bcrypt": "^5.1.0",
+    "cypress-plugin-stripe-elements": "^1.0.2",
     "damerau-levenshtein-js": "^1.1.8",
     "difflib": "^0.2.4",
     "dotenv": "^16.0.3",
