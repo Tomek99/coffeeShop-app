@@ -69,7 +69,7 @@ function Orders() {
           </div>
           {orderData.length > 5 ? (
             <Pagination
-              pageCount={pageCount}
+              pageCount={pageCount + 1}
               handleChangePage={handleChangePage}
             />
           ) : null}

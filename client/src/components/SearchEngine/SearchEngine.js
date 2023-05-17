@@ -59,9 +59,13 @@ function SearchEngine({ isSearchOpen, handleSearch }) {
       </div>
       <div className={styles.filteredProducts}>
         <div className={styles.flexRowTemplate}>
-          {filteredList.map((item, index) => (
-            <FilterItem item={item} key={index} clearSearch={clearSearch} />
-          ))}
+          {filteredList.length ? (
+            filteredList.map((item, index) => (
+              <FilterItem item={item} key={index} clearSearch={clearSearch} />
+            ))
+          ) : value.length > 2 ? (
+            <p style={{ fontSize: "1.3rem" }}>No results</p>
+          ) : null}
         </div>
       </div>
     </div>

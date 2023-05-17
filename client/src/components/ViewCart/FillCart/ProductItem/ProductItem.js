@@ -23,7 +23,7 @@ function ProductItem({ item, deleteItem, changeQuantity }) {
       </div>
       <div className={styles.rightSide}>
         <div className={styles.price}>
-          <p>{oldPrice !== 0 ? `$${oldPrice}` : null}</p>
+          <p>{oldPrice ? `$${oldPrice}` : null}</p>
           <p>${price}</p>
         </div>
         <div className={styles.selectMate}>

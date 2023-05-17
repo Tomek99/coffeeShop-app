@@ -4,7 +4,11 @@ import styles from "./BtnPurchasePay.module.css";
 
 function BtnPurchasePay({ handleCheckout }) {
   return (
-    <button onClick={handleCheckout} className={styles.BtnPurchasePay}>
+    <button
+      type="submit"
+      onClick={handleCheckout}
+      className={styles.BtnPurchasePay}
+    >
       Purchase and pay
     </button>
   );
