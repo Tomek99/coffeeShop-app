@@ -25,7 +25,7 @@ function Cart({ isCartOpen, handleCart }) {
       {cartItems.length ? (
         <div className={styles.products}>
           {cartItems.map((item, index) => (
-            <CartList key={index} item={item} />
+            <CartList key={index} item={item} imBinId={`imBinIdCart${index}`} />
           ))}
         </div>
       ) : (

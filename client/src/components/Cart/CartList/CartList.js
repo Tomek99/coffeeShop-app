@@ -3,8 +3,9 @@ import { Context } from "../../../Contexts/Context";
 import { ImBin } from "react-icons/im";
 import styles from "./CartList.module.scss";
 import PropTypes from "prop-types";
+import BtnDeleteProduct from "../../Buttons/BtnDeleteProduct/BtnDeleteProduct";
 
-function BasketList({ item }) {
+function BasketList({ item, imBinId }) {
   const { _id, name, imageUrl, price, oldPrice, quantity } = item;
 
   const { deleteItem } = useContext(Context);
@@ -22,12 +23,13 @@ function BasketList({ item }) {
         </p>
       </div>
       <span>{quantity}</span>
-      <button
-        className={styles.btnDeleteProduct}
-        onClick={() => deleteItem(_id, price, oldPrice)}
-      >
-        <ImBin size={18} />
-      </button>
+      <BtnDeleteProduct
+        handleBtn={deleteItem}
+        id={_id}
+        price={price}
+        oldPrice={oldPrice}
+        imBinId={imBinId}
+      />
     </div>
   );
 }

@@ -75,25 +75,6 @@
       }
     }
 
-    .buttons {
-      display: flex;
-
-      button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        border-radius: 50%;
-        color: #fff;
-        background-color: transparent;
-        cursor: pointer;
-
-        &:hover {
-          background-color: var(--grey);
-        }
-      }
-    }
-
     .btnDisplay {
       display: none;
     }

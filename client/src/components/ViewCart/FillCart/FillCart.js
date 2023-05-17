@@ -31,6 +31,7 @@ function FillCart() {
               deleteItem={deleteItem}
               clearTheCart={clearTheCart}
               changeQuantity={changeQuantity}
+              imBinId={`imBinIdViewCart${index}`}
             />
           ))}
         </div>

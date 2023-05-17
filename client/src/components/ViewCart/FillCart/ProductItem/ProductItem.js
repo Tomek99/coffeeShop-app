@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./ProductItem.module.scss";
 import { ImBin } from "react-icons/im";
-import { BsHeart, BsThreeDotsVertical } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import BtnDots from "../../../Buttons/BtnDots/BtnDots";
+import BtnDeleteProduct from "../../../Buttons/BtnDeleteProduct/BtnDeleteProduct";
 
-function ProductItem({ item, deleteItem, changeQuantity }) {
+function ProductItem({ item, deleteItem, changeQuantity, imBinId }) {
   const { _id, name, imageUrl, oldPrice, price, quantity } = item;
 
   const navigate = useNavigate();
@@ -39,11 +38,14 @@ function ProductItem({ item, deleteItem, changeQuantity }) {
             ))}
           </select>
         </div>
-        <div className={styles.buttons}>
-          <button onClick={() => deleteItem(_id, price, oldPrice)}>
-            <ImBin size={18} />
-          </button>
-        </div>
+
+        <BtnDeleteProduct
+          handleBtn={deleteItem}
+          id={_id}
+          price={price}
+          oldPrice={oldPrice}
+          imBinId={imBinId}
+        />
       </div>
     </div>
   );

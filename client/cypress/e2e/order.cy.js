@@ -21,8 +21,16 @@ it("should create new account", () => {
     cy.get(`#cartFillId${randomNumber}`).click({ force: true });
   }
 
-  // Navigate to viewCart component and delete first product in cart
+  // Navigate to viewCart component and delete random product in viewCart
   cy.get("#ViewCart").click({ force: true });
+  cy.get(".FillCart_items__5fPud")
+    .find(".ProductItem_Item__Wrqrs")
+    .then(($products) => {
+      // get random product in the viewCart
+      const productNumber = Math.floor(Math.random() * $products.length) + 0;
+      cy.get(`#imBinIdViewCart${productNumber}`).click({ force: true });
+    });
+
   cy.get("a[href='/cart']").contains("View my cart").click();
   cy.get("a[href='/order']").click();
 
@@ -48,8 +56,7 @@ it("should create new account", () => {
   // Navigate to success page
   cy.get(".SubmitButton-IconContainer").click();
 
-  const element = cy
-    .wait(20000)
+  cy.wait(20000)
     .get(".PaymentSuccess_PaymentSuccessful__KkTI7")
     .should("exist")
     .and("have.text", "Payment Successful!");
