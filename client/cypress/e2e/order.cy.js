@@ -7,7 +7,6 @@ it("should create new account", () => {
   cy.visit("http://localhost:3000/log-in");
 
   // Login to account
-
   cy.get('input[name="email"]').type(login_data.email);
   cy.get('input[name="password"]').type(login_data.password);
   cy.get(".LogIn_btnSignIn__Ow5dR").click();
@@ -18,15 +17,13 @@ it("should create new account", () => {
   // Add random products to cart
   const amountProducts = Math.floor(Math.random() * 5) + 2;
   for (let index = 0; index < amountProducts; index++) {
-    const randomNumber = Math.floor(Math.random() * 12) + 1;
-    cy.get(
-      `:nth-child(${randomNumber}) > .LatestProduct_iconsSection__qbt3\\+ > :nth-child(2)`
-    ).click({ force: true });
+    const randomNumber = Math.floor(Math.random() * 12) + 0;
+    cy.get(`#cartFillId${randomNumber}`).click({ force: true });
   }
 
-  // Navigate to viewCart component and delete first product
-  cy.get(".NavigationBar_btnSection__ehXll > :nth-child(7)").click();
-  cy.get("a[href='/cart']").click();
+  // Navigate to viewCart component and delete first product in cart
+  cy.get("#ViewCart").click({ force: true });
+  cy.get("a[href='/cart']").contains("View my cart").click();
   cy.get("a[href='/order']").click();
 
   // Complete deliver and payment data
@@ -50,7 +47,10 @@ it("should create new account", () => {
 
   // Navigate to success page
   cy.get(".SubmitButton-IconContainer").click();
-  cy.wait(20000)
+
+  const element = cy
+    .wait(20000)
     .get(".PaymentSuccess_PaymentSuccessful__KkTI7")
-    .should("exist");
+    .should("exist")
+    .and("have.text", "Payment Successful!");
 });

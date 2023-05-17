@@ -46,7 +46,11 @@ function Products() {
               {products
                 .slice(pagesVisited, pagesVisited + PRODUCTS_PER_PAGE)
                 .map((item, index) => (
-                  <LatestProduct key={index} item={item} />
+                  <LatestProduct
+                    key={index}
+                    item={item}
+                    cartFillId={`cartFillId${index}`}
+                  />
                 ))}
             </div>
             <div className={styles.productPagination}>

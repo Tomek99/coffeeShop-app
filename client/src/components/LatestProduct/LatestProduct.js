@@ -6,15 +6,9 @@ import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
-function LatestProduct({ item }) {
+function LatestProduct({ item, cartFillId }) {
   const { _id, imageUrl, name, price, oldPrice, rate, intensity } = item;
   const { addItem, addWishItem, wishList } = useContext(Context);
-  // products,
-  // let findProduct = products.find((product) => product._id === _id);
-  // findProduct.oldPrice = findProduct.oldPrice === null ? 0 : oldPrice;
-  // findProduct.quantity = 1;
-  // console.log(item);
-  // console.log(findProduct);
 
   let foundWishProduct = wishList.find((value) => {
     if (value === _id) return true;
@@ -33,7 +27,7 @@ function LatestProduct({ item }) {
           <BsFillEyeFill />
         </button>
 
-        <button onClick={() => addItem(item)}>
+        <button onClick={() => addItem(item)} id={cartFillId}>
           <BsCartFill />
         </button>
         <button

@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 function BtnCart({ handleCart }) {
   return (
-    <Link className={styles.btnCheckoutNow} to="/cart" onClick={handleCart}>
+    <Link
+      className={styles.btnCheckoutNow}
+      id="ViewCart"
+      to="/cart"
+      onClick={handleCart}
+    >
       View my cart
     </Link>
   );
