@@ -41,7 +41,7 @@ function SearchEngine({ isSearchOpen, handleSearch }) {
       }
     >
       <div className={styles.divFlexEnd}>
-        <BtnClose handleBtn={handleSearch} />
+        <BtnClose handleBtn={handleSearch} btnId="btn-close-searcher" />
       </div>
       <div className={styles.searchWrapper}>
         <label htmlFor="search-form">

@@ -6,23 +6,14 @@ it("should create new account", () => {
   const email = "test12312@GoMail.com";
   const password = "Test122@k";
 
-  cy.get(":nth-child(1) > .FieldComponent_inputText__GNSZj")
-    .type(name)
-    .wait(500);
-  cy.get(":nth-child(2) > .FieldComponent_inputText__GNSZj")
-    .type(lastName)
-    .wait(500);
-  cy.get(":nth-child(3) > .FieldComponent_inputText__GNSZj")
-    .type(email)
-    .wait(500);
-  cy.get(":nth-child(4) > .FieldComponent_inputText__GNSZj")
-    .type(password)
-    .wait(500);
-  cy.get(":nth-child(5) > .FieldComponent_inputText__GNSZj")
-    .type(password)
-    .wait(500);
-  cy.get(":nth-child(2) > .CheckBoxGroup_inputCheckbox__rw-L1").click();
-  cy.get(".SignUpForm_btnSignUp__w9PrY").click({ force: true });
+  cy.get("input[name='firstName']").type(name);
+  cy.get("input[name='lastName']").type(lastName);
+  cy.get("input[name='email']").type(email);
+  cy.get("input[name='password']").type(password);
+  cy.get("input[name='passwordConfirmation']").type(password);
+
+  cy.get("input[name='checkAll']").click();
+  cy.get("button[type='submit'").click({ force: true });
 
   cy.get(".Toastify__toast-body > :nth-child(2)").should("exist");
 });

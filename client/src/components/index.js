@@ -35,3 +35,7 @@ export { default as ProtectedOrder } from "./Protected/ProtectedOrder";
 export { default as LogIn } from "./LogIn/LogIn";
 export { default as SignUp } from "./SignUp/SignUp";
 export { default as RecoverPassword } from "./RecoverPassword/RecoverPassword";
+export { default as ArticleOverview } from "./BlogComponents/ArticleOverview/ArticleOverview";
+export { default as CarouselArticles } from "./BlogComponents/CarouselArticles/CarouselArticles";
+export { default as Categories } from "./BlogComponents/Categories/Categories";
+export { default as RecentPosts } from "./BlogComponents/RecentPosts/RecentPosts";

@@ -6,15 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./Contexts/Context";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
-import {
-  Home,
-  Articles,
-  Products,
-  Reviews,
-  AboutUs,
-  Account,
-  Wish,
-} from "./pages";
+import { Home, Blog, Products, Reviews, AboutUs, Account, Wish } from "./pages";
 import {
   NavigationBar,
   NavigationBarOrder,
@@ -414,8 +406,7 @@ function App() {
           <Route path="products/:id" element={<ProductDetails />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />
-          <Route path="articles" element={<Articles />} />
-          <Route path="blog" element={<Articles />} />
+          <Route path="blog" element={<Blog />} />
 
           <Route
             path="log-in"

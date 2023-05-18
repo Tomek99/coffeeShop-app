@@ -81,7 +81,11 @@ function NavigationBar() {
             />
           </nav>
           <div className={styles.btnSection}>
-            <button className={styles.btnDisplay} onClick={handleSearch}>
+            <button
+              className={styles.btnDisplay}
+              onClick={handleSearch}
+              id="bs-search"
+            >
               <BsSearch size={30} color={"#fff"} />
             </button>
 
