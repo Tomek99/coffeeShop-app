@@ -22,5 +22,11 @@
     align-items: center;
     gap: 50px;
     cursor: pointer;
+
+    .spanContent {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
   }
 }

@@ -11,13 +11,13 @@ function CarouselArticle() {
         alt="articleImg"
       />
       <div className={styles.articleContent}>
-        <span>
+        <span className={styles.spanContent}>
           {" "}
           <AiOutlineCalendar size={15} />
           Oct 08, 2023
         </span>
         <h1> 5 reasons why you should drink coffee in the morning</h1>
-        <span>
+        <span className={styles.spanContent}>
           {" "}
           <AiOutlineUserAdd size={15} />
           Adam Nowak
