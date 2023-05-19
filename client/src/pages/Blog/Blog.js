@@ -12,8 +12,10 @@ function Blog() {
     <div className={styles.Blog}>
       <CarouselArticles />
       <div className={styles.divInfo}>
-        <RecentPosts />
-        <Categories />
+        <div className={styles.divSticky}>
+          <RecentPosts />
+          <Categories />
+        </div>
       </div>
       <div className={styles.divArticles}>
         <ArticleOverview />

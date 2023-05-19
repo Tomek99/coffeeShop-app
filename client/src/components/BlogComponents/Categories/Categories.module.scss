@@ -1,0 +1,49 @@
+.Categories {
+  color: #fff;
+  background-color: var(--black);
+  padding: 20px 15px;
+  border-radius: 12px;
+
+  .categoriesHeader {
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border-bottom: var(--border);
+  }
+
+  .categoriesList {
+    font-size: 1.3rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      align-self: flex-start;
+      position: relative;
+      transition: 0.3s linear;
+      cursor: pointer;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 0;
+        height: 2px;
+        background: var(--main-color);
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        transition: 0.3s linear;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+}

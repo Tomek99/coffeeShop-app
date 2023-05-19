@@ -1,0 +1,19 @@
+.RecentPosts {
+  color: #fff;
+  background-color: var(--black);
+  padding: 20px 15px;
+  border-radius: 12px;
+
+  .postsHeader {
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border-bottom: var(--border);
+  }
+  .divPosts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -21,6 +21,13 @@
 
   .divInfo {
     grid-area: c;
-    background-color: purple;
+
+    .divSticky {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }

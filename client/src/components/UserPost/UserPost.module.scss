@@ -1,0 +1,23 @@
+.UserPost {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+
+  .userImage {
+    max-width: 65px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  .userContent {
+    font-size: 1.3rem;
+    color: #fff;
+
+    .postData {
+      color: var(--main-color);
+    }
+  }
+}
