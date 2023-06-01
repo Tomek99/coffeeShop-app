@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import CartSummary from "./CartSummary/CartSummary";
 import styles from "./FillCart.module.scss";
-import Item from "./Item/Item";
+import ProductItem from "./ProductItem/ProductItem";
 import { ImBin } from "react-icons/im";
 import { BsHeart } from "react-icons/bs";
 import { Context } from "../../../Contexts/Context";
 
 function FillCart() {
-  const { cartItems, cartQuantity, deleteItem, clearTheCart } =
+  const { cartItems, cartQuantity, deleteItem, clearTheCart, changeQuantity } =
     useContext(Context);
 
   return (
@@ -18,9 +18,6 @@ function FillCart() {
             Cart {`(${cartQuantity})`}
           </header>
           <div className={styles.buttons}>
-            <button>
-              <BsHeart size={18} /> <p>Save as list</p>
-            </button>
             <button onClick={clearTheCart}>
               <ImBin size={18} /> <p>Clear the cart</p>
             </button>
@@ -28,16 +25,18 @@ function FillCart() {
         </div>
         <div className={styles.items}>
           {cartItems.map((item, index) => (
-            <Item
+            <ProductItem
               key={index}
               item={item}
               deleteItem={deleteItem}
               clearTheCart={clearTheCart}
+              changeQuantity={changeQuantity}
+              imBinId={`imBinIdViewCart${index}`}
             />
           ))}
         </div>
       </div>
-      <div className={styles.cartSummary}>
+      <div className={styles.divSticky}>
         <CartSummary path="/order" text="Checkout" />
       </div>
     </div>

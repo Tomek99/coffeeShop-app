@@ -1,0 +1,14 @@
+.btnAddCart {
+  flex-grow: 1;
+  font-size: 1.7rem;
+  padding: 10px 40px;
+  background-color: var(--main-color);
+  color: #fff;
+  text-transform: none;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+
+.btnAddCart:hover {
+  background-color: #ce9754;
+}

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component 1`] = `
+<div>
+  <div
+    class="AboutSection"
+    id="aboutSection"
+  >
+    <header
+      class="headerSection"
+    >
+      <span>
+        about
+      </span>
+       
+      <span>
+        us
+      </span>
+    </header>
+    <div
+      class="divRow"
+    >
+      <img
+        alt="AboutImg"
+        src="/images/about-img.jpeg"
+      />
+      <div
+        class="textArea"
+      >
+        <h1>
+          What makes our coffee special?
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip.
+        </p>
+        <br />
+        <p>
+          Lorfffem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+        </p>
+        <br />
+        <a
+          href="/about-us"
+        >
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

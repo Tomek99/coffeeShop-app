@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./Feedback.module.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import RatingsStars from "../../../RatingStars/RatingStars";
+import BtnDots from "../../../Buttons/BtnDots/BtnDots";
+import BtnFeedback from "../../../Buttons/BtnFeedback/BtnFeedback";
 
 function Feedback() {
   return (
@@ -21,14 +23,12 @@ function Feedback() {
         </div>
       </div>
       <div className={styles.divRowSecond}>
-        <button className={styles.btnDots}>
-          <BsThreeDotsVertical size={20} />
-        </button>
+        <BtnDots />
         <div className={styles.rating}>
           <RatingsStars size="large" rate={null} name="no-value" tab={1} />
         </div>
 
-        <button className={styles.btnFeedback}>Give feedback</button>
+        <BtnFeedback />
       </div>
     </div>
   );

@@ -4,51 +4,51 @@ const productSchema = mongoose.Schema(
   {
     imageUrl: {
       type: String,
-      require: [true, "Add imageurl"],
+      required: [true, "Add imageurl"],
     },
     name: {
       type: String,
-      require: [true, "Add name"],
+      required: [true, "Add name"],
     },
-    newPrice: {
+    price: {
       type: String,
-      require: [true, "Add newPrice"],
+      required: [true, "Add newPrice"],
     },
     oldPrice: {
       type: String,
-      require: false,
+      required: false,
     },
     quantity: {
       type: Number,
-      require: [true, "Add quantity"],
+      required: [true, "Add quantity"],
     },
     origin: {
       type: String,
-      require: [true, "Add origin"],
+      required: [true, "Add origin"],
     },
     brand: {
       type: String,
-      require: [true, "Add brand"],
+      required: [true, "Add brand"],
     },
     intensity: {
       type: Number,
-      require: [true, "Add intensity"],
+      required: [true, "Add intensity"],
     },
     type: {
       type: String,
-      require: [true, "Add type"],
+      required: [true, "Add type"],
     },
     weight: {
       type: String,
-      require: true,
+      required: true,
     },
     rate: {
       type: Number,
-      require: [true, "Add rate"],
+      required: [true, "Add rate"],
     },
     available: {
       type: Boolean,
-      require: false,
+      required: false,
     },
   },
   {

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render RegisterReference component 1`] = `
+<div>
+  <div
+    class="RegisterReference"
+  >
+    <header>
+      Don't have an account yet?
+    </header>
+    <a
+      class="btnReference"
+      href="/sign-up"
+    >
+      Create an account
+    </a>
+    <button />
+  </div>
+</div>
+`;

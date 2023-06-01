@@ -1,0 +1,31 @@
+.Blog {
+  max-width: 1366px;
+  width: 100%;
+  margin: 20px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "a a a a"
+    "b b b c";
+  gap: 20px;
+
+  .divArticles {
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .divInfo {
+    grid-area: c;
+
+    .divSticky {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

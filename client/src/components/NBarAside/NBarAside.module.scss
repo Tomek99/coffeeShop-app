@@ -1,4 +1,4 @@
-.basketBar {
+.cartBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -8,12 +8,16 @@
     background-color: var(--black);
     font-size: 2rem;
     margin-bottom: 20px;
-    padding: 0 30px;
+    padding: 0 30px 0 15px;
     border-bottom: var(--border);
+
+    .spanTitle {
+        color: #fff;
+    }
 }
 
 @media (max-width: 900px) {
-    .basketBar {
+    .cartBar {
         height: 76px;
     }
 }

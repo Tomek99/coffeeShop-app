@@ -1,19 +1,12 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import MessengerCustomerChat from "react-messenger-customer-chat";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
 import { Context } from "./Contexts/Context";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
-import {
-  Home,
-  Articles,
-  Products,
-  Menu,
-  Reviews,
-  AboutUs,
-  Account,
-  Wish,
-} from "./pages";
+import { Home, Blog, Products, Reviews, AboutUs, Account, Wish } from "./pages";
 import {
   NavigationBar,
   NavigationBarOrder,
@@ -33,13 +26,15 @@ import {
   Protected,
   ViewCart,
   AccountContent,
-  OrderDetails,
   Summary,
+  PaymentSuccess,
+  PaymentCanceled,
+  ProtectedOrder,
 } from "./components";
 
 function App() {
-  /*----------- orders ----------- */
-  const [orders, setOrders] = useState([]);
+  /*----------- location ----------- */
+  const location = useLocation();
 
   /*----------- products ----------- */
   const [products, setProducts] = useState([]);
@@ -48,9 +43,15 @@ function App() {
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      const products = await axios.get("http://localhost:5000/api/products");
-      setLoading(false);
-      setProducts(products.data);
+      try {
+        const products = await axios.get(
+          `${process.env.REACT_APP_API_URI}/api/products`
+        );
+        setLoading(false);
+        setProducts(products.data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchData();
   }, []);
@@ -72,6 +73,7 @@ function App() {
   function logIn(data) {
     setIsLogIn(true);
     setUser(data);
+    notify("You have been logged in!");
     localStorage.clear(); // TEST
     localStorage.setItem("user-data", JSON.stringify(data));
     localStorage.setItem("is-logged", true);
@@ -80,6 +82,7 @@ function App() {
   function logOut() {
     setIsLogIn(false);
     setUser({});
+    notify("You have been logged out!");
     localStorage.clear();
   }
 
@@ -107,23 +110,23 @@ function App() {
   });
 
   function addItem(item) {
-    const newItemIndex = cartItems.findIndex(
+    const cartItemsCopy = cartItems.map((item) => ({ ...item }));
+
+    const newItemIndex = cartItemsCopy.findIndex(
       (element) => element._id === item._id
     );
 
     if (newItemIndex === -1) {
-      setCartItems([...cartItems, { ...item }]);
+      setCartItems([...cartItemsCopy, { ...item }]);
     } else {
-      let newArr = [...cartItems];
+      cartItemsCopy[newItemIndex].quantity =
+        cartItemsCopy[newItemIndex].quantity + item.quantity;
 
-      newArr[newItemIndex].quantity =
-        newArr[newItemIndex].quantity + item.quantity;
-
-      setCartItems(newArr);
+      setCartItems(cartItemsCopy);
     }
-
+    notify("Product(s) added to cart!");
     setCartQuantity(cartQuantity + item.quantity);
-    appendPrice(item.newPrice, item.oldPrice, item.quantity);
+    appendPrice(item.price, item.oldPrice, item.quantity);
   }
 
   function deleteItem(id, newPrice, oldPrice) {
@@ -133,6 +136,7 @@ function App() {
     setCartItems(cartList);
     setCartQuantity(cartQuantity - findItem[0].quantity);
     subtractPrice(newPrice, oldPrice, findItem[0].quantity);
+    notify("Product(s) has been removed!");
   }
 
   function appendPrice(newPrice, oldPrice, quantity) {
@@ -140,7 +144,7 @@ function App() {
       Math.round((cartValue + parseFloat(newPrice) * quantity) * 100) / 100
     );
 
-    if (oldPrice !== 0) {
+    if (oldPrice) {
       setCartSave(
         Math.round(
           (cartSave +
@@ -156,13 +160,40 @@ function App() {
       Math.round((cartValue - parseFloat(newPrice) * quantity) * 100) / 100
     );
 
-    if (oldPrice !== 0) {
+    if (oldPrice) {
       setCartSave(
         Math.round(
           (cartSave -
             (parseFloat(oldPrice) - parseFloat(newPrice)) * quantity) *
             100
         ) / 100
+      );
+    }
+  }
+
+  function changeQuantity(e, id) {
+    const cartItemsCopy = cartItems.map((item) => ({ ...item }));
+    const foundIndex = cartItemsCopy.findIndex(
+      (item, index) => item._id === id
+    );
+    const previousQuantity = cartItemsCopy[foundIndex].quantity;
+    cartItemsCopy[foundIndex].quantity = parseInt(e.target.value);
+
+    const currentQuantity = cartItemsCopy[foundIndex].quantity;
+    setCartItems(cartItemsCopy);
+    setCartQuantity(cartQuantity + currentQuantity - previousQuantity);
+
+    if (currentQuantity > previousQuantity) {
+      appendPrice(
+        cartItemsCopy[foundIndex].price,
+        cartItemsCopy[foundIndex].oldPrice,
+        Math.abs(currentQuantity - previousQuantity)
+      );
+    } else if (currentQuantity < previousQuantity) {
+      subtractPrice(
+        cartItemsCopy[foundIndex].price,
+        cartItemsCopy[foundIndex].oldPrice,
+        Math.abs(currentQuantity - previousQuantity)
       );
     }
   }
@@ -177,6 +208,12 @@ function App() {
     localStorage.setItem("cart-quantity", 0);
     localStorage.setItem("cart-value", 0);
     localStorage.setItem("cart-save", 0);
+
+    console.log(window.location.href);
+    console.log(`${process.env.REACT_APP_URI}/order/success`);
+
+    if (window.location.href !== `${process.env.REACT_APP_URI}/order/success`)
+      notify("Cart has been cleared!");
   }
   useEffect(() => {
     localStorage.setItem("cart-save", cartSave);
@@ -186,96 +223,190 @@ function App() {
   }, [cartValue, cartQuantity, cartItems, cartSave]);
 
   /*----------- wishList ----------- */
-  const [wishList, setWishList] = useState([]);
+  const [wishList, setWishList] = useState(() => {
+    const storedValue = localStorage.getItem("wishList");
 
-  function addItemWishList(item) {
-    setWishList([...wishList, { ...item }]);
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return [];
+  });
+
+  function addWishItem(id) {
+    const foundId = wishList.find((value) => value === id);
+
+    if (!foundId) {
+      setWishList([...wishList, id]);
+      localStorage.setItem("wishList", JSON.stringify([...wishList, id]));
+
+      notify("Product added to wish list!");
+    } else {
+      const filteredItems = wishList.filter((value) => value !== id);
+      setWishList(filteredItems);
+      localStorage.setItem("wishList", JSON.stringify(filteredItems));
+
+      notify("Product has been deleted!");
+    }
   }
 
   /*----------- order ----------- */
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState(() => {
+    const storedValue = localStorage.getItem("order");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return {};
+  });
 
-  function addOrder() {
-    const dateObj = new Date();
-    const day = dateObj.getUTCDate();
-    const month = dateObj.getUTCMonth() + 1;
-    const year = dateObj.getUTCFullYear();
+  function addOrder(order) {
+    const address = {
+      name: order.name,
+      street: order.street,
+      house: order.house,
+      ZIP_code: order.ZIP_code,
+      city: order.city,
+      number: order.number,
+      email: order.email,
+    };
 
-    // "idNumber": 700005588955,
-    setOrder({
+    const company = {
+      companyNip: order.companyNip,
+      companyName: order.companyName,
+      companyStreet: order.companyStreet,
+      companyZIPcode: order.companyZIPcode,
+      companyCity: order.companyCity,
+    };
+
+    let invoice = {
+      name: order.i_name,
+      street: order.i_street,
+      ZIP_code: order.i_ZIP_code,
+      city: order.i_city,
+    };
+    if (order.i_name) {
+      invoice = {
+        name: order.i_name,
+        street: order.i_street,
+        ZIP_code: order.i_ZIP_code,
+        city: order.i_city,
+      };
+    } else {
+      invoice = {
+        name: order.name,
+        street: order.street,
+        ZIP_code: order.ZIP_code,
+        city: order.city,
+      };
+    }
+    const orderUpdate = {
+      // userOrdersId: user.orders,
+      userOrdersId: user.orders,
       save: cartSave,
-      totalCost: cartValue,
+      cartValue: cartValue,
+      totalCost:
+        cartValue +
+        JSON.parse(order.deliveryFee) +
+        JSON.parse(order.paymentFee),
       supplyPrice: 15,
-      date: `${day} ${month} ${year}`,
-      status: "Completed",
-      deliver: "??????",
-      payment: "??????",
-      recipient: {
-        fullName: "Tomasz Skupień",
-        number: "123 123 213",
-        email: "test@gmail.com",
-      },
-      address: {
-        street: "Rokietnica",
-        house: "3232A",
-        city: "Rokietnica",
-        zip_code: "37-562",
-        extraInfo: "",
-      },
-      invoice: {
-        fullName: "Tomasz Skupień",
-        homeAdress: "595A",
-        postalAddress: "37-562",
-        city: "Rokietnica",
-      },
       products: cartItems,
-    });
+      address: address,
+      company: company,
+      invoice: invoice,
+      payment: order.payment,
+      paymentFee: order.paymentFee,
+      delivery: order.delivery,
+      deliveryFee: order.deliveryFee,
+      shopper: order.shopper,
+      comment: order.comment,
+      activeAddress: order.activeAddress,
+      activeCompany: order.activeCompany,
+      activeInvoice: order.activeInvoice,
+      activeComment: order.activeComment,
+    };
+
+    setOrder(orderUpdate);
+    localStorage.setItem("order", JSON.stringify(orderUpdate));
   }
 
-  /*----------- location ----------- */
-  const location = useLocation();
+  /*----------- notification ----------- */
+
+  const notify = (text) =>
+    toast.success(text, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
+  /*----------- navigate on Summary ----------- */
+  const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
+
+  function handleUserNavigateToSummary() {
+    setIsUserNavigateToSummary(true);
+  }
+
   return (
     <Context.Provider
       value={{
         addItem,
         deleteItem,
-        addItemWishList,
+        addWishItem,
         logIn,
         logOut,
         clearTheCart,
         addOrder,
+        changeQuantity,
         isLogIn,
         cartItems,
         cartValue,
         cartSave,
         cartQuantity,
+        wishList,
         products,
         user,
         loading,
-        orders,
+        order,
       }}
     >
       {(() => {
         switch (location.pathname) {
           case "/order":
           case "/order/summary":
+          case "/order/success":
+          case "/order/canceled":
             return <NavigationBarOrder />;
+
           default:
-            return <NavigationBar basketQuantity={cartQuantity} />;
+            return <NavigationBar />;
         }
       })()}
       <section className="columnWeb">
+        <div className="absoluteDivApp">
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+          <MessengerCustomerChat
+            pageId="109980154081140"
+            appId="1174144033276048"
+          />
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
-
-          <Route path="menu" element={<Menu />} />
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetails />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />
-          <Route path="articles" element={<Articles />} />
-          <Route path="blog" element={<Articles />} />
+          <Route path="blog" element={<Blog />} />
 
           <Route
             path="log-in"
@@ -312,7 +443,7 @@ function App() {
           >
             <Route path="account" element={<AccountContent />} />
             <Route path="orders" element={<Orders />} />
-            <Route path="orders/:id" element={<OrderDetails />} />
+            {/* <Route path="orders/:id" element={<OrderDetails />} /> */}
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />
             <Route path="address" element={<Address />} />
@@ -322,12 +453,32 @@ function App() {
           <Route
             path="order"
             element={
-              <Protected isLogIn={cartItems.length} navigate="/cart">
-                <Order />
+              <ProtectedOrder
+                isLogIn={isLogIn}
+                cartItemsLen={cartItems.length}
+                navigate="/log-in"
+              >
+                <Order
+                  handleUserNavigateToSummary={handleUserNavigateToSummary}
+                />
+              </ProtectedOrder>
+            }
+          />
+
+          <Route
+            path="order/summary"
+            element={
+              <Protected isLogIn={isUserNavigateToSummary} navigate="/order">
+                <Summary />
               </Protected>
             }
           />
-          <Route path="order/summary" element={<Summary />} />
+
+          <Route
+            path="order/success"
+            element={<PaymentSuccess clearTheCart={clearTheCart} />}
+          />
+          <Route path="order/canceled" element={<PaymentCanceled />} />
 
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
@@ -338,6 +489,9 @@ function App() {
         switch (location.pathname) {
           case "/order":
           case "/order/summary":
+          case "/cart":
+          case "/order/success":
+          case "/order/canceled":
             return <FooterOrder />;
 
           default:

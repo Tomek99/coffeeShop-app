@@ -17,7 +17,6 @@ function AboutUsNavList({ switchTab, tabNumber }) {
             key={index}
             item={item}
             switchTab={switchTab}
-            activeStyle={styles.activeStyle}
             tabNumber={tabNumber}
           />
         ))}

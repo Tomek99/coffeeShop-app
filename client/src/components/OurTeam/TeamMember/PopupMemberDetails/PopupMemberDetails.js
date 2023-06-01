@@ -1,27 +1,17 @@
 import React from "react";
 import styles from "./PopupMemberDetails.module.scss";
-import { GrTwitter } from "react-icons/gr";
 import { VscChromeClose } from "react-icons/vsc";
 import PropTypes from "prop-types";
+import BtnTwitter from "../../../Buttons/BtnTwitter/BtnTwitter";
 
 function PopupMemberDetails(props) {
-  const { id, url, name, position, text, showDetails, isActive } = props;
+  const { id, url, name, position, text, handleShowMember } = props;
   return (
-    <div
-      className={
-        isActive
-          ? `${styles.PopupMemberDetails} ${styles.active}`
-          : styles.PopupMemberDetails
-      }
-    >
+    <div className={styles.PopupMemberDetails}>
       <div className={styles.memberDetails}>
         <div className={styles.imgMemberSection}>
           <img src={url} alt={id} className={styles.imgMember} />
-          <a href="http://twitter.com" className={styles.btnFollowOnTwitter}>
-            {" "}
-            <GrTwitter className={styles.btnIconTwitter} />
-            <span>Follow on twitter</span>
-          </a>
+          <BtnTwitter />
         </div>
         <div className={styles.memberContent}>
           <div>
@@ -30,7 +20,7 @@ function PopupMemberDetails(props) {
           </div>
           <p>{text}</p>
         </div>
-        <button onClick={showDetails} className={styles.btnClose}>
+        <button onClick={() => handleShowMember()} className={styles.btnClose}>
           <VscChromeClose className={styles.btnIcon} />
         </button>
       </div>
@@ -44,7 +34,6 @@ PopupMemberDetails.propTypes = {
   name: PropTypes.string,
   position: PropTypes.string,
   text: PropTypes.string,
-  showDetails: PropTypes.func,
-  isActive: PropTypes.bool,
+  handleShowMember: PropTypes.func,
 };
 export default PopupMemberDetails;

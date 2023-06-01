@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render cart component 1`] = `
+<div>
+   
+  <div
+    class="PopupBasket"
+  >
+    <div
+      class="cartBar"
+    >
+      <span>
+        Cart 
+        <span
+          style="color: rgb(56, 179, 42);"
+        >
+          (1 items)
+        </span>
+      </span>
+      <button
+        class="btnClose"
+      >
+        <svg
+          fill="currentColor"
+          height="30"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="30"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="products"
+    >
+      <div
+        class="SingleProduct"
+      >
+        <img
+          alt="Caffe Crema Dolce, 1 kg"
+          src="https://res.cloudinary.com/dvoduabha/image/upload/v1679902516/coffee/lavazza/beans/2_CaffeCremaDolce1kg_ovwzh9.png"
+        />
+        <div
+          class="productDetails"
+        >
+          <h2>
+            Caffe Crema Dolce, 1 kg
+          </h2>
+          <p>
+            <span
+              class="newPrice"
+            >
+              $
+              15.50
+               
+            </span>
+            <span
+              class="oldPrice"
+            >
+               
+            </span>
+          </p>
+        </div>
+        <span>
+          2
+        </span>
+        <button
+          class="btnDeleteProduct"
+        >
+          <svg
+            fill="currentColor"
+            height="18"
+            stroke="currentColor"
+            stroke-width="0"
+            version="1.1"
+            viewBox="0 0 16 16"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 5v10c0 0.55 0.45 1 1 1h9c0.55 0 1-0.45 1-1v-10h-11zM5 14h-1v-7h1v7zM7 14h-1v-7h1v7zM9 14h-1v-7h1v7zM11 14h-1v-7h1v7z"
+            />
+            <path
+              d="M13.25 2h-3.25v-1.25c0-0.412-0.338-0.75-0.75-0.75h-3.5c-0.412 0-0.75 0.338-0.75 0.75v1.25h-3.25c-0.413 0-0.75 0.337-0.75 0.75v1.25h13v-1.25c0-0.413-0.338-0.75-0.75-0.75zM9 2h-3v-0.987h3v0.987z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="summary"
+    >
+      <a
+        class="btnCheckoutNow"
+        href="/cart"
+      >
+        View my cart
+      </a>
+      <p
+        class="bill"
+        style="color: rgb(56, 179, 42);"
+      >
+        Save: 
+        <span
+          class="price"
+        >
+          $
+          0.00
+        </span>
+      </p>
+      <p
+        class="bill"
+      >
+        Total cost:
+        <span
+          class="price"
+        >
+          $
+          0.00
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+`;

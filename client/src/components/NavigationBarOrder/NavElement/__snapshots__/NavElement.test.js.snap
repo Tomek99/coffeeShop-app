@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NavElement component 1`] = `
+<div>
+  <div
+    class="NavElement"
+  >
+    <li
+      class="LiElement"
+    >
+      <a
+        class="link disabledLink"
+        href="/test"
+      >
+        <span
+          style="margin-bottom: 3px;"
+        >
+          <span
+            class="dot"
+          >
+            gsr21r21r
+          </span>
+        </span>
+        <span
+          style="color: rgb(204, 204, 204);"
+        >
+          test
+        </span>
+      </a>
+    </li>
+  </div>
+</div>
+`;

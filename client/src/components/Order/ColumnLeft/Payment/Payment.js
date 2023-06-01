@@ -1,36 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import HeadingThree from "../../../HeadingThree/HeadingThree";
 import styles from "./Payment.module.scss";
 import input_payment_data from "../../../../data/input_payment_data.json";
-import InputRadioShopper from "../InputRadio/InputRadio";
-import { RiQuestionMark } from "react-icons/ri";
+import InputRadio from "../InputRadio/InputRadio";
+import PropTypes from "prop-types";
+import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
-function Payment({ handlePayment, payment }) {
-  const icons = [
-    <RiQuestionMark size={25} />,
-    <RiQuestionMark size={25} />,
-    <RiQuestionMark size={25} />,
-    <RiQuestionMark size={25} />,
-    <RiQuestionMark size={25} />,
-  ];
+function Payment({ activePayment, handlePayment, setFieldValue }) {
+  function handleFieldValue(id, index, fee) {
+    handlePayment(index);
+    setFieldValue("paymentFee", fee);
+  }
 
   return (
     <div className={styles.Payment}>
       <HeadingThree title="Payment" />
       <fieldset className={styles.fieldsetInputs}>
         {input_payment_data.map((item, index) => (
-          <InputRadioShopper
+          <InputRadio
             item={item}
-            index={index}
             key={index}
-            option={payment}
-            handleInput={handlePayment}
-            icon={icons[index]}
+            index={index}
+            activeIndex={activePayment}
+            handleFieldValue={handleFieldValue}
           />
         ))}
       </fieldset>
+      <ErrMessage name="payment" />
     </div>
   );
 }
-
+Payment.propTypes = {
+  activePayment: PropTypes.number,
+  handlePayment: PropTypes.func,
+  setFieldValue: PropTypes.func,
+};
 export default Payment;

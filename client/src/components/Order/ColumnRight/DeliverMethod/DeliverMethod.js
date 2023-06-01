@@ -2,8 +2,9 @@ import React from "react";
 import { BsTruck } from "react-icons/bs";
 import { TfiPackage } from "react-icons/tfi";
 import styles from "./DeliverMethod.module.scss";
+import PropTypes from "prop-types";
 
-function DeliverMethod({ deliver }) {
+function DeliverMethod({ delivery }) {
   return (
     <div className={styles.DeliverMethod}>
       <div className={styles.divContent}>
@@ -12,23 +13,7 @@ function DeliverMethod({ deliver }) {
         </div>
         <div className={styles.divText}>
           <p className={styles.pOne}>Delivery method:</p>
-          <p>
-            {" "}
-            {(() => {
-              switch (deliver) {
-                case "0":
-                  return "Carrier – InPost, UPS, FedEx, DTS, PickPack";
-                case "1":
-                  return "Pickup at coffe-shop showroom";
-                case "2":
-                  return "Package locker";
-                case "3":
-                  return "Collection at point - Żabka, Poczta Polska and others";
-                default:
-                  return null;
-              }
-            })()}
-          </p>
+          <p>{delivery}</p>
         </div>
       </div>
       <div className={styles.divContent}>
@@ -44,4 +29,7 @@ function DeliverMethod({ deliver }) {
   );
 }
 
+DeliverMethod.propTypes = {
+  delivery: PropTypes.string,
+};
 export default DeliverMethod;

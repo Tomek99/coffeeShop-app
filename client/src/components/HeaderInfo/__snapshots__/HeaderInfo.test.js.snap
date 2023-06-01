@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render FooterOrder component 1`] = `
+<div>
+  <header
+    class="HeaderInfo"
+  >
+    TEST
+  </header>
+</div>
+`;
+
+exports[`should render HeaderInfo component 1`] = `
+<div>
+  <header
+    class="HeaderInfo"
+  >
+    TEST
+  </header>
+</div>
+`;

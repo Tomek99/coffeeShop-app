@@ -2,3 +2,21 @@ node_modules
 build
 test
 .env
+
+
+
+# Cypress specific files to ignore
+.cypress/
+.cache/
+.output/
+.trash/
+
+# Videos, screenshots and other reports
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+
+# Other generated files
+cypress/fixtures/
+cypress/downloads/
+cypress/logs/

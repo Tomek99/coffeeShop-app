@@ -1,55 +1,32 @@
 .PopupMemberDetails {
-    display: none;
+    display: block;
     position: fixed;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    backdrop-filter: blur(5px);
+    width: 100%;
+    max-width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--black);
+    z-index: 110;
 
     .memberDetails {
         display: flex;
-        position: relative;
-        background-color: var(--black);
-        height: 100%;
-        max-height: 450px;
+        justify-content: center;
+        align-items: center;
 
         .imgMemberSection {
+            max-width: 300px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             gap: 30px;
-            background-color: var(--bg);
 
             .imgMember {
                 max-width: 300px;
-                max-height: 300px;
-            }
-
-            .btnFollowOnTwitter {
-                display: flex;
-                gap: 10px;
-                background-color: var(--main-color);
-                color: #fff;
-                font-weight: 1000;
-                font-size: 1.3rem;
-                padding: 10px 30px 10px 15px;
-                margin-bottom: 10px;
-                border-radius: 16px;
-                cursor: pointer;
-
-                .btnIconTwitter {
-                    font-size: 1.5rem;
-                }
-                span {
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                }
-            }
-            .btnFollowOnTwitter:hover {
-                background-color: #ce9754;
+                width: 100%;
+                height: auto;
             }
         }
 
@@ -58,9 +35,9 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-around;
-            background-color: var(--black);
+            max-width: 500px;
+            width: 100%;
             gap: 1rem;
-            max-width: 300px;
             padding: 10px 30px;
 
             div {
@@ -76,8 +53,8 @@
             p {
                 text-align: justify;
                 font-weight: 300;
-                font-size: 1.2rem;
-                height: 300px;
+                font-size: 1.4rem;
+                max-height: 300px;
                 padding: 0.5rem;
                 color: #ccc;
                 overflow: scroll;
@@ -91,52 +68,58 @@
             justify-content: center;
             align-items: center;
             background-color: var(--main-color);
-            top: -1.5rem;
-            right: -1.5rem;
+            top: -15px;
+            right: -15px;
             width: 4rem;
             height: 4rem;
             border-radius: 50%;
             cursor: pointer;
+
+            &:hover {
+                background-color: #ce9754;
+            }
 
             .btnIcon {
                 font-size: 2.5rem;
                 color: #fff;
             }
         }
-        .btnClose:hover {
-            background-color: #ce9754;
-        }
     }
 }
 
-.PopupMemberDetails.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@media (max-width: 850px) {
+    .PopupMemberDetails {
+        max-width: 500px;
+    }
 
-@media (max-width: 700px) {
     .memberDetails {
         flex-direction: column;
     }
 
-    .PopupMemberDetails.active {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 2.5rem;
+    .btnClose {
+        top: 5px !important;
+        right: 5px !important;
     }
 }
 
 @media (max-width: 375px) {
-    .memberDetails {
-        flex-direction: column;
-    }
+    .PopupMemberDetails {
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
 
-    .PopupMemberDetails.active {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 2.5rem;
+        .imgMemberSection {
+            position: absolute;
+            top: 90%;
+
+            .imgMember {
+                position: absolute;
+                top: -110px !important;
+                width: 100px !important;
+                border-radius: 50%;
+            }
+        }
     }
 }

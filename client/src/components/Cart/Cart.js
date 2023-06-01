@@ -3,11 +3,12 @@ import styles from "./Cart.module.scss";
 import CartList from "./CartList/CartList";
 import PropTypes from "prop-types";
 import NBarAside from "../NBarAside/NBarAside";
-import { Link } from "react-router-dom";
 import { Context } from "../../Contexts/Context";
+import BtnCart from "../Buttons/BtnCart/BtnCart";
 
 function Cart({ isCartOpen, handleCart }) {
   const { cartItems, cartValue, cartSave, cartQuantity } = useContext(Context);
+
   return (
     <div
       className={
@@ -17,14 +18,14 @@ function Cart({ isCartOpen, handleCart }) {
       }
     >
       <NBarAside
-        basketQuantity={cartQuantity}
+        cartQuantity={cartQuantity}
         handleBtn={handleCart}
-        isAccount={false}
+        isCart={true}
       />
-      {cartItems.length > 0 ? (
+      {cartItems.length ? (
         <div className={styles.products}>
           {cartItems.map((item, index) => (
-            <CartList key={index} item={item} />
+            <CartList key={index} item={item} imBinId={`imBinIdCart${index}`} />
           ))}
         </div>
       ) : (
@@ -37,9 +38,7 @@ function Cart({ isCartOpen, handleCart }) {
       )}
 
       <div className={styles.summary}>
-        <Link className={styles.btnCheckoutNow} to="/cart" onClick={handleCart}>
-          View my cart
-        </Link>
+        <BtnCart handleCart={handleCart} />
 
         <p className={styles.bill} style={{ color: "#38b32a" }}>
           Save: <span className={styles.price}>${cartSave.toFixed(2)}</span>

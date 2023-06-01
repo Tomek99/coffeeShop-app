@@ -1,13 +1,12 @@
 import React from "react";
 import styles from "./ParagraphElement.module.scss";
 
-function ParagraphElement({ item, icon }) {
-  const { name } = item;
+function ParagraphElement({ text, icon }) {
   return (
     <div className={styles.ParagraphElement}>
       <p>
         {icon}
-        {name}
+        {text}
       </p>
     </div>
   );

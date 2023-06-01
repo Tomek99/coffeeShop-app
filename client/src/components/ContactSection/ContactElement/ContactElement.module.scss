@@ -1,0 +1,18 @@
+.ContactElement {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  .title {
+    font-weight: 500;
+    font-size: 1.7rem;
+    color: var(--main-color);
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

@@ -5,34 +5,72 @@
     align-items: center;
     color: #fff;
 
-    .customerReview {
-        max-width: 900px;
-        width: 100%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        gap: 10px;
+    .wrapperDiv {
+        position: relative;
+
+        .carouselDiv {
+            max-width: 1366px;
+            width: 100%;
+            overflow: hidden;
+
+            .innerDiv {
+                display: inline-flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 25px;
+                padding: 5px;
+                transition: transform 0.3s;
+            }
+        }
+
+        .indicators {
+            opacity: 0;
+            transition: 0.3s linear;
+        }
+    }
+
+    &:hover .indicators {
+        opacity: 1;
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .customerReview {
-        max-width: 560px !important;
-        flex-direction: column !important;
+@media (max-width: 1380px) {
+    .carouselDiv {
+        max-width: 1024px !important;
+
+        .innerDiv {
+            gap: 15px !important;
+        }
     }
 }
 
-@media screen and (max-width: 600px) {
-    .customerReview {
-        max-width: 400px !important;
+@media (max-width: 1024px) {
+    .carouselDiv {
+        max-width: 854px !important;
     }
 }
 
-@media screen and (max-width: 400px) {
-    .customerReview {
-        max-width: 270px !important;
-        flex-direction: column !important;
+@media (max-width: 860px) {
+    .carouselDiv {
+        max-width: 640px !important;
+    }
+}
+
+@media (max-width: 642px) {
+    .carouselDiv {
+        max-width: 480px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .carouselDiv {
+        max-width: 425px !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .carouselDiv {
+        max-width: 360px !important;
     }
 }

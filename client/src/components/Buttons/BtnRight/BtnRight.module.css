@@ -1,0 +1,79 @@
+.BtnRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+   
+}
+
+
+.btnIcon {
+    color: #fff;
+}
+
+.BtnRight:hover {
+    background-color: var(--black);
+}
+
+@media (max-width: 1480px) {
+    .BtnRight {
+        right: -20px ;
+    }
+}
+
+
+
+@media (max-width: 1420px) {
+    .BtnRight {
+        right: 0px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .BtnRight {
+        right: -25px ;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    .BtnRight {
+        right: -35px;
+    }
+}
+
+
+@media (max-width: 1080px) {
+    .BtnRight {
+        right: -15px ;
+    }
+}
+
+@media (max-width: 1024px) {
+    .BtnRight {
+        right: -35px ;
+    }
+}
+
+
+@media (max-width: 950px) {
+    .BtnRight {
+        right: -20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .BtnRight {
+        right: 10px;
+    }
+}
+
+

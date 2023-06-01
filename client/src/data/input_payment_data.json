@@ -1,27 +1,37 @@
 [
     {
-        "genericValue": "online_payment",
-        "text": "Online payment",
-        "fee": "Free"
+        "id": "online_payment",
+        "name": "payment",
+        "value": "Online payment",
+        "fee": "0.00",
+        "url": "/images/payment_icons/dotPay.png"
     },
     {
-        "genericValue": "online_payment_card",
-        "text": "Online payment card",
-        "fee": "Free"
+        "id": "online_payment_card",
+        "name": "payment",
+        "value": "Online payment card",
+        "fee": "0.00",
+        "url": "/images/payment_icons/visa.png"
     },
     {
-        "genericValue": "blik",
-        "text": "BLIK",
-        "fee": "Free"
+        "id": "blik",
+        "name": "payment",
+        "value": "BLIK",
+        "fee": "0.00",
+        "url": "/images/payment_icons/blik.png"
     },
     {
-        "genericValue": "traditional_payment",
-        "text": "Traditional payment",
-        "fee": "Free"
+        "id": "traditional_payment",
+        "name": "payment",
+        "value": "Traditional payment",
+        "fee": "0.00",
+        "url": "/images/payment_icons/traditionalPayment.png"
     },
     {
-        "genericValue": "payment_on_delivery",
-        "text": "Payment on delivery",
-        "fee": "Free"
+        "id": "payment_on_delivery",
+        "name": "payment",
+        "value": "Payment on delivery",
+        "fee": "1.50",
+        "url": "/images/payment_icons/paymentOnDelivery.png"
     }
 ]

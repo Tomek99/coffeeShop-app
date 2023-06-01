@@ -1,41 +1,107 @@
 .WishProducts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  background-color: var(--black);
+  border: var(--border);
+  border-radius: 12px;
+  padding: 16px 24px;
+  transition: 0.3s linear;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+
+  .responsiveImg {
+    width: 100%;
+    width: 50px;
+    height: 90px;
+    cursor: pointer;
+  }
+
+  .divContent {
+    flex-grow: 1;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .name {
+      position: relative;
+      transition: 0.3s linear;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+
+    .textContent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      .divPrice {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 10px;
+
+        .oldPrice {
+          color: #ccc;
+          font-size: 1.2rem;
+          text-decoration: line-through;
+        }
+      }
+
+      .available {
+        color: var(--green);
+        border: 1px solid var(--green);
+        border-radius: 16px;
+        padding: 4px 12px;
+      }
+    }
+  }
+
+  .btnSection {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: var(--black);
-    border: var(--border);
-    border-radius: 12px;
-    padding: 16px 24px;
-    transition: 0.3s linear;
-    cursor: pointer;
+    margin-left: 20px;
+  }
+}
 
-    &:hover {
-        box-shadow: var(--shadow);
-    }
+@media (max-width: 750px) {
+  .WishProducts {
+    align-items: center;
 
-    .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+    .divContent {
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: 5px;
 
-        h2 {
-            font-size: 1.6rem;
+      .textContent {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+
+        .divPrice {
+          width: auto !important;
         }
-
-        button {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            background-color: transparent;
-
-            &:hover {
-                background-color: rgb(49, 49, 49);
-            }
-        }
+      }
     }
-    .update {
-        font-size: 1.3rem;
-        color: #ccc;
-    }
+  }
+}
+
+@media (max-width: 480px) {
+  .WishProducts {
+    padding: 12px 8px;
+  }
+  .btnSection {
+    margin-left: auto !important;
+  }
 }

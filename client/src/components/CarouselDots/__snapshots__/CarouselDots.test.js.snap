@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shoulde render CarouselDots component 1`] = `
+<div>
+  <div
+    class="CarouselDots"
+  >
+    <span
+      class="spanDot"
+      data-testid="span-element"
+    />
+    <span
+      class="spanDot"
+      data-testid="span-element"
+    />
+    <span
+      class="spanDot"
+      data-testid="span-element"
+    />
+  </div>
+</div>
+`;

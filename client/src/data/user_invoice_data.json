@@ -1,22 +1,22 @@
 [
     {
         "type": "text",
-        "name": "name",
+        "name": "i_name",
         "placeholder": "Name"
     },
     {
         "type": "text",
-        "name": "street",
-        "placeholder": "Street"
+        "name": "i_street",
+        "placeholder": "Street and number"
     },
     {
         "type": "text",
-        "name": "ZIP_code",
+        "name": "i_ZIP_code",
         "placeholder": "Zip code"
     },
     {
         "type": "text",
-        "name": "city",
+        "name": "i_city",
         "placeholder": "City"
     }
 ]

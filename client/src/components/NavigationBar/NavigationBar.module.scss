@@ -1,6 +1,6 @@
 .NavigationBar {
     position: sticky;
-    top: 0;
+    top: -1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,15 +20,6 @@
                 width: 100%;
                 margin: 5px 0 5px 0;
             }
-        }
-
-        .navMenu {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            list-style-type: none;
-            gap: 20px;
-            font-size: 2rem;
         }
 
         .btnSection {
@@ -76,27 +67,6 @@
 }
 
 @media (max-width: 900px) {
-    .navMenu {
-        position: fixed;
-        left: -100%;
-        top: 76px;
-        flex-direction: column !important;
-        background-color: var(--bg);
-        width: 30%;
-        text-align: center;
-        transition: 0.3s;
-        border-bottom: var(--border);
-        border-right: var(--border);
-
-        .navItem {
-            margin: 16px;
-        }
-    }
-
-    .navMenu.active {
-        left: 0;
-    }
-
     img.logo {
         width: 80% !important;
     }
@@ -111,10 +81,6 @@
     }
     .navBar {
         justify-content: space-evenly !important;
-    }
-
-    .navMenu {
-        width: 40%;
     }
 
     .quantityProductsInBasket {

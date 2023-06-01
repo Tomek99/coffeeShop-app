@@ -7,6 +7,7 @@ import {
 } from "react-icons/bs";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import RatingsStars from "../../../RatingStars/RatingStars";
+import BtnDots from "../../../Buttons/BtnDots/BtnDots";
 
 function Review() {
   return (
@@ -60,9 +61,7 @@ function Review() {
         </div>
       </div>
       <div className={styles.thirdDiv}>
-        <button className={styles.btnDots}>
-          <BsThreeDotsVertical size={20} color="#fff" />
-        </button>
+        <BtnDots />
       </div>
     </div>
   );

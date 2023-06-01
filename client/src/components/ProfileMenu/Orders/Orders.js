@@ -8,14 +8,33 @@ import Filter from "./Filter/Filter";
 import Pagination from "../../Pagination/Pagination";
 import { Context } from "../../../Contexts/Context";
 import HeaderInfo from "../../HeaderInfo/HeaderInfo";
+import axios from "axios";
+import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 
 function Orders() {
-  const { orders } = useContext(Context);
+  const { user } = useContext(Context);
+  const [loading, setLoading] = useState(true);
+  const [orderData, setOrderData] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+    async function fetchData() {
+      const storedValue = await axios.get(
+        `${process.env.REACT_APP_API_URI}/api/orders/user-orders/${user.orders}`
+      );
+      if (storedValue.data.orders) {
+        setOrderData(storedValue.data.orders);
+        setLoading(false);
+      } else setOrderData([]);
+    }
+    fetchData();
+  }, [user.orders]);
+
   const [pageNumber, setPageNumber] = useState(0);
   const navigate = useNavigate();
   const ordersPerPage = 5;
   const pagesVisited = pageNumber * ordersPerPage;
-  const pageCount = Math.round(orders.length / ordersPerPage);
+  const pageCount = Math.round(orderData.length / ordersPerPage);
 
   const handleChangePage = ({ selected }) => {
     setPageNumber(selected);
@@ -37,16 +56,25 @@ function Orders() {
     <>
       <HeaderInfo title="Orders" />
       <Filter />
-      <div className={styles.divOrders}>
-        {orders
-          .slice(pagesVisited, pagesVisited + ordersPerPage)
-          .map((item, index) => (
-            <SingleOrder item={item} key={index} />
-          ))}
-      </div>
-      {orders.length > 5 ? (
-        <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
-      ) : null}
+      {loading ? (
+        <LoaderSpinner loading={loading} />
+      ) : (
+        <div>
+          <div className={styles.divOrders}>
+            {orderData
+              .slice(pagesVisited, pagesVisited + ordersPerPage)
+              .map((item, index) => (
+                <SingleOrder item={item} key={index} />
+              ))}
+          </div>
+          {orderData.length > 5 ? (
+            <Pagination
+              pageCount={pageCount + 1}
+              handleChangePage={handleChangePage}
+            />
+          ) : null}
+        </div>
+      )}
       <Support />
     </>
   );

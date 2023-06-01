@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Content component 1`] = `
+<div>
+  <div
+    class="content"
+  >
+    <header>
+      Test
+    </header>
+    <p>
+      test test test test
+    </p>
+    <a
+      href="#menuSection"
+    >
+      btnTest
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,17 @@
+.BtnAddWishList {
+  /* justify-self: end; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  padding: 10px 0;
+  text-transform: none;
+  background-color: var(--black);
+  color: #fff;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+
+.BtnAddWishList:hover {
+  background-color: var(--light-black);
+}

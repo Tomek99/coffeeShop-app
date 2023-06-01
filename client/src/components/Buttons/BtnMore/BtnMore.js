@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./BtnMore.module.scss";
+import styles from "./BtnMore.module.css";
+import PropTypes from "prop-types";
 
 function BtnMore({ handleBtn }) {
   return (
@@ -8,5 +9,9 @@ function BtnMore({ handleBtn }) {
     </button>
   );
 }
+
+BtnMore.propTypes = {
+  handleBtn: PropTypes.func,
+};
 
 export default BtnMore;

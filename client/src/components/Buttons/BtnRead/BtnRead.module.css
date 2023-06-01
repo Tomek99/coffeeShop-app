@@ -1,0 +1,13 @@
+.BtnRead {
+  background-color: var(--main-color);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 10px 15px;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+
+.BtnRead:hover {
+  background-color: var(--main-color-darken);
+}

@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Benefits component 1`] = `
+<div>
+  <div
+    class="Benefits"
+  >
+    <h1>
+      Why you should create an account on cofee shop
+    </h1>
+    <p>
+      <svg
+        fill="none"
+        height="50"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+          stroke="none"
+        />
+        <path
+          d="M5 8h8.5a2.5 2.5 0 1 0 -2.34 -3.24"
+        />
+        <path
+          d="M3 12h15.5a2.5 2.5 0 1 1 -2.34 3.24"
+        />
+        <path
+          d="M4 16h5.5a2.5 2.5 0 1 1 -2.34 3.24"
+        />
+      </svg>
+       
+      <span>
+        Order faster
+      </span>
+    </p>
+    <p>
+      <svg
+        fill="currentColor"
+        height="50"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 16 16"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"
+        />
+        <path
+          d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"
+        />
+      </svg>
+      <span>
+        Check previous orders
+      </span>
+    </p>
+    <p>
+      <svg
+        fill="currentColor"
+        height="50"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 16 16"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 4.27v7.47c0 .45.3.84.75.97l6.5 1.73c.16.05.34.05.5 0l6.5-1.73c.45-.13.75-.52.75-.97V4.27c0-.45-.3-.84-.75-.97l-6.5-1.74a1.4 1.4 0 0 0-.5 0L1.75 3.3c-.45.13-.75.52-.75.97zm7 9.09l-6-1.59V5l6 1.61v6.75zM2 4l2.5-.67L11 5.06l-2.5.67L2 4zm13 7.77l-6 1.59V6.61l2-.55V8.5l2-.53V5.53L15 5v6.77zm-2-7.24L6.5 2.8l2-.53L15 4l-2 .53z"
+          fill-rule="evenodd"
+        />
+      </svg>
+      <span>
+        Track your order status
+      </span>
+    </p>
+    <p>
+      <svg
+        fill="none"
+        height="50"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+          stroke="none"
+        />
+        <path
+          d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+        />
+        <path
+          d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+        />
+        <path
+          d="M17 17h-11v-14h-2"
+        />
+        <path
+          d="M20 6l-1 7h-13"
+        />
+        <path
+          d="M10 10l6 -6"
+        />
+        <path
+          d="M10.5 4.5m-.5 0a.5 .5 0 1 0 1 0a.5 .5 0 1 0 -1 0"
+        />
+        <path
+          d="M15.5 9.5m-.5 0a.5 .5 0 1 0 1 0a.5 .5 0 1 0 -1 0"
+        />
+      </svg>
+      <span>
+        Benefit from discounts and special bargains
+      </span>
+    </p>
+  </div>
+</div>
+`;

@@ -6,28 +6,25 @@ const invoiceSchema = new mongoose.Schema(
       {
         uniequId: {
           type: String,
-          require: true,
+          required: true,
           unique: true,
         },
         NIP: {
           type: String,
-          require: false,
         },
         name: {
           type: String,
-          require: true,
+          required: true,
         },
         street: {
           type: String,
-          require: false,
         },
         ZIP_code: {
           type: String,
-          require: false,
         },
         city: {
           type: String,
-          require: true,
+          required: true,
         },
       },
     ],

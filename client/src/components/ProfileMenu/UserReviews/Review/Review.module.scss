@@ -93,20 +93,6 @@
             }
         }
     }
-
-    .thirdDiv {
-        .btnDots {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            background-color: transparent;
-
-            &:hover {
-                background-color: var(--grey);
-            }
-        }
-    }
 }
 
 @media (max-width: 520px) {
@@ -155,8 +141,5 @@
         position: absolute;
         top: 10;
         right: 0;
-
-        .btnDots {
-        }
     }
 }

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DesktopNavigation component 1`] = `
+<div>
+  <ul
+    class="DesktopNavigation"
+  >
+    <li
+      class="NavListElement"
+    >
+      <a
+        aria-current="page"
+        class="activeNavLink"
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      class="NavListElement"
+    >
+      <a
+        class="navLink"
+        href="/products"
+      >
+        Products
+      </a>
+    </li>
+    <li
+      class="NavListElement"
+    >
+      <a
+        class="navLink"
+        href="/about-us"
+      >
+        About
+      </a>
+    </li>
+    <li
+      class="NavListElement"
+    >
+      <a
+        class="navLink"
+        href="/contact"
+      >
+        Contact
+      </a>
+    </li>
+    <li
+      class="NavListElement"
+    >
+      <a
+        class="navLink"
+        href="/blog"
+      >
+        Blog
+      </a>
+    </li>
+  </ul>
+</div>
+`;

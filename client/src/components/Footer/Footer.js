@@ -30,23 +30,14 @@ function Footer() {
     <AiOutlineClockCircle size={20} />,
     <BsFillTelephoneFill size={20} />,
     <GoMail size={20} />,
+    <ImLocation2 size={20} />,
     <SlCreditCard size={20} />,
     <RiShoppingBagFill size={20} />,
-    <ImLocation2 size={20} />,
-  ];
-
-  const extraInforamation = [
-    { name: " pon – sob | 10:00 – 20:00" },
-    { name: "123456789" },
-    { name: "contact@xyz.com" },
-    { name: "Litewska 73 | 00-000 Warsaw" },
-    { name: "00 0000 0000 0000 0000 0000 0000" },
-    { name: "NIP 0000000000 | BDO 000000000" },
   ];
 
   return (
     <div className={styles.Footer}>
-      <div className={styles.GridTemplate}>
+      <div className={styles.GridTemplate} data-testid="gridTemplatElements">
         <div className={styles.navMenu}>
           <h6>Company</h6>
           <div className={styles.menuContent}>
@@ -83,7 +74,7 @@ function Footer() {
             <div className={styles.menu}>
               {footer_data.extraInforamation.map((item, index) => (
                 <ParagraphElement
-                  item={item}
+                  text={item.name}
                   key={index}
                   icon={extraInformationIcons[index]}
                 />

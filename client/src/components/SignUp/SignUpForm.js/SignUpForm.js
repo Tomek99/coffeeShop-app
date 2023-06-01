@@ -33,7 +33,7 @@ const validationSchema = Yup.object({
     .required("Required")
     .test("Unique Email", "Email already exists", async (email) => {
       const { data: success } = await axios.post(
-        "http://localhost:5000/api/users/register/validEmail",
+        `${process.env.REACT_APP_API_URI}/api/users/register/validEmail`,
         { email: email }
       );
       return success;
@@ -76,7 +76,7 @@ function SignUpForm() {
     const postData = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/users",
+          `${process.env.REACT_APP_API_URI}/api/users`,
           values
         );
         if (response.status === 200) return true;
@@ -85,12 +85,13 @@ function SignUpForm() {
         return false;
       }
     };
+
     const postRequest = postData();
     const userLogin = { email: values.email, password: values.password };
 
     if (await postRequest) {
       const isSuccess = await axios.post(
-        "http://localhost:5000/api/users/login",
+        `${process.env.REACT_APP_API_URI}/api/users/login`,
         userLogin
       );
       setSubmitting(false);

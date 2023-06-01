@@ -1,0 +1,31 @@
+.TextareaCom {
+  position: relative;
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px 10px 30px 10px;
+    box-sizing: border-box;
+    border-bottom: var(--border);
+    color: #fff;
+    overflow-y: hidden;
+    background-color: var(--bg);
+    font-size: 1.3rem;
+    resize: none;
+
+    line-height: 20px;
+
+    &::placeholder {
+      color: #ccc;
+      opacity: 0.7;
+    }
+  }
+
+  .countLength {
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+    font-size: 1.3rem;
+    color: #ccc;
+  }
+}

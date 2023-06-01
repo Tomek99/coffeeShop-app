@@ -5,11 +5,20 @@ import styles from "./NavListElement.module.scss";
 
 function NavListElement({ isLink, name, path }) {
   return (
-    <li className={styles.NavListElement} key={name}>
+    <li className={styles.NavListElement}>
       {isLink ? (
         <Link to={path}>{name}</Link>
       ) : (
-        <NavLink to={path} className={({ isActive }) => {}}>
+        <NavLink
+          to={path}
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? styles.activeNavLink
+              : styles.navLink
+          }
+        >
           {name}
         </NavLink>
       )}

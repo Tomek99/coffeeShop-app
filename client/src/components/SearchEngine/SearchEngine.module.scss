@@ -1,0 +1,133 @@
+.PopupSearch {
+    position: fixed;
+    top: -800px;
+    left: 0;
+    right: 0;
+    transition: 0.3s linear;
+    z-index: 99;
+    background-color: var(--black);
+    opacity: 0;
+
+    .divFlexEnd {
+        display: flex;
+        justify-content: flex-end;
+        margin: 50px 200px;
+    }
+
+    .searchWrapper {
+        margin: 50px 400px 50px 400px;
+
+        label {
+            display: block;
+
+            .searchInput {
+                width: 100%;
+                background-color: transparent;
+                border-bottom: var(--border);
+                color: #fff;
+                font-size: 2.5rem;
+                padding: 20px 5px;
+
+                &::placeholder {
+                    color: #fff;
+                    opacity: 0.2;
+                }
+
+                &::-webkit-search-cancel-button {
+                    -webkit-appearance: none;
+                    height: 1em;
+                    width: 1em;
+                    border-radius: 50em;
+                    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+
+                    background-size: contain;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .filteredProducts {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        color: #fff;
+
+        .flexRowTemplate {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            width: 100%;
+        }
+    }
+}
+
+.active {
+    top: 0;
+    opacity: 1;
+}
+
+@media (max-width: 1400px) {
+    .searchWrapper {
+        margin: 100px 300px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .searchWrapper {
+        margin: 100px 250px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .divFlexEnd {
+        margin: 25px 100px !important;
+    }
+    .searchWrapper {
+        margin: 25px 150px !important;
+    }
+
+    .flexRowTemplate {
+        overflow-y: scroll;
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 700px) {
+    .divFlexEnd {
+        margin: 50px 50px !important;
+    }
+    .searchWrapper {
+        margin: 100px 50px !important;
+
+        .searchInput {
+            font-size: 2rem !important;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .divFlexEnd {
+        margin: 25px 50px !important;
+    }
+    .searchWrapper {
+        margin: 25px 50px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .divFlexEnd {
+        margin: 25px 25px 0 25px !important;
+    }
+    .searchWrapper {
+        margin: 0 25px 25px 25px !important;
+    }
+}
+
+@media (max-width: 340px) {
+    .flexRowTemplate {
+        max-height: 360px;
+    }
+}

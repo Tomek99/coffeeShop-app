@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shoulde render CareSection component 1`] = `
+<div>
+  <div
+    class="CareSection"
+  >
+    <header
+      class="headerSection"
+    >
+      <span>
+        We care
+      </span>
+       
+      <span>
+        about you
+      </span>
+    </header>
+    <div
+      class="careItemsWrapper"
+    >
+      <div
+        class="CareItem"
+      >
+        <img
+          alt="Quality guarantee"
+          src="https://res.cloudinary.com/dvoduabha/image/upload/v1679933916/we_care/protect_ofonsc.webp"
+        />
+        <div
+          class="wrapperText"
+        >
+          <h2>
+            Quality guarantee
+          </h2>
+          <p>
+            The highest quality of producst or a refund
+          </p>
+        </div>
+      </div>
+      <div
+        class="CareItem"
+      >
+        <img
+          alt="Insured purchases"
+          src="https://res.cloudinary.com/dvoduabha/image/upload/v1679933916/we_care/certyfication_ljukti.webp"
+        />
+        <div
+          class="wrapperText"
+        >
+          <h2>
+            Insured purchases
+          </h2>
+          <p>
+            Active buyer protection and encrypted payments.
+          </p>
+        </div>
+      </div>
+      <div
+        class="CareItem"
+      >
+        <img
+          alt="Zip-Lock closure"
+          src="https://res.cloudinary.com/dvoduabha/image/upload/v1679933916/we_care/virus_guvstt.webp"
+        />
+        <div
+          class="wrapperText"
+        >
+          <h2>
+            Zip-Lock closure
+          </h2>
+          <p>
+            Packaging that maintain the product fresh after opening
+          </p>
+        </div>
+      </div>
+      <div
+        class="CareItem"
+      >
+        <img
+          alt="Secure deliveries"
+          src="https://res.cloudinary.com/dvoduabha/image/upload/v1679992916/we_care/packet_eglww5.webp"
+        />
+        <div
+          class="wrapperText"
+        >
+          <h2>
+            Secure deliveries
+          </h2>
+          <p>
+            We comply with all applicable restrictions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

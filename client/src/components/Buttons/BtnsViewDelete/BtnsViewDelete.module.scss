@@ -1,0 +1,32 @@
+.BtnsViewDelete {
+  background-color: transparent;
+  color: #fff;
+  transition: 0.3s linear;
+  border: var(--border);
+  border-radius: 16px;
+  padding: 8px 40px;
+  font-weight: 400;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--main-color);
+  }
+}
+
+.BtnsViewDeleteTwo {
+  background-color: var(--black);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: var(--border);
+  border-radius: 8px;
+  transition: 0.3s linear;
+  cursor: pointer;
+
+  svg {
+    font-size: 2rem;
+  }
+}

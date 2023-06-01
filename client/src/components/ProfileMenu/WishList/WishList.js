@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./WishList.module.scss";
-import WishFilter from "./WishFilter/WishFilter";
-import WishInfo from "./WishInfo/WishInfo";
+
 import WishProducts from "./WishProducts/WishProducts";
 import Support from "../Support/Support";
 import HeaderInfo from "../../HeaderInfo/HeaderInfo";
-// import { useContext } from "react";
-// import { Context } from "../../../Contexts/Context";
+import { Context } from "../../../Contexts/Context";
 
 function WishList() {
   useEffect(() => {
@@ -16,19 +14,33 @@ function WishList() {
       behavior: "instant",
     });
   }, []);
-  // const { addItemWishList } = useContext(Context);
+
+  const { wishList, products, addWishItem } = useContext(Context);
+
+  let foundedProducts = [];
+  for (const element of wishList) {
+    const foundElement = products.find((item) => element === item._id);
+    foundedProducts.push(foundElement);
+  }
+
   return (
     <>
-      <div className={styles.WishListHeader}>
-        <HeaderInfo title="Shopping lists" />
-        <button className={styles.btnAddList}>+ Add list</button>
+      <div className={styles.WishList}>
+        <HeaderInfo title="Wish list" />
       </div>
-      <WishFilter />
+      <h3 className={styles.headline}>Products observed</h3>
       <div className={styles.WishListProducts}>
-        <WishProducts />
-        <WishProducts />
+        {wishList.length ? (
+          foundedProducts.map((item, index) => (
+            <WishProducts key={index} item={item} addWishItem={addWishItem} />
+          ))
+        ) : (
+          <p style={{ fontSize: "1.3rem" }}>
+            No products added to the wishlist
+          </p>
+        )}
       </div>
-      <WishInfo />
+
       <Support />
     </>
   );

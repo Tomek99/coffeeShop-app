@@ -11,12 +11,14 @@
         font-size: 3.5rem;
     }
 
-    div {
+    .ourCompany {
         max-width: 700px;
         display: flex;
         flex-direction: column;
         margin: 0 10px 0 10px;
+        padding: 10px;
         gap: 15px;
+        border-radius: 8px;
         background-color: var(--black);
 
         p {

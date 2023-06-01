@@ -13,5 +13,6 @@ Protected.propTypes = {
   isLogIn: PropTypes.any,
   children: PropTypes.object,
   navigate: PropTypes.string,
+  productsLen: PropTypes.number,
 };
 export default Protected;

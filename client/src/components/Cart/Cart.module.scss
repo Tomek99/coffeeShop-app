@@ -2,7 +2,6 @@
     position: fixed;
     display: grid;
     grid-template-rows: auto 1fr auto;
-
     top: 0;
     height: 100%;
     right: -700px;
@@ -11,6 +10,7 @@
     background: var(--black);
     color: #fff;
     transition: 0.3s linear;
+    opacity: 0;
 
     .products {
         flex-grow: 1;
@@ -37,21 +37,6 @@
         padding: 40px;
         font-size: 1.5rem;
 
-        .btnCheckoutNow {
-            align-self: stretch;
-            text-align: center;
-            padding: 10px;
-            font-size: 1.7rem;
-            font-weight: bold;
-            background-color: var(--main-color);
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .btnCheckoutNow:hover {
-            background-color: var(--main-color-darken);
-        }
-
         .bill {
             display: flex;
             justify-content: space-between;
@@ -61,8 +46,9 @@
     }
 }
 
-.PopupBasket.active {
+.active {
     right: 0;
+    opacity: 1;
 }
 
 @media (max-width: 600px) {

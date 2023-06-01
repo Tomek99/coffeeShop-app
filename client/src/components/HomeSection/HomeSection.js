@@ -3,6 +3,18 @@ import styles from "./HomeSection.module.scss";
 import dataHomeSlider from "../../data/dataHomeSlider.json";
 import BtnSlider from "./BtnSlider/BtnSlider";
 import Content from "./Content/Content";
+import CarouselDots from "../CarouselDots/CarouselDots";
+
+// import SwiperCore, {
+//   EffectFlip,
+//   Navigation,
+//   Pagination,
+//   Autoplay,
+// } from "swiper";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/scss";
+// import "swiper/scss/navigation";
+// import "swiper/scss/pagination";
 
 function HomeSection() {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -34,42 +46,65 @@ function HomeSection() {
 
   return (
     <div className={styles.HomeSection}>
-      <div>
-        {dataHomeSlider.map((obj, index) => {
-          return (
-            <div
-              key={index}
-              className={
-                slideIndex === index + 1
-                  ? `${styles.slider} ${styles.activeAnim}`
-                  : styles.slider
-              }
-            >
-              <Content obj={obj} slideIndex={slideIndex} />
-              <img src={obj.url} alt={obj.title}></img>
-            </div>
-          );
-        })}
-      </div>
+      <div className={styles.HomeSection}>
+        <div>
+          {dataHomeSlider.map((obj, index) => {
+            return (
+              <div
+                key={index}
+                className={
+                  slideIndex === index + 1
+                    ? `${styles.slider} ${styles.activeAnim}`
+                    : styles.slider
+                }
+              >
+                <Content obj={obj} slideIndex={slideIndex} />
+                <img src={obj.url} alt={obj.title}></img>
+              </div>
+            );
+          })}
+        </div>
 
-      <BtnSlider handlerBtn={preSlide} arrowDirect={"left"} />
-      <BtnSlider handlerBtn={nextSlide} arrowDirect={"right"} />
+        <BtnSlider handlerBtn={preSlide} arrowDirect={"left"} />
+        <BtnSlider handlerBtn={nextSlide} arrowDirect={"right"} />
 
-      <div className={styles.containerDots}>
-        {Array.from({ length: dataHomeSlider.length }).map((item, index) => (
-          <span
-            className={
-              index + 1 === slideIndex
-                ? `${styles.spanDot} ${styles.activeDot}`
-                : styles.spanDot
-            }
-            key={index}
-            onClick={() => setSlide(index + 1)}
-          ></span>
-        ))}
+        <CarouselDots
+          carouselLength={dataHomeSlider.length}
+          slideIndex={slideIndex}
+          setSlide={setSlide}
+        />
       </div>
     </div>
   );
 }
 
 export default HomeSection;
+
+//   <div className={styles.HomeSection}>
+// <div>
+//   {dataHomeSlider.map((obj, index) => {
+//     return (
+//       <div
+//         key={index}
+//         className={
+//           slideIndex === index + 1
+//             ? `${styles.slider} ${styles.activeAnim}`
+//             : styles.slider
+//         }
+//       >
+//         <Content obj={obj} slideIndex={slideIndex} />
+//         <img src={obj.url} alt={obj.title}></img>
+//       </div>
+//     );
+//   })}
+// </div>
+
+// <BtnSlider handlerBtn={preSlide} arrowDirect={"left"} />
+// <BtnSlider handlerBtn={nextSlide} arrowDirect={"right"} />
+
+// <CarouselDots
+//   carouselLength={dataHomeSlider.length}
+//   slideIndex={slideIndex}
+//   setSlide={setSlide}
+// />
+// </div>

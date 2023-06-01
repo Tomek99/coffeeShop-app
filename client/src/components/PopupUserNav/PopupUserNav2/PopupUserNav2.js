@@ -42,7 +42,7 @@ function PopupUserNav2({ isAsideOpen, handleAside }) {
             : styles.PopupUserProfile2
         }
       >
-        <NBarAside isAccount={true} handleBtn={handleAside} />
+        <NBarAside isCart={false} handleBtn={handleAside} title="Account" />
         {isLogIn ? (
           <div className={styles.userName}>
             <p>Hi,</p>

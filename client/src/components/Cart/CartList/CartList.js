@@ -3,18 +3,19 @@ import { Context } from "../../../Contexts/Context";
 import { ImBin } from "react-icons/im";
 import styles from "./CartList.module.scss";
 import PropTypes from "prop-types";
+import BtnDeleteProduct from "../../Buttons/BtnDeleteProduct/BtnDeleteProduct";
 
-function BasketList({ item }) {
-  const { _id, name, imageUrl, newPrice, oldPrice, quantity } = item;
+function BasketList({ item, imBinId }) {
+  const { _id, name, imageUrl, price, oldPrice, quantity } = item;
 
   const { deleteItem } = useContext(Context);
   return (
     <div className={styles.SingleProduct} key={_id}>
-      <img src={"/" + imageUrl} alt={name} />
+      <img src={imageUrl} alt={name} />
       <div className={styles.productDetails}>
         <h2>{name}</h2>
         <p>
-          <span className={styles.newPrice}>${newPrice} </span>
+          <span className={styles.newPrice}>${price} </span>
           <span className={styles.oldPrice}>
             {" "}
             {Boolean(oldPrice) ? oldPrice : null}
@@ -22,12 +23,13 @@ function BasketList({ item }) {
         </p>
       </div>
       <span>{quantity}</span>
-      <button
-        className={styles.btnDeleteProduct}
-        onClick={() => deleteItem(_id, newPrice, oldPrice)}
-      >
-        <ImBin size={18} />
-      </button>
+      <BtnDeleteProduct
+        handleBtn={deleteItem}
+        id={_id}
+        price={price}
+        oldPrice={oldPrice}
+        imBinId={imBinId}
+      />
     </div>
   );
 }

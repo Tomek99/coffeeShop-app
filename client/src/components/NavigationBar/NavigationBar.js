@@ -3,29 +3,19 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
 import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
-import PopupSearch from "../PopupSearch/PopupSearch";
+import SearchEngine from "../SearchEngine/SearchEngine";
 import Cart from "../Cart/Cart";
-import NavListElement from "./NavListElement/NavListElement";
 import PropTypes from "prop-types";
 import PopupUserNav1 from "../PopupUserNav/PopupUserNav1/PopupUserNav1";
 import PopupUserNav2 from "../PopupUserNav/PopupUserNav2/PopupUserNav2";
 import { Context } from "../../Contexts/Context";
 import BlurScreen from "../BlurScreen/BlurScreen";
 import BtnHamburger from "../Buttons/BtnHamburger/BtnHamburger";
+import DesktopNavigation from "./DesktopNavigation/DesktopNavigation";
+import MobileNavigation from "./MobileNavigation/MobileNavigation";
 
-function NavigationBar(props) {
-  const { basketQuantity } = props;
-  const { isLogIn } = useContext(Context);
-
-  const navBarList = [
-    { name: "Home", path: "/" },
-    { name: "Products", path: "products" },
-    { name: "Menu", path: "menu" },
-    { name: "About", path: "about-us" },
-    { name: "Contact", path: "contact" },
-    { name: "Blog", path: "blog" },
-  ];
-
+function NavigationBar() {
+  const { isLogIn, cartQuantity } = useContext(Context);
   // { name: "Review", path: "reviews" },
 
   const [isAsideOpen, setAsideOpen] = useState(false);
@@ -38,17 +28,16 @@ function NavigationBar(props) {
   let elementHTML = window.document.getElementsByTagName("html")[0];
 
   const handleSearch = () => {
+    if (!isSearchOpen) elementHTML.style.overflowY = "hidden";
+    else elementHTML.style.overflowY = "scroll";
     setSearchOpen(!isSearchOpen);
-    setNavigationOpen(false);
-    setAsideOpen(false);
-    setCartOpen(false);
   };
 
   const handleNavigation = () => {
+    if (!isNavigationOpen) elementHTML.style.overflowY = "hidden";
+    else elementHTML.style.overflowY = "scroll";
+
     setNavigationOpen(!isNavigationOpen);
-    setAsideOpen(false);
-    setSearchOpen(false);
-    setCartOpen(false);
   };
 
   const handleAside = () => {
@@ -56,9 +45,6 @@ function NavigationBar(props) {
     else elementHTML.style.overflowY = "scroll";
 
     setAsideOpen(!isAsideOpen);
-    setNavigationOpen(false);
-    setSearchOpen(false);
-    setCartOpen(false);
   };
 
   const handleCart = (location) => {
@@ -68,9 +54,6 @@ function NavigationBar(props) {
     else elementHTML.style.overflowY = "scroll";
 
     setCartOpen(!isCartOpen);
-    setAsideOpen(false);
-    setNavigationOpen(false);
-    setSearchOpen(false);
   };
 
   return (
@@ -83,35 +66,33 @@ function NavigationBar(props) {
         <div className={styles.navBar}>
           <div className={styles.divLogo}>
             <Link to="/">
-              <img src="/images/logo.png" className={styles.logo} alt="" />
+              <img
+                src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png"
+                className={styles.logo}
+                alt="Logo"
+              />
             </Link>
           </div>
           <nav>
-            <ul
-              className={
-                isNavigationOpen
-                  ? `${styles.navMenu} ${styles.active}`
-                  : styles.navMenu
-              }
-            >
-              {navBarList.map((item) => (
-                <NavListElement
-                  isLink={true}
-                  key={item.name}
-                  name={item.name}
-                  path={item.path}
-                  style={styles.navItem}
-                />
-              ))}
-            </ul>
+            <DesktopNavigation />
+            <MobileNavigation
+              handleNavigation={handleNavigation}
+              isNavigationOpen={isNavigationOpen}
+            />
           </nav>
-
           <div className={styles.btnSection}>
-            <button className={styles.btnDisplay} onClick={handleSearch}>
+            <button
+              className={styles.btnDisplay}
+              onClick={handleSearch}
+              id="bs-search"
+            >
               <BsSearch size={30} color={"#fff"} />
             </button>
 
-            <PopupSearch isSearchOpen={isSearchOpen} />
+            <SearchEngine
+              isSearchOpen={isSearchOpen}
+              handleSearch={handleSearch}
+            />
 
             <Link to="wish-list" className={styles.btnDisplay}>
               <BsHeart size={30} color={"#fff"} />
@@ -141,28 +122,26 @@ function NavigationBar(props) {
               <span
                 className={styles.quantityProductsInBasket}
                 style={
-                  basketQuantity !== 0
-                    ? { display: "flex" }
-                    : { display: "none" }
+                  cartQuantity !== 0 ? { display: "flex" } : { display: "none" }
                 }
               >
-                {basketQuantity}
+                {cartQuantity}
               </span>
             </button>
             <PopupUserNav2
               isAsideOpen={isAsideOpen}
               handleAside={handleAside}
             />
-            <Cart
-              handleCart={handleCart}
-              isCartOpen={isCartOpen}
-              basketQuantity={basketQuantity}
-            />
-            {isCartOpen || isAsideOpen ? (
+            <Cart handleCart={handleCart} isCartOpen={isCartOpen} />
+            {isCartOpen || isAsideOpen || isNavigationOpen || isSearchOpen ? (
               <BlurScreen
                 isCartOpen={isCartOpen}
+                isNavigationOpen={isNavigationOpen}
+                isSearchOpen={isSearchOpen}
                 handleAside={handleAside}
                 handleCart={handleCart}
+                handleNavigation={handleNavigation}
+                handleSearch={handleSearch}
               />
             ) : null}
           </div>
