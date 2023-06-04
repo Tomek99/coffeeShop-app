@@ -101,6 +101,7 @@ function NavigationBar() {
             <Link
               to={isLogIn ? "account" : "log-in"}
               className={`${styles.btnDisplay} ${styles.btnDisplayActive}`}
+              id="userNavigationBtn0"
             >
               <FaRegUser size={30} color={"#fff"} />
             </Link>

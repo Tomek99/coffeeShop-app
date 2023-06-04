@@ -9,7 +9,7 @@ import ContactElement from "./ContactElement/ContactElement";
 import dataContact from "../../data/dataContact";
 
 const validationSchema_one = Yup.object().shape({
-  name: Yup.string()
+  name_form_one: Yup.string()
     .min(4, "Must be 4 characters or more")
     .required("Required"),
   email: Yup.string().email("Invalid email address").required("Required"),
@@ -22,7 +22,7 @@ const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const validationSchema_two = Yup.object().shape({
-  name: Yup.string()
+  name_form_two: Yup.string()
     .min(4, "Must be 4 characters or more")
     .required("Required"),
   number: Yup.string()
@@ -34,13 +34,13 @@ const validationSchema_two = Yup.object().shape({
 });
 
 const initialValues_1 = {
-  name: "",
+  name_form_one: "",
   email: "",
   comment: "",
 };
 
 const initialValues_2 = {
-  name: "",
+  name_form_two: "",
   number: "",
   comment: "",
 };
@@ -72,12 +72,14 @@ function ContactSection() {
             formData={contactData.contact_form_one}
             validationSchema={validationSchema_one}
             title="Write us an e-mail"
+            index={0}
           />
           <ContactForm
             initValue={initialValues_2}
             formData={contactData.contact_form_two}
             validationSchema={validationSchema_two}
             title="Write us a text message"
+            index={1}
           />
           <div>
             <Map />

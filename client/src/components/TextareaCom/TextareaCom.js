@@ -3,7 +3,7 @@ import styles from "./TextareaCom.module.scss";
 import TextareaAutosize from "react-textarea-autosize";
 import PropTypes from "prop-types";
 
-function TextareaCom({ setFieldValue }) {
+function TextareaCom({ setFieldValue, index }) {
   const [value, setValue] = useState("");
   function handleChange(e) {
     setFieldValue("comment", e.target.value);
@@ -17,6 +17,7 @@ function TextareaCom({ setFieldValue }) {
         value={value}
         name="comment"
         maxLength={1999}
+        id={index}
       />
       <span className={styles.countLength}>{value.length}/1999</span>
     </div>

@@ -29,3 +29,31 @@
     }
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1380px) {
+  .divInfo {
+    margin-right: 10px !important;
+  }
+
+  .divArticles {
+    margin-left: 10px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .Blog {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "a"
+      "c"
+      "b";
+
+    .divInfo {
+      margin: 0 10px !important;
+    }
+
+    .divArticles {
+      margin: 0 10px !important;
+    }
+  }
+}
