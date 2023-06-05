@@ -6,7 +6,7 @@ import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
-function LatestProduct({ item, cartFillId }) {
+function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
   const { _id, imageUrl, name, price, oldPrice, rate, intensity } = item;
   const { addItem, addWishItem, wishList } = useContext(Context);
 
@@ -21,9 +21,9 @@ function LatestProduct({ item, cartFillId }) {
   }
 
   return (
-    <div key={_id} className={styles.LatestProduct}>
+    <div className={styles.LatestProduct}>
       <div className={styles.iconsSection}>
-        <button onClick={navigatePage}>
+        <button onClick={navigatePage} id={showProductId}>
           <BsFillEyeFill />
         </button>
 
@@ -31,6 +31,7 @@ function LatestProduct({ item, cartFillId }) {
           <BsCartFill />
         </button>
         <button
+          id={wishlistId}
           className={foundWishProduct ? styles.activeBtn : null}
           onClick={() => addWishItem(_id)}
         >

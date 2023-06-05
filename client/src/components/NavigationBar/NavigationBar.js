@@ -111,6 +111,7 @@ function NavigationBar() {
             <button
               className={`${styles.btnDisplay} ${styles.btnDisplayActiveAside}`}
               onClick={handleAside}
+              id="userBtnOpen131"
             >
               <FaRegUser size={30} color={"#fff"} />
             </button>
@@ -118,6 +119,7 @@ function NavigationBar() {
             <button
               className={styles.btnDisplay}
               onClick={() => handleCart(location.pathname)}
+              id="cartBtnOpen132"
             >
               <BsCartFill size={30} color={"#fff"} />
               <span

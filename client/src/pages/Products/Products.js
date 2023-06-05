@@ -50,6 +50,8 @@ function Products() {
                     key={index}
                     item={item}
                     cartFillId={`cartFillId${index}`}
+                    showProductId={`showProductId${index}`}
+                    wishlistId={`wishlistId${index}`}
                   />
                 ))}
             </div>
