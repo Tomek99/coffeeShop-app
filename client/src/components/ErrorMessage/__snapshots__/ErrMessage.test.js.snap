@@ -3,7 +3,7 @@
 exports[`should render errMessage component 1`] = `
 <div>
   <div
-    class="errorComponent"
+    class="errorText"
   />
 </div>
 `;

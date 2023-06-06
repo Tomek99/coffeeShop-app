@@ -11,12 +11,17 @@ import { MemoryRouter } from "react-router-dom";
 // }));
 
 // jest.mock("./components");
+jest.mock("react-messenger-customer-chat", () => {
+  return () => {
+    return <div>MesseengerChat</div>;
+  };
+});
 
 test("rendering required component", () => {
-  //   const { container } = render(
-  //     <MemoryRouter>
-  //       <App />
-  //     </MemoryRouter>
-  //   );
-  //   expect(container).toMatchSnapshot();
+  const { container } = render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
+  expect(container).toMatchSnapshot();
 });

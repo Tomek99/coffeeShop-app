@@ -1,0 +1,3590 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering required component 1`] = `
+<div>
+  <div
+    class="NavigationBar"
+  >
+    <div
+      class="BtnHamburger"
+    >
+      <span
+        class="bar"
+      />
+      <span
+        class="bar"
+      />
+      <span
+        class="bar"
+      />
+    </div>
+    <div
+      class="navBar"
+    >
+      <div
+        class="divLogo"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Logo"
+            class="logo"
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png"
+          />
+        </a>
+      </div>
+      <nav>
+        <ul
+          class="DesktopNavigation"
+        >
+          <li
+            class="NavListElement"
+          >
+            <a
+              aria-current="page"
+              class="activeNavLink"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="NavListElement"
+          >
+            <a
+              class="navLink"
+              href="/products"
+            >
+              Products
+            </a>
+          </li>
+          <li
+            class="NavListElement"
+          >
+            <a
+              class="navLink"
+              href="/about-us"
+            >
+              About
+            </a>
+          </li>
+          <li
+            class="NavListElement"
+          >
+            <a
+              class="navLink"
+              href="/contact"
+            >
+              Contact
+            </a>
+          </li>
+          <li
+            class="NavListElement"
+          >
+            <a
+              class="navLink"
+              href="/blog"
+            >
+              Blog
+            </a>
+          </li>
+        </ul>
+        <ul
+          class="MobileNavigation"
+        >
+          <div
+            class="cartBar"
+          >
+            <span
+              class="spanTitle"
+            >
+              NAVIGATION
+            </span>
+            <button
+              class="btnClose"
+            >
+              <svg
+                fill="currentColor"
+                height="30"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="divList"
+          >
+            <li>
+              <a
+                class="linkElement"
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                class="linkElement"
+                href="/products"
+              >
+                Products
+              </a>
+            </li>
+            <li>
+              <a
+                class="linkElement"
+                href="/about-us"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                class="linkElement"
+                href="/contact"
+              >
+                Contact
+              </a>
+            </li>
+            <li>
+              <a
+                class="linkElement"
+                href="/blog"
+              >
+                Blog
+              </a>
+            </li>
+          </div>
+          <div>
+            <ul
+              class="socialMediaMenu"
+            >
+              <li
+                class="SocialMediaElement"
+              >
+                <a
+                  href="https://www.facebook.com/"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    version="1.1"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.5 3h2.5v-3h-2.5c-1.93 0-3.5 1.57-3.5 3.5v1.5h-2v3h2v8h3v-8h2.5l0.5-3h-3v-1.5c0-0.271 0.229-0.5 0.5-0.5z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="SocialMediaElement"
+              >
+                <a
+                  href="https://www.facebook.com/"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="SocialMediaElement"
+              >
+                <a
+                  href="https://www.facebook.com/"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="SocialMediaElement"
+              >
+                <a
+                  href="https://www.facebook.com/"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="SocialMediaElement"
+              >
+                <a
+                  href="https://www.facebook.com/"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </nav>
+      <div
+        class="btnSection"
+      >
+        <button
+          class="btnDisplay"
+          id="bs-search"
+        >
+          <svg
+            color="#fff"
+            fill="currentColor"
+            height="30"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 16 16"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+            />
+          </svg>
+        </button>
+        <div
+          class="PopupSearch"
+        >
+          <div
+            class="divFlexEnd"
+          >
+            <button
+              class="btnClose"
+              id="btn-close-searcher"
+            >
+              <svg
+                fill="currentColor"
+                height="30"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="searchWrapper"
+          >
+            <label
+              for="search-form"
+            >
+              <input
+                autocomplete="off"
+                class="searchInput"
+                id="search-form"
+                name="search-form"
+                placeholder="Search for products..."
+                type="search"
+                value=""
+              />
+            </label>
+          </div>
+          <div
+            class="filteredProducts"
+          >
+            <div
+              class="flexRowTemplate"
+            />
+          </div>
+        </div>
+        <a
+          class="btnDisplay"
+          href="/wish-list"
+        >
+          <svg
+            color="#fff"
+            fill="currentColor"
+            height="30"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 16 16"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+            />
+          </svg>
+        </a>
+        <a
+          class="btnDisplay btnDisplayActive"
+          href="/log-in"
+          id="userNavigationBtn0"
+        >
+          <svg
+            color="#fff"
+            fill="currentColor"
+            height="30"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 448 512"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+            />
+          </svg>
+        </a>
+        <ul
+          class="PopupUserProfile active"
+        >
+          <div
+            class="btnSignIn_UpSection"
+          >
+            <li
+              class="btnSignIn_Up"
+            >
+              <a
+                href="/log-in"
+              >
+                Log In
+              </a>
+            </li>
+            <li
+              class="infoAcc"
+            >
+              Don't have an account?
+            </li>
+            <li
+              class="btnSignIn_Up"
+            >
+              <a
+                href="/sign-up"
+              >
+                Sign up
+              </a>
+            </li>
+          </div>
+          <div
+            class="list"
+          >
+            <li>
+              <a
+                href="/account"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+                  />
+                </svg>
+                  
+                Account
+              </a>
+            </li>
+            <li>
+              <a
+                href="/orders"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M19 22H5a3 3 0 0 1-3-3V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12h4v4a3 3 0 0 1-3 3zm-1-5v2a1 1 0 0 0 2 0v-2h-2zm-2 3V4H4v15a1 1 0 0 0 1 1h11zM6 7h8v2H6V7zm0 4h8v2H6v-2zm0 4h5v2H6v-2z"
+                    />
+                  </g>
+                </svg>
+                  
+                Orders
+              </a>
+            </li>
+            <li>
+              <a
+                href="/wish-list"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  />
+                </svg>
+                  
+                Wish list
+              </a>
+            </li>
+            <li>
+              <a
+                href="/user-reviews"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0V0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"
+                  />
+                  <path
+                    d="M12 15l1.57-3.43L17 10l-3.43-1.57L12 5l-1.57 3.43L7 10l3.43 1.57z"
+                  />
+                </svg>
+                  
+                Reviews
+              </a>
+            </li>
+            <li>
+              <a
+                href="/address"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+                  />
+                </svg>
+                  
+                Address
+              </a>
+            </li>
+            <li>
+              <a
+                href="/settings"
+              >
+                <svg
+                  fill="none"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                  />
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                  />
+                </svg>
+                  
+                Profile seetings
+              </a>
+            </li>
+          </div>
+        </ul>
+        <button
+          class="btnDisplay btnDisplayActiveAside"
+          id="userBtnOpen131"
+        >
+          <svg
+            color="#fff"
+            fill="currentColor"
+            height="30"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 448 512"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+            />
+          </svg>
+        </button>
+        <button
+          class="btnDisplay"
+          id="cartBtnOpen132"
+        >
+          <svg
+            color="#fff"
+            fill="currentColor"
+            height="30"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 16 16"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+            />
+          </svg>
+          <span
+            class="quantityProductsInBasket"
+            style="display: none;"
+          >
+            0
+          </span>
+        </button>
+        <ul
+          class="PopupUserProfile2"
+        >
+          <div
+            class="cartBar"
+          >
+            <span
+              class="spanTitle"
+            >
+              Account
+            </span>
+            <button
+              class="btnClose"
+            >
+              <svg
+                fill="currentColor"
+                height="30"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="btnSignIn_UpSection"
+          >
+            <li
+              class="btnSignIn_Up"
+            >
+              <a
+                href="/log-in"
+              >
+                Log in
+              </a>
+            </li>
+            <li
+              class="infoAcc"
+            >
+              Don't have an account?
+            </li>
+            <li
+              class="btnSignIn_Up"
+            >
+              <a
+                href="/sign-up"
+              >
+                Sign up
+              </a>
+            </li>
+          </div>
+          <div
+            class="list"
+          >
+            <li>
+              <a
+                href="/account"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+                  />
+                </svg>
+                  
+                Account
+              </a>
+            </li>
+            <li>
+              <a
+                href="/orders"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M19 22H5a3 3 0 0 1-3-3V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12h4v4a3 3 0 0 1-3 3zm-1-5v2a1 1 0 0 0 2 0v-2h-2zm-2 3V4H4v15a1 1 0 0 0 1 1h11zM6 7h8v2H6V7zm0 4h8v2H6v-2zm0 4h5v2H6v-2z"
+                    />
+                  </g>
+                </svg>
+                  
+                Orders
+              </a>
+            </li>
+            <li>
+              <a
+                href="/wish-list"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  />
+                </svg>
+                  
+                Wish list
+              </a>
+            </li>
+            <li>
+              <a
+                href="/user-reviews"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0V0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"
+                  />
+                  <path
+                    d="M12 15l1.57-3.43L17 10l-3.43-1.57L12 5l-1.57 3.43L7 10l3.43 1.57z"
+                  />
+                </svg>
+                  
+                Reviews
+              </a>
+            </li>
+            <li>
+              <a
+                href="/address"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+                  />
+                </svg>
+                  
+                Address
+              </a>
+            </li>
+            <li>
+              <a
+                href="/settings"
+              >
+                <svg
+                  fill="none"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                  />
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                  />
+                </svg>
+                  
+                Profile seetings
+              </a>
+            </li>
+          </div>
+        </ul>
+        <div
+          class="PopupBasket"
+        >
+          <div
+            class="cartBar"
+          >
+            <span>
+              Cart 
+              <span
+                style="color: rgb(56, 179, 42);"
+              />
+            </span>
+            <button
+              class="btnClose"
+            >
+              <svg
+                fill="currentColor"
+                height="30"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="products"
+            style="font-size: 2rem; text-transform: none;"
+          >
+            Your cart is empty...
+          </div>
+          <div
+            class="summary"
+          >
+            <a
+              class="btnCheckoutNow"
+              href="/cart"
+              id="ViewCart"
+            >
+              View my cart
+            </a>
+            <p
+              class="bill"
+              style="color: rgb(56, 179, 42);"
+            >
+              Save: 
+              <span
+                class="price"
+              >
+                $
+                0.00
+              </span>
+            </p>
+            <p
+              class="bill"
+            >
+              Total cost:
+              <span
+                class="price"
+              >
+                $
+                0.00
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section
+    class="columnWeb"
+  >
+    <div
+      class="absoluteDivApp"
+    >
+      <div
+        class="Toastify"
+      />
+      <div>
+        MesseengerChat
+      </div>
+    </div>
+    <div
+      class="HomeSection"
+    >
+      <div
+        class="HomeSection"
+      >
+        <div>
+          <div
+            class="slider activeAnim"
+          >
+            <div
+              class="content"
+            >
+              <header>
+                fresh coffee in the morning
+              </header>
+              <p>
+                Lorem ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit, Consequuntur? Et Veritatis Velit Nesciunt Odio!
+              </p>
+              <a
+                href="#menuSection"
+              >
+                get it now
+              </a>
+            </div>
+            <img
+              alt="fresh coffee in the morning"
+              src="/images/home-img1.jpeg"
+            />
+          </div>
+          <div
+            class="slider"
+          >
+            <div
+              class="content"
+            >
+              <header>
+                product of the month
+              </header>
+              <p>
+                Caffè Crema Dolce
+              </p>
+              <a
+                href="#menuSection"
+              >
+                get it now
+              </a>
+            </div>
+            <img
+              alt="product of the month"
+              src="/images/home-img2.jpeg"
+            />
+          </div>
+          <div
+            class="slider"
+          >
+            <div
+              class="content"
+            >
+              <header>
+                beans ground instant coffee
+              </header>
+              <p />
+              <a
+                href="#menuSection"
+              >
+                Products
+              </a>
+            </div>
+            <img
+              alt="beans ground instant coffee"
+              src="/images/home-img3.jpeg"
+            />
+          </div>
+        </div>
+        <div
+          class="btnDiv"
+        >
+          <button
+            class="btnArrow btnArrowLeft"
+          >
+            <svg
+              color="#fff"
+              fill="currentColor"
+              height="40"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: rgb(255, 255, 255);"
+              viewBox="0 0 1024 1024"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M752.145 0c8.685 0 17.572 3.434 24.237 10.099 13.33 13.33 13.33 35.143 0 48.473L320.126 515.03l449.591 449.591c13.33 13.33 13.33 35.144 0 48.474-13.33 13.33-35.142 13.33-48.472 0L247.418 539.268c-13.33-13.33-13.33-35.144 0-48.474L727.91 10.1C734.575 3.435 743.46.002 752.146.002z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="btnDiv"
+        >
+          <button
+            class="btnArrow btnArrowRight"
+          >
+            <svg
+              color="#fff"
+              fill="currentColor"
+              height="40"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: rgb(255, 255, 255);"
+              viewBox="0 0 1024 1024"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M271.653 1023.192c-8.685 0-17.573-3.432-24.238-10.097-13.33-13.33-13.33-35.144 0-48.474L703.67 508.163 254.08 58.573c-13.33-13.331-13.33-35.145 0-48.475 13.33-13.33 35.143-13.33 48.473 0L776.38 483.925c13.33 13.33 13.33 35.143 0 48.473l-480.492 480.694c-6.665 6.665-15.551 10.099-24.236 10.099z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="CarouselDots"
+        >
+          <span
+            class="spanDot activeDot"
+            data-testid="span-element"
+          />
+          <span
+            class="spanDot"
+            data-testid="span-element"
+          />
+          <span
+            class="spanDot"
+            data-testid="span-element"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="AboutSection"
+      id="aboutSection"
+    >
+      <header
+        class="headerSection"
+      >
+        <span>
+          about
+        </span>
+         
+        <span>
+          us
+        </span>
+      </header>
+      <div
+        class="divRow"
+      >
+        <img
+          alt="AboutImg"
+          src="/images/about-img.jpeg"
+        />
+        <div
+          class="textArea"
+        >
+          <h1>
+            What makes our coffee special?
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip.
+          </p>
+          <br />
+          <p>
+            Lorfffem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+          </p>
+          <br />
+          <a
+            href="/about-us"
+          >
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ProductsSection"
+      id="productsSection"
+    >
+      <header
+        class="headerSection"
+      >
+        <span>
+          latest
+        </span>
+         
+        <span>
+          products
+        </span>
+      </header>
+      <div
+        class="wrapperDiv"
+      >
+        <span
+          aria-label="Loading Spinner"
+          data-testid="loader"
+          style="width: 150px; height: 150px; border-radius: 100%; border: 2px solid; border-bottom-color: transparent; display: inline-block; animation: react-spinners-ClipLoader-clip 0.75s 0s infinite linear; animation-fill-mode: both;"
+        />
+      </div>
+    </div>
+    <div
+      class="ShipmentSection"
+    >
+      <div
+        class="wrapper"
+      >
+        <div
+          class="container"
+          style="background-image: url(https://res.cloudinary.com/dvoduabha/image/upload/v1679902226/shipment_2_knukof.webp);"
+        >
+          <div
+            class="content"
+          >
+            <h2>
+              free shipping
+            </h2>
+            <div>
+              <p>
+                Orlen package, parcel locker and InPost carrier from $30
+              </p>
+            </div>
+            <button
+              class="BtnShipmentHome"
+              type="button"
+            >
+              <span
+                class="btnPosition"
+              >
+                 
+                Shipment methods
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="container"
+          style="background-image: url(https://res.cloudinary.com/dvoduabha/image/upload/v1679902226/shipment_1_orfjpa.webp);"
+        >
+          <div
+            class="content"
+          >
+            <h2>
+              free delivery
+            </h2>
+            <div>
+              <p>
+                On the whole Cracow area and neighbourhood, usually same day delivery!
+              </p>
+            </div>
+            <button
+              class="BtnShipmentHome"
+              type="button"
+            >
+              <span
+                class="btnPosition"
+              >
+                 
+                Delivery area
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ReviewSection"
+      id="reviewSection"
+    >
+      <header
+        class="headerSection"
+      >
+        <span>
+          customer's
+        </span>
+         
+        <span>
+          review
+        </span>
+      </header>
+      <div
+        class="wrapperDiv"
+      >
+        <div
+          class="carouselDiv"
+        >
+          <div
+            class="innerDiv"
+            style="transform: translateX(-0px);"
+          >
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-1.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="3 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarBorderIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarBorderIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                1_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-2.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="4 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarBorderIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                2_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-3.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="5 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                3_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-1.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="4 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarBorderIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                4_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-2.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="3 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarBorderIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarBorderIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                5_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-3.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="4 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarBorderIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                6_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-1.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="5 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                7_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-2.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="5 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                8_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-3.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="4 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarBorderIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                9_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-3.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="5 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                10_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-3.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="5 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                11_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+            <div
+              class="singleCustomer"
+            >
+              <div>
+                <img
+                  alt=""
+                  class="avatar"
+                  src="images/pic-3.png"
+                />
+                <p
+                  class="name"
+                >
+                  John Deo
+                </p>
+                <div>
+                  <span
+                    aria-label="5 Stars"
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                    role="img"
+                  >
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="StarIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <p>
+                12_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="indicators"
+        >
+          <button
+            class="BtnLeft"
+            type="button"
+          >
+            <svg
+              class="btnIcon"
+              fill="currentColor"
+              height="35"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+              />
+            </svg>
+          </button>
+          <button
+            class="BtnRight"
+            type="button"
+          >
+            <svg
+              class="btnIcon"
+              fill="currentColor"
+              height="35"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="CareSection"
+    >
+      <header
+        class="headerSection"
+      >
+        <span>
+          We care
+        </span>
+         
+        <span>
+          about you
+        </span>
+      </header>
+      <div
+        class="careItemsWrapper"
+      >
+        <div
+          class="CareItem"
+        >
+          <img
+            alt="Quality guarantee"
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1679933916/we_care/protect_ofonsc.webp"
+          />
+          <div
+            class="wrapperText"
+          >
+            <h2>
+              Quality guarantee
+            </h2>
+            <p>
+              The highest quality of producst or a refund
+            </p>
+          </div>
+        </div>
+        <div
+          class="CareItem"
+        >
+          <img
+            alt="Insured purchases"
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1679933916/we_care/certyfication_ljukti.webp"
+          />
+          <div
+            class="wrapperText"
+          >
+            <h2>
+              Insured purchases
+            </h2>
+            <p>
+              Active buyer protection and encrypted payments.
+            </p>
+          </div>
+        </div>
+        <div
+          class="CareItem"
+        >
+          <img
+            alt="Zip-Lock closure"
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1679933916/we_care/virus_guvstt.webp"
+          />
+          <div
+            class="wrapperText"
+          >
+            <h2>
+              Zip-Lock closure
+            </h2>
+            <p>
+              Packaging that maintain the product fresh after opening
+            </p>
+          </div>
+        </div>
+        <div
+          class="CareItem"
+        >
+          <img
+            alt="Secure deliveries"
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1679992916/we_care/packet_eglww5.webp"
+          />
+          <div
+            class="wrapperText"
+          >
+            <h2>
+              Secure deliveries
+            </h2>
+            <p>
+              We comply with all applicable restrictions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="blogsSection"
+      id="blogsSection"
+    >
+      <header
+        class="headerSection"
+      >
+        <span>
+          our
+        </span>
+         
+        <span>
+          news
+        </span>
+      </header>
+      <div
+        class="blogs"
+      >
+        <div
+          class="swiper swiper-initialized swiper-horizontal mySwiper"
+        >
+          <div
+            class="swiper-wrapper"
+            style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+          >
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-1.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 1st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-2.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 2st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-3.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-2.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-3.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-1.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-2.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-3.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-1.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-2.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="width: auto;"
+            >
+              <div
+                class="singleBlog"
+              >
+                <div
+                  class="zoomImage"
+                >
+                  <img
+                    alt="Tasty And Refreshing Coffee"
+                    src="images/blog-3.jpeg"
+                  />
+                </div>
+                <div
+                  class="textSection"
+                >
+                  <h2>
+                    Tasty And Refreshing Coffee
+                  </h2>
+                  <h4>
+                    By Admin / 3st May, 2021
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    class="Footer"
+  >
+    <div
+      class="GridTemplate"
+      data-testid="gridTemplatElements"
+    >
+      <div
+        class="navMenu"
+      >
+        <h6>
+          Company
+        </h6>
+        <div
+          class="menuContent"
+        >
+          <ul
+            class="menu"
+          >
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Products
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Blog
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                About us
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Personal pick-up points
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Commercial offer
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Collaboration
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Our partners
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="navMenu"
+      >
+        <h6>
+          Help
+        </h6>
+        <div
+          class="menuContent"
+        >
+          <ul
+            class="menu"
+          >
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Contact
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Frequently asked questions
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Payment methods
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Delivery methods
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Complaint
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Return
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Shop statute
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="navMenu"
+      >
+        <h6>
+          Account
+        </h6>
+        <div
+          class="menuContent"
+        >
+          <ul
+            class="menu"
+          >
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                My account
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Cart
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Wish list
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Orders
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Order tracking 
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Return
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Addresses
+              </a>
+            </li>
+            <li
+              class="LinkElement"
+            >
+              <a
+                href="/"
+              >
+                Recover password
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="navMenu"
+      >
+        <h6>
+          Coffee Shop
+        </h6>
+        <div
+          class="menuContent"
+        >
+          <div
+            class="menu"
+          >
+            <div
+              class="ParagraphElement"
+            >
+              <p>
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                  />
+                  <path
+                    d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                  />
+                </svg>
+                 pon – sob | 10:00 – 20:00
+              </p>
+            </div>
+            <div
+              class="ParagraphElement"
+            >
+              <p>
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                123-456-789
+              </p>
+            </div>
+            <div
+              class="ParagraphElement"
+            >
+              <p>
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 14 16"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                contact@xyz.com
+              </p>
+            </div>
+            <div
+              class="ParagraphElement"
+            >
+              <p>
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  version="1.1"
+                  viewBox="0 0 16 16"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0c-2.761 0-5 2.239-5 5 0 5 5 11 5 11s5-6 5-11c0-2.761-2.239-5-5-5zM8 8.063c-1.691 0-3.063-1.371-3.063-3.063s1.371-3.063 3.063-3.063 3.063 1.371 3.063 3.063-1.371 3.063-3.063 3.063zM6.063 5c0-1.070 0.867-1.938 1.938-1.938s1.938 0.867 1.938 1.938c0 1.070-0.867 1.938-1.938 1.938s-1.938-0.867-1.938-1.938z"
+                  />
+                </svg>
+                Litewska 73 | 00-000 Warsaw
+              </p>
+            </div>
+            <div
+              class="ParagraphElement"
+            >
+              <p>
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M928.144 176H95.856c-53.024 0-96 42.976-96 96v480c0 53.024 42.976 96 96 96h832.288c53.024 0 96-42.976 96-96V272c0-53.024-42.976-96-96-96zM95.856 240h832.288c17.664 0 32 14.336 32 32v64H63.856v-64c0-17.664 14.351-32 32-32zm832.288 544H95.856c-17.664 0-32-14.336-32-32V464h896.288v288c0 17.664-14.352 32-32 32z"
+                  />
+                </svg>
+                00 0000 0000 0000 0000 0000 0000
+              </p>
+            </div>
+            <div
+              class="ParagraphElement"
+            >
+              <p>
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 1a5 5 0 0 1 5 5v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3V6a5 5 0 0 1 5-5zm5 10h-2v1a1 1 0 0 0 1.993.117L17 12v-1zm-8 0H7v1a1 1 0 0 0 1.993.117L9 12v-1zm3-8a3 3 0 0 0-2.995 2.824L9 6v2h6V6a3 3 0 0 0-2.824-2.995L12 3z"
+                    />
+                  </g>
+                </svg>
+                NIP 0000000000 | BDO 000000000
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="SocialMedia"
+    >
+      <ul
+        class="SocialMediaMenu"
+      >
+        <li
+          class="SocialMediaElement"
+        >
+          <a
+            href="https://www.facebook.com/"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              version="1.1"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.5 3h2.5v-3h-2.5c-1.93 0-3.5 1.57-3.5 3.5v1.5h-2v3h2v8h3v-8h2.5l0.5-3h-3v-1.5c0-0.271 0.229-0.5 0.5-0.5z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="SocialMediaElement"
+        >
+          <a
+            href="https://www.facebook.com/"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="SocialMediaElement"
+        >
+          <a
+            href="https://www.facebook.com/"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="SocialMediaElement"
+        >
+          <a
+            href="https://www.facebook.com/"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="SocialMediaElement"
+        >
+          <a
+            href="https://www.facebook.com/"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <div
+        class="author"
+      >
+        <p>
+          Created By 
+          <span>
+            Tomasz Skupień
+          </span>
+           | All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

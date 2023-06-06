@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component 1`] = `
+<div>
+  <div
+    class="Categories"
+  >
+    <h1
+      class="categoriesHeader"
+    >
+      Categories
+    </h1>
+    <ul
+      class="categoriesList"
+    >
+      <li>
+        Arabica
+      </li>
+      <li>
+        Robusta
+      </li>
+      <li>
+        Single Origin
+      </li>
+      <li>
+        Blends
+      </li>
+      <li>
+        Espresso
+      </li>
+      <li>
+        Decaf
+      </li>
+      <li>
+        Organic
+      </li>
+      <li>
+        Flavored
+      </li>
+      <li>
+        Cold Brew
+      </li>
+      <li>
+        Instant
+      </li>
+    </ul>
+  </div>
+</div>
+`;

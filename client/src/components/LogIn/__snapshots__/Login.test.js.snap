@@ -28,7 +28,7 @@ exports[`should render Login component 1`] = `
               value=""
             />
             <div
-              class="errorComponent"
+              class="errorText"
             />
           </div>
           <div
@@ -51,7 +51,7 @@ exports[`should render Login component 1`] = `
               </button>
             </div>
             <div
-              class="errorComponent"
+              class="errorText"
             />
             <div>
               <a

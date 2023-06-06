@@ -52,7 +52,6 @@
     "react-whatsapp-widget": "^2.2.0",
     "redux": "^4.2.0",
     "style-loader": "^3.3.2",
-    "swiper": "^9.3.1",
     "typo-js": "^1.2.2",
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.4",
@@ -95,6 +94,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "jest-watch-typeahead": "^0.6.5",
     "node-sass": "^8.0.0",
-    "sass-loader": "^13.2.2"
+    "sass-loader": "^13.2.2",
+    "swiper": "^9.3.2"
   }
 }

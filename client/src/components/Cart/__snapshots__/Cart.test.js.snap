@@ -70,7 +70,8 @@ exports[`should render cart component 1`] = `
           2
         </span>
         <button
-          class="btnDeleteProduct"
+          class="BtnDeleteProduct"
+          id="imBinIdCart0"
         >
           <svg
             fill="currentColor"
@@ -98,6 +99,7 @@ exports[`should render cart component 1`] = `
       <a
         class="btnCheckoutNow"
         href="/cart"
+        id="ViewCart"
       >
         View my cart
       </a>
