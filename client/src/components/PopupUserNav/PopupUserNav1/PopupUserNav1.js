@@ -41,7 +41,7 @@ function PopupUserNav2() {
       ) : (
         <div className={styles.btnSignIn_UpSection}>
           <li className={styles.btnSignIn_Up}>
-            <Link to="log-in">Log In</Link>
+            <Link to="log-in">Log in</Link>
           </li>
 
           <li className={styles.infoAcc}>Don't have an account?</li>

@@ -10,7 +10,9 @@ class HomePage {
   }
 
   getLogInPage() {
-    return cy.get("a").contains("Log in");
+    return cy
+      .get(".PopupUserNav2_btnSignIn_UpSection__ISAqm > :nth-child(1) > a")
+      .contains("Log in");
   }
 
   getUserNavigationBar() {

@@ -1,6 +1,12 @@
 /// <reference types="Cypress" />
 
 class OrderPage {
+  // Errors
+
+  getErrors(className) {
+    return cy.get(className);
+  }
+
   // Delivery
   getCarrierDelivery() {
     return cy.get('label[for="carrier"]');
@@ -66,6 +72,9 @@ class OrderPage {
   }
   getCompanyStreetInput() {
     return cy.get("input[name='companyStreet']");
+  }
+  getCompanyZipCodeInput() {
+    return cy.get("input[name='companyZIPcode']");
   }
   getCompanyCityInput() {
     return cy.get("input[name='companyCity']");

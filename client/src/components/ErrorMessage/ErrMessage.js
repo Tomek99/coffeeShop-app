@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 
 function ErrMessage({ name }) {
   return (
-    <div className={styles.errorText}>
-      <ErrorMessage name={name} />
-    </div>
+    <ErrorMessage name={name}>
+      {(msg) => <div className={styles.errorText}>{msg}</div>}
+    </ErrorMessage>
   );
 }
 

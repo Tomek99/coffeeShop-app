@@ -23,10 +23,10 @@ const initialValues = {
 
 const validationSchema = Yup.object({
   firstName: Yup.string()
-    .min(3, "Must be 3 characters or less")
+    .min(3, "Must be 3 characters or more")
     .required("Required"),
   lastName: Yup.string()
-    .min(3, "Must be 3 characters or less")
+    .min(3, "Must be 3 characters or more")
     .required("Required"),
   email: Yup.string()
     .email("Invalid email address")
