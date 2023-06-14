@@ -81,16 +81,20 @@ class OrderPage {
   }
 
   //Private person invoice details
+  getInvoiceDetails() {
+    return cy.get('label[for="invoice"]');
+  }
+
   getInvoiceName() {
     return cy.get("input[name='i_name']");
   }
-  getInvoiceName() {
+  getInvoiceStreet() {
     return cy.get("input[name='i_street']");
   }
-  getInvoiceName() {
+  getInvoiceZipCode() {
     return cy.get("input[name='i_ZIP_code']");
   }
-  getInvoiceName() {
+  getInvoiceCity() {
     return cy.get("input[name='i_city']");
   }
 
