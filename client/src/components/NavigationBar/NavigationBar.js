@@ -57,100 +57,92 @@ function NavigationBar() {
   };
 
   return (
-    <>
-      <div className={styles.NavigationBar}>
-        <BtnHamburger
-          isActive={isNavigationOpen}
-          handleBtn={handleNavigation}
-        />
-        <div className={styles.navBar}>
-          <div className={styles.divLogo}>
-            <Link to="/">
-              <img
-                src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png"
-                className={styles.logo}
-                alt="Logo"
-              />
-            </Link>
-          </div>
-          <nav>
-            <DesktopNavigation />
-            <MobileNavigation
-              handleNavigation={handleNavigation}
-              isNavigationOpen={isNavigationOpen}
+    <div className={styles.NavigationBar}>
+      <BtnHamburger isActive={isNavigationOpen} handleBtn={handleNavigation} />
+      <div className={styles.navBar}>
+        <div className={styles.divLogo}>
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png"
+              className={styles.logo}
+              alt="Logo"
             />
-          </nav>
-          <div className={styles.btnSection}>
-            <button
-              className={styles.btnDisplay}
-              onClick={handleSearch}
-              id="bs-search"
-            >
-              <BsSearch size={30} color={"#fff"} />
-            </button>
+          </Link>
+        </div>
+        <nav>
+          <DesktopNavigation />
+          <MobileNavigation
+            handleNavigation={handleNavigation}
+            isNavigationOpen={isNavigationOpen}
+          />
+        </nav>
+        <div className={styles.btnSection}>
+          <button
+            className={styles.btnDisplay}
+            onClick={handleSearch}
+            id="bs-search"
+          >
+            <BsSearch size={30} color={"#fff"} />
+          </button>
 
-            <SearchEngine
+          <SearchEngine
+            isSearchOpen={isSearchOpen}
+            handleSearch={handleSearch}
+          />
+
+          <Link to="wish-list" className={styles.btnDisplay}>
+            <BsHeart size={30} color={"#fff"} />
+          </Link>
+
+          <Link
+            to={isLogIn ? "account" : "log-in"}
+            className={`${styles.btnDisplay} ${styles.btnDisplayActive}`}
+            id="userNavigationBtn0"
+          >
+            <FaRegUser size={30} color={"#fff"} />
+          </Link>
+
+          <PopupUserNav1 />
+
+          <button
+            className={`${styles.btnDisplay} ${styles.btnDisplayActiveAside}`}
+            onClick={handleAside}
+            id="userBtnOpen131"
+          >
+            <FaRegUser size={30} color={"#fff"} />
+          </button>
+
+          <button
+            className={styles.btnDisplay}
+            onClick={() => handleCart(location.pathname)}
+            id="cartBtnOpen132"
+          >
+            <BsCartFill size={30} color={"#fff"} />
+            <span
+              className={styles.quantityProductsInBasket}
+              style={
+                cartQuantity !== 0 ? { display: "flex" } : { display: "none" }
+              }
+            >
+              {cartQuantity}
+            </span>
+          </button>
+          <PopupUserNav2 isAsideOpen={isAsideOpen} handleAside={handleAside} />
+          <Cart handleCart={handleCart} isCartOpen={isCartOpen} />
+          {isCartOpen || isAsideOpen || isNavigationOpen || isSearchOpen ? (
+            <BlurScreen
+              isCartOpen={isCartOpen}
+              isNavigationOpen={isNavigationOpen}
               isSearchOpen={isSearchOpen}
+              handleAside={handleAside}
+              handleCart={handleCart}
+              handleNavigation={handleNavigation}
               handleSearch={handleSearch}
             />
-
-            <Link to="wish-list" className={styles.btnDisplay}>
-              <BsHeart size={30} color={"#fff"} />
-            </Link>
-
-            <Link
-              to={isLogIn ? "account" : "log-in"}
-              className={`${styles.btnDisplay} ${styles.btnDisplayActive}`}
-              id="userNavigationBtn0"
-            >
-              <FaRegUser size={30} color={"#fff"} />
-            </Link>
-
-            <PopupUserNav1 />
-
-            <button
-              className={`${styles.btnDisplay} ${styles.btnDisplayActiveAside}`}
-              onClick={handleAside}
-              id="userBtnOpen131"
-            >
-              <FaRegUser size={30} color={"#fff"} />
-            </button>
-
-            <button
-              className={styles.btnDisplay}
-              onClick={() => handleCart(location.pathname)}
-              id="cartBtnOpen132"
-            >
-              <BsCartFill size={30} color={"#fff"} />
-              <span
-                className={styles.quantityProductsInBasket}
-                style={
-                  cartQuantity !== 0 ? { display: "flex" } : { display: "none" }
-                }
-              >
-                {cartQuantity}
-              </span>
-            </button>
-            <PopupUserNav2
-              isAsideOpen={isAsideOpen}
-              handleAside={handleAside}
-            />
-            <Cart handleCart={handleCart} isCartOpen={isCartOpen} />
-            {isCartOpen || isAsideOpen || isNavigationOpen || isSearchOpen ? (
-              <BlurScreen
-                isCartOpen={isCartOpen}
-                isNavigationOpen={isNavigationOpen}
-                isSearchOpen={isSearchOpen}
-                handleAside={handleAside}
-                handleCart={handleCart}
-                handleNavigation={handleNavigation}
-                handleSearch={handleSearch}
-              />
-            ) : null}
-          </div>
+          ) : null}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

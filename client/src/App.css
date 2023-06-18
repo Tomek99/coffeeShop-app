@@ -56,6 +56,14 @@ section.columnWeb {
   margin-bottom: 30px;
 }
 
+section.adminWeb {
+  display: flex;
+  justify-content: stretch;
+}
+
+section.columnAdmin {
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;

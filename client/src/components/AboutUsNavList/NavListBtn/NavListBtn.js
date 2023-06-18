@@ -5,7 +5,7 @@ import styles from "./NavListBtn.module.scss";
 function NavListElement({ item, switchTab, tabNumber }) {
   const { name, number } = item;
   return (
-    <li>
+    <li className={styles.NavListElement}>
       <button
         className={tabNumber === number ? styles.activeStyle : undefined}
         onClick={() => switchTab(number)}

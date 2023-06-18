@@ -14,16 +14,3 @@ test("should render Login component", () => {
 
   expect(container).toMatchSnapshot();
 });
-
-// test("logIn function be should called", () => {
-//   const mock = jest.fn()
-//   const { container } = render(
-//     <MemoryRouter>
-//       <Context.Provider value={{}}>
-//       <LogIn />
-//       </Context.Provider>
-//     </MemoryRouter>
-//   );
-
-//   expect(container).toMatchSnapshot();
-// });

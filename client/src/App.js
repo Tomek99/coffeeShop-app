@@ -6,7 +6,16 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./Contexts/Context";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
-import { Home, Blog, Products, Reviews, AboutUs, Account, Wish } from "./pages";
+import {
+  Home,
+  Blog,
+  Products,
+  Reviews,
+  AboutUs,
+  Account,
+  Wish,
+  AdminPage,
+} from "./pages";
 import {
   NavigationBar,
   NavigationBarOrder,
@@ -33,6 +42,14 @@ import {
 } from "./components";
 
 function App() {
+  /*----------- admin ----------- */
+  // const [adminLogged, setAdminLogged] = useState(false);
+
+  // function handleAdmin() {
+  //   if (!adminLogged) {
+  //     prompt()
+  //   }
+  // }
   /*----------- location ----------- */
   const location = useLocation();
 
@@ -376,11 +393,15 @@ function App() {
           case "/order/canceled":
             return <NavigationBarOrder />;
 
+          case "/admin":
+            return <div></div>;
           default:
             return <NavigationBar />;
         }
       })()}
-      <section className="columnWeb">
+      <section
+        className={location.pathname !== "/admin" ? "columnWeb" : "adminWeb"}
+      >
         <div className="absoluteDivApp">
           <ToastContainer
             position="top-center"
@@ -479,9 +500,10 @@ function App() {
             element={<PaymentSuccess clearTheCart={clearTheCart} />}
           />
           <Route path="order/canceled" element={<PaymentCanceled />} />
-
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
+          <Route path="admin" element={<AdminPage />} />
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </section>
@@ -494,6 +516,8 @@ function App() {
           case "/order/canceled":
             return <FooterOrder />;
 
+          case "/admin":
+            return <div></div>;
           default:
             return <Footer />;
         }

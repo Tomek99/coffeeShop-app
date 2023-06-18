@@ -26,6 +26,7 @@
     "enzyme": "^3.11.0",
     "firebase": "^9.20.0",
     "formik": "^2.2.9",
+    "hamburgers": "^1.2.1",
     "hunspell-spellchecker": "^1.0.2",
     "modern-normalize": "^1.1.0",
     "normalize.css": "^8.0.1",
