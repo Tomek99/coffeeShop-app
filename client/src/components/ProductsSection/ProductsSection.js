@@ -4,86 +4,41 @@ import LatestProduct from "../LatestProduct/LatestProduct";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import { Context } from "../../Contexts/Context";
 import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
-import { useSwipeable } from "react-swipeable";
-// import CarouselDots from "../CarouselDots/CarouselDots";
-import BtnRight from "../Buttons/BtnRight/BtnRight";
-import BtnLeft from "../Buttons/BtnLeft/BtnLeft";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 
 function ProductsSection() {
   const { products, loading } = useContext(Context);
   const selectedProducts = products.slice(0, 8);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  function updateIndex(newIndex) {
-    if (newIndex < 0) {
-      newIndex = displayElements() - 1;
-    } else if (newIndex >= displayElements()) {
-      newIndex = 0;
-    }
-    setActiveIndex(newIndex);
-  }
-
-  const [width, setWidth] = useState();
-  const testRef = useRef(null);
-
-  function displayElements() {
-    if (width <= 520) {
-      return 8;
-    } else if (width <= 1240) {
-      return 4;
-    } else {
-      return 2;
-    }
-  }
-
-  const handlers = useSwipeable({
-    onSwipedLeft: () => updateIndex(activeIndex + 1),
-    onSwipedRight: () => updateIndex(activeIndex - 1),
-  });
-
-  useEffect(() => {
-    if (!loading) {
-      const handleResize = () => {
-        setWidth(testRef.current.offsetWidth);
-      };
-
-      handleResize();
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, [loading]);
-
-  useEffect(() => {
-    if (width) {
-      setActiveIndex(0);
-    }
-  }, [width]);
 
   return (
     <div className={styles.ProductsSection} id="productsSection">
       <HeaderSection firstWord="latest" secondWord="products" />
-      <div className={styles.wrapperDiv} {...handlers}>
+      <div className={styles.wrapperDiv}>
         {loading ? (
           <LoaderSpinner loading={loading} />
         ) : (
-          <div className={styles.carouselDiv} ref={testRef}>
-            <div
-              className={styles.innerDiv}
-              style={{
-                transform: `translateX(-${activeIndex * width}px)`,
+          <div className={styles.productsSectionCarousel}>
+            <Swiper
+              slidesPerView={"auto"}
+              grabCursor={true}
+              spaceBetween={32}
+              pagination={{
+                clickable: true,
               }}
+              className="mySwiper"
+              style={{ padding: "2px" }}
             >
               {selectedProducts.map((item, index) => (
-                <LatestProduct key={index} item={item} isHome={true} />
+                <SwiperSlide key={index} style={{ width: "auto" }}>
+                  <LatestProduct key={index} item={item} isHome={true} />
+                </SwiperSlide>
               ))}
-            </div>
-            <div className={styles.indicators}>
-              <BtnLeft activeIndex={activeIndex} updateIndex={updateIndex} />
-              <BtnRight activeIndex={activeIndex} updateIndex={updateIndex} />
-            </div>
+            </Swiper>
           </div>
         )}
       </div>

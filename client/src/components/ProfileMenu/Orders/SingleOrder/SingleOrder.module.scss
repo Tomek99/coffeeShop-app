@@ -1,66 +1,67 @@
 .SingleOrder {
+  display: flex;
+  transition: 0.3s linear;
+  gap: 10px;
+  border: var(--border);
+  border-radius: 12px;
+  background-color: var(--light-greay);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+
+  .details {
     display: flex;
-    transition: 0.3s linear;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #e5e5e5;
+
+    padding: 24px 25px 24px 24px;
+    border-radius: 12px 0 0 12px;
+    font-size: 1.3rem;
+
+    .headline {
+      color: var(--text-color);
+      text-transform: capitalize;
+    }
+  }
+
+  .products {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
     gap: 10px;
-    border: var(--border);
-    border-radius: 12px;
-    background-color: var(--black);
-    cursor: pointer;
+    padding: 24px 10px;
 
-    &:hover {
-        box-shadow: var(--shadow);
+    .hiddenElements {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      font-size: 1.3rem;
+      border: var(--border);
+      border-radius: 4px;
+      color: var(--text-color);
     }
-
-    .details {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        background-color: var(--grey);
-        padding: 24px 25px 24px 24px;
-        border-radius: 12px 0 0 12px;
-        font-size: 1.3rem;
-
-        .headline {
-            color: #fff;
-            text-transform: capitalize;
-        }
-    }
-
-    .products {
-        display: flex;
-        align-items: center;
-        flex-grow: 1;
-        gap: 10px;
-        padding: 24px 10px;
-
-        .hiddenElements {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px;
-            height: 60px;
-            font-size: 1.3rem;
-            border: var(--border);
-            border-radius: 4px;
-            color: #fff;
-        }
-    }
+  }
 }
 
 @media (max-width: 1280px) {
-    .details {
-        padding: 24px 60px 24px 24px !important;
-    }
+  .details {
+    padding: 24px 60px 24px 24px !important;
+  }
 }
 
 @media (max-width: 500px) {
-    .details {
-        padding: 24px !important;
-    }
+  .details {
+    padding: 24px !important;
+  }
 }
 
 @media (max-width: 400px) {
-    .details {
-        padding: 8px !important;
-    }
+  .details {
+    padding: 8px !important;
+  }
 }

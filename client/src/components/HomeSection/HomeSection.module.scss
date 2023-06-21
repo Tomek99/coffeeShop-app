@@ -1,14 +1,14 @@
 .HomeSection {
   display: flex;
   flex-direction: column;
-  position: relative;
-  height: 88vh;
+  align-items: center;
+  margin-top: 10px;
 
-  .slider {
+  .homeSectionCenter {
+    position: relative;
+    max-width: 1366px;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
+    overflow: hidden;
 
     img {
       width: 100%;
@@ -16,51 +16,13 @@
       object-fit: cover;
       object-position: bottom;
     }
-  }
 
-  .activeAnim {
-    opacity: 1;
-  }
-
-  .containerDots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    position: absolute;
-    left: 25px;
-    bottom: 20px;
-    padding: 10px;
-    z-index: 2;
-    cursor: default;
-
-    .spanDot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background-color: #ccc;
-      cursor: pointer;
+    .paginationLeftSide {
+      div {
+        span {
+          background-color: var(--main-color);
+        }
+      }
     }
-
-    .activeDot {
-      background-color: var(--main-color);
-      border: var(--border);
-    }
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .HomeSection {
-    height: 89vh !important;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .HomeSection {
-    height: 86vh !important;
-  }
-}
-@media screen and (max-width: 320px) {
-  .HomeSection {
-    height: 82vh !important;
   }
 }

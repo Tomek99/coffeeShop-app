@@ -3,6 +3,7 @@ import styles from "./PopupMemberDetails.module.scss";
 import { VscChromeClose } from "react-icons/vsc";
 import PropTypes from "prop-types";
 import BtnTwitter from "../../../Buttons/BtnTwitter/BtnTwitter";
+import BtnClose from "../../../Buttons/BtnClose/BtnClose";
 
 function PopupMemberDetails(props) {
   const { id, url, name, position, text, handleShowMember } = props;
@@ -20,9 +21,9 @@ function PopupMemberDetails(props) {
           </div>
           <p>{text}</p>
         </div>
-        <button onClick={() => handleShowMember()} className={styles.btnClose}>
-          <VscChromeClose className={styles.btnIcon} />
-        </button>
+        <div className={styles.divClose}>
+          <BtnClose handleBtn={handleShowMember} />
+        </div>
       </div>
     </div>
   );

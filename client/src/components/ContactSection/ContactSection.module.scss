@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-color);
   overflow: hidden;
   margin: 20px 10px 0 10px;
 
@@ -22,7 +22,7 @@
     .content {
       display: flex;
       flex-direction: column;
-      background-color: var(--black);
+      background-color: var(--light-greay);
       font-size: 1.4rem;
       padding: 40px;
       gap: 40px;

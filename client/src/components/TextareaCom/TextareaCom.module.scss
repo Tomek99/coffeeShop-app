@@ -12,13 +12,7 @@
     background-color: var(--bg);
     font-size: 1.3rem;
     resize: none;
-
     line-height: 20px;
-
-    &::placeholder {
-      color: #ccc;
-      opacity: 0.7;
-    }
   }
 
   .countLength {

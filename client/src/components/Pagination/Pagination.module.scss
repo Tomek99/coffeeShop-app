@@ -1,63 +1,62 @@
 .pagination {
-    margin-top: 30px;
-    align-self: flex-end;
+  margin-top: 30px;
+  align-self: flex-end;
 
-    .paginationBttns {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style-type: none;
-        gap: 10px;
-        font-size: 1.5rem;
-        color: #fff;
+  .paginationBttns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: var(--text-color);
 
-        .previousBttn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
-            background-color: var(--blue);
-            border-radius: 50%;
-            transition: 0.3s linear;
-            cursor: pointer;
+    .previousBttn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      border-radius: 50%;
+      transition: 0.3s linear;
+      cursor: pointer;
 
-            &:hover {
-                background-color: #313145;
-            }
-        }
-
-        .nextBttn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px 15px;
-            border-radius: 16px;
-            background-color: var(--blue);
-            transition: 0.3s linear;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #313145;
-            }
-        }
-
-        .pageNumbers {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: 0.3s linear;
-            cursor: pointer;
-
-            a {
-                padding: 8px;
-            }
-
-            &:hover {
-                background-color: #313145;
-            }
-        }
+      &:hover {
+        background-color: var(--light-greay);
+      }
     }
+
+    .nextBttn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 15px;
+      border-radius: 16px;
+
+      transition: 0.3s linear;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--light-greay);
+      }
+    }
+
+    .pageNumbers {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s linear;
+      cursor: pointer;
+
+      a {
+        padding: 8px;
+      }
+
+      &:hover {
+        background-color: var(--light-greay);
+      }
+    }
+  }
 }

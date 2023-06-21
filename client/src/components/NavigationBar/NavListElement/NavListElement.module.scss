@@ -1,42 +1,39 @@
 .NavListElement {
-    .navLink {
-        color: #fff;
-        transition: 0.3s linear;
-        position: relative;
+  .navLink {
+    color: var(--color);
+    transition: 0.3s linear;
+    position: relative;
 
-        &::after {
-            display: block;
-            content: "";
-            width: 0;
-            height: 2px;
-            background: var(--main-color);
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            transition: 0.3s linear;
-        }
-
-        &:hover::after {
-            width: 100%;
-        }
-
-        &:hover {
-            color: var(--main-color);
-        }
+    &::after {
+      display: block;
+      content: "";
+      width: 0;
+      height: 2px;
+      background: var(--text-color);
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      transition: 0.3s linear;
     }
 
-    .activeNavLink {
-        color: var(--main-color);
-        &::after {
-            display: block;
-            content: "";
-            width: 100%;
-            height: 2px;
-            background: var(--main-color);
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            transition: 0.25s linear;
-        }
+    &:hover::after {
+      width: 100%;
     }
+  }
+
+  .activeNavLink {
+    color: var(--text-color);
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: var(--text-color);
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      transition: 0.25s linear;
+    }
+  }
 }

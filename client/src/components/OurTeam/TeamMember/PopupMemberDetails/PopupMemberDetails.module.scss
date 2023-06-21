@@ -1,125 +1,111 @@
 .PopupMemberDetails {
-    display: block;
-    position: fixed;
-    width: 100%;
-    max-width: 800px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--black);
-    z-index: 110;
+  display: block;
+  position: fixed;
+  width: 100%;
+  max-width: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--light-greay);
+  z-index: 110;
 
-    .memberDetails {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  .memberDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .imgMemberSection {
-            max-width: 300px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 30px;
+    .imgMemberSection {
+      max-width: 300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
 
-            .imgMember {
-                max-width: 300px;
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        .memberContent {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-around;
-            max-width: 500px;
-            width: 100%;
-            gap: 1rem;
-            padding: 10px 30px;
-
-            div {
-                h1 {
-                    font-size: 2.5rem;
-                }
-                h3 {
-                    font-size: 1.7rem;
-                    color: var(--main-color);
-                }
-            }
-
-            p {
-                text-align: justify;
-                font-weight: 300;
-                font-size: 1.4rem;
-                max-height: 300px;
-                padding: 0.5rem;
-                color: #ccc;
-                overflow: scroll;
-                overflow-x: hidden;
-            }
-        }
-
-        .btnClose {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--main-color);
-            top: -15px;
-            right: -15px;
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #ce9754;
-            }
-
-            .btnIcon {
-                font-size: 2.5rem;
-                color: #fff;
-            }
-        }
+      .imgMember {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+      }
     }
+
+    .memberContent {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      max-width: 500px;
+      width: 100%;
+      gap: 1rem;
+      padding: 10px 30px;
+
+      div {
+        h1 {
+          font-size: 2.5rem;
+        }
+        h3 {
+          font-size: 1.7rem;
+          color: var(--text-color);
+        }
+      }
+
+      p {
+        text-align: justify;
+        font-weight: 300;
+        font-size: 1.4rem;
+        max-height: 300px;
+        padding: 0.5rem;
+        color: var(--text-color);
+        overflow: scroll;
+        overflow-x: hidden;
+      }
+    }
+
+    .divClose {
+      position: absolute;
+      background-color: var(--light-creamy);
+      top: -15px;
+      right: -15px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
 }
 
 @media (max-width: 850px) {
-    .PopupMemberDetails {
-        max-width: 500px;
-    }
+  .PopupMemberDetails {
+    max-width: 500px;
+  }
 
-    .memberDetails {
-        flex-direction: column;
-    }
+  .memberDetails {
+    flex-direction: column;
+  }
 
-    .btnClose {
-        top: 5px !important;
-        right: 5px !important;
-    }
+  .btnClose {
+    top: 5px !important;
+    right: 5px !important;
+  }
 }
 
 @media (max-width: 375px) {
-    .PopupMemberDetails {
-        top: 0 !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
+  .PopupMemberDetails {
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
 
-        .imgMemberSection {
-            position: absolute;
-            top: 90%;
+    .imgMemberSection {
+      position: absolute;
+      top: 90%;
 
-            .imgMember {
-                position: absolute;
-                top: -110px !important;
-                width: 100px !important;
-                border-radius: 50%;
-            }
-        }
+      .imgMember {
+        position: absolute;
+        top: -110px !important;
+        width: 100px !important;
+        border-radius: 50%;
+      }
     }
+  }
 }

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../Contexts/Context";
-import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
+import { BsEye, BsCart, BsHeart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
@@ -24,18 +24,18 @@ function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
     <div className={styles.LatestProduct}>
       <div className={styles.iconsSection}>
         <button onClick={navigatePage} id={showProductId}>
-          <BsFillEyeFill />
+          <BsEye />
         </button>
 
         <button onClick={() => addItem(item)} id={cartFillId}>
-          <BsCartFill />
+          <BsCart />
         </button>
         <button
           id={wishlistId}
           className={foundWishProduct ? styles.activeBtn : null}
           onClick={() => addWishItem(_id)}
         >
-          <BsFillHeartFill />
+          <BsHeart />
         </button>
       </div>
       <div className={styles.contentWrapper}>

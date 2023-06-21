@@ -14,10 +14,10 @@
   }
   .userContent {
     font-size: 1.3rem;
-    color: #fff;
+    color: var(--text-color);
 
     .postData {
-      color: var(--main-color);
+      font-weight: 500;
     }
   }
 }

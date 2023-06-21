@@ -4,33 +4,10 @@
   justify-content: center;
   align-items: center;
 
-  .wrapperDiv {
-    position: relative;
-
-    .carouselDiv {
-      max-width: 1366px;
-      width: 100%;
-      text-align: center;
-      overflow: hidden;
-      padding: 5px 10px;
-
-      // justify-content: space-between;
-
-      .innerDiv {
-        display: inline-flex;
-        gap: 30px;
-        transition: 0.3s linear;
-      }
-    }
-
-    .indicators {
-      opacity: 0;
-      transition: 0.3s linear;
-    }
-  }
-
-  &:hover .indicators {
-    opacity: 1;
+  .productsSectionCarousel {
+    max-width: 1366px;
+    width: 100%;
+    overflow: hidden;
   }
 }
 

@@ -1,75 +1,75 @@
 .firstDiv {
-    .rowTwo {
-        display: flex;
-        margin-top: 10px;
-        gap: 20px;
+  .rowTwo {
+    display: flex;
+    margin-top: 10px;
+    gap: 20px;
 
-        div {
-            background-color: var(--black);
-            border: var(--border);
-            padding: 20px 10px;
-            border-radius: 16px;
-        }
+    div {
+      background-color: var(--light-greay);
+      border: var(--border);
+      padding: 20px 10px;
+      border-radius: 16px;
     }
+  }
 }
 
 .secondDiv {
-    padding-bottom: 30px;
-    border-bottom: var(--border);
+  padding-bottom: 30px;
+  border-bottom: var(--border);
 
-    .rowThree {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        margin-top: 10px;
-        color: #ccc;
-    }
+  .rowThree {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 10px;
+    color: var(--text-color);
+  }
 }
 
 .thirdDiv {
-    max-width: 482px;
+  max-width: 482px;
 
-    .rowTwo {
+  .rowTwo {
+    display: flex;
+    gap: 20px;
+
+    .divContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      .btnComplaint {
         display: flex;
-        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        border-radius: 20px;
+        color: var(--text-color);
+        border: var(--border);
+        transition: 0.3s linear;
+        font-size: 1.3rem;
+        cursor: pointer;
 
-        .divContent {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            p {
-                margin-bottom: 10px;
-            }
-
-            .btnComplaint {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 10px 0;
-                border-radius: 20px;
-                color: #fff;
-                border: var(--border);
-                transition: 0.3s linear;
-                font-size: 1.3rem;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: var(--main-color);
-                }
-            }
+        &:hover {
+          background-color: var(--main-color);
         }
+      }
     }
+  }
 }
 
 @media (max-width: 700px) {
-    .rowTwo {
-        flex-direction: column;
-    }
+  .rowTwo {
+    flex-direction: column;
+  }
 
-    .secondDiv {
-        .rowThree {
-            flex-direction: column;
-        }
+  .secondDiv {
+    .rowThree {
+      flex-direction: column;
     }
+  }
 }

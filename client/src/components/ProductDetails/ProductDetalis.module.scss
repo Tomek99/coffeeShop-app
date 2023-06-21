@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   gap: 5rem;
-  color: #fff;
+  color: var(--text-color);
 
   .productDetailsSection {
     display: flex;
@@ -51,11 +51,11 @@
           flex-direction: row;
 
           input {
-            background: var(--black);
+            background: var(--light-greay);
             text-align: center;
             font-size: 1.7rem;
             width: 50px;
-            color: #fff;
+            color: var(--text-color);
           }
         }
       }

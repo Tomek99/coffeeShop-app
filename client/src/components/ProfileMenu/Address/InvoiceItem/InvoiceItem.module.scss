@@ -1,21 +1,22 @@
 .AddressItem {
-    border: var(--border);
-    border-radius: 8px;
-    background-color: var(--black);
+  border: var(--border);
+  color: var(--text-color);
+  border-radius: 8px;
+  background-color: var(--light-greay);
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        font-size: 1.3rem;
-        padding: 16px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.3rem;
+    padding: 16px;
 
-        .name {
-            font-weight: bold;
-        }
+    .name {
+      font-weight: bold;
     }
+  }
 
-    .buttons {
-        padding: 0 0 12px 4px;
-    }
+  .buttons {
+    padding: 0 0 12px 4px;
+  }
 }

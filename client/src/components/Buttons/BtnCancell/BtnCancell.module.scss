@@ -1,20 +1,18 @@
 .BtnCancell {
-    font-size: 13px;
-    padding: 10px 15px;
-    color: #fff;
+  font-size: 13px;
+  padding: 10px 15px;
+  color: var(--text-color);
+  border-radius: 18px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 
-    border-radius: 18px;
-    background-color: var(--black);
-    cursor: pointer;
-
-    &:hover {
-        transition: all 0.3s ease-in-out;
-        background-color: var(--grey);
-    }
+  &:hover {
+    background-color: var(--dark-grey);
+  }
 }
 @media (max-width: 560px) {
-    .btnAdd {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+  .btnAdd {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

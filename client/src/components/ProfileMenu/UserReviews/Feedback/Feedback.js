@@ -14,10 +14,16 @@ function Feedback() {
           <img src="/images/product-1.png" alt="a" />
         </div>
         <div className={styles.generalInfo}>
-          <Link className={styles.showMore} style={{ color: "#fff" }}>
+          <Link
+            className={styles.showMore}
+            style={{ color: "var(--text-color)" }}
+          >
             Fresh Cofee
           </Link>
-          <Link className={styles.showMore} style={{ color: "#ccc" }}>
+          <Link
+            className={styles.showMore}
+            style={{ color: "var(--text-color)" }}
+          >
             4 month ago
           </Link>
         </div>

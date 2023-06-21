@@ -9,21 +9,6 @@
     max-width: 1366px;
     width: 100%;
     overflow: hidden;
-
-    .swiper {
-      .swiper-pagination {
-        bottom: -2px;
-        position: relative;
-
-        .swiper-pagination-bullet {
-          background-color: #ccc;
-        }
-
-        .swiper-pagination-bullet-active {
-          background-color: var(--main-color);
-        }
-      }
-    }
   }
 }
 

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
-import { BsCartFill, BsSearch, BsHeart } from "react-icons/bs";
+import { BsCart, BsSearch, BsHeart } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
 import SearchEngine from "../SearchEngine/SearchEngine";
 import Cart from "../Cart/Cart";
@@ -82,7 +82,7 @@ function NavigationBar() {
             onClick={handleSearch}
             id="bs-search"
           >
-            <BsSearch size={30} color={"#fff"} />
+            <BsSearch size={30} color={"var(--text-color)"} />
           </button>
 
           <SearchEngine
@@ -91,7 +91,7 @@ function NavigationBar() {
           />
 
           <Link to="wish-list" className={styles.btnDisplay}>
-            <BsHeart size={30} color={"#fff"} />
+            <BsHeart size={30} color={"var(--text-color)"} />
           </Link>
 
           <Link
@@ -99,7 +99,7 @@ function NavigationBar() {
             className={`${styles.btnDisplay} ${styles.btnDisplayActive}`}
             id="userNavigationBtn0"
           >
-            <FaRegUser size={30} color={"#fff"} />
+            <FaRegUser size={30} color={"var(--text-color)"} />
           </Link>
 
           <PopupUserNav1 />
@@ -109,7 +109,7 @@ function NavigationBar() {
             onClick={handleAside}
             id="userBtnOpen131"
           >
-            <FaRegUser size={30} color={"#fff"} />
+            <FaRegUser size={30} color={"var(--text-color)"} />
           </button>
 
           <button
@@ -117,7 +117,7 @@ function NavigationBar() {
             onClick={() => handleCart(location.pathname)}
             id="cartBtnOpen132"
           >
-            <BsCartFill size={30} color={"#fff"} />
+            <BsCart size={30} color={"var(--text-color)"} />
             <span
               className={styles.quantityProductsInBasket}
               style={
