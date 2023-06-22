@@ -1,82 +1,82 @@
 .FooterOrder {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-items: center;
-    font-size: 1.3rem;
-    color: #fff;
-    margin: 0 10px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin: 0 10px;
 
-    .flexColumn {
+  .flexColumn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 12px 0 12px;
+    border-top: var(--border);
+
+    .columnLeft {
+      .divAsk {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 1200px;
-        width: 100%;
-        padding: 12px 0 12px;
-        border-top: var(--border);
+        align-items: center;
+        gap: 10px;
+      }
 
-        .columnLeft {
-            .divAsk {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
+      .divStatue {
+        display: flex;
+        gap: 10px;
 
-            .divStatue {
-                display: flex;
-                gap: 10px;
+        a {
+          color: var(--text-color);
 
-                a {
-                    color: #fff;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
+          &:hover {
+            text-decoration: underline;
+          }
         }
-
-        .columnRight {
-            max-width: 360px;
-            color: #ccc;
-
-            .dataOwner {
-                text-align: right;
-            }
-
-            .moreInfo {
-                max-width: 360px;
-                position: absolute;
-                text-align: right;
-                margin: 10px 5px;
-            }
-        }
+      }
     }
+
+    .columnRight {
+      max-width: 360px;
+      color: var(--text-color);
+
+      .dataOwner {
+        text-align: right;
+      }
+
+      .moreInfo {
+        max-width: 360px;
+        position: absolute;
+        text-align: right;
+        margin: 10px 5px;
+      }
+    }
+  }
 }
 
 @media (max-width: 900px) {
-    .flexColumn {
-        flex-direction: column !important;
+  .flexColumn {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+
+    .columnLeft {
+      .divStatue {
+        margin-top: 5px;
         justify-content: center;
-        align-items: center;
-
-        .columnLeft {
-            .divStatue {
-                margin-top: 5px;
-                justify-content: center;
-            }
-        }
-        .columnRight {
-            margin-top: 10px;
-
-            .dataOwner {
-                text-align: center !important;
-            }
-            .moreInfo {
-                text-align: center !important;
-            }
-        }
+      }
     }
+    .columnRight {
+      margin-top: 10px;
+
+      .dataOwner {
+        text-align: center !important;
+      }
+      .moreInfo {
+        text-align: center !important;
+      }
+    }
+  }
 }

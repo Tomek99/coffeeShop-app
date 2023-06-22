@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function NavElement({ item, id, tab }) {
   const { text, path } = item;
-  const check = <AiOutlineCheckCircle size={25} color="#ccc" />;
+  const check = <AiOutlineCheckCircle size={25} color={`var(--text-color)`} />;
 
   const dot = (
     <span
@@ -29,7 +29,9 @@ function NavElement({ item, id, tab }) {
           </span>
           <span
             style={
-              tab === id ? { color: "var(--main-color" } : { color: "#ccc" }
+              tab === id
+                ? { color: "var(--main-color" }
+                : { color: "var(--text-color)" }
             }
           >
             {text}

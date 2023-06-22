@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--bg);
+  background-color: var(--light-greay);
   box-shadow: var(--shadow-thick);
   z-index: 99;
 
@@ -17,7 +17,9 @@
 
     .divLogo {
       img.logo {
-        width: 80%;
+        max-width: 90px;
+        width: 100%;
+        height: auto;
         margin: 5px 0 5px 0;
       }
     }

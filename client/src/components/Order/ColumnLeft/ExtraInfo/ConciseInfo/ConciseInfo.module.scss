@@ -1,12 +1,12 @@
 .ConciseInfo {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    color: #ccc;
-    margin-top: 10px;
-    max-width: 470px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--text-color);
+  margin-top: 10px;
+  max-width: 470px;
 
-    p {
-        font-size: 1.3rem;
-    }
+  p {
+    font-size: 1.3rem;
+  }
 }

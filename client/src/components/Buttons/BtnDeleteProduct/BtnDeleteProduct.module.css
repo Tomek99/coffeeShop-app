@@ -4,11 +4,11 @@
   align-items: center;
   padding: 10px;
   border-radius: 50%;
-  color: #fff;
+  color: var(--text-color);
   background-color: transparent;
   cursor: pointer;
 }
 
 .BtnDeleteProduct:hover {
-  background-color: var(--grey);
+  background-color: var(--light-greay);
 }

@@ -1,9 +1,11 @@
 .Item {
   display: flex;
   justify-content: space-between;
-  border-bottom: var(--border);
   padding: 16px 24px;
-  color: #fff;
+  color: var(--text-color);
+  border: var(--shadow-thick);
+  border-radius: 12px;
+  background-color: var(--light-greay);
 
   .leftSide {
     display: flex;
@@ -38,7 +40,8 @@
       text-align: right;
 
       p:nth-of-type(1) {
-        color: #ccc;
+        color: var(--text-color);
+        opacity: 0.7;
         text-decoration: line-through;
         font-size: 1.3rem;
       }
@@ -57,8 +60,8 @@
       }
 
       .dropdownEl {
-        background-color: var(--black);
-        color: #fff;
+        background-color: var(--dark-grey);
+        color: var(--text-color);
         border: none;
         border-radius: 16px;
         padding: 6px;

@@ -1,21 +1,22 @@
 .ItemSummaryDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .divContent {
+    box-shadow: var(--shadow-thick);
+    background-color: var(--light-greay);
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 
-    .divContent {
-        background-color: var(--black);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        border: var(--border);
-        border-radius: 8px;
+    border-radius: 8px;
 
-        .divParagraph {
-            margin-right: 10px;
-            word-break: break-all;
-            font-size: 1.3rem;
-        }
+    .divParagraph {
+      margin-right: 10px;
+      word-break: break-all;
+      font-size: 1.3rem;
     }
+  }
 }

@@ -13,7 +13,9 @@ function CartItem({ item }) {
       <div className={styles.divPrice}>
         {oldPrice ? <p className={styles.oldPrice}>${oldPrice}</p> : null}
         <p>
-          <span style={{ color: "#ccc" }}>{quantity}pc.&nbsp;</span>
+          <span style={{ color: "var(--text-color)", opacity: 0.7 }}>
+            {quantity}pc.&nbsp;
+          </span>
           <span>${price}</span>
         </p>
       </div>

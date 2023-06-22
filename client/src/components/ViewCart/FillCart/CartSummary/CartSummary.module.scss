@@ -1,82 +1,82 @@
 .cartSummary {
-    border-radius: 8px;
-    color: #fff;
-    background-color: var(--bg);
+  border-radius: 8px;
+  color: var(--text-color);
+  background-color: var(--light-greay);
 
-    .discountKey {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-        border-radius: 8px 8px 0 0;
+  .discountKey {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 8px 8px 0 0;
 
-        .btnDiscount {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 10px;
-            color: #fff;
-            font-size: 1.7rem;
-            background-color: transparent;
-            cursor: pointer;
-        }
-
-        .activeKey {
-            position: relative;
-            width: 100%;
-            display: flex;
-            border-radius: 16px;
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
-            border: var(--border);
-
-            input {
-                flex-grow: 1;
-                padding: 8px 10px;
-                background-color: var(--black);
-                border-radius: 16px 0 0 16px;
-                font-size: 1.6rem;
-                color: #fff;
-                background-color: var(--black);
-            }
-        }
-
-        &:hover {
-            background-color: var(--black);
-        }
+    .btnDiscount {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      color: var(--text-color);
+      font-size: 1.7rem;
+      background-color: transparent;
+      transition: 0.2s linear;
+      cursor: pointer;
     }
 
-    .checkout {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        font-size: 1.3rem;
-        background-color: var(--black);
-        border-radius: 0 0 20px 20px;
-        padding: 5px 10px;
+    .activeKey {
+      position: relative;
+      width: 100%;
+      display: flex;
+      border-radius: 16px;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+      border: var(--border);
 
-        div {
-            .save {
-                color: #38b32a;
-            }
-            p {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 5px;
-                font-size: 1.5rem;
-                font-weight: bold;
-            }
-        }
+      .inputDiscount {
+        flex-grow: 1;
+        padding: 8px 10px;
+        background-color: var(--dark-grey);
+        border-radius: 16px 0 0 16px;
+        font-size: 1.6rem;
+        color: var(--text-color);
+      }
     }
+
+    &:hover {
+      background-color: var(--black);
+    }
+  }
+
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.3rem;
+    background-color: var(--black);
+    border-radius: 0 0 20px 20px;
+    padding: 5px 10px;
+
+    div {
+      .save {
+        color: #38b32a;
+      }
+      p {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 @media (max-width: 900px) {
-    .cartSummary {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        border: none;
-    }
+  .cartSummary {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border: none;
+  }
 }

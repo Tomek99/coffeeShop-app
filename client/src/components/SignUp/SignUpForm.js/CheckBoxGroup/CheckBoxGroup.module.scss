@@ -13,7 +13,7 @@
     font-size: 1.5rem;
     display: flex;
     gap: 5px;
-    color: #ccc;
+    color: var(--text-color);
 
     .inputCheckbox {
       border: var(--border);

@@ -33,7 +33,10 @@ function NavigationBarOrder() {
     <div className={styles.NavigationBarOrder}>
       <div className={styles.flexDiv}>
         <Link to="/" className={styles.divImg}>
-          <img src="../images/logo.png" alt="" />
+          <img
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
+            alt="logo"
+          />
         </Link>
         <div className={styles.navigationDivList}>
           <ul className={styles.ulList}>

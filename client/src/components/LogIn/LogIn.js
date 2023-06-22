@@ -10,6 +10,7 @@ import ErrorMessage from "../ErrorMessage/ErrMessage";
 import * as Yup from "yup";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import FieldComponent from "../FormikComponents/FieldComponent/FieldComponent";
 
 const validationSchema = Yup.object({
   email: Yup.string().required("Enter email"),

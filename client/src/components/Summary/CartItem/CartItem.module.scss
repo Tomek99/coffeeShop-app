@@ -1,37 +1,38 @@
 .CartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border);
+  padding: 20px;
+
+  .divFlexRow {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: var(--border);
-    padding: 20px;
+    gap: 20px;
 
-    .divFlexRow {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-
-        .responsiveImg {
-            width: 100%;
-            max-width: 45px;
-            height: auto;
-        }
-
-        p {
-            font-size: 1.3rem;
-        }
+    .responsiveImg {
+      width: 100%;
+      max-width: 45px;
+      height: auto;
     }
 
-    .divPrice {
-        font-size: 1.3rem;
-
-        .oldPrice {
-            font-size: 1.2rem;
-            text-decoration: line-through;
-            text-align: end;
-            color: #ccc;
-        }
+    p {
+      font-size: 1.3rem;
     }
+  }
+
+  .divPrice {
+    font-size: 1.3rem;
+
+    .oldPrice {
+      font-size: 1.2rem;
+      text-decoration: line-through;
+      text-align: end;
+      color: var(--text-color);
+      opacity: 0.7;
+    }
+  }
 }
 .CartItem:last-child {
-    border-bottom: none !important;
+  border-bottom: none !important;
 }

@@ -63,7 +63,7 @@ function NavigationBar() {
         <div className={styles.divLogo}>
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png"
+              src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
               className={styles.logo}
               alt="Logo"
             />

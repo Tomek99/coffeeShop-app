@@ -17,11 +17,12 @@
       .inputSearch {
         padding: 10px;
         border-radius: 8px;
-        background-color: var(--black);
-        color: #fff;
+        background-color: var(--light-greay);
+        color: var(--text-color);
       }
 
       .iconSearch {
+        color: var(--text-color);
         cursor: pointer;
       }
     }
@@ -29,7 +30,7 @@
 
   .btnNav {
     background-color: transparent;
-    color: #fff;
+    color: var(--text-color);
     cursor: pointer;
   }
 }
