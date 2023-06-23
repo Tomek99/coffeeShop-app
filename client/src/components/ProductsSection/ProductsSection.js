@@ -26,7 +26,6 @@ function ProductsSection() {
           <div className={styles.productsSectionCarousel}>
             <Swiper
               slidesPerView={"auto"}
-              loop={true}
               grabCursor={true}
               spaceBetween={32}
               pagination={{

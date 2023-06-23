@@ -3,9 +3,8 @@
   justify-content: space-between;
   padding: 16px 24px;
   color: var(--text-color);
-  border: var(--shadow-thick);
-  border-radius: 12px;
-  background-color: var(--light-greay);
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--shadow-thick-bottom);
 
   .leftSide {
     display: flex;
@@ -85,7 +84,8 @@
 }
 
 .Item:nth-last-of-type(1) {
-  border-bottom: none;
+  box-shadow: none !important;
+  border-radius: 0px 0px 12px 12px !important;
 }
 
 @media (max-width: 500px) {

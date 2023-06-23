@@ -18,7 +18,6 @@ function BlogsSection() {
       <div className="blogsCarousel">
         <Swiper
           slidesPerView={"auto"}
-          loop={"true"}
           spaceBetween={10}
           pagination={{
             clickable: true,

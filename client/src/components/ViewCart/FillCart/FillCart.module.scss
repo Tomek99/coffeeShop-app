@@ -44,8 +44,9 @@
 
     .items {
       border-radius: 12px;
-      border: var(--border);
-      background-color: var(--black);
+      box-shadow: var(--shadow-thick);
+      // background-color: var(--black);
+      gap: 10px;
     }
   }
 

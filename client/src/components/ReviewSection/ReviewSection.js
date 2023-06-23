@@ -19,7 +19,6 @@ function ReviewSection() {
       <div className={styles.reviewSectionCarousel}>
         <Swiper
           slidesPerView={"auto"}
-          loop={true}
           grabCursor={true}
           spaceBetween={30}
           pagination={{
