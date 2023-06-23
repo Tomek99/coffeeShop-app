@@ -5,19 +5,25 @@ import BtnSlider from "./BtnSlider/BtnSlider";
 import Content from "./Content/Content";
 import CarouselDots from "../CarouselDots/CarouselDots";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/swiper.min.css";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 function HomeSection() {
   return (
     <div className={styles.HomeSection}>
-      <div className={styles.homeSectionCenter}>
+      <div className={styles.homeSectionCarousel}>
         <Swiper
+          loop={true}
           pagination={true}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination, Navigation, Autoplay]}
+          autoplay={{
+            delay: 10000,
+            disableOnInteraction: true,
+          }}
           className={`${"mySwiper"} ${styles.paginationLeftSide}`}
           style={{ height: "600px", width: "100%" }}
         >

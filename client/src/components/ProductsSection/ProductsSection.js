@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
+import { Autoplay } from "swiper";
 
 function ProductsSection() {
   const { products, loading } = useContext(Context);
@@ -25,10 +26,16 @@ function ProductsSection() {
           <div className={styles.productsSectionCarousel}>
             <Swiper
               slidesPerView={"auto"}
+              loop={true}
               grabCursor={true}
               spaceBetween={32}
               pagination={{
                 clickable: true,
+              }}
+              modules={[Autoplay]}
+              autoplay={{
+                delay: 10000,
+                disableOnInteraction: true,
               }}
               className="mySwiper"
               style={{ padding: "2px" }}
@@ -45,4 +52,5 @@ function ProductsSection() {
     </div>
   );
 }
+
 export default ProductsSection;

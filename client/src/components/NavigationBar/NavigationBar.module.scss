@@ -39,7 +39,7 @@
           border-radius: 50%;
           width: 25px;
           height: 25px;
-          background-color: var(--dark-grey);
+          background-color: #dcdcdc;
           font-weight: bold;
           position: absolute;
           right: -25px;
@@ -92,5 +92,10 @@
     right: 4px !important;
     bottom: auto !important;
     font-size: 1.2rem !important;
+  }
+}
+@media (max-width: 340px) {
+  .divLogo {
+    margin-left: 35px;
   }
 }

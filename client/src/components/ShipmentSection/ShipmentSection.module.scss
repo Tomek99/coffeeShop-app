@@ -3,14 +3,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 50px;
+  margin: 0 10px;
 
   .wrapper {
     display: flex;
     gap: 25px;
     max-width: 1366px;
     width: 100%;
-    margin: 0 20px;
 
     .container {
       width: 100%;
@@ -54,18 +53,10 @@
 
 @media (max-width: 580px) {
   .ShipmentSection {
-    margin: 0 20px;
-
     .content {
       p {
         max-width: 150px !important;
       }
     }
-  }
-}
-
-@media (max-width: 350px) {
-  .ShipmentSection {
-    margin: 0 10px;
   }
 }

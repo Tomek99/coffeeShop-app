@@ -4,7 +4,7 @@
   align-items: center;
   margin-top: 10px;
 
-  .homeSectionCenter {
+  .homeSectionCarousel {
     position: relative;
     max-width: 1366px;
     width: 100%;
@@ -24,5 +24,87 @@
         }
       }
     }
+  }
+}
+@media (max-width: 1366px) {
+  .homeSectionCarousel {
+    max-width: 1280px !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .homeSectionCarousel {
+    max-width: 1180px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .homeSectionCarousel {
+    max-width: 1100px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .homeSectionCarousel {
+    max-width: 1024px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .homeSectionCarousel {
+    max-width: 920px !important;
+  }
+}
+
+@media (max-width: 920px) {
+  .homeSectionCarousel {
+    max-width: 820px !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .homeSectionCarousel {
+    max-width: 760px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .homeSectionCarousel {
+    max-width: 660px !important;
+  }
+}
+
+@media (max-width: 660px) {
+  .homeSectionCarousel {
+    max-width: 580px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .homeSectionCarousel {
+    max-width: 500px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .homeSectionCarousel {
+    max-width: 450px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .homeSectionCarousel {
+    max-width: 420px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .homeSectionCarousel {
+    max-width: 360px !important;
+  }
+}
+@media (max-width: 360px) {
+  .homeSectionCarousel {
+    max-width: 320px !important;
   }
 }

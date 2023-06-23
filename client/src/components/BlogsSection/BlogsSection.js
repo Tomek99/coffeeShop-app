@@ -15,9 +15,10 @@ function BlogsSection() {
   return (
     <div className="blogsSection" id="blogsSection">
       <HeaderSection firstWord="our" secondWord="news" />
-      <div className="blogs">
+      <div className="blogsCarousel">
         <Swiper
           slidesPerView={"auto"}
+          loop={"true"}
           spaceBetween={10}
           pagination={{
             clickable: true,

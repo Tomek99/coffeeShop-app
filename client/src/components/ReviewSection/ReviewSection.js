@@ -6,6 +6,7 @@ import CustomerReview from "./CustomerReview/CustomerReview";
 import PropTypes from "prop-types";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
@@ -18,10 +19,16 @@ function ReviewSection() {
       <div className={styles.reviewSectionCarousel}>
         <Swiper
           slidesPerView={"auto"}
+          loop={true}
           grabCursor={true}
           spaceBetween={30}
           pagination={{
             clickable: true,
+          }}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 10000,
+            disableOnInteraction: true,
           }}
           className="mySwiper"
           style={{ padding: "2px" }}
