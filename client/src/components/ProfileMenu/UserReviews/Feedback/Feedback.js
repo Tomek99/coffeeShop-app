@@ -8,7 +8,7 @@ import BtnFeedback from "../../../Buttons/BtnFeedback/BtnFeedback";
 import AddFeedback from "./AddFeedback/AddFeedback";
 import BlurScreen from "../../BlurScreen/BlurScreen";
 
-function Feedback() {
+function Feedback({ item }) {
   const [show, setShow] = useState(false);
 
   function handleFeedbackBtn() {
@@ -19,20 +19,20 @@ function Feedback() {
     <div className={styles.Product}>
       <div className={styles.divRowFirst}>
         <div className={styles.divImg}>
-          <img src="/images/product-1.png" alt="a" />
+          <img src={item.productImage} alt="a" />
         </div>
         <div className={styles.generalInfo}>
           <Link
             className={styles.showMore}
             style={{ color: "var(--text-color)" }}
           >
-            Fresh Cofee
+            {item.productName}
           </Link>
           <Link
             className={styles.showMore}
             style={{ color: "var(--text-color)" }}
           >
-            4 month ago
+            {item.createdAt}
           </Link>
         </div>
       </div>

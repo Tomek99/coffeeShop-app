@@ -18,7 +18,7 @@ function Account() {
       <div className={styles.divRow}>
         <UserNavigation />
 
-        <div style={{ color: "#fff" }} className={styles.divRight}>
+        <div className={styles.divRight}>
           <Outlet />
         </div>
       </div>

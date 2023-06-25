@@ -31,7 +31,7 @@ const invoiceSchema = new mongoose.Schema(
       require: true,
     },
     rate: {
-      type: String,
+      type: Number,
       require: true,
     },
     likes: {
@@ -39,7 +39,7 @@ const invoiceSchema = new mongoose.Schema(
       require: true,
     },
     dislikes: {
-      type: String,
+      type: Number,
       require: true,
     },
     isVoted: {
@@ -50,7 +50,7 @@ const invoiceSchema = new mongoose.Schema(
       type: Array,
       require: true,
     },
-    reviewChecked: {
+    isCheckedReview: {
       type: Boolean,
       require: true,
     },

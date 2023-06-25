@@ -10,5 +10,5 @@
 }
 
 .btnAddCart:hover {
-  background-color: #ce9754;
+  background-color: var(--main-color-darken);
 }

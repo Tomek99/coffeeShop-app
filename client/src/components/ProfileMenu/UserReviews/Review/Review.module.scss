@@ -19,7 +19,7 @@
         }
       }
       .imgReviewProduct {
-        max-width: 100px;
+        max-width: 80px;
         width: 100%;
         height: auto;
       }
@@ -50,13 +50,14 @@
           .title {
             font-size: 1.6rem;
             margin-bottom: 5px;
+            color: var(--text-color);
           }
           .ratingAndData {
             display: flex;
             align-items: center;
             gap: 5px;
 
-            span {
+            .dateCreated {
               font-size: 1.3rem;
             }
           }

@@ -6,13 +6,18 @@ const getReviews = asyncHandler(async (req, res) => {
   res.status(200).json(reviews);
 });
 
+const getReviewsByProductId = asyncHandler(async (req, res) => {
+  const reviews = await Review.find({ productId: req.params.id });
+  res.status(200).json(reviews);
+});
+
 const setReview = asyncHandler(async (req, res) => {
   const review = await Review.create({
     userId: req.body.userId,
-    userName: req.body.name,
+    userName: req.body.userName,
     userImages: [],
     productId: req.body.productId,
-    productName: req.body.name,
+    productName: req.body.productName,
     productImage: req.body.productImage,
     comment: "",
     rate: 0,
@@ -20,7 +25,7 @@ const setReview = asyncHandler(async (req, res) => {
     dislikes: 0,
     isVoted: false,
     amountVotes: [],
-    checkedReview: false,
+    isCheckedReview: false,
   });
 
   res.send(review).status(200);
@@ -29,4 +34,5 @@ const setReview = asyncHandler(async (req, res) => {
 module.exports = {
   getReviews,
   setReview,
+  getReviewsByProductId,
 };

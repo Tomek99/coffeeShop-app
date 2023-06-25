@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Additionalinformation from "./AdditionalInforamtion/Additionalinformation";
 import Description from "./Description/Description";
 import styles from "./ExtraDetails.module.scss";
-import ReviewProduct from "./ReviewProduct/ReviewProduct";
+import ProductReviews from "./ProductReviews/ProductReviews";
+import axios from "axios";
 
-function ExtraDetails() {
+function ExtraDetails({ productId }) {
   const [tabNumber, setTabNumber] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [reviews, setReviews] = useState([]);
 
   const switchTab = (tabNumber) => {
     setTabNumber(tabNumber);
   };
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchData = async () => {
+      try {
+        const products = await axios.get(
+          `${process.env.REACT_APP_API_URI}/api/reviews/product-reviews/${productId}`
+        );
+
+        setReviews(
+          products.data.filter((item) => item.isCheckedReview !== false)
+        );
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
 
   // const handleClick = (event) => {
   //   if (event.target.style.textDecoration) {
@@ -45,7 +67,7 @@ function ExtraDetails() {
             switchTab(2);
           }}
         >
-          Review product
+          Product reviews
         </button>
       </div>
       {(() => {
@@ -53,7 +75,7 @@ function ExtraDetails() {
           case 1:
             return <Additionalinformation />;
           case 2:
-            return <ReviewProduct />;
+            return <ProductReviews reviews={reviews} loading={loading} />;
           default:
             return <Description />;
         }
