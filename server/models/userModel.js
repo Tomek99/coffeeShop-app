@@ -26,10 +26,6 @@ const userSchema = mongoose.Schema(
       type: Array,
       required: true,
     },
-    orders: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Order",
-    },
     addresses: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Address",

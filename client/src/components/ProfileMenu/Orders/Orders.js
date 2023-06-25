@@ -20,15 +20,15 @@ function Orders() {
     setLoading(true);
     async function fetchData() {
       const storedValue = await axios.get(
-        `${process.env.REACT_APP_API_URI}/api/orders/user-orders/${user.orders}`
+        `${process.env.REACT_APP_API_URI}/api/orders/user-orders/${user._id}`
       );
-      if (storedValue.data.orders) {
-        setOrderData(storedValue.data.orders);
+      if (storedValue.data) {
+        setOrderData(storedValue.data);
         setLoading(false);
       } else setOrderData([]);
     }
     fetchData();
-  }, [user.orders]);
+  }, [user._id]);
 
   const [pageNumber, setPageNumber] = useState(0);
   const navigate = useNavigate();

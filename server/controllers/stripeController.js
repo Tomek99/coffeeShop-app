@@ -5,8 +5,7 @@ const DOMAIN_CANCEL = "http://localhost:3000/order";
 const Order = require("../models/orderModel");
 
 const setPayment = asyncHandler(async (req, res) => {
-  const { products, userOrdersId, address } = req.body;
-
+  const { products, userId, address } = req.body;
   const line_items = products.map((item) => {
     return {
       quantity: item.quantity,
@@ -32,16 +31,15 @@ const setPayment = asyncHandler(async (req, res) => {
         })
       );
     }
-
     const productsId = productData.map((item) => {
-      return item.id.slice(6);
+      return item.id.slice(5);
     });
 
     const customer = await stripe.customers.create({
       email: address.email,
       phone: address.number,
       metadata: {
-        userOrdersId: userOrdersId,
+        userId: userId,
         productsId: productsId.toString(6),
       },
     });
@@ -66,7 +64,6 @@ endpointSecret = process.env.STRIPE_END_POINT;
 const setWebhook = asyncHandler(async (req, res) => {
   const payload = req.rawBody.toString();
   const sig = req.headers["stripe-signature"];
-
   let event;
 
   try {
@@ -78,38 +75,35 @@ const setWebhook = asyncHandler(async (req, res) => {
 
   if (event.type === "checkout.session.completed") {
     sessionId = event.data.object.id;
-
     const session = await stripe.checkout.sessions.retrieve(sessionId);
-
     const lineItems = await stripe.checkout.sessions.listLineItems(sessionId, {
       limit: 100,
     });
 
     const customer = await stripe.customers.retrieve(session.customer);
-
     const productsId = customer.metadata.productsId.split(",");
     const productsExtraText = productsId.map((item) => {
-      return "prod_N" + item;
+      return "prod_" + item;
     });
 
-    let productData = await Promise.all(
+    const productData = await Promise.all(
       productsExtraText.map((id) => stripe.products.retrieve(id))
     );
 
     createOrder(
       event.data.object,
       lineItems.data,
-      customer.metadata.userOrdersId,
+      customer.metadata.userId,
       productData
     );
   }
 
-  res.send().end();
+  res.send().status(200).end();
 });
 
 // FUL FILL ORDER
 
-const createOrder = async (data, lineItems, userOrdersId, productData) => {
+const createOrder = async (data, lineItems, userId, productData) => {
   const items = lineItems.map((item, index) => {
     return {
       // id: "DO POPRAWY",
@@ -120,22 +114,15 @@ const createOrder = async (data, lineItems, userOrdersId, productData) => {
     };
   });
 
-  const post = await Order.findByIdAndUpdate(
-    userOrdersId,
-    {
-      $push: {
-        orders: {
-          paymentIntentId: data.payment_intent,
-          products: items,
-          subtotal: (data.amount_subtotal / 100).toFixed(2),
-          total: (data.amount_total / 100).toFixed(2),
-          shipping: data.customer_details,
-          payment_status: data.payment_status,
-        },
-      },
-    },
-    { new: true }
-  );
+  await Order.create({
+    userId: userId,
+    paymentIntentId: data.payment_intent,
+    products: items,
+    subtotal: (data.amount_subtotal / 100).toFixed(2),
+    total: (data.amount_total / 100).toFixed(2),
+    shipping: data.customer_details,
+    payment_status: data.payment_status,
+  });
 };
 
 module.exports = {

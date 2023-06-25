@@ -12,8 +12,8 @@
 }
 
 :root {
-  --main-color: #d3ad7f;
-  --main-color-darken: #d3a369;
+  --main-color: #0082fa;
+  --main-color-darken: #0070cc;
   /* --black: #0e0e13; */
   --light-black: #1a1a23;
   --bg: #fff; /* #04040b; */
@@ -39,7 +39,8 @@
   --shadow-thick-bottom: rgba(0, 0, 0, 0.25) 0px 1px 0px 0px;
   --blur-screen: rgb(60, 60, 60);
 }
-
+/* color: #0082fa;
+color: #0070cc; */
 html {
   font-size: 62.5%;
   overflow-x: hidden;

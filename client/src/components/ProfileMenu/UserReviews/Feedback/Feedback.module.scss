@@ -5,7 +5,6 @@
   background-color: var(--light-greay);
   padding: 12px;
   transition: 0.3s linear;
-  cursor: pointer;
 
   &:hover {
     box-shadow: var(--shadow-thick);
@@ -64,7 +63,7 @@
 
 @media (max-width: 520px) {
   .Product {
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     border-top: var(--border);
     background-color: transparent;
@@ -76,6 +75,7 @@
 
     .divRowSecond {
       flex-direction: column;
+      align-items: flex-end;
       margin-bottom: 10px;
 
       .btnDots {

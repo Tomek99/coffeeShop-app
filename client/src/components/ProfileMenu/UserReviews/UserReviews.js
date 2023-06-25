@@ -5,6 +5,7 @@ import Review from "./Review/Review";
 import Feedback from "./Feedback/Feedback";
 import HeaderInfo from "../../HeaderInfo/HeaderInfo";
 import HeadingThree from "../../HeadingThree/HeadingThree";
+import axios from "axios";
 
 function UserReviews() {
   useEffect(() => {
@@ -14,6 +15,20 @@ function UserReviews() {
       behavior: "instant",
     });
   }, []);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       `${process.env.REACT_APP_API_URI}/api/reviews/user-reviews/${"fw"}`
+  //     )
+  //     .then(({ data }) => {
+  //       setAddress(data.addresses);
+  //       setIdAddresses(data._id);
+  //     });
+  // }, [user.addresses]);
+
+  /// Plan pobrać receznje z serwera, dodawanie recenzji, dodawanie likes, dislikes
+
   return (
     <>
       <HeaderInfo title="Reviews" />

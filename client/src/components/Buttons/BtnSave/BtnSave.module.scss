@@ -1,20 +1,20 @@
 .btnDiv {
-    align-self: flex-end;
-    margin: 20px 15px;
+  align-self: flex-end;
+  margin: 20px 0px;
 
-    .btnSave {
-        width: 100%;
-        font-size: 1.8rem;
-        background: var(--main-color);
-        color: #fff;
-        border-radius: 16px;
-        padding: 5px 0px;
-        transition: 0.3s linear;
+  .btnSave {
+    width: 100%;
+    font-size: 1.8rem;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 16px;
+    padding: 5px 0px;
+    transition: 0.3s linear;
 
-        cursor: pointer;
+    cursor: pointer;
 
-        &:hover {
-            background-color: var(--main-color-darken);
-        }
+    &:hover {
+      background-color: var(--main-color-darken);
     }
+  }
 }

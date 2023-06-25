@@ -1,0 +1,137 @@
+.AddFeedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg);
+  z-index: 102;
+  color: var(--text-color);
+  padding: 10px;
+  // background-color: red;
+  border-radius: 12px;
+
+  .feedbackBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 2rem;
+    }
+  }
+
+  .formDiv {
+    .productNameDiv {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      font-size: 1.3rem;
+      border-bottom: var(--border);
+
+      img {
+        max-width: 65px;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .productRateDiv {
+      display: flex;
+      flex-direction: column;
+
+      padding-top: 10px;
+      font-size: 1.8rem;
+
+      span {
+        label {
+          span {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+    .productContentDiv {
+      margin: 10px 0 10px 0;
+      font-size: 1.3rem;
+
+      .pTitle {
+        font-size: 1.8rem;
+      }
+      .pText {
+        color: var(--text-color);
+        opacity: 0.6;
+        font-size: 1.3rem;
+      }
+      .pModerateReviews {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        color: #0082fa;
+        cursor: pointer;
+
+        &:hover {
+          color: #0070cc;
+        }
+      }
+    }
+  }
+
+  .addImageDiv {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+
+    .squarePlus {
+      padding: 15px;
+      border: var(--border);
+      border-radius: 8px;
+      transition: 0.3s linear;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid black;
+      }
+    }
+
+    .feedbackText {
+      .firstParagraph {
+        font-size: 1.4rem;
+      }
+      .secondParagraph {
+        opacity: 0.7;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .AddFeedback {
+    top: 40%;
+    width: 400px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .AddFeedback {
+    top: 50%;
+    width: 350px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .AddFeedback {
+    width: 310px !important;
+
+    .formDiv {
+      overflow-y: scroll;
+      height: 450px;
+    }
+    .productNameDiv {
+      margin-top: 0 !important;
+    }
+  }
+}
