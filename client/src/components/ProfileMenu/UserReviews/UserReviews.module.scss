@@ -1,17 +1,17 @@
 .divRow {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    span {
-        font-size: 2rem;
-    }
-    span {
-        color: #ccc;
-    }
+  span {
+    font-size: 2rem;
+  }
+  span {
+    color: var(--text-color);
+  }
 }
 
 .divColumn {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }

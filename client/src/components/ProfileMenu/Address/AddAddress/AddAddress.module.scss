@@ -4,7 +4,7 @@
   right: 50%;
   transform: translate(50%, -50%);
   z-index: 102;
-  color: #fff;
+  color: var(--text-color);
   background-color: var(--bg);
   border-radius: 8px;
   width: 400px;

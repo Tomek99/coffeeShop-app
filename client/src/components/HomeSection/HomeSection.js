@@ -4,107 +4,41 @@ import dataHomeSlider from "../../data/dataHomeSlider.json";
 import BtnSlider from "./BtnSlider/BtnSlider";
 import Content from "./Content/Content";
 import CarouselDots from "../CarouselDots/CarouselDots";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-// import SwiperCore, {
-//   EffectFlip,
-//   Navigation,
-//   Pagination,
-//   Autoplay,
-// } from "swiper";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/scss";
-// import "swiper/scss/navigation";
-// import "swiper/scss/pagination";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/swiper.min.css";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 function HomeSection() {
-  const [slideIndex, setSlideIndex] = useState(1);
-
-  function nextSlide() {
-    if (slideIndex !== dataHomeSlider.length) setSlideIndex(slideIndex + 1);
-    else if (slideIndex === dataHomeSlider.length) setSlideIndex(1);
-  }
-
-  function preSlide() {
-    if (slideIndex !== 1) setSlideIndex(slideIndex - 1);
-    else if (slideIndex === 1) setSlideIndex(dataHomeSlider.length);
-  }
-
-  function setSlide(number) {
-    setSlideIndex(number);
-  }
-
-  useEffect(() => {
-    let slider = setInterval(() => {
-      if (slideIndex === 3) {
-        setSlide(1);
-      } else {
-        setSlideIndex(slideIndex + 1);
-      }
-    }, 6000);
-    return () => clearInterval(slider);
-  }, [slideIndex]);
-
   return (
     <div className={styles.HomeSection}>
-      <div className={styles.HomeSection}>
-        <div>
+      <div className={styles.homeSectionCarousel}>
+        <Swiper
+          loop={true}
+          pagination={true}
+          modules={[Pagination, Navigation, Autoplay]}
+          autoplay={{
+            delay: 10000,
+            disableOnInteraction: true,
+          }}
+          className={`${"mySwiper"} ${styles.paginationLeftSide}`}
+          style={{ height: "600px", width: "100%" }}
+        >
           {dataHomeSlider.map((obj, index) => {
             return (
-              <div
-                key={index}
-                className={
-                  slideIndex === index + 1
-                    ? `${styles.slider} ${styles.activeAnim}`
-                    : styles.slider
-                }
-              >
-                <Content obj={obj} slideIndex={slideIndex} />
+              <SwiperSlide key={index}>
+                <Content obj={obj} slideIndex={index} />
                 <img src={obj.url} alt={obj.title}></img>
-              </div>
+              </SwiperSlide>
             );
           })}
-        </div>
-
-        <BtnSlider handlerBtn={preSlide} arrowDirect={"left"} />
-        <BtnSlider handlerBtn={nextSlide} arrowDirect={"right"} />
-
-        <CarouselDots
-          carouselLength={dataHomeSlider.length}
-          slideIndex={slideIndex}
-          setSlide={setSlide}
-        />
+        </Swiper>
       </div>
     </div>
   );
 }
 
 export default HomeSection;
-
-//   <div className={styles.HomeSection}>
-// <div>
-//   {dataHomeSlider.map((obj, index) => {
-//     return (
-//       <div
-//         key={index}
-//         className={
-//           slideIndex === index + 1
-//             ? `${styles.slider} ${styles.activeAnim}`
-//             : styles.slider
-//         }
-//       >
-//         <Content obj={obj} slideIndex={slideIndex} />
-//         <img src={obj.url} alt={obj.title}></img>
-//       </div>
-//     );
-//   })}
-// </div>
-
-// <BtnSlider handlerBtn={preSlide} arrowDirect={"left"} />
-// <BtnSlider handlerBtn={nextSlide} arrowDirect={"right"} />
-
-// <CarouselDots
-//   carouselLength={dataHomeSlider.length}
-//   slideIndex={slideIndex}
-//   setSlide={setSlide}
-// />
-// </div>

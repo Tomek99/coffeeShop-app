@@ -34,7 +34,7 @@ exports[`should render cartlist component 1`] = `
       2
     </span>
     <button
-      class="btnDeleteProduct"
+      class="BtnDeleteProduct"
     >
       <svg
         fill="currentColor"

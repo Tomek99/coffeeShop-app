@@ -1,35 +1,35 @@
 .CheckoutSummary {
-    padding: 10px;
-    font-size: 1.3rem;
-    background-color: var(--black);
-    border-radius: 8px;
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: var(--light-greay);
+  border-radius: 8px;
 
-    .divContent {
+  .divContent {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .divRow {
+      display: flex;
+      justify-content: space-between;
+
+      .pCol {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        text-align: end;
 
-        .divRow {
-            display: flex;
-            justify-content: space-between;
-
-            .pCol {
-                display: flex;
-                flex-direction: column;
-                text-align: end;
-
-                .noDiscount {
-                    font-size: 1.2rem;
-                    color: #ccc;
-                    text-decoration: line-through;
-                }
-            }
+        .noDiscount {
+          font-size: 1.2rem;
+          color: var(--text-color);
+          text-decoration: line-through;
         }
+      }
     }
+  }
 
-    .divBorder {
-        border-top: var(--border);
-        margin-top: 10px;
-        padding-top: 10px;
-    }
+  .divBorder {
+    border-top: var(--border);
+    margin-top: 10px;
+    padding-top: 10px;
+  }
 }

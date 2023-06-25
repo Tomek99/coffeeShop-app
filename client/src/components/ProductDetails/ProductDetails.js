@@ -98,7 +98,7 @@ function ProductDetails() {
               </div>
             </div>
           </div>
-          <ExtraDetails />
+          <ExtraDetails productId={productId.id} />
         </>
       )}
     </div>

@@ -27,9 +27,6 @@ exports[`should render Login component 1`] = `
               type="text"
               value=""
             />
-            <div
-              class="errorComponent"
-            />
           </div>
           <div
             class="inputContainer"
@@ -50,9 +47,6 @@ exports[`should render Login component 1`] = `
                 show
               </button>
             </div>
-            <div
-              class="errorComponent"
-            />
             <div>
               <a
                 class="recoverPassword"

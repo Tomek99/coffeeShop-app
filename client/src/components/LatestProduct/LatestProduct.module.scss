@@ -2,16 +2,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
   width: 300px;
   text-align: center;
   border-radius: 8px;
-  background-color: var(--black);
   padding: 30px 0;
   transition: 0.3s linear;
 
   &:hover {
     box-shadow: var(--shadow-thin);
+    background-color: var(--light-greay);
   }
 
   .iconsSection {
@@ -24,8 +23,8 @@
 
     button,
     a {
-      background-color: var(--black);
-      color: #fff;
+      background-color: #fff;
+      color: var(--text-color);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -42,12 +41,8 @@
     }
 
     button:hover,
-    a:hover {
-      background-color: var(--main-color);
-    }
-
     .activeBtn {
-      background-color: var(--main-color);
+      background-color: var(--light-greay);
     }
   }
 
@@ -64,7 +59,7 @@
       margin: 5px 0;
       font-size: 1.7rem;
       text-align: center;
-      color: #fff;
+      color: #000;
     }
 
     .intensity {
@@ -75,7 +70,7 @@
       font-size: 1.3rem;
       font-weight: 300;
       text-transform: uppercase;
-      color: #ccc;
+      color: var(--text-color);
       margin-bottom: 5px;
 
       span {
@@ -84,7 +79,7 @@
         align-items: center;
         height: 25px;
         width: 25px;
-        border: 0.2rem solid rgba(255, 255, 255, 0.3);
+        box-shadow: var(--shadow-thin);
         border-radius: 50%;
         font-weight: bold;
       }
@@ -93,49 +88,13 @@
 
   .price {
     font-size: 2.2rem;
-    margin-bottom: 5px;
-    color: #fff;
+    color: var(--text-color);
 
     .oldPrice {
       font-size: 1.5rem;
       text-decoration: line-through;
-      color: #ccc;
+      color: var(--text-color);
+      opacity: 0.7;
     }
-  }
-}
-
-@media (max-width: 1366px) {
-  .LatestProduct {
-    width: 282px !important;
-  }
-}
-
-@media (max-width: 1280px) {
-  .LatestProduct {
-    width: 290px !important;
-  }
-}
-
-@media (max-width: 660px) {
-  .LatestProduct {
-    width: 270px !important;
-  }
-}
-
-// @media (max-width: 560px) {
-//     .LatestProduct {
-//         width: 270px !important;
-//     }
-// }
-
-@media (max-width: 520px) {
-  .LatestProduct {
-    width: 320px !important;
-  }
-}
-
-@media (max-width: 350px) {
-  .LatestProduct {
-    width: 290px !important;
   }
 }

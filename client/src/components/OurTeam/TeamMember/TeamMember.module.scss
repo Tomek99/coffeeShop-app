@@ -1,85 +1,88 @@
 .TeamMember {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+  gap: 40px;
+  background-color: var(--light-greay);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      to right,
+      var(--text-color) 100%,
+      var(--text-color) 100%
+    ),
+    linear-gradient(to bottom, var(--text-color) 100%, var(--text-color) 100%),
+    linear-gradient(to right, var(--text-color) 100%, var(--text-color) 100%),
+    linear-gradient(to bottom, var(--text-color) 100%, var(--text-color) 100%);
+  background-size: 100% 0, 0 100%, 100% 0, 0 100%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  animation: bg 1.25s cubic-bezier(0.19, 1, 0.22, 1) 1;
+  animation-play-state: paused;
+
+  .memberImg {
+    position: relative;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    .btnArrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      transition: 0.3s linear;
+      background-color: var(--light-creamy);
+      cursor: pointer;
+    }
+
+    .iconArrow {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+    }
+
+    .btnArrow:hover {
+      background-color: #ddd0c2;
+    }
+    .btnArrow:hover .iconArrow {
+      left: 12px;
+    }
+  }
+
+  .content {
     display: flex;
     flex-direction: column;
-    position: relative;
-    padding: 20px;
-    gap: 40px;
-    background-color: var(--black);
-    background-repeat: no-repeat;
-    background-image: linear-gradient(to right, var(--main-color) 100%, var(--main-color) 100%),
-        linear-gradient(to bottom, var(--main-color) 100%, var(--main-color) 100%),
-        linear-gradient(to right, var(--main-color) 100%, var(--main-color) 100%),
-        linear-gradient(to bottom, var(--main-color) 100%, var(--main-color) 100%);
-    background-size: 100% 0, 0 100%, 100% 0, 0 100%;
-    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-    animation: bg 1.25s cubic-bezier(0.19, 1, 0.22, 1) 1;
-    animation-play-state: paused;
-
-    .memberImg {
-        position: relative;
-        img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-        }
-
-        .btnArrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            transition: 0.3s linear;
-            background-color: var(--main-color);
-            cursor: pointer;
-        }
-
-        .iconArrow {
-            width: 25px;
-            height: 25px;
-            position: absolute;
-            color: #fff;
-        }
-
-        .btnArrow:hover {
-            background-color: #ce9754;
-        }
-        .btnArrow:hover .iconArrow {
-            left: 12px;
-        }
+    cursor: pointer;
+    gap: 0.5rem;
+    .name {
+      font-weight: bold;
+      font-size: 1.8rem;
     }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 0.5rem;
-        .name {
-            font-weight: bold;
-            font-size: 1.8rem;
-        }
-        .position {
-            font-size: 1.4rem;
-            color: #ccc;
-            font-weight: 300;
-        }
+    .position {
+      font-size: 1.4rem;
+      color: var(--text-color);
+      font-weight: 300;
     }
+  }
 }
 
 @keyframes border-animation {
-    0% {
-        background-size: 0 1px, 1px 0, 0 1px, 1px 0;
-    }
+  0% {
+    background-size: 0 1px, 1px 0, 0 1px, 1px 0;
+  }
 
-    100% {
-        background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
-    }
+  100% {
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+  }
 }
 
 .TeamMember:hover {
-    animation: border-animation 2s infinite;
+  animation: border-animation 2s infinite;
 }

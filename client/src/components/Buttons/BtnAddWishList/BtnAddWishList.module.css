@@ -6,12 +6,12 @@
   font-size: 1.7rem;
   padding: 10px 0;
   text-transform: none;
-  background-color: var(--black);
-  color: #fff;
+  background-color: var(--light-greay);
+  color: var(--text-color);
   transition: 0.3s linear;
   cursor: pointer;
 }
 
 .BtnAddWishList:hover {
-  background-color: var(--light-black);
+  background-color: var(--dark-grey);
 }

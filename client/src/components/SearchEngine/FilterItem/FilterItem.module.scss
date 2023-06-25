@@ -1,27 +1,28 @@
 .FilterItem {
-    max-width: 150px;
+  max-width: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+
+  .imgWidth {
+    max-width: 80px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: #fff;
+    height: auto;
+    max-height: 140px;
+  }
 
-    .imgWidth {
-        max-width: 80px;
-        width: 100%;
-        height: auto;
-        max-height: 140px;
+  .contentWrapper {
+    font-size: 1.3rem;
+    text-align: center;
+
+    .strikethroughText {
+      text-decoration: line-through;
+      font-size: 1.1rem;
+      color: var(--text-color);
+      opacity: 0.7;
     }
-
-    .contentWrapper {
-        font-size: 1.3rem;
-        text-align: center;
-
-        .strikethroughText {
-            text-decoration: line-through;
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-    }
+  }
 }

@@ -41,12 +41,22 @@ function SingleOrder({ item }) {
       <div className={styles.details}>
         <h2 className={styles.headline}>{delivery_status}</h2>
         <div>
-          <p style={{ color: "#ccc", fontWeight: 300, marginBottom: "5px" }}>
+          <p
+            style={{
+              color: "var(--text-color)",
+              fontWeight: 300,
+              marginBottom: "5px",
+            }}
+          >
             {date}
           </p>
-          <p style={{ color: "#ccc", fontWeight: 300 }}>nr {_id}</p>
+          <p style={{ color: "var(--text-color)", fontWeight: 300 }}>
+            nr {_id}
+          </p>
         </div>
-        <p style={{ color: "#fff", fontWeight: "bold" }}>${total}</p>
+        <p style={{ color: "var(--text-color)", fontWeight: "bold" }}>
+          ${total}
+        </p>
       </div>
       <div className={styles.products}>
         {items.map((item, index) => (

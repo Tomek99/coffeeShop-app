@@ -1,26 +1,22 @@
 import React from "react";
 import styles from "./Review.module.scss";
-import {
-  BsThreeDotsVertical,
-  BsHandThumbsUp,
-  BsHandThumbsDown,
-} from "react-icons/bs";
+import { BsHandThumbsUp, BsHandThumbsDown } from "react-icons/bs";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import RatingsStars from "../../../RatingStars/RatingStars";
 import BtnDots from "../../../Buttons/BtnDots/BtnDots";
 
-function Review() {
+function Review({ item }) {
   return (
     <div className={styles.Review}>
       <div className={styles.divRow}>
         <div className={styles.firstDiv}>
           <div className={styles.imgAndTitle}>
             <img
-              src="/images/product-1.png"
-              alt=""
+              src={item.productImage}
+              alt={item.productName}
               className={styles.imgReviewProduct}
             />
-            <p>Fresh coffee</p>
+            <p></p>
           </div>
           <div className={styles.purchaseConfirmed}>
             <span>
@@ -35,27 +31,21 @@ function Review() {
         <div className={styles.secondDiv}>
           <div className={styles.content}>
             <div className={styles.headline}>
-              <p className={styles.title}>Fresh Cofee</p>
+              <p className={styles.title}>{item.productName}</p>
               <div className={styles.ratingAndData}>
-                <RatingsStars size="medium" rate={4} tab={0} />
-                <span>2 years ago</span>
+                <RatingsStars size="large" rate={item.rate} tab={0} />
+                <span className={styles.dateCreated}>{item.createdAt}</span>
               </div>
             </div>
-            <p className={styles.comment}>
-              The best coffee beans in the world!!!
-            </p>
+            <p className={styles.comment}>{item.comment}</p>
           </div>
           <div className={styles.mark}>
             <span className={styles.text}>Was this review helpful?</span>
             <div className={styles.thumbs}>
-              <button className={styles.thumb}>
-                <BsHandThumbsUp size={20} />
-              </button>
-              <span>0</span>
-              <button className={styles.thumb}>
-                <BsHandThumbsDown size={20} />
-              </button>
-              <span>0</span>
+              <BsHandThumbsUp size={20} className={styles.thumb} />
+              <span>{item.likes}</span>
+              <BsHandThumbsDown className={styles.thumb} size={20} />
+              <span>{item.dislikes}</span>
             </div>
           </div>
         </div>

@@ -1,20 +1,20 @@
 .btnAdd {
-    font-size: 13px;
-    padding: 10px 15px;
-    color: #fff;
-    border: var(--border);
-    border-radius: 18px;
-    background-color: var(--black);
-    cursor: pointer;
+  font-size: 13px;
+  padding: 10px 15px;
+  color: var(--text-color);
+  border: var(--border);
+  border-radius: 18px;
+  background-color: var(--light-greay);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 
-    &:hover {
-        transition: all 0.3s ease-in-out;
-        background-color: var(--grey);
-    }
+  &:hover {
+    background-color: var(--dark-grey);
+  }
 }
 @media (max-width: 560px) {
-    .btnAdd {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+  .btnAdd {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

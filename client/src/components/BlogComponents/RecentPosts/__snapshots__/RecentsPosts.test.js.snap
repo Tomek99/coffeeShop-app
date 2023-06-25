@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component 1`] = `
+<div>
+  <div
+    class="RecentPosts"
+  >
+    <h1
+      class="postsHeader"
+    >
+      Recent posts
+    </h1>
+    <div
+      class="divPosts"
+    >
+      <div
+        class="UserPost"
+      >
+        <img
+          alt="userImage"
+          class="userImage"
+          src="https://i.pinimg.com/originals/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg"
+        />
+        <div
+          class="userContent"
+        >
+          <p
+            class="postData"
+          >
+            06.03.2023
+          </p>
+          <p
+            class="userText"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+      <div
+        class="UserPost"
+      >
+        <img
+          alt="userImage"
+          class="userImage"
+          src="https://i.pinimg.com/originals/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg"
+        />
+        <div
+          class="userContent"
+        >
+          <p
+            class="postData"
+          >
+            06.03.2023
+          </p>
+          <p
+            class="userText"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+      <div
+        class="UserPost"
+      >
+        <img
+          alt="userImage"
+          class="userImage"
+          src="https://i.pinimg.com/originals/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg"
+        />
+        <div
+          class="userContent"
+        >
+          <p
+            class="postData"
+          >
+            06.03.2023
+          </p>
+          <p
+            class="userText"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

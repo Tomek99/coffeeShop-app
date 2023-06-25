@@ -1,3 +1,12 @@
 .CarouselArticles {
   grid-area: a;
+  max-width: 1366px;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1380px) {
+  .CarouselArticles {
+    margin-left: 10px;
+  }
 }

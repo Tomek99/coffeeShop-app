@@ -5,11 +5,11 @@ import { AiOutlineCalendar, AiOutlineUserAdd } from "react-icons/ai";
 function CarouselArticle() {
   return (
     <div className={styles.CarouselArticle}>
-      <img
+      {/* <img
         className={styles.articleImg}
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg"
         alt="articleImg"
-      />
+      /> */}
       <div className={styles.articleContent}>
         <span className={styles.spanContent}>
           {" "}

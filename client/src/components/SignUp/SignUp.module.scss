@@ -17,7 +17,7 @@
     .divLeft {
       display: flex;
       flex-direction: column;
-      color: #fff;
+      color: var(--text-color);
 
       .formContainer {
         border: var(--border);
@@ -34,7 +34,7 @@
       .divSignIn {
         text-align: center;
         font-size: 1.5rem;
-        color: #fff;
+        color: var(--text-color);
         margin-bottom: 20px;
 
         a {

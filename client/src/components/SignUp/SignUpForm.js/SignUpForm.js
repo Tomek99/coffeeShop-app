@@ -23,10 +23,10 @@ const initialValues = {
 
 const validationSchema = Yup.object({
   firstName: Yup.string()
-    .min(3, "Must be 3 characters or less")
+    .min(3, "Must be 3 characters or more")
     .required("Required"),
   lastName: Yup.string()
-    .min(3, "Must be 3 characters or less")
+    .min(3, "Must be 3 characters or more")
     .required("Required"),
   email: Yup.string()
     .email("Invalid email address")
@@ -45,13 +45,11 @@ const validationSchema = Yup.object({
     .matches(/[A-Z]/, "Password requires an uppercase letter")
     .matches(/[^\w]/, "Password requires a symbol")
     .required("Required"),
-  passwordConfirmation: Yup.string().test(
-    "passwords-match",
-    "Passwords must match",
-    function (value) {
+  passwordConfirmation: Yup.string()
+    .test("passwords-match", "Passwords must match", function (value) {
       return this.parent.password === value;
-    }
-  ),
+    })
+    .required("Required"),
   acceptTerms: Yup.bool().oneOf(
     [true],
     "Accept Terms & Conditions is required"
@@ -111,7 +109,7 @@ function SignUpForm() {
       validateOnBlur={false}
     >
       {({ setFieldValue, values }) => (
-        <Form className={styles.formInputs}>
+        <Form className={styles.formInputs} noValidate>
           {signup_fields.map((item, index) => (
             <FieldComponent item={item} key={index} />
           ))}

@@ -1,18 +1,18 @@
 .btnInvoice {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 5px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    transition: 0.3s linear;
-    color: #fff;
-    background-color: transparent;
-    z-index: 50;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: 0.3s linear;
+  color: var(--text-color);
+  background-color: var(--light-greay);
+  z-index: 50;
+  cursor: pointer;
 }
 
 .btnInvoice:hover {
-    background-color: rgb(49, 49, 49);
+  background-color: var(--dark-grey);
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form } from "formik";
 import styles from "./ContactForm.module.scss";
 import ErrMessage from "../../ErrorMessage/ErrMessage";
@@ -15,7 +15,7 @@ const onSubmit = (values, { setSubmitting, resetForm }) => {
   }, 400);
 };
 
-function ContactForm({ initValue, validationSchema, formData, title }) {
+function ContactForm({ initValue, validationSchema, formData, title, index }) {
   return (
     <Formik
       initialValues={initValue}
@@ -29,9 +29,12 @@ function ContactForm({ initValue, validationSchema, formData, title }) {
             <FieldComponent item={item} key={index} />
           ))}
           <div>
-            <TextareaCom setFieldValue={setFieldValue} />
+            <TextareaCom
+              setFieldValue={setFieldValue}
+              index={`contactFormComment${index}`}
+            />
             <ErrMessage name="comment" />
-            <BtnContact />
+            <BtnContact index={`btnFormContact${index}`} />
           </div>
         </Form>
       )}

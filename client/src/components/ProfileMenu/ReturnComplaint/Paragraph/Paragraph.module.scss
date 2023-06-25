@@ -1,19 +1,19 @@
 .Paragraph {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    h4 {
-        margin-bottom: 5px;
-        font-weight: bold;
-        font-size: 1.6rem;
-        color: var(--main-color);
-    }
+  h4 {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: var(--text-color);
+  }
 
-    p {
-        margin-bottom: 10px;
-        font-size: 1.3rem;
-        font-weight: 300;
-        color: #ccc;
-    }
+  p {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--text-color);
+  }
 }

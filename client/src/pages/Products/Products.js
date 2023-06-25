@@ -40,7 +40,7 @@ function Products() {
         <LoaderSpinner loading={loading} />
       ) : (
         <>
-          <HeaderSection firstWord="our" secondWord="products" />
+          {/* <HeaderSection firstWord="our" secondWord="products" /> */}
           <div className={styles.gridTemplate}>
             <div className={styles.itemsSection}>
               {products
@@ -50,6 +50,8 @@ function Products() {
                     key={index}
                     item={item}
                     cartFillId={`cartFillId${index}`}
+                    showProductId={`showProductId${index}`}
+                    wishlistId={`wishlistId${index}`}
                   />
                 ))}
             </div>

@@ -6,10 +6,8 @@ import CarouselArticle from "./CarouselArticle/CarouselArticle";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import "./styles.css";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 
 // import required modules
 
@@ -25,34 +23,12 @@ function CarouselArticles() {
         }}
         className="mySwiper"
       >
-        <SwiperSlide style={{ width: "auto" }}>
-          {" "}
-          <CarouselArticle />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "auto" }}>
-          {" "}
-          <CarouselArticle />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "auto" }}>
-          {" "}
-          <CarouselArticle />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "auto" }}>
-          {" "}
-          <CarouselArticle />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "auto" }}>
-          {" "}
-          <CarouselArticle />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "auto" }}>
-          {" "}
-          <CarouselArticle />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "auto" }}>
-          {" "}
-          <CarouselArticle />
-        </SwiperSlide>
+        {Array.from({ length: 8 }, (e, i) => (
+          <SwiperSlide key={i} style={{ width: "auto" }}>
+            {" "}
+            <CarouselArticle />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

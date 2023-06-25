@@ -8,7 +8,7 @@ function CustomerReview({ item }) {
 
   return (
     <div key={id} className={styles.singleCustomer}>
-      <div>
+      <div className={styles.singleCustomerLeftDiv}>
         <img src={avatarUrl} alt="" className={styles.avatar} />
         <p className={styles.name}>{name}</p>
         <div>

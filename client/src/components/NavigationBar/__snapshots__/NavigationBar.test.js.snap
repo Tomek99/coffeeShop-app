@@ -282,6 +282,7 @@ exports[`should render NavigationBar component 1`] = `
       >
         <button
           class="btnDisplay"
+          id="bs-search"
         >
           <svg
             color="#fff"
@@ -307,6 +308,7 @@ exports[`should render NavigationBar component 1`] = `
           >
             <button
               class="btnClose"
+              id="btn-close-searcher"
             >
               <svg
                 fill="currentColor"
@@ -371,6 +373,7 @@ exports[`should render NavigationBar component 1`] = `
         <a
           class="btnDisplay btnDisplayActive"
           href="/log-in"
+          id="userNavigationBtn0"
         >
           <svg
             color="#fff"
@@ -571,6 +574,7 @@ exports[`should render NavigationBar component 1`] = `
         </ul>
         <button
           class="btnDisplay btnDisplayActiveAside"
+          id="userBtnOpen131"
         >
           <svg
             color="#fff"
@@ -590,6 +594,7 @@ exports[`should render NavigationBar component 1`] = `
         </button>
         <button
           class="btnDisplay"
+          id="cartBtnOpen132"
         >
           <svg
             color="#fff"

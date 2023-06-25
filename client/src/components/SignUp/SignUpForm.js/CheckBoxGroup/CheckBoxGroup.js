@@ -1,6 +1,7 @@
 import { ErrorMessage, Field } from "formik";
 import React from "react";
 import styles from "./CheckBoxGroup.module.scss";
+import ErrMessage from "../../../ErrorMessage/ErrMessage";
 
 function CheckBoxGroup({ setFieldValue, values }) {
   return (
@@ -31,9 +32,8 @@ function CheckBoxGroup({ setFieldValue, values }) {
         />
         Accept Terms & Conditions*
       </label>
-      <ErrorMessage name="acceptTerms">
-        {(msg) => <div className={styles.checkBoxMessage}>{msg}</div>}
-      </ErrorMessage>
+
+      <ErrMessage name="acceptTerms" />
 
       <label>
         <Field

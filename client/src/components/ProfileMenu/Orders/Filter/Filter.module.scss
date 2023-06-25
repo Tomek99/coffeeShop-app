@@ -1,90 +1,92 @@
 .Filter {
-    margin: 0 10px;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.3rem;
+
+  .divLeft {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 1.3rem;
+    gap: 10px;
 
-    .divLeft {
+    .divRow {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+
+      div {
         display: flex;
-        gap: 10px;
-
-        .divRow {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: center;
-
-            div {
-                display: flex;
-                align-items: center;
-                padding: 5px 5px 5px 10px;
-                border: var(--border);
-                border-radius: 16px;
-                transition: 0.3s linear;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: var(--grey);
-                }
-            }
-
-            .divGapShowAll {
-                gap: 50px;
-            }
-
-            .divGapTeaCoffee {
-                gap: 15px;
-            }
-        }
-    }
-
-    .divRight {
-        display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 5px;
+        padding: 5px 5px 5px 10px;
+        border: var(--border);
+        border-radius: 16px;
+        transition: 0.3s linear;
+        color: var(--text-color);
+        cursor: pointer;
 
-        .divRow {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: center;
-            padding: 5px 5px 5px 10px;
-            border: var(--border);
-            border-radius: 16px;
-            cursor: pointer;
-            transition: 0.3s linear;
-
-            &:hover {
-                background-color: var(--grey);
-            }
+        &:hover {
+          background-color: var(--dark-grey);
         }
+      }
+
+      .divGapShowAll {
+        gap: 50px;
+      }
+
+      .divGapTeaCoffee {
+        gap: 15px;
+      }
     }
+  }
+
+  .divRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    .divRow {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 5px 5px 10px;
+      border: var(--border);
+      border-radius: 16px;
+      color: var(--text-color);
+      transition: 0.3s linear;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--dark-grey);
+      }
+    }
+  }
 }
 
 @media (max-width: 560px) {
-    .Filter {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+  .Filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 
-        .divRow {
-            gap: 10px;
+    .divRow {
+      gap: 10px;
 
-            div {
-                padding: 5px 0 5px 5px;
-            }
-        }
+      div {
+        padding: 5px 0 5px 5px;
+      }
     }
+  }
 }
 
 @media (max-width: 380px) {
-    .divGapShowAll {
-        gap: 10px !important;
-    }
+  .divGapShowAll {
+    gap: 10px !important;
+  }
 
-    .divGapTeaCoffee {
-        gap: 5px !important;
-    }
+  .divGapTeaCoffee {
+    gap: 5px !important;
+  }
 }

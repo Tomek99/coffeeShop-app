@@ -1,9 +1,10 @@
 .Item {
   display: flex;
   justify-content: space-between;
-  border-bottom: var(--border);
   padding: 16px 24px;
-  color: #fff;
+  color: var(--text-color);
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--shadow-thick-bottom);
 
   .leftSide {
     display: flex;
@@ -38,7 +39,8 @@
       text-align: right;
 
       p:nth-of-type(1) {
-        color: #ccc;
+        color: var(--text-color);
+        opacity: 0.7;
         text-decoration: line-through;
         font-size: 1.3rem;
       }
@@ -57,8 +59,8 @@
       }
 
       .dropdownEl {
-        background-color: var(--black);
-        color: #fff;
+        background-color: var(--dark-grey);
+        color: var(--text-color);
         border: none;
         border-radius: 16px;
         padding: 6px;
@@ -82,7 +84,8 @@
 }
 
 .Item:nth-last-of-type(1) {
-  border-bottom: none;
+  box-shadow: none !important;
+  border-radius: 0px 0px 12px 12px !important;
 }
 
 @media (max-width: 500px) {

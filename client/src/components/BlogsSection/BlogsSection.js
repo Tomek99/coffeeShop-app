@@ -6,17 +6,16 @@ import blogs from "../../data/blog.json";
 import PropTypes from "prop-types";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper";
+// import "swiper/css";
+// import "swiper/css/pagination";
+import { Autoplay } from "swiper";
 
 function BlogsSection() {
   return (
     <div className="blogsSection" id="blogsSection">
       <HeaderSection firstWord="our" secondWord="news" />
-      <div className="blogs">
+      <div className="blogsCarousel">
         <Swiper
           slidesPerView={"auto"}
           spaceBetween={10}
@@ -27,7 +26,7 @@ function BlogsSection() {
             delay: 10000,
             disableOnInteraction: false,
           }}
-          modules={[Autoplay, Pagination]}
+          modules={[Autoplay]}
           className="mySwiper"
         >
           {blogs.map((item, index) => (
@@ -45,11 +44,3 @@ BlogsSection.propTypes = {
 };
 
 export default BlogsSection;
-
-{
-  /* <div className={styles.blogs}>
-{Blog.slice(0, 3).map((item, index) => (
-  <LatestBlog key={index} item={item} />
-))}
-</div> */
-}

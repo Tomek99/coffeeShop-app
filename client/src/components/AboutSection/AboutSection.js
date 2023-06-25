@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./AboutSection.module.scss";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import { Link } from "react-router-dom";
+import BtnShipmentHome from "../Buttons/BtnShipmentHome/BtnShipmentHome";
 function AboutSection() {
   return (
     <div className={styles.AboutSection} id="aboutSection">
@@ -25,7 +26,7 @@ function AboutSection() {
             eiusmod tempor incididunt ut.
           </p>
           <br />
-          <Link to="about-us">Learn more</Link>
+          <BtnShipmentHome text={"Read more"} />
         </div>
       </div>
     </div>

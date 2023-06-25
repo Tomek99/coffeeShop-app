@@ -1,14 +1,15 @@
 .Support {
-    .firstHeader {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-    .supportLink {
-        color: rgb(162, 87, 223);
-        font-size: 1.3rem;
+  .firstHeader {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .supportLink {
+    color: rgb(162, 87, 223);
+    font-size: 1.3rem;
 
-        &:hover {
-            text-decoration: underline;
-        }
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }

@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../Contexts/Context";
-import { BsFillEyeFill, BsCartFill, BsFillHeartFill } from "react-icons/bs";
+import { BsEye, BsCart, BsHeart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
-function LatestProduct({ item, cartFillId }) {
+function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
   const { _id, imageUrl, name, price, oldPrice, rate, intensity } = item;
   const { addItem, addWishItem, wishList } = useContext(Context);
 
@@ -21,20 +21,21 @@ function LatestProduct({ item, cartFillId }) {
   }
 
   return (
-    <div key={_id} className={styles.LatestProduct}>
+    <div className={styles.LatestProduct}>
       <div className={styles.iconsSection}>
-        <button onClick={navigatePage}>
-          <BsFillEyeFill />
+        <button onClick={navigatePage} id={showProductId}>
+          <BsEye />
         </button>
 
         <button onClick={() => addItem(item)} id={cartFillId}>
-          <BsCartFill />
+          <BsCart />
         </button>
         <button
+          id={wishlistId}
           className={foundWishProduct ? styles.activeBtn : null}
           onClick={() => addWishItem(_id)}
         >
-          <BsFillHeartFill />
+          <BsHeart />
         </button>
       </div>
       <div className={styles.contentWrapper}>

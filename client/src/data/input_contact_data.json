@@ -1,26 +1,26 @@
 {
-    "contact_form_one": [
-        {
-            "type": "text",
-            "name": "name",
-            "placeholder": "Name and surname"
-        },
-        {
-            "type": "text",
-            "name": "email",
-            "placeholder": "E-mail"
-        }
-    ],
-    "contact_form_two": [
-        {
-            "type": "text",
-            "name": "name",
-            "placeholder": "Name and surname"
-        },
-        {
-            "type": "text",
-            "name": "number",
-            "placeholder": "Phone number"
-        }
-    ]
+  "contact_form_one": [
+    {
+      "type": "text",
+      "name": "name_form_one",
+      "placeholder": "Name and surname"
+    },
+    {
+      "type": "text",
+      "name": "email",
+      "placeholder": "E-mail"
+    }
+  ],
+  "contact_form_two": [
+    {
+      "type": "text",
+      "name": "name_form_two",
+      "placeholder": "Name and surname"
+    },
+    {
+      "type": "text",
+      "name": "number",
+      "placeholder": "Phone number"
+    }
+  ]
 }

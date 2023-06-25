@@ -16,6 +16,9 @@ cypress/videos/
 cypress/screenshots/
 cypress/reports/
 
+
+videos
+
 # Other generated files
 cypress/fixtures/
 cypress/downloads/

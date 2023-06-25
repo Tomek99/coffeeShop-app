@@ -4,68 +4,52 @@
   justify-content: center;
   align-items: center;
 
-  .wrapperDiv {
-    position: relative;
-
-    .carouselDiv {
-      max-width: 1366px;
-      width: 100%;
-      text-align: center;
-      overflow: hidden;
-      padding: 5px 10px;
-
-      // justify-content: space-between;
-
-      .innerDiv {
-        display: inline-flex;
-        gap: 30px;
-        transition: 0.3s linear;
-      }
-    }
-
-    .indicators {
-      opacity: 0;
-      transition: 0.3s linear;
-    }
-  }
-
-  &:hover .indicators {
-    opacity: 1;
-  }
-}
-
-@media (min-width: 1281px) {
-  .innerDiv {
-    gap: 40px !important;
+  .productsSectionCarousel {
+    max-width: 1366px;
+    width: 100%;
+    overflow: hidden;
   }
 }
 
 @media (max-width: 1366px) {
-  .carouselDiv {
-    max-width: 640px !important;
+  .productsSectionCarousel {
+    max-width: 1280px !important;
   }
 }
 
 @media (max-width: 1280px) {
-  .carouselDiv {
-    max-width: 640px !important;
+  .productsSectionCarousel {
+    max-width: 1024px !important;
   }
 }
 
-@media (max-width: 660px) {
-  .carouselDiv {
-    max-width: 600px !important;
+@media (max-width: 1024px) {
+  .productsSectionCarousel {
+    max-width: 900px !important;
   }
 }
 
-@media (max-width: 520px) {
-  .carouselDiv {
-    max-width: 350px !important;
+@media (max-width: 900px) {
+  .productsSectionCarousel {
+    max-width: 730px !important;
   }
 }
 
-@media (max-width: 350px) {
-  .carouselDiv {
+@media (max-width: 730px) {
+  .productsSectionCarousel {
+    max-width: 580px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .productsSectionCarousel {
+    max-width: 320px !important;
+  }
+}
+@media (max-width: 450px) {
+  .productsSectionCarousel {
+    padding-left: 7px;
+    padding-right: 7px;
     max-width: 320px !important;
   }
 }

@@ -51,9 +51,6 @@ const setUser = asyncHandler(async (req, res) => {
       password: hashedPassword,
       number: "",
       loggedDevices: [],
-      orders: await Order.create({
-        orders: [],
-      }),
       addresses: await Address.create({
         addresses: [],
       }),

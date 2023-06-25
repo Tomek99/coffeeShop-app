@@ -30,7 +30,7 @@ function CartSummary({ path, text }) {
           style={hide ? { display: "flex" } : { display: "none" }}
           className={styles.activeKey}
         >
-          <input type="text" />
+          <input type="text" className={styles.inputDiscount} />
           <BtnActive />
         </div>
       </div>

@@ -18,7 +18,7 @@ function BasketList({ item, imBinId }) {
           <span className={styles.newPrice}>${price} </span>
           <span className={styles.oldPrice}>
             {" "}
-            {Boolean(oldPrice) ? oldPrice : null}
+            {Boolean(oldPrice) ? `$${oldPrice}` : null}
           </span>
         </p>
       </div>

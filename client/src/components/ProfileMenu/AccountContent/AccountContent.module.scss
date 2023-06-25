@@ -1,33 +1,36 @@
 .accountContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .divCol {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 
-    .divCol {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .divRow {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-color);
 
-        .divRow {
-            display: flex;
-            justify-content: space-between;
+      h2 {
+        font-size: 2rem;
+      }
 
-            h2 {
-                font-size: 2rem;
-            }
+      button {
+        padding: 5px 10px;
+        font-size: 1.4rem;
+        color: var(--text-color);
+        background-color: transparent;
+        border-radius: 12px;
+        transition: 0.2s linear;
+        border: var(--border);
+        cursor: pointer;
 
-            button {
-                padding: 5px 10px;
-                font-size: 1.4rem;
-                color: #fff;
-                background-color: transparent;
-                border-radius: 12px;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: var(--grey);
-                }
-            }
+        &:hover {
+          background-color: var(--light-greay);
         }
+      }
     }
+  }
 }

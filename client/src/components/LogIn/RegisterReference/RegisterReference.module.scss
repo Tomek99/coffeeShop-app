@@ -1,31 +1,32 @@
 .RegisterReference {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
 
-    header {
-        font-size: 3rem;
-        text-transform: none;
+  header {
+    font-size: 3rem;
+    text-transform: none;
+  }
+
+  .btnReference {
+    align-self: stretch;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0 50px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    border: var(--border);
+    transition: 0.3s linear;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background: var(--main-color);
     }
-
-    .btnReference {
-        align-self: stretch;
-        background-color: transparent;
-        padding: 10px;
-        border-radius: 20px;
-        margin: 0 50px;
-        text-align: center;
-        color: #fff;
-        font-size: 1.8rem;
-        border: var(--border);
-        transition: 0.3s linear;
-        cursor: pointer;
-
-        &:hover {
-            background: var(--main-color);
-        }
-    }
+  }
 }
