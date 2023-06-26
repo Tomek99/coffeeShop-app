@@ -22,18 +22,18 @@ function Feedback({ item }) {
           <img src={item.productImage} alt="a" />
         </div>
         <div className={styles.generalInfo}>
-          <Link
+          <button
             className={styles.showMore}
-            style={{ color: "var(--text-color)" }}
+            style={{ color: "var(--text-color)", fontWeight: "400" }}
           >
             {item.productName}
-          </Link>
-          <Link
+          </button>
+          <button
             className={styles.showMore}
             style={{ color: "var(--text-color)" }}
           >
-            {item.createdAt}
-          </Link>
+            Purchased: {item.createdAt.slice(0, 10)}
+          </button>
         </div>
       </div>
       <div className={styles.divRowSecond}>

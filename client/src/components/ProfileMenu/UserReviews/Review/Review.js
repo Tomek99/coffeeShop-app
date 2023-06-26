@@ -4,6 +4,7 @@ import { BsHandThumbsUp, BsHandThumbsDown } from "react-icons/bs";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import RatingsStars from "../../../RatingStars/RatingStars";
 import BtnDots from "../../../Buttons/BtnDots/BtnDots";
+import DataDiff from "../../../DataDiff/DataDiff";
 
 function Review({ item }) {
   return (
@@ -34,7 +35,7 @@ function Review({ item }) {
               <p className={styles.title}>{item.productName}</p>
               <div className={styles.ratingAndData}>
                 <RatingsStars size="large" rate={item.rate} tab={0} />
-                <span className={styles.dateCreated}>{item.createdAt}</span>
+                <DataDiff reviewDate={item.createdAt} />
               </div>
             </div>
             <p className={styles.comment}>{item.comment}</p>

@@ -32,6 +32,8 @@
       .showMore {
         font-size: 1.3rem;
         font-weight: 300;
+        text-align: start;
+        cursor: pointer;
 
         &:hover {
           text-decoration: underline;

@@ -69,11 +69,14 @@ function ProductDetails() {
             </div>
             <div className={styles.productDetailsContent}>
               <h1>{productData.name}</h1>
-              <p>
+              <p className={styles.productPriceText}>
                 ${productData.price}
-                {productData.oldPrice ? ` $${productData.oldPrice}` : null}
+                &nbsp;
+                <span className={styles.oldProductPrice}>
+                  {productData.oldPrice ? ` $${productData.oldPrice}` : null}
+                </span>
               </p>
-              <p>country of origin:{productData.origin} </p>
+              <p>Origin: {productData.origin} </p>
               <p>Weight: {productData.weight}</p>
               <div className={styles.productDetailsContentButtons}>
                 <div className={styles.productQuantity}>
