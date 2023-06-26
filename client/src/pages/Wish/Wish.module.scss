@@ -1,46 +1,45 @@
 .Wish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  .divRow {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    color: #fff;
+    max-width: 1200px;
+    width: 100%;
 
-    .divRow {
-        display: flex;
-        max-width: 1200px;
-        width: 100%;
-
-        .divRight {
-            flex-basis: 100%;
-            display: flex;
-            flex-direction: column;
-            margin-left: 30px;
-            gap: 30px;
-        }
+    .divRight {
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+      gap: 30px;
     }
+  }
 }
 
 @media (max-width: 1240px) {
-    .divRight {
-        margin-right: 20px;
-    }
+  .divRight {
+    margin-right: 20px;
+  }
 }
 
 @media (max-width: 900px) {
-    //divColumn
-    .Wish {
-        flex-wrap: wrap;
-        .divRow {
-            flex-direction: column;
-            justify-content: stretch;
-            align-items: stretch;
-        }
+  //divColumn
+  .Wish {
+    flex-wrap: wrap;
+    .divRow {
+      flex-direction: column;
+      justify-content: stretch;
+      align-items: stretch;
     }
+  }
 }
 
 @media (max-width: 600px) {
-    .divRight {
-        margin-right: 10px;
-        margin-left: 10px !important;
-    }
+  .divRight {
+    margin-right: 10px;
+    margin-left: 10px !important;
+  }
 }
