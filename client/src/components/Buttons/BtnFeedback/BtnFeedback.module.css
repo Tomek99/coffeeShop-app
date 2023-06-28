@@ -5,6 +5,7 @@
   border-radius: 16px;
   color: var(--text-color);
   border: var(--border);
+  transition: 0.2s linear;
   cursor: pointer;
 }
 

@@ -57,7 +57,7 @@ function UserReviews() {
         {loading ? (
           <LoaderSpinner loading={loading} />
         ) : (
-          feedbacks.map((item) => <Feedback item={item} />)
+          feedbacks.map((item, i) => <Feedback key={i} item={item} />)
         )}
       </div>
       <div className={styles.divRow}>
@@ -68,7 +68,7 @@ function UserReviews() {
         {loading ? (
           <LoaderSpinner loading={loading} />
         ) : (
-          reviews.map((item) => <Review item={item} />)
+          reviews.map((item, i) => <Review key={i} item={item} />)
         )}
       </div>
       <Support />

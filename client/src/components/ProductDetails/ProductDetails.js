@@ -22,8 +22,6 @@ function ProductDetails() {
   const [productData, setProductData] = useState({});
   const [loading, setLoading] = useState(true);
   // Protected route if the route is not exist
-
-  console.log("hi");
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/products/product-details/${productId.id}`)
@@ -71,12 +69,15 @@ function ProductDetails() {
             </div>
             <div className={styles.productDetailsContent}>
               <h1>{productData.name}</h1>
-              <p>
+              <p className={styles.productPriceText}>
                 ${productData.price}
-                {productData.oldPrice ? ` $${productData.oldPrice}` : null}
+                &nbsp;
+                <span className={styles.oldProductPrice}>
+                  {productData.oldPrice ? ` $${productData.oldPrice}` : null}
+                </span>
               </p>
-              <p>country of origin:{productData.origin} </p>
-              <p>Weight: 500g</p>
+              <p>Origin: {productData.origin} </p>
+              <p>Weight: {productData.weight}</p>
               <div className={styles.productDetailsContentButtons}>
                 <div className={styles.productQuantity}>
                   <div style={{ display: "flex" }}>

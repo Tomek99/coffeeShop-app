@@ -61,14 +61,19 @@ function ExtraDetails({ productId }) {
         >
           Additional information
         </button>
-        <button
-          className={tabNumber === 2 ? styles.btn : null}
-          onClick={() => {
-            switchTab(2);
-          }}
-        >
-          Product reviews
-        </button>
+
+        <div>
+          {" "}
+          <button
+            className={tabNumber === 2 ? styles.btn : null}
+            onClick={() => {
+              switchTab(2);
+            }}
+          >
+            Product reviews
+          </button>
+          <span className={styles.reviewsLength}> ({reviews.length})</span>
+        </div>
       </div>
       {(() => {
         switch (tabNumber) {

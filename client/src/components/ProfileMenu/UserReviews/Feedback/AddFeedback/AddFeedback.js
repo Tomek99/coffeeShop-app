@@ -8,24 +8,32 @@ import { PiPlusLight } from "react-icons/pi";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import ErrMessage from "../../../../ErrorMessage/ErrMessage";
+import axios from "axios";
 
 const validationSchema = Yup.object().shape({
   rate: Yup.number().min(1, "Required"),
   comment: Yup.string().required("Required"),
 });
 
-function AddFeedback({ handleBtn }) {
+function AddFeedback({ handleBtn, item }) {
+  const reviewId = item._id;
+
   const initialValues = {
-    userId: "",
-    userName: "",
-    productId: "",
-    productName: "",
-    rate: 0,
+    userImages: "",
     comment: "",
-    likes: 0,
-    dislikes: 0,
-    photos: [],
+    rate: 0,
+    isCheckedReview: true,
   };
+
+  async function onSubmit(values, { resetForm }) {
+    const res = await axios.put(
+      `${process.env.REACT_APP_API_URI}/api/reviews/type-review`,
+      { reviewId, values }
+    );
+
+    resetForm();
+    window.location.reload();
+  }
 
   return (
     <div className={styles.AddFeedback}>
@@ -35,18 +43,13 @@ function AddFeedback({ handleBtn }) {
       </div>
       <div className={styles.formDiv}>
         <div className={styles.productNameDiv}>
-          <img src="/images/product-1.png" alt="product" />{" "}
+          <img src={item.productImage} alt="product" />{" "}
           <span>Caffe Crema Dolce, 1 kg</span>
         </div>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={(values, actions) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              actions.setSubmitting(false);
-            }, 1000);
-          }}
+          onSubmit={onSubmit}
         >
           {(props) => (
             <Form>

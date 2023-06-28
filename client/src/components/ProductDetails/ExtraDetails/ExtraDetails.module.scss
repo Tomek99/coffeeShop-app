@@ -2,11 +2,18 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 1000px;
+  width: 100%;
   margin: 0 10px;
 
   .ExtraDetailsBtn {
     display: flex;
+    justify-content: center;
     gap: 20px;
+
+    .reviewsLength {
+      font-size: 1.3rem;
+    }
 
     button {
       position: relative;
@@ -37,6 +44,7 @@
 
 @media (max-width: 500px) {
   .ExtraDetailsBtn {
+    padding: 0 10px;
     button {
       font-size: 1.7rem !important;
     }

@@ -29,9 +29,9 @@ function BlogsSection() {
           modules={[Autoplay]}
           className="mySwiper"
         >
-          {blogs.map((item, index) => (
-            <SwiperSlide style={{ width: "auto" }}>
-              <LatestBlog key={index} item={item} />
+          {blogs.map((item, i) => (
+            <SwiperSlide key={i} style={{ width: "auto" }}>
+              <LatestBlog item={item} />
             </SwiperSlide>
           ))}
         </Swiper>

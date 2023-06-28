@@ -22,18 +22,18 @@ function Feedback({ item }) {
           <img src={item.productImage} alt="a" />
         </div>
         <div className={styles.generalInfo}>
-          <Link
+          <button
             className={styles.showMore}
-            style={{ color: "var(--text-color)" }}
+            style={{ color: "var(--text-color)", fontWeight: "400" }}
           >
             {item.productName}
-          </Link>
-          <Link
+          </button>
+          <button
             className={styles.showMore}
             style={{ color: "var(--text-color)" }}
           >
-            {item.createdAt}
-          </Link>
+            Purchased: {item.createdAt.slice(0, 10)}
+          </button>
         </div>
       </div>
       <div className={styles.divRowSecond}>
@@ -42,7 +42,9 @@ function Feedback({ item }) {
           <RatingsStars size="large" rate={null} name="no-value" tab={1} />
         </div>
         <BtnFeedback handleBtn={handleFeedbackBtn} />
-        {show ? <AddFeedback handleBtn={handleFeedbackBtn} /> : null}
+        {show ? (
+          <AddFeedback handleBtn={handleFeedbackBtn} item={item} />
+        ) : null}
       </div>
       {show ? <BlurScreen handleBlurScreen={handleFeedbackBtn} /> : null}
     </div>

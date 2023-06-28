@@ -21,6 +21,7 @@
     "bcrypt": "^5.1.0",
     "cypress-plugin-stripe-elements": "^1.0.2",
     "damerau-levenshtein-js": "^1.1.8",
+    "date-diff": "^1.0.2",
     "difflib": "^0.2.4",
     "dotenv": "^16.0.3",
     "enzyme": "^3.11.0",

@@ -344,7 +344,7 @@ function App() {
 
   const notify = (text) =>
     toast.success(text, {
-      position: "top-center",
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
@@ -352,6 +352,19 @@ function App() {
       draggable: true,
       progress: undefined,
       theme: "light",
+    });
+
+  const notifyError = (text) =>
+    toast.error(text, {
+      position: "top-right",
+      autoClose: 3000,
+
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
     });
 
   /*----------- navigate on Summary ----------- */
@@ -372,6 +385,8 @@ function App() {
         clearTheCart,
         addOrder,
         changeQuantity,
+        notify,
+        notifyError,
         isLogIn,
         cartItems,
         cartValue,

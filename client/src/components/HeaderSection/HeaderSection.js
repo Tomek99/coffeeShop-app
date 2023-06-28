@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function Header({ firstWord, secondWord }) {
   return (
     <header className={styles.headerSection}>
-      <span>{firstWord}</span> <span>{secondWord}</span>
+      {firstWord} {secondWord}
     </header>
   );
 }

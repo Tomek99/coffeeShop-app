@@ -1,88 +1,88 @@
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 30%;
-    left: 100px;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 30%;
+  left: 100px;
+  margin: 20px;
+  color: #fff;
+  z-index: 1;
+  opacity: 1;
+
+  header {
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 2rem;
+    max-width: 600px;
+  }
+
+  button {
+    background-color: var(--main-color);
+    text-transform: capitalize;
     color: #fff;
-    z-index: 1;
-    opacity: 1;
+    border-radius: 8px;
+    font-size: 1.7rem;
+    padding: 12px 35px 12px 35px;
+    margin-top: 10px;
+    transition: 0.2s linear;
+    cursor: pointer;
 
-    header {
-        font-size: 5rem;
-        text-transform: uppercase;
-        font-weight: bold;
+    &:hover {
+      letter-spacing: 0.1rem;
     }
-
-    p {
-        font-size: 2rem;
-        max-width: 600px;
-    }
-
-    a {
-        background-color: var(--main-color);
-        text-transform: capitalize;
-        color: #fff;
-        border-radius: 8px;
-        font-size: 1.7rem;
-        padding: 12px 35px 12px 35px;
-        margin-top: 10px;
-        transition: 0.2s linear;
-        cursor: pointer;
-
-        &:hover {
-            letter-spacing: 0.1rem;
-        }
-    }
+  }
 }
 
 .content_3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 100px;
-    left: 0;
-    right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 100px;
+  left: 0;
+  right: 0;
 }
 
 @media (max-width: 1000px) {
-    .content {
-        align-items: center;
-        justify-content: flex-start;
-        top: 120px;
-        left: 0;
-        right: 0;
+  .content {
+    align-items: center;
+    justify-content: flex-start;
+    top: 120px;
+    left: 0;
+    right: 0;
 
-        header {
-            text-align: center;
-            font-size: 3rem;
-        }
-
-        p {
-            margin-top: 10px;
-            text-align: center;
-            max-width: 500px;
-            font-size: 1.5rem;
-        }
-
-        a {
-            margin-top: 20px;
-        }
+    header {
+      text-align: center;
+      font-size: 3rem;
     }
+
+    p {
+      margin-top: 10px;
+      text-align: center;
+      max-width: 500px;
+      font-size: 1.5rem;
+    }
+
+    button {
+      margin-top: 20px;
+    }
+  }
 }
 
 @media (max-width: 800px) {
-    .content {
-        align-items: center;
-        justify-content: flex-start;
-        top: 120px;
-    }
+  .content {
+    align-items: center;
+    justify-content: flex-start;
+    top: 120px;
+  }
 }
 
 @media (max-width: 350px) {
-    .content {
-        top: 25px;
-    }
+  .content {
+    top: 25px;
+  }
 }

@@ -1,0 +1,126 @@
+.ProductReview {
+  display: flex;
+  gap: 100px;
+  border-bottom: var(--border);
+  padding: 20px 0;
+
+  .userImgDiv {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+
+    .avatarImg {
+      width: 36px;
+      height: auto;
+    }
+    .userNameDesktop {
+      font-size: 1.3rem;
+    }
+  }
+  .purchaseConfirmed {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .spanText {
+      font-size: 1.3rem;
+      opacity: 0.7;
+    }
+  }
+
+  .productReviewRightDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .mobileContentDiv {
+      display: none;
+    }
+
+    .ratingContent {
+      display: flex;
+      align-items: center;
+    }
+
+    .userComment {
+      max-width: 700px;
+      font-size: 1.3rem;
+      word-wrap: break-word;
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+
+      .text {
+        margin-right: 15px;
+        font-size: 1.3rem;
+      }
+
+      .thumbs {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 1.3rem;
+
+        .thumb {
+          background-color: transparent;
+          transition: 0.3s linear;
+          cursor: pointer;
+
+          :hover {
+            color: var(--main-color-darken);
+          }
+        }
+      }
+    }
+  }
+}
+
+.ProductReview:nth-child(1) {
+  border-top: var(--border);
+}
+
+@media (max-width: 1280px) {
+  .ProductReview {
+    justify-content: center;
+    gap: 50px;
+    padding: 20px 10px;
+
+    .userImgDiv {
+      margin-right: 20px !important;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .ProductReview {
+    gap: 0;
+    .userNameDesktop {
+      display: none !important;
+    }
+
+    .userNameMobile {
+      font-size: 1.3rem;
+    }
+
+    .mobileContentDiv {
+      display: flex !important;
+      align-items: center;
+
+      .userNameMobile {
+        margin-right: 10px;
+      }
+      .spanText {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .userImgDiv {
+    margin-right: 0 !important;
+  }
+  .purchaseConfirmed {
+    display: none !important;
+  }
+}
