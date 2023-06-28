@@ -8,29 +8,33 @@ import axios from "axios";
 import { Context } from "../../../../../Contexts/Context";
 
 function ProductReview({ item }) {
-  const { notify, notifyError } = useContext(Context);
-
+  const { notify, notifyError, user } = useContext(Context);
+  console.log(user._id);
   const [likes, setLikes] = useState(item.likes);
   const [dislikes, setDislikes] = useState(item.dislikes);
 
   async function handleThumb(rate) {
-    const res = await axios.put(
-      `${process.env.REACT_APP_API_URI}/api/reviews/rate-review`,
-      {
-        reviewId: item._id,
-        userId: item.userId,
-        rate,
-      }
-    );
+    if (user._id) {
+      const res = await axios.put(
+        `${process.env.REACT_APP_API_URI}/api/reviews/rate-review`,
+        {
+          reviewId: item._id,
+          userId: user._id,
+          rate,
+        }
+      );
 
-    if (res.data) {
-      if (rate !== "0") setLikes(likes + 1);
-      else {
-        setDislikes(dislikes + 1);
+      if (res.data) {
+        if (rate !== "0") setLikes(likes + 1);
+        else {
+          setDislikes(dislikes + 1);
+        }
+        notify("Thank you for your vote");
+      } else {
+        notifyError("You can only vote once for each comment");
       }
-      notify("Thank you for your vote");
     } else {
-      notifyError("You can only vote once for each comment");
+      notifyError("You cannot vote if you are not logged in.");
     }
   }
 
