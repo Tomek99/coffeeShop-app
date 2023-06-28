@@ -42,7 +42,9 @@ function Feedback({ item }) {
           <RatingsStars size="large" rate={null} name="no-value" tab={1} />
         </div>
         <BtnFeedback handleBtn={handleFeedbackBtn} />
-        {show ? <AddFeedback handleBtn={handleFeedbackBtn} /> : null}
+        {show ? (
+          <AddFeedback handleBtn={handleFeedbackBtn} item={item} />
+        ) : null}
       </div>
       {show ? <BlurScreen handleBlurScreen={handleFeedbackBtn} /> : null}
     </div>

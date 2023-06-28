@@ -1,0 +1,20 @@
+.BtnNavigate {
+  background-color: var(--main-color);
+  text-transform: capitalize;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1.7rem;
+  padding: 12px 35px 12px 35px;
+  margin-top: 10px;
+  transition: 0.2s linear;
+  cursor: pointer;
+
+  &:hover {
+    letter-spacing: 0.1rem;
+  }
+}
+@media (max-width: 1000px) {
+  .BtnNavigate {
+    margin-top: 20px;
+  }
+}

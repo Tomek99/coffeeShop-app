@@ -6,6 +6,7 @@ const connectDB = require("./config/db");
 var cors = require("cors");
 const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
+const functions = require("firebase-functions");
 
 connectDB();
 
@@ -39,3 +40,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
+
+exports.api = functions.https.onRequest(app);

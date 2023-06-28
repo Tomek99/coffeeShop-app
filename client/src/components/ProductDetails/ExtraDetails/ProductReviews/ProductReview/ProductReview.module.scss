@@ -1,16 +1,14 @@
 .ProductReview {
   display: flex;
-  //   justify-content: space-evenly;
-
+  gap: 100px;
   border-bottom: var(--border);
-  padding-bottom: 20px;
+  padding: 20px 0;
 
   .userImgDiv {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 10px;
-    margin-right: 200px;
 
     .avatarImg {
       width: 36px;
@@ -67,19 +65,28 @@
         font-size: 1.3rem;
 
         .thumb {
-          cursor: pointer;
           background-color: transparent;
+          transition: 0.3s linear;
+          cursor: pointer;
+
+          :hover {
+            color: var(--main-color-darken);
+          }
         }
       }
     }
   }
 }
 
+.ProductReview:nth-child(1) {
+  border-top: var(--border);
+}
+
 @media (max-width: 1280px) {
   .ProductReview {
     justify-content: center;
     gap: 50px;
-    padding: 0 10px 30px 10px;
+    padding: 20px 10px;
 
     .userImgDiv {
       margin-right: 20px !important;

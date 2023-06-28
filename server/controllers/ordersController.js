@@ -18,7 +18,7 @@ const createOrder = asyncHandler(async (req, res) => {
     total: "2323",
   });
 
-  res.status(200).json(product);
+  res.status(200).send(product);
 });
 
 module.exports = {

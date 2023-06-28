@@ -10,14 +10,16 @@ const invoiceSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    userImages: {
-      type: Array,
+    userReviewDate: {
+      type: Date,
       require: true,
     },
+    userImages: [{ type: String, require: true }],
     productId: {
       type: String,
       require: true,
     },
+    usersIdVoted: [{ type: String, require: true }],
     productName: {
       type: String,
       require: true,
@@ -40,14 +42,6 @@ const invoiceSchema = new mongoose.Schema(
     },
     dislikes: {
       type: Number,
-      require: true,
-    },
-    isVoted: {
-      type: Boolean,
-      require: true,
-    },
-    amountVotes: {
-      type: Array,
       require: true,
     },
     isCheckedReview: {

@@ -24,12 +24,13 @@ function handleDiff(reviewDate) {
     Number(minutes),
     Number(seconds)
   );
+
   //-------Review added
 
   const yearTwo = Number(reviewDate.slice(0, 4));
   const monthTwo = Number(reviewDate.slice(5, 7));
   const dayTwo = Number(reviewDate.slice(8, 10));
-  const hoursTwo = Number(reviewDate.slice(11, 13));
+  const hoursTwo = Number(reviewDate.slice(11, 13)) + 2;
   const minutesTwo = Number(reviewDate.slice(14, 16));
   const secondsTwo = Number(reviewDate.slice(17, 19));
 
@@ -45,7 +46,7 @@ function handleDiff(reviewDate) {
 
   const diff = new DateDiff(date1, date2);
 
-  if (diff.seconds() < 60);
+  if (diff.seconds() < 60) return `${Math.round(diff.seconds())} second(s) ago`;
   else if (diff.seconds() < 3600)
     return `${Math.round(diff.minutes())} minute(s) ago`;
   else if (diff.seconds() < 86400)

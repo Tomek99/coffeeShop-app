@@ -35,7 +35,7 @@ function Review({ item }) {
               <p className={styles.title}>{item.productName}</p>
               <div className={styles.ratingAndData}>
                 <RatingsStars size="large" rate={item.rate} tab={0} />
-                <DataDiff reviewDate={item.createdAt} />
+                <DataDiff reviewDate={item.userReviewDate} />
               </div>
             </div>
             <p className={styles.comment}>{item.comment}</p>

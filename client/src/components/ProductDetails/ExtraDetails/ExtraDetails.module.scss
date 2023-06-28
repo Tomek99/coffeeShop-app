@@ -11,6 +11,10 @@
     justify-content: center;
     gap: 20px;
 
+    .reviewsLength {
+      font-size: 1.3rem;
+    }
+
     button {
       position: relative;
       color: var(--text-color);
