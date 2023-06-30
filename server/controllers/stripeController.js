@@ -3,6 +3,20 @@ const stripe = require("stripe")(process.env.STRIPE_URI);
 const DOMAIN_SUCCESS = "http://localhost:3000/order/success";
 const DOMAIN_CANCEL = "http://localhost:3000/order";
 const Order = require("../models/orderModel");
+const Review = require("../models/reviewModel");
+
+const nodemailer = require("nodemailer");
+
+// const transporter = nodemailer.createTransport({
+//   host: "smtp.gmail.com",
+//   port: 465,
+//   secure: true,
+//   auth: {
+//     // TODO: replace `user` and `pass` values from <https://forwardemail.net>
+//     user: process.env.EMAIL,
+//     pass: process.env.PASSWORD,
+//   },
+// });
 
 const setPayment = asyncHandler(async (req, res) => {
   const { products, userId, address } = req.body;
@@ -59,10 +73,11 @@ const setPayment = asyncHandler(async (req, res) => {
 });
 //---------------------------------------------------------------------------------------------------------
 let endpointSecret;
-endpointSecret = process.env.STRIPE_END_POINT;
+endpointSecret = process.env.STRIPE_END_POINT_SECRET;
 
 const setWebhook = asyncHandler(async (req, res) => {
-  const payload = req.rawBody.toString();
+  console.log("Hello");
+  const payload = await req.rawBody.toString();
   const sig = req.headers["stripe-signature"];
   let event;
 
@@ -96,7 +111,21 @@ const setWebhook = asyncHandler(async (req, res) => {
       customer.metadata.userId,
       productData
     );
+
+    // let emailTo = session.customer_details.email;
+
+    // const info = await transporter.sendMail({
+    //   from: process.env.email, // sender address
+    //   to: emailTo, // list of receivers
+    //   subject: "Thanks for the payment", // Subject line
+    //   text: "Thanks for the payment", // plain text body
+    //   html: `<b>Hello world?</b>`, // html body
+    // });
+
+    // console.log("Hello: %s", info.messageId);
   }
+
+  createReview();
 
   res.send().status(200).end();
 });

@@ -13,22 +13,19 @@ const getReviewsByProductId = asyncHandler(async (req, res) => {
 
 const setReview = asyncHandler(async (req, res) => {
   //-------Current data
+  const { userId, userName, productId, productName, productImage } = req.body;
   const currentTime = new Date().toISOString();
-  let userImages = req.query.userImages ? req.query.userImages.split(",") : [];
+
+  let userImages = req.body.userImages ? req.body.userImages.split(",") : [];
   const review = await Review.create({
-    userId: req.query.userId,
-    userName: req.query.userName,
-    userImages: userImages,
+    userId,
+    userName,
+    userImages,
     userReviewDate: currentTime,
     usersIdVoted: [],
-    productId: req.query.productId,
-    productName: req.query.productName,
-    productImage: req.query.productImage,
-    comment: "",
-    rate: 0,
-    likes: 0,
-    dislikes: 0,
-    isCheckedReview: false,
+    productId,
+    productName,
+    productImage,
   });
 
   res.status(200).send(review);

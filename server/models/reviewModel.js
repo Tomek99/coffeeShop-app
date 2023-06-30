@@ -31,22 +31,27 @@ const invoiceSchema = new mongoose.Schema(
     comment: {
       type: String,
       require: true,
+      default: "",
     },
     rate: {
       type: Number,
       require: true,
+      default: 0,
     },
     likes: {
       type: Number,
       require: true,
+      default: 0,
     },
     dislikes: {
       type: Number,
       require: true,
+      default: 0,
     },
     isCheckedReview: {
       type: Boolean,
       require: true,
+      default: false,
     },
   },
   {
