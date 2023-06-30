@@ -3,6 +3,7 @@
 https://coffeeshop2023.netlify.app/
 
 Dane do konta testowego: 
+
 login: test2@gmail.com 
 hasło: Test2@gmail
 
@@ -40,13 +41,12 @@ Oto przykład zestawu funkcjonalności dla minimalnej wersji produktu (Minimum V
 -Wyświetlanie listy poprzednich zamówień użytkownika.
 -Wyświetlanie szczegółowych informacji o zamówieniach (produkty, data zamówienia, status).
 
---
 8.Panel użytkownika - zakładka recenzje:
 - Dodawanie recenzji na temat zakupionego produktu (komentarz oraz ocena w skali 1 - 5.
 - Zapisanie recenzji w bazie danych powiązanej z odpowiednim produktem.
 - Wyświetlanie listy recenzji wystawionych przez użytkownika.
 
-9. Ocenianie recenzji przez użytkowników sklepu.
+9. Możliwość oceny recenzji przez użytkowników sklepu:
 - Każdy zalogowana osoba ma możliwość oceny recenzji danego użytkownika przy użyciu łapki w dół i górę:
 - Jeżeli nie jesteśmy zalogowani lub oddaliśmy już glos na dany produkt otrzymamy powiadomienie. 
 
