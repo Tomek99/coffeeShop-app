@@ -23,3 +23,7 @@ videos
 cypress/fixtures/
 cypress/downloads/
 cypress/logs/
+
+ngrok.exe
+# Local Netlify folder
+.netlify

@@ -2,8 +2,9 @@
   "name": "warehouse",
   "version": "1.0.0",
   "description": "store away data",
-  "main": "server.js",
+  "main": "./server.js",
   "dependencies": {
+    "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
     "colors": "^1.4.0",
@@ -16,6 +17,7 @@
     "mongoose": "^6.8.4",
     "mongoose-bcrypt": "^1.10.1",
     "nanoid": "^4.0.1",
+    "nodemailer": "^6.9.3",
     "nodemon": "^2.0.20",
     "raw-body": "^2.5.2",
     "stripe": "^11.15.0",
@@ -23,7 +25,8 @@
   },
   "scripts": {
     "start": "node backend/server.js",
-    "server": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "build": "netlify deploy --prod"
   },
   "author": "",
   "license": "ISC"
