@@ -226,9 +226,6 @@ function App() {
     localStorage.setItem("cart-value", 0);
     localStorage.setItem("cart-save", 0);
 
-    console.log(window.location.href);
-    console.log(`${process.env.REACT_APP_URI}/order/success`);
-
     if (window.location.href !== `${process.env.REACT_APP_URI}/order/success`)
       notify("Cart has been cleared!");
   }
@@ -511,7 +508,13 @@ function App() {
 
           <Route
             path="order/success"
-            element={<PaymentSuccess clearTheCart={clearTheCart} />}
+            element={
+              <PaymentSuccess
+                clearTheCart={clearTheCart}
+                cartItems={cartItems}
+                user={user}
+              />
+            }
           />
           <Route path="order/canceled" element={<PaymentCanceled />} />
           <Route path="wish-list" element={<Wish />} />
