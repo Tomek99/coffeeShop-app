@@ -35,7 +35,9 @@ function UserReviews() {
           products.data.filter((item) => item.isCheckedReview !== true)
         );
         setReviews(
-          products.data.filter((item) => item.isCheckedReview !== false)
+          products.data
+            .reverse()
+            .filter((item) => item.isCheckedReview !== false)
         );
         setLoading(false);
       } catch (error) {
@@ -68,7 +70,7 @@ function UserReviews() {
         {loading ? (
           <LoaderSpinner loading={loading} />
         ) : (
-          reviews.map((item, i) => <Review key={i} item={item} />)
+          reviews.reverse().map((item, i) => <Review key={i} item={item} />)
         )}
       </div>
       <Support />

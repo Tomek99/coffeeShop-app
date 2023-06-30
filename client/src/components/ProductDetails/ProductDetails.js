@@ -24,7 +24,9 @@ function ProductDetails() {
   // Protected route if the route is not exist
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/products/product-details/${productId.id}`)
+      .get(
+        `${process.env.REACT_APP_API_URI}/api/products/product-details/${productId.id}`
+      )
       .then((response) => {
         const productDetails = response.data;
         if (productDetails._id) {
