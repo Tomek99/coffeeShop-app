@@ -5,6 +5,7 @@ https://coffeeshop2023.netlify.app/
 Dane do konta testowego: 
 
 login: test2@gmail.com 
+
 hasło: Test2@gmail
 
 Oto przykład zestawu funkcjonalności dla minimalnej wersji produktu (Minimum Viable Product - MVP) dla sklepu internetowego:
@@ -38,21 +39,27 @@ Oto przykład zestawu funkcjonalności dla minimalnej wersji produktu (Minimum V
 - Możliwośc interkacji z produktami znajdującymi się w liście życzeń (usuwanie produktów oraz przekierowanie do podstrony z pełnymi informacji o produkcie).
 
 7.Historia zamówień:
--Wyświetlanie listy poprzednich zamówień użytkownika.
--Wyświetlanie szczegółowych informacji o zamówieniach (produkty, data zamówienia, status).
+- Wyświetlanie listy poprzednich zamówień użytkownika.
+- Wyświetlanie szczegółowych informacji o zamówieniach (produkty, data zamówienia, status).
 
 8.Panel użytkownika - zakładka recenzje:
 - Dodawanie recenzji na temat zakupionego produktu (komentarz oraz ocena w skali 1 - 5.
 - Zapisanie recenzji w bazie danych powiązanej z odpowiednim produktem.
 - Wyświetlanie listy recenzji wystawionych przez użytkownika.
 
-9. Możliwość oceny recenzji przez użytkowników sklepu:
+9.Możliwość oceny recenzji przez użytkowników sklepu:
 - Każdy zalogowana osoba ma możliwość oceny recenzji danego użytkownika przy użyciu łapki w dół i górę:
 - Jeżeli nie jesteśmy zalogowani lub oddaliśmy już glos na dany produkt otrzymamy powiadomienie. 
 
-10. Dodawanie faktur i adresów w zakładce "Adres":
+10.Dodawanie faktur i adresów w zakładce "Adres":
 - Możliwość dodawania i edycji faktur i adresów użytkownika.
 
-12. Składanie zamówienia:
+11.Składanie zamówienia:
 - Możliwość potwierdzenia zawartości koszyka i przejścia do procesu składania zamówienia.
 - Wybór adresu dostawy, metody płatności.
+
+12.Rozmowa na czacie z klientem(Mesenger-style):
+- Wykorzystanie interfejsu przypominającego Messenger od Facebooka.
+- Możliwość wysyłania wiadomości między klientem a obsługą sklepu.
+- Wyświetlanie powiadomień o nowych wiadomościach.
+- Historia wiadomości dla kontynuacji rozmowy.
