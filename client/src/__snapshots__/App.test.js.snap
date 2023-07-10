@@ -30,7 +30,7 @@ exports[`rendering required component 1`] = `
           <img
             alt="Logo"
             class="logo"
-            src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png"
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
           />
         </a>
       </div>
@@ -285,12 +285,11 @@ exports[`rendering required component 1`] = `
           id="bs-search"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 16 16"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
@@ -355,12 +354,11 @@ exports[`rendering required component 1`] = `
           href="/wish-list"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 16 16"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
@@ -376,12 +374,11 @@ exports[`rendering required component 1`] = `
           id="userNavigationBtn0"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 448 512"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
@@ -403,7 +400,7 @@ exports[`rendering required component 1`] = `
               <a
                 href="/log-in"
               >
-                Log In
+                Log in
               </a>
             </li>
             <li
@@ -458,15 +455,9 @@ exports[`rendering required component 1`] = `
                   width="20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g>
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M19 22H5a3 3 0 0 1-3-3V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12h4v4a3 3 0 0 1-3 3zm-1-5v2a1 1 0 0 0 2 0v-2h-2zm-2 3V4H4v15a1 1 0 0 0 1 1h11zM6 7h8v2H6V7zm0 4h8v2H6v-2zm0 4h5v2H6v-2z"
-                    />
-                  </g>
+                  <path
+                    d="M19 22H5C3.34315 22 2 20.6569 2 19V3C2 2.44772 2.44772 2 3 2H17C17.5523 2 18 2.44772 18 3V15H22V19C22 20.6569 20.6569 22 19 22ZM18 17V19C18 19.5523 18.4477 20 19 20C19.5523 20 20 19.5523 20 19V17H18ZM16 20V4H4V19C4 19.5523 4.44772 20 5 20H16ZM6 7H14V9H6V7ZM6 11H14V13H6V11ZM6 15H11V17H6V15Z"
+                  />
                 </svg>
                   
                 Orders
@@ -577,12 +568,11 @@ exports[`rendering required component 1`] = `
           id="userBtnOpen131"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 448 512"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
@@ -597,18 +587,17 @@ exports[`rendering required component 1`] = `
           id="cartBtnOpen132"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 16 16"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
             />
           </svg>
           <span
@@ -711,15 +700,9 @@ exports[`rendering required component 1`] = `
                   width="20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g>
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M19 22H5a3 3 0 0 1-3-3V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12h4v4a3 3 0 0 1-3 3zm-1-5v2a1 1 0 0 0 2 0v-2h-2zm-2 3V4H4v15a1 1 0 0 0 1 1h11zM6 7h8v2H6V7zm0 4h8v2H6v-2zm0 4h5v2H6v-2z"
-                    />
-                  </g>
+                  <path
+                    d="M19 22H5C3.34315 22 2 20.6569 2 19V3C2 2.44772 2.44772 2 3 2H17C17.5523 2 18 2.44772 18 3V15H22V19C22 20.6569 20.6569 22 19 22ZM18 17V19C18 19.5523 18.4477 20 19 20C19.5523 20 20 19.5523 20 19V17H18ZM16 20V4H4V19C4 19.5523 4.44772 20 5 20H16ZM6 7H14V9H6V7ZM6 11H14V13H6V11ZM6 15H11V17H6V15Z"
+                  />
                 </svg>
                   
                 Orders
@@ -916,138 +899,100 @@ exports[`rendering required component 1`] = `
       class="HomeSection"
     >
       <div
-        class="HomeSection"
+        class="homeSectionCarousel"
       >
-        <div>
-          <div
-            class="slider activeAnim"
-          >
-            <div
-              class="content"
-            >
-              <header>
-                fresh coffee in the morning
-              </header>
-              <p>
-                Lorem ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit, Consequuntur? Et Veritatis Velit Nesciunt Odio!
-              </p>
-              <a
-                href="#menuSection"
-              >
-                get it now
-              </a>
-            </div>
-            <img
-              alt="fresh coffee in the morning"
-              src="/images/home-img1.jpeg"
-            />
-          </div>
-          <div
-            class="slider"
-          >
-            <div
-              class="content"
-            >
-              <header>
-                product of the month
-              </header>
-              <p>
-                Caffè Crema Dolce
-              </p>
-              <a
-                href="#menuSection"
-              >
-                get it now
-              </a>
-            </div>
-            <img
-              alt="product of the month"
-              src="/images/home-img2.jpeg"
-            />
-          </div>
-          <div
-            class="slider"
-          >
-            <div
-              class="content"
-            >
-              <header>
-                beans ground instant coffee
-              </header>
-              <p />
-              <a
-                href="#menuSection"
-              >
-                Products
-              </a>
-            </div>
-            <img
-              alt="beans ground instant coffee"
-              src="/images/home-img3.jpeg"
-            />
-          </div>
-        </div>
         <div
-          class="btnDiv"
+          class="swiper swiper-initialized swiper-horizontal mySwiper paginationLeftSide"
+          style="height: 600px; width: 100%;"
         >
-          <button
-            class="btnArrow btnArrowLeft"
+          <div
+            class="swiper-wrapper"
+            style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
           >
-            <svg
-              color="#fff"
-              fill="currentColor"
-              height="40"
-              stroke="currentColor"
-              stroke-width="0"
-              style="color: rgb(255, 255, 255);"
-              viewBox="0 0 1024 1024"
-              width="40"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="swiper-slide"
+              data-swiper-slide-index="0"
             >
-              <path
-                d="M752.145 0c8.685 0 17.572 3.434 24.237 10.099 13.33 13.33 13.33 35.143 0 48.473L320.126 515.03l449.591 449.591c13.33 13.33 13.33 35.144 0 48.474-13.33 13.33-35.142 13.33-48.472 0L247.418 539.268c-13.33-13.33-13.33-35.144 0-48.474L727.91 10.1C734.575 3.435 743.46.002 752.146.002z"
+              <div
+                class="content content_3"
+              >
+                <header>
+                  fresh coffee in the morning
+                </header>
+                <p>
+                  Lorem ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit, Consequuntur? Et Veritatis Velit Nesciunt Odio!
+                </p>
+                <button
+                  class="BtnNavigate"
+                >
+                  get it now
+                </button>
+              </div>
+              <img
+                alt="fresh coffee in the morning"
+                src="/images/home-img1.jpeg"
               />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="btnDiv"
-        >
-          <button
-            class="btnArrow btnArrowRight"
-          >
-            <svg
-              color="#fff"
-              fill="currentColor"
-              height="40"
-              stroke="currentColor"
-              stroke-width="0"
-              style="color: rgb(255, 255, 255);"
-              viewBox="0 0 1024 1024"
-              width="40"
-              xmlns="http://www.w3.org/2000/svg"
+            </div>
+            <div
+              class="swiper-slide"
+              data-swiper-slide-index="1"
             >
-              <path
-                d="M271.653 1023.192c-8.685 0-17.573-3.432-24.238-10.097-13.33-13.33-13.33-35.144 0-48.474L703.67 508.163 254.08 58.573c-13.33-13.331-13.33-35.145 0-48.475 13.33-13.33 35.143-13.33 48.473 0L776.38 483.925c13.33 13.33 13.33 35.143 0 48.473l-480.492 480.694c-6.665 6.665-15.551 10.099-24.236 10.099z"
+              <div
+                class="content"
+              >
+                <header>
+                  product of the month
+                </header>
+                <p>
+                  Caffè Crema Dolce
+                </p>
+                <button
+                  class="BtnNavigate"
+                >
+                  get it now
+                </button>
+              </div>
+              <img
+                alt="product of the month"
+                src="/images/home-img2.jpeg"
               />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="CarouselDots"
-        >
-          <span
-            class="spanDot activeDot"
-            data-testid="span-element"
-          />
-          <span
-            class="spanDot"
-            data-testid="span-element"
-          />
-          <span
-            class="spanDot"
-            data-testid="span-element"
-          />
+            </div>
+            <div
+              class="swiper-slide"
+              data-swiper-slide-index="2"
+            >
+              <div
+                class="content"
+              >
+                <header>
+                  beans ground instant coffee
+                </header>
+                <p />
+                <button
+                  class="BtnNavigate"
+                >
+                  Products
+                </button>
+              </div>
+              <img
+                alt="beans ground instant coffee"
+                src="/images/home-img3.jpeg"
+              />
+            </div>
+          </div>
+          <div
+            class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"
+          >
+            <span
+              class="swiper-pagination-bullet swiper-pagination-bullet-active"
+            />
+            <span
+              class="swiper-pagination-bullet"
+            />
+            <span
+              class="swiper-pagination-bullet"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -1058,13 +1003,9 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        <span>
-          about
-        </span>
+        about
          
-        <span>
-          us
-        </span>
+        us
       </header>
       <div
         class="divRow"
@@ -1087,11 +1028,17 @@ exports[`rendering required component 1`] = `
             Lorfffem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
           </p>
           <br />
-          <a
-            href="/about-us"
+          <button
+            class="BtnShipmentHome"
+            type="button"
           >
-            Learn more
-          </a>
+            <span
+              class="btnPosition"
+            >
+               
+              Read more
+            </span>
+          </button>
         </div>
       </div>
     </div>
@@ -1102,13 +1049,9 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        <span>
-          latest
-        </span>
+        latest
          
-        <span>
-          products
-        </span>
+        products
       </header>
       <div
         class="wrapperDiv"
@@ -1186,1416 +1129,1457 @@ exports[`rendering required component 1`] = `
     </div>
     <div
       class="ReviewSection"
-      id="reviewSection"
     >
       <header
         class="headerSection"
       >
-        <span>
-          customer's
-        </span>
+        customer's
          
-        <span>
-          review
-        </span>
+        review
       </header>
       <div
-        class="wrapperDiv"
+        class="reviewSectionCarousel"
       >
         <div
-          class="carouselDiv"
+          class="swiper swiper-initialized swiper-horizontal mySwiper"
+          style="padding: 2px;"
         >
           <div
-            class="innerDiv"
-            style="transform: translateX(-0px);"
+            class="swiper-wrapper"
+            style="cursor: grab; transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
           >
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-1.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="3 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-1.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="3 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarBorderIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarBorderIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarBorderIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarBorderIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  1_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                1_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-2.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="4 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-2.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="4 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarBorderIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarBorderIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  2_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                2_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-3.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="5 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-3.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="5 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  3_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                3_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-1.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="4 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-1.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="4 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarBorderIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarBorderIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  4_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                4_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-2.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="3 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-2.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="3 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarBorderIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarBorderIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarBorderIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarBorderIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  5_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                5_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-3.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="4 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-3.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="4 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarBorderIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarBorderIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  6_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                6_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-1.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="5 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-1.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="5 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  7_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                7_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-2.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="5 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-2.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="5 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  8_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                8_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-3.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="4 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-3.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="4 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarBorderIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarBorderIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  9_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                9_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-3.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="5 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-3.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="5 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  10_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                10_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-3.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="5 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-3.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="5 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  11_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                11_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
             <div
-              class="singleCustomer"
+              class="swiper-slide"
+              style="width: auto;"
             >
-              <div>
-                <img
-                  alt=""
-                  class="avatar"
-                  src="images/pic-3.png"
-                />
-                <p
-                  class="name"
+              <div
+                class="singleCustomer"
+              >
+                <div
+                  class="singleCustomerLeftDiv"
                 >
-                  John Deo
-                </p>
-                <div>
-                  <span
-                    aria-label="5 Stars"
-                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
-                    role="img"
+                  <img
+                    alt=""
+                    class="avatar"
+                    src="images/pic-3.png"
+                  />
+                  <p
+                    class="name"
                   >
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                    John Deo
+                  </p>
+                  <div>
+                    <span
+                      aria-label="5 Stars"
+                      class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+                      role="img"
+                    >
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
                         >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        <span
+                          class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                            data-testid="StarIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                          </svg>
+                        </span>
                       </span>
                     </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                          data-testid="StarIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
+                <p>
+                  12_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
+                </p>
               </div>
-              <p>
-                12_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus viverra accumsan. Donec in sapien sed felis malesuada porttitor vitae eget diam. 
-              </p>
             </div>
           </div>
-        </div>
-        <div
-          class="indicators"
-        >
-          <button
-            class="BtnLeft"
-            type="button"
-          >
-            <svg
-              class="btnIcon"
-              fill="currentColor"
-              height="35"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              width="35"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
-              />
-            </svg>
-          </button>
-          <button
-            class="BtnRight"
-            type="button"
-          >
-            <svg
-              class="btnIcon"
-              fill="currentColor"
-              height="35"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              width="35"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
-              />
-            </svg>
-          </button>
+          <div
+            class="swiper-pagination"
+          />
         </div>
       </div>
     </div>
@@ -2605,13 +2589,9 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        <span>
-          We care
-        </span>
+        We care
          
-        <span>
-          about you
-        </span>
+        about you
       </header>
       <div
         class="careItemsWrapper"
@@ -2697,16 +2677,12 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        <span>
-          our
-        </span>
+        our
          
-        <span>
-          news
-        </span>
+        news
       </header>
       <div
-        class="blogs"
+        class="blogsCarousel"
       >
         <div
           class="swiper swiper-initialized swiper-horizontal mySwiper"
@@ -3047,7 +3023,7 @@ exports[`rendering required component 1`] = `
             </div>
           </div>
           <div
-            class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
+            class="swiper-pagination"
           />
         </div>
       </div>
@@ -3377,13 +3353,12 @@ exports[`rendering required component 1`] = `
                   height="20"
                   stroke="currentColor"
                   stroke-width="0"
-                  viewBox="0 0 14 16"
+                  viewBox="0 0 24 24"
                   width="20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
-                    fill-rule="evenodd"
+                    d="M1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14a1.75 1.75 0 0 1-1.75 1.75H1.75A1.75 1.75 0 0 1 0 18.75v-14C0 3.784.784 3 1.75 3ZM1.5 7.412V18.75c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V7.412l-9.52 6.433c-.592.4-1.368.4-1.96 0Zm0-2.662v.852l10.36 7a.25.25 0 0 0 .28 0l10.36-7V4.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"
                   />
                 </svg>
                 contact@xyz.com
@@ -3443,15 +3418,9 @@ exports[`rendering required component 1`] = `
                   width="20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g>
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M12 1a5 5 0 0 1 5 5v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3V6a5 5 0 0 1 5-5zm5 10h-2v1a1 1 0 0 0 1.993.117L17 12v-1zm-8 0H7v1a1 1 0 0 0 1.993.117L9 12v-1zm3-8a3 3 0 0 0-2.995 2.824L9 6v2h6V6a3 3 0 0 0-2.824-2.995L12 3z"
-                    />
-                  </g>
+                  <path
+                    d="M12.0049 0.999512C14.7663 0.999512 17.0049 3.23809 17.0049 5.99951V7.99951H20.0049C20.5572 7.99951 21.0049 8.44723 21.0049 8.99951V20.9995C21.0049 21.5518 20.5572 21.9995 20.0049 21.9995H4.00488C3.4526 21.9995 3.00488 21.5518 3.00488 20.9995V8.99951C3.00488 8.44723 3.4526 7.99951 4.00488 7.99951H7.00488V5.99951C7.00488 3.23809 9.24346 0.999512 12.0049 0.999512ZM17.0049 10.9995H15.0049V11.9995C15.0049 12.5518 15.4526 12.9995 16.0049 12.9995C16.5177 12.9995 16.9404 12.6135 16.9982 12.1161L17.0049 11.9995V10.9995ZM9.00488 10.9995H7.00488V11.9995C7.00488 12.5518 7.4526 12.9995 8.00488 12.9995C8.51772 12.9995 8.94039 12.6135 8.99815 12.1161L9.00488 11.9995V10.9995ZM12.0049 2.99951C10.4072 2.99951 9.10122 4.24843 9.00998 5.82324L9.00488 5.99951V7.99951H15.0049V5.99951C15.0049 4.40183 13.756 3.09585 12.1812 3.0046L12.0049 2.99951Z"
+                  />
                 </svg>
                 NIP 0000000000 | BDO 000000000
               </p>

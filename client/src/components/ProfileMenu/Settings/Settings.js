@@ -34,6 +34,8 @@ function Settings() {
 
   function handleActive(active) {
     setTab(active);
+
+    //
   }
 
   return (

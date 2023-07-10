@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./BtnRemoveData.module.scss";
 
-function BtnRemoveData({ deleteDocument }) {
+function BtnRemoveData({ handleBtn }) {
   return (
-    <button className={styles.BtnRemoveData} onClick={deleteDocument}>
+    <button className={styles.BtnRemoveData} onClick={handleBtn}>
       Yes, remove
     </button>
   );

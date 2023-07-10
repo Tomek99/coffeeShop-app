@@ -21,9 +21,7 @@ exports[`should render NavElement component 1`] = `
             gsr21r21r
           </span>
         </span>
-        <span
-          style="color: rgb(204, 204, 204);"
-        >
+        <span>
           test
         </span>
       </a>

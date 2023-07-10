@@ -9,13 +9,9 @@ exports[`should render ContactSecton 1`] = `
     <header
       class="headerSection"
     >
-      <span>
-        contact
-      </span>
+      contact
        
-      <span>
-        us
-      </span>
+      us
     </header>
     <p
       class="openHours"
@@ -59,13 +55,12 @@ exports[`should render ContactSecton 1`] = `
               height="20"
               stroke="currentColor"
               stroke-width="0"
-              viewBox="0 0 14 16"
+              viewBox="0 0 24 24"
               width="20"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
-                fill-rule="evenodd"
+                d="M1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14a1.75 1.75 0 0 1-1.75 1.75H1.75A1.75 1.75 0 0 1 0 18.75v-14C0 3.784.784 3 1.75 3ZM1.5 7.412V18.75c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V7.412l-9.52 6.433c-.592.4-1.368.4-1.96 0Zm0-2.662v.852l10.36 7a.25.25 0 0 0 .28 0l10.36-7V4.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"
               />
             </svg>
             test@coffeshop.com
@@ -119,13 +114,12 @@ exports[`should render ContactSecton 1`] = `
               height="20"
               stroke="currentColor"
               stroke-width="0"
-              viewBox="0 0 14 16"
+              viewBox="0 0 24 24"
               width="20"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
-                fill-rule="evenodd"
+                d="M1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14a1.75 1.75 0 0 1-1.75 1.75H1.75A1.75 1.75 0 0 1 0 18.75v-14C0 3.784.784 3 1.75 3ZM1.5 7.412V18.75c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V7.412l-9.52 6.433c-.592.4-1.368.4-1.96 0Zm0-2.662v.852l10.36 7a.25.25 0 0 0 .28 0l10.36-7V4.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"
               />
             </svg>
             warehouse@coffeshop.com
@@ -162,13 +156,12 @@ exports[`should render ContactSecton 1`] = `
               height="20"
               stroke="currentColor"
               stroke-width="0"
-              viewBox="0 0 14 16"
+              viewBox="0 0 24 24"
               width="20"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
-                fill-rule="evenodd"
+                d="M1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14a1.75 1.75 0 0 1-1.75 1.75H1.75A1.75 1.75 0 0 1 0 18.75v-14C0 3.784.784 3 1.75 3ZM1.5 7.412V18.75c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V7.412l-9.52 6.433c-.592.4-1.368.4-1.96 0Zm0-2.662v.852l10.36 7a.25.25 0 0 0 .28 0l10.36-7V4.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"
               />
             </svg>
             test@coffeshop.com
@@ -225,15 +218,9 @@ exports[`should render ContactSecton 1`] = `
               width="20"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g>
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M12 1a5 5 0 0 1 5 5v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3V6a5 5 0 0 1 5-5zm5 10h-2v1a1 1 0 0 0 1.993.117L17 12v-1zm-8 0H7v1a1 1 0 0 0 1.993.117L9 12v-1zm3-8a3 3 0 0 0-2.995 2.824L9 6v2h6V6a3 3 0 0 0-2.824-2.995L12 3z"
-                />
-              </g>
+              <path
+                d="M12.0049 0.999512C14.7663 0.999512 17.0049 3.23809 17.0049 5.99951V7.99951H20.0049C20.5572 7.99951 21.0049 8.44723 21.0049 8.99951V20.9995C21.0049 21.5518 20.5572 21.9995 20.0049 21.9995H4.00488C3.4526 21.9995 3.00488 21.5518 3.00488 20.9995V8.99951C3.00488 8.44723 3.4526 7.99951 4.00488 7.99951H7.00488V5.99951C7.00488 3.23809 9.24346 0.999512 12.0049 0.999512ZM17.0049 10.9995H15.0049V11.9995C15.0049 12.5518 15.4526 12.9995 16.0049 12.9995C16.5177 12.9995 16.9404 12.6135 16.9982 12.1161L17.0049 11.9995V10.9995ZM9.00488 10.9995H7.00488V11.9995C7.00488 12.5518 7.4526 12.9995 8.00488 12.9995C8.51772 12.9995 8.94039 12.6135 8.99815 12.1161L9.00488 11.9995V10.9995ZM12.0049 2.99951C10.4072 2.99951 9.10122 4.24843 9.00998 5.82324L9.00488 5.99951V7.99951H15.0049V5.99951C15.0049 4.40183 13.756 3.09585 12.1812 3.0046L12.0049 2.99951Z"
+              />
             </svg>
             NIP 2424242424 | BDO 242424242
           </p>
@@ -282,9 +269,6 @@ exports[`should render ContactSecton 1`] = `
               type="text"
               value=""
             />
-            <div
-              class="errorText"
-            />
           </div>
           <div>
             <input
@@ -293,9 +277,6 @@ exports[`should render ContactSecton 1`] = `
               placeholder="E-mail"
               type="text"
               value=""
-            />
-            <div
-              class="errorText"
             />
           </div>
           <div>
@@ -315,9 +296,6 @@ exports[`should render ContactSecton 1`] = `
                 /1999
               </span>
             </div>
-            <div
-              class="errorText"
-            />
             <button
               class="BtnContact"
               id="btnFormContact0"
@@ -342,9 +320,6 @@ exports[`should render ContactSecton 1`] = `
               type="text"
               value=""
             />
-            <div
-              class="errorText"
-            />
           </div>
           <div>
             <input
@@ -353,9 +328,6 @@ exports[`should render ContactSecton 1`] = `
               placeholder="Phone number"
               type="text"
               value=""
-            />
-            <div
-              class="errorText"
             />
           </div>
           <div>
@@ -375,9 +347,6 @@ exports[`should render ContactSecton 1`] = `
                 /1999
               </span>
             </div>
-            <div
-              class="errorText"
-            />
             <button
               class="BtnContact"
               id="btnFormContact1"

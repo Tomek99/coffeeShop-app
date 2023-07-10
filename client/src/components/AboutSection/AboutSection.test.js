@@ -9,7 +9,7 @@ test("should render component", async () => {
     </MemoryRouter>
   );
 
-  await screen.findByRole("link");
+  await screen.findByRole("button");
 
   expect(container).toMatchSnapshot();
 });

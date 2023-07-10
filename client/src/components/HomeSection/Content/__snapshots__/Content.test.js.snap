@@ -11,11 +11,11 @@ exports[`should render Content component 1`] = `
     <p>
       test test test test
     </p>
-    <a
-      href="#menuSection"
+    <button
+      class="BtnNavigate"
     >
       btnTest
-    </a>
+    </button>
   </div>
 </div>
 `;

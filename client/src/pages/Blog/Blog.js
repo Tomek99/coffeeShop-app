@@ -21,6 +21,9 @@ function Blog() {
         <ArticleOverview />
         <ArticleOverview />
         <ArticleOverview />
+        <ArticleOverview />
+        <ArticleOverview />
+        <ArticleOverview />
       </div>
     </div>
   );

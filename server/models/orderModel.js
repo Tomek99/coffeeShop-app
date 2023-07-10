@@ -8,11 +8,6 @@ today = dd + " " + mm + " " + yyyy;
 
 const orderSchema = new mongoose.Schema(
   {
-    uniequId: {
-      type: String,
-      require: true,
-      unique: true,
-    },
     userId: { type: String, require: true },
     paymentIntentId: { type: String },
     products: [

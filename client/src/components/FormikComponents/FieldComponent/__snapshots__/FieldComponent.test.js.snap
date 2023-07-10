@@ -10,9 +10,6 @@ exports[`should render FieldComponent component 1`] = `
       type="text"
       value=""
     />
-    <div
-      class="errorText"
-    />
   </div>
 </div>
 `;

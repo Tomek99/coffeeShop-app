@@ -35,6 +35,7 @@ exports[`should render CartSummary component 1`] = `
         style="display: none;"
       >
         <input
+          class="inputDiscount"
           type="text"
         />
         <button

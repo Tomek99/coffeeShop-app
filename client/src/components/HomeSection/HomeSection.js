@@ -7,8 +7,7 @@ import CarouselDots from "../CarouselDots/CarouselDots";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import { Pagination, Navigation, Autoplay } from "swiper";
 
