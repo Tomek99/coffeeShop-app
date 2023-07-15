@@ -8,11 +8,17 @@ import BtnActive from "../../../Buttons/BtnActive/BtnActive";
 
 function CartSummary({ path, text }) {
   const [hide, setHide] = useState(false);
+  const [discount, setDiscount] = useState("");
+  const [discountAmount, setDiscountAmount] = useState("");
 
   const { cartValue, cartSave, addOrder } = useContext(Context);
 
   function handleButton() {
     setHide(!hide);
+  }
+
+  function handleDiscount() {
+    setDiscountAmount("Wrong code, try again");
   }
 
   return (
@@ -30,9 +36,17 @@ function CartSummary({ path, text }) {
           style={hide ? { display: "flex" } : { display: "none" }}
           className={styles.activeKey}
         >
-          <input type="text" className={styles.inputDiscount} />
-          <BtnActive />
+          <input
+            type="text"
+            className={styles.inputDiscount}
+            value={discount}
+            onChange={(e) => {
+              setDiscount(e.target.value);
+            }}
+          />
+          <BtnActive handleBtn={handleDiscount} />
         </div>
+        <p className={styles.discountBar}>{discountAmount}</p>
       </div>
       <div className={styles.checkout}>
         <div>

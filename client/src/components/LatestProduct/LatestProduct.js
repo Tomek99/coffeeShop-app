@@ -40,7 +40,9 @@ function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
       </div>
       <div className={styles.contentWrapper}>
         <img src={imageUrl} alt={name} />
-        <h3 className={styles.nameProduct}>{name}</h3>
+        <h3 className={styles.nameProduct} onClick={navigatePage}>
+          {name}
+        </h3>
         <p className={styles.intensity}>
           Intensity <span>{intensity}</span>
         </p>

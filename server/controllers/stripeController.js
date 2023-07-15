@@ -73,7 +73,7 @@ const setPayment = asyncHandler(async (req, res) => {
 });
 //---------------------------------------------------------------------------------------------------------
 let endpointSecret;
-endpointSecret = process.env.STRIPE_END_POINT_SECRET;
+endpointSecret = process.env.STRIPE_END_POINT;
 
 const setWebhook = asyncHandler(async (req, res) => {
   console.log("Hello");
