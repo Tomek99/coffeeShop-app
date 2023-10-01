@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
+
 class ProductPage {
-  getRandomProduct() {}
+  private elements = {};
 }
 
 export default ProductPage;
