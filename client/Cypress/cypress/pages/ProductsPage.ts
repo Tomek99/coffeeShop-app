@@ -2,12 +2,20 @@
 
 class ProductsPage {
   private elements = {
-    openProduct: (number) => cy.get(`#showProductId${number}`),
+    openProductBtn: (number) => cy.get(`#showProductId${number}`),
 
-    addProductCart: (number) => cy.get(`#cartFillId${number}`),
+    productCartBtn: (number) => cy.get(`#cartFillId${number}`),
 
-    purchaseBtn: (number) => cy.get(`#wishListId${number}`),
+    wishBtn: (number) => cy.get(`#wishListId${number}`),
   };
+
+  addProductsCart(numberProducts: number) {
+    const amountProducts = Math.floor(Math.random() * numberProducts + 1);
+    for (let i = 0; i < amountProducts; i++) {
+      const number = Math.floor(Math.random() * 11);
+      this.elements.productCartBtn(number).click({ force: true });
+    }
+  }
 }
 
 export default ProductsPage;

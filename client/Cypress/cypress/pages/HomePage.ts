@@ -11,8 +11,24 @@ class HomePage {
     vieCartPageBtn: () => cy.get("#ViewCart"),
   };
 
-  onClickUserBtnOpen() {
+  visitHomePage() {
+    cy.visit("http://localhost:3000/");
+  }
+
+  openLoginPage() {
     this.elements.userBtn().click();
+  }
+
+  openProductsPage() {
+    this.elements.productsPageBtn().click();
+  }
+
+  openCartBar() {
+    this.elements.cartBarBtn().click({ force: true });
+  }
+
+  openViewCartPage() {
+    this.elements.vieCartPageBtn().click();
   }
 }
 
