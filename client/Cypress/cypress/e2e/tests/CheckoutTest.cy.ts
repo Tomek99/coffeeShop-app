@@ -1,35 +1,60 @@
 /// <reference types="Cypress" />
-import HomePage from "../../pages/HomePage";
-import ProductsPage from "../../pages/ProductsPage";
-import LoginPage from "../../pages/LoginPage";
+
 import OrderPage from "../../pages/OrderPage";
 import OrderSummaryPage from "../../pages/OrderSummaryPage";
 import StripePage from "../../pages/StripePage";
 import SuccessPage from "../../pages/SuccessPage";
-import ViewCartPage from "../../pages/ViewCartPage";
+import BaseTest from "./BaseTest";
+import CypressHelper from "./CypressHelper";
+import { AddressData } from "../../interfaces/addressDeliveryInterface";
+import { CompanyData } from "../../interfaces/companyDataInterface";
+import { InvoiceData } from "../../interfaces/invoiceDataInterface";
+import { StripeData } from "../../interfaces/stripeDataInterface";
+import "cypress-iframe";
+
+const deliverAddresData: AddressData = {
+  name: "Test",
+  street: "Test 14A",
+  house: "13",
+  zipCode: "00-000",
+  city: "Warsaw",
+  number: "111222333",
+  email: "test@gmail.com",
+};
+
+const stipeFormData: StripeData = {
+  cardNumber: "4242424242424242",
+  cardExipry: "4242",
+  cardCvc: "424",
+  billingName: "Marcin Kowalski",
+};
 
 describe("Checkout products with valid data", () => {
   beforeEach(() => {
-    performBasicSteps();
+    BaseTest.performBasicStepsForOrder();
   });
 
-  it("test one", () => {});
+  // TEST 1
+  it("as a private person", () => {
+    new OrderPage()
+      .onClickCarrierDeliveryBtn()
+      .onClickPurchaseAsPrivatePersonBtn()
+      .fillDeliveryAddressForm(deliverAddresData)
+      .onClickOnlinePaymentBtn()
+      .onClickSummaryBtn();
+
+    CypressHelper.handleNotFoundElementExpection();
+
+    new OrderSummaryPage().onClickPurchaseBtn();
+
+    new StripePage().fillForm(stipeFormData).onClickSubmitBtn();
+
+    cy.wait(20000);
+
+    const textPaymentSuccessful = "Payment Successful!";
+
+    new SuccessPage()
+      .haveDisplayedText()
+      .should("have.text", textPaymentSuccessful);
+  });
 });
-
-function performBasicSteps() {
-  const homePage = new HomePage();
-  const productsPage = new ProductsPage();
-  const loginPage = new LoginPage();
-  const viewCartPage = new ViewCartPage();
-
-  homePage.visitHomePage();
-  homePage.openLoginPage();
-  loginPage.loginUser("test1@gmail.com", "Test1@gmail");
-  homePage.openProductsPage();
-
-  productsPage.addProductsCart(6);
-  homePage.openCartBar();
-  homePage.openViewCartPage();
-
-  viewCartPage.openCheckoutPage();
-}

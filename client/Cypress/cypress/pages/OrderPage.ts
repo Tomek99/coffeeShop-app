@@ -1,5 +1,9 @@
 /// <reference types="Cypress" />
 
+import { AddressData } from "../interfaces/addressDeliveryInterface";
+import { CompanyData } from "../interfaces/companyDataInterface";
+import { InvoiceData } from "../interfaces/invoiceDataInterface";
+
 class OrderPage {
   private elements = {
     //Delivery
@@ -40,7 +44,7 @@ class OrderPage {
     emailAddressInput: () => cy.get("input[name='email']"),
 
     //Company details for invoice
-    CompanyNipInput: () => cy.get("input[name='companyNip']"),
+    companyNipInput: () => cy.get("input[name='companyNip']"),
 
     companyNameInput: () => cy.get("input[name='companyName']"),
 
@@ -76,7 +80,56 @@ class OrderPage {
   };
 
   getErrors(className) {
-    return cy.get(className);
+    cy.get(className);
+  }
+
+  onClickCarrierDeliveryBtn(): OrderPage {
+    this.elements.carrierDeliveryLabel().click();
+    return new OrderPage();
+  }
+
+  onClickPurchaseAsPrivatePersonBtn(): OrderPage {
+    this.elements.purchaseAsPrivatePersonLabel().click();
+    return new OrderPage();
+  }
+
+  onClickOnlinePaymentBtn(): OrderPage {
+    this.elements.onlinePayment().click();
+    return new OrderPage();
+  }
+
+  onClickSummaryBtn(): void {
+    this.elements.summaryBtn().click();
+  }
+
+  fillDeliveryAddressForm(addressData: AddressData): OrderPage {
+    this.elements.addressInput().type(addressData.name);
+    this.elements.streetAddressInput().type(addressData.street);
+    this.elements.houseAddressInput().type(addressData.house);
+    this.elements.zipCodeAddressInput().type(addressData.zipCode);
+    this.elements.cityAddressInput().type(addressData.city);
+    this.elements.numberAddressInput().type(addressData.number);
+    this.elements.emailAddressInput().type(addressData.email);
+
+    return new OrderPage();
+  }
+
+  fillCompanyForm(comapnyData: CompanyData): OrderPage {
+    this.elements.companyNameInput().type(comapnyData.name);
+    this.elements.companyStreetInput().type(comapnyData.street);
+    this.elements.companyZipCodeInput().type(comapnyData.zipCode);
+    this.elements.companyCityInput().type(comapnyData.city);
+
+    return new OrderPage();
+  }
+
+  fillInvoiceDetailsForm(invoiceData: InvoiceData): OrderPage {
+    this.elements.invoiceName().type(invoiceData.name);
+    this.elements.invoiceStreet().type(invoiceData.street);
+    this.elements.invoiceZipCode().type(invoiceData.zipCode);
+    this.elements.invoiceCity().type(invoiceData.city);
+
+    return new OrderPage();
   }
 }
 

@@ -2,9 +2,12 @@
 
 class SuccessPage {
   private elements = {
-    successText: () =>
-      cy.wait(20000).get("div").contains("Payment Successful!"),
+    textPaymentSuccessful: () => cy.get("div").contains("Payment Successful!"),
   };
+
+  haveDisplayedText() {
+    return this.elements.textPaymentSuccessful();
+  }
 }
 
 export default SuccessPage;

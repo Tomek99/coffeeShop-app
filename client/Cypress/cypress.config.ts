@@ -5,7 +5,11 @@ export default defineConfig({
     viewportWidth: 1620,
     viewportHeight: 1080,
     watchForFileChanges: false,
-    defaultCommandTimeout: 3000,
+    chromeWebSecurity: false,
+    experimentalModifyObstructiveThirdPartyCode: true,
+    experimentalStudio: true,
+    defaultCommandTimeout: 4000,
+
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },

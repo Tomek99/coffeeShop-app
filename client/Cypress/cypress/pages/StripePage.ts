@@ -1,16 +1,32 @@
 /// <reference types="Cypress" />
-import stripe_card from "../fixtures/stripe_card.json";
+
+import { StripeData } from "../interfaces/stripeDataInterface";
 
 class StripePage {
   private elements = {
-    fillStripeForm: () => {
-      cy.get("button[type='submit']").click();
-      for (const iterator of stripe_card)
-        cy.get(iterator.element).type(iterator.value);
-    },
+    cardNumberInput: () => cy.get("#cardNumber"),
 
-    stripeSubmitBtn: () => cy.get(".SubmitButton-IconContainer"),
+    cardExpiryInput: () => cy.get("#cardExpiry"),
+
+    cardCvcInput: () => cy.get("#cardCvc"),
+
+    billingName: () => cy.get("#billingName"),
+
+    submitBtn: () => cy.get(".SubmitButton-IconContainer"),
   };
+
+  fillForm(data: StripeData): StripePage {
+    this.elements.cardNumberInput().type(data.cardNumber);
+    this.elements.cardExpiryInput().type(data.cardExipry);
+    this.elements.cardCvcInput().type(data.cardCvc);
+    this.elements.billingName().type(data.billingName);
+
+    return new StripePage();
+  }
+
+  onClickSubmitBtn() {
+    this.elements.submitBtn().click();
+  }
 }
 
 export default StripePage;
