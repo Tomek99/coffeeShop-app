@@ -81,7 +81,7 @@ class OrderPage {
   };
 
   getErrors(className) {
-    cy.get(className);
+    return cy.get(className);
   }
 
   onClickCarrierDeliveryBtn(): OrderPage {
@@ -106,13 +106,16 @@ class OrderPage {
 
   onClickSummaryBtn(): OrderSummaryPage {
     this.elements.summaryBtn().click();
-
     return new OrderSummaryPage();
+  }
+
+  onClickSummaryInvalidBtn(): OrderPage {
+    this.elements.summaryBtn().click();
+    return new OrderPage();
   }
 
   onClickInvoiceDetailsBtn(): OrderPage {
     this.elements.invoiceDetailsLabel().click();
-
     return new OrderPage();
   }
 
@@ -124,7 +127,6 @@ class OrderPage {
     this.elements.cityAddressInput().type(addressData.city);
     this.elements.numberAddressInput().type(addressData.number);
     this.elements.emailAddressInput().type(addressData.email);
-
     return new OrderPage();
   }
 
@@ -134,7 +136,6 @@ class OrderPage {
     this.elements.companyStreetInput().type(comapnyData.street);
     this.elements.companyZipCodeInput().type(comapnyData.zipCode);
     this.elements.companyCityInput().type(comapnyData.city);
-
     return new OrderPage();
   }
 
@@ -143,7 +144,6 @@ class OrderPage {
     this.elements.invoiceStreet().type(invoiceData.street);
     this.elements.invoiceZipCode().type(invoiceData.zipCode);
     this.elements.invoiceCity().type(invoiceData.city);
-
     return new OrderPage();
   }
 }

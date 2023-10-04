@@ -6,43 +6,11 @@ import StripePage from "../../pages/StripePage";
 import SuccessPage from "../../pages/SuccessPage";
 import BaseTest from "./BaseTest";
 import CypressHelper from "../../utils/CypressHelper";
-import { AddressData } from "../../interfaces/addressDeliveryInterface";
-import { CompanyData } from "../../interfaces/companyDataInterface";
-import { InvoiceData } from "../../interfaces/invoiceDataInterface";
-import { StripeData } from "../../interfaces/stripeDataInterface";
+
+import deliverAddresData from "../../fixtures/deliveryAddressData";
+import companyAddressData from "../../fixtures/companyAddressData";
+import invoiceAddressData from "../../fixtures/invoiceAddressData";
 import "cypress-iframe";
-
-const deliverAddresData: AddressData = {
-  name: "Test",
-  street: "Test 14A",
-  house: "13",
-  zipCode: "00-000",
-  city: "Warsaw",
-  number: "111222333",
-  email: "test@gmail.com",
-};
-
-const companyAddressData: CompanyData = {
-  nip: "00000000",
-  name: "TestCompany",
-  street: "test",
-  zipCode: "00-000",
-  city: "Warsaw",
-};
-
-const invoiceData: InvoiceData = {
-  name: "Test test",
-  street: "Test 14A",
-  zipCode: "00-000",
-  city: "Warsaw",
-};
-
-const stipeFormData: StripeData = {
-  cardNumber: "4242424242424242",
-  cardExipry: "4242",
-  cardCvc: "424",
-  billingName: "Marcin Kowalski",
-};
 
 describe("Checkout products with valid data", () => {
   beforeEach(() => {
@@ -58,7 +26,7 @@ describe("Checkout products with valid data", () => {
       .onClickOnlinePaymentBtn()
       .onClickSummaryBtn()
       .onClickPurchaseBtn()
-      .fillStripeForm(stipeFormData)
+      .fillStripeForm()
       .onClickSubmitBtn()
       .haveDisplayedText();
 
@@ -76,7 +44,7 @@ describe("Checkout products with valid data", () => {
       .onClickOnlinePaymentBtn()
       .onClickSummaryBtn()
       .onClickPurchaseBtn()
-      .fillStripeForm(stipeFormData)
+      .fillStripeForm()
       .onClickSubmitBtn()
       .haveDisplayedText();
 
@@ -91,15 +59,59 @@ describe("Checkout products with valid data", () => {
       .onClickPurchaseAsPrivatePersonBtn()
       .fillDeliveryAddressForm(deliverAddresData)
       .onClickInvoiceDetailsBtn()
-      .fillInvoiceDetailsForm(invoiceData)
+      .fillInvoiceDetailsForm(invoiceAddressData)
       .onClickOnlinePaymentBtn()
       .onClickSummaryBtn()
       .onClickPurchaseBtn()
-      .fillStripeForm(stipeFormData)
+      .fillStripeForm()
       .onClickSubmitBtn()
       .haveDisplayedText();
 
     //Aseration
     assertTextElement.should("have.text", "Payment Successful!");
+  });
+});
+
+describe("Checkout products with invalid data", () => {
+  beforeEach(() => {
+    BaseTest.performBasicStepsForOrder();
+  });
+
+  // TEST 4
+  it("should not purchase products with empty form", () => {
+    const errors = new OrderPage()
+      .onClickSummaryInvalidBtn()
+      .getErrors(".ErrMessage_errorText__1OrwW");
+
+    //Aseration
+    errors.each((item, index, list) => {
+      expect(Cypress.$(item).text()).to.eq("Required");
+
+      if (index === list.length - 1) {
+        expect(list).to.have.length(10);
+      }
+    });
+  });
+
+  // TEST 5
+  it("should not purchase products without delivery checked option", () => {
+    const errors = new OrderPage()
+      .onClickPurchaseAsCompanyBtn()
+      .fillCompanyForm(companyAddressData)
+      .fillDeliveryAddressForm(deliverAddresData)
+      .onClickOnlinePaymentBtn()
+      .onClickSummaryInvalidBtn()
+      .getErrors(".ErrMessage_errorText__1OrwW");
+
+    //Asseration
+    errors.each((item, index, list) => {
+      if (Cypress.$(item).text() !== "") {
+        expect(Cypress.$(item).text()).to.eq("Required");
+      }
+
+      if (index === list.length - 1) {
+        expect(list).to.have.length(1);
+      }
+    });
   });
 });

@@ -3,6 +3,13 @@
 import { StripeData } from "../interfaces/stripeDataInterface";
 import SuccessPage from "./SuccessPage";
 
+const stipeFormData: StripeData = {
+  cardNumber: "4242424242424242",
+  cardExipry: "4242",
+  cardCvc: "424",
+  billingName: "Marcin Kowalski",
+};
+
 class StripePage {
   private elements = {
     cardNumberInput: () => cy.get("#cardNumber"),
@@ -16,11 +23,11 @@ class StripePage {
     submitBtn: () => cy.get(".SubmitButton-IconContainer"),
   };
 
-  fillStripeForm(data: StripeData): StripePage {
-    this.elements.cardNumberInput().type(data.cardNumber);
-    this.elements.cardExpiryInput().type(data.cardExipry);
-    this.elements.cardCvcInput().type(data.cardCvc);
-    this.elements.billingName().type(data.billingName);
+  fillStripeForm(): StripePage {
+    this.elements.cardNumberInput().type(stipeFormData.cardNumber);
+    this.elements.cardExpiryInput().type(stipeFormData.cardExipry);
+    this.elements.cardCvcInput().type(stipeFormData.cardCvc);
+    this.elements.billingName().type(stipeFormData.billingName);
 
     return new StripePage();
   }
