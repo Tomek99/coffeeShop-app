@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
 
 import { StripeData } from "../interfaces/stripeDataInterface";
+import SuccessPage from "./SuccessPage";
 
 class StripePage {
   private elements = {
@@ -15,7 +16,7 @@ class StripePage {
     submitBtn: () => cy.get(".SubmitButton-IconContainer"),
   };
 
-  fillForm(data: StripeData): StripePage {
+  fillStripeForm(data: StripeData): StripePage {
     this.elements.cardNumberInput().type(data.cardNumber);
     this.elements.cardExpiryInput().type(data.cardExipry);
     this.elements.cardCvcInput().type(data.cardCvc);
@@ -24,8 +25,11 @@ class StripePage {
     return new StripePage();
   }
 
-  onClickSubmitBtn() {
+  onClickSubmitBtn(): SuccessPage {
     this.elements.submitBtn().click();
+    cy.wait(20000);
+
+    return new SuccessPage();
   }
 }
 

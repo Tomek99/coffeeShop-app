@@ -3,6 +3,7 @@
 import { AddressData } from "../interfaces/addressDeliveryInterface";
 import { CompanyData } from "../interfaces/companyDataInterface";
 import { InvoiceData } from "../interfaces/invoiceDataInterface";
+import OrderSummaryPage from "./OrderSummaryPage";
 
 class OrderPage {
   private elements = {
@@ -98,8 +99,10 @@ class OrderPage {
     return new OrderPage();
   }
 
-  onClickSummaryBtn(): void {
+  onClickSummaryBtn(): OrderSummaryPage {
     this.elements.summaryBtn().click();
+
+    return new OrderSummaryPage();
   }
 
   fillDeliveryAddressForm(addressData: AddressData): OrderPage {

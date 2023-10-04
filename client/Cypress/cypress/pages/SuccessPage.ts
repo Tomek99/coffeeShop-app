@@ -5,7 +5,7 @@ class SuccessPage {
     textPaymentSuccessful: () => cy.get("div").contains("Payment Successful!"),
   };
 
-  haveDisplayedText() {
+  haveDisplayedText(): Cypress.Chainable<JQuery<HTMLDivElement>> {
     return this.elements.textPaymentSuccessful();
   }
 }

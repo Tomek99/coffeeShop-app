@@ -5,7 +5,7 @@ import OrderSummaryPage from "../../pages/OrderSummaryPage";
 import StripePage from "../../pages/StripePage";
 import SuccessPage from "../../pages/SuccessPage";
 import BaseTest from "./BaseTest";
-import CypressHelper from "./CypressHelper";
+import CypressHelper from "../../utils/CypressHelper";
 import { AddressData } from "../../interfaces/addressDeliveryInterface";
 import { CompanyData } from "../../interfaces/companyDataInterface";
 import { InvoiceData } from "../../interfaces/invoiceDataInterface";
@@ -36,25 +36,20 @@ describe("Checkout products with valid data", () => {
 
   // TEST 1
   it("as a private person", () => {
-    new OrderPage()
+    const textElement = new OrderPage()
       .onClickCarrierDeliveryBtn()
       .onClickPurchaseAsPrivatePersonBtn()
       .fillDeliveryAddressForm(deliverAddresData)
       .onClickOnlinePaymentBtn()
-      .onClickSummaryBtn();
-
-    CypressHelper.handleNotFoundElementExpection();
-
-    new OrderSummaryPage().onClickPurchaseBtn();
-
-    new StripePage().fillForm(stipeFormData).onClickSubmitBtn();
-
-    cy.wait(20000);
+      .onClickSummaryBtn()
+      .onClickPurchaseBtn()
+      .fillStripeForm(stipeFormData)
+      .onClickSubmitBtn()
+      .haveDisplayedText();
 
     const textPaymentSuccessful = "Payment Successful!";
 
-    new SuccessPage()
-      .haveDisplayedText()
-      .should("have.text", textPaymentSuccessful);
+    //Assertion
+    textElement.should("have.text", textPaymentSuccessful);
   });
 });
