@@ -3,6 +3,7 @@
 import { AddressData } from "../interfaces/addressDeliveryInterface";
 import { CompanyData } from "../interfaces/companyDataInterface";
 import { InvoiceData } from "../interfaces/invoiceDataInterface";
+import { RecipientData } from "../interfaces/recipientDataInterface";
 import OrderSummaryPage from "./OrderSummaryPage";
 
 class OrderPage {
@@ -10,7 +11,7 @@ class OrderPage {
     //Delivery
     carrierDeliveryLabel: () => cy.get('label[for="carrier"]'),
 
-    pickupDeliveryLabel: () => cy.get('label[for="showroom"]'),
+    showroomLabel: () => cy.get('label[for="showroom"]'),
 
     packagelocerDeliveryLabel: () => cy.get('label[for="packageLocker"]'),
 
@@ -78,6 +79,11 @@ class OrderPage {
     paymentOnDelviery: () => cy.get('label[for="payment_on_delivery"]'),
 
     summaryBtn: () => cy.get("button").contains("Summary"),
+
+    //ExtraOptions
+    commentBtn: () => cy.get('label[for="comment"]'),
+
+    commentArea: () => cy.get('textarea[name="comment"]'),
   };
 
   getErrors(className) {
@@ -86,6 +92,11 @@ class OrderPage {
 
   onClickCarrierDeliveryBtn(): OrderPage {
     this.elements.carrierDeliveryLabel().click();
+    return new OrderPage();
+  }
+
+  onClickShowroomBtn(): OrderPage {
+    this.elements.showroomLabel().click();
     return new OrderPage();
   }
 
@@ -144,6 +155,23 @@ class OrderPage {
     this.elements.invoiceStreet().type(invoiceData.street);
     this.elements.invoiceZipCode().type(invoiceData.zipCode);
     this.elements.invoiceCity().type(invoiceData.city);
+    return new OrderPage();
+  }
+
+  fillRecipientAddressForm(recipientData: RecipientData): OrderPage {
+    this.elements.recipientNameInput().type(recipientData.fullName);
+    this.elements.recipientPhoneInput().type(recipientData.phoneNumber);
+    this.elements.recipientEmailInput().type(recipientData.email);
+    return new OrderPage();
+  }
+
+  onClickCommentBtn(): OrderPage {
+    this.elements.commentBtn().click();
+    return new OrderPage();
+  }
+
+  addComment(text: string): OrderPage {
+    this.elements.commentArea().type(text);
     return new OrderPage();
   }
 }
