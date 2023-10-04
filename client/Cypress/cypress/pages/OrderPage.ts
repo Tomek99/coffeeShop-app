@@ -20,7 +20,7 @@ class OrderPage {
     //Client
     purchaseAsPrivatePersonLabel: () => cy.get('label[for="privatePerson"]'),
 
-    purchaseAsCompany: () => cy.get('label[for="company"]'),
+    purchaseAsCompanyLabel: () => cy.get('label[for="company"]'),
 
     //Recipient details
     recipientNameInput: () => cy.get("input[name='name']"),
@@ -56,7 +56,7 @@ class OrderPage {
     companyCityInput: () => cy.get("input[name='companyCity']"),
 
     //Private person invoice details
-    invoiceDetails: () => cy.get('label[for="invoice"]'),
+    invoiceDetailsLabel: () => cy.get('label[for="invoice"]'),
 
     invoiceName: () => cy.get("input[name='i_name']"),
 
@@ -94,6 +94,11 @@ class OrderPage {
     return new OrderPage();
   }
 
+  onClickPurchaseAsCompanyBtn(): OrderPage {
+    this.elements.purchaseAsCompanyLabel().click();
+    return new OrderPage();
+  }
+
   onClickOnlinePaymentBtn(): OrderPage {
     this.elements.onlinePayment().click();
     return new OrderPage();
@@ -103,6 +108,12 @@ class OrderPage {
     this.elements.summaryBtn().click();
 
     return new OrderSummaryPage();
+  }
+
+  onClickInvoiceDetailsBtn(): OrderPage {
+    this.elements.invoiceDetailsLabel().click();
+
+    return new OrderPage();
   }
 
   fillDeliveryAddressForm(addressData: AddressData): OrderPage {
@@ -118,6 +129,7 @@ class OrderPage {
   }
 
   fillCompanyForm(comapnyData: CompanyData): OrderPage {
+    this.elements.companyNipInput().type(comapnyData.nip);
     this.elements.companyNameInput().type(comapnyData.name);
     this.elements.companyStreetInput().type(comapnyData.street);
     this.elements.companyZipCodeInput().type(comapnyData.zipCode);

@@ -22,6 +22,21 @@ const deliverAddresData: AddressData = {
   email: "test@gmail.com",
 };
 
+const companyAddressData: CompanyData = {
+  nip: "00000000",
+  name: "TestCompany",
+  street: "test",
+  zipCode: "00-000",
+  city: "Warsaw",
+};
+
+const invoiceData: InvoiceData = {
+  name: "Test test",
+  street: "Test 14A",
+  zipCode: "00-000",
+  city: "Warsaw",
+};
+
 const stipeFormData: StripeData = {
   cardNumber: "4242424242424242",
   cardExipry: "4242",
@@ -36,7 +51,7 @@ describe("Checkout products with valid data", () => {
 
   // TEST 1
   it("as a private person", () => {
-    const textElement = new OrderPage()
+    const assertTextElement = new OrderPage()
       .onClickCarrierDeliveryBtn()
       .onClickPurchaseAsPrivatePersonBtn()
       .fillDeliveryAddressForm(deliverAddresData)
@@ -47,9 +62,44 @@ describe("Checkout products with valid data", () => {
       .onClickSubmitBtn()
       .haveDisplayedText();
 
-    const textPaymentSuccessful = "Payment Successful!";
-
     //Assertion
-    textElement.should("have.text", textPaymentSuccessful);
+    assertTextElement.should("have.text", "Payment Successful!");
+  });
+
+  // TEST 2
+  it("as a company", () => {
+    const assertTextElement = new OrderPage()
+      .onClickCarrierDeliveryBtn()
+      .onClickPurchaseAsCompanyBtn()
+      .fillCompanyForm(companyAddressData)
+      .fillDeliveryAddressForm(deliverAddresData)
+      .onClickOnlinePaymentBtn()
+      .onClickSummaryBtn()
+      .onClickPurchaseBtn()
+      .fillStripeForm(stipeFormData)
+      .onClickSubmitBtn()
+      .haveDisplayedText();
+
+    //Aseration
+    assertTextElement.should("have.text", "Payment Successful!");
+  });
+
+  // TEST 3
+  it("as private person with invoice details", () => {
+    const assertTextElement = new OrderPage()
+      .onClickCarrierDeliveryBtn()
+      .onClickPurchaseAsPrivatePersonBtn()
+      .fillDeliveryAddressForm(deliverAddresData)
+      .onClickInvoiceDetailsBtn()
+      .fillInvoiceDetailsForm(invoiceData)
+      .onClickOnlinePaymentBtn()
+      .onClickSummaryBtn()
+      .onClickPurchaseBtn()
+      .fillStripeForm(stipeFormData)
+      .onClickSubmitBtn()
+      .haveDisplayedText();
+
+    //Aseration
+    assertTextElement.should("have.text", "Payment Successful!");
   });
 });
