@@ -9,7 +9,9 @@ const bcrypt = require("bcrypt");
 //@route GET /api/goals
 //@access Private
 const getUsers = asyncHandler(async (req, res) => {
+  console.log("hello");
   const users = await User.find();
+
   res.status(200).json(users);
 });
 
@@ -67,9 +69,20 @@ const setUser = asyncHandler(async (req, res) => {
   }
 });
 
+const deleteUser = asyncHandler(async (req, res) => {
+  const { _id, addresses, invoices } = req.body;
+
+  await User.findByIdAndDelete(_id);
+  await Address.findByIdAndDelete(addresses);
+  await Invoice.findByIdAndDelete(invoices);
+
+  res.status(200).send(true);
+});
+
 module.exports = {
   getUsers,
   isUserExist,
   setUser,
+  deleteUser,
   logIn,
 };

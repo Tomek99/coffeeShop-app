@@ -3,6 +3,8 @@ import LatestProduct from "./LatestProduct";
 import { Context } from "../../Contexts/Context";
 import { MemoryRouter } from "react-router-dom";
 
+window.scrollTo = jest.fn();
+
 test("should render LatestProduct component", () => {
   const item = {
     _id: "3gijh3g0h23",

@@ -43,8 +43,12 @@ function UserNavigation() {
   return (
     <div className={styles.UserNavigation}>
       <div className={styles.divGreeting}>
-        <p>Hi,</p>
-        <p className={styles.pName}>{user.firstName}</p>
+        {user.firstName ? (
+          <>
+            <p>Hi,</p>
+            <p className={styles.pName}>{user.firstName}</p>
+          </>
+        ) : null}
       </div>
       <div className={styles.navList}>
         {navList.map((item) => (

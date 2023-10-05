@@ -51,7 +51,7 @@ function EditInvoice({ handleBlurScreen, userData, idDocuments }) {
     <div className={styles.EditInvoice}>
       <div className={styles.flexBoxDiv}>
         <div className={styles.headerDiv}>
-          <header className={styles.headerName}>Add invoice details </header>
+          <header className={styles.headerName}>Edit invoice details </header>
           <BtnClose handleBtn={handleBlurScreen} />
         </div>
         <Formik

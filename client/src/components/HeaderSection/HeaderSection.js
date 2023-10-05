@@ -3,11 +3,9 @@ import styles from "./HeaderSection.module.scss";
 import PropTypes from "prop-types";
 
 function Header({ firstWord, secondWord }) {
-  return (
-    <header className={styles.headerSection}>
-      {firstWord} {secondWord}
-    </header>
-  );
+  const conectedTitle = `${firstWord} ${secondWord}`;
+
+  return <header className={styles.headerSection}>{conectedTitle}</header>;
 }
 
 Header.propTypes = {

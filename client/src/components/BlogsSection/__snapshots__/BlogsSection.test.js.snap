@@ -9,16 +9,12 @@ exports[`should render BlogsSection component 1`] = `
     <header
       class="headerSection"
     >
-      <span>
-        our
-      </span>
+      our
        
-      <span>
-        news
-      </span>
+      news
     </header>
     <div
-      class="blogs"
+      class="blogsCarousel"
     >
       <div
         class="swiper swiper-initialized swiper-horizontal mySwiper"
@@ -359,7 +355,7 @@ exports[`should render BlogsSection component 1`] = `
           </div>
         </div>
         <div
-          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
+          class="swiper-pagination"
         />
       </div>
     </div>

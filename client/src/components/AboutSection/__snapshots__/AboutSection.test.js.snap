@@ -9,13 +9,9 @@ exports[`should render component 1`] = `
     <header
       class="headerSection"
     >
-      <span>
-        about
-      </span>
+      about
        
-      <span>
-        us
-      </span>
+      us
     </header>
     <div
       class="divRow"
@@ -38,11 +34,17 @@ exports[`should render component 1`] = `
           Lorfffem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
         </p>
         <br />
-        <a
-          href="/about-us"
+        <button
+          class="BtnShipmentHome"
+          type="button"
         >
-          Learn more
-        </a>
+          <span
+            class="btnPosition"
+          >
+             
+            Read more
+          </span>
+        </button>
       </div>
     </div>
   </div>

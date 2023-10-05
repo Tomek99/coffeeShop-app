@@ -8,17 +8,23 @@ exports[`Should render AbousUsNavList component 1`] = `
     <ul
       class="navListElements"
     >
-      <li>
+      <li
+        class="NavListElement"
+      >
         <button>
           About Us
         </button>
       </li>
-      <li>
+      <li
+        class="NavListElement"
+      >
         <button>
           Our Team
         </button>
       </li>
-      <li>
+      <li
+        class="NavListElement"
+      >
         <button>
           FAQ
         </button>

@@ -4,11 +4,6 @@ const addressSchema = mongoose.Schema(
   {
     addresses: [
       {
-        uniequId: {
-          type: String,
-          required: true,
-          unique: true,
-        },
         name: {
           type: String,
           required: true,

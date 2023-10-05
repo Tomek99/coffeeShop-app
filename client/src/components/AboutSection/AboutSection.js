@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./AboutSection.module.scss";
 import HeaderSection from "../HeaderSection/HeaderSection";
-import { Link } from "react-router-dom";
 import BtnShipmentHome from "../Buttons/BtnShipmentHome/BtnShipmentHome";
 function AboutSection() {
   return (

@@ -1,6 +1,0 @@
-[
-  { "element": "#cardNumber", "value": "4242424242424242" },
-  { "element": "#cardExpiry", "value": "0424" },
-  { "element": "#cardCvc", "value": "424" },
-  { "element": "#billingName", "value": "Marcin Kowalski" }
-]

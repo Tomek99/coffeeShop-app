@@ -25,13 +25,13 @@ app.use(
   })
 );
 
-app.use("api/users", require("./routes/usersRoutes"));
-app.use("api/products", require("./routes/productsRoutes"));
-app.use("api/addresses", require("./routes/addressesRoutes"));
-app.use("api/invoices", require("./routes/invoicesRoutes"));
-app.use("api/stripe", require("./routes/stripeRoutes"));
-app.use("api/orders", require("./routes/ordersRoutes"));
-app.use("api/reviews", require("./routes/reviewsRoutes"));
+app.use("/api/users", require("./routes/usersRoutes"));
+app.use("/api/products", require("./routes/productsRoutes"));
+app.use("/api/addresses", require("./routes/addressesRoutes"));
+app.use("/api/invoices", require("./routes/invoicesRoutes"));
+app.use("/api/stripe", require("./routes/stripeRoutes"));
+app.use("/api/orders", require("./routes/ordersRoutes"));
+app.use("/api/reviews", require("./routes/reviewsRoutes"));
 
 app.use(errorHandler);
 

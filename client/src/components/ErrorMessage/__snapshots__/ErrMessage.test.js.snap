@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render errMessage component 1`] = `
-<div>
-  <div
-    class="errorText"
-  />
-</div>
-`;
+exports[`should render errMessage component 1`] = `<div />`;

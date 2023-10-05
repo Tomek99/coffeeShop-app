@@ -1,13 +1,13 @@
 .btnEdit {
-    margin-top: 15px;
-    padding: 5px 10px;
-    background-color: var(--main-color);
-    color: #fff;
-    border-radius: 16px;
-    transition: 0.3s linear;
-    cursor: pointer;
+  margin-top: 15px;
+  padding: 5px 10px;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 16px;
+  transition: 0.3s linear;
+  cursor: pointer;
 
-    &:hover {
-        background-color: var(--main-color-darken);
-    }
+  &:hover {
+    background-color: var(--main-color-darken);
+  }
 }

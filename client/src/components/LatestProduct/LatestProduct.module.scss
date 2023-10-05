@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
+  align-items: center;
   text-align: center;
   border-radius: 8px;
   padding: 30px 0;
@@ -55,11 +56,31 @@
     }
 
     .nameProduct {
-      padding: 0 30px;
-      margin: 5px 0;
+      margin: 5px 10px;
+      text-align: center;
       font-size: 1.7rem;
       text-align: center;
-      color: #000;
+      transition: 0.2s linear;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1.5px;
+        left: 50%;
+        right: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--text-color);
+        transition: all 0.3s ease;
+      }
+
+      &:hover::before {
+        width: 100%;
+        left: 0;
+        right: 0;
+      }
     }
 
     .intensity {

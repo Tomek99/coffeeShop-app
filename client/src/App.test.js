@@ -11,6 +11,8 @@ import { MemoryRouter } from "react-router-dom";
 // }));
 
 // jest.mock("./components");
+
+window.scrollTo = jest.fn();
 jest.mock("react-messenger-customer-chat", () => {
   return () => {
     return <div>MesseengerChat</div>;

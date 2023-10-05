@@ -30,7 +30,7 @@ exports[`should render NavigationBar component 1`] = `
           <img
             alt="Logo"
             class="logo"
-            src="https://res.cloudinary.com/dvoduabha/image/upload/v1681564825/logo_lsboeg.png"
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
           />
         </a>
       </div>
@@ -285,12 +285,11 @@ exports[`should render NavigationBar component 1`] = `
           id="bs-search"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 16 16"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
@@ -355,12 +354,11 @@ exports[`should render NavigationBar component 1`] = `
           href="/wish-list"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 16 16"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
@@ -376,12 +374,11 @@ exports[`should render NavigationBar component 1`] = `
           id="userNavigationBtn0"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 448 512"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
@@ -403,7 +400,7 @@ exports[`should render NavigationBar component 1`] = `
               <a
                 href="/log-in"
               >
-                Log In
+                Log in
               </a>
             </li>
             <li
@@ -458,15 +455,9 @@ exports[`should render NavigationBar component 1`] = `
                   width="20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g>
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M19 22H5a3 3 0 0 1-3-3V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12h4v4a3 3 0 0 1-3 3zm-1-5v2a1 1 0 0 0 2 0v-2h-2zm-2 3V4H4v15a1 1 0 0 0 1 1h11zM6 7h8v2H6V7zm0 4h8v2H6v-2zm0 4h5v2H6v-2z"
-                    />
-                  </g>
+                  <path
+                    d="M19 22H5C3.34315 22 2 20.6569 2 19V3C2 2.44772 2.44772 2 3 2H17C17.5523 2 18 2.44772 18 3V15H22V19C22 20.6569 20.6569 22 19 22ZM18 17V19C18 19.5523 18.4477 20 19 20C19.5523 20 20 19.5523 20 19V17H18ZM16 20V4H4V19C4 19.5523 4.44772 20 5 20H16ZM6 7H14V9H6V7ZM6 11H14V13H6V11ZM6 15H11V17H6V15Z"
+                  />
                 </svg>
                   
                 Orders
@@ -577,12 +568,11 @@ exports[`should render NavigationBar component 1`] = `
           id="userBtnOpen131"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 448 512"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
@@ -597,18 +587,17 @@ exports[`should render NavigationBar component 1`] = `
           id="cartBtnOpen132"
         >
           <svg
-            color="#fff"
+            color="var(--text-color)"
             fill="currentColor"
             height="30"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 16 16"
             width="30"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
             />
           </svg>
           <span
@@ -709,15 +698,9 @@ exports[`should render NavigationBar component 1`] = `
                   width="20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g>
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M19 22H5a3 3 0 0 1-3-3V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12h4v4a3 3 0 0 1-3 3zm-1-5v2a1 1 0 0 0 2 0v-2h-2zm-2 3V4H4v15a1 1 0 0 0 1 1h11zM6 7h8v2H6V7zm0 4h8v2H6v-2zm0 4h5v2H6v-2z"
-                    />
-                  </g>
+                  <path
+                    d="M19 22H5C3.34315 22 2 20.6569 2 19V3C2 2.44772 2.44772 2 3 2H17C17.5523 2 18 2.44772 18 3V15H22V19C22 20.6569 20.6569 22 19 22ZM18 17V19C18 19.5523 18.4477 20 19 20C19.5523 20 20 19.5523 20 19V17H18ZM16 20V4H4V19C4 19.5523 4.44772 20 5 20H16ZM6 7H14V9H6V7ZM6 11H14V13H6V11ZM6 15H11V17H6V15Z"
+                  />
                 </svg>
                   
                 Orders
