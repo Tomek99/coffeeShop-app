@@ -7,3 +7,11 @@ exports[`should first 1`] = `
   />
 </div>
 `;
+
+exports[`should render BlurScreen component 1`] = `
+<div>
+  <div
+    class="BlurScreen"
+  />
+</div>
+`;

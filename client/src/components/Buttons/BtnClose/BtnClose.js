@@ -5,7 +5,12 @@ import PropTypes from "prop-types";
 
 function BtnClose({ handleBtn, btnId }) {
   return (
-    <button className={styles.btnClose} onClick={handleBtn} id={btnId}>
+    <button
+      className={styles.btnClose}
+      onClick={handleBtn}
+      id={btnId}
+      data-testid="btnClose1231"
+    >
       <IoCloseSharp size={30} />
     </button>
   );

@@ -15,6 +15,7 @@ exports[`should render MobileNavigation component 1`] = `
       </span>
       <button
         class="btnClose"
+        data-testid="btnClose1231"
       >
         <svg
           fill="currentColor"
