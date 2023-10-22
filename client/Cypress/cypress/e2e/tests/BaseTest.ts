@@ -3,9 +3,10 @@ import HomePage from "../../pages/HomePage";
 import ProductsPage from "../../pages/ProductsPage";
 import LoginPage from "../../pages/LoginPage";
 import ViewCartPage from "../../pages/ViewCartPage";
+import CypressHelper from "../../utils/CypressHelper";
 
 class BaseTest {
-  public static performBasicStepsForOrder() {
+  public static performBasicStepsForOrder(): void {
     const numberOfProducts: number = 6;
 
     new HomePage()
@@ -17,6 +18,13 @@ class BaseTest {
       .openCartBar()
       .openViewCartPage()
       .openCheckoutPage();
+  }
+
+  public static performBasicStepsForReviewThumb(): void {
+    new HomePage()
+      .visitHomePage()
+      .openProductsPage()
+      .openRevelantProductPage(CypressHelper.generateRandomNumber(3));
   }
 }
 
