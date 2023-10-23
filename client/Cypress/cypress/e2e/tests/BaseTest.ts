@@ -34,6 +34,14 @@ class BaseTest {
         .openRevelantProductPage(CypressHelper.generateRandomNumber(3));
     }
   }
+
+  public static performBasicStepsForAddressDetails(): void {
+    new HomePage()
+      .visitHomePage()
+      .openLoginPage()
+      .loginUser("test1@gmail.com", "Test1@gmail")
+      .openAddressDetails();
+  }
 }
 
 export default BaseTest;

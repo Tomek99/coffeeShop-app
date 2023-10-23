@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 
+import AddressDetails from "./AddressDetails";
 import LoginPage from "./LoginPage";
 import ProductsPage from "./ProductsPage";
 import ProfileSettingsPage from "./ProfileSettingsPage";
@@ -21,8 +22,9 @@ class HomePage {
         "li[class*='PopupUserNav1_btnSignIn_Up__vWDrC']>a[href*='/sign-up']"
       ),
 
-    profileSettingsBtn: () =>
-      cy.get("div[class*='PopupUserNav1_list__J7Nmc']>li>a[href*='/settings']"),
+    profileSettingsBtn: () => cy.contains("Profile seetings"), //cy.get("div[class*='PopupUserNav1_list__J7Nmc']>li>a[href*='/settings']")
+
+    addressDetailsBtn: () => cy.contains("Address"),
   };
 
   visitHomePage(): HomePage {
@@ -64,6 +66,15 @@ class HomePage {
     this.elements.profileSettingsBtn().click({ force: true });
 
     return new ProfileSettingsPage();
+  }
+
+  openAddressDetails(): AddressDetails {
+    cy.wait(5000);
+
+    this.elements.userBtn().trigger("mouseover", { force: true });
+    this.elements.addressDetailsBtn().click({ force: true });
+
+    return new AddressDetails();
   }
 }
 
