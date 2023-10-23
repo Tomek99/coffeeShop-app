@@ -20,11 +20,19 @@ class BaseTest {
       .openCheckoutPage();
   }
 
-  public static performBasicStepsForReviewThumb(): void {
-    new HomePage()
-      .visitHomePage()
-      .openProductsPage()
-      .openRevelantProductPage(CypressHelper.generateRandomNumber(3));
+  public static performBasicStepsForReviewThumb(isUserLoggedIn: boolean): void {
+    if (isUserLoggedIn) {
+      new HomePage()
+        .visitHomePage()
+        .openLoginPage()
+        .loginUser("test1@gmail.com", "Test1@gmail")
+        .openProductsPage();
+    } else {
+      new HomePage()
+        .visitHomePage()
+        .openProductsPage()
+        .openRevelantProductPage(CypressHelper.generateRandomNumber(3));
+    }
   }
 }
 

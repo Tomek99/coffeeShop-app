@@ -2,6 +2,7 @@
 
 import CypressHelper from "../utils/CypressHelper";
 import HomePage from "./HomePage";
+import ProductPage from "./ProductPage";
 
 class ProductsPage {
   private elements = {
@@ -22,8 +23,10 @@ class ProductsPage {
     return new HomePage();
   }
 
-  openRevelantProductPage(productNumber: number) {
+  openRevelantProductPage(productNumber: number): ProductPage {
     this.elements.productViewBtn(productNumber).click({ force: true });
+
+    return new ProductPage();
   }
 }
 
