@@ -4,9 +4,9 @@ https://coffeeshop2023.netlify.app/
 
 Dane do konta testowego:
 
-login: test2@gmail.com
+login: test1@gmail.com
 
-hasło: Test2@gmail
+hasło: Test1@gmail
 
 Frontend:
 https://github.com/Tomek99/coffeeShop-app/tree/main/client
