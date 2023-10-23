@@ -48,9 +48,8 @@ class AddressDetails {
     editBtn: () => cy.contains("Edit"),
 
     //Data
-    formAddressElement: (value: number) =>
-      cy.get(`div:nth-of-type(${value}) > div[data-cy="addressData"] > p`),
-
+    formAddressElement: (valueNthOfType: number) =>
+      cy.get(`div:nth-of-type(${valueNthOfType}) > div[data-cy="addressData"]`),
     addressFormErrors: () => cy.get(".ErrMessage_errorText__1OrwW"),
   };
 
@@ -188,8 +187,8 @@ class AddressDetails {
   }
 
   // Return data
-  getAddressFormElements(value: number) {
-    return this.elements.formAddressElement(value);
+  getAddressFormElement(valueNthOfType: number) {
+    return this.elements.formAddressElement(valueNthOfType);
   }
 
   getAddressErrorsForm() {
