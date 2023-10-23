@@ -18,14 +18,14 @@ describe("Checkout products with valid data", () => {
   // TEST 1 -------------------------------
   it("as a private person", () => {
     const assertTextElement = new OrderPage()
-      .onClickCarrierDeliveryBtn()
-      .onClickPurchaseAsPrivatePersonBtn()
+      .clickOnCarrierDeliveryBtn()
+      .clickOnPurchaseAsPrivatePersonBtn()
       .fillDeliveryAddressForm(deliverAddresData)
-      .onClickOnlinePaymentBtn()
-      .onClickSummaryBtn()
-      .onClickPurchaseBtn()
+      .clickOnOnlinePaymentBtn()
+      .clickOnSummaryBtn()
+      .clickOnPurchaseBtn()
       .fillStripeForm()
-      .onClickSubmitBtn()
+      .clickOnSubmitBtn()
       .haveDisplayedText();
 
     //Assertion
@@ -35,15 +35,15 @@ describe("Checkout products with valid data", () => {
   // TEST 2 -------------------------------
   it("as a company", () => {
     const assertTextElement = new OrderPage()
-      .onClickCarrierDeliveryBtn()
-      .onClickPurchaseAsCompanyBtn()
+      .clickOnCarrierDeliveryBtn()
+      .clickOnPurchaseAsCompanyBtn()
       .fillCompanyForm(companyAddressData)
       .fillDeliveryAddressForm(deliverAddresData)
-      .onClickOnlinePaymentBtn()
-      .onClickSummaryBtn()
-      .onClickPurchaseBtn()
+      .clickOnOnlinePaymentBtn()
+      .clickOnSummaryBtn()
+      .clickOnPurchaseBtn()
       .fillStripeForm()
-      .onClickSubmitBtn()
+      .clickOnSubmitBtn()
       .haveDisplayedText();
 
     //Aseration
@@ -53,16 +53,16 @@ describe("Checkout products with valid data", () => {
   // TEST 3 -------------------------------
   it("as private person with invoice details", () => {
     const assertTextElement = new OrderPage()
-      .onClickCarrierDeliveryBtn()
-      .onClickPurchaseAsPrivatePersonBtn()
+      .clickOnCarrierDeliveryBtn()
+      .clickOnPurchaseAsPrivatePersonBtn()
       .fillDeliveryAddressForm(deliverAddresData)
-      .onClickInvoiceDetailsBtn()
+      .clickOnInvoiceDetailsBtn()
       .fillInvoiceDetailsForm(invoiceAddressData)
-      .onClickOnlinePaymentBtn()
-      .onClickSummaryBtn()
-      .onClickPurchaseBtn()
+      .clickOnOnlinePaymentBtn()
+      .clickOnSummaryBtn()
+      .clickOnPurchaseBtn()
       .fillStripeForm()
-      .onClickSubmitBtn()
+      .clickOnSubmitBtn()
       .haveDisplayedText();
 
     //Aseration
@@ -72,16 +72,16 @@ describe("Checkout products with valid data", () => {
   // TEST 4 -------------------------------
   it("as private person & invoice details & pickup at coffe-shop showroom", () => {
     const assertTextElement = new OrderPage()
-      .onClickShowroomBtn()
-      .onClickPurchaseAsPrivatePersonBtn()
+      .clickOnShowroomBtn()
+      .clickOnPurchaseAsPrivatePersonBtn()
       .fillRecipientAddressForm(reciepientData)
-      .onClickInvoiceDetailsBtn()
+      .clickOnInvoiceDetailsBtn()
       .fillInvoiceDetailsForm(invoiceAddressData)
-      .onClickOnlinePaymentBtn()
-      .onClickSummaryBtn()
-      .onClickPurchaseBtn()
+      .clickOnOnlinePaymentBtn()
+      .clickOnSummaryBtn()
+      .clickOnPurchaseBtn()
       .fillStripeForm()
-      .onClickSubmitBtn()
+      .clickOnSubmitBtn()
       .haveDisplayedText();
 
     //Aseration
@@ -92,17 +92,17 @@ describe("Checkout products with valid data", () => {
     const comment = "test test test test test test test test test";
 
     const assertTextElement = new OrderPage()
-      .onClickCarrierDeliveryBtn()
-      .onClickPurchaseAsCompanyBtn()
+      .clickOnCarrierDeliveryBtn()
+      .clickOnPurchaseAsCompanyBtn()
       .fillCompanyForm(companyAddressData)
       .fillDeliveryAddressForm(deliverAddresData)
-      .onClickOnlinePaymentBtn()
-      .onClickCommentBtn()
+      .clickOnOnlinePaymentBtn()
+      .clickOnCommentBtn()
       .addComment(comment)
-      .onClickSummaryBtn()
-      .onClickPurchaseBtn()
+      .clickOnSummaryBtn()
+      .clickOnPurchaseBtn()
       .fillStripeForm()
-      .onClickSubmitBtn()
+      .clickOnSubmitBtn()
       .haveDisplayedText();
 
     //Aseration
@@ -118,7 +118,7 @@ describe("Checkout products with invalid data", () => {
   // TEST 6 -------------------------------
   it("should not pass empty form", () => {
     const errors = new OrderPage()
-      .onClickSummaryInvalidBtn()
+      .clickOnSummaryInvalidBtn()
       .getErrors(".ErrMessage_errorText__1OrwW");
 
     //Asseration
@@ -136,11 +136,11 @@ describe("Checkout products with invalid data", () => {
   // TEST 7 -------------------------------
   it("should not pass without delivery checked option", () => {
     const errors = new OrderPage()
-      .onClickPurchaseAsCompanyBtn()
+      .clickOnPurchaseAsCompanyBtn()
       .fillCompanyForm(companyAddressData)
       .fillDeliveryAddressForm(deliverAddresData)
-      .onClickOnlinePaymentBtn()
-      .onClickSummaryInvalidBtn()
+      .clickOnOnlinePaymentBtn()
+      .clickOnSummaryInvalidBtn()
       .getErrors(".ErrMessage_errorText__1OrwW");
 
     //Asseration
@@ -160,11 +160,11 @@ describe("Checkout products with invalid data", () => {
   // TEST 8 -------------------------------
   it("should not pass without payment checked option", () => {
     const error = new OrderPage()
-      .onClickCarrierDeliveryBtn()
-      .onClickPurchaseAsCompanyBtn()
+      .clickOnCarrierDeliveryBtn()
+      .clickOnPurchaseAsCompanyBtn()
       .fillCompanyForm(companyAddressData)
       .fillDeliveryAddressForm(deliverAddresData)
-      .onClickSummaryInvalidBtn()
+      .clickOnSummaryInvalidBtn()
       .getErrors(".ErrMessage_errorText__1OrwW");
 
     //Asseration
@@ -184,10 +184,10 @@ describe("Checkout products with invalid data", () => {
   // TEST 9 -------------------------------
   it("should not pass without 'purchasing as' checked option", () => {
     const error = new OrderPage()
-      .onClickCarrierDeliveryBtn()
+      .clickOnCarrierDeliveryBtn()
       .fillDeliveryAddressForm(deliverAddresData)
-      .onClickOnlinePaymentBtn()
-      .onClickSummaryInvalidBtn()
+      .clickOnOnlinePaymentBtn()
+      .clickOnSummaryInvalidBtn()
       .getErrors(".ErrMessage_errorText__1OrwW");
 
     //Asseration
@@ -207,12 +207,12 @@ describe("Checkout products with invalid data", () => {
   // TEST 10 -------------------------------
   it("should not pass without 'invoice details' form", () => {
     const errors = new OrderPage()
-      .onClickCarrierDeliveryBtn()
-      .onClickPurchaseAsPrivatePersonBtn()
+      .clickOnCarrierDeliveryBtn()
+      .clickOnPurchaseAsPrivatePersonBtn()
       .fillDeliveryAddressForm(deliverAddresData)
-      .onClickInvoiceDetailsBtn()
-      .onClickOnlinePaymentBtn()
-      .onClickSummaryInvalidBtn()
+      .clickOnInvoiceDetailsBtn()
+      .clickOnOnlinePaymentBtn()
+      .clickOnSummaryInvalidBtn()
       .getErrors(".ErrMessage_errorText__1OrwW");
 
     //Asseration

@@ -44,14 +44,17 @@ class AddressDetails {
 
     cancellDeleteBtn: () => cy.get("button").contains("Cancell"),
 
-    // Data
+    //Edit address
+    editBtn: () => cy.contains("Edit"),
+
+    //Data
     formAddressElement: (value: number) =>
       cy.get(`div:nth-of-type(${value}) > div[data-cy="addressData"] > p`),
 
     addressFormErrors: () => cy.get(".ErrMessage_errorText__1OrwW"),
   };
 
-  // add new address/invoice
+  //Add new address/invoice
 
   clickOnNewAddressBtn(): AddressDetails {
     this.elements.newAddressBtn().click();
@@ -100,6 +103,42 @@ class AddressDetails {
     return this;
   }
 
+  editNameInputAddress(value: string): AddressDetails {
+    this.elements.nameInputAddress().clear().type(value);
+    return this;
+  }
+
+  editStreetInputAddress(value: string): AddressDetails {
+    this.elements.streetInputAddress().clear().type(value);
+
+    return this;
+  }
+
+  editHouseInputAddress(value: string): AddressDetails {
+    this.elements.houseInputAddress().clear().type(value);
+    return this;
+  }
+
+  editZipCodeInputAddress(value: string): AddressDetails {
+    this.elements.zipCodeInputAddress().clear().type(value);
+    return this;
+  }
+
+  editCityInputAddress(value: string): AddressDetails {
+    this.elements.cityInputAddress().clear().type(value);
+    return this;
+  }
+
+  editNumberInputAddress(value: string): AddressDetails {
+    this.elements.numberInputAddress().clear().type(value);
+    return this;
+  }
+
+  editEmailInputAddress(value: string): AddressDetails {
+    this.elements.emailInputAddress().clear().type(value);
+    return this;
+  }
+
   clickOnSaveAddressBtn(): AddressDetails {
     this.elements.saveAddressFormBtn().click();
 
@@ -140,6 +179,11 @@ class AddressDetails {
   clickOnDeleteAddressBtn(deleteAddressNumber): AddressDetails {
     this.elements.addressDeleteBtn(deleteAddressNumber).click();
     this.elements.confirmDeleteBtn().click();
+    return this;
+  }
+
+  clickOnEditBtn(): AddressDetails {
+    this.elements.editBtn().click();
     return this;
   }
 
