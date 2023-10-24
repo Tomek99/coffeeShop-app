@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render OurTeam component 1`] = `
+<div>
+  <div
+    class="OurTeam"
+  >
+    <header
+      class="headerSection"
+    >
+      Leadership undefined
+    </header>
+    <p
+      class="aboutTeam"
+    >
+      We're led by a team who constantly questions, tinkers, and chellenges to unlock great creativity around every turn
+    </p>
+    <div
+      class="team"
+    >
+      <div
+        class="TeamMember"
+      >
+        <div
+          class="memberImg"
+        >
+          <img
+            alt=""
+            src="/images/teammember.png"
+          />
+          <button
+            class="btnArrow"
+          >
+            <svg
+              class="iconArrow"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="content"
+        >
+          <p
+            class="name"
+          >
+            Emmy Hoffman
+          </p>
+          <p
+            class="position"
+          >
+            President
+          </p>
+        </div>
+      </div>
+      <div
+        class="TeamMember"
+      >
+        <div
+          class="memberImg"
+        >
+          <img
+            alt=""
+            src="/images/teammember.png"
+          />
+          <button
+            class="btnArrow"
+          >
+            <svg
+              class="iconArrow"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="content"
+        >
+          <p
+            class="name"
+          >
+            Emmy Hoffman
+          </p>
+          <p
+            class="position"
+          >
+            Chief Talen Officer
+          </p>
+        </div>
+      </div>
+      <div
+        class="TeamMember"
+      >
+        <div
+          class="memberImg"
+        >
+          <img
+            alt=""
+            src="/images/teammember.png"
+          />
+          <button
+            class="btnArrow"
+          >
+            <svg
+              class="iconArrow"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="content"
+        >
+          <p
+            class="name"
+          >
+            Emmy Hoffman
+          </p>
+          <p
+            class="position"
+          >
+            Chief Marketing Officer
+          </p>
+        </div>
+      </div>
+      <div
+        class="TeamMember"
+      >
+        <div
+          class="memberImg"
+        >
+          <img
+            alt=""
+            src="/images/teammember.png"
+          />
+          <button
+            class="btnArrow"
+          >
+            <svg
+              class="iconArrow"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="content"
+        >
+          <p
+            class="name"
+          >
+            Emmy Hoffman
+          </p>
+          <p
+            class="position"
+          >
+            Chief Strategy Officer
+          </p>
+        </div>
+      </div>
+      <div
+        class="TeamMember"
+      >
+        <div
+          class="memberImg"
+        >
+          <img
+            alt=""
+            src="/images/teammember.png"
+          />
+          <button
+            class="btnArrow"
+          >
+            <svg
+              class="iconArrow"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="content"
+        >
+          <p
+            class="name"
+          >
+            Emmy Hoffman
+          </p>
+          <p
+            class="position"
+          >
+            Executive Chairman
+          </p>
+        </div>
+      </div>
+      <div
+        class="TeamMember"
+      >
+        <div
+          class="memberImg"
+        >
+          <img
+            alt=""
+            src="/images/teammember.png"
+          />
+          <button
+            class="btnArrow"
+          >
+            <svg
+              class="iconArrow"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="content"
+        >
+          <p
+            class="name"
+          >
+            Emmy Hoffman
+          </p>
+          <p
+            class="position"
+          >
+            Executive Chairman
+          </p>
+        </div>
+      </div>
+      <div
+        class="TeamMember"
+      >
+        <div
+          class="memberImg"
+        >
+          <img
+            alt=""
+            src="/images/teammember.png"
+          />
+          <button
+            class="btnArrow"
+          >
+            <svg
+              class="iconArrow"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="content"
+        >
+          <p
+            class="name"
+          >
+            Emmy Hoffman
+          </p>
+          <p
+            class="position"
+          >
+            Chief Executive Officer
+          </p>
+        </div>
+      </div>
+      <div
+        class="TeamMember"
+      >
+        <div
+          class="memberImg"
+        >
+          <img
+            alt=""
+            src="/images/teammember.png"
+          />
+          <button
+            class="btnArrow"
+          >
+            <svg
+              class="iconArrow"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="content"
+        >
+          <p
+            class="name"
+          >
+            Emmy Hoffman
+          </p>
+          <p
+            class="position"
+          >
+            President
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

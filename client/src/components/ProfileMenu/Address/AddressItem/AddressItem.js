@@ -8,7 +8,7 @@ import BlurScreen from "../../BlurScreen/BlurScreen";
 import EditAddress from "./EditAddress/EditAddress";
 
 function AddressItem({ item, idAddresses }) {
-  const { _id, name, street, ZIP_code, city, number, email } = item;
+  const { _id, name, street, ZIP_code, city, number, email, house } = item;
 
   const [blurScreen, setBlurScreen] = useState(false);
   const [isVisibleEdit, setVisibleEdit] = useState(false);
@@ -30,9 +30,10 @@ function AddressItem({ item, idAddresses }) {
   return (
     <>
       <div className={styles.AddressItem}>
-        <div className={styles.content}>
+        <div className={styles.content} data-cy="addressData">
           <p className={styles.name}>{name}</p>
           <p>{street}</p>
+          <p>{house}</p>
           <p>{ZIP_code}</p>
           <p>{city}</p>
           <p>{number}</p>

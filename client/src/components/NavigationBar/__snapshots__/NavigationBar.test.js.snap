@@ -103,6 +103,7 @@ exports[`should render NavigationBar component 1`] = `
             </span>
             <button
               class="btnClose"
+              data-testid="btnClose1231"
             >
               <svg
                 fill="currentColor"
@@ -307,6 +308,7 @@ exports[`should render NavigationBar component 1`] = `
           >
             <button
               class="btnClose"
+              data-testid="btnClose1231"
               id="btn-close-searcher"
             >
               <svg
@@ -618,6 +620,7 @@ exports[`should render NavigationBar component 1`] = `
             </span>
             <button
               class="btnClose"
+              data-testid="btnClose1231"
             >
               <svg
                 fill="currentColor"

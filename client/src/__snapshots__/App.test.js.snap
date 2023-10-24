@@ -103,6 +103,7 @@ exports[`rendering required component 1`] = `
             </span>
             <button
               class="btnClose"
+              data-testid="btnClose1231"
             >
               <svg
                 fill="currentColor"
@@ -307,6 +308,7 @@ exports[`rendering required component 1`] = `
           >
             <button
               class="btnClose"
+              data-testid="btnClose1231"
               id="btn-close-searcher"
             >
               <svg
@@ -620,6 +622,7 @@ exports[`rendering required component 1`] = `
             </span>
             <button
               class="btnClose"
+              data-testid="btnClose1231"
             >
               <svg
                 fill="currentColor"
@@ -822,6 +825,7 @@ exports[`rendering required component 1`] = `
             </span>
             <button
               class="btnClose"
+              data-testid="btnClose1231"
             >
               <svg
                 fill="currentColor"
@@ -1003,9 +1007,7 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        about
-         
-        us
+        about us
       </header>
       <div
         class="divRow"
@@ -1049,9 +1051,7 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        latest
-         
-        products
+        latest products
       </header>
       <div
         class="wrapperDiv"
@@ -1133,9 +1133,7 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        customer's
-         
-        review
+        customer's review
       </header>
       <div
         class="reviewSectionCarousel"
@@ -2589,9 +2587,7 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        We care
-         
-        about you
+        We care about you
       </header>
       <div
         class="careItemsWrapper"
@@ -2677,9 +2673,7 @@ exports[`rendering required component 1`] = `
       <header
         class="headerSection"
       >
-        our
-         
-        news
+        our news
       </header>
       <div
         class="blogsCarousel"

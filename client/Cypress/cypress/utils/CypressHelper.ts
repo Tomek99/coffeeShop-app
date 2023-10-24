@@ -11,4 +11,8 @@ export default class CypressHelper {
       }
     });
   }
+
+  public static generateRandomNumber(rangeNumber: number): number {
+    return Math.floor(Math.random() * rangeNumber);
+  }
 }

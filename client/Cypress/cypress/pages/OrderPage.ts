@@ -90,42 +90,42 @@ class OrderPage {
     return cy.get(className);
   }
 
-  onClickCarrierDeliveryBtn(): OrderPage {
+  clickOnCarrierDeliveryBtn(): OrderPage {
     this.elements.carrierDeliveryLabel().click();
     return new OrderPage();
   }
 
-  onClickShowroomBtn(): OrderPage {
+  clickOnShowroomBtn(): OrderPage {
     this.elements.showroomLabel().click();
     return new OrderPage();
   }
 
-  onClickPurchaseAsPrivatePersonBtn(): OrderPage {
+  clickOnPurchaseAsPrivatePersonBtn(): OrderPage {
     this.elements.purchaseAsPrivatePersonLabel().click();
     return new OrderPage();
   }
 
-  onClickPurchaseAsCompanyBtn(): OrderPage {
+  clickOnPurchaseAsCompanyBtn(): OrderPage {
     this.elements.purchaseAsCompanyLabel().click();
     return new OrderPage();
   }
 
-  onClickOnlinePaymentBtn(): OrderPage {
+  clickOnOnlinePaymentBtn(): OrderPage {
     this.elements.onlinePayment().click();
     return new OrderPage();
   }
 
-  onClickSummaryBtn(): OrderSummaryPage {
+  clickOnSummaryBtn(): OrderSummaryPage {
     this.elements.summaryBtn().click();
     return new OrderSummaryPage();
   }
 
-  onClickSummaryInvalidBtn(): OrderPage {
+  clickOnSummaryInvalidBtn(): OrderPage {
     this.elements.summaryBtn().click();
     return new OrderPage();
   }
 
-  onClickInvoiceDetailsBtn(): OrderPage {
+  clickOnInvoiceDetailsBtn(): OrderPage {
     this.elements.invoiceDetailsLabel().click();
     return new OrderPage();
   }
@@ -165,7 +165,7 @@ class OrderPage {
     return new OrderPage();
   }
 
-  onClickCommentBtn(): OrderPage {
+  clickOnCommentBtn(): OrderPage {
     this.elements.commentBtn().click();
     return new OrderPage();
   }

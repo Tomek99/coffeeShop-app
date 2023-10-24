@@ -9,7 +9,7 @@ class OrderSummaryPage {
       cy.get("button[type='submit']").contains("Purchase and pay"),
   };
 
-  onClickPurchaseBtn(): StripePage {
+  clickOnPurchaseBtn(): StripePage {
     CypressHelper.handleNotFoundElementExpection();
     this.elements.purchaseBtn().click();
 

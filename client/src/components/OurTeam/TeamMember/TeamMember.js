@@ -5,7 +5,7 @@ import PopupMemberDetails from "./PopupMemberDetails/PopupMemberDetails";
 import PropTypes from "prop-types";
 
 function Team({ item, handleShowMember, showMember, id }) {
-  const { url, name, position, text } = item;
+  const { url, name, position } = item;
 
   return (
     <div className={styles.TeamMember}>
@@ -26,10 +26,7 @@ function Team({ item, handleShowMember, showMember, id }) {
       {showMember === id ? (
         <PopupMemberDetails
           id={id}
-          url={url}
-          name={name}
-          position={position}
-          text={text}
+          item={item}
           handleShowMember={handleShowMember}
         />
       ) : null}

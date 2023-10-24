@@ -79,11 +79,19 @@ function ProductReview({ item }) {
         <div className={styles.mark}>
           <span className={styles.text}>Was this review helpful?</span>
           <div className={styles.thumbs}>
-            <button className={styles.thumb} onClick={() => handleThumb("1")}>
+            <button
+              className={styles.thumb}
+              onClick={() => handleThumb("1")}
+              data-cy="thumbUpBtn"
+            >
               <BsHandThumbsUp size={20} className={styles.thumb} />
             </button>
             <span>{likes}</span>
-            <button className={styles.thumb} onClick={() => handleThumb("0")}>
+            <button
+              className={styles.thumb}
+              onClick={() => handleThumb("0")}
+              data-cy="thumbDownBtn"
+            >
               {" "}
               <BsHandThumbsDown className={styles.thumb} size={20} />
             </button>

@@ -6,20 +6,20 @@ import BtnTwitter from "../../../Buttons/BtnTwitter/BtnTwitter";
 import BtnClose from "../../../Buttons/BtnClose/BtnClose";
 
 function PopupMemberDetails(props) {
-  const { id, url, name, position, text, handleShowMember } = props;
+  const { id, item, handleShowMember } = props;
   return (
     <div className={styles.PopupMemberDetails}>
       <div className={styles.memberDetails}>
         <div className={styles.imgMemberSection}>
-          <img src={url} alt={id} className={styles.imgMember} />
+          <img src={item.url} alt={id} className={styles.imgMember} />
           <BtnTwitter />
         </div>
         <div className={styles.memberContent}>
           <div>
-            <h1>{name}</h1>
-            <h3>{position}</h3>
+            <h1>{item.name}</h1>
+            <h3>{item.position}</h3>
           </div>
-          <p>{text}</p>
+          <p>{item.text}</p>
         </div>
         <div className={styles.divClose}>
           <BtnClose handleBtn={handleShowMember} />

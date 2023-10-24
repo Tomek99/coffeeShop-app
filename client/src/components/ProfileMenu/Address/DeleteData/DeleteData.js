@@ -44,7 +44,7 @@ function DeleteData({
       </p>
       <div className={styles.btnsDiv}>
         <BtnCancell handleBlurScreen={handleBlurScreen} />
-        <BtnRemoveData deleteDocument={deleteDocument} />
+        <BtnRemoveData handleBtn={deleteDocument} />
       </div>
     </div>
   );

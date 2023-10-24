@@ -3,26 +3,44 @@ import HomePage from "../../pages/HomePage";
 import ProductsPage from "../../pages/ProductsPage";
 import LoginPage from "../../pages/LoginPage";
 import ViewCartPage from "../../pages/ViewCartPage";
+import CypressHelper from "../../utils/CypressHelper";
 
 class BaseTest {
-  public static performBasicStepsForOrder() {
-    const homePage = new HomePage();
-    const productsPage = new ProductsPage();
-    const loginPage = new LoginPage();
-    const viewCartPage = new ViewCartPage();
-
-    homePage.visitHomePage();
-    homePage.openLoginPage();
-    loginPage.loginUser("test1@gmail.com", "Test1@gmail");
-    homePage.openProductsPage();
-
+  public static performBasicStepsForOrder(): void {
     const numberOfProducts: number = 6;
 
-    productsPage.addProductsCart(numberOfProducts);
-    homePage.openCartBar();
-    homePage.openViewCartPage();
+    new HomePage()
+      .visitHomePage()
+      .openLoginPage()
+      .loginUser("test1@gmail.com", "Test1@gmail")
+      .openProductsPage()
+      .addProductsCart(numberOfProducts)
+      .openCartBar()
+      .openViewCartPage()
+      .openCheckoutPage();
+  }
 
-    viewCartPage.openCheckoutPage();
+  public static performBasicStepsForReviewThumb(isUserLoggedIn: boolean): void {
+    if (isUserLoggedIn) {
+      new HomePage()
+        .visitHomePage()
+        .openLoginPage()
+        .loginUser("test1@gmail.com", "Test1@gmail")
+        .openProductsPage();
+    } else {
+      new HomePage()
+        .visitHomePage()
+        .openProductsPage()
+        .openRevelantProductPage(CypressHelper.generateRandomNumber(3));
+    }
+  }
+
+  public static performBasicStepsForAddressDetails(): void {
+    new HomePage()
+      .visitHomePage()
+      .openLoginPage()
+      .loginUser("test1@gmail.com", "Test1@gmail")
+      .openAddressDetails();
   }
 }
 

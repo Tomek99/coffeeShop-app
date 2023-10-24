@@ -32,7 +32,7 @@ class StripePage {
     return new StripePage();
   }
 
-  onClickSubmitBtn(): SuccessPage {
+  clickOnSubmitBtn(): SuccessPage {
     this.elements.submitBtn().click();
     cy.wait(20000);
 
