@@ -18,4 +18,7 @@ Feature tests:
 https://github.com/Tomek99/coffeeShop-selenium-tests
 
 E2E tests:
-https://github.com/Tomek99/coffeeShop-app/tree/main/client/cypress
+https://github.com/Tomek99/coffeeShop-app/tree/main/client/Cypress/cypress
+
+Test scenario  and test case:
+https://github.com/Tomek99/coffeShop-manual-tests
