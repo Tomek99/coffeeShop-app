@@ -30,7 +30,7 @@ function AddressItem({ item, idAddresses }) {
   return (
     <>
       <div className={styles.AddressItem}>
-        <div className={styles.content} data-cy="addressData">
+        <div className={styles.content}>
           <p className={styles.name}>{name}</p>
           <p>{street}</p>
           <p>{house}</p>

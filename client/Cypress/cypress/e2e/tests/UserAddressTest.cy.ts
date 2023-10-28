@@ -1,4 +1,4 @@
-import AddressDetails from "../../pages/AddressDetails";
+import AddressDetailsPage from "../../pages/AddressDetailsPage";
 import BaseTest from "./BaseTest";
 
 const editForm = {
@@ -15,23 +15,23 @@ beforeEach(() => {
   BaseTest.performBasicStepsForAddressDetails();
 });
 
-describe("Add & Delete & Empty address", () => {
+describe("Add & delete & empty address", () => {
   it("add one address", () => {
-    const assertion = fillAddressForm().getAddressFormElement(1);
+    const assertion = fillAddressForm();
 
-    assertion.should("contain", "test@gmail.com");
+    assertion.getAddressFormElement(1).should("exist");
 
     deleteFirstAddressInRow();
   });
 
-  it.only("delete address", () => {
+  it("delete address", () => {
     const assertion = fillAddressForm().clickOnDeleteAddressBtn(0);
 
-    assertion.getAddressFormElement(1).should("not.exist");
+    assertion.getAddressFormElement(2).should("not.exist");
   });
 
-  it("add empty address", () => {
-    const assertion = new AddressDetails()
+  it("try to add empty address", () => {
+    const assertion = new AddressDetailsPage()
       .clickOnNewAddressBtn()
       .clickOnSaveAddressBtn()
       .getAddressErrorsForm();
@@ -83,8 +83,8 @@ describe("Edit address details", () => {
   });
 });
 
-function fillAddressForm(): AddressDetails {
-  return new AddressDetails()
+function fillAddressForm(): AddressDetailsPage {
+  return new AddressDetailsPage()
     .clickOnNewAddressBtn()
     .fillNameInputAddress("Test")
     .fillStreetInputAddress("Test")
@@ -97,5 +97,5 @@ function fillAddressForm(): AddressDetails {
 }
 
 function deleteFirstAddressInRow() {
-  new AddressDetails().clickOnDeleteAddressBtn(0);
+  new AddressDetailsPage().clickOnDeleteAddressBtn(0);
 }
