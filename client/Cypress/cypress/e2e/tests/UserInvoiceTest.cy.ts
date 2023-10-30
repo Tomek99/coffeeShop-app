@@ -12,9 +12,19 @@ describe("Add & delete & empty invoice", () => {
     asseration.getInvoiceFormElement(1).should("exist");
   });
 
-  //   it("delete invoice", () => {});
+  it("delete invoice", () => {
+    const asseration = fillInvoiceForm().clickOnDeleteAddressBtn(0);
 
-  //   it("try to add empty invoice", () => {});
+    asseration.getInvoiceFormElement(2).should("not.exist");
+  });
+
+  it("try to add empty invoice", () => {
+    const asseration = new AddressDetailsPage()
+      .clickOnNewInvoiceBtn()
+      .clickOnSaveInvoiceBtn();
+
+    asseration.getFormErrors().should("have.length", 4);
+  });
 });
 
 function fillInvoiceForm(): AddressDetailsPage {

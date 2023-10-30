@@ -56,7 +56,7 @@ class AddressDetails {
         `div[data-cy='invoicesForms'] > div:nth-of-type(${valueNthOfType})`
       ),
 
-    addressFormErrors: () => cy.get(".ErrMessage_errorText__1OrwW"),
+    formErrors: () => cy.get(".ErrMessage_errorText__1OrwW"),
   };
 
   //Add new address/invoice
@@ -189,6 +189,8 @@ class AddressDetails {
     return this;
   }
 
+  click;
+
   clickOnEditBtn(): AddressDetails {
     this.elements.editBtn().click();
     return this;
@@ -199,8 +201,8 @@ class AddressDetails {
     return this.elements.formAddressElement(valueNthOfType);
   }
 
-  getAddressErrorsForm() {
-    return this.elements.addressFormErrors();
+  getFormErrors() {
+    return this.elements.formErrors();
   }
 
   getInvoiceFormElement(valueNthOfType: number) {

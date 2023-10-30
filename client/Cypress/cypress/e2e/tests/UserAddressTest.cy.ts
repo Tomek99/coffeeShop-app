@@ -34,7 +34,7 @@ describe("Add & delete & empty address", () => {
     const assertion = new AddressDetailsPage()
       .clickOnNewAddressBtn()
       .clickOnSaveAddressBtn()
-      .getAddressErrorsForm();
+      .getFormErrors();
 
     assertion.should("have.length", 3);
   });
