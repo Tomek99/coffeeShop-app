@@ -40,6 +40,8 @@ describe("Add & delete & empty address", () => {
   });
 });
 
+// --------------------------------------------------
+
 describe("Edit address details", () => {
   it("name & street", () => {
     const assertion = fillAddressForm()
@@ -82,6 +84,8 @@ describe("Edit address details", () => {
     deleteFirstAddressInRow();
   });
 });
+
+// --------------------------------------------------
 
 function fillAddressForm(): AddressDetailsPage {
   return new AddressDetailsPage()

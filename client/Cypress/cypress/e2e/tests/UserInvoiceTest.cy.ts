@@ -27,6 +27,20 @@ describe("Add & delete & empty invoice", () => {
   });
 });
 
+// --------------------------------------------------
+describe("Edit address details", () => {
+  it("", () => {});
+
+  it("", () => {});
+
+  it("", () => {});
+
+  it("", () => {});
+
+  it("", () => {});
+});
+
+// --------------------------------------------------
 function fillInvoiceForm(): AddressDetailsPage {
   return new AddressDetailsPage()
     .clickOnNewInvoiceBtn()
