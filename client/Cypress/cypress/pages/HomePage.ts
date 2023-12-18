@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import AddressDetails from "./AddressDetails";
+import AddressDetails from "./AddressDetailsPage";
 import LoginPage from "./LoginPage";
 import ProductsPage from "./ProductsPage";
 import ProfileSettingsPage from "./ProfileSettingsPage";

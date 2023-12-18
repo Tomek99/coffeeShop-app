@@ -49,8 +49,14 @@ class AddressDetails {
 
     //Data
     formAddressElement: (valueNthOfType: number) =>
-      cy.get(`div:nth-of-type(${valueNthOfType}) > div[data-cy="addressData"]`),
-    addressFormErrors: () => cy.get(".ErrMessage_errorText__1OrwW"),
+      cy.get(`[data-cy="addressForms"] > div:nth-of-type(${valueNthOfType})`),
+
+    formInvoiceElement: (valueNthOfType: number) =>
+      cy.get(
+        `div[data-cy='invoicesForms'] > div:nth-of-type(${valueNthOfType})`
+      ),
+
+    formErrors: () => cy.get(".ErrMessage_errorText__1OrwW"),
   };
 
   //Add new address/invoice
@@ -171,8 +177,10 @@ class AddressDetails {
     return this;
   }
 
-  clickOnSaveInvoiceBtn() {
+  clickOnSaveInvoiceBtn(): AddressDetails {
     this.elements.saveInvoiceFormBtn().click();
+
+    return this;
   }
 
   clickOnDeleteAddressBtn(deleteAddressNumber): AddressDetails {
@@ -180,6 +188,8 @@ class AddressDetails {
     this.elements.confirmDeleteBtn().click();
     return this;
   }
+
+  click;
 
   clickOnEditBtn(): AddressDetails {
     this.elements.editBtn().click();
@@ -191,8 +201,12 @@ class AddressDetails {
     return this.elements.formAddressElement(valueNthOfType);
   }
 
-  getAddressErrorsForm() {
-    return this.elements.addressFormErrors();
+  getFormErrors() {
+    return this.elements.formErrors();
+  }
+
+  getInvoiceFormElement(valueNthOfType: number) {
+    return this.elements.formInvoiceElement(valueNthOfType);
   }
 }
 

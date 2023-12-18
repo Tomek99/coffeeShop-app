@@ -29,7 +29,7 @@ function InvoiceItem({ item, idInvoices }) {
   return (
     <>
       <div className={styles.AddressItem}>
-        <div className={styles.content} data-cy="invoiceData">
+        <div className={styles.content}>
           <p>{NIP}</p>
           <p className={styles.name}>{name}</p>
           <p>{street}</p>

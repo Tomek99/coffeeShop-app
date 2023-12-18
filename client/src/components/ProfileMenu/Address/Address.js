@@ -110,35 +110,37 @@ function Address() {
             ) : null}
           </div>
         </div>
-        <div className={styles.thirdDiv}>
+        <div className={styles.thirdDiv} data-cy="addressForms">
           {address.map((item, index) => (
             <AddressItem item={item} key={index} idAddresses={idAddresses} />
           ))}
 
-          <div>
-            {address.length === 0 || width < 560 ? (
-              <BtnAdd name="address" handleBtn={handleShowAddress} />
-            ) : null}
-          </div>
+          {address.length === 0 || width < 560 ? (
+            <div>
+              <BtnAdd name="address" handleBtn={handleShowAddress} />{" "}
+            </div>
+          ) : null}
         </div>
         <div>
           <div className={styles.secondDiv}>
             <HeadingThree title="Invoice details" />
-            <div className={styles.btnHide}>
-              {invoice.length !== 0 ? (
-                <BtnAdd name="invoice" handleBtn={handleShowInvoice} />
-              ) : null}
-            </div>
+
+            {invoice.length !== 0 ? (
+              <div className={styles.btnHide}>
+                <BtnAdd name="invoice" handleBtn={handleShowInvoice} />{" "}
+              </div>
+            ) : null}
           </div>
-          <div className={styles.thirdDiv}>
+          <div className={styles.thirdDiv} data-cy="invoicesForms">
             {invoice.map((item, index) => (
               <InvoiceItem item={item} key={index} idInvoices={idInvoices} />
             ))}
-            <div>
-              {invoice.length === 0 || width < 560 ? (
-                <BtnAdd name="invoice" handleBtn={handleShowInvoice} />
-              ) : null}
-            </div>
+
+            {invoice.length === 0 || width < 560 ? (
+              <div>
+                <BtnAdd name="invoice" handleBtn={handleShowInvoice} />{" "}
+              </div>
+            ) : null}
           </div>
         </div>
         {isVisibleAddress ? <AddAddress idAddresses={idAddresses} /> : null}
