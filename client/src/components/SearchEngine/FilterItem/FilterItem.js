@@ -1,17 +1,20 @@
 import React from "react";
 import styles from "./FilterItem.module.scss";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function FilterItem({ item, clearSearch }) {
   const { name, imageUrl, price, oldPrice, _id } = item;
 
+  const navigate = useNavigate();
+
+  function navigateToProduct() {
+    clearSearch();
+    navigate(`/products/${_id}`);
+  }
+
   return (
-    <Link
-      className={styles.FilterItem}
-      onClick={clearSearch}
-      to={`/products/${_id}`}
-    >
+    <div className={styles.FilterItem} onClick={navigateToProduct}>
       <img src={imageUrl} alt={name} className={styles.imgWidth} />
 
       <div className={styles.contentWrapper}>
@@ -23,7 +26,7 @@ function FilterItem({ item, clearSearch }) {
           </span>
         </p>
       </div>
-    </Link>
+    </div>
   );
 }
 

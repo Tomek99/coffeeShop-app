@@ -12,6 +12,7 @@ const getInvoice = asyncHandler(async (req, res) => {
 });
 
 const setInvoice = asyncHandler(async (req, res) => {
+  console.log("hello");
   const { _id, NIP, name, street, ZIP_code, city } = req.body;
   const post = await Invoice.findByIdAndUpdate(
     _id,

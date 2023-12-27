@@ -24,13 +24,19 @@ const initialValues = {
 const validationSchema = Yup.object({
   firstName: Yup.string()
     .min(3, "Must be 3 characters or more")
+    .max(30, "Must be 30 characters or less")
     .required("Required"),
   lastName: Yup.string()
     .min(3, "Must be 3 characters or more")
+    .max(30, "Must be 30 characters or less")
     .required("Required"),
   email: Yup.string()
     .email("Invalid email address")
     .required("Required")
+    .matches(
+      /^[a-zA-Z0-9._%]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$/,
+      "Invalid email address"
+    )
     .test("Unique Email", "Email already exists", async (email) => {
       const { data: success } = await axios.post(
         `${process.env.REACT_APP_API_URI}/api/users/register/validEmail`,
@@ -40,6 +46,7 @@ const validationSchema = Yup.object({
     }),
   password: Yup.string()
     .min(8, "Password must be 8 characters long")
+    .max(30, "Password is too long")
     .matches(/[0-9]/, "Password requires a number")
     .matches(/[a-z]/, "Password requires a lowercase letter")
     .matches(/[A-Z]/, "Password requires an uppercase letter")

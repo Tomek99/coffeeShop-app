@@ -310,6 +310,7 @@ function App() {
     }
     const orderUpdate = {
       userId: user._id,
+      userName: user.firstName,
       save: cartSave,
       cartValue: cartValue,
       totalCost:

@@ -9,7 +9,6 @@ function RegisterReference() {
       <Link to="/sign-up" className={styles.btnReference}>
         Create an account
       </Link>
-      <button></button>
     </div>
   );
 }
