@@ -8,6 +8,8 @@ import HeadingThree from "../../HeadingThree/HeadingThree";
 import axios from "axios";
 import { Context } from "../../../Contexts/Context";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
+import Pagination from "../../Pagination/Pagination";
+import { useNavigate } from "react-router-dom";
 
 function UserReviews() {
   const { user } = useContext(Context);
@@ -53,7 +55,30 @@ function UserReviews() {
     };
     fetchData();
   }, [user._id]);
-  /// Plan pobrać receznje z serwera, dodawanie recenzji, dodawanie likes, dislikes
+
+  /* Pagination */
+  const [pageNumber, setPageNumber] = useState(0);
+  const navigate = useNavigate();
+  const ordersPerPage = 5;
+  const pagesVisited = pageNumber * ordersPerPage;
+  const pageCount = Math.ceil(reviews.length / ordersPerPage);
+
+  const handleChangePage = ({ selected }) => {
+    setPageNumber(selected);
+
+    navigate({
+      pathname: "/user-reviews",
+      search: selected !== 0 ? `?page=${selected + 1}` : null,
+    });
+  };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [pageNumber]);
 
   return (
     <>
@@ -73,13 +98,18 @@ function UserReviews() {
         <HeadingThree title="Your reviews" />
         <span>&nbsp;({reviews.length})</span>
       </div>
-      <div className={styles.divColumn}>
+      <div className={styles.reviewsColumn}>
         {loading ? (
           <LoaderSpinner loading={loading} />
         ) : (
-          reviews.map((item, i) => <Review key={i} item={item} />)
+          reviews
+            .slice(pagesVisited, pagesVisited + ordersPerPage)
+            .map((item, i) => <Review key={i} item={item} />)
         )}
       </div>
+      {reviews.length > 5 ? (
+        <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
+      ) : null}
       <Support />
     </>
   );
