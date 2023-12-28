@@ -32,12 +32,19 @@ function UserReviews() {
           `${process.env.REACT_APP_API_URI}/api/reviews/user-reviews/${user._id}`
         );
         setFeedbacks(
-          products.data.filter((item) => item.isCheckedReview !== true)
+          products.data
+            .filter((item) => item.isCheckedReview !== true)
+            .sort(
+              (a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate)
+            )
         );
+
         setReviews(
           products.data
-            .reverse()
             .filter((item) => item.isCheckedReview !== false)
+            .sort(
+              (a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate)
+            )
         );
         setLoading(false);
       } catch (error) {
@@ -70,7 +77,7 @@ function UserReviews() {
         {loading ? (
           <LoaderSpinner loading={loading} />
         ) : (
-          reviews.reverse().map((item, i) => <Review key={i} item={item} />)
+          reviews.map((item, i) => <Review key={i} item={item} />)
         )}
       </div>
       <Support />
