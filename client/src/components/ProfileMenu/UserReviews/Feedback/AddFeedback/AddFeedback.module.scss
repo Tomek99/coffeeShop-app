@@ -56,6 +56,8 @@
     .productContentDiv {
       margin: 10px 0 10px 0;
       font-size: 1.3rem;
+      display: flex;
+      flex-direction: column;
 
       .pTitle {
         font-size: 1.8rem;
@@ -64,9 +66,9 @@
         color: var(--text-color);
         opacity: 0.6;
         font-size: 1.3rem;
+        margin: 5px 0;
       }
       .pModerateReviews {
-        margin-top: 10px;
         font-size: 1.3rem;
         color: #0082fa;
         cursor: pointer;

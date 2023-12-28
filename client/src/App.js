@@ -342,7 +342,7 @@ function App() {
 
   const notify = (text) =>
     toast.success(text, {
-      position: "top-right",
+      position: "top-left",
       autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,

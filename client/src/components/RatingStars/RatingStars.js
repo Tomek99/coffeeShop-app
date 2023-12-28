@@ -3,7 +3,7 @@ import styles from "./RatingStars.module.scss";
 import React from "react";
 import PropTypes from "prop-types";
 
-function RatingsStars({ rate, size, tab, setFieldValue }) {
+function RatingsStars({ rate, size, tab, setFieldValue, handleFeedbackBtn }) {
   return (
     <>
       {(() => {
@@ -23,6 +23,17 @@ function RatingsStars({ rate, size, tab, setFieldValue }) {
                     setFieldValue("rate", 0);
                   }
                 }}
+              />
+            );
+
+          case 2:
+            return (
+              <Rating
+                name="no-value"
+                size={size}
+                value={null}
+                className={styles.RatingsStars}
+                onChange={handleFeedbackBtn}
               />
             );
           default:
