@@ -17,11 +17,12 @@ const validationSchema = Yup.object().shape({
 
 function AddFeedback({ handleBtn, item }) {
   const reviewId = item._id;
-
+  console.log(item.productId);
   const initialValues = {
     userImages: "",
     comment: "",
     rate: 0,
+    productId: item.productId,
     isCheckedReview: true,
   };
 

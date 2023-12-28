@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const Review = require("../models/reviewModel");
+const Product = require("../models/productModel");
 
 const getReviews = asyncHandler(async (req, res) => {
   const reviews = await Review.find({ userId: req.params.id });
@@ -53,6 +54,7 @@ const rateReview = asyncHandler(async (req, res) => {
     await Review.findByIdAndUpdate(reviewId, updateFields, {
       new: true,
     }).exec();
+
     res.status(200).send("1");
   }
 });
@@ -66,6 +68,20 @@ const typeReview = asyncHandler(async (req, res) => {
     rate: values.rate,
     isCheckedReview: true,
   });
+
+  try {
+    await Product.findByIdAndUpdate(
+      values.productId,
+      {
+        $push: {
+          productRatings: values.rate,
+        },
+      },
+      { new: true }
+    );
+  } catch (error) {
+    console.log(error);
+  }
 
   res.status(200).send(foundReview);
 });

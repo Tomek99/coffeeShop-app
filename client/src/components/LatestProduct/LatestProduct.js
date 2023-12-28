@@ -7,7 +7,8 @@ import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
 
 function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
-  const { _id, imageUrl, name, price, oldPrice, rate, intensity } = item;
+  const { _id, imageUrl, name, price, oldPrice, productRatings, intensity } =
+    item;
   const { addItem, addWishItem, wishList } = useContext(Context);
 
   let foundWishProduct = wishList.find((value) => {
@@ -19,6 +20,12 @@ function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
   function navigatePage() {
     navigate(`/products/${_id}`);
   }
+
+  const productRatingsAverage =
+    productRatings === null
+      ? 0
+      : productRatings.reduce((sum, current) => sum + current, 0) /
+        productRatings.length;
 
   return (
     <div className={styles.LatestProduct}>
@@ -47,7 +54,7 @@ function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
           Intensity <span>{intensity}</span>
         </p>
         <div>
-          <RatingsStars rate={rate} size="large" />
+          <RatingsStars rate={productRatingsAverage} size="large" />
         </div>
       </div>
       <p className={styles.price}>

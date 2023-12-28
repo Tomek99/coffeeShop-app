@@ -87,7 +87,6 @@ const setWebhook = asyncHandler(async (req, res) => {
   if (event.type === "checkout.session.completed") {
     sessionId = event.data.object.id;
 
-    console.log(event.data);
     const session = await stripe.checkout.sessions.retrieve(sessionId);
     const lineItems = await stripe.checkout.sessions.listLineItems(sessionId, {
       limit: 100,
