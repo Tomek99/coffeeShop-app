@@ -9,6 +9,20 @@
   cursor: pointer;
 }
 
+.btnFeedbackIcon {
+  display: none;
+}
+
 .btnFeedback:hover {
   background-color: var(--dark-grey);
+}
+
+@media (max-width: 400px) {
+  .btnFeedback {
+    display: none;
+  }
+
+  .btnFeedbackIcon {
+    display: block;
+  }
 }

@@ -9,7 +9,6 @@ import { Context } from "../../../../../Contexts/Context";
 
 function ProductReview({ item }) {
   const { notify, notifyError, user } = useContext(Context);
-  console.log(user._id);
   const [likes, setLikes] = useState(item.likes);
   const [dislikes, setDislikes] = useState(item.dislikes);
 
