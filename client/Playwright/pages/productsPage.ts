@@ -1,7 +1,7 @@
 import { Page, Locator } from "@playwright/test";
 import Utils from "../utility/Utils";
 
-export class productsPage {
+export class ProductsPage {
   private readonly page: Page;
   private readonly productCartBtn: Locator;
 
