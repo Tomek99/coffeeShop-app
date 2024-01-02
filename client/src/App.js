@@ -427,10 +427,10 @@ function App() {
             pauseOnHover
             theme="light"
           />
-          <MessengerCustomerChat
+          {/* <MessengerCustomerChat
             pageId="109980154081140"
             appId="1174144033276048"
-          />
+          /> */}
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
