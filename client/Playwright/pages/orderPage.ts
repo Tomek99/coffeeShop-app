@@ -1,6 +1,7 @@
 import { Locator, Page } from "@playwright/test";
-import { DeliveryAddressForm } from "../interfaces/DeliveryAddressInterface";
-import { CompanyAddressForm } from "../interfaces/CompanyAddressInterface";
+import { DeliveryAddressInterface } from "../interfaces/DeliveryAddressInterface";
+import { CompanyAddressInterface } from "../interfaces/CompanyAddressInterface";
+import { InvoiceDetailsInterface } from "../interfaces/InvoiceDetailsInterface";
 
 export class OrderPage {
   private readonly page: Page;
@@ -90,11 +91,11 @@ export class OrderPage {
     this.companyCityInput = page.locator("input[name='companyCity']");
 
     //Private person invoice details
-    this.invoiceDetailsLabel = page.getByRole("button", { name: "" });
-    this.invoiceName = page.getByPlaceholder("Name");
+    this.invoiceDetailsLabel = page.getByText("I would like to provide other");
+    this.invoiceName = page.locator('input[name="i_name"]');
     this.invoiceStreet = page.getByPlaceholder("Street and number");
-    this.invoiceZipCode = page.getByPlaceholder("Zip code");
-    this.invoiceCity = page.getByPlaceholder("City");
+    this.invoiceZipCode = page.locator('input[name="i_ZIP_code"]');
+    this.invoiceCity = page.locator('input[name="i_city"]');
 
     // Payment
     this.onlinePayment = page.locator("label[for='online_payment']");
@@ -165,14 +166,14 @@ export class OrderPage {
     await this.emailAddressInput.fill(value);
   }
 
-  async fillDeliveryAddressForm(data: DeliveryAddressForm) {
-    await this.fillNameAddress(data.name);
-    await this.fillStreetAddress(data.street);
-    await this.fillHouseAddress(data.house);
-    await this.fillZipCodeAddress(data.zipCode);
-    await this.fillCityAddress(data.city);
-    await this.fillNumberAddress(data.number);
-    await this.fillEmailAddress(data.email);
+  async fillDeliveryAddressForm(data: DeliveryAddressInterface) {
+    await this.userNameAddressInput.fill(data.name);
+    await this.streetAddressInput.fill(data.street);
+    await this.houseAddressInput.fill(data.house);
+    await this.zipCodeAddressInput.fill(data.zipCode);
+    await this.cityAddressInput.fill(data.city);
+    await this.numberAddressInput.fill(data.number);
+    await this.emailAddressInput.fill(data.email);
   }
 
   //Company details for invoice
@@ -192,12 +193,12 @@ export class OrderPage {
     await this.companyCityInput.fill(value);
   }
 
-  async fillCompanyForm(data: CompanyAddressForm) {
-    await this.fillcompanyNip(data.nip);
-    await this.fillcompanyName(data.name);
-    await this.fillcompanyStreet(data.street);
-    await this.fillcompanyZipCode(data.zipCode);
-    await this.fillcompanyCity(data.city);
+  async fillCompanyForm(data: CompanyAddressInterface) {
+    await this.companyNipInput.fill(data.nip);
+    await this.companyNameInput.fill(data.name);
+    await this.companyStreetInput.fill(data.street);
+    await this.companyZipCodeInput.fill(data.zipCode);
+    await this.companyCityInput.fill(data.city);
   }
 
   //Private person invoice details
@@ -215,6 +216,13 @@ export class OrderPage {
   }
   async fillInvoiceCity(value: string) {
     await this.invoiceCity.fill(value);
+  }
+
+  async fillInvoiceForm(data: InvoiceDetailsInterface) {
+    await this.invoiceName.fill(data.name);
+    await this.invoiceStreet.fill(data.street);
+    await this.invoiceZipCode.fill(data.zipCode);
+    await this.invoiceCity.fill(data.city);
   }
 
   // Payment

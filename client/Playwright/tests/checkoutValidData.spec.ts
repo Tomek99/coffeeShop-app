@@ -4,11 +4,16 @@ import { ProductsPage } from "../pages/productsPage";
 import { ViewCartPage } from "../pages/viewCartPage";
 import { LoginPage } from "../pages/loginPage";
 import { OrderPage } from "../pages/orderPage";
-import { DeliveryAddressForm } from "../interfaces/DeliveryAddressInterface";
+import { DeliveryAddressInterface } from "../interfaces/DeliveryAddressInterface";
 import { BaseTest } from "./BaseTest";
-import { CompanyAddressForm } from "../interfaces/CompanyAddressInterface";
+import { CompanyAddressInterface } from "../interfaces/CompanyAddressInterface";
+import { InvoiceDetailsInterface } from "../interfaces/InvoiceDetailsInterface";
+import { RecipientDetailsInterface } from "../interfaces/RecipientDetailsInterface";
+import { OrderSummaryPage } from "../pages/orderSummaryPage";
+import { StripePage } from "../pages/stripePage";
+import { SuccessPage } from "../pages/successPage";
 
-const deliveryAddressForm: DeliveryAddressForm = {
+const deliveryAddressData: DeliveryAddressInterface = {
   name: "Test",
   street: "test",
   house: "123",
@@ -18,7 +23,7 @@ const deliveryAddressForm: DeliveryAddressForm = {
   email: "test@gamil.com",
 };
 
-const companyInvoiceForm: CompanyAddressForm = {
+const companyInvoiceData: CompanyAddressInterface = {
   nip: "111111111",
   name: "Test",
   street: "Test",
@@ -26,37 +31,109 @@ const companyInvoiceForm: CompanyAddressForm = {
   city: "Test",
 };
 
+const invoiceDetailsData: InvoiceDetailsInterface = {
+  name: "test",
+  street: "test 32",
+  zipCode: "00-000",
+  city: "Test",
+};
+
+const recipientDetailsData: RecipientDetailsInterface = {
+  name: "test",
+  phoneNumber: "111222333",
+  email: "test@gmail.com",
+};
+
 test.describe("Purchase products with valid data", () => {
   test.beforeEach(async ({ page }) => {
-    BaseTest.performBasicStepsForCheckout(page);
+    await BaseTest.performBasicStepsForCheckout(page);
   });
 
   test("place an order as private person", async ({ page }) => {
     const orderPage = new OrderPage(page);
+    const orderSummaryPage = new OrderSummaryPage(page);
+    const stripePage = new StripePage(page);
+    const successPage = new SuccessPage(page);
 
     await orderPage.clickOnCarrier();
     await orderPage.clickOnPrivatePerson();
-    await orderPage.fillDeliveryAddressForm(deliveryAddressForm);
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
     await orderPage.clickOnlinePayment();
     await orderPage.clickOnSummaryBtn();
+
+    await orderSummaryPage.clickOnPurchaseBtn();
+
+    await stripePage.fillCardNumber();
+    await stripePage.fillCardExpiry();
+    await stripePage.fillCardCvc();
+    await stripePage.fillBillingName();
+    await stripePage.onClickSubmitBtn();
+
+    const locator = await successPage.getSuccessLocator();
+    await expect(locator).toHaveText("Payment Successful!");
   });
 
   test("place an order as company", async ({ page }) => {
     const orderPage = new OrderPage(page);
+    const orderSummaryPage = new OrderSummaryPage(page);
 
     await orderPage.clickOnCarrier();
     await orderPage.clickOnCompany();
-    await orderPage.fillCompanyForm(companyInvoiceForm);
-    await orderPage.fillDeliveryAddressForm(deliveryAddressForm);
+    await orderPage.fillCompanyForm(companyInvoiceData);
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
+    await orderPage.clickOnlinePayment();
+    await orderPage.clickOnSummaryBtn();
+
+    await orderSummaryPage.clickOnPurchaseBtn();
+  });
+  test("provide other invoice details", async ({ page }) => {
+    const orderPage = new OrderPage(page);
+    const orderSummaryPage = new OrderSummaryPage(page);
+
+    await orderPage.clickOnCarrier();
+    await orderPage.clickOnPrivatePerson();
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
+    await orderPage.clickOnProvideInvoiceDetails();
+    await orderPage.fillInvoiceForm(invoiceDetailsData);
+    await orderPage.clickOnlinePayment();
+    await orderPage.clickOnSummaryBtn();
+
+    await orderSummaryPage.clickOnPurchaseBtn();
+  });
+  test("place an order and pick up in the showroom", async ({ page }) => {
+    const orderPage = new OrderPage(page);
+    const orderSummaryPage = new OrderSummaryPage(page);
+
+    await orderPage.clickOnCarrier();
+    await orderPage.clickOnPrivatePerson();
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
+    await orderPage.clickOnlinePayment();
+    await orderPage.clickOnSummaryBtn();
+
+    await orderSummaryPage.clickOnPurchaseBtn();
+  });
+  test("add comment to order", async ({ page }) => {
+    const orderPage = new OrderPage(page);
+    const orderSummaryPage = new OrderSummaryPage(page);
+
+    await orderPage.clickOnCarrier();
+    await orderPage.clickOnPrivatePerson();
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
+    await orderPage.clickOnlinePayment();
+    await orderPage.clickOnCommentBtn();
+    await orderPage.fillCommentArea("Test test test");
+    await orderPage.clickOnSummaryBtn();
+
+    await orderSummaryPage.clickOnPurchaseBtn();
+  });
+  test("edit data in order summary", async ({ page }) => {
+    const orderPage = new OrderPage(page);
+    const orderSummaryPage = new OrderSummaryPage(page);
+
+    await orderPage.clickOnCarrier();
+    await orderPage.clickOnPrivatePerson();
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
     await orderPage.clickOnlinePayment();
     await orderPage.clickOnSummaryBtn();
   });
-
-  test("provide other invoice details", async ({ page }) => {});
-
-  test("place an order and pick up in the showroom", async ({ page }) => {});
-
-  test("add comment to order", async ({ page }) => {});
-
-  test("edit data in order summary", async ({ page }) => {});
 });

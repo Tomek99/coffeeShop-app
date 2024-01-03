@@ -1,4 +1,4 @@
-export interface DeliveryAddressForm {
+export interface DeliveryAddressInterface {
   name: string;
   street: string;
   house: string;
