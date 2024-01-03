@@ -1,4 +1,6 @@
 import { Locator, Page } from "@playwright/test";
+import { DeliveryAddressForm } from "../interfaces/DeliveryAddressInterface";
+import { CompanyAddressForm } from "../interfaces/CompanyAddressInterface";
 
 export class OrderPage {
   private readonly page: Page;
@@ -19,7 +21,7 @@ export class OrderPage {
   private readonly recipientEmailInput: Locator;
 
   //Delivery address
-  private readonly addressInput: Locator;
+  private readonly userNameAddressInput: Locator;
   private readonly streetAddressInput: Locator;
   private readonly houseAddressInput: Locator;
   private readonly zipCodeAddressInput: Locator;
@@ -57,53 +59,190 @@ export class OrderPage {
     this.page = page;
 
     //Delviery
-    this.carrierLabel = page.getByLabel("carrier");
-    this.pickupLabel = page.getByLabel("showroom");
-    this.packageLockerLabel = page.getByLabel("packageLocker");
-    this.collectionLabel = page.getByLabel("collectionAtPoint");
+    this.carrierLabel = page.locator('label[for="carrier"]');
+    this.pickupLabel = page.locator('label[for="showroom"]');
+    this.packageLockerLabel = page.locator('label[for="packageLocker"]');
+    this.collectionLabel = page.locator('label[for="collectionAtPoint"]');
 
     // Purchasing as
-    this.privatePersonLabel = page.getByLabel("privatePerson");
-    this.companyLabel = page.getByLabel("company");
+    this.privatePersonLabel = page.locator("label[for='privatePerson']");
+    this.companyLabel = page.locator("label[for='company']");
 
     //Recipient details
-    this.recipientNameInput = page.getByLabel("");
-    this.recipientPhoneInput = page.getByLabel("");
-    this.recipientEmailInput = page.getByLabel("");
+    this.recipientNameInput = page.getByLabel("Name");
+    this.recipientPhoneInput = page.getByLabel("Phone number");
+    this.recipientEmailInput = page.getByLabel("E-mail");
 
     //Delivery address
-    this.addressInput = page.getByLabel("");
-    this.streetAddressInput = page.getByLabel("");
-    this.houseAddressInput = page.getByLabel("");
-    this.zipCodeAddressInput = page.getByLabel("");
-    this.cityAddressInput = page.getByLabel("");
-    this.numberAddressInput = page.getByLabel("");
-    this.emailAddressInput = page.getByLabel("");
+    this.userNameAddressInput = page.locator('input[name="name"]');
+    this.streetAddressInput = page.locator("input[name='street']");
+    this.houseAddressInput = page.getByPlaceholder("House");
+    this.zipCodeAddressInput = page.locator("input[name='ZIP_code']");
+    this.cityAddressInput = page.locator("input[name='city']");
+    this.numberAddressInput = page.getByPlaceholder("Number");
+    this.emailAddressInput = page.getByPlaceholder("email");
 
     //Company details for invoice
-    this.companyNipInput = page.getByLabel("");
-    this.companyNameInput = page.getByLabel("");
-    this.companyStreetInput = page.getByLabel("");
-    this.companyZipCodeInput = page.getByLabel("");
-    this.companyCityInput = page.getByLabel("");
+    this.companyNipInput = page.getByPlaceholder("NIP");
+    this.companyNameInput = page.locator("input[name='companyName']");
+    this.companyStreetInput = page.locator("input[name='companyStreet']");
+    this.companyZipCodeInput = page.locator("input[name='companyZIPcode']");
+    this.companyCityInput = page.locator("input[name='companyCity']");
 
     //Private person invoice details
     this.invoiceDetailsLabel = page.getByRole("button", { name: "" });
-    this.invoiceName = page.getByPlaceholder("");
-    this.invoiceStreet = page.getByPlaceholder("");
-    this.invoiceZipCode = page.getByPlaceholder("");
-    this.invoiceCity = page.getByPlaceholder("");
+    this.invoiceName = page.getByPlaceholder("Name");
+    this.invoiceStreet = page.getByPlaceholder("Street and number");
+    this.invoiceZipCode = page.getByPlaceholder("Zip code");
+    this.invoiceCity = page.getByPlaceholder("City");
 
     // Payment
-    this.onlinePayment = page.getByLabel("");
-    this.onlinePaymentCard = page.getByLabel("");
-    this.blikPayment = page.getByLabel("");
-    this.traditionalPayment = page.getByLabel("");
-    this.paymentOnDelviery = page.getByLabel("");
-    this.summaryBtn = page.getByRole("button", { name: "" });
+    this.onlinePayment = page.locator("label[for='online_payment']");
+    this.onlinePaymentCard = page.locator("label[for='online_payment_card']");
+    this.blikPayment = page.locator("label[for='blik']");
+    this.traditionalPayment = page.locator("label[for='traditional_payment']");
+    this.paymentOnDelviery = page.locator("label[for='payment_on_delivery']");
+    this.summaryBtn = page.getByRole("button", { name: "Summary" });
 
     //ExtraOptions
     this.commentBtn = page.getByLabel("comment");
     this.commentArea = page.getByPlaceholder("Your comments");
+  }
+
+  // Delivery
+  async clickOnCarrier() {
+    await this.carrierLabel.click();
+  }
+  async clickOnPickup() {
+    await this.pickupLabel.click();
+  }
+  async clickOnPackageLocker() {
+    await this.packageLockerLabel.click();
+  }
+  async clickOnCollection() {
+    await this.collectionLabel.click();
+  }
+
+  // Purchasing as
+  async clickOnPrivatePerson() {
+    await this.privatePersonLabel.click();
+  }
+  async clickOnCompany() {
+    await this.companyLabel.click();
+  }
+
+  //Recipient details
+  async fillRecipientName(value: string) {
+    await this.recipientNameInput.fill(value);
+  }
+  async fillRecipientPhone(value: string) {
+    await this.recipientPhoneInput.fill(value);
+  }
+  async fillRecipientEmail(value: string) {
+    await this.recipientEmailInput.fill(value);
+  }
+
+  //Delivery address
+  async fillNameAddress(value: string) {
+    await this.userNameAddressInput.fill(value);
+  }
+  async fillStreetAddress(value: string) {
+    await this.streetAddressInput.fill(value);
+  }
+  async fillHouseAddress(value: string) {
+    await this.houseAddressInput.fill(value);
+  }
+  async fillZipCodeAddress(value: string) {
+    await this.zipCodeAddressInput.fill(value);
+  }
+  async fillCityAddress(value: string) {
+    await this.cityAddressInput.fill(value);
+  }
+  async fillNumberAddress(value: string) {
+    await this.numberAddressInput.fill(value);
+  }
+  async fillEmailAddress(value: string) {
+    await this.emailAddressInput.fill(value);
+  }
+
+  async fillDeliveryAddressForm(data: DeliveryAddressForm) {
+    await this.fillNameAddress(data.name);
+    await this.fillStreetAddress(data.street);
+    await this.fillHouseAddress(data.house);
+    await this.fillZipCodeAddress(data.zipCode);
+    await this.fillCityAddress(data.city);
+    await this.fillNumberAddress(data.number);
+    await this.fillEmailAddress(data.email);
+  }
+
+  //Company details for invoice
+  async fillcompanyNip(value: string) {
+    await this.companyNipInput.fill(value);
+  }
+  async fillcompanyName(value: string) {
+    await this.companyNameInput.fill(value);
+  }
+  async fillcompanyStreet(value: string) {
+    await this.companyStreetInput.fill(value);
+  }
+  async fillcompanyZipCode(value: string) {
+    await this.companyZipCodeInput.fill(value);
+  }
+  async fillcompanyCity(value: string) {
+    await this.companyCityInput.fill(value);
+  }
+
+  async fillCompanyForm(data: CompanyAddressForm) {
+    await this.fillcompanyNip(data.nip);
+    await this.fillcompanyName(data.name);
+    await this.fillcompanyStreet(data.street);
+    await this.fillcompanyZipCode(data.zipCode);
+    await this.fillcompanyCity(data.city);
+  }
+
+  //Private person invoice details
+  async clickOnProvideInvoiceDetails() {
+    await this.invoiceDetailsLabel.click();
+  }
+  async fillInvoiceName(value: string) {
+    await this.invoiceName.fill(value);
+  }
+  async fillInvoiceStreet(value: string) {
+    await this.invoiceStreet.fill(value);
+  }
+  async fillInvoiceZipCode(value: string) {
+    await this.invoiceZipCode.fill(value);
+  }
+  async fillInvoiceCity(value: string) {
+    await this.invoiceCity.fill(value);
+  }
+
+  // Payment
+  async clickOnlinePayment() {
+    await this.onlinePayment.click();
+  }
+  async clickOnOnlinePaymentCard() {
+    await this.onlinePaymentCard.click();
+  }
+  async clickOnBlikPayment() {
+    await this.blikPayment.click();
+  }
+  async clickOnTraditionalPayment() {
+    await this.traditionalPayment.click();
+  }
+  async clickOnPaymentOnDelviery() {
+    await this.paymentOnDelviery.click();
+  }
+
+  async clickOnSummaryBtn() {
+    await this.summaryBtn.click();
+  }
+
+  //ExtraOptions
+  async clickOnCommentBtn() {
+    await this.commentBtn.click();
+  }
+  async fillCommentArea(value: string) {
+    await this.commentArea.fill(value);
   }
 }
