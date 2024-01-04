@@ -7,6 +7,7 @@ import { MdOutlineReviews } from "react-icons/md";
 import { RiFileList3Line } from "react-icons/ri";
 import { Context } from "../../../Contexts/Context";
 import { FaRegUser } from "react-icons/fa";
+import BtnDefault from "../../Buttons/BtnDefault/BtnDefault";
 
 function PopupUserNav2() {
   const { isLogIn, logOut, user } = useContext(Context);
@@ -39,16 +40,11 @@ function PopupUserNav2() {
           <p>{user.firstName}</p>
         </div>
       ) : (
-        <div className={styles.btnSignIn_UpSection}>
-          <li className={styles.btnSignIn_Up}>
-            <Link to="log-in">Log in</Link>
-          </li>
-
-          <li className={styles.infoAcc}>Don't have an account?</li>
-          <li className={styles.btnSignIn_Up}>
-            <Link to="sign-up">Sign up</Link>
-          </li>
-        </div>
+        <section className={styles.btnsSection}>
+          <BtnDefault route={"log-in"} text={"Log in"} />
+          <span className={styles.spanTextAccount}>Don't have an account?</span>
+          <BtnDefault route={"sign-up"} text={"Sign up"} />
+        </section>
       )}
       <div className={styles.list}>
         {navList.map((item) => (

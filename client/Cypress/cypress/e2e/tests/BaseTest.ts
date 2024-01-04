@@ -7,7 +7,7 @@ import CypressHelper from "../../utils/CypressHelper";
 
 class BaseTest {
   public static performBasicStepsForOrder(): void {
-    const numberOfProducts: number = 6;
+    const numberOfProducts: number = CypressHelper.generateRandomNumber(6);
 
     new HomePage()
       .visitHomePage()

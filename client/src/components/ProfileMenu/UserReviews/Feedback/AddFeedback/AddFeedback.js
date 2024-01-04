@@ -17,11 +17,12 @@ const validationSchema = Yup.object().shape({
 
 function AddFeedback({ handleBtn, item }) {
   const reviewId = item._id;
-
+  console.log(item.productId);
   const initialValues = {
     userImages: "",
     comment: "",
     rate: 0,
+    productId: item.productId,
     isCheckedReview: true,
   };
 
@@ -64,16 +65,16 @@ function AddFeedback({ handleBtn, item }) {
                 <ErrMessage name={"rate"} />
               </div>
               <div className={styles.productContentDiv}>
-                <p className={styles.pTitle}>
+                <span className={styles.pTitle}>
                   Type what do you think about our product
-                </p>
-                <p className={styles.pText}>
+                </span>
+                <span className={styles.pText}>
                   Remember that your opinion should concern the product and its
                   functions.
-                </p>
-                <p className={styles.pModerateReviews}>
+                </span>
+                <span className={styles.pModerateReviews}>
                   Check how we moderate reviews.
-                </p>
+                </span>
               </div>
               <TextareaCom setFieldValue={props.setFieldValue} />
               <ErrMessage name={"comment"} />

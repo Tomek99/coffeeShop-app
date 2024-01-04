@@ -310,6 +310,7 @@ function App() {
     }
     const orderUpdate = {
       userId: user._id,
+      userName: user.firstName,
       save: cartSave,
       cartValue: cartValue,
       totalCost:
@@ -341,7 +342,7 @@ function App() {
 
   const notify = (text) =>
     toast.success(text, {
-      position: "top-right",
+      position: "top-left",
       autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
@@ -426,10 +427,10 @@ function App() {
             pauseOnHover
             theme="light"
           />
-          <MessengerCustomerChat
+          {/* <MessengerCustomerChat
             pageId="109980154081140"
             appId="1174144033276048"
-          />
+          /> */}
         </div>
         <Routes>
           <Route path="/" element={<Home />} />

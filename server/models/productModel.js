@@ -42,10 +42,12 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    rate: {
-      type: Number,
-      required: [true, "Add rate"],
+
+    productRatings: {
+      type: Array,
+      default: [],
     },
+
     available: {
       type: Boolean,
       required: false,

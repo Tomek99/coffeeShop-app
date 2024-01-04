@@ -16,7 +16,7 @@ function Products() {
 
   const PRODUCTS_PER_PAGE = 12;
   const pagesVisited = pageNumber * PRODUCTS_PER_PAGE;
-  const pageCount = Math.round(products.length / PRODUCTS_PER_PAGE);
+  const pageCount = Math.ceil(products.length / PRODUCTS_PER_PAGE);
 
   const handleChangePage = ({ selected }) => {
     setPageNumber(selected);
@@ -55,12 +55,10 @@ function Products() {
                   />
                 ))}
             </div>
-            <div className={styles.productPagination}>
-              <Pagination
-                pageCount={pageCount}
-                handleChangePage={handleChangePage}
-              />
-            </div>
+            <Pagination
+              pageCount={pageCount}
+              handleChangePage={handleChangePage}
+            />
           </div>
         </>
       )}

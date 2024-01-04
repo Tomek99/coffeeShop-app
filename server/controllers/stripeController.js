@@ -4,22 +4,15 @@ const DOMAIN_SUCCESS = "http://localhost:3000/order/success";
 const DOMAIN_CANCEL = "http://localhost:3000/order";
 const Order = require("../models/orderModel");
 const Review = require("../models/reviewModel");
+const Product = require("../models/productModel");
+
+const { setReview } = require("../controllers/reviewsController");
 
 const nodemailer = require("nodemailer");
 
-// const transporter = nodemailer.createTransport({
-//   host: "smtp.gmail.com",
-//   port: 465,
-//   secure: true,
-//   auth: {
-//     // TODO: replace `user` and `pass` values from <https://forwardemail.net>
-//     user: process.env.EMAIL,
-//     pass: process.env.PASSWORD,
-//   },
-// });
-
 const setPayment = asyncHandler(async (req, res) => {
-  const { products, userId, address } = req.body;
+  const { products, userId, address, userName } = req.body;
+
   const line_items = products.map((item) => {
     return {
       quantity: item.quantity,
@@ -35,26 +28,30 @@ const setPayment = asyncHandler(async (req, res) => {
   });
 
   try {
-    let productData = [];
+    // let productData = [];
 
-    for (let index = 0; index < products.length; index++) {
-      productData.push(
-        await stripe.products.create({
-          name: products[index].name,
-          images: [products[index].imageUrl],
-        })
-      );
-    }
-    const productsId = productData.map((item) => {
-      return item.id.slice(5);
+    // for (let index = 0; index < products.length; index++) {
+    //   productData.push(
+    //     await stripe.products.create({
+    //       id: products[index]._id,
+    //       name: products[index].name,
+    //       images: [products[index].imageUrl],
+    //       metadata: products[index]._id,
+    //     })
+    //   );
+    // }
+
+    const productsId = products.map((item) => {
+      return item._id;
     });
 
     const customer = await stripe.customers.create({
       email: address.email,
       phone: address.number,
+      name: userName,
       metadata: {
         userId: userId,
-        productsId: productsId.toString(6),
+        productsId: productsId.toString(),
       },
     });
 
@@ -76,7 +73,6 @@ let endpointSecret;
 endpointSecret = process.env.STRIPE_END_POINT;
 
 const setWebhook = asyncHandler(async (req, res) => {
-  console.log("Hello");
   const payload = await req.rawBody.toString();
   const sig = req.headers["stripe-signature"];
   let event;
@@ -90,6 +86,7 @@ const setWebhook = asyncHandler(async (req, res) => {
 
   if (event.type === "checkout.session.completed") {
     sessionId = event.data.object.id;
+
     const session = await stripe.checkout.sessions.retrieve(sessionId);
     const lineItems = await stripe.checkout.sessions.listLineItems(sessionId, {
       limit: 100,
@@ -97,35 +94,20 @@ const setWebhook = asyncHandler(async (req, res) => {
 
     const customer = await stripe.customers.retrieve(session.customer);
     const productsId = customer.metadata.productsId.split(",");
-    const productsExtraText = productsId.map((item) => {
-      return "prod_" + item;
-    });
 
-    const productData = await Promise.all(
-      productsExtraText.map((id) => stripe.products.retrieve(id))
-    );
+    const productsList = await getProducts(productsId);
 
     createOrder(
       event.data.object,
       lineItems.data,
       customer.metadata.userId,
-      productData
+      productsList
     );
 
-    // let emailTo = session.customer_details.email;
-
-    // const info = await transporter.sendMail({
-    //   from: process.env.email, // sender address
-    //   to: emailTo, // list of receivers
-    //   subject: "Thanks for the payment", // Subject line
-    //   text: "Thanks for the payment", // plain text body
-    //   html: `<b>Hello world?</b>`, // html body
-    // });
-
-    // console.log("Hello: %s", info.messageId);
+    productsList.forEach((element) => {
+      createReview(customer.metadata.userId, customer.name, element);
+    });
   }
-
-  createReview();
 
   res.send().status(200).end();
 });
@@ -137,7 +119,7 @@ const createOrder = async (data, lineItems, userId, productData) => {
     return {
       // id: "DO POPRAWY",
       name: item.description,
-      imageUrl: productData[index].images[0],
+      imageUrl: productData[index].imageUrl,
       price: (item.price.unit_amount / 100).toFixed(2),
       quantity: item.quantity,
     };
@@ -153,6 +135,30 @@ const createOrder = async (data, lineItems, userId, productData) => {
     payment_status: data.payment_status,
   });
 };
+
+async function getProducts(productsId) {
+  const productsList = [];
+  for (const productId of productsId) {
+    const product = await Product.findById(productId);
+    productsList.push(product);
+  }
+  return productsList;
+}
+
+async function createReview(userId, userName, product) {
+  const currentTime = new Date().toISOString();
+
+  await Review.create({
+    userId,
+    userName,
+    userImages: [],
+    userReviewDate: currentTime,
+    usersIdVoted: [],
+    productId: product._id,
+    productName: product.name,
+    productImage: product.imageUrl,
+  });
+}
 
 module.exports = {
   setPayment,

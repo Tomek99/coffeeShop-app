@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ProductReviews.module.scss";
-import axios from "axios";
 import LoaderSpinner from "../../../LoaderSpinner/LoaderSpinner";
-import { useParams } from "react-router-dom";
 import ProductReview from "./ProductReview/ProductReview";
 
 function ProductReviews({ loading, reviews }) {
@@ -11,7 +9,11 @@ function ProductReviews({ loading, reviews }) {
       {loading ? (
         <LoaderSpinner loading={loading} />
       ) : reviews.length !== 0 ? (
-        reviews.map((item, i) => <ProductReview key={i} item={item} />)
+        reviews
+          .sort(
+            (a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate)
+          )
+          .map((item, i) => <ProductReview key={i} item={item} />)
       ) : (
         <p className={styles.noReviews}>No reviews</p>
       )}

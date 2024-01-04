@@ -13,8 +13,7 @@ class ProductsPage {
     wishBtn: (number) => cy.get(`#wishListId${number}`),
   };
 
-  addProductsCart(numberProducts: number): HomePage {
-    const amountProducts = Math.floor(Math.random() * numberProducts + 1);
+  addProductsCart(amountProducts: number): HomePage {
     for (let i = 0; i < amountProducts; i++) {
       const number = CypressHelper.generateRandomNumber(11); //Math.floor(Math.random() * 11); << zastąpić tym w przypadku blędu
       this.elements.productCartBtn(number).click({ force: true });

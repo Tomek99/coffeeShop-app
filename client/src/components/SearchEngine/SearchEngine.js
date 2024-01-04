@@ -64,7 +64,7 @@ function SearchEngine({ isSearchOpen, handleSearch }) {
               <FilterItem item={item} key={index} clearSearch={clearSearch} />
             ))
           ) : value.length > 2 ? (
-            <p style={{ fontSize: "1.3rem" }}>No results</p>
+            <div style={{ fontSize: "1.3rem" }}>No results</div>
           ) : null}
         </div>
       </div>

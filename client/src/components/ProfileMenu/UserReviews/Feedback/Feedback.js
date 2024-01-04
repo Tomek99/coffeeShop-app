@@ -38,8 +38,14 @@ function Feedback({ item }) {
       </div>
       <div className={styles.divRowSecond}>
         <BtnDots />
-        <div className={styles.rating} onClick={handleFeedbackBtn}>
-          <RatingsStars size="large" rate={null} name="no-value" tab={1} />
+        <div className={styles.rating}>
+          <RatingsStars
+            size="large"
+            rate={null}
+            name="no-value"
+            tab={2}
+            handleFeedbackBtn={handleFeedbackBtn}
+          />
         </div>
         <BtnFeedback handleBtn={handleFeedbackBtn} />
         {show ? (

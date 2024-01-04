@@ -34,7 +34,7 @@ function Orders() {
   const navigate = useNavigate();
   const ordersPerPage = 5;
   const pagesVisited = pageNumber * ordersPerPage;
-  const pageCount = Math.round(orderData.length / ordersPerPage);
+  const pageCount = Math.ceil(orderData.length / ordersPerPage);
 
   const handleChangePage = ({ selected }) => {
     setPageNumber(selected);
@@ -69,7 +69,7 @@ function Orders() {
           </div>
           {orderData.length > 5 ? (
             <Pagination
-              pageCount={pageCount + 1}
+              pageCount={pageCount}
               handleChangePage={handleChangePage}
             />
           ) : null}
