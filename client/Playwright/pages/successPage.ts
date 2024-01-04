@@ -14,7 +14,7 @@ export class SuccessPage {
   }
 
   async getSuccessLocator() {
-    await this.page.waitForTimeout(30000);
+    await this.page.waitForURL("**/order/success");
     return await this.successLocator;
   }
 

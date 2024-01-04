@@ -2,13 +2,14 @@ import { Locator, Page } from "@playwright/test";
 import { DeliveryAddressInterface } from "../interfaces/DeliveryAddressInterface";
 import { CompanyAddressInterface } from "../interfaces/CompanyAddressInterface";
 import { InvoiceDetailsInterface } from "../interfaces/InvoiceDetailsInterface";
+import { RecipientDetailsInterface } from "../interfaces/RecipientDetailsInterface";
 
 export class OrderPage {
   private readonly page: Page;
 
   // Delivery
   private readonly carrierLabel: Locator;
-  private readonly pickupLabel: Locator;
+  private readonly pickupShowroomLabel: Locator;
   private readonly packageLockerLabel: Locator;
   private readonly collectionLabel: Locator;
 
@@ -61,7 +62,7 @@ export class OrderPage {
 
     //Delviery
     this.carrierLabel = page.locator('label[for="carrier"]');
-    this.pickupLabel = page.locator('label[for="showroom"]');
+    this.pickupShowroomLabel = page.locator('label[for="showroom"]');
     this.packageLockerLabel = page.locator('label[for="packageLocker"]');
     this.collectionLabel = page.locator('label[for="collectionAtPoint"]');
 
@@ -70,9 +71,9 @@ export class OrderPage {
     this.companyLabel = page.locator("label[for='company']");
 
     //Recipient details
-    this.recipientNameInput = page.getByLabel("Name");
-    this.recipientPhoneInput = page.getByLabel("Phone number");
-    this.recipientEmailInput = page.getByLabel("E-mail");
+    this.recipientNameInput = page.getByPlaceholder("Name");
+    this.recipientPhoneInput = page.getByPlaceholder("Phone number");
+    this.recipientEmailInput = page.getByPlaceholder("E-mail");
 
     //Delivery address
     this.userNameAddressInput = page.locator('input[name="name"]');
@@ -114,8 +115,8 @@ export class OrderPage {
   async clickOnCarrier() {
     await this.carrierLabel.click();
   }
-  async clickOnPickup() {
-    await this.pickupLabel.click();
+  async clickOnPickupShowroom() {
+    await this.pickupShowroomLabel.click();
   }
   async clickOnPackageLocker() {
     await this.packageLockerLabel.click();
@@ -141,6 +142,12 @@ export class OrderPage {
   }
   async fillRecipientEmail(value: string) {
     await this.recipientEmailInput.fill(value);
+  }
+
+  async fillRecipientDetailsForm(data: RecipientDetailsInterface) {
+    await this.recipientNameInput.fill(data.name);
+    await this.recipientPhoneInput.fill(data.phoneNumber);
+    await this.recipientEmailInput.fill(data.email);
   }
 
   //Delivery address

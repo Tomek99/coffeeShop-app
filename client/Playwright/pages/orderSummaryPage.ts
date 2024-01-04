@@ -14,10 +14,14 @@ export class OrderSummaryPage {
   }
 
   async clickOnPurchaseBtn() {
-    this.purchaseBtn.click();
+    await this.purchaseBtn.click();
   }
 
   async clickOnChangeBtn() {
-    this.changeBtn.click();
+    await this.changeBtn.click();
+  }
+
+  async getTextContent(value: string) {
+    return await this.page.locator(`//p[text()='${value}']`);
   }
 }
