@@ -16,7 +16,9 @@ test.describe("Purchase products with invalid data", () => {
     BaseTest.performBasicStepsForCheckout(page);
   });
 
-  test("skip filling delivery and payment form", async ({ page }) => {
+  test("should display an error if the delivery and payment form is omitted", async ({
+    page,
+  }) => {
     const orderPage = new OrderPage(page);
     await orderPage.clickOnSummaryBtn();
 
@@ -26,7 +28,9 @@ test.describe("Purchase products with invalid data", () => {
     await expect(errors.nth(0)).toContainText("Required");
   });
 
-  test("skip ticking delivery form", async ({ page }) => {
+  test("should display an error if the delivery form is not ticked", async ({
+    page,
+  }) => {
     const orderPage = new OrderPage(page);
     await orderPage.clickOnPrivatePerson();
     await orderPage.fillDeliveryAddressForm(deliveryAddressData);
@@ -38,7 +42,9 @@ test.describe("Purchase products with invalid data", () => {
     await expect(errors).toContainText("Required");
   });
 
-  test("skip ticking 'purchasking as' form", async ({ page }) => {
+  test("should display an error if the purchasing as  form is not selected", async ({
+    page,
+  }) => {
     const orderPage = new OrderPage(page);
     await orderPage.clickOnCarrier();
     await orderPage.fillDeliveryAddressForm(deliveryAddressData);
@@ -50,7 +56,9 @@ test.describe("Purchase products with invalid data", () => {
     await expect(errors).toContainText("Required");
   });
 
-  test("skip filling delivery address form", async ({ page }) => {
+  test("should display an error if delivery address is not filled", async ({
+    page,
+  }) => {
     const orderPage = new OrderPage(page);
     await orderPage.clickOnCarrier();
     await orderPage.clickOnPrivatePerson();
@@ -62,7 +70,9 @@ test.describe("Purchase products with invalid data", () => {
     await expect(errors.nth(5)).toContainText("Required");
   });
 
-  test("skip ticking payment method form", async ({ page }) => {
+  test("should display an error if payment method is not checked", async ({
+    page,
+  }) => {
     const orderPage = new OrderPage(page);
     await orderPage.clickOnCarrier();
     await orderPage.clickOnPrivatePerson();

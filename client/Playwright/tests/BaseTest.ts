@@ -1,8 +1,13 @@
-import { Page } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 import { BrowserstackHomePage } from "../pages/homePage";
 import { LoginPage } from "../pages/loginPage";
 import { ProductsPage } from "../pages/productsPage";
 import { ViewCartPage } from "../pages/viewCartPage";
+import { deliveryAddressData } from "../data/deliveryAddressData";
+import { OrderPage } from "../pages/orderPage";
+import { OrderSummaryPage } from "../pages/orderSummaryPage";
+import { StripePage } from "../pages/stripePage";
+import { SuccessPage } from "../pages/successPage";
 
 export class BaseTest {
   // checkoutValidDataTest && checkoutInvalidDataTest
@@ -26,5 +31,17 @@ export class BaseTest {
     await viewCartPage.clickOnCheckoutBtn();
   }
 
-  public static performBasicStepsForkkk(page: Page) {}
+  public static async performBasicStepsForUserAddingReview(page: Page) {
+    const homePage = new BrowserstackHomePage(page);
+    const loginPage = new LoginPage(page);
+
+    await homePage.goToHomePage();
+    await homePage.hoverOverOnUserNavBtn();
+    await homePage.clickOnLoginBtn();
+    await loginPage.fillEmailInput("test1@gmail.com");
+    await loginPage.fillPasswordInput("Test1@gmail");
+    await loginPage.clickOnLoginBtn();
+    await homePage.hoverOverOnUserNavBtn();
+    await homePage.clickOnReviewsBtn();
+  }
 }
