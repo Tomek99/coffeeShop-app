@@ -8,6 +8,7 @@ import { OrderPage } from "../pages/orderPage";
 import { OrderSummaryPage } from "../pages/orderSummaryPage";
 import { StripePage } from "../pages/stripePage";
 import { SuccessPage } from "../pages/successPage";
+import { ReviewsPage } from "../pages/reviewsPage";
 
 export class BaseTest {
   // checkoutValidDataTest && checkoutInvalidDataTest
@@ -43,5 +44,12 @@ export class BaseTest {
     await loginPage.clickOnLoginBtn();
     await homePage.hoverOverOnUserNavBtn();
     await homePage.clickOnReviewsBtn();
+  }
+
+  public static async navigateToFeedbackPage(page: Page): Promise<ReviewsPage> {
+    const reviewsPage = new ReviewsPage(page);
+    await reviewsPage.clickOnReviewsBtn();
+    await reviewsPage.clickOnGiveFeedbackBtn();
+    return reviewsPage;
   }
 }

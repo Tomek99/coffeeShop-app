@@ -7,6 +7,7 @@ export class ReviewsPage {
   private readonly textArea: Locator;
   private readonly errorMessage: Locator;
   private readonly reviewsBtn: Locator;
+  private readonly closeReviewFormBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -17,6 +18,9 @@ export class ReviewsPage {
     this.textArea = page.getByPlaceholder("Your comments");
     this.errorMessage = page.getByText("Required");
     this.reviewsBtn = page.locator("//div/a[text()='Reviews']");
+    this.closeReviewFormBtn = page
+      .locator("section")
+      .getByTestId("btnClose1231");
   }
 
   async clickOnGiveFeedbackBtn() {
@@ -29,6 +33,10 @@ export class ReviewsPage {
 
   async clickOnReviewsBtn() {
     await this.reviewsBtn.click();
+  }
+
+  async clickOnCloseReviewFormBtn() {
+    await this.closeReviewFormBtn.click();
   }
 
   async fillTextArea(value: string) {
@@ -44,5 +52,9 @@ export class ReviewsPage {
 
   async getErrors() {
     return await this.errorMessage;
+  }
+
+  async getUserMessage(text: string) {
+    return await this.page.locator(`//p[text()='${text}']`).first();
   }
 }
