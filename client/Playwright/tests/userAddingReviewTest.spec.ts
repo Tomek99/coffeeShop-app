@@ -45,26 +45,22 @@ async function checkAsseration(reviewsPage: ReviewsPage, errorsCount: number) {
   await expect(errors.nth(0)).toHaveText("Required");
 }
 
-test.describe("add user review with invalid data", () => {
-  test("display error message below rating when saving with lack rating", async ({
-    page,
-  }) => {
+test.describe("add review product with invalid data", () => {
+  test("should display error if user added only comment", async ({ page }) => {
     const reviewsPage = await BaseTest.navigateToFeedbackPage(page);
     await reviewsPage.fillTextArea("test");
     await reviewsPage.clickOnSaveBtn();
     await checkAsseration(reviewsPage, 1);
   });
 
-  test("display error message below comment when saving with lack comment", async ({
-    page,
-  }) => {
+  test("should display error if user checked only rating", async ({ page }) => {
     const reviewsPage = await BaseTest.navigateToFeedbackPage(page);
     await reviewsPage.giveRating(4);
     await reviewsPage.clickOnSaveBtn();
     await checkAsseration(reviewsPage, 1);
   });
 
-  test("display error message below comment & rating when form is empty", async ({
+  test("should display error if user tries to send an empty form", async ({
     page,
   }) => {
     const reviewsPage = await BaseTest.navigateToFeedbackPage(page);
