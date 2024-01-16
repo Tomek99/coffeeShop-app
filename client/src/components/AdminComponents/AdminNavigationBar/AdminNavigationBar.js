@@ -16,24 +16,41 @@ import { FaUsers } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { TbTriangleSquareCircle } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import AdminUnorderedList from "./AdminUnorderedList/AdminUnorderedList";
 
 const clientFacing = [
-  { text: "Products", icon: <BsCartFill size="20" /> },
-  { text: "Customers", icon: <FaUsers size="20" /> },
-  { text: "Transactions", icon: <HiOutlineDocumentChartBar size="20" /> },
-  { text: "Geography", icon: <BsGlobeAmericas size="20" /> },
+  { text: "Products", icon: <BsCartFill size="20" />, path: "products" },
+  { text: "Customers", icon: <FaUsers size="20" />, path: "customers" },
+  {
+    text: "Transactions",
+    icon: <HiOutlineDocumentChartBar size="20" />,
+    path: "transactions",
+  },
+  { text: "Geography", icon: <BsGlobeAmericas size="20" />, path: "geography" },
 ];
 
 const sales = [
-  { text: "Overview", icon: <RiComputerLine size="20" /> },
-  { text: "Daily", icon: <BsCalendar4Event size="20" /> },
-  { text: "Monthly", icon: <BsCalendar3 size="20" /> },
-  { text: "Breakdown", icon: <TbTriangleSquareCircle size="20" /> },
+  { text: "Overview", icon: <RiComputerLine size="20" />, path: "overview" },
+  { text: "Daily", icon: <BsCalendar4Event size="20" />, path: "daily" },
+  { text: "Monthly", icon: <BsCalendar3 size="20" />, path: "monthly" },
+  {
+    text: "Breakdown",
+    icon: <TbTriangleSquareCircle size="20" />,
+    path: "breakdown",
+  },
 ];
 
 const management = [
-  { text: "Admin", icon: <MdOutlineAdminPanelSettings size="20" /> },
-  { text: "Performance", icon: <MdOutlineTrendingUp size="20" /> },
+  {
+    text: "Admin",
+    icon: <MdOutlineAdminPanelSettings size="20" />,
+    path: "admin-manaagement",
+  },
+  {
+    text: "Performance",
+    icon: <MdOutlineTrendingUp size="20" />,
+    path: "performance",
+  },
 ];
 
 function AdminNavigationBar({ openNav, handleNav }) {
@@ -60,39 +77,10 @@ function AdminNavigationBar({ openNav, handleNav }) {
           <span>Dashboard</span>
         </button>
       </div>
-      <ul className={styles.navBar}>
-        <span className={styles.header}>Client Facing</span>
-        {clientFacing.map((el, index) => (
-          <li key={index} className={styles.adminLiElement}>
-            <button>
-              {el.icon}
-              {el.text}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <ul className={styles.navBar}>
-        <span className={styles.header}>Sales</span>
-        {sales.map((el, index) => (
-          <li key={index} className={styles.adminLiElement}>
-            <button>
-              {el.icon}
-              {el.text}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <ul className={styles.navBar}>
-        <span className={styles.header}>Management</span>
-        {management.map((el, index) => (
-          <li key={index} className={styles.adminLiElement}>
-            <button>
-              {el.icon}
-              {el.text}
-            </button>
-          </li>
-        ))}
-      </ul>
+
+      <AdminUnorderedList header={"Client Facing"} arrayLinks={clientFacing} />
+      <AdminUnorderedList header={"Sales"} arrayLinks={sales} />
+      <AdminUnorderedList header={"Management"} arrayLinks={management} />
     </div>
   );
 }

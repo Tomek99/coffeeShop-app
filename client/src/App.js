@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./Contexts/Context";
-import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import {
   Home,
   Blog,
@@ -39,6 +39,9 @@ import {
   PaymentSuccess,
   PaymentCanceled,
   ProtectedOrder,
+  AdminProducts,
+  AdminCustomers,
+  AdminTransactions,
 } from "./components";
 
 function App() {
@@ -406,7 +409,10 @@ function App() {
             return <NavigationBarOrder />;
 
           case "/admin":
-            return <div></div>;
+          case "/admin/products":
+          case "/admin/customers":
+          case "/admin/transactions":
+            return <null />;
           default:
             return <NavigationBar />;
         }
@@ -520,7 +526,11 @@ function App() {
           <Route path="order/canceled" element={<PaymentCanceled />} />
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
-          <Route path="admin" element={<AdminPage />} />
+          <Route path="admin" element={<AdminPage />}>
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="customers" element={<AdminCustomers />} />
+            <Route path="transactions" element={<AdminTransactions />} />
+          </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
@@ -535,7 +545,10 @@ function App() {
             return <FooterOrder />;
 
           case "/admin":
-            return <div></div>;
+          case "/admin/products":
+          case "/admin/customers":
+          case "/admin/transactions":
+            return null;
           default:
             return <Footer />;
         }

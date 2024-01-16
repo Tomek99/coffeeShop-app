@@ -46,6 +46,8 @@ export class BaseTest {
     await homePage.clickOnReviewsBtn();
   }
 
+  public static async placeOrder() {}
+
   public static async navigateToFeedbackPage(page: Page): Promise<ReviewsPage> {
     const reviewsPage = new ReviewsPage(page);
     await reviewsPage.clickOnReviewsBtn();

@@ -1,0 +1,33 @@
+.SingleProduct {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-thick-bottom);
+  padding-bottom: 10px;
+
+  .singleProductImg {
+    max-width: 60px;
+    width: 100%;
+    height: 100px;
+  }
+
+  .productContent {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1.2rem;
+  }
+
+  .actionBtns {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-right: 20px;
+  }
+}
+
+.SingleProduct:last-child {
+  box-shadow: none;
+}

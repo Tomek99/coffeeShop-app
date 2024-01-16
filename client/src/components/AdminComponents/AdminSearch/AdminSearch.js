@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./AdminBar.module.scss";
+import styles from "./AdminSearch.module.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 function AdminBar({ handleNav }) {

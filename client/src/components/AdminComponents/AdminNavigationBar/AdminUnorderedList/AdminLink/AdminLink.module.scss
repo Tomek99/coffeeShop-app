@@ -1,0 +1,16 @@
+.adminLiElement {
+  .adminLink {
+    color: var(--text-color);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.5rem;
+    transition: 0.3s linear;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+}

@@ -1,9 +1,13 @@
 .AdminPage {
   display: grid;
-  grid-template-columns: 250px 1fr;
   gap: 30px;
-  color: #fff;
+  color: #000;
   width: 100%;
+
+  .divRightSide {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+  }
 }
 
 @media (max-width: 1000px) {
