@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./AdminProducts.module.scss";
 import axios from "axios";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
-import AdminSingleProduct from "./AdminSingleProduct/AdminSingleProduct";
+import AdminProduct from "./AdminProduct/AdminProduct";
 
 function AdminProducts() {
   const [isLoaded, setLoading] = useState(true);
@@ -29,7 +29,7 @@ function AdminProducts() {
   ) : (
     <div className={styles.AdminProducts}>
       {products.map((product, index) => (
-        <AdminSingleProduct product={product} key={index} />
+        <AdminProduct product={product} key={index} />
       ))}
     </div>
   );

@@ -1,0 +1,18 @@
+.AdminProductDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 1.2rem;
+
+  span {
+    &:nth-child(odd) {
+      font-weight: bold;
+    }
+  }
+}
+
+// .AdminProductDetails:nth-child(odd) {
+//   font-weight: bolder;
+//   background-color: red;
+// }

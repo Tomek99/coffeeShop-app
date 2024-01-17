@@ -4,6 +4,11 @@
   justify-content: flex-end;
   gap: 5px;
   margin-right: 20px;
+
+  .adminActionBtn {
+    background-color: transparent;
+    cursor: pointer;
+  }
 }
 @media (max-width: 420px) {
   .AdminActionBtns {
