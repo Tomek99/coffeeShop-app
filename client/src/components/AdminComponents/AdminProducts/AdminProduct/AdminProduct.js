@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import styles from "./AdminProduct.module.scss";
 import AdminActionBtns from "./AdminActionBtns/AdminActionBtns";
 import AdminProductDetails from "./AdminProductDetails/AdminProductDetails";
+import AdminEditProductDetails from "./AdminEditProductDetails/AdminEditProductDetails";
+import AdminDeleteProduct from "./AdminDeleteProduct/AdminDeleteProduct";
 
 function AdminProduct({ product }) {
-  const [isAdminProductDetailsDisplayed, setIsAdminProductDetailsDisplayed] =
-    useState(false);
+  const [action, setAction] = useState(null);
 
-  function handleAdminProductDetails() {
-    setIsAdminProductDetailsDisplayed(!isAdminProductDetailsDisplayed);
+  function handleAction(currentAction) {
+    if (currentAction === action) {
+      setAction(null);
+    } else {
+      setAction(currentAction);
+    }
   }
   return (
     <section className={styles.AdminProduct}>
@@ -28,13 +33,25 @@ function AdminProduct({ product }) {
             {product.oldPrice === null ? null : `- $${product.oldPrice}`}
           </span>
         </div>
-        <AdminActionBtns
-          handleAdminProductDetails={handleAdminProductDetails}
-        />
+        <AdminActionBtns handleAction={handleAction} />
       </div>
-      {isAdminProductDetailsDisplayed ? (
-        <AdminProductDetails productDetails={product} />
-      ) : null}
+      {(() => {
+        switch (action) {
+          case "viewDetails":
+            return <AdminProductDetails productDetails={product} />;
+          case "editDetails":
+            return <AdminEditProductDetails productDetails={product} />;
+          case "deleteProduct":
+            return (
+              <AdminDeleteProduct
+                handleAction={handleAction}
+                productId={product._id}
+              />
+            );
+          default:
+            return null;
+        }
+      })()}
     </section>
   );
 }

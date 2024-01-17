@@ -9,7 +9,6 @@ const bcrypt = require("bcrypt");
 //@route GET /api/goals
 //@access Private
 const getUsers = asyncHandler(async (req, res) => {
-  console.log("hello");
   const users = await User.find();
 
   res.status(200).json(users);

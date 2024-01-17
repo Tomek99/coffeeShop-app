@@ -11,6 +11,11 @@ const getProduct = asyncHandler(async (req, res) => {
   res.status(200).send(product);
 });
 
+const deleteProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findByIdAndDelete(req.body.productId);
+  res.status(200).send(product);
+});
+
 const setProduct = asyncHandler(async (req, res) => {
   const product = await Product.create({
     imageUrl: req.body.imageUrl,
@@ -36,4 +41,5 @@ module.exports = {
   getProducts,
   getProduct,
   setProduct,
+  deleteProduct,
 };

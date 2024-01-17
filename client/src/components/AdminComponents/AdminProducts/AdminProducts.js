@@ -28,6 +28,7 @@ function AdminProducts() {
     <LoaderSpinner />
   ) : (
     <div className={styles.AdminProducts}>
+      <p>add product</p>
       {products.map((product, index) => (
         <AdminProduct product={product} key={index} />
       ))}

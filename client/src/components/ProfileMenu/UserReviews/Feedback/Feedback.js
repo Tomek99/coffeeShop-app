@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import styles from "./Feedback.module.scss";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import RatingsStars from "../../../RatingStars/RatingStars";
 import BtnDots from "../../../Buttons/BtnDots/BtnDots";
 import BtnFeedback from "../../../Buttons/BtnFeedback/BtnFeedback";

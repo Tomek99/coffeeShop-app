@@ -1,4 +1,5 @@
 .AdminProductDetails {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -23,16 +24,30 @@
       dt {
         text-transform: capitalize;
       }
+
+      dd {
+        word-wrap: break-word;
+      }
     }
   }
-  .producText {
-    &:nth-child(odd) {
-      font-weight: bold;
-    }
+
+  .producText:nth-child(odd) {
+    font-weight: bold;
   }
 }
 
-// .AdminProductDetails:nth-child(odd) {
-//   font-weight: bolder;
-//   background-color: red;
-// }
+@media (max-width: 800px) {
+  dd {
+    max-width: 600px;
+  }
+}
+@media (max-width: 680px) {
+  dd {
+    max-width: 320px;
+  }
+}
+@media (max-width: 420px) {
+  dd {
+    max-width: 280px;
+  }
+}
