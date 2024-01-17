@@ -5,7 +5,27 @@
   margin-top: 10px;
   font-size: 1.2rem;
 
-  span {
+  .headerText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  dl {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .producText {
+      display: flex;
+      gap: 5px;
+
+      dt {
+        text-transform: capitalize;
+      }
+    }
+  }
+  .producText {
     &:nth-child(odd) {
       font-weight: bold;
     }

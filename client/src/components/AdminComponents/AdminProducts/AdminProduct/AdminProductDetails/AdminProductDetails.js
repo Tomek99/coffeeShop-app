@@ -2,64 +2,32 @@ import React from "react";
 import styles from "./AdminProductDetails.module.scss";
 
 function AdminProductDetails({ productDetails }) {
-  console.log(productDetails.oldPrice);
   return (
     <div className={styles.AdminProductDetails}>
-      <span>
-        ID:
-        {productDetails._id}
-      </span>
-      <span>
-        Product name:
-        {productDetails.name}
-      </span>
-      <span>
-        Image url:
-        {productDetails.imageUrl}
-      </span>
-      <span>
-        Price:
-        {productDetails.price}
-      </span>
-      <span>
-        Old Price:
-        {productDetails.oldPrice === null ? "null" : productDetails.oldPrice}
-      </span>
-      <span>
-        Origin:
-        {productDetails.origin}
-      </span>
-      <span>
-        Brand:
-        {productDetails.brand}
-      </span>
-      <span>
-        Intensity:
-        {productDetails.intensity}
-      </span>
-      <span>
-        Type:
-        {productDetails.type}
-      </span>
-      <span>
-        Weight:
-        {productDetails.weight}
-      </span>
-      <span>
-        Available:
-        {productDetails.available}
-      </span>
-
-      <span> Product Ratings:</span>
-      <span> Product Ratings Average:</span>
-      <span>
-        CreatedAt:
-        {productDetails.createdAt}
-      </span>
-      <span>
-        UpdatedAt:
-        {productDetails.updatedAt}
-      </span>
+      <p className={styles.headerText}>Product details</p>
+      <dl>
+        {Object.keys(productDetails).map((objectKey, index) =>
+          objectKey !== "__v" ? (
+            <span key={index} className={styles.producText}>
+              <dt>{objectKey}:</dt>
+              <dd>
+                {(() => {
+                  switch (objectKey) {
+                    case "productRatings":
+                      return productDetails[objectKey].map(
+                        (value) => value + ", "
+                      );
+                    case "available":
+                      return productDetails[objectKey].toString();
+                    default:
+                      return productDetails[objectKey];
+                  }
+                })()}
+              </dd>
+            </span>
+          ) : null
+        )}
+      </dl>
     </div>
   );
 }
