@@ -55,6 +55,7 @@ function App() {
   // }
   /*----------- location ----------- */
   const location = useLocation();
+  const setColumnPattern = location.pathname.includes("/admin");
 
   /*----------- products ----------- */
   const [products, setProducts] = useState([]);
@@ -417,9 +418,7 @@ function App() {
             return <NavigationBar />;
         }
       })()}
-      <section
-        className={location.pathname !== "/admin" ? "columnWeb" : "adminWeb"}
-      >
+      <section className={setColumnPattern ? "adminWeb" : "columnWeb"}>
         <div className="absoluteDivApp">
           <ToastContainer
             position="top-center"

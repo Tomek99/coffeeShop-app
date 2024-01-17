@@ -31,3 +31,18 @@
 .SingleProduct:last-child {
   box-shadow: none;
 }
+
+@media (max-width: 420px) {
+  .SingleProduct {
+    flex-direction: column !important;
+
+    .productContent {
+      align-items: center;
+    }
+
+    .actionBtns {
+      margin-right: 0;
+      align-items: center;
+    }
+  }
+}

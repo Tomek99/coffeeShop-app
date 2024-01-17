@@ -13,7 +13,7 @@
 @media (max-width: 1000px) {
   .AdminPage {
     grid-template-columns: auto;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr !important;
     gap: 0;
   }
 }

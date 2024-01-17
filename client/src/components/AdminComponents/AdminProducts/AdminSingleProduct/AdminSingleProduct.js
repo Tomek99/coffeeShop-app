@@ -1,8 +1,6 @@
 import React from "react";
-import styles from "./SingleProduct.module.scss";
-import { CiEdit } from "react-icons/ci";
-import { ImBin } from "react-icons/im";
-import { BsEye } from "react-icons/bs";
+import styles from "./AdminSingleProduct.module.scss";
+import AdminActionBtns from "./AdminActionBtns/AdminActionBtns";
 
 function SingleProduct({ product }) {
   return (
@@ -19,11 +17,7 @@ function SingleProduct({ product }) {
           ${product.price} - ${product.oldPrice}
         </span>
       </div>
-      <div className={styles.actionBtns}>
-        <BsEye size={25} />
-        <CiEdit size={25} />
-        <ImBin size={25} />
-      </div>
+      <AdminActionBtns />
     </section>
   );
 }

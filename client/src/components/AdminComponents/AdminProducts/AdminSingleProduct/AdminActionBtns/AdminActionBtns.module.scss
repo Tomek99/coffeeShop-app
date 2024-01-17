@@ -1,0 +1,13 @@
+.AdminActionBtns {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  margin-right: 20px;
+}
+@media (max-width: 420px) {
+  .AdminActionBtns {
+    margin-right: 0;
+    align-items: center;
+  }
+}
