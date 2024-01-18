@@ -40,7 +40,12 @@ function AdminProduct({ product }) {
           case "viewDetails":
             return <AdminProductDetails productDetails={product} />;
           case "editDetails":
-            return <AdminEditProductDetails productDetails={product} />;
+            return (
+              <AdminEditProductDetails
+                productDetails={product}
+                handleAction={handleAction}
+              />
+            );
           case "deleteProduct":
             return (
               <AdminDeleteProduct

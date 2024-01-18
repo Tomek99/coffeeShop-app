@@ -1,0 +1,14 @@
+.BtnAddNewProduct {
+  align-self: flex-start;
+  background-color: var(--green);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--bg);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.BtnAddNewProduct:hover {
+  background-color: var(--green-darken);
+}

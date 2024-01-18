@@ -1,0 +1,17 @@
+.BtnCloseEditProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--bg);
+  background-color: var(--red);
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.3s linear;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--red-darken);
+  }
+}

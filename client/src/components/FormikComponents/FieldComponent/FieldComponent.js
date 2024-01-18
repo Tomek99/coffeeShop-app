@@ -1,5 +1,5 @@
-import { Field } from "formik";
 import React from "react";
+import { Field } from "formik";
 import ErrMessage from "../../ErrorMessage/ErrMessage";
 import styles from "./FieldComponent.module.scss";
 

@@ -1,0 +1,86 @@
+[
+  {
+    "type": "text",
+    "name": "_id",
+    "placeholder": "id",
+    "inputDisabled": true
+  },
+  {
+    "type": "text",
+    "name": "imageUrl",
+    "placeholder": "Image url",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "name",
+    "placeholder": "Product name",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "price",
+    "placeholder": "Price",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "oldPrice",
+    "placeholder": "Old price",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "quantity",
+    "placeholder": "Quantity",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "origin",
+    "placeholder": "Origin",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "brand",
+    "placeholder": "Brand",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "intensity",
+    "placeholder": "Intensity",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "weight",
+    "placeholder": "Weight",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "available",
+    "placeholder": "Availability",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
+    "name": "createdAt",
+    "placeholder": "Created at",
+    "inputDisabled": true
+  },
+  {
+    "type": "text",
+    "name": "updatedAt",
+    "placeholder": "Updated at",
+    "inputDisabled": true
+  },
+  {
+    "type": "text",
+    "name": "productRatings",
+    "placeholder": "Product raitings",
+    "inputDisabled": true
+  }
+]

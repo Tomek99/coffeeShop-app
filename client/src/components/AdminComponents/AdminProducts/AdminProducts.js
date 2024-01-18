@@ -3,10 +3,17 @@ import styles from "./AdminProducts.module.scss";
 import axios from "axios";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import AdminProduct from "./AdminProduct/AdminProduct";
+import BtnAddNewProduct from "../../Buttons/BtnAddNewProduct/BtnAddNewProduct";
+import AdminAddNewProduct from "./AdminProduct/AdminAddNewProduct/AdminAddNewProduct";
 
 function AdminProducts() {
   const [isLoaded, setLoading] = useState(true);
   const [products, setProducts] = useState(true);
+  const [newProductIsDisplayed, setNewProductIsDisplayed] = useState(false);
+
+  function handleNewProductIsDisplayed() {
+    setNewProductIsDisplayed(!newProductIsDisplayed);
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -28,7 +35,16 @@ function AdminProducts() {
     <LoaderSpinner />
   ) : (
     <div className={styles.AdminProducts}>
-      <p>add product</p>
+      <div>
+        <BtnAddNewProduct
+          handleNewProductIsDisplayed={handleNewProductIsDisplayed}
+        />
+        {newProductIsDisplayed ? (
+          <AdminAddNewProduct
+            handleNewProductIsDisplayed={handleNewProductIsDisplayed}
+          />
+        ) : null}
+      </div>
       {products.map((product, index) => (
         <AdminProduct product={product} key={index} />
       ))}
