@@ -8,6 +8,11 @@
     display: grid;
     grid-template-rows: 100px 1fr;
   }
+
+  .additionContainer {
+    background-color: var(--light-greay);
+    width: 250px;
+  }
 }
 
 @media (max-width: 1000px) {

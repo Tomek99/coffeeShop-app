@@ -49,6 +49,12 @@
   },
   {
     "type": "text",
+    "name": "type",
+    "placeholder": "Type",
+    "inputDisabled": false
+  },
+  {
+    "type": "text",
     "name": "intensity",
     "placeholder": "Intensity",
     "inputDisabled": false

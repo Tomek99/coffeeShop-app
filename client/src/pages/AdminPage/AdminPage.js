@@ -15,7 +15,7 @@ function AdmingPage() {
     ? "auto"
     : windowWidth <= 1000
     ? "auto"
-    : "250px 1fr";
+    : "250px 1fr auto";
 
   return (
     <div
@@ -27,6 +27,9 @@ function AdmingPage() {
         <AdminSearch handleNav={handleNav} />
         <Outlet />
       </div>
+      {windowWidth <= 1400 ? null : (
+        <div className={styles.additionContainer}></div>
+      )}
     </div>
   );
 }

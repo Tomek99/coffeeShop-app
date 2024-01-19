@@ -20,7 +20,7 @@ const setProduct = asyncHandler(async (req, res) => {
   const product = await Product.create({
     imageUrl: req.body.imageUrl,
     name: req.body.name,
-    newPrice: req.body.newPrice,
+    price: req.body.price,
     oldPrice: req.body.oldPrice,
     quantity: req.body.quantity,
     origin: req.body.origin,
@@ -28,13 +28,35 @@ const setProduct = asyncHandler(async (req, res) => {
     type: req.body.type,
     weight: req.body.weight,
     brand: req.body.brand,
-    rate: req.body.rate,
     available: req.body.available,
   });
+  res.send(product).status(200);
+});
 
-  res.send(product);
-
-  res.status(200);
+const updateProduct = asyncHandler(async (req, res) => {
+  try {
+    const product = await Product.findByIdAndUpdate(req.body._id, {
+      imageUrl: req.body.imageUrl,
+      name: req.body.name,
+      price: req.body.price,
+      oldPrice: req.body.oldPrice,
+      quantity: req.body.quantity,
+      origin: req.body.origin,
+      intensity: req.body.intensity,
+      type: req.body.type,
+      weight: req.body.weight,
+      brand: req.body.brand,
+      available: req.body.available,
+    });
+    // Check if product is null (not found)
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    res.status(200).json(product);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 module.exports = {
@@ -42,4 +64,5 @@ module.exports = {
   getProduct,
   setProduct,
   deleteProduct,
+  updateProduct,
 };

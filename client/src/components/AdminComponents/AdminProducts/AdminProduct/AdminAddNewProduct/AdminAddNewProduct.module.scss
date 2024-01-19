@@ -1,0 +1,11 @@
+.AdminAddNewProduct {
+  margin-top: 10px;
+
+  .btnsActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
