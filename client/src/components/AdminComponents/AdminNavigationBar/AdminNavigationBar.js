@@ -72,10 +72,11 @@ function AdminNavigationBar({ openNav, handleNav }) {
         </Link>
       </div>
       <div className={openNav ? styles.divDashboard : styles.divDashboard}>
-        <button className={styles.dashboardBtn}>
+        <Link to={""} className={styles.dashboardBtn}>
+          {" "}
           <AiOutlineHome size="20" />
-          <span>Dashboard</span>
-        </button>
+          Dashboard
+        </Link>
       </div>
 
       <AdminUnorderedList header={"Client Facing"} arrayLinks={clientFacing} />

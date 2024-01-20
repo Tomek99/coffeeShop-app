@@ -22,9 +22,9 @@
   }
 
   .btnCancell {
-    background-color: var(--green);
+    background-color: var(--main-color);
     &:hover {
-      background-color: var(--green-darken);
+      background-color: var(--main-color-darken);
     }
   }
 }

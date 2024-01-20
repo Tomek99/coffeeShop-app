@@ -1,6 +1,6 @@
 .BtnConfirm {
   align-self: flex-start;
-  background-color: var(--green);
+  background-color: var(--main-color);
   padding: 10px;
   border-radius: 8px;
   color: var(--bg);
@@ -9,6 +9,6 @@
   transition: all 0.3s linear;
 
   &:hover {
-    background-color: var(--green-darken);
+    background-color: var(--main-color-darken);
   }
 }
