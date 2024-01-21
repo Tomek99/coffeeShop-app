@@ -45,3 +45,5 @@ export { default as AdminTransactions } from "./AdminComponents/AdminTransaction
 export { default as AdminProducts } from "./AdminComponents/AdminProducts/AdminProducts";
 export { default as AdminCustomers } from "./AdminComponents/AdminCustomers/AdminCustomers";
 export { default as AdminSearch } from "./AdminComponents/AdminSearch/AdminSearch";
+export { default as AdminLoginPage } from "./AdminComponents/AdminLoginPage/AdminLoginPage";
+export { default as AdminDashboard } from "./AdminComponents/AdminDashboard/AdminDashboard";

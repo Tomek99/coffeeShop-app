@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import styles from "./AdminPage.module.scss";
 import { Outlet } from "react-router-dom";
-import { AdminNavigationBar, AdminSearch } from "../../components";
+import {
+  AdminLoginPage,
+  AdminNavigationBar,
+  AdminSearch,
+} from "../../components";
 import { useWindowWidth } from "@react-hook/window-size";
 
 function AdmingPage() {
   const [openNav, setOpenNav] = useState(false);
+  const [isAdminMode, setIsAdminMode] = useState(false);
   const windowWidth = useWindowWidth();
   function handleNav() {
     setOpenNav(!openNav);
+  }
+
+  function handleAdminMode() {
+    setIsAdminMode(!isAdminMode);
   }
 
   const setGridColumnTemplate = openNav
@@ -17,7 +26,7 @@ function AdmingPage() {
     ? "auto"
     : "250px 1fr auto";
 
-  return (
+  return isAdminMode ? (
     <div
       className={styles.AdminPage}
       style={{ gridTemplateColumns: setGridColumnTemplate }}
@@ -31,6 +40,8 @@ function AdmingPage() {
         <div className={styles.additionContainer}></div>
       )}
     </div>
+  ) : (
+    <AdminLoginPage handleAdminMode={handleAdminMode} />
   );
 }
 
