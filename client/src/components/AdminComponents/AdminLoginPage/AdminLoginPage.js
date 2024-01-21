@@ -27,6 +27,8 @@ function AdminLoginPage({ handleAdminMode }) {
         initialValues={{ adminLogin: "", adminPassword: "" }}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
+        validateOnBlur={false}
+        validateOnChange={false}
       >
         <Form className={styles.adminLoginForm}>
           <fieldset className={styles.adminPanelFieldset}>

@@ -42,6 +42,7 @@ import {
   AdminProducts,
   AdminCustomers,
   AdminTransactions,
+  AdminDashboard,
 } from "./components";
 
 function App() {
@@ -526,6 +527,7 @@ function App() {
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
           <Route path="admin" element={<AdminPage />}>
+            <Route path="" element={<AdminDashboard />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="transactions" element={<AdminTransactions />} />
