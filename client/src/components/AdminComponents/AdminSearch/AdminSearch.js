@@ -2,15 +2,7 @@ import React from "react";
 import styles from "./AdminSearch.module.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
-function AdminBar({ handleNav, handleLogin }) {
-  const navigate = useNavigate();
-
-  function logout() {
-    handleLogin();
-    navigate(`/`);
-  }
-
+function AdminBar({ handleNav }) {
   return (
     <div className={styles.AdminBar}>
       <div className={styles.divSecondBar}>
@@ -26,9 +18,7 @@ function AdminBar({ handleNav, handleLogin }) {
           <BsSearch size={30} className={styles.iconSearch} />
         </div>
       </div>
-      <button className={styles.btnLogOut} onClick={logout}>
-        Log out
-      </button>
+      {/* <div>ProfileRight</div> */}
     </div>
   );
 }

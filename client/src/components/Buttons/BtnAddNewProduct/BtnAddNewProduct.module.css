@@ -1,6 +1,6 @@
 .BtnAddNewProduct {
   align-self: flex-start;
-  background-color: var(--main-color);
+  background-color: var(--green);
   padding: 10px;
   border-radius: 8px;
   color: var(--bg);
@@ -10,5 +10,5 @@
 }
 
 .BtnAddNewProduct:hover {
-  background-color: var(--main-color-darken);
+  background-color: var(--green-darken);
 }

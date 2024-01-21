@@ -9,6 +9,7 @@ function AdminDeleteProduct({ handleAction, productId }) {
       { data: { productId } }
     );
     window.location.reload();
+    console.log(data);
   }
 
   return (

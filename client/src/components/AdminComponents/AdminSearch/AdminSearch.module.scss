@@ -1,10 +1,8 @@
 .AdminBar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding-top: 20px;
   padding-left: 10px;
-  width: 100%;
 
   .divSecondBar {
     display: flex;
@@ -34,14 +32,6 @@
     background-color: transparent;
     color: var(--text-color);
     cursor: pointer;
-  }
-
-  .btnLogOut {
-    cursor: pointer;
-    padding: 10px;
-    color: var(--bg);
-    background-color: var(--main-color);
-    border-radius: 8px;
   }
 }
 
