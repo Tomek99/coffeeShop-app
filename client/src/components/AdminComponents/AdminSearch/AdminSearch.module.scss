@@ -33,6 +33,22 @@
     color: var(--text-color);
     cursor: pointer;
   }
+
+  .btnLogout {
+    align-self: center;
+    background-color: var(--main-color);
+    color: var(--bg);
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: 0.2s linear;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--main-color-darken);
+    }
+  }
 }
 
 @media (max-width: 1000px) {

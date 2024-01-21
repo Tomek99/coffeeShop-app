@@ -19,7 +19,16 @@ const passowrdItem = {
 
 function AdminLoginPage({ handleAdminMode }) {
   function onSubmit(values, { setSubmitting }) {
-    handleAdminMode();
+    setSubmitting(true);
+
+    try {
+      handleAdminMode();
+    } catch (error) {
+      // Handle errors
+      console.log(error);
+    } finally {
+      setSubmitting(false);
+    }
   }
   return (
     <div className={styles.AdminLoginPage}>

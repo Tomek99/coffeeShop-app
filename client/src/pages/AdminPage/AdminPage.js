@@ -10,7 +10,11 @@ import { useWindowWidth } from "@react-hook/window-size";
 
 function AdmingPage() {
   const [openNav, setOpenNav] = useState(false);
-  const [isAdminMode, setIsAdminMode] = useState(false);
+  const [isAdminMode, setIsAdminMode] = useState(() => {
+    const storedValue = localStorage.getItem("isAdminMode");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return false;
+  });
   const windowWidth = useWindowWidth();
   function handleNav() {
     setOpenNav(!openNav);
@@ -18,6 +22,7 @@ function AdmingPage() {
 
   function handleAdminMode() {
     setIsAdminMode(!isAdminMode);
+    localStorage.setItem("isAdminMode", JSON.stringify(!isAdminMode));
   }
 
   const setGridColumnTemplate = openNav
@@ -33,10 +38,10 @@ function AdmingPage() {
     >
       <AdminNavigationBar openNav={openNav} handleNav={handleNav} />
       <div className={styles.divRightSide}>
-        <AdminSearch handleNav={handleNav} />
+        <AdminSearch handleNav={handleNav} handleAdminMode={handleAdminMode} />
         <Outlet />
       </div>
-      {windowWidth <= 1400 ? null : (
+      {windowWidth <= 1400 || openNav ? null : (
         <div className={styles.additionContainer}></div>
       )}
     </div>

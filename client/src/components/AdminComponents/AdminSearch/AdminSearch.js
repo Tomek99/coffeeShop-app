@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./AdminSearch.module.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
-function AdminBar({ handleNav }) {
+function AdminSearch({ handleNav, handleAdminMode }) {
   return (
     <div className={styles.AdminBar}>
       <div className={styles.divSecondBar}>
@@ -18,9 +18,11 @@ function AdminBar({ handleNav }) {
           <BsSearch size={30} className={styles.iconSearch} />
         </div>
       </div>
-      {/* <div>ProfileRight</div> */}
+      <button className={styles.btnLogout} onClick={handleAdminMode}>
+        Log out
+      </button>
     </div>
   );
 }
 
-export default AdminBar;
+export default AdminSearch;
