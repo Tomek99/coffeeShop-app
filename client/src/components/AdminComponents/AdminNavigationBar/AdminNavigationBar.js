@@ -1,13 +1,10 @@
 import React from "react";
 import styles from "./AdminNavigationBar.module.scss";
 import { AiOutlineHome } from "react-icons/ai";
+import { BsCartFill, BsCalendar4Event, BsCalendar3 } from "react-icons/bs";
+
 import {
-  BsCartFill,
-  BsGlobeAmericas,
-  BsCalendar4Event,
-  BsCalendar3,
-} from "react-icons/bs";
-import {
+  MdOutlineReviews,
   MdOutlineAdminPanelSettings,
   MdOutlineTrendingUp,
 } from "react-icons/md";
@@ -26,7 +23,7 @@ const clientFacing = [
     icon: <HiOutlineDocumentChartBar size="20" />,
     path: "transactions",
   },
-  { text: "Geography", icon: <BsGlobeAmericas size="20" />, path: "geography" },
+  { text: "Reviews", icon: <MdOutlineReviews size="20" />, path: "reviews" },
 ];
 
 const sales = [
@@ -44,7 +41,7 @@ const management = [
   {
     text: "Admin",
     icon: <MdOutlineAdminPanelSettings size="20" />,
-    path: "admin-manaagement",
+    path: "admin-management",
   },
   {
     text: "Performance",

@@ -43,6 +43,7 @@ import {
   AdminCustomers,
   AdminTransactions,
   AdminDashboard,
+  AdminReviews,
 } from "./components";
 
 function App() {
@@ -414,6 +415,7 @@ function App() {
           case "/admin/products":
           case "/admin/customers":
           case "/admin/transactions":
+          case "/admin/reviews":
             return <null />;
           default:
             return <NavigationBar />;
@@ -531,6 +533,7 @@ function App() {
             <Route path="products" element={<AdminProducts />} />
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="transactions" element={<AdminTransactions />} />
+            <Route path="reviews" element={<AdminReviews />} />
           </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
@@ -549,6 +552,7 @@ function App() {
           case "/admin/products":
           case "/admin/customers":
           case "/admin/transactions":
+          case "/admin/reviews":
             return null;
           default:
             return <Footer />;

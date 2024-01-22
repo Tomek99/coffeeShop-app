@@ -45,9 +45,11 @@ function AdminProducts() {
           />
         ) : null}
       </div>
-      {products.map((product, index) => (
-        <AdminProduct product={product} key={index} />
-      ))}
+      <section className={styles.productsSection}>
+        {products.map((product, index) => (
+          <AdminProduct product={product} key={index} />
+        ))}
+      </section>
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.AdminCustomers {
+  padding-left: 10px;
+  text-align: center;
+  font-size: 1.1rem;
+  overflow: hidden;
+
+  .headers {
+    td {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: underline;
+    }
+  }
+}

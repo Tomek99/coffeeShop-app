@@ -47,3 +47,4 @@ export { default as AdminCustomers } from "./AdminComponents/AdminCustomers/Admi
 export { default as AdminSearch } from "./AdminComponents/AdminSearch/AdminSearch";
 export { default as AdminLoginPage } from "./AdminComponents/AdminLoginPage/AdminLoginPage";
 export { default as AdminDashboard } from "./AdminComponents/AdminDashboard/AdminDashboard";
+export { default as AdminReviews } from "./AdminComponents/AdminReviews/AdminReviews";
