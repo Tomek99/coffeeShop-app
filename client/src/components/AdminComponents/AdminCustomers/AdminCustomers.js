@@ -13,7 +13,6 @@ function AdminCustomers() {
       .get(`${process.env.REACT_APP_API_URI}/api/users`)
       .then((res) => {
         if (res.status === 200) {
-          console.log(res.data);
           setCustomers(res.data);
           setLoading(false);
         }
@@ -26,22 +25,26 @@ function AdminCustomers() {
   return loading ? (
     <LoaderSpinner loading={loading} />
   ) : (
-    <table className={styles.AdminCustomers}>
-      <tr className={styles.headers}>
-        <td>Nr</td>
-        <td>Id</td>
-        <td>Customer name</td>
-        <td>Email</td>
-        <td>Phone number</td>
-        <td>Password</td>
-        <td>Orders</td>
-        <td>Edit</td>
-        <td>Delete</td>
-      </tr>
-      {customers.map((item, index) => (
-        <AdminCustomerItem item={item} index={index + 1} key={index} />
-      ))}
-    </table>
+    <div className={styles.AdminCustomers}>
+      <table className={styles.tableContent}>
+        <tbody>
+          <tr className={styles.headers}>
+            <td>Nr</td>
+            <td>Id</td>
+            <td>Customer name</td>
+            <td>Email</td>
+            <td>Phone number</td>
+            <td>Password</td>
+            <td>Orders</td>
+            <td>Edit</td>
+            <td>Delete</td>
+          </tr>
+          {customers.map((item, index) => (
+            <AdminCustomerItem item={item} index={index + 1} key={index} />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

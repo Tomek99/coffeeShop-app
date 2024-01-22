@@ -1,0 +1,23 @@
+.AdminOrderedItems {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .productsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .prItem {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      span {
+        &:nth-child(even) {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

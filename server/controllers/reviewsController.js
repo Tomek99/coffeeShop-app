@@ -7,6 +7,11 @@ const getReviews = asyncHandler(async (req, res) => {
   res.status(200).json(reviews);
 });
 
+const getAllReviews = asyncHandler(async (req, res) => {
+  const reviews = await Review.find();
+  res.status(200).json(reviews);
+});
+
 const getReviewsByProductId = asyncHandler(async (req, res) => {
   const reviews = await Review.find({ productId: req.params.id });
   res.status(200).json(reviews);
@@ -92,4 +97,5 @@ module.exports = {
   getReviewsByProductId,
   rateReview,
   typeReview,
+  getAllReviews,
 };

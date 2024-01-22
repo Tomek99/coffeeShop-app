@@ -1,0 +1,17 @@
+.AdminDeliveryAddress {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .deliveryAddress {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+      &:nth-child(even) {
+        font-weight: bold;
+      }
+    }
+  }
+}

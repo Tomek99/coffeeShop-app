@@ -1,0 +1,11 @@
+.AdminTranscationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    &:nth-child(odd) {
+      font-weight: bold;
+    }
+  }
+}

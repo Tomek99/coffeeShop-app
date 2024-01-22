@@ -8,7 +8,7 @@ function AdminCustomerItem({ item, index }) {
   const maskedHash = item.password.replace(/./g, "*").slice(0, 20);
   return (
     <tr className={styles.AdminCustomerItem}>
-      <td>{index}</td>
+      <td>{index}.</td>
       <td>{item._id}</td>
       <td>
         {item.firstName}

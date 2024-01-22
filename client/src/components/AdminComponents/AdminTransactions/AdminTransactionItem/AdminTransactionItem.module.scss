@@ -1,0 +1,22 @@
+.AdminTransactionItem {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  padding: 5px;
+
+  div {
+    flex-basis: 33%;
+  }
+
+  &:nth-child(odd) {
+    background-color: var(--light-greay);
+  }
+}
+
+@media (max-width: 620px) {
+  .AdminTransactionItem {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+}
