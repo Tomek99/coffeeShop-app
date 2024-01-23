@@ -7,21 +7,10 @@ import HeaderInfo from "../../HeaderInfo/HeaderInfo";
 import { Context } from "../../../Contexts/Context";
 
 function WishList() {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
-  }, []);
-
   const { wishList, products, addWishItem } = useContext(Context);
-
-  let foundedProducts = [];
-  for (const element of wishList) {
-    const foundElement = products.find((item) => element === item._id);
-    foundedProducts.push(foundElement);
-  }
+  const foundedProducts = products.filter((product) =>
+    wishList.includes(product._id)
+  );
 
   return (
     <>

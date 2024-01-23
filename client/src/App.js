@@ -1,10 +1,9 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MessengerCustomerChat from "react-messenger-customer-chat";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useWishListHook from "./hooks/useWishListHook";
-import axios from "axios";
 import { Context } from "./Contexts/Context";
 import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import {
@@ -18,11 +17,7 @@ import {
   AdminPage,
 } from "./pages";
 import {
-  NavigationBar,
-  NavigationBarOrder,
   ContactSection,
-  Footer,
-  FooterOrder,
   ProductDetails,
   Orders,
   Order,
@@ -46,260 +41,47 @@ import {
   AdminDashboard,
   AdminReviews,
 } from "./components";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+
 import useNotifyHook from "./hooks/useNotifyHook";
+import useUserOrderHook from "./hooks/useUserOrderHook";
+import useLoginHook from "./hooks/useLoginHook";
+import useCartHook from "./hooks/useCartHook";
+import useFetchData from "./hooks/useFetchData";
+import FooterSwitcher from "./components/Switcher/FooterSwitcher/FooterSwitcher";
+import NavigationBarSwitcher from "./components/Switcher/NavigationBarSwitcher/NavigationBarSwitcher";
+import ToastContainerCom from "./components/ToastContainerCom/ToastContainerCom";
 
 function App() {
   /*----------- location ----------- */
   const location = useLocation();
   const setColumnPattern = location.pathname.includes("/admin");
-
-  /*----------- login ----------- */
-  const [isLogIn, setIsLogIn] = useState(() => {
-    if (localStorage.getItem("is-logged") !== null) {
-      const storedValue = localStorage.getItem("is-logged");
-      return storedValue === "true" ? true : false;
-    } else return false;
-  });
-
-  const [user, setUser] = useState(() => {
-    const storedValue = localStorage.getItem("user-data");
-    if (storedValue !== null && isLogIn) return JSON.parse(storedValue);
-    else return {};
-  });
-
-  function logIn(data) {
-    setIsLogIn(true);
-    setUser(data);
-    notify("You have been logged in!");
-    localStorage.clear(); // TEST
-    localStorage.setItem("user-data", JSON.stringify(data));
-    localStorage.setItem("is-logged", true);
-  }
-
-  function logOut() {
-    setIsLogIn(false);
-    setUser({});
-    notify("You have been logged out!");
-    localStorage.clear();
-  }
-
-  /*----------- cart ----------- */
-  const [cartItems, setCartItems] = useState(() => {
-    const storedValue = localStorage.getItem("cart");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return [];
-  });
-  const [cartValue, setCartValue] = useState(() => {
-    const storedValue = localStorage.getItem("cart-value");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return 0;
-  });
-  const [cartSave, setCartSave] = useState(() => {
-    const storedValue = localStorage.getItem("cart-save");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return 0;
-  });
-
-  const [cartQuantity, setCartQuantity] = useState(() => {
-    const storedValue = localStorage.getItem("cart-quantity");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return 0;
-  });
-
-  function addItem(item) {
-    const cartItemsCopy = cartItems.map((item) => ({ ...item }));
-
-    const newItemIndex = cartItemsCopy.findIndex(
-      (element) => element._id === item._id
-    );
-
-    if (newItemIndex === -1) {
-      setCartItems([...cartItemsCopy, { ...item }]);
-    } else {
-      cartItemsCopy[newItemIndex].quantity =
-        cartItemsCopy[newItemIndex].quantity + item.quantity;
-
-      setCartItems(cartItemsCopy);
-    }
-    notify("Product(s) added to cart!");
-    setCartQuantity(cartQuantity + item.quantity);
-    appendPrice(item.price, item.oldPrice, item.quantity);
-  }
-
-  function deleteItem(id, newPrice, oldPrice) {
-    const cartList = cartItems.filter((item) => item._id !== id);
-    const findItem = cartItems.filter((item) => item._id === id);
-
-    setCartItems(cartList);
-    setCartQuantity(cartQuantity - findItem[0].quantity);
-    subtractPrice(newPrice, oldPrice, findItem[0].quantity);
-    notify("Product(s) has been removed!");
-  }
-
-  function appendPrice(newPrice, oldPrice, quantity) {
-    setCartValue(
-      Math.round((cartValue + parseFloat(newPrice) * quantity) * 100) / 100
-    );
-
-    if (oldPrice) {
-      setCartSave(
-        Math.round(
-          (cartSave +
-            (parseFloat(oldPrice) - parseFloat(newPrice)) * quantity) *
-            100
-        ) / 100
-      );
-    }
-  }
-
-  function subtractPrice(newPrice, oldPrice, quantity) {
-    setCartValue(
-      Math.round((cartValue - parseFloat(newPrice) * quantity) * 100) / 100
-    );
-
-    if (oldPrice) {
-      setCartSave(
-        Math.round(
-          (cartSave -
-            (parseFloat(oldPrice) - parseFloat(newPrice)) * quantity) *
-            100
-        ) / 100
-      );
-    }
-  }
-
-  function changeQuantity(e, id) {
-    const cartItemsCopy = cartItems.map((item) => ({ ...item }));
-    const foundIndex = cartItemsCopy.findIndex(
-      (item, index) => item._id === id
-    );
-    const previousQuantity = cartItemsCopy[foundIndex].quantity;
-    cartItemsCopy[foundIndex].quantity = parseInt(e.target.value);
-
-    const currentQuantity = cartItemsCopy[foundIndex].quantity;
-    setCartItems(cartItemsCopy);
-    setCartQuantity(cartQuantity + currentQuantity - previousQuantity);
-
-    if (currentQuantity > previousQuantity) {
-      appendPrice(
-        cartItemsCopy[foundIndex].price,
-        cartItemsCopy[foundIndex].oldPrice,
-        Math.abs(currentQuantity - previousQuantity)
-      );
-    } else if (currentQuantity < previousQuantity) {
-      subtractPrice(
-        cartItemsCopy[foundIndex].price,
-        cartItemsCopy[foundIndex].oldPrice,
-        Math.abs(currentQuantity - previousQuantity)
-      );
-    }
-  }
-
-  function clearTheCart() {
-    setCartItems([]);
-    setCartQuantity(0);
-    setCartValue(0);
-    setCartSave(0);
-
-    localStorage.setItem("cart", JSON.stringify([]));
-    localStorage.setItem("cart-quantity", 0);
-    localStorage.setItem("cart-value", 0);
-    localStorage.setItem("cart-save", 0);
-
-    if (window.location.href !== `${process.env.REACT_APP_URI}/order/success`)
-      notify("Cart has been cleared!");
-  }
-  useEffect(() => {
-    localStorage.setItem("cart-save", cartSave);
-    localStorage.setItem("cart-value", cartValue);
-    localStorage.setItem("cart-quantity", cartQuantity);
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartValue, cartQuantity, cartItems, cartSave]);
-
   /*----------- notification ----------- */
   const { notify, notifyError } = useNotifyHook();
-
+  /*----------- login ----------- */
+  const { isLogIn, user, logIn, logOut } = useLoginHook(notify);
+  /*----------- products ----------- */
+  const apiProductEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
+  const { data } = useFetchData(apiProductEndpoint);
+  /*----------- cart ----------- */
+  const {
+    cartItems,
+    cartValue,
+    cartSave,
+    cartQuantity,
+    addItem,
+    deleteItem,
+    changeQuantity,
+    clearTheCart,
+  } = useCartHook(notify);
   /*----------- wishList ----------- */
   const { addWishItem, wishList } = useWishListHook(notify);
-
   /*----------- order ----------- */
-  const [order, setOrder] = useState(() => {
-    const storedValue = localStorage.getItem("order");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return {};
-  });
-
-  function addOrder(order) {
-    const address = {
-      name: order.name,
-      street: order.street,
-      house: order.house,
-      ZIP_code: order.ZIP_code,
-      city: order.city,
-      number: order.number,
-      email: order.email,
-    };
-
-    const company = {
-      companyNip: order.companyNip,
-      companyName: order.companyName,
-      companyStreet: order.companyStreet,
-      companyZIPcode: order.companyZIPcode,
-      companyCity: order.companyCity,
-    };
-
-    let invoice = {
-      name: order.i_name,
-      street: order.i_street,
-      ZIP_code: order.i_ZIP_code,
-      city: order.i_city,
-    };
-    if (order.i_name) {
-      invoice = {
-        name: order.i_name,
-        street: order.i_street,
-        ZIP_code: order.i_ZIP_code,
-        city: order.i_city,
-      };
-    } else {
-      invoice = {
-        name: order.name,
-        street: order.street,
-        ZIP_code: order.ZIP_code,
-        city: order.city,
-      };
-    }
-    const orderUpdate = {
-      userId: user._id,
-      userName: user.firstName,
-      save: cartSave,
-      cartValue: cartValue,
-      totalCost:
-        cartValue +
-        JSON.parse(order.deliveryFee) +
-        JSON.parse(order.paymentFee),
-      supplyPrice: 15,
-      products: cartItems,
-      address: address,
-      company: company,
-      invoice: invoice,
-      payment: order.payment,
-      paymentFee: order.paymentFee,
-      delivery: order.delivery,
-      deliveryFee: order.deliveryFee,
-      shopper: order.shopper,
-      comment: order.comment,
-      activeAddress: order.activeAddress,
-      activeCompany: order.activeCompany,
-      activeInvoice: order.activeInvoice,
-      activeComment: order.activeComment,
-    };
-
-    setOrder(orderUpdate);
-    localStorage.setItem("order", JSON.stringify(orderUpdate));
-  }
-
+  const { addOrder, order } = useUserOrderHook(
+    user,
+    cartSave,
+    cartValue,
+    cartItems
+  );
   /*----------- navigate on Summary ----------- */
   const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
   function handleUserNavigateToSummary() {
@@ -323,49 +105,20 @@ function App() {
         cartItems,
         cartValue,
         cartSave,
+        products: data,
         cartQuantity,
         wishList,
-
         user,
-
         order,
       }}
     >
-      {(() => {
-        switch (location.pathname) {
-          case "/order":
-          case "/order/summary":
-          case "/order/success":
-          case "/order/canceled":
-            return <NavigationBarOrder />;
-
-          case "/admin":
-          case "/admin/products":
-          case "/admin/customers":
-          case "/admin/transactions":
-          case "/admin/reviews":
-            return <null />;
-          default:
-            return <NavigationBar />;
-        }
-      })()}
+      <NavigationBarSwitcher pathname={location.pathname} />
       <section className={setColumnPattern ? "adminWeb" : "columnWeb"}>
         <div className="absoluteDivApp">
-          <ToastContainer
-            position="top-center"
-            autoClose={3000}
-            hideProgressBar
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
+          <ToastContainerCom />
           {/* <MessengerCustomerChat
-            pageId="109980154081140"
-            appId="1174144033276048"
+            pageId={process.env.REACT_APP_PB_ID}
+            appId={process.env.REACT_APP_FB_PAGE_ID}
           /> */}
         </div>
         <Routes>
@@ -467,25 +220,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </section>
-      {(() => {
-        switch (location.pathname) {
-          case "/order":
-          case "/order/summary":
-          case "/cart":
-          case "/order/success":
-          case "/order/canceled":
-            return <FooterOrder />;
-
-          case "/admin":
-          case "/admin/products":
-          case "/admin/customers":
-          case "/admin/transactions":
-          case "/admin/reviews":
-            return null;
-          default:
-            return <Footer />;
-        }
-      })()}
+      <FooterSwitcher pathname={location.pathname} />
     </Context.Provider>
   );
 }
