@@ -46,19 +46,20 @@ import {
   AdminReviews,
 } from "./components";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import useFetchData from "./hooks/useFetchData";
+import useNotifyHook from "./hooks/useNotifyHook";
 
 function App() {
+  /*----------- admin ----------- */
+  // const [adminLogged, setAdminLogged] = useState(false);
+
+  // function handleAdmin() {
+  //   if (!adminLogged) {
+  //     prompt()
+  //   }
+  // }
   /*----------- location ----------- */
   const location = useLocation();
   const setColumnPattern = location.pathname.includes("/admin");
-
-  /*----------- products ----------- */
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
-  const { isLoaded, productsData: data } = useFetchData(apiEndpoint);
 
   /*----------- login ----------- */
   const [isLogIn, setIsLogIn] = useState(() => {
@@ -326,35 +327,10 @@ function App() {
   }
 
   /*----------- notification ----------- */
-
-  const notify = (text) =>
-    toast.success(text, {
-      position: "top-left",
-      autoClose: 3000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-
-  const notifyError = (text) =>
-    toast.error(text, {
-      position: "top-right",
-      autoClose: 3000,
-
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
+  const { notify, notifyError } = useNotifyHook();
 
   /*----------- navigate on Summary ----------- */
   const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
-
   function handleUserNavigateToSummary() {
     setIsUserNavigateToSummary(true);
   }
@@ -378,9 +354,9 @@ function App() {
         cartSave,
         cartQuantity,
         wishList,
-        products,
+
         user,
-        loading,
+
         order,
       }}
     >

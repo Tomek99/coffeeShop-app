@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   HomeSection,
   AboutSection,
@@ -9,7 +9,7 @@ import {
   CareComponent,
 } from "../../components/index";
 
-function Home(props) {
+function Home() {
   return (
     <>
       <HomeSection />
