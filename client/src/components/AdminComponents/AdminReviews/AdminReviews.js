@@ -3,30 +3,17 @@ import axios from "axios";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import styles from "./AdminReviews.module.scss";
 import AdminReviewItem from "./AdminReviewItem/AdminReviewItem";
+import useFetchData from "../../../hooks/useFetchData";
 
 function AdminReviews() {
-  const [userReviews, setCustomers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/reviews`;
+  const { isLoaded, data } = useFetchData(apiEndpoint);
 
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URI}/api/reviews`)
-      .then((res) => {
-        if (res.status === 200) {
-          setCustomers(res.data);
-          setLoading(false);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  return loading ? (
-    <LoaderSpinner loading={loading} />
+  return isLoaded ? (
+    <LoaderSpinner loading={isLoaded} />
   ) : (
     <div className={styles.AdminTransactions}>
-      {userReviews.map((item, index) => (
+      {data.map((item, index) => (
         <AdminReviewItem item={item} key={index} />
       ))}
     </div>

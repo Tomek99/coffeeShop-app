@@ -3,6 +3,8 @@
   flex-direction: row;
   font-size: 1.2rem;
   padding: 5px;
+  height: 200px;
+  overflow: scroll;
 
   div {
     flex-basis: 33%;
@@ -18,5 +20,6 @@
     flex-direction: column;
     gap: 20px;
     padding: 0;
+    height: auto !important;
   }
 }

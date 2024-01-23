@@ -6,6 +6,7 @@ import LatestProduct from "../../components/LatestProduct/LatestProduct";
 import LoaderSpinner from "../../components/LoaderSpinner/LoaderSpinner";
 import Pagination from "../../components/Pagination/Pagination";
 import { useNavigate } from "react-router-dom";
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 
 function Products() {
   const { products, loading } = useContext(Context);
@@ -27,40 +28,31 @@ function Products() {
     });
   };
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
-  }, [pageNumber]);
   return (
     <div className={styles.Products}>
       {loading ? (
         <LoaderSpinner loading={loading} />
       ) : (
-        <>
-          {/* <HeaderSection firstWord="our" secondWord="products" /> */}
-          <div className={styles.gridTemplate}>
-            <div className={styles.itemsSection}>
-              {products
-                .slice(pagesVisited, pagesVisited + PRODUCTS_PER_PAGE)
-                .map((item, index) => (
-                  <LatestProduct
-                    key={index}
-                    item={item}
-                    cartFillId={`cartFillId${index}`}
-                    showProductId={`showProductId${index}`}
-                    wishlistId={`wishlistId${index}`}
-                  />
-                ))}
-            </div>
-            <Pagination
-              pageCount={pageCount}
-              handleChangePage={handleChangePage}
-            />
+        <div className={styles.gridTemplate}>
+          <div className={styles.itemsSection}>
+            {products
+              .slice(pagesVisited, pagesVisited + PRODUCTS_PER_PAGE)
+              .map((item, index) => (
+                <LatestProduct
+                  key={index}
+                  item={item}
+                  cartFillId={`cartFillId${index}`}
+                  showProductId={`showProductId${index}`}
+                  wishlistId={`wishlistId${index}`}
+                />
+              ))}
           </div>
-        </>
+          <Pagination
+            pageCount={pageCount}
+            handleChangePage={handleChangePage}
+          />
+          <ScrollToTop pageNumber={pageNumber} />
+        </div>
       )}
     </div>
   );

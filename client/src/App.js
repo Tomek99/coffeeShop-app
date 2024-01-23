@@ -45,16 +45,10 @@ import {
   AdminDashboard,
   AdminReviews,
 } from "./components";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import useFetchData from "./hooks/useFetchData";
 
 function App() {
-  /*----------- admin ----------- */
-  // const [adminLogged, setAdminLogged] = useState(false);
-
-  // function handleAdmin() {
-  //   if (!adminLogged) {
-  //     prompt()
-  //   }
-  // }
   /*----------- location ----------- */
   const location = useLocation();
   const setColumnPattern = location.pathname.includes("/admin");
@@ -63,21 +57,8 @@ function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    const fetchData = async () => {
-      try {
-        const products = await axios.get(
-          `${process.env.REACT_APP_API_URI}/api/products`
-        );
-        setLoading(false);
-        setProducts(products.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
+  const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
+  const { isLoaded, productsData: data } = useFetchData(apiEndpoint);
 
   /*----------- login ----------- */
   const [isLogIn, setIsLogIn] = useState(() => {

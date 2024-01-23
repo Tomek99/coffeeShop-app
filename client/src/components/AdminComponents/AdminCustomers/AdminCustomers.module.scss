@@ -2,11 +2,11 @@
   padding-left: 10px;
   text-align: center;
   font-size: 1.2rem;
+
   overflow: scroll;
 
   .tableContent {
     width: 100%;
-    height: 100vh;
 
     .headers {
       td {
@@ -14,6 +14,10 @@
         font-size: 1.2rem;
         text-decoration: underline;
       }
+    }
+
+    td {
+      height: 50px;
     }
   }
 }

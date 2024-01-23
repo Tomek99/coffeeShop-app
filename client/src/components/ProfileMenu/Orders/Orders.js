@@ -10,6 +10,7 @@ import { Context } from "../../../Contexts/Context";
 import HeaderInfo from "../../HeaderInfo/HeaderInfo";
 import axios from "axios";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 function Orders() {
   const { user } = useContext(Context);
@@ -44,14 +45,6 @@ function Orders() {
       search: selected !== 0 ? `?page=${selected + 1}` : null,
     });
   };
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
-  }, [pageNumber]);
   return (
     <>
       <HeaderInfo title="Orders" />
@@ -76,6 +69,7 @@ function Orders() {
         </div>
       )}
       <Support />
+      <ScrollToTop pageNumber={pageNumber} />
     </>
   );
 }

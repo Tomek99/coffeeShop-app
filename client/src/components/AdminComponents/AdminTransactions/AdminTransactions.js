@@ -1,34 +1,35 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import AdminTransactionItem from "./AdminTransactionItem/AdminTransactionItem";
 import styles from "./AdminTransactions.module.scss";
+import useFetchData from "../../../hooks/useFetchData";
+import usePaginationHook from "../../../hooks/usePaginationHook";
+import Pagination from "../../Pagination/Pagination";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 function AdminTransactions() {
-  const [transactions, setTransactions] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/orders`;
+  const { isLoaded, data } = useFetchData(apiEndpoint);
 
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URI}/api/orders`)
-      .then((res) => {
-        if (res.status === 200) {
-          console.log(res.data);
-          setTransactions(res.data);
-          setLoading(false);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-  return loading ? (
-    <LoaderSpinner loading={loading} />
+  const {
+    pageNumber,
+    pagesVisited,
+    pageCount,
+    itemsPerPage,
+    handleChangePage,
+  } = usePaginationHook(0, data, 10, "/admin/transactions");
+
+  return isLoaded ? (
+    <LoaderSpinner loading={isLoaded} />
   ) : (
     <div className={styles.AdminTransactions}>
-      {transactions.map((item, index) => (
-        <AdminTransactionItem item={item} index={index} key={index} />
-      ))}
+      {data
+        .slice(pagesVisited, pagesVisited + itemsPerPage)
+        .map((item, index) => (
+          <AdminTransactionItem item={item} index={index} key={index} />
+        ))}
+      <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
+      <ScrollToTop pageNumber={pageNumber} />
     </div>
   );
 }

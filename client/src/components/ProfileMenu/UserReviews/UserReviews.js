@@ -10,6 +10,9 @@ import { Context } from "../../../Contexts/Context";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import Pagination from "../../Pagination/Pagination";
 import { useNavigate } from "react-router-dom";
+import useFetchData from "../../../hooks/useFetchData";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
+import usePaginationHook from "../../../hooks/usePaginationHook";
 
 function UserReviews() {
   const { user } = useContext(Context);
@@ -17,14 +20,6 @@ function UserReviews() {
   const [feedbacks, setFeedbacks] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
-  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -57,29 +52,16 @@ function UserReviews() {
   }, [user._id]);
 
   /* Pagination */
-  const [pageNumber, setPageNumber] = useState(0);
-  const navigate = useNavigate();
-  const ordersPerPage = 5;
-  const pagesVisited = pageNumber * ordersPerPage;
-  const pageCount = Math.ceil(reviews.length / ordersPerPage);
 
-  const handleChangePage = ({ selected }) => {
-    setPageNumber(selected);
+  const {
+    pageNumber,
+    pagesVisited,
+    pageCount,
+    itemsPerPage,
+    handleChangePage,
+  } = usePaginationHook(0, reviews, 5, "/user-reviews");
 
-    navigate({
-      pathname: "/user-reviews",
-      search: selected !== 0 ? `?page=${selected + 1}` : null,
-    });
-  };
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
-  }, [pageNumber]);
-
+  // "/admin/products"
   return (
     <>
       <HeaderInfo title="Reviews" />
@@ -103,7 +85,7 @@ function UserReviews() {
           <LoaderSpinner loading={loading} />
         ) : (
           reviews
-            .slice(pagesVisited, pagesVisited + ordersPerPage)
+            .slice(pagesVisited, pagesVisited + itemsPerPage)
             .map((item, i) => <Review key={i} item={item} />)
         )}
       </div>
@@ -111,6 +93,7 @@ function UserReviews() {
         <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
       ) : null}
       <Support />
+      <ScrollToTop pageNumber={pageNumber} />
     </>
   );
 }
