@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useWishListHook from "./hooks/useWishListHook";
 import axios from "axios";
 import { Context } from "./Contexts/Context";
 import { Route, Routes, useLocation, Navigate } from "react-router-dom";
@@ -49,14 +50,6 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import useNotifyHook from "./hooks/useNotifyHook";
 
 function App() {
-  /*----------- admin ----------- */
-  // const [adminLogged, setAdminLogged] = useState(false);
-
-  // function handleAdmin() {
-  //   if (!adminLogged) {
-  //     prompt()
-  //   }
-  // }
   /*----------- location ----------- */
   const location = useLocation();
   const setColumnPattern = location.pathname.includes("/admin");
@@ -224,30 +217,11 @@ function App() {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartValue, cartQuantity, cartItems, cartSave]);
 
+  /*----------- notification ----------- */
+  const { notify, notifyError } = useNotifyHook();
+
   /*----------- wishList ----------- */
-  const [wishList, setWishList] = useState(() => {
-    const storedValue = localStorage.getItem("wishList");
-
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return [];
-  });
-
-  function addWishItem(id) {
-    const foundId = wishList.find((value) => value === id);
-
-    if (!foundId) {
-      setWishList([...wishList, id]);
-      localStorage.setItem("wishList", JSON.stringify([...wishList, id]));
-
-      notify("Product added to wish list!");
-    } else {
-      const filteredItems = wishList.filter((value) => value !== id);
-      setWishList(filteredItems);
-      localStorage.setItem("wishList", JSON.stringify(filteredItems));
-
-      notify("Product has been deleted!");
-    }
-  }
+  const { addWishItem, wishList } = useWishListHook(notify);
 
   /*----------- order ----------- */
   const [order, setOrder] = useState(() => {
@@ -325,9 +299,6 @@ function App() {
     setOrder(orderUpdate);
     localStorage.setItem("order", JSON.stringify(orderUpdate));
   }
-
-  /*----------- notification ----------- */
-  const { notify, notifyError } = useNotifyHook();
 
   /*----------- navigate on Summary ----------- */
   const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
