@@ -1,11 +1,18 @@
 import "./App.css";
 import React, { useState } from "react";
 import MessengerCustomerChat from "react-messenger-customer-chat";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useWishListHook from "./hooks/useWishListHook";
 import { Context } from "./Contexts/Context";
 import { Route, Routes, useLocation, Navigate } from "react-router-dom";
+import FooterSwitcher from "./components/Switcher/FooterSwitcher/FooterSwitcher";
+import NavigationBarSwitcher from "./components/Switcher/NavigationBarSwitcher/NavigationBarSwitcher";
+import ToastContainerCom from "./components/ToastContainerCom/ToastContainerCom";
+import useNotifyHook from "./hooks/useNotifyHook";
+import useUserOrderHook from "./hooks/useUserOrderHook";
+import useLoginHook from "./hooks/useLoginHook";
+import useCartHook from "./hooks/useCartHook";
+import useFetchData from "./hooks/useFetchData";
 import {
   Home,
   Blog,
@@ -40,16 +47,8 @@ import {
   AdminTransactions,
   AdminDashboard,
   AdminReviews,
+  AdminCustomersMessages,
 } from "./components";
-
-import useNotifyHook from "./hooks/useNotifyHook";
-import useUserOrderHook from "./hooks/useUserOrderHook";
-import useLoginHook from "./hooks/useLoginHook";
-import useCartHook from "./hooks/useCartHook";
-import useFetchData from "./hooks/useFetchData";
-import FooterSwitcher from "./components/Switcher/FooterSwitcher/FooterSwitcher";
-import NavigationBarSwitcher from "./components/Switcher/NavigationBarSwitcher/NavigationBarSwitcher";
-import ToastContainerCom from "./components/ToastContainerCom/ToastContainerCom";
 
 function App() {
   /*----------- location ----------- */
@@ -209,14 +208,18 @@ function App() {
           <Route path="order/canceled" element={<PaymentCanceled />} />
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
+
           <Route path="admin" element={<AdminPage />}>
             <Route path="" element={<AdminDashboard />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="transactions" element={<AdminTransactions />} />
-            <Route path="reviews" element={<AdminReviews />} />
+            <Route path="customers-reviews" element={<AdminReviews />} />
+            <Route
+              path="customers-messages"
+              element={<AdminCustomersMessages />}
+            />
           </Route>
-
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </section>

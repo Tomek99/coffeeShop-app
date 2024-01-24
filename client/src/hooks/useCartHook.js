@@ -23,10 +23,15 @@ const useCartHook = (notify) => {
     else return 0;
   });
 
+  useEffect(() => {
+    localStorage.setItem("cart-save", cartSave);
+    localStorage.setItem("cart-value", cartValue);
+    localStorage.setItem("cart-quantity", cartQuantity);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartValue, cartQuantity, cartItems, cartSave]);
+
   function addItem(item) {
     const cartItemsCopy = cartItems.map((item) => ({ ...item }));
-    console.log(cartItems);
-    console.log(~~item.quantity);
     const newItemIndex = cartItemsCopy.findIndex(
       (element) => element._id === item._id
     );
@@ -39,8 +44,8 @@ const useCartHook = (notify) => {
 
       setCartItems(cartItemsCopy);
     }
+
     notify("Product(s) added to cart!");
-    console.log("useCartHook: " + cartQuantity);
     setCartQuantity(cartQuantity + ~~item.quantity);
     appendPrice(item.price, item.oldPrice, ~~item.quantity);
   }
@@ -128,12 +133,7 @@ const useCartHook = (notify) => {
     if (window.location.href !== `${process.env.REACT_APP_URI}/order/success`)
       notify("Cart has been cleared!");
   }
-  useEffect(() => {
-    localStorage.setItem("cart-save", cartSave);
-    localStorage.setItem("cart-value", cartValue);
-    localStorage.setItem("cart-quantity", cartQuantity);
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartValue, cartQuantity, cartItems, cartSave]);
+
   return {
     cartItems,
     cartValue,

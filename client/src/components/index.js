@@ -48,3 +48,4 @@ export { default as AdminSearch } from "./AdminComponents/AdminSearch/AdminSearc
 export { default as AdminLoginPage } from "./AdminComponents/AdminLoginPage/AdminLoginPage";
 export { default as AdminDashboard } from "./AdminComponents/AdminDashboard/AdminDashboard";
 export { default as AdminReviews } from "./AdminComponents/AdminReviews/AdminReviews";
+export { default as AdminCustomersMessages } from "./AdminComponents/AdminCustomersMessages/AdminCustomersMessages";

@@ -16,7 +16,8 @@ function FooterSwitcher({ pathname }) {
       case "/admin/products":
       case "/admin/customers":
       case "/admin/transactions":
-      case "/admin/reviews":
+      case "/admin/customers-reviews":
+      case "/admin/customers-messages":
         return null;
       default:
         return <Footer />;

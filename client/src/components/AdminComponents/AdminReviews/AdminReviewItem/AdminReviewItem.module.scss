@@ -1,0 +1,13 @@
+.AdminReviewItem {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: var(--shadow-thick-bottom);
+
+  .reviewItemContent {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

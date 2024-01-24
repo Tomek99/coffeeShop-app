@@ -12,6 +12,7 @@ import { HiOutlineDocumentChartBar } from "react-icons/hi2";
 import { FaUsers } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { TbTriangleSquareCircle } from "react-icons/tb";
+import { TiMessages } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import AdminUnorderedList from "./AdminUnorderedList/AdminUnorderedList";
 
@@ -23,32 +24,41 @@ const clientFacing = [
     icon: <HiOutlineDocumentChartBar size="20" />,
     path: "transactions",
   },
-  { text: "Reviews", icon: <MdOutlineReviews size="20" />, path: "reviews" },
-];
-
-const sales = [
-  { text: "Overview", icon: <RiComputerLine size="20" />, path: "overview" },
-  { text: "Daily", icon: <BsCalendar4Event size="20" />, path: "daily" },
-  { text: "Monthly", icon: <BsCalendar3 size="20" />, path: "monthly" },
   {
-    text: "Breakdown",
-    icon: <TbTriangleSquareCircle size="20" />,
-    path: "breakdown",
+    text: "Reviews",
+    icon: <MdOutlineReviews size="20" />,
+    path: "customers-reviews",
+  },
+  {
+    text: "Messages",
+    icon: <TiMessages size="20" />,
+    path: "customers-messages",
   },
 ];
 
-const management = [
-  {
-    text: "Admin",
-    icon: <MdOutlineAdminPanelSettings size="20" />,
-    path: "admin-management",
-  },
-  {
-    text: "Performance",
-    icon: <MdOutlineTrendingUp size="20" />,
-    path: "performance",
-  },
-];
+// const sales = [
+//   { text: "Overview", icon: <RiComputerLine size="20" />, path: "overview" },
+//   { text: "Daily", icon: <BsCalendar4Event size="20" />, path: "daily" },
+//   { text: "Monthly", icon: <BsCalendar3 size="20" />, path: "monthly" },
+//   {
+//     text: "Breakdown",
+//     icon: <TbTriangleSquareCircle size="20" />,
+//     path: "breakdown",
+//   },
+// ];
+
+// const management = [
+//   {
+//     text: "Admin",
+//     icon: <MdOutlineAdminPanelSettings size="20" />,
+//     path: "admin-management",
+//   },
+//   {
+//     text: "Performance",
+//     icon: <MdOutlineTrendingUp size="20" />,
+//     path: "performance",
+//   },
+// ];
 
 function AdminNavigationBar({ openNav, handleNav }) {
   return (
@@ -76,8 +86,8 @@ function AdminNavigationBar({ openNav, handleNav }) {
       </div>
 
       <AdminUnorderedList header={"Client Facing"} arrayLinks={clientFacing} />
-      <AdminUnorderedList header={"Sales"} arrayLinks={sales} />
-      <AdminUnorderedList header={"Management"} arrayLinks={management} />
+      {/* <AdminUnorderedList header={"Sales"} arrayLinks={sales} />
+      <AdminUnorderedList header={"Management"} arrayLinks={management} /> */}
     </div>
   );
 }
