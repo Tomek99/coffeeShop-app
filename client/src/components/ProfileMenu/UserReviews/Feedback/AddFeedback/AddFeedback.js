@@ -23,7 +23,7 @@ function AddFeedback({ handleBtn, item }) {
     comment: "",
     rate: 0,
     productId: item.productId,
-    isCheckedReview: true,
+    isUserReviewAdded: true,
   };
 
   async function onSubmit(values, { resetForm }) {

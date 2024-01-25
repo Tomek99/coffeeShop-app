@@ -54,6 +54,14 @@ const invoiceSchema = new mongoose.Schema(
     },
     isModeratorReviewApproved: {
       type: String,
+      default: "checking",
+    },
+    moderatorAttention: {
+      type: String,
+      default: "",
+    },
+    extraMmoderatorAttention: {
+      type: String,
       default: "",
     },
   },

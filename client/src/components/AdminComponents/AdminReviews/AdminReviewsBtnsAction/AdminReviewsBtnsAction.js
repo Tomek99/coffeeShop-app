@@ -4,24 +4,24 @@ function AdminReviewsBtnsAction({ handleSelectedSubPage, selectedSubPage }) {
   return (
     <section className={styles.AdminReviewsBtnsAction}>
       <button
-        onClick={() => handleSelectedSubPage("acceptedReviews")}
+        onClick={() => handleSelectedSubPage("checkingReviews")}
         className={
-          selectedSubPage === "acceptedReviews"
+          selectedSubPage === "checkingReviews"
             ? `${styles.AdminBtnAction} ${styles.clickedButton}`
             : `${styles.AdminBtnAction}`
         }
       >
-        Accepted reviews
+        Checking reviews
       </button>
       <button
-        onClick={() => handleSelectedSubPage("veryficationReviews")}
+        onClick={() => handleSelectedSubPage("ratedReviews")}
         className={
-          selectedSubPage === "veryficationReviews"
+          selectedSubPage === "ratedReviews"
             ? `${styles.AdminBtnAction} ${styles.clickedButton}`
             : `${styles.AdminBtnAction}`
         }
       >
-        Review Verification
+        Rated reviews
       </button>
     </section>
   );

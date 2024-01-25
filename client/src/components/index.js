@@ -49,3 +49,4 @@ export { default as AdminLoginPage } from "./AdminComponents/AdminLoginPage/Admi
 export { default as AdminDashboard } from "./AdminComponents/AdminDashboard/AdminDashboard";
 export { default as AdminReviews } from "./AdminComponents/AdminReviews/AdminReviews";
 export { default as AdminCustomersMessages } from "./AdminComponents/AdminCustomersMessages/AdminCustomersMessages";
+export { default as AdminSettings } from "./AdminComponents/AdminSettings/AdminSettings";

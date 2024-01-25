@@ -1,14 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./AdminLink.module.scss";
 
 function AdminLinks({ obj }) {
   return (
     <li className={styles.adminLiElement}>
-      <Link to={obj.path} className={styles.adminLink}>
+      <NavLink
+        to={obj.path}
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? `${styles.adminNavLink} ${styles.adminActiveNavLink}`
+            : styles.adminNavLink
+        }
+      >
         {obj.icon}
         {obj.text}
-      </Link>
+      </NavLink>
     </li>
   );
 }

@@ -3,26 +3,9 @@ import FooterOrder from "../../FooterOrder/FooterOrder";
 import Footer from "../../Footer/Footer";
 
 function FooterSwitcher({ pathname }) {
-  return (() => {
-    switch (pathname) {
-      case "/order":
-      case "/order/summary":
-      case "/cart":
-      case "/order/success":
-      case "/order/canceled":
-        return <FooterOrder />;
-
-      case "/admin":
-      case "/admin/products":
-      case "/admin/customers":
-      case "/admin/transactions":
-      case "/admin/customers-reviews":
-      case "/admin/customers-messages":
-        return null;
-      default:
-        return <Footer />;
-    }
-  })();
+  if (pathname.includes("/order")) return <FooterOrder />;
+  else if (pathname.includes("/admin")) return <null />;
+  else return <Footer />;
 }
 
 export default FooterSwitcher;

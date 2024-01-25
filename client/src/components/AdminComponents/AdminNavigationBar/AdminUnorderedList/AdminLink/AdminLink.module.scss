@@ -1,5 +1,5 @@
 .adminLiElement {
-  .adminLink {
+  .adminNavLink {
     color: var(--text-color);
     background-color: transparent;
     display: flex;
@@ -12,5 +12,9 @@
     &:hover {
       color: var(--main-color);
     }
+  }
+
+  .adminNavLink.adminActiveNavLink {
+    color: var(--main-color);
   }
 }

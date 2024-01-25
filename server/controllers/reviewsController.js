@@ -14,7 +14,7 @@ const getAllReviews = asyncHandler(async (req, res) => {
 
 const getReviewsByProductId = asyncHandler(async (req, res) => {
   const reviews = await Review.find({ productId: req.params.id });
-  res.status(200).json(reviews);
+  res.status(200).json(reviews || []);
 });
 
 const setReview = asyncHandler(async (req, res) => {
@@ -71,7 +71,7 @@ const typeReview = asyncHandler(async (req, res) => {
     userReviewDate: currentTime,
     comment: values.comment,
     rate: values.rate,
-    isCheckedReview: true,
+    isUserReviewAdded: true,
   });
 
   try {

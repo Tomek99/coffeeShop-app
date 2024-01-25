@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styles from "./AdminProduct.module.scss";
-import AdminActionBtns from "./AdminActionBtns/AdminActionBtns";
 import AdminProductDetails from "./AdminProductDetails/AdminProductDetails";
 import AdminEditProductDetails from "./AdminEditProductDetails/AdminEditProductDetails";
 import AdminDeleteProduct from "./AdminDeleteProduct/AdminDeleteProduct";
+import AdminIconBtn from "../../AdminBtns/AdminIconBtn";
 
 function AdminProduct({ product }) {
   const [action, setAction] = useState(null);
 
-  function handleAction(currentAction) {
+  function handleBtn(currentAction) {
     if (currentAction === action) {
       setAction(null);
     } else {
@@ -33,7 +33,25 @@ function AdminProduct({ product }) {
             {product.oldPrice === null ? null : `- $${product.oldPrice}`}
           </span>
         </div>
-        <AdminActionBtns handleAction={handleAction} />
+
+        <div className={styles.adminActionBtns}>
+          <AdminIconBtn
+            handleBtn={handleBtn}
+            btnType="BsEye"
+            btnAction="viewDetails"
+          />
+
+          <AdminIconBtn
+            handleBtn={handleBtn}
+            btnType="CiEdit"
+            btnAction="editDetails"
+          />
+          <AdminIconBtn
+            handleBtn={handleBtn}
+            btnType="ImBin"
+            btnAction="deleteProduct"
+          />
+        </div>
       </div>
       {(() => {
         switch (action) {
@@ -43,13 +61,13 @@ function AdminProduct({ product }) {
             return (
               <AdminEditProductDetails
                 productDetails={product}
-                handleAction={handleAction}
+                handleAction={handleBtn}
               />
             );
           case "deleteProduct":
             return (
               <AdminDeleteProduct
-                handleAction={handleAction}
+                handleAction={handleBtn}
                 productId={product._id}
               />
             );

@@ -2,13 +2,4 @@
   &:nth-child(even) {
     background-color: var(--light-greay);
   }
-  .adminActionBtn {
-    background-color: transparent;
-    transition: 0.2s linear;
-    cursor: pointer;
-
-    &:hover {
-      color: var(--main-color);
-    }
-  }
 }

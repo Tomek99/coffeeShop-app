@@ -2,6 +2,13 @@
   box-shadow: var(--shadow-thick-bottom);
   padding: 5px;
 
+  .adminActionBtns {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+
   .singleProduct {
     display: flex;
     flex-direction: row;
@@ -25,6 +32,12 @@
 
 .SingleProduct:last-child {
   box-shadow: none;
+}
+
+@media (max-width: 420px) {
+  .adminActionBtns {
+    align-items: center;
+  }
 }
 
 @media (max-width: 420px) {

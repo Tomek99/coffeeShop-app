@@ -3,25 +3,9 @@ import NavigationBar from "../../NavigationBar/NavigationBar";
 import NavigationBarOrder from "../../NavigationBarOrder/NavigationBarOrder";
 
 function NavigationBarSwitcher({ pathname }) {
-  return (() => {
-    switch (pathname) {
-      case "/order":
-      case "/order/summary":
-      case "/order/success":
-      case "/order/canceled":
-        return <NavigationBarOrder />;
-
-      case "/admin":
-      case "/admin/products":
-      case "/admin/customers":
-      case "/admin/transactions":
-      case "/admin/customers-reviews":
-      case "/admin/customers-messages":
-        return <null />;
-      default:
-        return <NavigationBar />;
-    }
-  })();
+  if (pathname.includes("/order")) return <NavigationBarOrder />;
+  else if (pathname.includes("/admin")) return <null />;
+  else return <NavigationBar />;
 }
 
 export default NavigationBarSwitcher;

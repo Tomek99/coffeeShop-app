@@ -10,7 +10,7 @@ const getAllUsersOrders = asyncHandler(async (req, res) => {
 const getOrders = asyncHandler(async (req, res) => {
   const get_data = await Order.find({ userId: req.params.id });
 
-  res.status(200).json(get_data);
+  res.status(200).json(get_data || []);
 });
 
 const createOrder = asyncHandler(async (req, res) => {

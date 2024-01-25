@@ -17,39 +17,15 @@ import usePaginationHook from "../../../hooks/usePaginationHook";
 function UserReviews() {
   const { user } = useContext(Context);
 
-  const [feedbacks, setFeedbacks] = useState([]);
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const endPoint = `${process.env.REACT_APP_API_URI}/api/reviews/user-reviews/${user._id}`;
+  const { data, isLoaded } = useFetchData(endPoint);
 
-  useEffect(() => {
-    setLoading(true);
-    const fetchData = async () => {
-      try {
-        const products = await axios.get(
-          `${process.env.REACT_APP_API_URI}/api/reviews/user-reviews/${user._id}`
-        );
-        setFeedbacks(
-          products.data
-            .filter((item) => item.isCheckedReview !== true)
-            .sort(
-              (a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate)
-            )
-        );
-
-        setReviews(
-          products.data
-            .filter((item) => item.isCheckedReview !== false)
-            .sort(
-              (a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate)
-            )
-        );
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, [user._id]);
+  const feedbacks = data
+    .filter((item) => item.isUserReviewAdded !== true)
+    .sort((a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate));
+  const reviews = data
+    .filter((item) => item.isUserReviewAdded !== false)
+    .sort((a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate));
 
   /* Pagination */
 
@@ -61,8 +37,9 @@ function UserReviews() {
     handleChangePage,
   } = usePaginationHook(0, reviews, 5, "/user-reviews");
 
-  // "/admin/products"
-  return (
+  return isLoaded ? (
+    <LoaderSpinner loading={isLoaded} />
+  ) : (
     <>
       <HeaderInfo title="Reviews" />
       <div className={styles.divRow}>
@@ -70,24 +47,20 @@ function UserReviews() {
         <span>&nbsp;({feedbacks.length})</span>
       </div>
       <div className={styles.divColumn}>
-        {loading ? (
-          <LoaderSpinner loading={loading} />
-        ) : (
-          feedbacks.map((item, i) => <Feedback key={i} item={item} />)
-        )}
+        {feedbacks.map((item, i) => (
+          <Feedback key={i} item={item} />
+        ))}
       </div>
       <div className={styles.divRow}>
         <HeadingThree title="Your reviews" />
         <span>&nbsp;({reviews.length})</span>
       </div>
       <div className={styles.reviewsColumn}>
-        {loading ? (
-          <LoaderSpinner loading={loading} />
-        ) : (
-          reviews
-            .slice(pagesVisited, pagesVisited + itemsPerPage)
-            .map((item, i) => <Review key={i} item={item} />)
-        )}
+        {reviews
+          .slice(pagesVisited, pagesVisited + itemsPerPage)
+          .map((item, i) => (
+            <Review key={i} item={item} />
+          ))}
       </div>
       {reviews.length > 5 ? (
         <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />

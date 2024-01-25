@@ -15,15 +15,11 @@ import { TbTriangleSquareCircle } from "react-icons/tb";
 import { TiMessages } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import AdminUnorderedList from "./AdminUnorderedList/AdminUnorderedList";
+import PageLogo from "../../PageLogo/PageLogo";
 
 const clientFacing = [
-  { text: "Products", icon: <BsCartFill size="20" />, path: "products" },
   { text: "Customers", icon: <FaUsers size="20" />, path: "customers" },
-  {
-    text: "Transactions",
-    icon: <HiOutlineDocumentChartBar size="20" />,
-    path: "transactions",
-  },
+
   {
     text: "Reviews",
     icon: <MdOutlineReviews size="20" />,
@@ -36,29 +32,27 @@ const clientFacing = [
   },
 ];
 
-// const sales = [
-//   { text: "Overview", icon: <RiComputerLine size="20" />, path: "overview" },
-//   { text: "Daily", icon: <BsCalendar4Event size="20" />, path: "daily" },
-//   { text: "Monthly", icon: <BsCalendar3 size="20" />, path: "monthly" },
-//   {
-//     text: "Breakdown",
-//     icon: <TbTriangleSquareCircle size="20" />,
-//     path: "breakdown",
-//   },
-// ];
+const sales = [
+  { text: "Products", icon: <BsCartFill size="20" />, path: "products" },
+  {
+    text: "Transactions",
+    icon: <HiOutlineDocumentChartBar size="20" />,
+    path: "transactions",
+  },
+];
 
-// const management = [
-//   {
-//     text: "Admin",
-//     icon: <MdOutlineAdminPanelSettings size="20" />,
-//     path: "admin-management",
-//   },
-//   {
-//     text: "Performance",
-//     icon: <MdOutlineTrendingUp size="20" />,
-//     path: "performance",
-//   },
-// ];
+const management = [
+  {
+    text: "Admin",
+    icon: <MdOutlineAdminPanelSettings size="20" />,
+    path: "admin-management",
+  },
+  // {
+  //   text: "Performance",
+  //   icon: <MdOutlineTrendingUp size="20" />,
+  //   path: "performance",
+  // },
+];
 
 function AdminNavigationBar({ openNav, handleNav }) {
   return (
@@ -69,25 +63,17 @@ function AdminNavigationBar({ openNav, handleNav }) {
           : styles.AdminNavigationBar
       }
     >
-      <div className={styles.divLogo}>
-        <Link to="/">
-          {" "}
-          <img
-            src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
-            alt="logo"
-          />
-        </Link>
-      </div>
+      <PageLogo />
       <div className={openNav ? styles.divDashboard : styles.divDashboard}>
-        <Link to={""} className={styles.dashboardBtn}>
+        <Link to={""} className={styles.dashboardLink}>
           <AiOutlineHome size="20" />
           <span>Dashboard</span>
         </Link>
       </div>
 
       <AdminUnorderedList header={"Client Facing"} arrayLinks={clientFacing} />
-      {/* <AdminUnorderedList header={"Sales"} arrayLinks={sales} />
-      <AdminUnorderedList header={"Management"} arrayLinks={management} /> */}
+      <AdminUnorderedList header={"Sales"} arrayLinks={sales} />
+      <AdminUnorderedList header={"Management"} arrayLinks={management} />
     </div>
   );
 }
