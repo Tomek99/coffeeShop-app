@@ -5,18 +5,7 @@
 
   .checkingReviewContent {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    .columnItem {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-
-      .ratingSpan {
-        display: flex;
-        align-items: center;
-      }
-    }
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .btnsAction {

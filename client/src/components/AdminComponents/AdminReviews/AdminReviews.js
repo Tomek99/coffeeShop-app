@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import styles from "./AdminReviews.module.scss";
-import AdminRatedReviewItem from "./AdminAcceptedReviews/AdminRatedReviewItem/AdminRatedReviewItem";
 import useFetchData from "../../../hooks/useFetchData";
-import usePaginationHook from "../../../hooks/usePaginationHook";
-import Pagination from "../../Pagination/Pagination";
-import ScrollToTop from "../../ScrollToTop/ScrollToTop";
-import AdminRatedReviews from "./AdminAcceptedReviews/AdminRatedReviews";
+import AdminRatedReviews from "./AdminRatedReviews/AdminRatedReviews";
 import AdminCheckingReviews from "./AdminCheckingReviews/AdminCheckingReviews";
 import AdminReviewsBtnsAction from "./AdminReviewsBtnsAction/AdminReviewsBtnsAction";
 
@@ -17,7 +12,7 @@ function AdminReviews() {
   const ratedReviews = data.filter(
     (item) =>
       item.isUserReviewAdded === true &&
-      item.isModeratorReviewApproved === "true"
+      ["rejected", "approved"].includes(item.isModeratorReviewApproved)
   );
 
   const checkingReviews = data.filter(
@@ -42,10 +37,10 @@ function AdminReviews() {
 
       {(() => {
         switch (selectedSubPage) {
-          case "ratedReviews":
-            return <AdminRatedReviews data={ratedReviews} />;
           case "checkingReviews":
             return <AdminCheckingReviews data={checkingReviews} />;
+          case "ratedReviews":
+            return <AdminRatedReviews data={ratedReviews} />;
           default:
             return null;
         }

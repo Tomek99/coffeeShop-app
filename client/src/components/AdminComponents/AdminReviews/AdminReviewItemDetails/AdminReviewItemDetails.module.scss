@@ -1,0 +1,10 @@
+.AdminReviewItemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .ratingSpan {
+    display: flex;
+    align-items: center;
+  }
+}
