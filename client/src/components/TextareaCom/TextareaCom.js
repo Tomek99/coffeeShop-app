@@ -16,10 +16,10 @@ function TextareaCom({ setFieldValue, index }) {
         placeholder="Your comments"
         value={value}
         name="comment"
-        maxLength={1999}
+        maxLength={999}
         id={index}
       />
-      <span className={styles.countLength}>{value.length}/1999</span>
+      <span className={styles.countLength}>{value.length}/999</span>
     </div>
   );
 }

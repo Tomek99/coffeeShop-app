@@ -1,0 +1,35 @@
+.AdminCheckingReviewItem {
+  font-size: 1.5rem;
+  padding: 15px 0;
+  box-shadow: var(--shadow-thick-bottom);
+
+  .checkingReviewContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .columnItem {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .ratingSpan {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .btnsAction {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkingReviewContent {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+}

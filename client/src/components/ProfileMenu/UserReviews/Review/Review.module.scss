@@ -6,6 +6,7 @@
 
   .divRow {
     display: flex;
+    gap: 10px;
 
     .firstDiv {
       display: flex;
@@ -13,6 +14,7 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
+      min-width: 150px;
 
       .imgAndTitle {
         p {
@@ -64,6 +66,8 @@
         }
 
         .comment {
+          max-width: auto;
+          width: 100%;
           font-size: 1.3rem;
           font-weight: 300;
           color: var(--text-color);

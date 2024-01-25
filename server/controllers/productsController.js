@@ -7,8 +7,20 @@ const getProducts = asyncHandler(async (req, res) => {
 });
 
 const getProduct = asyncHandler(async (req, res) => {
-  const product = await Product.findById(req.params.id);
-  res.status(200).send(product);
+  try {
+    const product = await Product.findById(req.params.id);
+
+    if (product) {
+      res.status(200).send(product);
+    } else {
+      res.status(200).send(false);
+    }
+  } catch (error) {
+    // Handle the error caused by invalid ObjectId
+    console.error(error);
+    // Return an empty object or a specific response
+    res.status(200).send(false);
+  }
 });
 
 const deleteProduct = asyncHandler(async (req, res) => {

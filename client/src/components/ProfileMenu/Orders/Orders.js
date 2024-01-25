@@ -26,7 +26,7 @@ function Orders() {
     pageCount,
     itemsPerPage,
     handleChangePage,
-  } = usePaginationHook(0, data, 10, "purchased-products");
+  } = usePaginationHook(0, data, 10, "/purchased-products");
 
   return (
     <>

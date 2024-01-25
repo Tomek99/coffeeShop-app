@@ -14,7 +14,7 @@ function AdminRatedReviews({ data }) {
     handleChangePage,
   } = usePaginationHook(0, data, 15, "/admin/customers-reviews");
 
-  return (
+  return data.length ? (
     <div className={styles.AdminRatedReviews}>
       <div className={styles.reviewItems}>
         {data
@@ -26,6 +26,8 @@ function AdminRatedReviews({ data }) {
       <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
       <ScrollToTop pageNumber={pageNumber} />
     </div>
+  ) : (
+    <p style={{ fontSize: "1.5rem" }}>There are no rated reviews yet.</p>
   );
 }
 

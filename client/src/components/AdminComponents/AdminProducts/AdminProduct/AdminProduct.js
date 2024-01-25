@@ -3,7 +3,7 @@ import styles from "./AdminProduct.module.scss";
 import AdminProductDetails from "./AdminProductDetails/AdminProductDetails";
 import AdminEditProductDetails from "./AdminEditProductDetails/AdminEditProductDetails";
 import AdminDeleteProduct from "./AdminDeleteProduct/AdminDeleteProduct";
-import AdminIconBtn from "../../AdminBtns/AdminIconBtn";
+import AdminIconBtn from "../../AdminBtns/AdminIconBtn/AdminIconBtn";
 
 function AdminProduct({ product }) {
   const [action, setAction] = useState(null);
@@ -38,18 +38,18 @@ function AdminProduct({ product }) {
           <AdminIconBtn
             handleBtn={handleBtn}
             btnType="BsEye"
-            btnAction="viewDetails"
+            action="viewDetails"
           />
 
           <AdminIconBtn
             handleBtn={handleBtn}
             btnType="CiEdit"
-            btnAction="editDetails"
+            action="editDetails"
           />
           <AdminIconBtn
             handleBtn={handleBtn}
             btnType="ImBin"
-            btnAction="deleteProduct"
+            action="deleteProduct"
           />
         </div>
       </div>

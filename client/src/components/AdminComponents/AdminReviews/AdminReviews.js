@@ -14,6 +14,17 @@ import AdminReviewsBtnsAction from "./AdminReviewsBtnsAction/AdminReviewsBtnsAct
 function AdminReviews() {
   const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/reviews`;
   const { isLoaded, data } = useFetchData(apiEndpoint);
+  const ratedReviews = data.filter(
+    (item) =>
+      item.isUserReviewAdded === true &&
+      item.isModeratorReviewApproved === "true"
+  );
+
+  const checkingReviews = data.filter(
+    (item) =>
+      item.isUserReviewAdded === true &&
+      item.isModeratorReviewApproved === "checking"
+  );
 
   const [selectedSubPage, setSelectedSubPage] = useState("checkingReviews");
   function handleSelectedSubPage(page) {
@@ -32,9 +43,9 @@ function AdminReviews() {
       {(() => {
         switch (selectedSubPage) {
           case "ratedReviews":
-            return <AdminRatedReviews data={data} />;
+            return <AdminRatedReviews data={ratedReviews} />;
           case "checkingReviews":
-            return <AdminCheckingReviews data={data} />;
+            return <AdminCheckingReviews data={checkingReviews} />;
           default:
             return null;
         }

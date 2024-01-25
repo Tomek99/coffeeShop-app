@@ -1,0 +1,22 @@
+.AdminTextBtn {
+  color: var(--bg);
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.confirmText {
+  background-color: var(--main-color);
+
+  &:hover {
+    background-color: var(--main-color-darken);
+  }
+}
+.rejectText {
+  background-color: var(--red);
+  &:hover {
+    background-color: var(--red-darken);
+  }
+}

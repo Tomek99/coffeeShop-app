@@ -14,7 +14,11 @@ import user_navigation from "../../../data/user_naviagation.json";
 //   return { ...item, element: JSON.parse(item.element) };
 
 const navList = [
-  { name: "Orders", path: "/orders", element: <RiFileList3Line size={20} /> },
+  {
+    name: "Orders",
+    path: "/purchased-products",
+    element: <RiFileList3Line size={20} />,
+  },
   {
     name: "Returns and Complaints",
     path: "/returns",

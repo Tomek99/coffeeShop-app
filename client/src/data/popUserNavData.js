@@ -7,7 +7,7 @@ import { FaRegUser } from "react-icons/fa";
 const navList = [
   { name: "Account", path: "account", element: <FaRegUser size={20} /> },
   {
-    name: "Purchased products",
+    name: "Orders",
     path: "purchased-products",
     element: <RiFileList3Line size={20} />,
   },
