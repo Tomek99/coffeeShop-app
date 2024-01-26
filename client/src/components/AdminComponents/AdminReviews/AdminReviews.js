@@ -11,14 +11,14 @@ function AdminReviews() {
   const { isLoaded, data } = useFetchData(apiEndpoint);
   const ratedReviews = data.filter(
     (item) =>
-      item.isUserReviewAdded === true &&
-      ["rejected", "approved"].includes(item.isModeratorReviewApproved)
+      item.isUserAddedReview === true &&
+      ["rejected", "approved"].includes(item.isModeratorApprovedReview)
   );
 
   const checkingReviews = data.filter(
     (item) =>
-      item.isUserReviewAdded === true &&
-      item.isModeratorReviewApproved === "checking"
+      item.isUserAddedReview === true &&
+      item.isModeratorApprovedReview === "checking"
   );
 
   const [selectedSubPage, setSelectedSubPage] = useState("checkingReviews");

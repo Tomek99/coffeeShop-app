@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  max-width: 400px;
+  text-align: justify;
 
   .ratingSpan {
     display: flex;

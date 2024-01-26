@@ -23,7 +23,7 @@ function AdminCheckingReviews({ data }) {
       <ScrollToTop pageNumber={pageNumber} />
     </div>
   ) : (
-    <p style={{ fontSize: "1.5rem" }}>There are no rated reviews yet.</p>
+    <p style={{ fontSize: "1.5rem" }}>There are no reviews yet.</p>
   );
 }
 

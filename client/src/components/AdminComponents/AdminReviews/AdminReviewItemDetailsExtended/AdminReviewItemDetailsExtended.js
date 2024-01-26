@@ -5,12 +5,18 @@ import RatingsStars from "../../../RatingStars/RatingStars";
 function AdminReviewItemDetailsExtended({ item }) {
   return (
     <div className={styles.AdminReviewItemDetailsExtended}>
-      <span>Review date: {item.userReviewDate}</span>
-      <span className={styles.ratingSpan}>
-        Rate:
+      <div>
+        <b>Review date: </b>
+        <span>{item.userReviewDate}</span>
+      </div>
+      <div className={styles.ratingSpan}>
+        <b>Rate:</b>
         <RatingsStars tab={0} rate={item.rate} size={"medium"} />
-      </span>
-      <p>Comment: {item.comment}</p>
+      </div>
+      <div>
+        <b>Comment: </b>
+        <p>{item.comment}</p>
+      </div>
     </div>
   );
 }

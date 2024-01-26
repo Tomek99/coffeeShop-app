@@ -48,11 +48,11 @@ const invoiceSchema = new mongoose.Schema(
       require: true,
       default: 0,
     },
-    isUserReviewAdded: {
+    isUserAddedReview: {
       type: Boolean,
       default: false,
     },
-    isModeratorReviewApproved: {
+    isModeratorApprovedReview: {
       type: String,
       default: "checking",
     },

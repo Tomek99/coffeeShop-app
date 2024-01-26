@@ -1,0 +1,14 @@
+.AdminModeratorAttention {
+  display: flex;
+  flex-direction: column;
+
+  .textContent {
+    max-width: 400px;
+    text-align: justify;
+    margin-bottom: 5px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
