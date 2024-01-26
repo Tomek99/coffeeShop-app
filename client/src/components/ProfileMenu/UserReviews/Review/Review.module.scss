@@ -78,6 +78,8 @@
         display: flex;
 
         .text {
+          display: flex;
+          align-items: center;
           margin-right: 15px;
           font-size: 1.3rem;
           color: var(--text-color);

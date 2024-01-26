@@ -4,7 +4,7 @@ import Footer from "../../Footer/Footer";
 
 function FooterSwitcher({ pathname }) {
   if (pathname.includes("/order")) return <FooterOrder />;
-  else if (pathname.includes("/admin")) return <null />;
+  else if (pathname.includes("/admin")) return null;
   else return <Footer />;
 }
 

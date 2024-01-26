@@ -5,6 +5,7 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import RatingsStars from "../../../RatingStars/RatingStars";
 import BtnDots from "../../../Buttons/BtnDots/BtnDots";
 import DataDiff from "../../../DataDiff/DataDiff";
+import BtnThumbs from "../../../Buttons/BtnThumbs/BtnThumbs";
 
 function Review({ item }) {
   return (
@@ -42,12 +43,7 @@ function Review({ item }) {
           </div>
           <div className={styles.mark}>
             <span className={styles.text}>Was this review helpful?</span>
-            <div className={styles.thumbs}>
-              <BsHandThumbsUp size={20} className={styles.thumb} />
-              <span>{item.likes}</span>
-              <BsHandThumbsDown className={styles.thumb} size={20} />
-              <span>{item.dislikes}</span>
-            </div>
+            <BtnThumbs item={item} isDisabled={true} />
           </div>
         </div>
       </div>

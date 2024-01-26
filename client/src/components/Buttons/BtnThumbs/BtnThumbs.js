@@ -4,7 +4,7 @@ import { Context } from "../../../Contexts/Context";
 import axios from "axios";
 import styles from "./BtnThumbs.module.scss";
 
-function BtnThumbs({ item }) {
+function BtnThumbs({ item, isDisabled }) {
   const { notify, notifyError, user } = useContext(Context);
   const [likes, setLikes] = useState(item.likes);
   const [dislikes, setDislikes] = useState(item.dislikes);
@@ -40,6 +40,7 @@ function BtnThumbs({ item }) {
         className={styles.thumb}
         onClick={() => handleThumb("1")}
         data-cy="thumbUpBtn"
+        disabled={isDisabled}
       >
         <BsHandThumbsUp size={20} className={styles.thumb} />
       </button>
@@ -48,6 +49,7 @@ function BtnThumbs({ item }) {
         className={styles.thumb}
         onClick={() => handleThumb("0")}
         data-cy="thumbDownBtn"
+        disabled={isDisabled}
       >
         {" "}
         <BsHandThumbsDown className={styles.thumb} size={20} />

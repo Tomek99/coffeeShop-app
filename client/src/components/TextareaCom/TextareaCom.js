@@ -13,7 +13,7 @@ function TextareaCom({ setFieldValue, index }) {
     <div className={styles.TextareaCom}>
       <TextareaAutosize
         onChange={handleChange}
-        placeholder="Your comments"
+        placeholder="Your comment"
         value={value}
         name="comment"
         maxLength={999}

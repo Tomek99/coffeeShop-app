@@ -21,10 +21,10 @@ function UserReviews() {
   const { data, isLoaded } = useFetchData(endPoint);
 
   const feedbacks = data
-    .filter((item) => item.isUserReviewAdded !== true)
+    .filter((item) => item.isUserAddedReview !== true)
     .sort((a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate));
   const reviews = data
-    .filter((item) => item.isUserReviewAdded !== false)
+    .filter((item) => item.isUserAddedReview !== false)
     .sort((a, b) => new Date(b.userReviewDate) - new Date(a.userReviewDate));
 
   /* Pagination */

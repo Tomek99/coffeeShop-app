@@ -4,7 +4,7 @@ import NavigationBarOrder from "../../NavigationBarOrder/NavigationBarOrder";
 
 function NavigationBarSwitcher({ pathname }) {
   if (pathname.includes("/order")) return <NavigationBarOrder />;
-  else if (pathname.includes("/admin")) return <null />;
+  else if (pathname.includes("/admin")) return <div></div>;
   else return <NavigationBar />;
 }
 

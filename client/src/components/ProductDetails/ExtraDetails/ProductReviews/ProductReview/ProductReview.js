@@ -46,7 +46,7 @@ function ProductReview({ item }) {
         <p className={styles.userComment}>{item.comment} s </p>
         <div className={styles.mark}>
           <span className={styles.text}>Was this review helpful?</span>
-          <BtnThumbs item={item} />
+          <BtnThumbs item={item} isDisabled={false} />
         </div>
       </div>
     </div>

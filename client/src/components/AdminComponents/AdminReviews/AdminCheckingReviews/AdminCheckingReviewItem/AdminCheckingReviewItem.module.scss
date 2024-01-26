@@ -5,6 +5,7 @@
   .checkingReviewContent {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
   }
 
   .btnsAction {
@@ -15,7 +16,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .checkingReviewContent {
     display: grid;
     grid-template-columns: 1fr !important;

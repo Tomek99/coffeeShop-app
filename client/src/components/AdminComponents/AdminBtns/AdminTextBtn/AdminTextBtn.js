@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./AdminTextBtn.module.scss";
 
-function AdminTextBtn({ handleBtn, textBtn, action }) {
+function AdminTextBtn({ handleBtn, textBtn, action, typeBtn = "button" }) {
   return (
     <button
-      type="button"
+      type={typeBtn}
       className={
         action === "confirm"
           ? `${styles.AdminTextBtn} ${styles.confirmText}`
