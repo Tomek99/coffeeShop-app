@@ -18,7 +18,6 @@ function AdminUserReviewRatingForm({ item }) {
   }
 
   function handleComment(e) {
-    console.log(e.target.value);
     setComment(e.target.value);
   }
 

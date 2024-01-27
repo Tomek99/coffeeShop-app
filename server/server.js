@@ -32,6 +32,7 @@ app.use("/api/invoices", require("./routes/invoicesRoutes"));
 app.use("/api/stripe", require("./routes/stripeRoutes"));
 app.use("/api/orders", require("./routes/ordersRoutes"));
 app.use("/api/reviews", require("./routes/reviewsRoutes"));
+app.use("/api/admin", require("./routes/adminRoutes"));
 
 app.use(errorHandler);
 
