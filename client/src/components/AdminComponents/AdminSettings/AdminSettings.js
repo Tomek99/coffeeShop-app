@@ -1,38 +1,22 @@
-import { Field, Form, Formik } from "formik";
 import React from "react";
 import styles from "./AdminSettings.module.scss";
-import FieldComponent from "../../FormikComponents/FieldComponent/FieldComponent";
-import adminSettingsData from "../../../data/adminSettingsData.json";
-
-const intitialValues = {
-  adminName: "",
-  adminLogin: "",
-  adminPassword: "",
-  adminMode: "",
-};
+import useFetchData from "../../../hooks/useFetchData";
+import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
+import AdminSettingsNewUserForm from "./AdminSettingsNewUserForm/AdminSettingsNewUserForm";
+import AdminSettingsUserItem from "./AdminSettingsUserItem/AdminSettingsUserItem";
 
 function AdminSettings() {
-  return (
-    <div>
-      <Formik initialValues={intitialValues}>
-        <Form className={styles.admin}>
-          <label>
-            <Field type="radio" name="mode" value="owner" />
-            Owner
-          </label>
-          <label>
-            <Field type="radio" name="mode" value="worker" />
-            Worker
-          </label>
-          <div>
-            {adminSettingsData.map((item, i) => (
-              <FieldComponent item={item} key={i} />
-            ))}
-          </div>
-        </Form>
-      </Formik>
+  const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/admin/getUsers`;
+  const { isLoaded, data } = useFetchData(apiEndpoint);
 
-      <div></div>
+  return (
+    <div className={styles.AdminSettings}>
+      <AdminSettingsNewUserForm />
+      {isLoaded ? (
+        <LoaderSpinner loading={isLoaded} />
+      ) : (
+        data.map((item, i) => <AdminSettingsUserItem item={item} key={i} />)
+      )}
     </div>
   );
 }

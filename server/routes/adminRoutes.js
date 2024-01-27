@@ -8,7 +8,7 @@ const {
 } = require("../controllers/adminController");
 
 router.route("/getUsers").get(getAdmins);
-router.route("/getUser/:id").get(getSingleAdmin);
+router.route("/getSingleUser/:id").get(getSingleAdmin);
 router.route("/postUser").post(postUser);
 
 module.exports = router;

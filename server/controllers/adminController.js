@@ -8,6 +8,8 @@ const getAdmins = asyncHandler(async (req, res) => {
 
 const getSingleAdmin = asyncHandler(async (req, res) => {
   const adminPanelUsers = await Admin.findById(req.params.id);
+
+  res.status(200).json(adminPanelUsers);
 });
 const postUser = asyncHandler(async (req, res) => {
   const { adminName, adminLogin, adminPassword, adminMode } = req.body;
