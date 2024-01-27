@@ -5,7 +5,11 @@ function BtnExtraDetails({ tabNumber, handleBtn, textBtn, storeNumber }) {
   return (
     <button
       type="button"
-      className={tabNumber === storeNumber ? styles.btn : null}
+      className={
+        tabNumber === storeNumber
+          ? `${styles.BtnExtraDetails} ${styles.btn}`
+          : styles.BtnExtraDetails
+      }
       onClick={() => {
         handleBtn(storeNumber);
       }}

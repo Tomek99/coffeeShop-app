@@ -6,6 +6,7 @@ import adminSettingsData from "../../../../data/adminSettingsData.json";
 import postDataUtils from "../../../../utils/postDataUtils";
 import * as Yup from "yup";
 import ErrMessage from "../../../ErrorMessage/ErrMessage";
+import AdminTextBtn from "../../AdminBtns/AdminTextBtn/AdminTextBtn";
 
 const validationSchema = Yup.object({
   adminName: Yup.string().required("Required"),
@@ -36,7 +37,8 @@ function AdminSettingsNewUserForm() {
       onSubmit={onSubmit}
     >
       <Form className={styles.AdminSettingsNewUserForm}>
-        <div>
+        <h2 className={styles.adminSettingsHeader}>Select mode</h2>
+        <div className={styles.radioDiv}>
           <label>
             <Field type="radio" name="adminMode" value="owner" />
             Owner
@@ -47,12 +49,18 @@ function AdminSettingsNewUserForm() {
           </label>
           <ErrMessage name="adminMode" />
         </div>
-        <div>
+        <h2 className={styles.adminSettingsHeader}>Fill out user data</h2>
+        <div className={styles.adminFormInputs}>
           {adminSettingsData.map((item, i) => (
             <FieldComponent item={item} key={i} />
           ))}
         </div>
-        <button type="submit">Submit</button>
+        <AdminTextBtn
+          typeBtn="submit"
+          textBtn="Submit"
+          handleBtn={() => {}}
+          action="confirm"
+        />
       </Form>
     </Formik>
   );

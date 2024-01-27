@@ -10,7 +10,7 @@ function AdminTextBtn({ handleBtn, textBtn, action, typeBtn = "button" }) {
           ? `${styles.AdminTextBtn} ${styles.confirmText}`
           : `${styles.AdminTextBtn} ${styles.rejectText}`
       }
-      onClick={() => handleBtn(action)}
+      onClick={handleBtn}
     >
       {textBtn}
     </button>

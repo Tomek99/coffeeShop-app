@@ -7,7 +7,6 @@ function AdminReviewItemDetails({ item }) {
   return (
     <div className={styles.AdminReviewItemDetails}>
       <h1 className={styles.reviewItemHeader}>Review id: {item._id}</h1>
-
       <div>
         <b>Product id:</b>
         <span>{item.productId}</span>

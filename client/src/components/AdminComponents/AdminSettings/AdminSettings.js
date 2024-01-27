@@ -15,7 +15,14 @@ function AdminSettings() {
       {isLoaded ? (
         <LoaderSpinner loading={isLoaded} />
       ) : (
-        data.map((item, i) => <AdminSettingsUserItem item={item} key={i} />)
+        <section>
+          <h1>Users</h1>
+          <div className={styles.usersItems}>
+            {data.map((item, i) => (
+              <AdminSettingsUserItem item={item} key={i} />
+            ))}
+          </div>
+        </section>
       )}
     </div>
   );

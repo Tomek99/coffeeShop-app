@@ -26,8 +26,15 @@ const postUser = asyncHandler(async (req, res) => {
   res.status(200).json(post);
 });
 
+const deleteUser = asyncHandler(async (req, res) => {
+  const { id } = req.body;
+  const post = await Admin.findByIdAndDelete(req.body.id);
+  res.status(200).json(post);
+});
+
 module.exports = {
   getAdmins,
   getSingleAdmin,
   postUser,
+  deleteUser,
 };
