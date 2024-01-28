@@ -3,13 +3,13 @@ const router = express.Router();
 
 const {
   getAdmins,
-  getSingleAdmin,
+  findSingleAdmin,
   postUser,
   deleteUser,
 } = require("../controllers/adminController");
 
 router.route("/getUsers").get(getAdmins);
-router.route("/getSingleUser/:id").get(getSingleAdmin);
+router.route("/findSingleAdmin").post(findSingleAdmin);
 router.route("/postUser").post(postUser);
 router.route("/deleteUser").delete(deleteUser);
 

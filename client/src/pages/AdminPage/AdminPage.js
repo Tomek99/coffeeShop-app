@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./AdminPage.module.scss";
+import { AdminContext } from "../../Contexts/AdminContext";
 import { Outlet } from "react-router-dom";
 import {
   AdminLoginPage,
@@ -15,6 +16,13 @@ function AdmingPage() {
     if (storedValue !== null) return JSON.parse(storedValue);
     else return false;
   });
+
+  const [adminData, setAdminData] = useState(() => {
+    const storedValue = localStorage.getItem("adminData");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return false;
+  });
+
   const windowWidth = useWindowWidth();
   function handleNav() {
     setOpenNav(!openNav);
@@ -23,6 +31,16 @@ function AdmingPage() {
   function handleAdminMode() {
     setIsAdminMode(!isAdminMode);
     localStorage.setItem("isAdminMode", JSON.stringify(!isAdminMode));
+
+    if (!isAdminMode === false) {
+      localStorage.removeItem("adminData");
+      localStorage.removeItem("isAdminMode");
+    }
+  }
+
+  function handleAdminData(data) {
+    setAdminData(data);
+    localStorage.setItem("adminData", JSON.stringify(data));
   }
 
   const setGridColumnTemplate = openNav
@@ -31,22 +49,34 @@ function AdmingPage() {
     ? "auto"
     : "250px 1fr auto";
 
-  return isAdminMode ? (
-    <div
-      className={styles.AdminPage}
-      style={{ gridTemplateColumns: setGridColumnTemplate }}
+  return (
+    <AdminContext.Provider
+      value={{
+        openNav,
+        adminData,
+        handleNav,
+        handleAdminMode,
+        handleAdminData,
+      }}
     >
-      <AdminNavigationBar openNav={openNav} handleNav={handleNav} />
-      <div className={styles.divRightSide}>
-        <AdminSearch handleNav={handleNav} handleAdminMode={handleAdminMode} />
-        <Outlet />
-      </div>
-      {windowWidth <= 1400 || openNav ? null : (
-        <div className={styles.additionContainer}></div>
+      {isAdminMode ? (
+        <div
+          className={styles.AdminPage}
+          style={{ gridTemplateColumns: setGridColumnTemplate }}
+        >
+          <AdminNavigationBar />
+          <div className={styles.divRightSide}>
+            <AdminSearch />
+            <Outlet />
+          </div>
+          {windowWidth <= 1400 || openNav ? null : (
+            <div className={styles.additionContainer}></div>
+          )}
+        </div>
+      ) : (
+        <AdminLoginPage />
       )}
-    </div>
-  ) : (
-    <AdminLoginPage handleAdminMode={handleAdminMode} />
+    </AdminContext.Provider>
   );
 }
 

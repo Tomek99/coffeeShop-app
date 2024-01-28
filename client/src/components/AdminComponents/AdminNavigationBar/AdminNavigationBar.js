@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./AdminNavigationBar.module.scss";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsCartFill, BsCalendar4Event, BsCalendar3 } from "react-icons/bs";
@@ -16,6 +16,7 @@ import { TiMessages } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import AdminUnorderedList from "./AdminUnorderedList/AdminUnorderedList";
 import PageLogo from "../../PageLogo/PageLogo";
+import { AdminContext } from "../../../Contexts/AdminContext";
 
 const clientFacing = [
   { text: "Customers", icon: <FaUsers size="20" />, path: "customers" },
@@ -47,14 +48,11 @@ const management = [
     icon: <MdOutlineAdminPanelSettings size="20" />,
     path: "admin-management",
   },
-  // {
-  //   text: "Performance",
-  //   icon: <MdOutlineTrendingUp size="20" />,
-  //   path: "performance",
-  // },
 ];
 
-function AdminNavigationBar({ openNav, handleNav }) {
+function AdminNavigationBar() {
+  const { openNav, adminData } = useContext(AdminContext);
+
   return (
     <div
       className={
@@ -73,7 +71,9 @@ function AdminNavigationBar({ openNav, handleNav }) {
 
       <AdminUnorderedList header={"Client Facing"} arrayLinks={clientFacing} />
       <AdminUnorderedList header={"Sales"} arrayLinks={sales} />
-      <AdminUnorderedList header={"Management"} arrayLinks={management} />
+      {adminData.adminMode !== "worker" ? (
+        <AdminUnorderedList header={"Management"} arrayLinks={management} />
+      ) : null}
     </div>
   );
 }

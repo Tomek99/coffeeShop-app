@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./AdminDashboard.module.scss";
 import dashboardData from "../../../data/dashboardData.json";
+import { AdminContext } from "../../../Contexts/AdminContext";
 
 function AdminDashboard() {
+  const { adminData } = useContext(AdminContext);
+  console.log(adminData);
   return (
     <div className={styles.AdminDashboard}>
-      <h1 className={styles.dashBoardHeader}>Welcome to Panel Admin!</h1>
+      <h1 className={styles.dashBoardHeader}>
+        Welcome to the admin panel {adminData.adminName}!
+      </h1>
       <div className={styles.dashBoardContent}>
         {dashboardData.sections.map((item, i) => (
           <div key={i}>

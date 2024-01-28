@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./AdminSearch.module.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
-function AdminSearch({ handleNav, handleAdminMode }) {
+import { AdminContext } from "../../../Contexts/AdminContext";
+function AdminSearch() {
+  const { handleNav, handleAdminMode } = useContext(AdminContext);
   return (
     <div className={styles.AdminBar}>
       <div className={styles.divSecondBar}>

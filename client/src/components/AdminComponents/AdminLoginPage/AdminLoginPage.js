@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import styles from "./AdminLoginPage.module.scss";
 import { Form, Formik } from "formik";
 import FieldComponent from "../../FormikComponents/FieldComponent/FieldComponent";
 import BtnDefault from "../../Buttons/BtnDefault/BtnDefault";
 import { validationSchema } from "../../../validationSchemas/adminPanelValidationSchema";
+import postDataUtils from "../../../utils/postDataUtils";
+import inbuiltAdmin from "../../../data/inbuiltAdmin.json";
+import { AdminContext } from "../../../Contexts/AdminContext";
 
 const loginItem = {
   type: "text",
@@ -17,18 +20,31 @@ const passowrdItem = {
   placeholder: "Enter password",
 };
 
-function AdminLoginPage({ handleAdminMode }) {
-  function onSubmit(values, { setSubmitting }) {
-    setSubmitting(true);
+function AdminLoginPage() {
+  const { handleAdminMode, handleAdminData } = useContext(AdminContext);
+  const [invalidData, setInvalidData] = useState("");
 
-    try {
+  async function onSubmit(values, { setSubmitting }) {
+    setSubmitting(true);
+    setInvalidData("");
+
+    const apiAdminEndpoint = `${process.env.REACT_APP_API_URI}/api/admin/findSingleAdmin`;
+    const response = await postDataUtils(apiAdminEndpoint, values);
+
+    if (response) {
       handleAdminMode();
-    } catch (error) {
-      // Handle errors
-      console.log(error);
-    } finally {
-      setSubmitting(false);
+      handleAdminData(response);
+    } else if (
+      values.adminLogin === process.env.REACT_APP_ADMIN_LOGIN &&
+      values.adminPassword === process.env.REACT_APP_ADMIN_PASSWORD
+    ) {
+      handleAdminMode();
+      handleAdminData(inbuiltAdmin);
+    } else {
+      setInvalidData("Invalid data, try again...");
     }
+
+    setSubmitting(false);
   }
   return (
     <div className={styles.AdminLoginPage}>
@@ -52,6 +68,7 @@ function AdminLoginPage({ handleAdminMode }) {
             <label>Password:</label>
 
             <FieldComponent item={passowrdItem} />
+            <p>{invalidData}</p>
           </div>
           <div className={styles.btnsAdminLoginPageActions}>
             <BtnDefault route="" text="Return Home" />

@@ -6,11 +6,20 @@ const getAdmins = asyncHandler(async (req, res) => {
   res.status(200).json(adminPanelUsers);
 });
 
-const getSingleAdmin = asyncHandler(async (req, res) => {
-  const adminPanelUsers = await Admin.findById(req.params.id);
+const findSingleAdmin = asyncHandler(async (req, res) => {
+  const { adminLogin, adminPassword } = req.body;
+  const admin = await Admin.findOne({ adminLogin });
 
-  res.status(200).json(adminPanelUsers);
+  if (
+    admin !== null &&
+    (await bcrypt.compare(adminPassword, admin.adminPassword))
+  ) {
+    return res.status(200).json(admin);
+  } else {
+    res.status(200).json(false);
+  }
 });
+
 const postUser = asyncHandler(async (req, res) => {
   const { adminName, adminLogin, adminPassword, adminMode } = req.body;
   const salt = await bcrypt.genSalt(10);
@@ -34,7 +43,7 @@ const deleteUser = asyncHandler(async (req, res) => {
 
 module.exports = {
   getAdmins,
-  getSingleAdmin,
+  findSingleAdmin,
   postUser,
   deleteUser,
 };
