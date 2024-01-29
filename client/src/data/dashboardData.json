@@ -1,0 +1,43 @@
+{
+  "sections": [
+    {
+      "name": "Client Facing",
+      "categories": [
+        {
+          "name": "Customers",
+          "description": "This section contains information about the customers, including their profiles, contact details, and history of interactions."
+        },
+        {
+          "name": "Reviews",
+          "description": "This space is for managing and viewing customer feedback to reviews related to products."
+        },
+        {
+          "name": "Messages",
+          "description": "This involves communication channels between clients and the business."
+        }
+      ]
+    },
+    {
+      "name": "Sales",
+      "categories": [
+        {
+          "name": "Products",
+          "description": "This section contains details about the products or services offered, including descriptions, pricing, and possibly inventory information."
+        },
+        {
+          "name": "Transactions",
+          "description": "This includes a record of all sales transactions, providing an overview of purchases, order status, and payment details."
+        }
+      ]
+    },
+    {
+      "name": "Management",
+      "categories": [
+        {
+          "name": "Admin",
+          "description": "This section is dedicated to administrative functions, allowing authorized users to manage the system, set permissions, and perform other administrative tasks. It may include user management, system configuration, and overall control of the platform."
+        }
+      ]
+    }
+  ]
+}

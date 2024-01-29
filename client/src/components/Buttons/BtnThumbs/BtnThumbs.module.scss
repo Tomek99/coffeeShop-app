@@ -1,0 +1,17 @@
+.BtnThumbs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.3rem;
+
+  .thumb {
+    transition: 0.3s linear;
+    background-color: transparent !important;
+
+    cursor: pointer;
+
+    :hover {
+      color: var(--main-color-darken);
+    }
+  }
+}

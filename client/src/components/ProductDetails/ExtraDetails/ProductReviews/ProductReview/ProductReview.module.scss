@@ -57,23 +57,6 @@
         margin-right: 15px;
         font-size: 1.3rem;
       }
-
-      .thumbs {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 1.3rem;
-
-        .thumb {
-          background-color: transparent;
-          transition: 0.3s linear;
-          cursor: pointer;
-
-          :hover {
-            color: var(--main-color-darken);
-          }
-        }
-      }
     }
   }
 }

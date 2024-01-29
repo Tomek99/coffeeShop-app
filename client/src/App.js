@@ -1,27 +1,29 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MessengerCustomerChat from "react-messenger-customer-chat";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+import useWishListHook from "./hooks/useWishListHook";
 import { Context } from "./Contexts/Context";
-import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
+import FooterSwitcher from "./components/Switcher/FooterSwitcher/FooterSwitcher";
+import NavigationBarSwitcher from "./components/Switcher/NavigationBarSwitcher/NavigationBarSwitcher";
+import ToastContainerCom from "./components/ToastContainerCom/ToastContainerCom";
+import useNotifyHook from "./hooks/useNotifyHook";
+import useUserOrderHook from "./hooks/useUserOrderHook";
+import useLoginHook from "./hooks/useLoginHook";
+import useCartHook from "./hooks/useCartHook";
+import useFetchData from "./hooks/useFetchData";
 import {
   Home,
   Blog,
   Products,
-  Reviews,
   AboutUs,
   Account,
   Wish,
   AdminPage,
 } from "./pages";
 import {
-  NavigationBar,
-  NavigationBarOrder,
   ContactSection,
-  Footer,
-  FooterOrder,
   ProductDetails,
   Orders,
   Order,
@@ -39,335 +41,48 @@ import {
   PaymentSuccess,
   PaymentCanceled,
   ProtectedOrder,
+  AdminProducts,
+  AdminCustomers,
+  AdminTransactions,
+  AdminDashboard,
+  AdminReviews,
+  AdminCustomersMessages,
+  AdminSettings,
 } from "./components";
 
 function App() {
-  /*----------- admin ----------- */
-  // const [adminLogged, setAdminLogged] = useState(false);
-
-  // function handleAdmin() {
-  //   if (!adminLogged) {
-  //     prompt()
-  //   }
-  // }
   /*----------- location ----------- */
   const location = useLocation();
-
-  /*----------- products ----------- */
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(true);
-    const fetchData = async () => {
-      try {
-        const products = await axios.get(
-          `${process.env.REACT_APP_API_URI}/api/products`
-        );
-        setLoading(false);
-        setProducts(products.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  /*----------- login ----------- */
-  const [isLogIn, setIsLogIn] = useState(() => {
-    if (localStorage.getItem("is-logged") !== null) {
-      const storedValue = localStorage.getItem("is-logged");
-      return storedValue === "true" ? true : false;
-    } else return false;
-  });
-
-  const [user, setUser] = useState(() => {
-    const storedValue = localStorage.getItem("user-data");
-    if (storedValue !== null && isLogIn) return JSON.parse(storedValue);
-    else return {};
-  });
-
-  function logIn(data) {
-    setIsLogIn(true);
-    setUser(data);
-    notify("You have been logged in!");
-    localStorage.clear(); // TEST
-    localStorage.setItem("user-data", JSON.stringify(data));
-    localStorage.setItem("is-logged", true);
-  }
-
-  function logOut() {
-    setIsLogIn(false);
-    setUser({});
-    notify("You have been logged out!");
-    localStorage.clear();
-  }
-
-  /*----------- cart ----------- */
-  const [cartItems, setCartItems] = useState(() => {
-    const storedValue = localStorage.getItem("cart");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return [];
-  });
-  const [cartValue, setCartValue] = useState(() => {
-    const storedValue = localStorage.getItem("cart-value");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return 0;
-  });
-  const [cartSave, setCartSave] = useState(() => {
-    const storedValue = localStorage.getItem("cart-save");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return 0;
-  });
-
-  const [cartQuantity, setCartQuantity] = useState(() => {
-    const storedValue = localStorage.getItem("cart-quantity");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return 0;
-  });
-
-  function addItem(item) {
-    const cartItemsCopy = cartItems.map((item) => ({ ...item }));
-
-    const newItemIndex = cartItemsCopy.findIndex(
-      (element) => element._id === item._id
-    );
-
-    if (newItemIndex === -1) {
-      setCartItems([...cartItemsCopy, { ...item }]);
-    } else {
-      cartItemsCopy[newItemIndex].quantity =
-        cartItemsCopy[newItemIndex].quantity + item.quantity;
-
-      setCartItems(cartItemsCopy);
-    }
-    notify("Product(s) added to cart!");
-    setCartQuantity(cartQuantity + item.quantity);
-    appendPrice(item.price, item.oldPrice, item.quantity);
-  }
-
-  function deleteItem(id, newPrice, oldPrice) {
-    const cartList = cartItems.filter((item) => item._id !== id);
-    const findItem = cartItems.filter((item) => item._id === id);
-
-    setCartItems(cartList);
-    setCartQuantity(cartQuantity - findItem[0].quantity);
-    subtractPrice(newPrice, oldPrice, findItem[0].quantity);
-    notify("Product(s) has been removed!");
-  }
-
-  function appendPrice(newPrice, oldPrice, quantity) {
-    setCartValue(
-      Math.round((cartValue + parseFloat(newPrice) * quantity) * 100) / 100
-    );
-
-    if (oldPrice) {
-      setCartSave(
-        Math.round(
-          (cartSave +
-            (parseFloat(oldPrice) - parseFloat(newPrice)) * quantity) *
-            100
-        ) / 100
-      );
-    }
-  }
-
-  function subtractPrice(newPrice, oldPrice, quantity) {
-    setCartValue(
-      Math.round((cartValue - parseFloat(newPrice) * quantity) * 100) / 100
-    );
-
-    if (oldPrice) {
-      setCartSave(
-        Math.round(
-          (cartSave -
-            (parseFloat(oldPrice) - parseFloat(newPrice)) * quantity) *
-            100
-        ) / 100
-      );
-    }
-  }
-
-  function changeQuantity(e, id) {
-    const cartItemsCopy = cartItems.map((item) => ({ ...item }));
-    const foundIndex = cartItemsCopy.findIndex(
-      (item, index) => item._id === id
-    );
-    const previousQuantity = cartItemsCopy[foundIndex].quantity;
-    cartItemsCopy[foundIndex].quantity = parseInt(e.target.value);
-
-    const currentQuantity = cartItemsCopy[foundIndex].quantity;
-    setCartItems(cartItemsCopy);
-    setCartQuantity(cartQuantity + currentQuantity - previousQuantity);
-
-    if (currentQuantity > previousQuantity) {
-      appendPrice(
-        cartItemsCopy[foundIndex].price,
-        cartItemsCopy[foundIndex].oldPrice,
-        Math.abs(currentQuantity - previousQuantity)
-      );
-    } else if (currentQuantity < previousQuantity) {
-      subtractPrice(
-        cartItemsCopy[foundIndex].price,
-        cartItemsCopy[foundIndex].oldPrice,
-        Math.abs(currentQuantity - previousQuantity)
-      );
-    }
-  }
-
-  function clearTheCart() {
-    setCartItems([]);
-    setCartQuantity(0);
-    setCartValue(0);
-    setCartSave(0);
-
-    localStorage.setItem("cart", JSON.stringify([]));
-    localStorage.setItem("cart-quantity", 0);
-    localStorage.setItem("cart-value", 0);
-    localStorage.setItem("cart-save", 0);
-
-    if (window.location.href !== `${process.env.REACT_APP_URI}/order/success`)
-      notify("Cart has been cleared!");
-  }
-  useEffect(() => {
-    localStorage.setItem("cart-save", cartSave);
-    localStorage.setItem("cart-value", cartValue);
-    localStorage.setItem("cart-quantity", cartQuantity);
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartValue, cartQuantity, cartItems, cartSave]);
-
-  /*----------- wishList ----------- */
-  const [wishList, setWishList] = useState(() => {
-    const storedValue = localStorage.getItem("wishList");
-
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return [];
-  });
-
-  function addWishItem(id) {
-    const foundId = wishList.find((value) => value === id);
-
-    if (!foundId) {
-      setWishList([...wishList, id]);
-      localStorage.setItem("wishList", JSON.stringify([...wishList, id]));
-
-      notify("Product added to wish list!");
-    } else {
-      const filteredItems = wishList.filter((value) => value !== id);
-      setWishList(filteredItems);
-      localStorage.setItem("wishList", JSON.stringify(filteredItems));
-
-      notify("Product has been deleted!");
-    }
-  }
-
-  /*----------- order ----------- */
-  const [order, setOrder] = useState(() => {
-    const storedValue = localStorage.getItem("order");
-    if (storedValue !== null) return JSON.parse(storedValue);
-    else return {};
-  });
-
-  function addOrder(order) {
-    const address = {
-      name: order.name,
-      street: order.street,
-      house: order.house,
-      ZIP_code: order.ZIP_code,
-      city: order.city,
-      number: order.number,
-      email: order.email,
-    };
-
-    const company = {
-      companyNip: order.companyNip,
-      companyName: order.companyName,
-      companyStreet: order.companyStreet,
-      companyZIPcode: order.companyZIPcode,
-      companyCity: order.companyCity,
-    };
-
-    let invoice = {
-      name: order.i_name,
-      street: order.i_street,
-      ZIP_code: order.i_ZIP_code,
-      city: order.i_city,
-    };
-    if (order.i_name) {
-      invoice = {
-        name: order.i_name,
-        street: order.i_street,
-        ZIP_code: order.i_ZIP_code,
-        city: order.i_city,
-      };
-    } else {
-      invoice = {
-        name: order.name,
-        street: order.street,
-        ZIP_code: order.ZIP_code,
-        city: order.city,
-      };
-    }
-    const orderUpdate = {
-      userId: user._id,
-      userName: user.firstName,
-      save: cartSave,
-      cartValue: cartValue,
-      totalCost:
-        cartValue +
-        JSON.parse(order.deliveryFee) +
-        JSON.parse(order.paymentFee),
-      supplyPrice: 15,
-      products: cartItems,
-      address: address,
-      company: company,
-      invoice: invoice,
-      payment: order.payment,
-      paymentFee: order.paymentFee,
-      delivery: order.delivery,
-      deliveryFee: order.deliveryFee,
-      shopper: order.shopper,
-      comment: order.comment,
-      activeAddress: order.activeAddress,
-      activeCompany: order.activeCompany,
-      activeInvoice: order.activeInvoice,
-      activeComment: order.activeComment,
-    };
-
-    setOrder(orderUpdate);
-    localStorage.setItem("order", JSON.stringify(orderUpdate));
-  }
-
+  const setColumnPattern = location.pathname.includes("/admin");
   /*----------- notification ----------- */
-
-  const notify = (text) =>
-    toast.success(text, {
-      position: "top-left",
-      autoClose: 3000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-
-  const notifyError = (text) =>
-    toast.error(text, {
-      position: "top-right",
-      autoClose: 3000,
-
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-
+  const { notify, notifyError } = useNotifyHook();
+  /*----------- login ----------- */
+  const { isLogIn, user, logIn, logOut } = useLoginHook(notify);
+  /*----------- products ----------- */
+  const apiProductEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
+  const { data } = useFetchData(apiProductEndpoint);
+  /*----------- cart ----------- */
+  const {
+    cartItems,
+    cartValue,
+    cartSave,
+    cartQuantity,
+    addItem,
+    deleteItem,
+    changeQuantity,
+    clearTheCart,
+  } = useCartHook(notify);
+  /*----------- wishList ----------- */
+  const { addWishItem, wishList } = useWishListHook(notify);
+  /*----------- order ----------- */
+  const { addOrder, order } = useUserOrderHook(
+    user,
+    cartSave,
+    cartValue,
+    cartItems
+  );
   /*----------- navigate on Summary ----------- */
   const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
-
   function handleUserNavigateToSummary() {
     setIsUserNavigateToSummary(true);
   }
@@ -389,47 +104,20 @@ function App() {
         cartItems,
         cartValue,
         cartSave,
+        products: data,
         cartQuantity,
         wishList,
-        products,
         user,
-        loading,
         order,
       }}
     >
-      {(() => {
-        switch (location.pathname) {
-          case "/order":
-          case "/order/summary":
-          case "/order/success":
-          case "/order/canceled":
-            return <NavigationBarOrder />;
-
-          case "/admin":
-            return <div></div>;
-          default:
-            return <NavigationBar />;
-        }
-      })()}
-      <section
-        className={location.pathname !== "/admin" ? "columnWeb" : "adminWeb"}
-      >
+      <NavigationBarSwitcher pathname={location.pathname} />
+      <section className={setColumnPattern ? "adminWeb" : "columnWeb"}>
         <div className="absoluteDivApp">
-          <ToastContainer
-            position="top-center"
-            autoClose={3000}
-            hideProgressBar
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
+          <ToastContainerCom />
           {/* <MessengerCustomerChat
-            pageId="109980154081140"
-            appId="1174144033276048"
+            pageId={process.env.REACT_APP_PB_ID}
+            appId={process.env.REACT_APP_FB_PAGE_ID}
           /> */}
         </div>
         <Routes>
@@ -437,7 +125,6 @@ function App() {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetails />} />
-          <Route path="reviews" element={<Reviews />} />
           <Route path="contact" element={<ContactSection />} />
           <Route path="blog" element={<Blog />} />
 
@@ -475,8 +162,8 @@ function App() {
             }
           >
             <Route path="account" element={<AccountContent />} />
-            <Route path="orders" element={<Orders />} />
-            {/* <Route path="orders/:id" element={<OrderDetails />} /> */}
+            <Route path="purchased-products" element={<Orders />} />
+
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />
             <Route path="address" element={<Address />} />
@@ -520,26 +207,23 @@ function App() {
           <Route path="order/canceled" element={<PaymentCanceled />} />
           <Route path="wish-list" element={<Wish />} />
           <Route path="cart" element={<ViewCart />} />
-          <Route path="admin" element={<AdminPage />} />
 
+          <Route path="admin" element={<AdminPage />}>
+            <Route path="" element={<AdminDashboard />} />
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="customers" element={<AdminCustomers />} />
+            <Route path="transactions" element={<AdminTransactions />} />
+            <Route path="customers-reviews" element={<AdminReviews />} />
+            <Route path="admin-management" element={<AdminSettings />} />
+            <Route
+              path="customers-messages"
+              element={<AdminCustomersMessages />}
+            />
+          </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </section>
-      {(() => {
-        switch (location.pathname) {
-          case "/order":
-          case "/order/summary":
-          case "/cart":
-          case "/order/success":
-          case "/order/canceled":
-            return <FooterOrder />;
-
-          case "/admin":
-            return <div></div>;
-          default:
-            return <Footer />;
-        }
-      })()}
+      <FooterSwitcher pathname={location.pathname} />
     </Context.Provider>
   );
 }

@@ -7,9 +7,14 @@ const getReviews = asyncHandler(async (req, res) => {
   res.status(200).json(reviews);
 });
 
+const getAllReviews = asyncHandler(async (req, res) => {
+  const reviews = await Review.find();
+  res.status(200).json(reviews);
+});
+
 const getReviewsByProductId = asyncHandler(async (req, res) => {
   const reviews = await Review.find({ productId: req.params.id });
-  res.status(200).json(reviews);
+  res.status(200).json(reviews || []);
 });
 
 const setReview = asyncHandler(async (req, res) => {
@@ -66,7 +71,7 @@ const typeReview = asyncHandler(async (req, res) => {
     userReviewDate: currentTime,
     comment: values.comment,
     rate: values.rate,
-    isCheckedReview: true,
+    isUserAddedReview: true,
   });
 
   try {
@@ -86,10 +91,38 @@ const typeReview = asyncHandler(async (req, res) => {
   res.status(200).send(foundReview);
 });
 
+const putReviewDecision = asyncHandler(async (req, res) => {
+  const { id, decision, selectedReason, comment } = req.body;
+
+  try {
+    const post = await Review.findByIdAndUpdate(id, {
+      isModeratorApprovedReview: decision,
+      moderatorAttention: selectedReason,
+      extraMmoderatorAttention: comment,
+    });
+    res.status(200).json(post);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+const deleteReview = asyncHandler(async (req, res) => {
+  const { id } = req.body;
+  try {
+    const post = await Review.findByIdAndDelete(id);
+    res.status(200).json(post);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = {
   getReviews,
   setReview,
   getReviewsByProductId,
   rateReview,
   typeReview,
+  getAllReviews,
+  putReviewDecision,
+  deleteReview,
 };

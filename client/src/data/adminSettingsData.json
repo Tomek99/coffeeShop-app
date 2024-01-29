@@ -1,0 +1,17 @@
+[
+  {
+    "type": "text",
+    "name": "adminName",
+    "placeholder": "Enter name"
+  },
+  {
+    "type": "text",
+    "name": "adminLogin",
+    "placeholder": "Enter login"
+  },
+  {
+    "type": "password",
+    "name": "adminPassword",
+    "placeholder": "Enter password"
+  }
+]

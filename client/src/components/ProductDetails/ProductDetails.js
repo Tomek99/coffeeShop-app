@@ -12,35 +12,28 @@ import BtnAddCart from "../Buttons/BtnAddCart/BtnAddCart";
 import BtnPlusMinus from "../Buttons/BtnPlusMinus/BtnPlusMinus";
 import axios from "axios";
 import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
+import useFetchData from "../../hooks/useFetchData";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const productId = useParams();
-  const navigate = useNavigate();
 
   const { addItem, addWishItem } = useContext(Context);
-  const [productData, setProductData] = useState({});
-  const [loading, setLoading] = useState(true);
-  // Protected route if the route is not exist
-  useEffect(() => {
-    axios
-      .get(
-        `${process.env.REACT_APP_API_URI}/api/products/product-details/${productId.id}`
-      )
-      .then((response) => {
-        const productDetails = response.data;
-        if (productDetails._id) {
-          setLoading(false);
-          setProductData(response.data);
-        } else {
-          navigate("/products");
-        }
-      });
-  }, [productId, navigate]);
+
+  // const [loading, setLoading] = useState(true);
+
+  const endPoint = `${process.env.REACT_APP_API_URI}/api/products/product-details/${productId.id}`;
+  const { isLoaded, data } = useFetchData(endPoint);
+  // Protected route if the one is not exist
+  const navigate = useNavigate();
+  if (data === false) {
+    navigate("/products");
+  }
 
   const onClickAddToCart = () => {
-    productData.quantity = quantity;
-    addItem(productData);
+    data.quantity = quantity;
+    addItem(data);
   };
 
   const increaseAmount = () => {
@@ -52,34 +45,27 @@ function ProductDetails() {
     else setQuantity(quantity - 1);
   };
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
-  }, []);
   return (
     <div className={styles.ProductDetails}>
-      {loading ? (
-        <LoaderSpinner loading={loading} />
+      {isLoaded ? (
+        <LoaderSpinner loading={isLoaded} />
       ) : (
         <>
           <div className={styles.productDetailsSection}>
             <div className={styles.productDetailsImage}>
-              <img src={productData.imageUrl} alt="Img" />
+              <img src={data.imageUrl} alt="Img" />
             </div>
             <div className={styles.productDetailsContent}>
-              <h1>{productData.name}</h1>
+              <h1>{data.name}</h1>
               <p className={styles.productPriceText}>
-                ${productData.price}
+                ${data.price}
                 &nbsp;
                 <span className={styles.oldProductPrice}>
-                  {productData.oldPrice ? ` $${productData.oldPrice}` : null}
+                  {data.oldPrice ? ` $${data.oldPrice}` : null}
                 </span>
               </p>
-              <p>Origin: {productData.origin} </p>
-              <p>Weight: {productData.weight}</p>
+              <p>Origin: {data.origin} </p>
+              <p>Weight: {data.weight}</p>
               <div className={styles.productDetailsContentButtons}>
                 <div className={styles.productQuantity}>
                   <div style={{ display: "flex" }}>

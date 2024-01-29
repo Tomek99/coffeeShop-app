@@ -1,10 +1,16 @@
 const asyncHandler = require("express-async-handler");
 const Order = require("../models/orderModel");
 
+const getAllUsersOrders = asyncHandler(async (req, res) => {
+  const response = await Order.find();
+
+  res.status(200).json(response);
+});
+
 const getOrders = asyncHandler(async (req, res) => {
   const get_data = await Order.find({ userId: req.params.id });
 
-  res.status(200).json(get_data);
+  res.status(200).json(get_data || []);
 });
 
 const createOrder = asyncHandler(async (req, res) => {
@@ -23,5 +29,6 @@ const createOrder = asyncHandler(async (req, res) => {
 
 module.exports = {
   getOrders,
+  getAllUsersOrders,
   createOrder,
 };

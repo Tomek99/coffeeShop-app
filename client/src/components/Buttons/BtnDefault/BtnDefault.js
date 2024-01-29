@@ -7,7 +7,6 @@ function BtnDefault({ route, text }) {
 
   function goToPage() {
     navigate(`/${route}`);
-    console.log("hello");
   }
   return (
     <button onClick={goToPage} className={styles.BtnDefault}>

@@ -11,7 +11,7 @@
   background-color: var(--light-greay);
 
   .divDashboard {
-    .dashboardBtn {
+    .dashboardLink {
       display: flex;
       align-items: center;
       font-size: 1.5rem;
@@ -25,48 +25,9 @@
         color: var(--main-color);
       }
     }
-  }
 
-  .divLogo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    img {
-      max-width: 90px;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .navBar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    list-style: none;
-
-    .header {
-      color: var(--text-color);
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    .adminLiElement {
-      button {
-        color: var(--text-color);
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        font-size: 1.5rem;
-        transition: 0.3s linear;
-        cursor: pointer;
-
-        &:hover {
-          color: var(--main-color);
-        }
-      }
+    .dashboardLink.dashboardActiveBtn {
+      color: var(--main-color) !important;
     }
   }
 }

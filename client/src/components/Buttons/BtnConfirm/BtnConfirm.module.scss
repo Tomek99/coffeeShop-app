@@ -1,0 +1,14 @@
+.BtnConfirm {
+  align-self: flex-start;
+  background-color: var(--main-color);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--bg);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+
+  &:hover {
+    background-color: var(--main-color-darken);
+  }
+}

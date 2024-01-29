@@ -1,0 +1,12 @@
+.AdminUnorderedList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+
+  .header {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+}

@@ -260,4 +260,9 @@ export class OrderPage {
   async fillCommentArea(value: string) {
     await this.commentArea.fill(value);
   }
+
+  //Errors
+  async getErrors(): Promise<Locator> {
+    return await this.page.locator(".ErrMessage_errorText__1OrwW");
+  }
 }

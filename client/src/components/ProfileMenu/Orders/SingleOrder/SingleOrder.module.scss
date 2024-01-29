@@ -16,7 +16,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     background-color: #e5e5e5;
-
     padding: 24px 25px 24px 24px;
     border-radius: 12px 0 0 12px;
     font-size: 1.3rem;
@@ -33,6 +32,11 @@
     flex-grow: 1;
     gap: 10px;
     padding: 24px 10px;
+
+    .imgResponsive {
+      width: 40px;
+      height: 70px;
+    }
 
     .hiddenElements {
       display: flex;

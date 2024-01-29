@@ -1,0 +1,24 @@
+.AdminCheckingReviewItem {
+  padding: 15px 0;
+  box-shadow: var(--shadow-thick-bottom);
+
+  .checkingReviewContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+  }
+
+  .btnsAction {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .checkingReviewContent {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+}

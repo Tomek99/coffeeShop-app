@@ -16,7 +16,6 @@ function RatingsStars({ rate, size, tab, setFieldValue, handleFeedbackBtn }) {
                 size={size}
                 className={styles.RatingsStars}
                 onChange={(event, newValue) => {
-                  console.log(newValue);
                   if (newValue !== null) {
                     setFieldValue("rate", newValue);
                   } else {

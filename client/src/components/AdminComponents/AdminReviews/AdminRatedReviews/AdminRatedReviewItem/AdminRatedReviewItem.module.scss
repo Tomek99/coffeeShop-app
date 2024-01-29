@@ -1,0 +1,48 @@
+.AdminReviewItem {
+  box-shadow: var(--shadow-thick-bottom);
+  padding-bottom: 10px;
+
+  .reviewItemContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 50px;
+    gap: 5px;
+
+    .columnItem {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .ratingSpan {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .adminActionBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .editReviewForm {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .btnsAction {
+    max-width: 250px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .reviewItemContent {
+    grid-template-columns: 1fr !important;
+  }
+}

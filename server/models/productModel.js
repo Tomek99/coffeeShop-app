@@ -19,7 +19,7 @@ const productSchema = mongoose.Schema(
       required: false,
     },
     quantity: {
-      type: Number,
+      type: String,
       required: [true, "Add quantity"],
     },
     origin: {
@@ -31,7 +31,7 @@ const productSchema = mongoose.Schema(
       required: [true, "Add brand"],
     },
     intensity: {
-      type: Number,
+      type: String,
       required: [true, "Add intensity"],
     },
     type: {
@@ -40,7 +40,7 @@ const productSchema = mongoose.Schema(
     },
     weight: {
       type: String,
-      required: true,
+      required: [true, "Add type"],
     },
 
     productRatings: {
@@ -49,7 +49,7 @@ const productSchema = mongoose.Schema(
     },
 
     available: {
-      type: Boolean,
+      type: String,
       required: false,
     },
   },

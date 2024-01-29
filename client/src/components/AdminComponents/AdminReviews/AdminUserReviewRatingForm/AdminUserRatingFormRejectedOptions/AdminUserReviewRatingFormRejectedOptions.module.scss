@@ -1,0 +1,14 @@
+.AdminUserReviewRatingFormRejectedOptions {
+  display: flex;
+  flex-direction: column;
+
+  .selectOptions {
+    border: 1px solid black;
+  }
+
+  .adornTextArea {
+    padding: 5px;
+    background-color: var(--light-greay);
+    resize: none;
+  }
+}

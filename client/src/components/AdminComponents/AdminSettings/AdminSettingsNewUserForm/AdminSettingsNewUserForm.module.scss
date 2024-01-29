@@ -1,0 +1,30 @@
+.AdminSettingsNewUserForm {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 440px;
+  width: 100%;
+  border: var(--border);
+  border-radius: 8px;
+  padding: 20px;
+
+  .adminSettingsHeader {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .adminFormInputs {
+    margin-bottom: 20px;
+  }
+
+  .radioDiv {
+    margin: 5px 0;
+
+    label {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+}

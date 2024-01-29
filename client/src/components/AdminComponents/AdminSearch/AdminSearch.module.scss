@@ -1,0 +1,59 @@
+.AdminBar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 10px;
+  flex-wrap: wrap;
+
+  .divSecondBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    .divSearch {
+      display: flex;
+      gap: 5px;
+
+      .inputSearch {
+        padding: 10px;
+        border-radius: 8px;
+        background-color: var(--light-greay);
+        color: var(--text-color);
+      }
+
+      .iconSearch {
+        color: var(--text-color);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .btnNav {
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+
+  .btnLogout {
+    align-self: center;
+    background-color: var(--main-color);
+    color: var(--bg);
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    transition: 0.2s linear;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--main-color-darken);
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .AdminBar {
+    padding-top: 10px;
+  }
+}

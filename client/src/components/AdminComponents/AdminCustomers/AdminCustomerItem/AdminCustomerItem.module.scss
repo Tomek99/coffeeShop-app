@@ -1,0 +1,5 @@
+.AdminCustomerItem {
+  &:nth-child(even) {
+    background-color: var(--light-greay);
+  }
+}

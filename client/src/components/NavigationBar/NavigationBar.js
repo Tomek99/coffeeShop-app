@@ -13,6 +13,7 @@ import BlurScreen from "../BlurScreen/BlurScreen";
 import BtnHamburger from "../Buttons/BtnHamburger/BtnHamburger";
 import DesktopNavigation from "./DesktopNavigation/DesktopNavigation";
 import MobileNavigation from "./MobileNavigation/MobileNavigation";
+import PageLogo from "../PageLogo/PageLogo";
 
 function NavigationBar() {
   const { isLogIn, cartQuantity } = useContext(Context);
@@ -60,15 +61,7 @@ function NavigationBar() {
     <div className={styles.NavigationBar}>
       <BtnHamburger isActive={isNavigationOpen} handleBtn={handleNavigation} />
       <div className={styles.navBar}>
-        <div className={styles.divLogo}>
-          <Link to="/">
-            <img
-              src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
-              className={styles.logo}
-              alt="Logo"
-            />
-          </Link>
-        </div>
+        <PageLogo />
         <nav>
           <DesktopNavigation />
           <MobileNavigation

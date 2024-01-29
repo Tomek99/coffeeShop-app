@@ -1,0 +1,13 @@
+.PageLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  img {
+    max-width: 90px;
+    width: 100%;
+    height: auto;
+    margin: 5px 0 5px 0;
+  }
+}

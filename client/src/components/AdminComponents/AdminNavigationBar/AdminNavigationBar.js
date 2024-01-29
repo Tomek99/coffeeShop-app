@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./AdminNavigationBar.module.scss";
 import { AiOutlineHome } from "react-icons/ai";
+import { BsCartFill, BsCalendar4Event, BsCalendar3 } from "react-icons/bs";
+
 import {
-  BsCartFill,
-  BsGlobeAmericas,
-  BsCalendar4Event,
-  BsCalendar3,
-} from "react-icons/bs";
-import {
+  MdOutlineReviews,
   MdOutlineAdminPanelSettings,
   MdOutlineTrendingUp,
 } from "react-icons/md";
@@ -15,28 +12,47 @@ import { HiOutlineDocumentChartBar } from "react-icons/hi2";
 import { FaUsers } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { TbTriangleSquareCircle } from "react-icons/tb";
+import { TiMessages } from "react-icons/ti";
 import { Link } from "react-router-dom";
+import AdminUnorderedList from "./AdminUnorderedList/AdminUnorderedList";
+import PageLogo from "../../PageLogo/PageLogo";
+import { AdminContext } from "../../../Contexts/AdminContext";
 
 const clientFacing = [
-  { text: "Products", icon: <BsCartFill size="20" /> },
-  { text: "Customers", icon: <FaUsers size="20" /> },
-  { text: "Transactions", icon: <HiOutlineDocumentChartBar size="20" /> },
-  { text: "Geography", icon: <BsGlobeAmericas size="20" /> },
+  { text: "Customers", icon: <FaUsers size="20" />, path: "customers" },
+
+  {
+    text: "Reviews",
+    icon: <MdOutlineReviews size="20" />,
+    path: "customers-reviews",
+  },
+  {
+    text: "Messages",
+    icon: <TiMessages size="20" />,
+    path: "customers-messages",
+  },
 ];
 
 const sales = [
-  { text: "Overview", icon: <RiComputerLine size="20" /> },
-  { text: "Daily", icon: <BsCalendar4Event size="20" /> },
-  { text: "Monthly", icon: <BsCalendar3 size="20" /> },
-  { text: "Breakdown", icon: <TbTriangleSquareCircle size="20" /> },
+  { text: "Products", icon: <BsCartFill size="20" />, path: "products" },
+  {
+    text: "Transactions",
+    icon: <HiOutlineDocumentChartBar size="20" />,
+    path: "transactions",
+  },
 ];
 
 const management = [
-  { text: "Admin", icon: <MdOutlineAdminPanelSettings size="20" /> },
-  { text: "Performance", icon: <MdOutlineTrendingUp size="20" /> },
+  {
+    text: "Admin",
+    icon: <MdOutlineAdminPanelSettings size="20" />,
+    path: "admin-management",
+  },
 ];
 
-function AdminNavigationBar({ openNav, handleNav }) {
+function AdminNavigationBar() {
+  const { openNav, adminData } = useContext(AdminContext);
+
   return (
     <div
       className={
@@ -45,54 +61,19 @@ function AdminNavigationBar({ openNav, handleNav }) {
           : styles.AdminNavigationBar
       }
     >
-      <div className={styles.divLogo}>
-        <Link to="/">
-          {" "}
-          <img
-            src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
-            alt="logo"
-          />
-        </Link>
-      </div>
+      <PageLogo />
       <div className={openNav ? styles.divDashboard : styles.divDashboard}>
-        <button className={styles.dashboardBtn}>
+        <Link to={""} className={styles.dashboardLink}>
           <AiOutlineHome size="20" />
           <span>Dashboard</span>
-        </button>
+        </Link>
       </div>
-      <ul className={styles.navBar}>
-        <span className={styles.header}>Client Facing</span>
-        {clientFacing.map((el, index) => (
-          <li key={index} className={styles.adminLiElement}>
-            <button>
-              {el.icon}
-              {el.text}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <ul className={styles.navBar}>
-        <span className={styles.header}>Sales</span>
-        {sales.map((el, index) => (
-          <li key={index} className={styles.adminLiElement}>
-            <button>
-              {el.icon}
-              {el.text}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <ul className={styles.navBar}>
-        <span className={styles.header}>Management</span>
-        {management.map((el, index) => (
-          <li key={index} className={styles.adminLiElement}>
-            <button>
-              {el.icon}
-              {el.text}
-            </button>
-          </li>
-        ))}
-      </ul>
+
+      <AdminUnorderedList header={"Client Facing"} arrayLinks={clientFacing} />
+      <AdminUnorderedList header={"Sales"} arrayLinks={sales} />
+      {adminData.adminMode !== "worker" ? (
+        <AdminUnorderedList header={"Management"} arrayLinks={management} />
+      ) : null}
     </div>
   );
 }

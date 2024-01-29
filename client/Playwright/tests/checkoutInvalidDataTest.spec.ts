@@ -1,26 +1,86 @@
-// import { test, expect } from "@playwright/test";
-// import { BrowserstackHomePage } from "../pages/homePage";
-// import { ProductsPage } from "../pages/productsPage";
-// import { ViewCartPage } from "../pages/viewCartPage";
-// import { LoginPage } from "../pages/loginPage";
-// import { OrderPage } from "../pages/orderPage";
+import { test, expect } from "@playwright/test";
+import { BrowserstackHomePage } from "../pages/homePage";
+import { ProductsPage } from "../pages/productsPage";
+import { ViewCartPage } from "../pages/viewCartPage";
+import { LoginPage } from "../pages/loginPage";
+import { OrderPage } from "../pages/orderPage";
 
-// import { BaseTest } from "./BaseTest";
+import { BaseTest } from "./BaseTest";
+import { deliveryAddressData } from "../data/deliveryAddressData";
+import { OrderSummaryPage } from "../pages/orderSummaryPage";
+import { StripePage } from "../pages/stripePage";
+import { SuccessPage } from "../pages/successPage";
 
-// test.describe("Purchase products with invalid data", () => {
-//   test.beforeEach(async ({ page }) => {
-//     BaseTest.performBasicStepsForCheckout(page);
-//   });
+test.describe("Purchase products with invalid data", () => {
+  test.beforeEach(async ({ page }) => {
+    BaseTest.performBasicStepsForCheckout(page);
+  });
 
-//   test("place an order as private person", async ({ page }) => {});
+  test("should display an error if the delivery and payment form is omitted", async ({
+    page,
+  }) => {
+    const orderPage = new OrderPage(page);
+    await orderPage.clickOnSummaryBtn();
 
-//   test("place an order as company", async ({ page }) => {});
+    const errors = await orderPage.getErrors();
+    await expect(errors).toHaveCount(10);
 
-//   test("place an order with empty data", async ({ page }) => {});
+    await expect(errors.nth(0)).toContainText("Required");
+  });
 
-//   test("provide other invoice details", async ({ page }) => {});
+  test("should display an error if the delivery form is not ticked", async ({
+    page,
+  }) => {
+    const orderPage = new OrderPage(page);
+    await orderPage.clickOnPrivatePerson();
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
+    await orderPage.clickOnlinePayment();
+    await orderPage.clickOnSummaryBtn();
 
-//   test("edit data in order summary", async ({ page }) => {});
+    const errors = await orderPage.getErrors();
+    await expect(errors).toHaveCount(1);
+    await expect(errors).toContainText("Required");
+  });
 
-//   test("add comment to order", async ({ page }) => {});
-// });
+  test("should display an error if the purchasing as  form is not selected", async ({
+    page,
+  }) => {
+    const orderPage = new OrderPage(page);
+    await orderPage.clickOnCarrier();
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
+    await orderPage.clickOnlinePayment();
+    await orderPage.clickOnSummaryBtn();
+
+    const errors = await orderPage.getErrors();
+    await expect(errors).toHaveCount(1);
+    await expect(errors).toContainText("Required");
+  });
+
+  test("should display an error if delivery address is not filled", async ({
+    page,
+  }) => {
+    const orderPage = new OrderPage(page);
+    await orderPage.clickOnCarrier();
+    await orderPage.clickOnPrivatePerson();
+    await orderPage.clickOnlinePayment();
+    await orderPage.clickOnSummaryBtn();
+
+    const errors = await orderPage.getErrors();
+    await expect(errors).toHaveCount(7);
+    await expect(errors.nth(5)).toContainText("Required");
+  });
+
+  test("should display an error if payment method is not checked", async ({
+    page,
+  }) => {
+    const orderPage = new OrderPage(page);
+    await orderPage.clickOnCarrier();
+    await orderPage.clickOnPrivatePerson();
+    await orderPage.fillDeliveryAddressForm(deliveryAddressData);
+    await orderPage.clickOnSummaryBtn();
+
+    const error = await orderPage.getErrors();
+    await expect(error).toHaveCount(1);
+    await expect(error).toContainText("Required");
+  });
+});

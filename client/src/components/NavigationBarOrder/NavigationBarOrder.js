@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./NavigationBarOrder.module.scss";
 import NavElement from "./NavElement/NavElement";
+import PageLogo from "../PageLogo/PageLogo";
 
 function NavigationBarOrder() {
   const [tab, setTab] = useState(1);
@@ -32,12 +33,7 @@ function NavigationBarOrder() {
   return (
     <div className={styles.NavigationBarOrder}>
       <div className={styles.flexDiv}>
-        <Link to="/" className={styles.divImg}>
-          <img
-            src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
-            alt="logo"
-          />
-        </Link>
+        <PageLogo />
         <div className={styles.navigationDivList}>
           <ul className={styles.ulList}>
             {navList.map((item, index) => (

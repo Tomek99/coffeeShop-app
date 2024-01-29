@@ -11,17 +11,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import { Autoplay } from "swiper";
+import useFetchData from "../../hooks/useFetchData";
 
 function ProductsSection() {
-  const { products, loading } = useContext(Context);
-  const selectedProducts = products.slice(0, 8);
+  const apiProductEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
+  const { isLoaded, data } = useFetchData(apiProductEndpoint);
+  const selectedProducts = data.slice(0, 8);
 
   return (
     <div className={styles.ProductsSection} id="productsSection">
       <HeaderSection firstWord="latest" secondWord="products" />
       <div className={styles.wrapperDiv}>
-        {loading ? (
-          <LoaderSpinner loading={loading} />
+        {isLoaded ? (
+          <LoaderSpinner loading={isLoaded} />
         ) : (
           <div className={styles.productsSectionCarousel}>
             <Swiper

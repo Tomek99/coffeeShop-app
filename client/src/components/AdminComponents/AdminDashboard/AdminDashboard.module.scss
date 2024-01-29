@@ -1,0 +1,23 @@
+.AdminDashboard {
+  padding-left: 10px;
+
+  .dashBoardHeader {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .dashBoardContent {
+    font-size: 1.4rem;
+
+    .ulText {
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      p {
+        max-width: 500px;
+      }
+    }
+  }
+}

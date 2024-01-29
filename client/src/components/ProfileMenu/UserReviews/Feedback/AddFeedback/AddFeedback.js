@@ -17,13 +17,13 @@ const validationSchema = Yup.object().shape({
 
 function AddFeedback({ handleBtn, item }) {
   const reviewId = item._id;
-  console.log(item.productId);
+
   const initialValues = {
     userImages: "",
     comment: "",
     rate: 0,
     productId: item.productId,
-    isCheckedReview: true,
+    isUserReviewAdded: true,
   };
 
   async function onSubmit(values, { resetForm }) {
@@ -81,7 +81,6 @@ function AddFeedback({ handleBtn, item }) {
               <div className={styles.addImageDiv}>
                 <div className={styles.squarePlus}>
                   <PiPlusLight size={25} />
-                  {/* <input type="file" id="myFile" name="filename"></input> */}
                 </div>
                 <div className={styles.feedbackText}>
                   <p className={styles.firstParagraph}>Add photo (optional) </p>

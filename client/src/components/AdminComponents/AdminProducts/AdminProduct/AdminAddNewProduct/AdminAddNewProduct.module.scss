@@ -1,0 +1,14 @@
+.AdminAddNewProduct {
+  margin-top: 10px;
+  border: var(--border);
+  border-radius: 8px;
+  padding: 10px;
+
+  .btnsActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
