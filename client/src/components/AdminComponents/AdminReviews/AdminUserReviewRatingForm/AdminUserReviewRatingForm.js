@@ -9,7 +9,7 @@ function AdminUserReviewRatingForm({ item }) {
   const [decision, setDecision] = useState("checking");
   const [selectedReason, setSelectedReason] = useState("inappropriate_content");
   const [comment, setComment] = useState("");
-  console.log(item);
+
   function handleDecision(e) {
     setDecision(e.target.value);
     if (e.target.value === "approved") {
@@ -30,13 +30,14 @@ function AdminUserReviewRatingForm({ item }) {
 
   async function handleCheckingReview() {
     const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/reviews/put-review-decision`;
-
     const response = await putDataUtil(apiEndpoint, {
       id: item._id,
       decision,
       selectedReason,
       comment,
     });
+
+    window.location.reload();
   }
 
   return (

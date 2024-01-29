@@ -8,6 +8,7 @@ const {
   rateReview,
   typeReview,
   putReviewDecision,
+  deleteReview,
 } = require("../controllers/reviewsController");
 
 router.route("").get(getAllReviews);
@@ -17,5 +18,6 @@ router.route("/create-review").post(setReview);
 router.route("/rate-review").put(rateReview);
 router.route("/type-review").put(typeReview);
 router.route("/put-review-decision").put(putReviewDecision);
+router.route("/delete-review").delete(deleteReview);
 
 module.exports = router;

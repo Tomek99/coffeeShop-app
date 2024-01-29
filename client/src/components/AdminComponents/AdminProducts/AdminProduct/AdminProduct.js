@@ -4,21 +4,14 @@ import AdminProductDetails from "./AdminProductDetails/AdminProductDetails";
 import AdminEditProductDetails from "./AdminEditProductDetails/AdminEditProductDetails";
 import AdminDeleteProduct from "./AdminDeleteProduct/AdminDeleteProduct";
 import AdminIconBtn from "../../AdminBtns/AdminIconBtn/AdminIconBtn";
-import AdminEditDataForm from "../../AdminEditDataForm/AdminEditDataForm";
-import { validationSchema } from "../../../../validationSchemas/adminProductValidationSchema";
-import productDetailsData from "../../../../data/adminEditProductDetails.json";
 
 function AdminProduct({ product }) {
   const [action, setAction] = useState(null);
 
   function handleBtn(currentAction) {
-    if (currentAction === action) {
-      setAction(null);
-    } else {
-      setAction(currentAction);
-    }
+    setAction(currentAction === action ? null : currentAction);
   }
-  const apiEndPint = `${process.env.REACT_APP_API_URI}/api/products`;
+
   return (
     <section className={styles.AdminProduct}>
       <div className={styles.singleProduct}>
@@ -63,12 +56,9 @@ function AdminProduct({ product }) {
             return <AdminProductDetails productDetails={product} />;
           case "editDetails":
             return (
-              <AdminEditDataForm
-                dataForm={productDetailsData}
-                initValues={product}
-                apiEndpoint={apiEndPint}
+              <AdminEditProductDetails
+                productDetails={product}
                 handleAction={handleBtn}
-                validationSchema={validationSchema}
               />
             );
           case "deleteProduct":

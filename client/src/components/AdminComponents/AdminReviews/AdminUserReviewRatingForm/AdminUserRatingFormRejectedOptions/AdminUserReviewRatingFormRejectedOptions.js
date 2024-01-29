@@ -14,7 +14,7 @@ function AdminUserReviewRatingFormRejectedOptions({
         onChange={handleSelectChange}
         className={styles.selectOptions}
       >
-        <option value="inappropriate_content">-</option>
+        <option value="-">-</option>
         <option value="inappropriate_content">Inappropriate Content</option>
         <option value="spam">Spam or Advertising</option>
         <option value="irrelevant">Irrelevant to the Product</option>
@@ -27,7 +27,7 @@ function AdminUserReviewRatingFormRejectedOptions({
       <textarea
         maxLength={999}
         className={styles.adornTextArea}
-        placeholder="Enter addition data"
+        placeholder="Enter additional comments"
         onChange={handleComment}
       />
     </div>

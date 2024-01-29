@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./AdminRatedReviews.module.scss";
 import AdminRatedReviewItem from "./AdminRatedReviewItem/AdminRatedReviewItem";
 import Pagination from "../../../Pagination/Pagination";

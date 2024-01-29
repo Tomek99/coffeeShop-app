@@ -106,6 +106,16 @@ const putReviewDecision = asyncHandler(async (req, res) => {
   }
 });
 
+const deleteReview = asyncHandler(async (req, res) => {
+  const { id } = req.body;
+  try {
+    const post = await Review.findByIdAndDelete(id);
+    res.status(200).json(post);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = {
   getReviews,
   setReview,
@@ -114,4 +124,5 @@ module.exports = {
   typeReview,
   getAllReviews,
   putReviewDecision,
+  deleteReview,
 };

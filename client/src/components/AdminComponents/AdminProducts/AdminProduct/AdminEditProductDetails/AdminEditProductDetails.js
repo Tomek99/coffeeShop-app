@@ -6,13 +6,11 @@ import BtnConfirm from "../../../../Buttons/BtnConfirm/BtnConfirm";
 import BtnCloseEditProduct from "../../../../Buttons/BtnCloseEditProduct/BtnCloseEditProduct";
 import productDetailsData from "../../../../../data/adminEditProductDetails.json";
 import { validationSchema } from "../../../../../validationSchemas/adminProductValidationSchema";
-import axios from "axios";
+import putDataUtil from "../../../../../utils/putDataUtil";
 
 async function onSubmit(values, { setSubmitting }) {
-  await axios.put(`${process.env.REACT_APP_API_URI}/api/products`, {
-    ...values,
-  });
-
+  const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
+  const response = await putDataUtil(apiEndpoint, values);
   window.location.reload();
 }
 

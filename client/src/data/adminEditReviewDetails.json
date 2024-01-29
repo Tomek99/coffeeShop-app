@@ -1,0 +1,14 @@
+[
+  {
+    "type": "text",
+    "name": "isModeratorReviewApproved",
+    "placeholder": "Review status",
+    "inputDisabled": true
+  },
+  {
+    "type": "text",
+    "name": "_id",
+    "placeholder": "id",
+    "inputDisabled": true
+  }
+]

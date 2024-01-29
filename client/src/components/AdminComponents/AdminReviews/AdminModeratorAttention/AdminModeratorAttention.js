@@ -3,7 +3,6 @@ import styles from "./AdminModeratorAttention.module.scss";
 import AdminReviewStatus from "./AdminReviewStatus/AdminReviewStatus";
 
 function AdminModeratorAttention({ item }) {
-  console.log(item.isModeratorApprovedReview === "approved");
   return (
     <div className={styles.AdminModeratorAttention}>
       <AdminReviewStatus status={item.isModeratorApprovedReview} />
