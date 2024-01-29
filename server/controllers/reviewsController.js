@@ -71,7 +71,7 @@ const typeReview = asyncHandler(async (req, res) => {
     userReviewDate: currentTime,
     comment: values.comment,
     rate: values.rate,
-    isUserReviewAdded: true,
+    isUserAddedReview: true,
   });
 
   try {
@@ -91,6 +91,21 @@ const typeReview = asyncHandler(async (req, res) => {
   res.status(200).send(foundReview);
 });
 
+const putReviewDecision = asyncHandler(async (req, res) => {
+  const { id, decision, selectedReason, comment } = req.body;
+
+  try {
+    const post = await Review.findByIdAndUpdate(id, {
+      isModeratorApprovedReview: decision,
+      moderatorAttention: selectedReason,
+      extraMmoderatorAttention: comment,
+    });
+    res.status(200).json(post);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = {
   getReviews,
   setReview,
@@ -98,4 +113,5 @@ module.exports = {
   rateReview,
   typeReview,
   getAllReviews,
+  putReviewDecision,
 };

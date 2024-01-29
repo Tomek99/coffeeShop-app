@@ -14,6 +14,7 @@ function AdminUserReviewRatingFormRejectedOptions({
         onChange={handleSelectChange}
         className={styles.selectOptions}
       >
+        <option value="inappropriate_content">-</option>
         <option value="inappropriate_content">Inappropriate Content</option>
         <option value="spam">Spam or Advertising</option>
         <option value="irrelevant">Irrelevant to the Product</option>

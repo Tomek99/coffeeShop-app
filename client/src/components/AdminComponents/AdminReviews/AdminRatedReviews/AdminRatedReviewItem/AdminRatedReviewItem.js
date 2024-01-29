@@ -29,6 +29,7 @@ function AdminRatedReviewItem({ item }) {
           btnAction={"editReview"}
         />
       </div>
+      <div>edit</div>
     </div>
   );
 }

@@ -17,6 +17,7 @@ function AdminDeleteProduct({ handleAction, productId }) {
       <button className={styles.btnDeleteProduct} onClick={deleteProduct}>
         Yes, delete
       </button>
+
       <button
         className={styles.btnCancell}
         onClick={() => handleAction("deleteProduct")}

@@ -3,7 +3,7 @@ import styles from "./AdminCheckingReviewItem.module.scss";
 import AdminReviewItemDetails from "../../AdminReviewItemDetails/AdminReviewItemDetails";
 import AdminReviewItemDetailsExtended from "../../AdminReviewItemDetailsExtended/AdminReviewItemDetailsExtended";
 import AdminUserReviewRatingForm from "../../AdminUserReviewRatingForm/AdminUserReviewRatingForm";
-import AdminTextBtn from "../../../AdminBtns/AdminTextBtn/AdminTextBtn";
+
 function AdminCheckingReviewItem({ item }) {
   return (
     <section className={styles.AdminCheckingReviewItem}>

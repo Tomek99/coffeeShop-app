@@ -24,7 +24,9 @@ export const validationSchema = Yup.object().shape({
     .min(1, "Too Short!")
     .test("Digits only", "The field should have digits only", digitsAndDotOnly)
     .required("Required"),
-  quantity: Yup.string().max(1, "Too Long!").required("Required"),
+  quantity: Yup.string()
+    .test("Digits only", "The field should have digits only", digitsAndDotOnly)
+    .required("Required"),
   origin: Yup.string()
     .min(2, "Too Short!")
     .max(20, "Too Long!")
