@@ -1,5 +1,8 @@
 .AdminRatedReviews {
-  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
   .reviewItems {
     display: flex;
     flex-direction: column;

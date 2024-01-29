@@ -15,13 +15,17 @@ function AdminCheckingReviews({ data }) {
   } = usePaginationHook(0, data, 15, "/admin/customers-reviews");
 
   return data.length ? (
-    <div className={styles.adminReviewsAccepted}>
-      {data.slice(pagesVisited, pagesVisited + itemsPerPage).map((item, i) => (
-        <AdminCheckingReviewItem item={item} key={i} />
-      ))}
+    <section className={styles.AdminCheckingReviews}>
+      <div>
+        {data
+          .slice(pagesVisited, pagesVisited + itemsPerPage)
+          .map((item, i) => (
+            <AdminCheckingReviewItem item={item} key={i} />
+          ))}
+      </div>
       <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
       <ScrollToTop pageNumber={pageNumber} />
-    </div>
+    </section>
   ) : (
     <p style={{ fontSize: "1.5rem" }}>There are no reviews yet.</p>
   );

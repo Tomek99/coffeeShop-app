@@ -13,7 +13,7 @@ function AdminModeratorAttention({ item }) {
             <p>{item.moderatorAttention}</p>
           </div>
           <div className={styles.textContent}>
-            <span>Addition data:</span>
+            <span>Addition comments:</span>
             <p>{item.extraMmoderatorAttention}</p>
           </div>
         </>

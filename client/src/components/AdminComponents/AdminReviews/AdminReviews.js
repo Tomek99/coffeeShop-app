@@ -29,7 +29,7 @@ function AdminReviews() {
   return isLoaded ? (
     <LoaderSpinner loading={isLoaded} />
   ) : (
-    <section className={styles.AdminTransactions}>
+    <section className={styles.AdminReviews}>
       <AdminReviewsBtnsAction
         handleSelectedSubPage={handleSelectedSubPage}
         selectedSubPage={selectedSubPage}

@@ -1,7 +1,6 @@
-.AdminTransactions {
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.AdminReviews {
+  display: grid;
+  grid-template-rows: auto 1fr;
   padding: 0 10px;
+  font-size: 1.2rem;
 }
