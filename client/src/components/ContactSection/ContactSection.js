@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./ContactSection.module.scss";
 import HeaderSection from "../HeaderSection/HeaderSection";
 import Map from "./Map/Map";
@@ -7,6 +7,9 @@ import contactData from "../../data/input_contact_data.json";
 import * as Yup from "yup";
 import ContactElement from "./ContactElement/ContactElement";
 import dataContact from "../../data/dataContact";
+import postDataUtils from "../../utils/postDataUtils";
+
+import EmailContactForm from "./EmailContactForm/EmailContactForm";
 
 const validationSchema_one = Yup.object().shape({
   name_form_one: Yup.string()
@@ -18,9 +21,7 @@ const validationSchema_one = Yup.object().shape({
     .min(5, "Must be 5 characters or more"),
 });
 
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
+const phoneRegExp = /^[1-9]\d{2}(?:\s?\d{3}){2}$/;
 const validationSchema_two = Yup.object().shape({
   name_form_two: Yup.string()
     .min(4, "Must be 4 characters or more")
@@ -46,13 +47,21 @@ const initialValues_2 = {
 };
 
 function ContactSection() {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
+  const onSubmitMessage = async (values, { setSubmitting, resetForm }) => {
+    const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/messages/message/post-message`;
+
+    const response = await postDataUtils(apiEndpoint, {
+      fullName: values.name_form_two,
+      number: values.number,
+      message: values.comment,
     });
-  }, []);
+    console.log(response);
+    setTimeout(() => {
+      alert("Message has been sent");
+      setSubmitting(false);
+      resetForm();
+    }, 400);
+  };
 
   return (
     <div className={styles.ContactSection} id="contactSection">
@@ -67,23 +76,24 @@ function ContactSection() {
           ))}
         </div>
         <div className={styles.contactFormWrapper}>
-          <ContactForm
+          {/* <ContactForm
             initValue={initialValues_1}
             formData={contactData.contact_form_one}
             validationSchema={validationSchema_one}
             title="Write us an e-mail"
             index={0}
-          />
+            onSubmit={sendEmail}
+          /> */}
+          <EmailContactForm />
           <ContactForm
             initValue={initialValues_2}
             formData={contactData.contact_form_two}
             validationSchema={validationSchema_two}
             title="Write us a text message"
             index={1}
+            onSubmit={onSubmitMessage}
           />
-          <div>
-            <Map />
-          </div>
+          <Map />
         </div>
       </div>
     </div>

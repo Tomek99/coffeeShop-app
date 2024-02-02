@@ -5,13 +5,17 @@ const messageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  contactType: {
+  number: {
     type: String,
     required: true,
   },
-  clientMessage: {
+  message: {
     type: String,
     required: true,
+  },
+  isCompleted: {
+    type: String,
+    default: "waiting",
   },
 });
 

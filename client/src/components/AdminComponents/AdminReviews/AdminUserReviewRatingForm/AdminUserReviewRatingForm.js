@@ -12,12 +12,6 @@ function AdminUserReviewRatingForm({ item }) {
 
   function handleDecision(e) {
     setDecision(e.target.value);
-    if (e.target.value === "approved") {
-      setSelectedReason("");
-      setComment("");
-    } else {
-      setSelectedReason("inappropriate_content");
-    }
   }
 
   function handleSelectChange(e) {

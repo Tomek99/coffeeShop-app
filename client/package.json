@@ -24,6 +24,7 @@
     "date-diff": "^1.0.2",
     "difflib": "^0.2.4",
     "dotenv": "^16.0.3",
+    "emailjs": "^4.0.3",
     "enzyme": "^3.11.0",
     "firebase": "^9.20.0",
     "formik": "^2.2.9",

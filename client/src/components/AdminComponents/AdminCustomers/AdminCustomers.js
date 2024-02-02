@@ -33,7 +33,6 @@ function AdminCustomers() {
             <td>Phone number</td>
             <td>Password</td>
             <td>Orders</td>
-            <td>Edit</td>
             <td>Delete</td>
           </tr>
           {data
