@@ -9,10 +9,10 @@ import BtnChangePage from "../../Buttons/BtnChangePage/BtnChangePage";
 function AdminCustomersMessages() {
   const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/messages/get-messages`;
   const { isLoaded, data } = useFetchData(apiEndpoint);
-  const [selectedPage, setSelectedPage] = useState("waiting");
+  const [selectedPage, setSelectedPage] = useState("pending");
 
   const waitingMessages = data.filter((item) =>
-    item.isCompleted.includes("waiting")
+    item.isCompleted.includes("pending")
   );
   const completedMessages = data.filter((item) =>
     item.isCompleted.includes("completed")
@@ -28,8 +28,8 @@ function AdminCustomersMessages() {
         <BtnChangePage
           handlePage={handlePage}
           selectedpage={selectedPage}
-          textBtn="Waiting messages"
-          adjustedPage="waiting"
+          textBtn="Pending messages"
+          adjustedPage="pending"
         />
         <BtnChangePage
           handlePage={handlePage}
@@ -43,7 +43,7 @@ function AdminCustomersMessages() {
       ) : (
         (() => {
           switch (selectedPage) {
-            case "waiting":
+            case "pending":
               return <AdminCustomerWaitingMessages data={waitingMessages} />;
             case "completed":
               return (

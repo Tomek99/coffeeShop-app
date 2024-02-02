@@ -3,12 +3,13 @@ import styles from "./AdminCustomerMessageItem.module.scss";
 import AdminTextBtn from "../../AdminBtns/AdminTextBtn/AdminTextBtn";
 import deleteDataUtil from "../../../../utils/deleteDataUtil";
 import putDataUtil from "../../../../utils/putDataUtil";
-import AdminReviewStatus from "../../AdminReviews/AdminModeratorAttention/AdminReviewStatus/AdminReviewStatus";
+import formatPhoneNumberUtil from "../../../../utils/formatPhoneNumberUtil";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 function AdminCustomerMessageItem({ item }) {
   const apiEndpointDeleteMessage = `${process.env.REACT_APP_API_URI}/api/messages/message/delete-message`;
   const apiEndpointPutMessage = `${process.env.REACT_APP_API_URI}/api/messages/message/put-message`;
+
   async function deleteMessage() {
     await deleteDataUtil(apiEndpointDeleteMessage, item._id);
     window.location.reload();
@@ -20,12 +21,14 @@ function AdminCustomerMessageItem({ item }) {
       isCompleted: "completed",
     });
   }
+
+  const formatedNumber = formatPhoneNumberUtil(item.number);
   return (
     <div className={styles.AdminCustomerMessageItem}>
       <section className={styles.customerData}>
         <span>ID: {item._id}</span>
         <span>Full name: {item.fullName}</span>
-        <span>Phone number: {item.number}</span>
+        <span>Phone number: {formatedNumber}</span>
       </section>
       <div>
         <p>{item.message}</p>
