@@ -1,5 +1,16 @@
 .AdminCustomerMessageItem {
   font-size: 1.2rem;
+  box-shadow: var(--shadow-thick-bottom);
+  padding: 10px 0;
+
+  .messageStatus {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    font-weight: bold;
+  }
 
   .customerData {
     display: flex;
@@ -18,25 +29,12 @@
     margin-top: 10px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 20px;
-
-    .btnCustomerMessageItem {
-      width: 100%;
-      font-size: 1.5rem;
-      padding: 10px;
-      background-color: var(--main-color);
-      color: var(--bg);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.2s linear;
-      &:hover {
-        background-color: var(--main-color-darken);
-      }
-    }
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   .customerData {
     flex-direction: column !important;
     gap: 5px;

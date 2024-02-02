@@ -1,25 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./AdminCustomersMessages.module.scss";
-import AdminCustomerMessageItem from "./AdminCustomerMessageItem/AdminCustomerMessageItem";
-
-const testData = [
-  {
-    _id: "fwafwafwaf",
-    fullName: "Gal anonim",
-    number: "111-222-333",
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at quam fringilla, varius tellus at, commodo nisl. Nunc eu lobortis nisl. Nunc consectetur nunc sit amet quam euismod tincidunt. Sed eu cursus nisl. Proin consequat elit non tortor interdum finibus. Nam in dui vel sem lacinia suscipit. Phasellus aliquet convallis nulla in maximus. Curabitur vel ante quis metus convallis ornare non vitae nibh. Vestibulum luctus quis ligula ut sagittis. Nunc ultricies vehicula faucibus. Duis ut placerat quam, id venenatis dui. Donec sit amet vulputate ante, sed venenatis lectus. Suspendisse sed lorem neque.",
-  },
-];
+import useFetchData from "../../../hooks/useFetchData";
+import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
+import AdminCustomerWaitingMessages from "./AdminCustomerWaitingMessages/AdminCustomerWaitingMessages";
+import AdminCustomerCompletedMessages from "./AdminCustomerCompletedMessages/AdminCustomerCompletedMessages";
+import BtnChangePage from "../../Buttons/BtnChangePage/BtnChangePage";
 
 function AdminCustomersMessages() {
+  const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/messages/get-messages`;
+  const { isLoaded, data } = useFetchData(apiEndpoint);
+  const [selectedPage, setSelectedPage] = useState("waiting");
+
+  const waitingMessages = data.filter((item) =>
+    item.isCompleted.includes("waiting")
+  );
+  const completedMessages = data.filter((item) =>
+    item.isCompleted.includes("completed")
+  );
+
+  function handlePage(page) {
+    setSelectedPage(page);
+  }
+
   return (
     <section className={styles.AdminCustomersMessages}>
-      <div>
-        {testData.map((item, i) => (
-          <AdminCustomerMessageItem item={item} key={i} />
-        ))}
+      <div className={styles.btnsDiv}>
+        <BtnChangePage
+          handlePage={handlePage}
+          selectedpage={selectedPage}
+          textBtn="Waiting messages"
+          adjustedPage="waiting"
+        />
+        <BtnChangePage
+          handlePage={handlePage}
+          selectedpage={selectedPage}
+          textBtn="Completed messages"
+          adjustedPage="completed"
+        />
       </div>
+      {isLoaded ? (
+        <LoaderSpinner loading={isLoaded} />
+      ) : (
+        (() => {
+          switch (selectedPage) {
+            case "waiting":
+              return <AdminCustomerWaitingMessages data={waitingMessages} />;
+            case "completed":
+              return (
+                <AdminCustomerCompletedMessages data={completedMessages} />
+              );
+            default:
+              return null;
+          }
+        })()
+      )}
       <div></div>
     </section>
   );

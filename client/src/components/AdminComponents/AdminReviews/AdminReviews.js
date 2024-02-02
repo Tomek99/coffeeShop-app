@@ -4,7 +4,8 @@ import styles from "./AdminReviews.module.scss";
 import useFetchData from "../../../hooks/useFetchData";
 import AdminRatedReviews from "./AdminRatedReviews/AdminRatedReviews";
 import AdminCheckingReviews from "./AdminCheckingReviews/AdminCheckingReviews";
-import AdminReviewsBtnsAction from "./AdminReviewsBtnsAction/AdminReviewsBtnsAction";
+
+import BtnChangePage from "../../Buttons/BtnChangePage/BtnChangePage";
 
 function AdminReviews() {
   const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/reviews`;
@@ -21,22 +22,32 @@ function AdminReviews() {
       item.isModeratorApprovedReview === "checking"
   );
 
-  const [selectedSubPage, setSelectedSubPage] = useState("checkingReviews");
-  function handleSelectedSubPage(page) {
-    setSelectedSubPage(page);
+  const [selectedPage, setSelectedPage] = useState("checkingReviews");
+  function handlePage(page) {
+    setSelectedPage(page);
   }
 
   return isLoaded ? (
     <LoaderSpinner loading={isLoaded} />
   ) : (
     <section className={styles.AdminReviews}>
-      <AdminReviewsBtnsAction
-        handleSelectedSubPage={handleSelectedSubPage}
-        selectedSubPage={selectedSubPage}
-      />
+      <div className={styles.btnsDiv}>
+        <BtnChangePage
+          textBtn="Checking reviews"
+          handlePage={handlePage}
+          selectedpage={selectedPage}
+          adjustedPage="checkingReviews"
+        />
+        <BtnChangePage
+          textBtn="Rated reviews"
+          handlePage={handlePage}
+          selectedpage={selectedPage}
+          adjustedPage="ratedReviews"
+        />
+      </div>
 
       {(() => {
-        switch (selectedSubPage) {
+        switch (selectedPage) {
           case "checkingReviews":
             return <AdminCheckingReviews data={checkingReviews} />;
           case "ratedReviews":
