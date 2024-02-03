@@ -1,39 +1,69 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import * as Yup from "yup";
+import { Form, Formik } from "formik";
+import contactData from "../../../data/input_contact_data.json";
+import FieldComponent from "../../FormikComponents/FieldComponent/FieldComponent";
+import FieldTextarea from "../../FormikComponents/FieldTextarea/FieldTextarea";
+import styles from "./EmailContactForm.module.scss";
+import BtnContact from "../../Buttons/BtnContact/BtnContact";
+
+const validationSchema = Yup.object().shape({
+  fullName: Yup.string()
+    .min(4, "Must be 4 characters or more")
+    .required("Required"),
+  email: Yup.string().email("Invalid email address").required("Required"),
+  message: Yup.string()
+    .required("Required")
+    .min(5, "Must be 5 characters or more"),
+});
+
+const initialValues = {
+  fullName: "",
+  email: "",
+  message: "",
+};
+
 function EmailContactForm() {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
+  const formRef = React.createRef();
+  const onSubmitMessage = async (values, { setSubmitting, resetForm }) => {
+    try {
+      await emailjs.sendForm(
         "service_7afqm2j",
         "template_avigmgr",
-        form.current,
+        formRef.current,
         "dIx15g4AwWAGhfIJ0"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
       );
+
+      alert("Message has been sent successfully!");
+      resetForm();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Error sending email. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
     <div>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
-      </form>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmitMessage}
+      >
+        {({ setFieldValue, values }) => (
+          <Form ref={formRef} className={styles.EmailContactForm}>
+            {contactData.contact_form_one.map((item, i) => (
+              <FieldComponent item={item} key={i} />
+            ))}
+            <FieldTextarea setFieldValue={setFieldValue} />
+            <div>
+              <BtnContact index={`btnFormContact${23}`} />
+            </div>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 }

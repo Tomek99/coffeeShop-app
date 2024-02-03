@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./AdminCustomers.module.scss";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import AdminCustomerItem from "./AdminCustomerItem/AdminCustomerItem";
@@ -9,7 +9,8 @@ import Pagination from "../../Pagination/Pagination";
 
 function AdminCustomers() {
   const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/users`;
-  const { isLoaded, data } = useFetchData(apiEndpoint);
+  const { isLoaded: isUsersDataLoaded, data: usersData } =
+    useFetchData(apiEndpoint);
 
   const {
     pageNumber,
@@ -17,10 +18,14 @@ function AdminCustomers() {
     pageCount,
     itemsPerPage,
     handleChangePage,
-  } = usePaginationHook(0, data, 15, "/admin/customers");
+  } = usePaginationHook(0, usersData, 15, "/admin/customers");
 
-  return isLoaded ? (
-    <LoaderSpinner loading={isLoaded} />
+  const apiEndpointOrders = `${process.env.REACT_APP_API_URI}/api/orders`;
+  const { isLoaded: isOrdersDataLoaded, data: ordersData } =
+    useFetchData(apiEndpointOrders);
+
+  return isUsersDataLoaded ? (
+    <LoaderSpinner loading={isUsersDataLoaded} />
   ) : (
     <div className={styles.AdminCustomers}>
       <table className={styles.tableContent}>
@@ -35,22 +40,22 @@ function AdminCustomers() {
             <td>Orders</td>
             <td>Delete</td>
           </tr>
-          {data
+          {usersData
             .slice(pagesVisited, pagesVisited + itemsPerPage)
             .map((item, index) => (
-              <AdminCustomerItem item={item} index={index + 1} key={index} />
+              <AdminCustomerItem
+                item={item}
+                index={index + 1}
+                key={index}
+                ordersData={ordersData}
+                isOrdersDataLoaded={isOrdersDataLoaded}
+              />
             ))}
         </tbody>
       </table>
-      {data.length > 15 ? (
-        <>
-          <Pagination
-            pageCount={pageCount}
-            handleChangePage={handleChangePage}
-          />
-          <ScrollToTop pageNumber={pageNumber} />
-        </>
-      ) : null}
+
+      <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
+      <ScrollToTop pageNumber={pageNumber} />
     </div>
   );
 }

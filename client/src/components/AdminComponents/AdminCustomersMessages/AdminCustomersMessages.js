@@ -54,7 +54,6 @@ function AdminCustomersMessages() {
           }
         })()
       )}
-      <div></div>
     </section>
   );
 }

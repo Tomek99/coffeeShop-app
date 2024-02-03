@@ -8,6 +8,6 @@ function formatPhoneNumberUtil(inputString) {
     "$1-$2-$3"
   );
 
-  return `+48 ${formattedPhoneNumber}`;
+  return `+48${formattedPhoneNumber}`;
 }
 export default formatPhoneNumberUtil;

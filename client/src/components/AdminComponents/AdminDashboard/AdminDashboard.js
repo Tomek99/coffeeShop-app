@@ -5,7 +5,7 @@ import { AdminContext } from "../../../Contexts/AdminContext";
 
 function AdminDashboard() {
   const { adminData } = useContext(AdminContext);
-  console.log(adminData);
+
   return (
     <div className={styles.AdminDashboard}>
       <h1 className={styles.dashBoardHeader}>

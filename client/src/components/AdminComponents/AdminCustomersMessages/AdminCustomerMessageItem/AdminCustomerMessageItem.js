@@ -20,6 +20,7 @@ function AdminCustomerMessageItem({ item }) {
       id: item._id,
       isCompleted: "completed",
     });
+    window.location.reload();
   }
 
   const formatedNumber = formatPhoneNumberUtil(item.number);
@@ -29,9 +30,13 @@ function AdminCustomerMessageItem({ item }) {
         <span>ID: {item._id}</span>
         <span>Full name: {item.fullName}</span>
         <span>Phone number: {formatedNumber}</span>
+        <span>Created at: {item.createdAt}</span>
+        {item.isCompleted.includes("completed") ? (
+          <span>Updated at: {item.updatedAt}</span>
+        ) : null}
       </section>
       <div>
-        <p>{item.message}</p>
+        <p className={styles.paragraph}>{item.message}</p>
       </div>
 
       {item.isCompleted.includes("completed") ? (
