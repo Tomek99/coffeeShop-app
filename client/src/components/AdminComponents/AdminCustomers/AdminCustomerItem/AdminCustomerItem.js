@@ -5,6 +5,7 @@ import { CiEdit } from "react-icons/ci";
 import { BsEye } from "react-icons/bs";
 import AdminIconBtn from "../../AdminBtns/AdminIconBtn/AdminIconBtn";
 import AdminTextBtn from "../../AdminBtns/AdminTextBtn/AdminTextBtn";
+import AdminCustomerItemOrderSwitcher from "./AdminCustomerItemOrderSwitcher/AdminCustomerItemOrderSwitcher";
 
 function AdminCustomerItem({ item, index, ordersData, isOrdersDataLoaded }) {
   const maskedHash = item.password.replace(/./g, "*").slice(0, 20);
@@ -43,26 +44,11 @@ function AdminCustomerItem({ item, index, ordersData, isOrdersDataLoaded }) {
           />
         </td>
       </tr>
-
-      {(() => {
-        switch (action) {
-          case "orders":
-            return (
-              <tr>
-                <td colSpan={8}>{orders.length} </td>
-              </tr>
-            );
-          case "delete":
-            return (
-              <tr>
-                <td colSpan={8}>{orders.length} </td>
-              </tr>
-            );
-
-          default:
-            return null;
-        }
-      })()}
+      <AdminCustomerItemOrderSwitcher
+        action={action}
+        orders={orders}
+        item={item}
+      />
     </>
   );
 }

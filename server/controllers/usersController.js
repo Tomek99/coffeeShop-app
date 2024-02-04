@@ -70,7 +70,6 @@ const setUser = asyncHandler(async (req, res) => {
 
 const deleteUser = asyncHandler(async (req, res) => {
   const { _id, addresses, invoices } = req.body;
-
   await User.findByIdAndDelete(_id);
   await Address.findByIdAndDelete(addresses);
   await Invoice.findByIdAndDelete(invoices);

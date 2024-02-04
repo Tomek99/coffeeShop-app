@@ -17,14 +17,13 @@ const postMessage = asyncHandler(async (req, res) => {
 });
 
 const putMessage = asyncHandler(async (req, res) => {
-  const response = await Message.findByIdAndUpdate(req._id, {
-    isCompleted: req.isCompleted,
-  });
+  const { id, isCompleted } = req.body;
+  const response = await Message.findByIdAndUpdate(id, { isCompleted });
   res.status(200).json(response);
 });
 
 const deleteMessage = asyncHandler(async (req, res) => {
-  const response = await Message.findByIdAndDelete(req.body._id);
+  const response = await Message.findByIdAndDelete(req.body.id);
   res.status(200).json(response);
 });
 

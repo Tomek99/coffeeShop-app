@@ -3,13 +3,11 @@ const Order = require("../models/orderModel");
 
 const getAllUsersOrders = asyncHandler(async (req, res) => {
   const response = await Order.find();
-
   res.status(200).json(response);
 });
 
 const getOrders = asyncHandler(async (req, res) => {
   const get_data = await Order.find({ userId: req.params.id });
-
   res.status(200).json(get_data || []);
 });
 
