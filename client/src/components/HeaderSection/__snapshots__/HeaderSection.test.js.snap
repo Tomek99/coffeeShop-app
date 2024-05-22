@@ -5,9 +5,7 @@ exports[`should render HeaderSection component 1`] = `
   <header
     class="headerSection"
   >
-    Our
-     
-    products
+    Our products
   </header>
 </div>
 `;

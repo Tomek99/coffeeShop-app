@@ -6,7 +6,7 @@ function OrderDetails() {
   return (
     <div className={styles.OrderDetails}>
       <div className={styles.buttonShowOrders}>
-        <BtnReturn text="Show all orders" returnPath="/orders" />
+        <BtnReturn text="Show all orders" returnPath="/purchase-details" />
       </div>
       <div>
         <p>fwafawfa</p>

@@ -26,6 +26,7 @@ function ProductDetails() {
   const endPoint = `${process.env.REACT_APP_API_URI}/api/products/product-details/${productId.id}`;
   const { isLoaded, data } = useFetchData(endPoint);
   // Protected route if the one is not exist
+
   const navigate = useNavigate();
   if (data === false) {
     navigate("/products");

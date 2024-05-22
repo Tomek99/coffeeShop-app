@@ -8,9 +8,7 @@ exports[`should render component 1`] = `
     <header
       class="headerSection"
     >
-      Our
-       
-      company
+      Our company
     </header>
     <div
       class="ourCompany"

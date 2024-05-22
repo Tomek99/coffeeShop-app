@@ -9,9 +9,7 @@ exports[`should render BlogsSection component 1`] = `
     <header
       class="headerSection"
     >
-      our
-       
-      news
+      our news
     </header>
     <div
       class="blogsCarousel"

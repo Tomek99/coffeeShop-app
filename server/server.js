@@ -37,7 +37,7 @@ app.use("/api/messages", require("./routes/messagesRoutes"));
 
 app.use(errorHandler);
 
-app.get("/", (req, res) => {
+app.get("/root", (req, res) => {
   res.send("working!");
 });
 

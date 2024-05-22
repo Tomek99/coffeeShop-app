@@ -8,15 +8,19 @@ exports[`should render NavigationBarOrder 1`] = `
     <div
       class="flexDiv"
     >
-      <a
-        class="divImg"
-        href="/"
+      <div
+        class="PageLogo"
       >
-        <img
-          alt="logo"
-          src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
-        />
-      </a>
+        <a
+          href="/"
+        >
+           
+          <img
+            alt="logo"
+            src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
+          />
+        </a>
+      </div>
       <div
         class="navigationDivList"
       >

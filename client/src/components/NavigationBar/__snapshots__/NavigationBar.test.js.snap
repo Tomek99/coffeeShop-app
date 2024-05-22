@@ -22,14 +22,14 @@ exports[`should render NavigationBar component 1`] = `
       class="navBar"
     >
       <div
-        class="divLogo"
+        class="PageLogo"
       >
         <a
           href="/"
         >
+           
           <img
-            alt="Logo"
-            class="logo"
+            alt="logo"
             src="https://res.cloudinary.com/dvoduabha/image/upload/v1687425664/logo1_iw4cvy.png"
           />
         </a>
@@ -393,33 +393,25 @@ exports[`should render NavigationBar component 1`] = `
         <ul
           class="PopupUserProfile active"
         >
-          <div
-            class="btnSignIn_UpSection"
+          <section
+            class="btnsSection"
           >
-            <li
-              class="btnSignIn_Up"
+            <button
+              class="BtnDefault"
             >
-              <a
-                href="/log-in"
-              >
-                Log in
-              </a>
-            </li>
-            <li
-              class="infoAcc"
+              Log in
+            </button>
+            <span
+              class="spanTextAccount"
             >
               Don't have an account?
-            </li>
-            <li
-              class="btnSignIn_Up"
+            </span>
+            <button
+              class="BtnDefault"
             >
-              <a
-                href="/sign-up"
-              >
-                Sign up
-              </a>
-            </li>
-          </div>
+              Sign up
+            </button>
+          </section>
           <div
             class="list"
           >
@@ -446,7 +438,7 @@ exports[`should render NavigationBar component 1`] = `
             </li>
             <li>
               <a
-                href="/orders"
+                href="/purchased-products"
               >
                 <svg
                   fill="currentColor"
@@ -690,7 +682,7 @@ exports[`should render NavigationBar component 1`] = `
             </li>
             <li>
               <a
-                href="/orders"
+                href="/purchased-products"
               >
                 <svg
                   fill="currentColor"

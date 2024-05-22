@@ -30,8 +30,9 @@
   --red: rgb(180, 3, 28);
   --yellow: rgb(255, 195, 0);
   --red-darken: rgb(156, 4, 24);
-  --shadow: rgba(255, 255, 255, 0.491) 0px 2px 4px 0px,
-    rgba(255, 255, 255, 0.496) 0px 0px 2px 1px;
+  --shadow: rgba(129, 129, 129, 0.25) 0px 2px 4px 0px,
+    rgba(129, 129, 129, 0.13) 0px 0px 2px 1px;
+
   --shadow-thin: rgba(129, 129, 129, 0.25) 0px 0px 1px 1px,
     rgba(255, 255, 255, 0.13) 0px 0px 1px 1px;
   --shadow-thick: rgba(0, 0, 0, 0.25) 0px 0px 1px 1px,

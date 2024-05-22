@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ErrMessage from "../../ErrorMessage/ErrMessage";
 import styles from "./FieldTextarea.module.scss";
 
-function FieldTextarea({ setFieldValue }) {
+function FieldTextarea({ setFieldValue, index }) {
   const [remainingChars, setRemainingChars] = useState(0);
 
   const handleInputChange = (event, setFieldValue) => {
@@ -17,7 +17,7 @@ function FieldTextarea({ setFieldValue }) {
     <div className={styles.TextareaCom}>
       <Field
         as="textarea"
-        id="message"
+        id={`message${index}`}
         name="message"
         maxLength={999}
         placeholder="Your message"

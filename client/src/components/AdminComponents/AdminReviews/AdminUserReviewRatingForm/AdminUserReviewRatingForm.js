@@ -7,7 +7,7 @@ import putDataUtil from "../../../../utils/putDataUtil";
 
 function AdminUserReviewRatingForm({ item }) {
   const [decision, setDecision] = useState("checking");
-  const [selectedReason, setSelectedReason] = useState("inappropriate_content");
+  const [selectedReason, setSelectedReason] = useState("-");
   const [comment, setComment] = useState("");
 
   function handleDecision(e) {

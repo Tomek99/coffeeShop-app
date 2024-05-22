@@ -2,23 +2,21 @@ import AddressDetailsPage from "../../pages/AddressDetailsPage";
 import BaseTest from "./BaseTest";
 
 describe("Add & delete & empty invoice", () => {
-  before(() => {
+  beforeEach(() => {
     BaseTest.performBasicStepsForAddressDetails();
   });
+  it("should delete invoice", () => {
+    const asseration = fillInvoiceForm().clickOnDeleteAddressBtn(0);
 
-  it("add invoice", () => {
+    asseration.getInvoiceFormElement(2).should("not.exist");
+  });
+  it("should add invoice", () => {
     const asseration = fillInvoiceForm();
 
     asseration.getInvoiceFormElement(1).should("exist");
   });
 
-  it("delete invoice", () => {
-    const asseration = fillInvoiceForm().clickOnDeleteAddressBtn(0);
-
-    asseration.getInvoiceFormElement(2).should("not.exist");
-  });
-
-  it("try to add empty invoice", () => {
+  it("should try to add empty invoice", () => {
     const asseration = new AddressDetailsPage()
       .clickOnNewInvoiceBtn()
       .clickOnSaveInvoiceBtn();

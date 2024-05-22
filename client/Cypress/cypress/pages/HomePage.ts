@@ -17,10 +17,7 @@ class HomePage {
 
     vieCartPageBtn: () => cy.get("#ViewCart"),
 
-    signupBtn: () =>
-      cy.get(
-        "li[class*='PopupUserNav1_btnSignIn_Up__vWDrC']>a[href*='/sign-up']"
-      ),
+    signupBtn: () => cy.get("button").contains("Sign up"),
 
     profileSettingsBtn: () => cy.contains("Profile seetings"), //cy.get("div[class*='PopupUserNav1_list__J7Nmc']>li>a[href*='/settings']")
 

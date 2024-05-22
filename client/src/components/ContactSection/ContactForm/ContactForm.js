@@ -13,6 +13,7 @@ const phoneRegExp = /^[1-9]\d{2}(?:\s?\d{3}){2}$/;
 const validationSchema = Yup.object().shape({
   fullName: Yup.string()
     .min(4, "Must be 4 characters or more")
+    .max(32, "Must be 32 characters or less")
     .required("Required"),
   number: Yup.string()
     .matches(phoneRegExp, "Phone number is not valid")
@@ -52,7 +53,7 @@ function ContactForm({ formData, title, index }) {
             <FieldComponent item={item} key={index} />
           ))}
           <div>
-            <FieldTextarea setFieldValue={setFieldValue} />
+            <FieldTextarea setFieldValue={setFieldValue} index={1} />
             <BtnContact index={`btnFormContact${index}`} />
           </div>
         </Form>

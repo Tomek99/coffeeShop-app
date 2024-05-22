@@ -31,7 +31,7 @@ class BaseTest {
       new HomePage()
         .visitHomePage()
         .openProductsPage()
-        .openRevelantProductPage(CypressHelper.generateRandomNumber(3));
+        .openRevelantProductPage(0);
     }
   }
 

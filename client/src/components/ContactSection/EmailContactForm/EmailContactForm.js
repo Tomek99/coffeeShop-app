@@ -54,10 +54,11 @@ function EmailContactForm() {
       >
         {({ setFieldValue, values }) => (
           <Form ref={formRef} className={styles.EmailContactForm}>
+            <p>Write email to us</p>
             {contactData.contact_form_one.map((item, i) => (
               <FieldComponent item={item} key={i} />
             ))}
-            <FieldTextarea setFieldValue={setFieldValue} />
+            <FieldTextarea setFieldValue={setFieldValue} index={0} />
             <div>
               <BtnContact index={`btnFormContact${23}`} />
             </div>

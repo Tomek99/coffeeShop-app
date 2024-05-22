@@ -22,11 +22,10 @@ function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
   }
 
   const productRatingsAverage =
-    productRatings === null
-      ? 0
-      : productRatings.reduce((sum, current) => sum + current, 0) /
-        productRatings.length;
-
+    productRatings && productRatings.length > 0
+      ? productRatings.reduce((sum, current) => sum + current, 0) /
+        productRatings.length
+      : 0;
   return (
     <div className={styles.LatestProduct}>
       <div className={styles.iconsSection}>

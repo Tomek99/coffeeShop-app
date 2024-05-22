@@ -9,7 +9,6 @@ const {
 } = require("../controllers/addressesController");
 
 router.route("/").get(getAddresses);
-
 router.route("/user-address/:id").get(getAddress);
 router.route("/user-address").post(setAddress);
 router.route("/user-address/edit-address").put(editAddress);
