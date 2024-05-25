@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./SingleOrder.module.scss";
 import { useNavigate } from "react-router-dom";
 // import Order from "./Orderff/Order";
@@ -6,11 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { useWindowWidth } from "@react-hook/window-size";
 import PropTypes from "prop-types";
 import BtnDots from "../../../Buttons/BtnDots/BtnDots";
+import { Context } from "../../../../Contexts/Context";
 // import { redirect } from "react-router-dom";
 
 function SingleOrder({ item }) {
   //ADD HIDDEN PRODUCTS IN ORDER COMPONENT !!!
   const { _id, delivery_status, date, total, products } = item;
+
+  const { handlePurchaseDetails } = useContext(Context);
 
   const width = useWindowWidth();
   const navigate = useNavigate();
@@ -18,7 +21,7 @@ function SingleOrder({ item }) {
   function openOrderDetails() {
     navigate(`/purchased-products/purchase-details/${_id}`);
   }
-  // redirect(`/orders/${_id}`); po co?
+
   const calculateVisibleItems = (width) => {
     if (width < 370) return 0;
     if (width < 500) return 1;

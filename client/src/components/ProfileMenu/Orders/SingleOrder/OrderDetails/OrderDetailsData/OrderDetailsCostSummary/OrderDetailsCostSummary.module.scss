@@ -1,0 +1,29 @@
+.costSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.3rem;
+  gap: 10px;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: var(--border);
+
+  div {
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .total {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 450px) {
+  .costSummary {
+    align-items: center !important;
+  }
+}

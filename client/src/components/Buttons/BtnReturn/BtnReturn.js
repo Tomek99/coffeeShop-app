@@ -7,9 +7,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 function BtnReturn({ text, returnPath }) {
   return (
     <Link to={returnPath} className={styles.ReturnBtn}>
-      <span>
-        <MdArrowBackIosNew />
-      </span>
+      <MdArrowBackIosNew />
       <span>{text}</span>
     </Link>
   );

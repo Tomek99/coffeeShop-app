@@ -101,6 +101,7 @@ function App() {
         changeQuantity,
         notify,
         notifyError,
+
         isLogIn,
         cartItems,
         cartValue,

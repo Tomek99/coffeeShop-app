@@ -1,0 +1,56 @@
+.OrderDetailsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .divContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 1.3rem;
+
+    .rowDiv {
+      max-width: 700px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .colDiv {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .spanInfo {
+          font-weight: bold;
+        }
+      }
+    }
+    .btns {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .rowDiv {
+    grid-template-columns: 1fr 1fr !important;
+
+    .colDiv {
+      gap: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .rowDiv {
+    grid-template-columns: 1fr !important;
+  }
+}

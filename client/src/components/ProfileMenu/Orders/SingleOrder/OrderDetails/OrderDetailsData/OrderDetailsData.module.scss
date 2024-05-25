@@ -1,3 +1,15 @@
+.OrderDetailsData {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .divContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
 .buttonShowOrders {
   display: flex;
   flex-direction: column;

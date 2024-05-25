@@ -1,0 +1,14 @@
+.BtnGetInvoice {
+  background-color: transparent;
+  border: var(--border);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: 0.3s linear;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--bg);
+    background-color: var(--main-color-darken);
+  }
+}
