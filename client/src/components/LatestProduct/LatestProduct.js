@@ -9,7 +9,14 @@ import RatingsStars from "../RatingStars/RatingStars";
 function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
   const { _id, imageUrl, name, price, oldPrice, productRatings, intensity } =
     item;
-  const { addItem, addWishItem, wishList } = useContext(Context);
+  const { addItem, addWishItem, saveViewedProduct, wishList } =
+    useContext(Context);
+
+  const viwedProduct = {
+    productId: _id,
+    productUrl: imageUrl,
+    productName: name,
+  };
 
   let foundWishProduct = wishList.find((value) => {
     if (value === _id) return true;
@@ -19,6 +26,7 @@ function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
   const navigate = useNavigate();
   function navigatePage() {
     navigate(`/products/${_id}`);
+    saveViewedProduct(viwedProduct);
   }
 
   const productRatingsAverage =

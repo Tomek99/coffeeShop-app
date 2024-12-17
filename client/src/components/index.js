@@ -6,7 +6,7 @@ export { default as ShipmentSection } from "./ShipmentSection/ShipmentSection";
 export { default as ProductsSection } from "./ProductsSection/ProductsSection";
 export { default as CareComponent } from "./CareSection/CareSection";
 export { default as BlogsSection } from "./BlogsSection/BlogsSection";
-export { default as HistorySection } from "./HistorySection/HistorySection";
+export { default as ViewedProductsSection } from "./HistorySection/ViewedProductsSection";
 export { default as ReviewSection } from "./ReviewSection/ReviewSection";
 export { default as ContactSection } from "./ContactSection/ContactSection";
 export { default as Footer } from "./Footer/Footer";

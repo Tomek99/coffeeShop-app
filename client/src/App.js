@@ -13,6 +13,7 @@ import useUserOrderHook from "./hooks/useUserOrderHook";
 import useLoginHook from "./hooks/useLoginHook";
 import useCartHook from "./hooks/useCartHook";
 import useFetchData from "./hooks/useFetchData";
+import useViewedProductsHook from "./hooks/useViewedProductsHook";
 import {
   Home,
   Blog,
@@ -84,6 +85,7 @@ function App() {
   );
   /*----------- userHistory ----------- */
   // const {userHistory} = useUserHistoryHook();
+  const { viewedProducts, saveViewedProduct } = useViewedProductsHook();
 
   /*----------- navigate on Summary ----------- */
   const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
@@ -104,7 +106,9 @@ function App() {
         changeQuantity,
         notify,
         notifyError,
+        saveViewedProduct,
 
+        viewedProducts,
         isLogIn,
         cartItems,
         cartValue,

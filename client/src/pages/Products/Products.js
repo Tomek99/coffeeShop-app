@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./Products.module.scss";
-import HeaderSection from "../../components/HeaderSection/HeaderSection";
-import { Context } from "../../Contexts/Context";
 import LatestProduct from "../../components/LatestProduct/LatestProduct";
 import LoaderSpinner from "../../components/LoaderSpinner/LoaderSpinner";
 import Pagination from "../../components/Pagination/Pagination";
