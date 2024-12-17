@@ -82,6 +82,9 @@ function App() {
     cartValue,
     cartItems
   );
+  /*----------- userHistory ----------- */
+  // const {userHistory} = useUserHistoryHook();
+
   /*----------- navigate on Summary ----------- */
   const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
   function handleUserNavigateToSummary() {

@@ -7,6 +7,7 @@ import {
   BlogsSection,
   ShipmentSection,
   CareComponent,
+  HistorySection,
 } from "../../components/index";
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
       <ReviewSection />
       <CareComponent />
       <BlogsSection />
+      <HistorySection />
     </>
   );
 }
