@@ -1,4 +1,5 @@
 export { default as NavigationBar } from "./NavigationBar/NavigationBar";
+export { default as CookieBarConsenst } from "./CookieBarConsenst/CookieBarConsenst";
 export { default as NavigationBarOrder } from "./NavigationBarOrder/NavigationBarOrder";
 export { default as HomeSection } from "./HomeSection/HomeSection";
 export { default as AboutSection } from "./AboutSection/AboutSection";

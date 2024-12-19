@@ -50,6 +50,7 @@ import {
   AdminCustomersMessages,
   AdminSettings,
   OrderDetails,
+  CookieBarConsenst,
 } from "./components";
 
 function App() {
@@ -235,6 +236,7 @@ function App() {
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <CookieBarConsenst />
       </section>
       <FooterSwitcher pathname={location.pathname} />
     </Context.Provider>
