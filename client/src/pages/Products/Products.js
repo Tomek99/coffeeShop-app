@@ -6,6 +6,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import usePaginationHook from "../../hooks/usePaginationHook";
 import useFetchData from "../../hooks/useFetchData";
+import ProductControlView from "../../components/ProductControlView/ProductControlView";
 
 function Products() {
   const apiProductEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
@@ -18,13 +19,32 @@ function Products() {
     handleChangePage,
   } = usePaginationHook(0, data, 12, "/products");
 
+  const [isClicked, setIsClicked] = useState(false);
+  const [selectedView, isSelectedView] = useState(0);
+
+  function handleArrow() {
+    setIsClicked(!isClicked);
+  }
+
+  function slectView(number) {
+    if (selectedView !== number) {
+      setIsClicked(!isClicked);
+      isSelectedView(number);
+    }
+  }
+
   return (
     <div className={styles.Products}>
       {isLoaded ? (
         <LoaderSpinner loading={isLoaded} />
       ) : (
         <div className={styles.productsLayout}>
-          <div>hi</div>
+          <ProductControlView
+            isClicked={isClicked}
+            selectedView={selectedView}
+            handleArrow={handleArrow}
+            selectView={slectView}
+          />
           <div className={styles.productsItemsSection}>
             {data
               .slice(pagesVisited, pagesVisited + itemsPerPage)

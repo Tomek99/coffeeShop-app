@@ -1,0 +1,54 @@
+.ProductControlView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+
+  .productsViewPanel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 70px;
+    height: 32px;
+    border-radius: 8px;
+    border: var(--border);
+    cursor: pointer;
+
+    .selectBtn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 10px;
+    }
+
+    .selectSortDiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 70px;
+      top: 30px;
+      border: var(--border);
+      border-radius: 0 0 8px 8px;
+      background-color: var(--bg);
+
+      > div {
+        padding: 5px 20px 5px 5px;
+        transition: 0.3s linear;
+
+        &:hover {
+          background-color: var(--light-grey);
+
+          > div > span {
+            background-color: var(--darker-grey);
+          }
+        }
+      }
+    }
+  }
+}
