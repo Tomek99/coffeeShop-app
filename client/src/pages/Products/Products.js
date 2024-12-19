@@ -23,8 +23,9 @@ function Products() {
       {isLoaded ? (
         <LoaderSpinner loading={isLoaded} />
       ) : (
-        <div className={styles.gridTemplate}>
-          <div className={styles.itemsSection}>
+        <div className={styles.productsLayout}>
+          <div>hi</div>
+          <div className={styles.productsItemsSection}>
             {data
               .slice(pagesVisited, pagesVisited + itemsPerPage)
               .map((item, index) => (
