@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
+import { ProductsContext } from "../../Contexts/ProductsContext";
 import styles from "./Products.module.scss";
-import LatestProduct from "../../components/LatestProduct/LatestProduct";
 import LoaderSpinner from "../../components/LoaderSpinner/LoaderSpinner";
 import Pagination from "../../components/Pagination/Pagination";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import usePaginationHook from "../../hooks/usePaginationHook";
 import useFetchData from "../../hooks/useFetchData";
 import ProductControlView from "../../components/ProductControlView/ProductControlView";
+import LargeProductsView from "./ProductsView/LargeProductsView/LargeProductsView";
+import MediumProductsView from "./ProductsView/MediumProductsView/MediumProductsView";
+import SmallProductsView from "./ProductsView/SmallProductsView/SmallProductsView";
 
 function Products() {
   const apiProductEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
@@ -26,7 +29,7 @@ function Products() {
     setIsClicked(!isClicked);
   }
 
-  function slectView(number) {
+  function selectView(number) {
     if (selectedView !== number) {
       setIsClicked(!isClicked);
       isSelectedView(number);
@@ -34,38 +37,40 @@ function Products() {
   }
 
   return (
-    <div className={styles.Products}>
-      {isLoaded ? (
-        <LoaderSpinner loading={isLoaded} />
-      ) : (
-        <div className={styles.productsLayout}>
-          <ProductControlView
-            isClicked={isClicked}
-            selectedView={selectedView}
-            handleArrow={handleArrow}
-            selectView={slectView}
-          />
-          <div className={styles.productsItemsSection}>
-            {data
-              .slice(pagesVisited, pagesVisited + itemsPerPage)
-              .map((item, index) => (
-                <LatestProduct
-                  key={index}
-                  item={item}
-                  cartFillId={`cartFillId${index}`}
-                  showProductId={`showProductId${index}`}
-                  wishlistId={`wishlistId${index}`}
-                />
-              ))}
+    <ProductsContext.Provider value={{ data, pagesVisited, itemsPerPage }}>
+      <div className={styles.Products}>
+        {isLoaded ? (
+          <LoaderSpinner loading={isLoaded} />
+        ) : (
+          <div className={styles.productsLayout}>
+            <ProductControlView
+              isClicked={isClicked}
+              selectedView={selectedView}
+              handleArrow={handleArrow}
+              selectView={selectView}
+            />
+            {(() => {
+              switch (selectedView) {
+                case 0:
+                  return <LargeProductsView />;
+                case 1:
+                  return <MediumProductsView />;
+                case 2:
+                  return <SmallProductsView />;
+                default:
+                  return null;
+              }
+            })()}
+
+            <Pagination
+              pageCount={pageCount}
+              handleChangePage={handleChangePage}
+            />
+            <ScrollToTop pageNumber={pageNumber} />
           </div>
-          <Pagination
-            pageCount={pageCount}
-            handleChangePage={handleChangePage}
-          />
-          <ScrollToTop pageNumber={pageNumber} />
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </ProductsContext.Provider>
   );
 }
 

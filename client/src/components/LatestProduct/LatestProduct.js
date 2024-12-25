@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
+import BtnsProduct from "../Buttons/BtnsProduct/BtnsProduct";
 
-function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
+function LatestProduct({ item }) {
   const { _id, imageUrl, name, price, oldPrice, productRatings, intensity } =
     item;
   const { addItem, addWishItem, saveViewedProduct, wishList } =
@@ -17,11 +18,6 @@ function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
     productUrl: imageUrl,
     productName: name,
   };
-
-  let foundWishProduct = wishList.find((value) => {
-    if (value === _id) return true;
-    return false;
-  });
 
   const navigate = useNavigate();
   function navigatePage() {
@@ -36,25 +32,16 @@ function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
       : 0;
   return (
     <div className={styles.LatestProduct}>
-      <div className={styles.iconsSection}>
-        <button onClick={navigatePage} id={showProductId}>
-          <BsEye />
-        </button>
-
-        <button onClick={() => addItem(item)} id={cartFillId}>
-          <BsCart />
-        </button>
-        <button
-          id={wishlistId}
-          className={foundWishProduct ? styles.activeBtn : null}
-          onClick={() => addWishItem(_id)}
-        >
-          <BsHeart />
-        </button>
-      </div>
+      <BtnsProduct
+        item={item}
+        wishList={wishList}
+        navigatePage={navigatePage}
+        addItem={addItem}
+        addWishItem={addWishItem}
+      />
       <div className={styles.contentWrapper}>
         <img src={imageUrl} alt={name} />
-        <h3 className={styles.nameProduct} onClick={navigatePage}>
+        <h3 className={styles.productName} onClick={navigatePage}>
           {name}
         </h3>
         <p className={styles.intensity}>

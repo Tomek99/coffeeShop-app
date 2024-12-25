@@ -1,17 +1,11 @@
 .Products {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   .productsLayout {
     max-width: 1200px;
     width: 100%;
-
-    .productsItemsSection {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
   }
 }

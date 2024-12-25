@@ -36,10 +36,10 @@
       border: var(--border);
       border-radius: 0 0 8px 8px;
       background-color: var(--bg);
+      z-index: 1;
 
       > div {
         padding: 5px 20px 5px 5px;
-        transition: 0.3s linear;
 
         &:hover {
           background-color: var(--light-grey);

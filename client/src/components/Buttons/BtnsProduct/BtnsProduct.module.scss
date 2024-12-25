@@ -1,0 +1,32 @@
+.BtnsProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+
+  button,
+  a {
+    background-color: #fff;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: var(--border);
+    border-radius: 8px;
+    transition: 0.3s linear;
+    cursor: pointer;
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+
+  button:hover,
+  .activeBtn {
+    background-color: var(--light-greay);
+  }
+}
