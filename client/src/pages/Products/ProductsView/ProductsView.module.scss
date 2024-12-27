@@ -1,12 +1,18 @@
-.LargeProductsView {
+.largeProductsView {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.mediumProductsView {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 1200px) {
-  .LargeProductsView {
+  .largeProductsView {
     justify-content: flex-start !important;
   }
 }

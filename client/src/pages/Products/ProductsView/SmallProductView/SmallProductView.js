@@ -1,15 +1,10 @@
 import React from "react";
-import styles from "./MedProductView.module.scss";
-import RatingsStars from "../../../../../components/RatingStars/RatingStars";
+import styles from "./SmallProductView.module.scss";
 import { useNavigate } from "react-router-dom";
-import BtnsProduct from "../../../../../components/Buttons/BtnsProduct/BtnsProduct";
+import RatingsStars from "../../../../components/RatingStars/RatingStars";
+import BtnsProduct from "../../../../components/Buttons/BtnsProduct/BtnsProduct";
 
-// item={item}
-// cartFillId={`cartFillId${index}`}
-// showProductId={`showProductId${index}`}
-// wishlistId={`wishlistId${index}`}
-
-function MedProductView({
+function SmallProductsView({
   item,
   addItem,
   addWishItem,
@@ -29,7 +24,7 @@ function MedProductView({
     brand,
     weight,
   } = item;
-  console.log(item);
+
   const viwedProduct = {
     productId: _id,
     productUrl: imageUrl,
@@ -49,19 +44,26 @@ function MedProductView({
       : 0;
 
   return (
-    <div className={styles.MedProductView} onClick={navigatePage}>
+    <div className={styles.SmallProductsView} onClick={navigatePage}>
       <div className={styles.divLeft}>
         <img src={imageUrl} alt={name} className={styles.productImg} />
       </div>
-      <div className={styles.divCenter}>
+      <div className={styles.divDescription}>
         <span className={styles.spanProductName}>{name}</span>
-        <RatingsStars rate={productRatingsAverage} size="large" />
-        <span>Brand: {brand}</span>
-        <span>Intensity: {intensity}</span>
-        <span>Origin: {origin}</span>
-        <span>Weight: {weight}</span>
-        <span>type {type}</span>
+        <span className={styles.spanDescription}>
+          {brand} | {origin} | {intensity} | {weight} | {type}
+        </span>
       </div>
+      <div className={styles.showBtns}>
+        <BtnsProduct
+          item={item}
+          wishList={wishList}
+          navigatePage={navigatePage}
+          addItem={addItem}
+          addWishItem={addWishItem}
+        />
+      </div>
+      <RatingsStars rate={productRatingsAverage} size="large" />
       <div className={styles.divRight}>
         <div className={styles.divPrice}>
           {oldPrice !== null ? (
@@ -69,18 +71,9 @@ function MedProductView({
           ) : null}
           <span>{oldPrice !== null ? `$${price}` : `$${price}`}</span>
         </div>
-        <div className={styles.showBtns}>
-          <BtnsProduct
-            item={item}
-            wishList={wishList}
-            navigatePage={navigatePage}
-            addItem={addItem}
-            addWishItem={addWishItem}
-          />
-        </div>
       </div>
     </div>
   );
 }
 
-export default MedProductView;
+export default SmallProductsView;

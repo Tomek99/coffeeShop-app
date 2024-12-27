@@ -7,9 +7,7 @@ import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import usePaginationHook from "../../hooks/usePaginationHook";
 import useFetchData from "../../hooks/useFetchData";
 import ProductControlView from "../../components/ProductControlView/ProductControlView";
-import LargeProductsView from "./ProductsView/LargeProductsView/LargeProductsView";
-import MediumProductsView from "./ProductsView/MediumProductsView/MediumProductsView";
-import SmallProductsView from "./ProductsView/SmallProductsView/SmallProductsView";
+import ProductsView from "./ProductsView/ProductsView";
 
 function Products() {
   const apiProductEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
@@ -49,18 +47,8 @@ function Products() {
               handleArrow={handleArrow}
               selectView={selectView}
             />
-            {(() => {
-              switch (selectedView) {
-                case 0:
-                  return <LargeProductsView />;
-                case 1:
-                  return <MediumProductsView />;
-                case 2:
-                  return <SmallProductsView />;
-                default:
-                  return null;
-              }
-            })()}
+
+            <ProductsView selectedView={selectedView} />
 
             <Pagination
               pageCount={pageCount}
