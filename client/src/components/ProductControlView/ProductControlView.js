@@ -11,6 +11,7 @@ function ProductControlView({
   selectedView,
   handleArrow,
   selectView,
+  clickRef,
 }) {
   return (
     <div className={styles.ProductControlView}>
@@ -41,7 +42,7 @@ function ProductControlView({
           </span>
         </div>
         {isClicked ? (
-          <div className={styles.selectSortDiv}>
+          <div ref={clickRef} className={styles.selectSortDiv}>
             <SquaresIcon selectedView={selectedView} selectView={selectView} />
             <RowsMediumIcon
               selectedView={selectedView}
