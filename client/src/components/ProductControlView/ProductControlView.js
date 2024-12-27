@@ -42,9 +42,15 @@ function ProductControlView({
         </div>
         {isClicked ? (
           <div className={styles.selectSortDiv}>
-            <SquaresIcon selectView={selectView} />
-            <RowsMediumIcon selectView={selectView} />
-            <RowsSmallIcon selectView={selectView} />
+            <SquaresIcon selectedView={selectedView} selectView={selectView} />
+            <RowsMediumIcon
+              selectedView={selectedView}
+              selectView={selectView}
+            />
+            <RowsSmallIcon
+              selectedView={selectedView}
+              selectView={selectView}
+            />
           </div>
         ) : null}
       </div>

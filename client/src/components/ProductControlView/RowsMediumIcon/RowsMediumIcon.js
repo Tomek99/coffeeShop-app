@@ -1,9 +1,16 @@
 import React from "react";
 import styles from "./RowsMediumIcon.module.scss";
 
-function RowsMediumIcon({ selectView }) {
+function RowsMediumIcon({ selectedView, selectView }) {
   return (
-    <div className={styles.RowsMediumIcon} onClick={() => selectView(1)}>
+    <div
+      className={
+        selectedView !== 1
+          ? styles.RowsMediumIcon
+          : `${styles.RowsMediumIcon} ${styles.selectedView}`
+      }
+      onClick={() => selectView(1)}
+    >
       <div className={styles.rowContent}>
         <span className={styles.squareIcon}></span>
         <span className={styles.barIcon}></span>

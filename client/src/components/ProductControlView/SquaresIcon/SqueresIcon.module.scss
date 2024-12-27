@@ -18,3 +18,11 @@
     }
   }
 }
+
+.SquaresIcon.selectedView {
+  background-color: var(--light-grey);
+
+  .squareIcon {
+    background-color: var(--darker-grey);
+  }
+}

@@ -47,9 +47,7 @@ function Products() {
               handleArrow={handleArrow}
               selectView={selectView}
             />
-
             <ProductsView selectedView={selectedView} />
-
             <Pagination
               pageCount={pageCount}
               handleChangePage={handleChangePage}
