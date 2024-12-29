@@ -2,18 +2,10 @@ import React, { useState } from "react";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import styles from "./ProductSort.module.scss";
 import { useClickAway } from "use-click-away";
+import optionsSortProductData from "../../data/optionsSortProductData.json";
 
-const sortOptionsArray = [
-  { id: 0, option: "From the most popular" },
-  { id: 1, option: "From the most relevant" },
-  { id: 2, option: "Customer rating: from the best" },
-  { id: 3, option: "Price: from the cheapest" },
-  { id: 4, option: "Price: from the most expensive" },
-];
-
-function ProductSort() {
+function ProductSort({ sortOption, selectSortOption }) {
   const [isClicked, setIsClicked] = useState(false);
-  const [sortOption, setSortOption] = useState("From the most popular");
 
   const clickRef = React.useRef("");
 
@@ -23,11 +15,6 @@ function ProductSort() {
 
   function handleProductSortMenu() {
     setIsClicked(!isClicked);
-  }
-
-  function selectOption(option) {
-    setSortOption(option);
-    handleProductSortMenu();
   }
 
   return (
@@ -51,10 +38,12 @@ function ProductSort() {
       </div>
       {isClicked ? (
         <div className={styles.divOptions}>
-          {sortOptionsArray.map((item, i) => (
+          {optionsSortProductData.map((item, i) => (
             <span
               key={i}
-              onClick={() => selectOption(item.option)}
+              onClick={() =>
+                selectSortOption(item.option, handleProductSortMenu)
+              }
               className={
                 sortOption === item.option
                   ? `${styles.spanSortOption} ${styles.spanActived}`

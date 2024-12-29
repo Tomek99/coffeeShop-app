@@ -7,14 +7,25 @@ import RowsMediumIcon from "./RowsMediumIcon/RowsMediumIcon";
 import RowsSmallIcon from "./RowsSmallIcon/RowsSmallIcon";
 
 import ProductSort from "../SortProducts/ProductSort";
+import { useClickAway } from "use-click-away";
 
 function ProductControlView({
-  isClicked,
   selectedView,
-  collapseArrow,
   selectView,
-  clickRef,
+  sortOption,
+  selectSortOption,
 }) {
+  const clickRef = React.useRef("");
+
+  const [isClicked, setIsClicked] = useState(false);
+  useClickAway(clickRef, () => {
+    setIsClicked(false);
+  });
+
+  function collapseViewMenu() {
+    setIsClicked(!isClicked);
+  }
+
   return (
     <div className={styles.ProductControlView}>
       <div
@@ -22,15 +33,33 @@ function ProductControlView({
         className={styles.productsViewPanel}
         style={isClicked ? { borderRadius: "8px 8px 0 0" } : null}
       >
-        <div className={styles.selectBtn} onClick={collapseArrow}>
+        <div className={styles.selectBtn} onClick={collapseViewMenu}>
           {(() => {
             switch (selectedView) {
               case 0:
-                return <SquaresIcon selectView={selectView} />;
+                return (
+                  <SquaresIcon
+                    selectView={selectView}
+                    selectedView={null}
+                    collapseViewMenu={collapseViewMenu}
+                  />
+                );
               case 1:
-                return <RowsMediumIcon selectView={selectView} />;
+                return (
+                  <RowsMediumIcon
+                    selectView={selectView}
+                    selectedView={null}
+                    collapseViewMenu={collapseViewMenu}
+                  />
+                );
               case 2:
-                return <RowsSmallIcon selectView={selectView} />;
+                return (
+                  <RowsSmallIcon
+                    selectView={selectView}
+                    selectedView={null}
+                    collapseViewMenu={collapseViewMenu}
+                  />
+                );
 
               default:
                 return null;
@@ -46,19 +75,28 @@ function ProductControlView({
         </div>
         {isClicked ? (
           <div className={styles.selectSortDiv}>
-            <SquaresIcon selectedView={selectedView} selectView={selectView} />
+            <SquaresIcon
+              selectedView={selectedView}
+              selectView={selectView}
+              collapseViewMenu={collapseViewMenu}
+            />
             <RowsMediumIcon
               selectedView={selectedView}
               selectView={selectView}
+              collapseViewMenu={collapseViewMenu}
             />
             <RowsSmallIcon
               selectedView={selectedView}
               selectView={selectView}
+              collapseViewMenu={collapseViewMenu}
             />
           </div>
         ) : null}
       </div>
-      <ProductSort />
+      <ProductSort
+        sortOption={sortOption}
+        selectSortOption={selectSortOption}
+      />
     </div>
   );
 }

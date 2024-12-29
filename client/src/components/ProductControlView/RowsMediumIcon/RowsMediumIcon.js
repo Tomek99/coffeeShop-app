@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./RowsMediumIcon.module.scss";
 
-function RowsMediumIcon({ selectedView, selectView }) {
+function RowsMediumIcon({ selectedView, selectView, collapseViewMenu }) {
   return (
     <div
       className={
@@ -9,7 +9,7 @@ function RowsMediumIcon({ selectedView, selectView }) {
           ? styles.RowsMediumIcon
           : `${styles.RowsMediumIcon} ${styles.selectedView}`
       }
-      onClick={() => selectView(1)}
+      onClick={() => selectView(1, collapseViewMenu)}
     >
       <div className={styles.rowContent}>
         <span className={styles.squareIcon}></span>

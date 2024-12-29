@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./RowsSmallIcon.module.scss";
 
-function RowsSmallIcon({ selectedView, selectView }) {
+function RowsSmallIcon({ selectedView, selectView, collapseViewMenu }) {
   return (
     <div
       className={
@@ -9,7 +9,7 @@ function RowsSmallIcon({ selectedView, selectView }) {
           ? styles.RowsSmallIcon
           : `${styles.RowsSmallIcon} ${styles.selectedView}`
       }
-      onClick={() => selectView(2)}
+      onClick={() => selectView(2, collapseViewMenu)}
     >
       <div className={styles.rowContent}>
         <span className={styles.squareIcon}></span>

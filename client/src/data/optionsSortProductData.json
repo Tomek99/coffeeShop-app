@@ -1,0 +1,7 @@
+[
+  { "id": 0, "option": "From the most popular" },
+  { "id": 1, "option": "From the most relevant" },
+  { "id": 2, "option": "Customer rating: from the best" },
+  { "id": 3, "option": "Price: from the cheapest" },
+  { "id": 4, "option": "Price: from the most expensive" }
+]

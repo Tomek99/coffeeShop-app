@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SqueresIcon.module.scss";
 
-function SquaresIcon({ selectedView, selectView }) {
+function SquaresIcon({ selectedView, selectView, collapseViewMenu }) {
   return (
     <div
       className={
@@ -9,7 +9,7 @@ function SquaresIcon({ selectedView, selectView }) {
           ? styles.SquaresIcon
           : `${styles.SquaresIcon} ${styles.selectedView}`
       }
-      onClick={() => selectView(0)}
+      onClick={() => selectView(0, collapseViewMenu)}
     >
       <div className={styles.rowContent}>
         <span className={styles.squareIcon}></span>

@@ -5,8 +5,17 @@ import MedProductView from "./MediumProductView/MedProductView";
 import LatestProduct from "../../../components/LatestProduct/LatestProduct";
 import styles from "./ProductsView.module.scss";
 import SmallProductView from "./SmallProductView/SmallProductView";
+import optionsSortProductData from "../../../data/optionsSortProductData.json";
 
-function ProductsView({ selectedView }) {
+const sortOptionsArray = [
+  { id: 0, option: "From the most popular" },
+  { id: 1, option: "From the most relevant" },
+  { id: 2, option: "Customer rating: from the best" },
+  { id: 3, option: "Price: from the cheapest" },
+  { id: 4, option: "Price: from the most expensive" },
+];
+
+function ProductsView({ selectedView, sortOption }) {
   const { data, pagesVisited, itemsPerPage } = useContext(ProductsContext);
   const { addItem, addWishItem, saveViewedProduct, wishList } =
     useContext(Context);

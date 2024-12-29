@@ -22,28 +22,24 @@ function Products() {
     handleChangePage,
   } = usePaginationHook(0, data, 12, "/products");
 
-  const [isClicked, setIsClicked] = useState(false);
-  const [selectedView, isSelectedView] = useState(() => {
+  const [selectedView, setSelectedView] = useState(() => {
     const storedValue = localStorage.getItem("product-view");
     if (storedValue !== null) return JSON.parse(storedValue);
     else return 0;
   });
-  const clickRef = React.useRef("");
 
-  useClickAway(clickRef, () => {
-    setIsClicked(false);
-  });
-
-  function collapseArrow() {
-    setIsClicked(!isClicked);
+  function selectView(number, collapseViewMenu) {
+    if (selectedView !== number) {
+      setSelectedView(number);
+      localStorage.setItem("product-view", JSON.stringify(number));
+      collapseViewMenu();
+    }
   }
 
-  function selectView(number) {
-    if (selectedView !== number) {
-      setIsClicked(!isClicked);
-      isSelectedView(number);
-      localStorage.setItem("product-view", JSON.stringify(number));
-    }
+  const [sortOption, setSortOption] = useState("From the most popular");
+  function selectSortOption(option, collapseSortMenu) {
+    setSortOption(option);
+    collapseSortMenu();
   }
 
   return (
@@ -54,13 +50,12 @@ function Products() {
         ) : (
           <div className={styles.productsLayout}>
             <ProductControlView
-              isClicked={isClicked}
               selectedView={selectedView}
-              collapseArrow={collapseArrow}
               selectView={selectView}
-              clickRef={clickRef}
+              sortOption={sortOption}
+              selectSortOption={selectSortOption}
             />
-            <ProductsView selectedView={selectedView} />
+            <ProductsView selectedView={selectedView} sortOption={sortOption} />
             <Pagination
               pageCount={pageCount}
               handleChangePage={handleChangePage}
