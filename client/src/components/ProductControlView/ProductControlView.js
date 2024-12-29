@@ -1,25 +1,28 @@
 import React, { useState } from "react";
 import styles from "./ProductControlView.module.scss";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
-import { HiOutlineSquares2X2 } from "react-icons/hi2";
+
 import SquaresIcon from "./SquaresIcon/SquaresIcon";
 import RowsMediumIcon from "./RowsMediumIcon/RowsMediumIcon";
 import RowsSmallIcon from "./RowsSmallIcon/RowsSmallIcon";
 
+import ProductSort from "../SortProducts/ProductSort";
+
 function ProductControlView({
   isClicked,
   selectedView,
-  handleArrow,
+  collapseArrow,
   selectView,
   clickRef,
 }) {
   return (
     <div className={styles.ProductControlView}>
       <div
+        ref={clickRef}
         className={styles.productsViewPanel}
         style={isClicked ? { borderRadius: "8px 8px 0 0" } : null}
       >
-        <div className={styles.selectBtn} onClick={handleArrow}>
+        <div className={styles.selectBtn} onClick={collapseArrow}>
           {(() => {
             switch (selectedView) {
               case 0:
@@ -42,7 +45,7 @@ function ProductControlView({
           </span>
         </div>
         {isClicked ? (
-          <div ref={clickRef} className={styles.selectSortDiv}>
+          <div className={styles.selectSortDiv}>
             <SquaresIcon selectedView={selectedView} selectView={selectView} />
             <RowsMediumIcon
               selectedView={selectedView}
@@ -55,7 +58,7 @@ function ProductControlView({
           </div>
         ) : null}
       </div>
-      <div>Sortowanie</div>
+      <ProductSort />
     </div>
   );
 }

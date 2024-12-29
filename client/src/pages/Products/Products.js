@@ -34,7 +34,7 @@ function Products() {
     setIsClicked(false);
   });
 
-  function handleArrow() {
+  function collapseArrow() {
     setIsClicked(!isClicked);
   }
 
@@ -56,7 +56,7 @@ function Products() {
             <ProductControlView
               isClicked={isClicked}
               selectedView={selectedView}
-              handleArrow={handleArrow}
+              collapseArrow={collapseArrow}
               selectView={selectView}
               clickRef={clickRef}
             />
