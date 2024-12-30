@@ -18,7 +18,6 @@ function useViewedProductsHook() {
   }
 
   useEffect(() => {
-    console.log(viewedProducts);
     localStorage.setItem("user-history", JSON.stringify(viewedProducts));
   }, [viewedProducts]);
   return { viewedProducts, saveViewedProduct };

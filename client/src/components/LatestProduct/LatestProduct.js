@@ -49,6 +49,7 @@ function LatestProduct({ item }) {
         </p>
         <div>
           <RatingsStars rate={productRatingsAverage} size="large" />
+          <span>({productRatings.length})</span>
         </div>
       </div>
       <p className={styles.price}>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ProductsContext } from "../../../Contexts/ProductsContext";
 import { Context } from "../../../Contexts/Context";
 import MedProductView from "./MediumProductView/MedProductView";
@@ -7,18 +7,56 @@ import styles from "./ProductsView.module.scss";
 import SmallProductView from "./SmallProductView/SmallProductView";
 import optionsSortProductData from "../../../data/optionsSortProductData.json";
 
-const sortOptionsArray = [
-  { id: 0, option: "From the most popular" },
-  { id: 1, option: "From the most relevant" },
-  { id: 2, option: "Customer rating: from the best" },
-  { id: 3, option: "Price: from the cheapest" },
-  { id: 4, option: "Price: from the most expensive" },
-];
+const SORT_OPTIONS = {
+  OPTION_ONE: "From the most popular",
+  OPTION_TWO: "From the most relevant",
+  OPTION_THREE: "Customer rating: from the best",
+  OPTION_FOUR: "Price: from the cheapest",
+  OPTION_FIVE: "Price: from the most expensive",
+};
 
 function ProductsView({ selectedView, sortOption }) {
   const { data, pagesVisited, itemsPerPage } = useContext(ProductsContext);
   const { addItem, addWishItem, saveViewedProduct, wishList } =
     useContext(Context);
+
+  const [products, setProducts] = useState(data);
+
+  const sortProducts = (data, sortOption) => {
+    switch (sortOption) {
+      case SORT_OPTIONS.OPTION_ONE:
+        return [...data].sort(
+          (a, b) =>
+            (b.productRatings?.length || 0) - (a.productRatings?.length || 0)
+        );
+      case SORT_OPTIONS.OPTION_TWO:
+        return data;
+      case SORT_OPTIONS.OPTION_THREE:
+        return [...data].sort((a, b) => {
+          const avgRatingA =
+            a.productRatings?.reduce((sum, r) => sum + r, 0) /
+            (a.productRatings?.length || 1);
+          const avgRatingB =
+            b.productRatings?.reduce((sum, r) => sum + r, 0) /
+            (b.productRatings?.length || 1);
+          return avgRatingB - avgRatingA;
+        });
+      case SORT_OPTIONS.OPTION_FOUR:
+        return [...data].sort(
+          (a, b) => parseFloat(a.price) - parseFloat(b.price)
+        );
+      case SORT_OPTIONS.OPTION_FIVE:
+        return [...data].sort(
+          (a, b) => parseFloat(b.price) - parseFloat(a.price)
+        );
+      default:
+        return data;
+    }
+  };
+
+  useEffect(() => {
+    setProducts(sortProducts(data, sortOption));
+  }, [data, sortOption]);
 
   return (
     <div>
@@ -28,7 +66,7 @@ function ProductsView({ selectedView, sortOption }) {
           case 0:
             return (
               <div className={styles.largeProductsView}>
-                {data
+                {products
                   .slice(pagesVisited, pagesVisited + itemsPerPage)
                   .map((item, index) => (
                     <LatestProduct key={index} item={item} />
@@ -39,7 +77,7 @@ function ProductsView({ selectedView, sortOption }) {
           case 1:
             return (
               <div className={styles.mediumProductsView}>
-                {data
+                {products
                   .slice(pagesVisited, pagesVisited + itemsPerPage)
                   .map((item, index) => (
                     <MedProductView
@@ -56,7 +94,7 @@ function ProductsView({ selectedView, sortOption }) {
           case 2:
             return (
               <div className={styles.smallProductsView}>
-                {data
+                {products
                   .slice(pagesVisited, pagesVisited + itemsPerPage)
                   .map((item, index) => (
                     <SmallProductView

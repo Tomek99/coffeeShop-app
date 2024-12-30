@@ -63,7 +63,10 @@ function SmallProductsView({
           addWishItem={addWishItem}
         />
       </div>
-      <RatingsStars rate={productRatingsAverage} size="large" />
+      <div>
+        <RatingsStars rate={productRatingsAverage} size="large" />
+        <span>({productRatings.length})</span>
+      </div>
       <div className={styles.divRight}>
         <div className={styles.divPrice}>
           {oldPrice !== null ? (
