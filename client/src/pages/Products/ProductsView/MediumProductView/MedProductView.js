@@ -55,7 +55,7 @@ function MedProductView({
       </div>
       <div className={styles.divCenter}>
         <span className={styles.spanProductName}>{name}</span>
-        <div>
+        <div className={styles.divRatingsStars}>
           <RatingsStars rate={productRatingsAverage} size="large" />
           <span>({productRatings.length})</span>
         </div>

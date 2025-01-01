@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EmptyCart 1`] = `
+<div>
+  <div
+    class="ViewCart"
+  >
+    <div
+      class="emptyCart"
+    >
+      <header
+        class="cartHeader"
+      >
+        Your cart is empty
+      </header>
+      <button
+        class="BtnDefault"
+      >
+        Return to products page
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render one item 1`] = `
+<div>
+  <div
+    class="ViewCart"
+  >
+    <div
+      class="fillCart"
+    >
+      <div
+        class="leftColumn"
+      >
+        <div
+          class="divRow"
+        >
+          <header
+            class="cartHeader"
+          >
+            Cart 
+            (undefined)
+          </header>
+          <div
+            class="buttons"
+          >
+            <button>
+              <svg
+                fill="currentColor"
+                height="18"
+                stroke="currentColor"
+                stroke-width="0"
+                version="1.1"
+                viewBox="0 0 16 16"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 5v10c0 0.55 0.45 1 1 1h9c0.55 0 1-0.45 1-1v-10h-11zM5 14h-1v-7h1v7zM7 14h-1v-7h1v7zM9 14h-1v-7h1v7zM11 14h-1v-7h1v7z"
+                />
+                <path
+                  d="M13.25 2h-3.25v-1.25c0-0.412-0.338-0.75-0.75-0.75h-3.5c-0.412 0-0.75 0.338-0.75 0.75v1.25h-3.25c-0.413 0-0.75 0.337-0.75 0.75v1.25h13v-1.25c0-0.413-0.338-0.75-0.75-0.75zM9 2h-3v-0.987h3v0.987z"
+                />
+              </svg>
+               
+              <p>
+                Clear the cart
+              </p>
+            </button>
+          </div>
+        </div>
+        <div
+          class="items"
+        >
+          <div
+            class="Item"
+          >
+            <div
+              class="leftSide"
+            >
+              <img
+                alt="https://res.cloudinary.com/dvoduabha/image/upload/v1679902516/coffee/lavazza/ground/4_LavazzaTierraBioOrganicforAfrica_qvc2in.png"
+                src="https://res.cloudinary.com/dvoduabha/image/upload/v1679902516/coffee/lavazza/ground/4_LavazzaTierraBioOrganicforAfrica_qvc2in.png"
+              />
+              <div>
+                <p>
+                  Lavazza Tierra Bio-Organic for Africa
+                </p>
+              </div>
+            </div>
+            <div
+              class="rightSide"
+            >
+              <div
+                class="price"
+              >
+                <p>
+                  $8.00
+                </p>
+                <p>
+                  $
+                  7.00
+                </p>
+              </div>
+              <div
+                class="selectMate"
+              >
+                <select
+                  class="dropdownEl"
+                >
+                  <option
+                    value="1"
+                  >
+                    1
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    2
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    3
+                  </option>
+                  <option
+                    value="4"
+                  >
+                    4
+                  </option>
+                  <option
+                    value="5"
+                  >
+                    5
+                  </option>
+                  <option
+                    value="6"
+                  >
+                    6
+                  </option>
+                  <option
+                    value="7"
+                  >
+                    7
+                  </option>
+                  <option
+                    value="8"
+                  >
+                    8
+                  </option>
+                  <option
+                    value="9"
+                  >
+                    9+
+                  </option>
+                </select>
+              </div>
+              <button
+                class="BtnDeleteProduct"
+                id="imBinIdViewCart0"
+              >
+                <svg
+                  fill="currentColor"
+                  height="18"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  version="1.1"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 5v10c0 0.55 0.45 1 1 1h9c0.55 0 1-0.45 1-1v-10h-11zM5 14h-1v-7h1v7zM7 14h-1v-7h1v7zM9 14h-1v-7h1v7zM11 14h-1v-7h1v7z"
+                  />
+                  <path
+                    d="M13.25 2h-3.25v-1.25c0-0.412-0.338-0.75-0.75-0.75h-3.5c-0.412 0-0.75 0.338-0.75 0.75v1.25h-3.25c-0.413 0-0.75 0.337-0.75 0.75v1.25h13v-1.25c0-0.413-0.338-0.75-0.75-0.75zM9 2h-3v-0.987h3v0.987z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="divSticky"
+      >
+        <div>
+          test
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

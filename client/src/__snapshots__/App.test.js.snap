@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`rendering required component 1`] = `
+exports[`should render App component 1`] = `
 <div>
   <div
     class="NavigationBar"
@@ -810,7 +810,7 @@ exports[`rendering required component 1`] = `
             class="cartBar"
           >
             <span>
-              Cart 
+              Cart
               <span
                 style="color: rgb(56, 179, 42);"
               />
@@ -3009,6 +3009,29 @@ exports[`rendering required component 1`] = `
             class="swiper-pagination"
           />
         </div>
+      </div>
+    </div>
+    <div
+      class="CookieConsent"
+      style="align-items: baseline; background: rgb(242, 242, 242); color: rgb(0, 0, 0); display: flex; flex-wrap: wrap; justify-content: space-between; left: 0px; position: fixed; width: 100%; z-index: 999; font-size: 1.2rem; box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 1px 1px,rgba(255, 255, 255, 0.13) 0px 0px 1px 1px; bottom: 0px;"
+    >
+      <div
+        class=""
+        style="flex: 1 0 300px; margin: 15px;"
+      >
+        We use cookies to enhance your experience 🍪 We use cookies and similar technologies to personalize content, analyze site traffic, and improve your browsing experience. By clicking “Accept” you consent to the use of all cookies.
+      </div>
+      <div
+        class=""
+      >
+        <button
+          aria-label="Accept cookies"
+          class=""
+          id="rcc-confirm-button"
+          style="background: rgb(0, 130, 250); border: 0px; border-radius: 8px; box-shadow: none; color: rgb(255, 255, 255); cursor: pointer; flex: 0 0 auto; padding: 5px 10px; margin: 15px; font-size: 13px;"
+        >
+          Accept
+        </button>
       </div>
     </div>
   </section>

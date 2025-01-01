@@ -22,6 +22,12 @@
       object-fit: cover;
     }
 
+    .divRatingsStars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .productName {
       display: flex;
       justify-content: center;

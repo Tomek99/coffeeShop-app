@@ -7,8 +7,8 @@ function OrderDetailsProductsOrdered({ data }) {
     <div className={styles.OrderDetailsProductsOrdered}>
       <h1 className={styles.title}>Products ordered</h1>
       <div className={styles.divProducts}>
-        {data.map((item) => (
-          <OrderDetailsProductOrdered item={item} />
+        {data.map((item, i) => (
+          <OrderDetailsProductOrdered item={item} key={i} />
         ))}
       </div>
     </div>

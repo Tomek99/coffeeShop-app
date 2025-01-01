@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 5px;
   margin: 20px 0;
 
   .productsViewPanel {
@@ -50,5 +51,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 1300px) {
+  .ProductControlView {
+    padding: 0 20px;
   }
 }

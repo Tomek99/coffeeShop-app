@@ -1,4 +1,4 @@
-.FAQ {
+.Faq {
   display: flex;
   flex-direction: column;
   color: var(--text-color);
@@ -6,12 +6,15 @@
   justify-content: center;
   gap: 10px;
 
-  .test {
+  .faqContent {
     max-width: 700px;
     margin: 0 10px 0 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    box-shadow: var(--shadow-thick);
+    border-radius: 8px;
 
     div {
       display: flex;

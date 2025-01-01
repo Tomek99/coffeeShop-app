@@ -282,7 +282,7 @@ exports[`should render ContactSecton 1`] = `
               class="TextareaCom"
             >
               <textarea
-                id="message"
+                id="message0"
                 maxlength="999"
                 name="message"
                 placeholder="Your message"
@@ -336,7 +336,7 @@ exports[`should render ContactSecton 1`] = `
               class="TextareaCom"
             >
               <textarea
-                id="message"
+                id="message1"
                 maxlength="999"
                 name="message"
                 placeholder="Your message"

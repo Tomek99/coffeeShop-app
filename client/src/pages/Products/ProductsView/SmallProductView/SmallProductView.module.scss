@@ -21,6 +21,13 @@
     }
   }
 
+  .divRatingsStars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+
   .divLeft {
     display: flex;
     align-items: center;

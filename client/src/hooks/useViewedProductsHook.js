@@ -8,9 +8,9 @@ function useViewedProductsHook() {
   });
 
   function saveViewedProduct(item) {
-    const exist = viewedProducts.find(
-      (product) => product.Id === item.productId
-    );
+    const exist = viewedProducts.find((object) => {
+      return object.productId === item.productId;
+    });
 
     if (!exist) {
       setViewedProducts((viewedProducts) => [...viewedProducts, item]);

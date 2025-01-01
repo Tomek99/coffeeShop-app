@@ -22,7 +22,6 @@ function CustomerReview({ item }) {
 
 CustomerReview.propTypes = {
   id: PropTypes.number,
-
   imageUrl: PropTypes.string,
   text: PropTypes.string,
   avatarUrl: PropTypes.string,

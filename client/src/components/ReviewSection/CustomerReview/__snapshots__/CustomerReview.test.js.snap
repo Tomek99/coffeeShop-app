@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CustomerReview 1`] = `
+<div>
+  <div
+    class="singleCustomer"
+  >
+    <div
+      class="singleCustomerLeftDiv"
+    >
+      <img
+        alt=""
+        class="avatar"
+        src=""
+      />
+      <p
+        class="name"
+      >
+        productName
+      </p>
+      <div>
+        <span
+          aria-label="5 Stars"
+          class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly RatingsStars css-ryrseu-MuiRating-root"
+          role="img"
+        >
+          <span>
+            <span
+              class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span>
+            <span
+              class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span>
+            <span
+              class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span>
+            <span
+              class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span>
+            <span
+              class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+    <p>
+       test test test
+    </p>
+  </div>
+</div>
+`;

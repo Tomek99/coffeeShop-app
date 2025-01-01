@@ -4,8 +4,8 @@ import frequentAskedQuestion from "../../data/FAQ.json";
 
 function FAQ() {
   return (
-    <div className={styles.FAQ}>
-      <div className={styles.test}>
+    <div className={styles.Faq}>
+      <div className={styles.faqContent}>
         {frequentAskedQuestion.map((item) => (
           <div key={item.id}>
             <h2>{item.title}</h2>

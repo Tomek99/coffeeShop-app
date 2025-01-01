@@ -6,11 +6,17 @@ exports[`should render NBarAside & mock btn 1`] = `
     class="cartBar"
   >
     <span>
-      Cart 
+      Cart
       <span
         style="color: rgb(56, 179, 42);"
       >
-        (5 items)
+        (
+        <span
+          data-testid="cartQuantity"
+        >
+          5
+        </span>
+         items)
       </span>
     </span>
     <button

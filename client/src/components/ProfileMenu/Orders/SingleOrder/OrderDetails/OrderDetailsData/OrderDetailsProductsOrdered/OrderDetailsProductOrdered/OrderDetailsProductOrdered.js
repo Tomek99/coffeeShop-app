@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./OrderDetailsProductOrdered.module.scss";
 
 function OrderDetailsProductOrdered({ item }) {
-  console.log(item);
   const { imageUrl, name, price, quantity, _id } = item;
   return (
     <div className={styles.OrderDetailsProductOrdered}>
