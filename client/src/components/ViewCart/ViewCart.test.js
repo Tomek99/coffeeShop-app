@@ -1,5 +1,6 @@
 import { getByRole, render, screen } from "@testing-library/react";
 import ViewCart from "./ViewCart";
+import user from "@testing-library/user-event";
 import { Context } from "../../Contexts/Context";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
@@ -43,18 +44,20 @@ const renderComponent = (cartItems) => {
   );
 };
 
-test("should render EmptyCart", () => {
-  const { container } = renderComponent(items1);
+describe("render components", () => {
+  test("should render EmptyCart", () => {
+    const { container } = renderComponent(items1);
 
-  const div = screen.getByText("Your cart is empty");
-  expect(div).toBeInTheDocument();
-  expect(container).toMatchSnapshot();
-});
+    const div = screen.getByText("Your cart is empty");
+    expect(div).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+  });
 
-test("should render one item", () => {
-  const { container } = renderComponent(items2);
+  test("should render one item", () => {
+    const { container } = renderComponent(items2);
 
-  const div = screen.getByText("Lavazza Tierra Bio-Organic for Africa");
-  expect(div).toBeInTheDocument();
-  expect(container).toMatchSnapshot();
+    const div = screen.getByText("Lavazza Tierra Bio-Organic for Africa");
+    expect(div).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+  });
 });

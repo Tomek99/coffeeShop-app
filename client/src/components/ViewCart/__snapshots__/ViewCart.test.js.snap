@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render EmptyCart 1`] = `
+exports[`render components should render EmptyCart 1`] = `
 <div>
   <div
     class="ViewCart"
@@ -23,7 +23,7 @@ exports[`should render EmptyCart 1`] = `
 </div>
 `;
 
-exports[`should render one item 1`] = `
+exports[`render components should render one item 1`] = `
 <div>
   <div
     class="ViewCart"
@@ -40,8 +40,11 @@ exports[`should render one item 1`] = `
           <header
             class="cartHeader"
           >
-            Cart 
-            (undefined)
+            Cart
+            <span>
+               
+              (undefined)
+            </span>
           </header>
           <div
             class="buttons"

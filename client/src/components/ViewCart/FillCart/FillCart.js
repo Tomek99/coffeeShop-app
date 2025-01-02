@@ -15,7 +15,8 @@ function FillCart() {
       <div className={styles.leftColumn}>
         <div className={styles.divRow}>
           <header className={styles.cartHeader}>
-            Cart {`(${cartQuantity})`}
+            Cart
+            <span> {`(${cartQuantity})`}</span>
           </header>
           <div className={styles.buttons}>
             <button onClick={clearTheCart}>
