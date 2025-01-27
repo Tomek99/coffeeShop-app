@@ -4,6 +4,7 @@ import styles from "./SqueresIcon.module.scss";
 function SquaresIcon({ selectedView, selectView, collapseViewMenu }) {
   return (
     <div
+      data-testid="squaresIcon"
       className={
         selectedView !== 0
           ? styles.SquaresIcon

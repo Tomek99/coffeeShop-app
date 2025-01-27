@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 
 import AddressDetails from "./AddressDetailsPage";
 import LoginPage from "./LoginPage";
@@ -22,6 +22,8 @@ class HomePage {
     profileSettingsBtn: () => cy.contains("Profile seetings"), //cy.get("div[class*='PopupUserNav1_list__J7Nmc']>li>a[href*='/settings']")
 
     addressDetailsBtn: () => cy.contains("Address"),
+
+    productsNamesInCart: () => cy.get("h2"),
   };
 
   visitHomePage(): HomePage {
@@ -42,6 +44,10 @@ class HomePage {
   openCartBar(): HomePage {
     this.elements.cartBarBtn().click({ force: true });
     return this;
+  }
+
+  findProductName() {
+    return this.elements.productsNamesInCart();
   }
 
   openViewCartPage(): ViewCartPage {

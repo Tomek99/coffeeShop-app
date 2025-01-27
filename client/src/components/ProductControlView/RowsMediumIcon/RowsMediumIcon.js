@@ -4,6 +4,7 @@ import styles from "./RowsMediumIcon.module.scss";
 function RowsMediumIcon({ selectedView, selectView, collapseViewMenu }) {
   return (
     <div
+      data-testid="rowsMediumIcon"
       className={
         selectedView !== 1
           ? styles.RowsMediumIcon

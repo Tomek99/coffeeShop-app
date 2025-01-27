@@ -59,8 +59,7 @@ function ProductsView({ selectedView, sortOption }) {
   }, [data, sortOption]);
 
   return (
-    <div>
-      {" "}
+    <div id="productsView">
       {(() => {
         switch (selectedView) {
           case 0:

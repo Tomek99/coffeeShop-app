@@ -4,6 +4,7 @@ import styles from "./RowsSmallIcon.module.scss";
 function RowsSmallIcon({ selectedView, selectView, collapseViewMenu }) {
   return (
     <div
+      data-testid="rowsSmallIcon"
       className={
         selectedView !== 2
           ? styles.RowsSmallIcon

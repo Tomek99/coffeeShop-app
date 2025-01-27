@@ -61,6 +61,7 @@ function App() {
   const { notify, notifyError } = useNotifyHook();
   /*----------- login ----------- */
   const { isLogIn, user, logIn, logOut } = useLoginHook(notify);
+  console.log(user);
   /*----------- products ----------- */
   const apiProductEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
   const { data } = useFetchData(apiProductEndpoint);

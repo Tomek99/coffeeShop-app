@@ -33,7 +33,11 @@ function ProductControlView({
         className={styles.productsViewPanel}
         style={isClicked ? { borderRadius: "8px 8px 0 0" } : null}
       >
-        <div className={styles.selectBtn} onClick={collapseViewMenu}>
+        <div
+          className={styles.selectBtn}
+          onClick={collapseViewMenu}
+          data-testid="productControlerView"
+        >
           {(() => {
             switch (selectedView) {
               case 0:

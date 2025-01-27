@@ -36,7 +36,7 @@ function Products() {
     }
   }
 
-  const [sortOption, setSortOption] = useState("From the most popular");
+  const [sortOption, setSortOption] = useState("From the most relevant");
   function selectSortOption(option, collapseSortMenu) {
     setSortOption(option);
     collapseSortMenu();

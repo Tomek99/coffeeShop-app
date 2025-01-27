@@ -1,14 +1,11 @@
-/// <reference types="Cypress" />
-
+// <reference types="Cypress" />
+import "cypress-iframe";
 import OrderPage from "../../pages/OrderPage";
-
 import BaseTest from "./BaseTest";
 import deliverAddresData from "../../fixtures/deliveryAddressData";
 import invoiceAddressData from "../../fixtures/invoiceAddressData";
 import companyAddressData from "../../fixtures/companyAddressData";
 import reciepientData from "../../fixtures/recipientDetailsData";
-
-import "cypress-iframe";
 
 describe("Checkout products with valid data", () => {
   beforeEach(() => {
