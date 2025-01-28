@@ -60,7 +60,7 @@ describe("user sorting products", () => {
     });
   });
 
-  it.only("should sort price from the most expensive", () => {
+  it("should sort price from the most expensive", () => {
     const PRODUCT_NAME_ONE: string = "Crema e Aroma, 1 kg";
     const PRODUCT_NAME_TWO: string = "Caffe Crema Classico, 1 kg";
 
