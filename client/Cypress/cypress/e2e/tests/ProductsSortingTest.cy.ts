@@ -43,19 +43,37 @@ describe("user sorting products", () => {
       .clickOnSelectSortingOption("Customer rating: from the best");
   });
 
-  it.only("should sort price from the cheapest", () => {
-    new HomePage()
+  it("should sort price from the cheapest", () => {
+    const PRODUCT_NAME_ONE: string = "Lavazza Tierra Bio-Organic for Amazonia";
+    const PRODUCT_NAME_TWO: string = "Qualita Oro - Perfect Symphony 250 g";
+
+    const productsPrice = new HomePage()
       .visitHomePage()
       .openProductsPage()
       .clickOnSortControler()
-      .clickOnSelectSortingOption("Price: from the cheapest");
+      .clickOnSelectSortingOption("Price: from the cheapest")
+      .getProducts();
+
+    productsPrice.should(($item) => {
+      expect($item.eq(0)).to.contain.text(PRODUCT_NAME_ONE);
+      expect($item.eq(1)).to.contain.text(PRODUCT_NAME_TWO);
+    });
   });
 
-  it("should sort price from the most expensive", () => {
-    new HomePage()
+  it.only("should sort price from the most expensive", () => {
+    const PRODUCT_NAME_ONE: string = "Crema e Aroma, 1 kg";
+    const PRODUCT_NAME_TWO: string = "Caffe Crema Classico, 1 kg";
+
+    const productsPrice = new HomePage()
       .visitHomePage()
       .openProductsPage()
       .clickOnSortControler()
-      .clickOnSelectSortingOption("Price from the most expensive");
+      .clickOnSelectSortingOption("Price: from the most expensive")
+      .getProducts();
+
+    productsPrice.should(($item) => {
+      expect($item.eq(0)).to.contain.text(PRODUCT_NAME_ONE);
+      expect($item.eq(1)).to.contain.text(PRODUCT_NAME_TWO);
+    });
   });
 });
