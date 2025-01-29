@@ -24,8 +24,8 @@ test.describe("Purchase products with invalid data", () => {
 
     const errors = await orderPage.getErrors();
     await expect(errors).toHaveCount(10);
-
     await expect(errors.nth(0)).toContainText("Required");
+    await expect(errors.nth(1)).toContainText("Required");
   });
 
   test("should display an error if the delivery form is not ticked", async ({

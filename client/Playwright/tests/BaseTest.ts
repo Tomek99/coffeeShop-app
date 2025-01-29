@@ -9,6 +9,7 @@ import { OrderSummaryPage } from "../pages/orderSummaryPage";
 import { StripePage } from "../pages/stripePage";
 import { SuccessPage } from "../pages/successPage";
 import { ReviewsPage } from "../pages/reviewsPage";
+import { AdminLoginPage } from "../pages/adminLoginPage";
 
 export class BaseTest {
   // checkoutValidDataTest && checkoutInvalidDataTest
@@ -25,8 +26,8 @@ export class BaseTest {
     await loginPage.fillPasswordInput("Test1@gmail");
     await loginPage.clickOnLoginBtn();
     await homePage.clickOnProductsBtn();
-    await productPage.addRandomProductToCart();
-    await productPage.addRandomProductToCart();
+    await productPage.addProductToCart(1);
+    await productPage.addProductToCart(2);
     await homePage.clickOnCartBtn();
     await homePage.clickOnViewCartBtn();
     await viewCartPage.clickOnCheckoutBtn();
@@ -46,12 +47,20 @@ export class BaseTest {
     await homePage.clickOnReviewsBtn();
   }
 
-  public static async placeOrder() {}
+  // public static async placeOrder() {}
 
   public static async navigateToFeedbackPage(page: Page): Promise<ReviewsPage> {
     const reviewsPage = new ReviewsPage(page);
     await reviewsPage.clickOnReviewsBtn();
     await reviewsPage.clickOnGiveFeedbackBtn();
     return reviewsPage;
+  }
+
+  public static async loginToAdminPage(page: Page) {
+    const adminLoginPage = new AdminLoginPage(page);
+    await adminLoginPage.goToAdminLoginPage();
+    await adminLoginPage.fillAdminLoginInput("admin1");
+    await adminLoginPage.fillAdminPasswordInput("Nimda1");
+    await adminLoginPage.clickOnLoginToAdminPanelBtn();
   }
 }

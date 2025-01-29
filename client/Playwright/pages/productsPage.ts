@@ -8,7 +8,7 @@ export class ProductsPage {
   constructor(page: Page) {
     this.page = page;
     this.productCartBtn = page.locator(
-      `#cartFillId${Utils.generateRandomNumber(12)}`
+      `.BtnsProduct_BtnsProduct__Gi5nT > button:nth-child(2)`
     );
   }
 
@@ -22,7 +22,7 @@ export class ProductsPage {
     await locator.click();
   }
 
-  async addRandomProductToCart() {
-    await this.productCartBtn.click();
+  async addProductToCart(element) {
+    await this.productCartBtn.nth(element).click();
   }
 }

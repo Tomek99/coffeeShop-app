@@ -108,7 +108,7 @@ export class OrderPage {
 
     //ExtraOptions
     this.commentBtn = page.getByLabel("comment");
-    this.commentArea = page.getByPlaceholder("Your comments");
+    this.commentArea = page.getByPlaceholder("Your comment");
   }
 
   // Delivery
@@ -258,6 +258,7 @@ export class OrderPage {
     await this.commentBtn.click();
   }
   async fillCommentArea(value: string) {
+    await this.commentArea.click();
     await this.commentArea.fill(value);
   }
 

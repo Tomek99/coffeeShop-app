@@ -18,10 +18,15 @@ export class StripePage {
   }
 
   async fillStripeForm() {
-    await this.cardNumberInput.fill("4242424242424242");
-    await this.cardExpiryInput.fill("4242");
-    await this.cardCvcInput.fill("424");
-    await this.billingName.fill("test test");
+    const CARD_NUMBER: string = "4242424242424242";
+    const CARD_EXPIRY: string = "2727";
+    const CARD_CVC: string = "424";
+    const BILLING_NAME: string = "test test";
+
+    await this.cardNumberInput.fill(CARD_NUMBER);
+    await this.cardExpiryInput.fill(CARD_EXPIRY);
+    await this.cardCvcInput.fill(CARD_CVC);
+    await this.billingName.fill(BILLING_NAME);
     await this.submitBtn.click();
   }
 }
