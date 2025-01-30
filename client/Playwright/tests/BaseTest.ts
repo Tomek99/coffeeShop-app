@@ -8,8 +8,11 @@ import { OrderPage } from "../pages/orderPage";
 import { OrderSummaryPage } from "../pages/orderSummaryPage";
 import { StripePage } from "../pages/stripePage";
 import { SuccessPage } from "../pages/successPage";
+import { ContactPage } from "../pages/contactPage";
 import { ReviewsPage } from "../pages/reviewsPage";
 import { AdminLoginPage } from "../pages/adminLoginPage";
+import { AdminPage } from "../pages/adminPage";
+import { UserDataContactPage } from "../types/userDataContactPageType";
 
 export class BaseTest {
   // checkoutValidDataTest && checkoutInvalidDataTest
@@ -62,5 +65,27 @@ export class BaseTest {
     await adminLoginPage.fillAdminLoginInput("admin1");
     await adminLoginPage.fillAdminPasswordInput("Nimda1");
     await adminLoginPage.clickOnLoginToAdminPanelBtn();
+  }
+
+  public static async addMessage(
+    page: Page,
+    userDataContactPage: UserDataContactPage
+  ) {
+    const homePage = new BrowserstackHomePage(page);
+    const contactPage = new ContactPage(page);
+
+    await homePage.goToHomePage();
+    await homePage.openContactPage();
+
+    await contactPage.fillFullNameInputMessage(userDataContactPage.fullName);
+    await contactPage.fillPhoneInputMessage(userDataContactPage.phoneNumber);
+    await contactPage.fillMessageTextAreaMessage(userDataContactPage.message);
+    await contactPage.clickOnSendBtnMessage();
+  }
+
+  public static async openAdminMessagesPage(page: Page) {
+    const adminPage = new AdminPage(page);
+
+    await adminPage.openAdminMessagesPage();
   }
 }

@@ -24,7 +24,7 @@ test.describe("Purchase products with valid data", () => {
     await BaseTest.performBasicStepsForCheckout(page);
   });
 
-  test("place an order as private person", async ({ page }) => {
+  test("should place an order as private person", async ({ page }) => {
     const orderPage = new OrderPage(page);
     const orderSummaryPage = new OrderSummaryPage(page);
     const stripePage = new StripePage(page);
@@ -42,7 +42,7 @@ test.describe("Purchase products with valid data", () => {
     await expect(locator).toHaveText(paymentSucess);
   });
 
-  test("place an order as company", async ({ page }) => {
+  test("should place an order as company", async ({ page }) => {
     const orderPage = new OrderPage(page);
     const orderSummaryPage = new OrderSummaryPage(page);
     const stripePage = new StripePage(page);
@@ -61,7 +61,7 @@ test.describe("Purchase products with valid data", () => {
     await expect(locator).toHaveText(paymentSucess);
   });
 
-  test("provide other invoice details", async ({ page }) => {
+  test("should provide other invoice details", async ({ page }) => {
     const orderPage = new OrderPage(page);
     const orderSummaryPage = new OrderSummaryPage(page);
     const stripePage = new StripePage(page);
@@ -82,7 +82,9 @@ test.describe("Purchase products with valid data", () => {
     await expect(locator).toHaveText(paymentSucess);
   });
 
-  test("place an order and pick up in the showroom", async ({ page }) => {
+  test("should place an order and pick up in the showroom", async ({
+    page,
+  }) => {
     const orderPage = new OrderPage(page);
     const orderSummaryPage = new OrderSummaryPage(page);
     const stripePage = new StripePage(page);
@@ -100,7 +102,7 @@ test.describe("Purchase products with valid data", () => {
     await expect(locator).toHaveText(paymentSucess);
   });
 
-  test("add comment to order", async ({ page }) => {
+  test("should add comment to order", async ({ page }) => {
     const orderPage = new OrderPage(page);
     const orderSummaryPage = new OrderSummaryPage(page);
     const stripePage = new StripePage(page);
@@ -124,7 +126,7 @@ test.describe("Purchase products with valid data", () => {
     await expect(locator).toHaveText(paymentSucess);
   });
 
-  test("edit data in order summary", async ({ page }) => {
+  test("should edit data in order summary", async ({ page }) => {
     const orderPage = new OrderPage(page);
     const orderSummaryPage = new OrderSummaryPage(page);
     const stripePage = new StripePage(page);

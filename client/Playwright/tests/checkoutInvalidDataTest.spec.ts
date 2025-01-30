@@ -13,7 +13,7 @@ import { SuccessPage } from "../pages/successPage";
 
 test.describe("Purchase products with invalid data", () => {
   test.beforeEach(async ({ page }) => {
-    BaseTest.performBasicStepsForCheckout(page);
+    await BaseTest.performBasicStepsForCheckout(page);
   });
 
   test("should display an error if the delivery and payment form is omitted", async ({

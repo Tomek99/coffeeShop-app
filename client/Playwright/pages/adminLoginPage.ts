@@ -9,9 +9,9 @@ export class AdminLoginPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.adminLogin = page.locator("");
-    this.adminPassword = page.locator("");
-    this.adminloginBtn = page.locator("");
+    this.adminLogin = page.getByPlaceholder("Enter login");
+    this.adminPassword = page.getByPlaceholder("Enter password");
+    this.adminloginBtn = page.getByRole("button", { name: "Login" });
   }
 
   async goToAdminLoginPage() {
