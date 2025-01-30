@@ -45,7 +45,7 @@ function AddFeedback({ handleBtn, item }) {
       <div className={styles.formDiv}>
         <div className={styles.productNameDiv}>
           <img src={item.productImage} alt="product" />{" "}
-          <span>Caffe Crema Dolce, 1 kg</span>
+          <span>{item.productName}</span>
         </div>
         <Formik
           initialValues={initialValues}

@@ -14,6 +14,7 @@ test("should render LatestProduct component", () => {
     oldPrice: null,
     rate: 4,
     intensity: 7,
+    productRatings: [2, 3],
   };
 
   const wishList = [];

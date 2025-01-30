@@ -8,7 +8,7 @@ class LoginPage {
 
     passwordInput: () => cy.get("input[name='password']"),
 
-    logInBtn: () => cy.get("button").contains("Log in"),
+    loginBtn: () => cy.get(".LogIn_btnSignIn__Ow5dR"),
 
     headerLogin: () => cy.get("header").contains("Log in"),
   };
@@ -16,7 +16,7 @@ class LoginPage {
   loginUser(login: string, password: string): HomePage {
     this.elements.emailInput().type(login);
     this.elements.passwordInput().type(password);
-    this.elements.logInBtn().click();
+    this.elements.loginBtn().click();
 
     return new HomePage();
   }

@@ -8,9 +8,13 @@ function NBarAside({ isCart, cartQuantity, handleBtn, title }) {
     <div className={styles.cartBar}>
       {isCart ? (
         <span>
-          Cart&nbsp;
+          Cart
           <span style={{ color: "#38b32a" }}>
-            {cartQuantity !== 0 ? `(${cartQuantity} items)` : null}
+            {cartQuantity > 0 ? (
+              <>
+                (<span data-testid="cartQuantity">{cartQuantity}</span> items)
+              </>
+            ) : null}
           </span>
         </span>
       ) : (

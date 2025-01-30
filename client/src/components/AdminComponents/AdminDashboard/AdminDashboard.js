@@ -5,7 +5,7 @@ import { AdminContext } from "../../../Contexts/AdminContext";
 
 function AdminDashboard() {
   const { adminData } = useContext(AdminContext);
-  console.log(adminData);
+
   return (
     <div className={styles.AdminDashboard}>
       <h1 className={styles.dashBoardHeader}>
@@ -14,7 +14,7 @@ function AdminDashboard() {
       <div className={styles.dashBoardContent}>
         {dashboardData.sections.map((item, i) => (
           <div key={i}>
-            <h2>
+            <h2 className={styles.titleHeader}>
               <span>{i + 1}.</span>
               {item.name}
             </h2>

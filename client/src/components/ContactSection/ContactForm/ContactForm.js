@@ -2,25 +2,49 @@ import React from "react";
 import { Formik, Form } from "formik";
 import styles from "./ContactForm.module.scss";
 import ErrMessage from "../../ErrorMessage/ErrMessage";
-import emailjs from "@emailjs/browser";
 import FieldComponent from "../../FormikComponents/FieldComponent/FieldComponent";
 import TextareaCom from "../../TextareaCom/TextareaCom";
 import BtnContact from "../../Buttons/BtnContact/BtnContact";
+import * as Yup from "yup";
+import postDataUtils from "../../../utils/postDataUtils";
+import FieldTextarea from "../../FormikComponents/FieldTextarea/FieldTextarea";
 
-const onSubmit = (values, { setSubmitting, resetForm }) => {
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
-    setSubmitting(false);
-    resetForm();
-  }, 400);
+const phoneRegExp = /^[1-9]\d{2}(?:\s?\d{3}){2}$/;
+const validationSchema = Yup.object().shape({
+  fullName: Yup.string()
+    .min(4, "Must be 4 characters or more")
+    .max(32, "Must be 32 characters or less")
+    .required("Required"),
+  number: Yup.string()
+    .matches(phoneRegExp, "Phone number is not valid")
+    .required("Required"),
+  message: Yup.string()
+    .required("Required")
+    .min(5, "Must be 5 characters or more"),
+});
+const initialValues = {
+  fullName: "",
+  number: "",
+  message: "",
 };
+function ContactForm({ formData, title, index }) {
+  const onSubmitMessage = async (values, { setSubmitting, resetForm }) => {
+    const apiEndpoint = `${process.env.REACT_APP_API_URI}/api/messages/message/post-message`;
 
-function ContactForm({ initValue, validationSchema, formData, title, index }) {
+    const response = await postDataUtils(apiEndpoint, values);
+
+    setTimeout(() => {
+      alert("Message has been sent");
+      setSubmitting(false);
+      resetForm();
+    }, 400);
+  };
+
   return (
     <Formik
-      initialValues={initValue}
+      initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={onSubmit}
+      onSubmit={onSubmitMessage}
     >
       {({ setFieldValue }) => (
         <Form className={styles.formContact}>
@@ -29,11 +53,7 @@ function ContactForm({ initValue, validationSchema, formData, title, index }) {
             <FieldComponent item={item} key={index} />
           ))}
           <div>
-            <TextareaCom
-              setFieldValue={setFieldValue}
-              index={`contactFormComment${index}`}
-            />
-            <ErrMessage name="comment" />
+            <FieldTextarea setFieldValue={setFieldValue} index={1} />
             <BtnContact index={`btnFormContact${index}`} />
           </div>
         </Form>

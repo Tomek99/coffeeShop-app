@@ -30,7 +30,7 @@ const useCartHook = (notify) => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartValue, cartQuantity, cartItems, cartSave]);
 
-  function addItem(item) {
+  function addItem(item, event) {
     const cartItemsCopy = cartItems.map((item) => ({ ...item }));
     const newItemIndex = cartItemsCopy.findIndex(
       (element) => element._id === item._id

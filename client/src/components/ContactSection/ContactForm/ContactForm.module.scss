@@ -1,14 +1,13 @@
 .formContact {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 600px;
-    margin-bottom: 50px;
-    padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
 
-    p {
-        font-size: 2.2rem;
-
-        font-weight: bold;
-    }
+  p {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
 }

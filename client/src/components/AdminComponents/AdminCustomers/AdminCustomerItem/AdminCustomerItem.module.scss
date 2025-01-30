@@ -1,5 +1,10 @@
 .AdminCustomerItem {
+  position: relative;
   &:nth-child(even) {
     background-color: var(--light-greay);
   }
+}
+.btnDeleteAccount {
+  position: absolute;
+  top: 20px;
 }

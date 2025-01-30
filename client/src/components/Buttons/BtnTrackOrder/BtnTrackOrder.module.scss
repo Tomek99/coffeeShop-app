@@ -1,0 +1,18 @@
+.BtnTrackOrder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: var(--border);
+  font-size: 1.5rem;
+  color: var(--bg);
+  transition: 0.3s linear;
+  background-color: var(--main-color);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--main-color-darken);
+  }
+}

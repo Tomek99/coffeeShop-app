@@ -5,56 +5,51 @@ import { useNavigate } from "react-router-dom";
 import styles from "./LatestProduct.module.scss";
 import PropTypes from "prop-types";
 import RatingsStars from "../RatingStars/RatingStars";
+import BtnsProduct from "../Buttons/BtnsProduct/BtnsProduct";
 
-function LatestProduct({ item, cartFillId, showProductId, wishlistId }) {
+function LatestProduct({ item }) {
   const { _id, imageUrl, name, price, oldPrice, productRatings, intensity } =
     item;
-  const { addItem, addWishItem, wishList } = useContext(Context);
+  const { addItem, addWishItem, saveViewedProduct, wishList } =
+    useContext(Context);
 
-  let foundWishProduct = wishList.find((value) => {
-    if (value === _id) return true;
-    return false;
-  });
+  const viwedProduct = {
+    productId: _id,
+    productUrl: imageUrl,
+    productName: name,
+  };
 
   const navigate = useNavigate();
   function navigatePage() {
     navigate(`/products/${_id}`);
+    saveViewedProduct(viwedProduct);
   }
 
   const productRatingsAverage =
-    productRatings === null
-      ? 0
-      : productRatings.reduce((sum, current) => sum + current, 0) /
-        productRatings.length;
-
+    productRatings && productRatings.length > 0
+      ? productRatings.reduce((sum, current) => sum + current, 0) /
+        productRatings.length
+      : 0;
   return (
     <div className={styles.LatestProduct}>
-      <div className={styles.iconsSection}>
-        <button onClick={navigatePage} id={showProductId}>
-          <BsEye />
-        </button>
-
-        <button onClick={() => addItem(item)} id={cartFillId}>
-          <BsCart />
-        </button>
-        <button
-          id={wishlistId}
-          className={foundWishProduct ? styles.activeBtn : null}
-          onClick={() => addWishItem(_id)}
-        >
-          <BsHeart />
-        </button>
-      </div>
+      <BtnsProduct
+        item={item}
+        wishList={wishList}
+        navigatePage={navigatePage}
+        addItem={addItem}
+        addWishItem={addWishItem}
+      />
       <div className={styles.contentWrapper}>
         <img src={imageUrl} alt={name} />
-        <h3 className={styles.nameProduct} onClick={navigatePage}>
+        <h3 className={styles.productName} onClick={navigatePage}>
           {name}
         </h3>
         <p className={styles.intensity}>
           Intensity <span>{intensity}</span>
         </p>
-        <div>
+        <div className={styles.divRatingsStars}>
           <RatingsStars rate={productRatingsAverage} size="large" />
+          <span>({productRatings.length})</span>
         </div>
       </div>
       <p className={styles.price}>

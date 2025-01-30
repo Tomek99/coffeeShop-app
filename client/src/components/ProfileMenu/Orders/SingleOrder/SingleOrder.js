@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./SingleOrder.module.scss";
+import { useNavigate } from "react-router-dom";
 // import Order from "./Orderff/Order";
 
 import { useWindowWidth } from "@react-hook/window-size";
 import PropTypes from "prop-types";
 import BtnDots from "../../../Buttons/BtnDots/BtnDots";
+import { Context } from "../../../../Contexts/Context";
 // import { redirect } from "react-router-dom";
 
 function SingleOrder({ item }) {
   //ADD HIDDEN PRODUCTS IN ORDER COMPONENT !!!
   const { _id, delivery_status, date, total, products } = item;
+
+  const { handlePurchaseDetails } = useContext(Context);
+
   const width = useWindowWidth();
-  // console.log(date);
-  // redirect(`/orders/${_id}`); po co?
+  const navigate = useNavigate();
+
+  function openOrderDetails() {
+    navigate(`/purchased-products/purchase-details/${_id}`);
+  }
+
   const calculateVisibleItems = (width) => {
     if (width < 370) return 0;
     if (width < 500) return 1;
@@ -27,30 +36,8 @@ function SingleOrder({ item }) {
   const items = products.slice(0, visibleItemsCount);
   const hiddenElements = products.length - items.length;
 
-  // let hiddenElements = item.products.length;
-  // let items = [...item.products];
-  // if (width < 370) {
-  //   items = items.slice(0, 0);
-  // } else if (width < 500) {
-  //   items = items.slice(0, 1);
-  // } else if (width < 700) {
-  //   items = items.slice(0, 2);
-  // } else if (width < 800) {
-  //   items = items.slice(0, 4);
-  // } else if (width < 900) {
-  //   items = items.slice(0, 6);
-  // } else if (width < 1000) {
-  //   items = items.slice(0, 3);
-  // } else if (width < 1050) {
-  //   items = items.slice(0, 4);
-  // } else {
-  //   items = items.slice(0, 5);
-  // }
-
-  // hiddenElements -= items.length;
   return (
-    // <Link to={`${idNumber}`}>
-    <div className={styles.SingleOrder}>
+    <div className={styles.SingleOrder} onClick={() => openOrderDetails()}>
       <div className={styles.details}>
         <h2 className={styles.headline}>{delivery_status}</h2>
         <div>
@@ -86,7 +73,6 @@ function SingleOrder({ item }) {
       </div>
       <BtnDots />
     </div>
-    // </Link>
   );
 }
 SingleOrder.propTypes = {

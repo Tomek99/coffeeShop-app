@@ -1,0 +1,52 @@
+.historySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .searchedProducts {
+    max-width: 1366px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .searchedProducts {
+    max-width: 1280px !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .searchedProducts {
+    max-width: 1024px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .searchedProducts {
+    max-width: 900px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .searchedProducts {
+    max-width: 730px !important;
+  }
+}
+
+@media (max-width: 730px) {
+  .searchedProducts {
+    max-width: 580px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .searchedProducts {
+    max-width: 450px !important;
+  }
+}
+@media (max-width: 450px) {
+  .searchedProducts {
+    max-width: 320px !important;
+  }
+}

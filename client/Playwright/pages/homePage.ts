@@ -9,6 +9,7 @@ export class BrowserstackHomePage {
   private readonly userNavBtn: Locator;
   private readonly loginBtn: Locator;
   private readonly reviewsBtn: Locator;
+  private readonly contactPageBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -18,6 +19,7 @@ export class BrowserstackHomePage {
     this.userNavBtn = page.locator("#userNavigationBtn0");
     this.loginBtn = page.getByRole("button", { name: "Log in" });
     this.reviewsBtn = page.getByRole("link", { name: "Reviews" }).first();
+    this.contactPageBtn = page.getByRole("link", { name: "Contact" }).first();
   }
 
   async goToHomePage() {
@@ -50,5 +52,9 @@ export class BrowserstackHomePage {
 
   async clickOnReviewsBtn() {
     await this.reviewsBtn.click();
+  }
+
+  async openContactPage() {
+    await this.contactPageBtn.click();
   }
 }

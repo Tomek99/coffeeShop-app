@@ -8,9 +8,7 @@ exports[`Shoulde render CareSection component 1`] = `
     <header
       class="headerSection"
     >
-      We care
-       
-      about you
+      We care about you
     </header>
     <div
       class="careItemsWrapper"

@@ -1,0 +1,37 @@
+.RowsMediumIcon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .rowContent {
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+
+    .squareIcon {
+      width: 5px;
+      height: 4px;
+      background-color: var(--light-grey);
+      margin: 1px;
+    }
+    .barIcon {
+      width: 15px;
+      height: 4px;
+      background-color: var(--light-grey);
+      margin: 1px;
+    }
+  }
+}
+
+.RowsMediumIcon.selectedView {
+  background-color: var(--light-grey);
+
+  .squareIcon {
+    background-color: var(--darker-grey);
+  }
+  .barIcon {
+    background-color: var(--darker-grey);
+  }
+}

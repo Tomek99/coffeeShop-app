@@ -11,7 +11,7 @@ describe("Check thumbs when user is not logged in", () => {
   const textAlertIfUserNotLoggedIn: string =
     "You cannot vote if you are not logged in.";
 
-  it("vote thumb up", () => {
+  it("Should vote thumb up", () => {
     const alertText = new ProductPage()
       .openProductReviews()
       .clickOnThumbUp()
@@ -20,7 +20,7 @@ describe("Check thumbs when user is not logged in", () => {
     alertText.should("have.text", textAlertIfUserNotLoggedIn);
   });
 
-  it("vote thumb down", () => {
+  it("Should vote thumb down", () => {
     const alertText = new ProductPage()
       .openProductReviews()
       .clickOnThumbDown()
@@ -38,7 +38,7 @@ describe("Check thumbs when user is logged in & has already given vote", () => {
   const textAlertIfUserVoted: string =
     "You can only vote once for each comment";
 
-  it("vote thumb up", () => {
+  it("Should vote thumb up", () => {
     const textAlert = new ProductsPage()
       .openRevelantProductPage(CypressHelper.generateRandomNumber(1))
       .openProductReviews()
@@ -48,7 +48,7 @@ describe("Check thumbs when user is logged in & has already given vote", () => {
     textAlert.should("have.text", textAlertIfUserVoted);
   });
 
-  it("vote thumb down", () => {
+  it("Should vote thumb down", () => {
     const textAlert = new ProductsPage()
       .openRevelantProductPage(CypressHelper.generateRandomNumber(1))
       .openProductReviews()
@@ -66,9 +66,9 @@ describe("Check thumbs when user is logged in &  hasn't voted yet", () => {
 
   const textAlertIfUserNotVoted: string = "Thank you for your vote";
 
-  it.only("vote thumb up", () => {
+  it("Should vote thumb up", () => {
     const textAlert = new ProductsPage()
-      .openRevelantProductPage(10)
+      .openRevelantProductPage(6)
       .openProductReviews()
       .clickOnThumbUp()
       .getAlertText();
@@ -76,9 +76,9 @@ describe("Check thumbs when user is logged in &  hasn't voted yet", () => {
     textAlert.should("have.text", textAlertIfUserNotVoted);
   });
 
-  it("vote thumb down", () => {
+  it("Should vote thumb down", () => {
     const textAlert = new ProductsPage()
-      .openRevelantProductPage(9)
+      .openRevelantProductPage(8)
       .openProductReviews()
       .clickOnThumbDown()
       .getAlertText();

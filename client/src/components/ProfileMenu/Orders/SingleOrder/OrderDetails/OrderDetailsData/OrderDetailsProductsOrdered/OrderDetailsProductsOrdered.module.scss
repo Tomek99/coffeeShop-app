@@ -1,0 +1,12 @@
+.title {
+  font-size: 2rem;
+}
+
+.OrderDetailsProductsOrdered {
+  .divProducts {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -13,7 +13,7 @@ import { SuccessPage } from "../pages/successPage";
 
 test.describe("Purchase products with invalid data", () => {
   test.beforeEach(async ({ page }) => {
-    BaseTest.performBasicStepsForCheckout(page);
+    await BaseTest.performBasicStepsForCheckout(page);
   });
 
   test("should display an error if the delivery and payment form is omitted", async ({
@@ -24,8 +24,8 @@ test.describe("Purchase products with invalid data", () => {
 
     const errors = await orderPage.getErrors();
     await expect(errors).toHaveCount(10);
-
     await expect(errors.nth(0)).toContainText("Required");
+    await expect(errors.nth(1)).toContainText("Required");
   });
 
   test("should display an error if the delivery form is not ticked", async ({

@@ -3,10 +3,10 @@
 exports[`should render FAQ component 1`] = `
 <div>
   <div
-    class="FAQ"
+    class="Faq"
   >
     <div
-      class="test"
+      class="faqContent"
     >
       <div>
         <h2>

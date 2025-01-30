@@ -1,0 +1,15 @@
+.AdminCustomerItemOrders {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  box-shadow: var(--shadow-thick-bottom);
+
+  .orderContent {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}

@@ -13,6 +13,7 @@ import useUserOrderHook from "./hooks/useUserOrderHook";
 import useLoginHook from "./hooks/useLoginHook";
 import useCartHook from "./hooks/useCartHook";
 import useFetchData from "./hooks/useFetchData";
+import useViewedProductsHook from "./hooks/useViewedProductsHook";
 import {
   Home,
   Blog,
@@ -48,6 +49,8 @@ import {
   AdminReviews,
   AdminCustomersMessages,
   AdminSettings,
+  OrderDetails,
+  CookieBarConsenst,
 } from "./components";
 
 function App() {
@@ -58,6 +61,7 @@ function App() {
   const { notify, notifyError } = useNotifyHook();
   /*----------- login ----------- */
   const { isLogIn, user, logIn, logOut } = useLoginHook(notify);
+  console.log(user);
   /*----------- products ----------- */
   const apiProductEndpoint = `${process.env.REACT_APP_API_URI}/api/products`;
   const { data } = useFetchData(apiProductEndpoint);
@@ -81,6 +85,10 @@ function App() {
     cartValue,
     cartItems
   );
+  /*----------- userHistory ----------- */
+  // const {userHistory} = useUserHistoryHook();
+  const { viewedProducts, saveViewedProduct } = useViewedProductsHook();
+
   /*----------- navigate on Summary ----------- */
   const [isUserNavigateToSummary, setIsUserNavigateToSummary] = useState(false);
   function handleUserNavigateToSummary() {
@@ -100,6 +108,9 @@ function App() {
         changeQuantity,
         notify,
         notifyError,
+        saveViewedProduct,
+
+        viewedProducts,
         isLogIn,
         cartItems,
         cartValue,
@@ -163,6 +174,10 @@ function App() {
           >
             <Route path="account" element={<AccountContent />} />
             <Route path="purchased-products" element={<Orders />} />
+            <Route
+              path="purchased-products/purchase-details/:id"
+              element={<OrderDetails />}
+            />
 
             <Route path="returns" element={<ReturnComplaint />} />
             <Route path="user-reviews" element={<UserReviews />} />
@@ -222,6 +237,7 @@ function App() {
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <CookieBarConsenst />
       </section>
       <FooterSwitcher pathname={location.pathname} />
     </Context.Provider>

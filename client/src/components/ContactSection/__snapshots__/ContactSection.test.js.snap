@@ -9,9 +9,7 @@ exports[`should render ContactSecton 1`] = `
     <header
       class="headerSection"
     >
-      contact
-       
-      us
+      contact us
     </header>
     <p
       class="openHours"
@@ -254,57 +252,60 @@ exports[`should render ContactSecton 1`] = `
       <div
         class="contactFormWrapper"
       >
-        <form
-          action="#"
-          class="formContact"
-        >
-          <p>
-            Write us an e-mail
-          </p>
-          <div>
-            <input
-              class="inputText"
-              name="name_form_one"
-              placeholder="Name and surname"
-              type="text"
-              value=""
-            />
-          </div>
-          <div>
-            <input
-              class="inputText"
-              name="email"
-              placeholder="E-mail"
-              type="text"
-              value=""
-            />
-          </div>
-          <div>
+        <div>
+          <form
+            action="#"
+            class="EmailContactForm"
+          >
+            <p>
+              Write email to us
+            </p>
+            <div>
+              <input
+                class="inputText"
+                name="fullName"
+                placeholder="Name and surname"
+                type="text"
+                value=""
+              />
+            </div>
+            <div>
+              <input
+                class="inputText"
+                name="email"
+                placeholder="E-mail"
+                type="text"
+                value=""
+              />
+            </div>
             <div
               class="TextareaCom"
             >
               <textarea
-                id="contactFormComment0"
-                maxlength="1999"
-                name="comment"
-                placeholder="Your comments"
+                id="message0"
+                maxlength="999"
+                name="message"
+                placeholder="Your message"
+                rows="1"
               />
               <span
                 class="countLength"
               >
                 0
-                /1999
+                /999
               </span>
             </div>
-            <button
-              class="BtnContact"
-              id="btnFormContact0"
-              type="submit"
-            >
-              Send
-            </button>
-          </div>
-        </form>
+            <div>
+              <button
+                class="BtnContact"
+                id="btnFormContact23"
+                type="submit"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
         <form
           action="#"
           class="formContact"
@@ -315,7 +316,7 @@ exports[`should render ContactSecton 1`] = `
           <div>
             <input
               class="inputText"
-              name="name_form_two"
+              name="fullName"
               placeholder="Name and surname"
               type="text"
               value=""
@@ -335,16 +336,17 @@ exports[`should render ContactSecton 1`] = `
               class="TextareaCom"
             >
               <textarea
-                id="contactFormComment1"
-                maxlength="1999"
-                name="comment"
-                placeholder="Your comments"
+                id="message1"
+                maxlength="999"
+                name="message"
+                placeholder="Your message"
+                rows="1"
               />
               <span
                 class="countLength"
               >
                 0
-                /1999
+                /999
               </span>
             </div>
             <button
@@ -358,9 +360,7 @@ exports[`should render ContactSecton 1`] = `
         </form>
         <div>
           <div>
-            <div>
-              Loading...
-            </div>
+            Loading...
           </div>
         </div>
       </div>

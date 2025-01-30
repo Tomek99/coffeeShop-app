@@ -1,0 +1,58 @@
+.ProductSort {
+  position: relative;
+  box-shadow: var(--shadow-thick);
+  border-radius: 8px;
+  font-size: 1.3rem;
+  z-index: 1;
+  cursor: pointer;
+
+  .divBtn {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+
+    &::before {
+      content: "Sort";
+      position: absolute;
+      top: -9px;
+      left: 10px;
+      background-color: var(--bg);
+      color: var(--darker-grey);
+    }
+  }
+
+  .divOptions {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 250px;
+    top: 101px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg);
+    box-shadow: var(--shadow-thick);
+    border-radius: 0 0 8px 8px;
+
+    .spanSortOption {
+      padding: 7px 15px;
+
+      &:hover {
+        background-color: var(--dark-grey);
+      }
+
+      &:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+    }
+
+    .spanSortOption.spanActived {
+      font-weight: 500;
+      background-color: var(--dark-grey);
+    }
+  }
+}
+.ProductSort.ProductSortActivated {
+  border-radius: 8px 8px 0 0;
+}

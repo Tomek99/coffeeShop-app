@@ -1,11 +1,11 @@
-.OrderDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.buttonShowOrders {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
 
-    .buttonShowOrders {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
+  .orderStatus {
+    font-size: 20px;
+  }
 }

@@ -1,13 +1,15 @@
 export { default as NavigationBar } from "./NavigationBar/NavigationBar";
+export { default as CookieBarConsenst } from "./CookieBarConsenst/CookieBarConsenst";
 export { default as NavigationBarOrder } from "./NavigationBarOrder/NavigationBarOrder";
 export { default as HomeSection } from "./HomeSection/HomeSection";
 export { default as AboutSection } from "./AboutSection/AboutSection";
 export { default as ShipmentSection } from "./ShipmentSection/ShipmentSection";
 export { default as ProductsSection } from "./ProductsSection/ProductsSection";
 export { default as CareComponent } from "./CareSection/CareSection";
+export { default as BlogsSection } from "./BlogsSection/BlogsSection";
+export { default as ViewedProductsSection } from "./HistorySection/ViewedProductsSection";
 export { default as ReviewSection } from "./ReviewSection/ReviewSection";
 export { default as ContactSection } from "./ContactSection/ContactSection";
-export { default as BlogsSection } from "./BlogsSection/BlogsSection";
 export { default as Footer } from "./Footer/Footer";
 export { default as FooterOrder } from "./FooterOrder/FooterOrder";
 export { default as AboutCs } from "./AboutCS/AboutCs";

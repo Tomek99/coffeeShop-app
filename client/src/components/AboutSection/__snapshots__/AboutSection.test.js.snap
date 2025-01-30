@@ -9,9 +9,7 @@ exports[`should render component 1`] = `
     <header
       class="headerSection"
     >
-      about
-       
-      us
+      about us
     </header>
     <div
       class="divRow"

@@ -1,14 +1,11 @@
-/// <reference types="Cypress" />
-
+// <reference types="Cypress" />
+import "cypress-iframe";
 import OrderPage from "../../pages/OrderPage";
-
 import BaseTest from "./BaseTest";
 import deliverAddresData from "../../fixtures/deliveryAddressData";
 import invoiceAddressData from "../../fixtures/invoiceAddressData";
 import companyAddressData from "../../fixtures/companyAddressData";
 import reciepientData from "../../fixtures/recipientDetailsData";
-
-import "cypress-iframe";
 
 describe("Checkout products with valid data", () => {
   beforeEach(() => {
@@ -16,7 +13,7 @@ describe("Checkout products with valid data", () => {
   });
 
   // TEST 1 -------------------------------
-  it("as a private person", () => {
+  it("should place an order as a private person", () => {
     const assertTextElement = new OrderPage()
       .clickOnCarrierDeliveryBtn()
       .clickOnPurchaseAsPrivatePersonBtn()
@@ -33,7 +30,7 @@ describe("Checkout products with valid data", () => {
   });
 
   // TEST 2 -------------------------------
-  it("as a company", () => {
+  it("should place an order as a company", () => {
     const assertTextElement = new OrderPage()
       .clickOnCarrierDeliveryBtn()
       .clickOnPurchaseAsCompanyBtn()
@@ -51,7 +48,7 @@ describe("Checkout products with valid data", () => {
   });
 
   // TEST 3 -------------------------------
-  it("as private person with invoice details", () => {
+  it("should place an order as private person with invoice details", () => {
     const assertTextElement = new OrderPage()
       .clickOnCarrierDeliveryBtn()
       .clickOnPurchaseAsPrivatePersonBtn()
@@ -70,7 +67,7 @@ describe("Checkout products with valid data", () => {
   });
 
   // TEST 4 -------------------------------
-  it("as private person & invoice details & pickup at coffe-shop showroom", () => {
+  it("should place an order as private person & invoice details & pickup at coffe-shop showroom", () => {
     const assertTextElement = new OrderPage()
       .clickOnShowroomBtn()
       .clickOnPurchaseAsPrivatePersonBtn()
@@ -88,7 +85,7 @@ describe("Checkout products with valid data", () => {
     assertTextElement.should("have.text", "Payment Successful!");
   });
   // TEST 5 -------------------------------
-  it.only("as company & pickup at coffe-shop showroom & comment", () => {
+  it("should place an order as company & pickup at coffe-shop showroom & comment", () => {
     const comment = "test test test test test test test test test";
 
     const assertTextElement = new OrderPage()

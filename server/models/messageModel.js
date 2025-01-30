@@ -1,18 +1,31 @@
 const mongoose = require("mongoose");
 
-const messageSchema = new mongoose.Schema({
-  fullName: {
-    type: String,
-    required: true,
+const messageSchema = new mongoose.Schema(
+  {
+    fullName: {
+      type: String,
+      required: true,
+    },
+    number: {
+      type: String,
+      required: true,
+    },
+    message: {
+      type: String,
+      required: true,
+    },
+    response: {
+      type: String,
+      default: "",
+    },
+    isCompleted: {
+      type: String,
+      default: "pending",
+    },
   },
-  contactType: {
-    type: String,
-    required: true,
-  },
-  clientMessage: {
-    type: String,
-    required: true,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 module.exports = mongoose.model("Message", messageSchema);

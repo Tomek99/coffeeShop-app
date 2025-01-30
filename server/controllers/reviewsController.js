@@ -17,11 +17,20 @@ const getReviewsByProductId = asyncHandler(async (req, res) => {
   res.status(200).json(reviews || []);
 });
 
+const deleteAllReviews = asyncHandler(async (req, res) => {
+  const result = await Review.deleteMany({});
+
+  res.status(200).json({
+    message: "All reviews have been deleted",
+    deletedCount: result.deletedCount, // Number of deleted documents
+  });
+});
+
 const setReview = asyncHandler(async (req, res) => {
   //-------Current data
   const { userId, userName, productId, productName, productImage } = req.body;
   const currentTime = new Date().toISOString();
-
+  console.log(req.body);
   let userImages = req.body.userImages ? req.body.userImages.split(",") : [];
   const review = await Review.create({
     userId,
@@ -125,4 +134,5 @@ module.exports = {
   getAllReviews,
   putReviewDecision,
   deleteReview,
+  deleteAllReviews,
 };

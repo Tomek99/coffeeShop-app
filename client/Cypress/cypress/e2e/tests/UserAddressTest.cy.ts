@@ -16,7 +16,7 @@ beforeEach(() => {
 });
 
 describe("Add & delete & empty address", () => {
-  it("add one address", () => {
+  it("should add one address", () => {
     const assertion = fillAddressForm();
 
     assertion.getAddressFormElement(1).should("exist");
@@ -24,13 +24,13 @@ describe("Add & delete & empty address", () => {
     deleteFirstAddressInRow();
   });
 
-  it("delete address", () => {
+  it("should delete address", () => {
     const assertion = fillAddressForm().clickOnDeleteAddressBtn(0);
 
     assertion.getAddressFormElement(2).should("not.exist");
   });
 
-  it("try to add empty address", () => {
+  it("should try to add empty address", () => {
     const assertion = new AddressDetailsPage()
       .clickOnNewAddressBtn()
       .clickOnSaveAddressBtn()
@@ -43,7 +43,7 @@ describe("Add & delete & empty address", () => {
 // --------------------------------------------------
 
 describe("Edit address details", () => {
-  it("name & street", () => {
+  it("should edit name & street", () => {
     const assertion = fillAddressForm()
       .clickOnEditBtn()
       .editNameInputAddress(editForm.name)
@@ -56,7 +56,7 @@ describe("Edit address details", () => {
     deleteFirstAddressInRow();
   });
 
-  it("house & zip code", () => {
+  it("should edit house & zip code", () => {
     const assertion = fillAddressForm()
       .clickOnEditBtn()
       .editHouseInputAddress(editForm.house)
@@ -69,7 +69,7 @@ describe("Edit address details", () => {
     deleteFirstAddressInRow();
   });
 
-  it("city & number & email", () => {
+  it("should edit city & number & email", () => {
     const assertion = fillAddressForm()
       .clickOnEditBtn()
       .editCityInputAddress(editForm.city)

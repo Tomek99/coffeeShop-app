@@ -14,73 +14,50 @@
     background-color: var(--light-greay);
   }
 
-  .iconsSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    margin-top: 5px;
-
-    button,
-    a {
-      background-color: #fff;
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 4.5rem;
-      height: 4.5rem;
-      border: var(--border);
-      border-radius: 8px;
-      transition: 0.3s linear;
-      cursor: pointer;
-
-      svg {
-        font-size: 2rem;
-      }
-    }
-
-    button:hover,
-    .activeBtn {
-      background-color: var(--light-greay);
-    }
-  }
-
   .contentWrapper {
     img {
+      width: 100%;
       max-width: 120px;
       height: 210px;
       object-fit: cover;
-      width: 100%;
     }
 
-    .nameProduct {
-      margin: 5px 10px;
-      text-align: center;
+    .divRatingsStars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .productName {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+      height: 40px;
       font-size: 1.7rem;
-      text-align: center;
       transition: 0.2s linear;
       position: relative;
       cursor: pointer;
 
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: -1.5px;
-        left: 50%;
-        right: 50%;
-        width: 0;
-        height: 2px;
-        background-color: var(--text-color);
-        transition: all 0.3s ease;
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   bottom: -1.5px;
+      //   left: 50%;
+      //   right: 50%;
+      //   width: 0;
+      //   height: 2px;
+      //   background-color: var(--text-color);
+      //   transition: all 0.3s ease;
+      // }
+      &:hover {
+        text-decoration: underline;
       }
-
-      &:hover::before {
-        width: 100%;
-        left: 0;
-        right: 0;
-      }
+      // &:hover::before {
+      //   width: 100%;
+      //   left: 0;
+      //   right: 0;
+      // }
     }
 
     .intensity {

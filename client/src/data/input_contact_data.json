@@ -2,7 +2,7 @@
   "contact_form_one": [
     {
       "type": "text",
-      "name": "name_form_one",
+      "name": "fullName",
       "placeholder": "Name and surname"
     },
     {
@@ -14,7 +14,7 @@
   "contact_form_two": [
     {
       "type": "text",
-      "name": "name_form_two",
+      "name": "fullName",
       "placeholder": "Name and surname"
     },
     {

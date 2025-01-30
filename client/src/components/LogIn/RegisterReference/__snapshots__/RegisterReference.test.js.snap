@@ -14,7 +14,6 @@ exports[`should render RegisterReference component 1`] = `
     >
       Create an account
     </a>
-    <button />
   </div>
 </div>
 `;

@@ -1,0 +1,42 @@
+.AdminCustomerMessageItem {
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-thick-bottom);
+  padding: 10px 0;
+
+  .paragraph {
+    text-align: justify;
+  }
+
+  .messageStatus {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .customerData {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .btnsAction {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .customerData {
+    gap: 10px !important;
+  }
+}

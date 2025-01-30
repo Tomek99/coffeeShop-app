@@ -1,0 +1,28 @@
+.SquaresIcon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .rowContent {
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+
+    .squareIcon {
+      height: 8px;
+      width: 6px;
+      background-color: var(--light-grey);
+      margin: 1px;
+    }
+  }
+}
+
+.SquaresIcon.selectedView {
+  background-color: var(--light-grey);
+
+  .squareIcon {
+    background-color: var(--darker-grey);
+  }
+}

@@ -1,0 +1,27 @@
+.SearchedProduct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 200px;
+  padding: 10px 5px;
+  border-radius: 8px;
+  transition: 0.3s linear;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--shadow-thin);
+    background-color: var(--light-greay);
+  }
+  .productImg {
+    width: 100%;
+    max-width: 100px;
+    height: 170px;
+  }
+
+  .spanName {
+    font-size: 12px;
+    text-align: center;
+  }
+}

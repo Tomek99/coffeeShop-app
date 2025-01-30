@@ -37,6 +37,7 @@ exports[`should render CartSummary component 1`] = `
         <input
           class="inputDiscount"
           type="text"
+          value=""
         />
         <button
           class="BtnActive"
@@ -45,6 +46,9 @@ exports[`should render CartSummary component 1`] = `
           Active
         </button>
       </div>
+      <p
+        class="discountBar"
+      />
     </div>
     <div
       class="checkout"
