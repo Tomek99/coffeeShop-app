@@ -36,6 +36,9 @@ class AddressDetails {
 
     saveInvoiceFormBtn: () => cy.get('button[type="submit"]').contains("Save"),
 
+    deleteInvoiceBtn: () =>
+      cy.get(".InvoiceItem_buttons__BnBBb > button:nth-child(1)"),
+
     //Delete Address
     addressDeleteBtn: (deleteAddressNumber) =>
       cy.get("button").contains("Delete").eq(deleteAddressNumber),
@@ -185,6 +188,12 @@ class AddressDetails {
 
   clickOnDeleteAddressBtn(deleteAddressNumber): AddressDetails {
     this.elements.addressDeleteBtn(deleteAddressNumber).click();
+    this.elements.confirmDeleteBtn().click();
+    return this;
+  }
+
+  clickOnDeleteInvoiceBtn(): AddressDetails {
+    this.elements.deleteInvoiceBtn().last().click();
     this.elements.confirmDeleteBtn().click();
     return this;
   }

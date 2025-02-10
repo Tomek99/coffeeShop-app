@@ -9,31 +9,37 @@ type InvoiceData = {
   cityName: string;
 };
 
-const invoiceData: InvoiceData = {
-  nip: "1231231230",
-  companyName: "Acme Corp",
-  steet: "1 Main Street",
-  zipCode: "00-001",
-  cityName: "Warsaw",
-};
-
 describe("Add & delete & empty invoice", () => {
   beforeEach(() => {
     BaseTest.performBasicStepsForAddressDetails();
   });
 
   it("should add invoice", () => {
+    const invoiceData: InvoiceData = {
+      nip: "1234567890",
+      companyName: "Acme Corp",
+      steet: "1 Main Street",
+      zipCode: "00-001",
+      cityName: "Warsaw",
+    };
+
     const object = fillInvoiceFormAndAdd(invoiceData);
 
     object.getInvoiceFormElement(1).should("exist");
-
-    object.clickOnDeleteAddressBtn(0);
   });
 
   it("should delete invoice", () => {
-    fillInvoiceFormAndAdd(invoiceData).clickOnDeleteAddressBtn(0);
+    const invoiceData: InvoiceData = {
+      nip: "9999999999",
+      companyName: "Acme Corp",
+      steet: "1 Main Street",
+      zipCode: "00-001",
+      cityName: "Warsaw",
+    };
 
-    cy.get(".InvoiceItem_content__muuOU > :nth-child(1)").should("not.exist");
+    fillInvoiceFormAndAdd(invoiceData).clickOnDeleteInvoiceBtn();
+
+    cy.get('[data-cy="invoicesForms"]').should("not.contain", invoiceData.nip);
   });
 
   it("should try to add empty invoice", () => {
