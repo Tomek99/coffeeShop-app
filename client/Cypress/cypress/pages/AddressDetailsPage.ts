@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 
 class AddressDetails {
   private elements = {
@@ -188,8 +188,6 @@ class AddressDetails {
     this.elements.confirmDeleteBtn().click();
     return this;
   }
-
-  click;
 
   clickOnEditBtn(): AddressDetails {
     this.elements.editBtn().click();

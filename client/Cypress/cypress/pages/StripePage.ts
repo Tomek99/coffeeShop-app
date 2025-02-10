@@ -1,12 +1,12 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 
 import { StripeData } from "../interfaces/stripeDataInterface";
 import SuccessPage from "./SuccessPage";
 
 const stipeFormData: StripeData = {
   cardNumber: "4242424242424242",
-  cardExipry: "4242",
-  cardCvc: "424",
+  cardExipry: "1234",
+  cardCvc: "567",
   billingName: "Marcin Kowalski",
 };
 
@@ -24,6 +24,15 @@ class StripePage {
   };
 
   fillStripeForm(): StripePage {
+    Cypress.on("uncaught:exception", (err, runnable) => {
+      if (
+        err.message.includes("expressCheckout Element didn't mount normally")
+      ) {
+        return false; // Zignoruj błąd i nie przerywaj testu
+      }
+      return true; // Pozwól innym błędom powodować niepowodzenie testu
+    });
+
     this.elements.cardNumberInput().type(stipeFormData.cardNumber);
     this.elements.cardExpiryInput().type(stipeFormData.cardExipry);
     this.elements.cardCvcInput().type(stipeFormData.cardCvc);

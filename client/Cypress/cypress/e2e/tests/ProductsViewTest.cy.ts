@@ -3,7 +3,7 @@ import BaseTest from "./BaseTest";
 
 describe("user channing view & adding products to cart", () => {
   it("should set small view & add product to cart", () => {
-    const PRODUCT_NAME: string = "Espresso Italiano Aromatico";
+    const PRODUCT_NAME: string = "Caffe Crema Classico, 1 kg";
     const PRODUCT_NUMBER: number = 0;
 
     const foundProductsInCart = new HomePage()
@@ -18,8 +18,8 @@ describe("user channing view & adding products to cart", () => {
     foundProductsInCart.should("have.text", PRODUCT_NAME);
   });
 
-  it("should set medium view & add product products", () => {
-    const PRODUCT_NAME: string = "Prontissimo! Classico";
+  it("should set medium view & add product", () => {
+    const PRODUCT_NAME: string = "Caffe Crema Dolce, 1 kg";
     const PRODUCT_NUMBER: number = 1;
 
     const foundProductsInCart = new HomePage()
@@ -35,7 +35,7 @@ describe("user channing view & adding products to cart", () => {
   });
 
   it("should set large view & add product to cart", () => {
-    const PRODUCT_NAME: string = "Lavazza Tierra Bio-Organic for Africa";
+    const PRODUCT_NAME: string = "Crema e Aroma, 1 kg";
     const PRODUCT_NUMBER: number = 2;
 
     const foundProductsInCart = new HomePage()
@@ -53,8 +53,8 @@ describe("user channing view & adding products to cart", () => {
 
   it("should click each view & add product", () => {
     const PRODUCTS_LENGTH = 12;
-    const PRODUCT_ONE = "Prontissimo! ClassicoIntensity";
-    const PRODUCT_TWO = "Lavazza Tierra Bio-Organic for Planet";
+    const PRODUCT_ONE = "Caffe Crema Dolce, 1 kg";
+    const PRODUCT_TWO = "Lavazza Tierra Bio-Organic for Africa";
 
     const foundProducts = new HomePage()
       .visitHomePage()

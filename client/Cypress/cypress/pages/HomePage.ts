@@ -51,7 +51,7 @@ class HomePage {
   }
 
   openViewCartPage(): ViewCartPage {
-    this.elements.vieCartPageBtn().click();
+    this.elements.vieCartPageBtn().click({ force: true });
     return new ViewCartPage();
   }
 

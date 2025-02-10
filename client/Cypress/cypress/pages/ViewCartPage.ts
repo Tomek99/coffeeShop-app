@@ -1,8 +1,8 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 
 class ViewCartPage {
   private elements = {
-    checkoutBtn: () => cy.get("a").contains("Checkout"),
+    checkoutBtn: () => cy.contains("Checkout"),
   };
 
   openCheckoutPage() {

@@ -17,6 +17,9 @@ class ProductsPage {
 
     selectViewDiv: (view) => cy.get(`div[data-testid="${view}"]`),
 
+    cartBtns: () =>
+      cy.get(`.BtnsProduct_BtnsProduct__Gi5nT > button:nth-child(2)`),
+
     sortControlerDiv: () => cy.get(`.ProductSort_divBtn__BH0W8`),
 
     selectSortingOption: (option) => cy.contains(option),
@@ -35,11 +38,19 @@ class ProductsPage {
     return new HomePage();
   }
 
+  addProductsCart(amountProducts: number): HomePage {
+    for (let i = 0; i < amountProducts; i++) {
+      const number = Math.floor(Math.random() * 5); //Math.floor(Math.random() * 11); << zastąpić tym w przypadku blędu
+      this.elements.cartBtns().eq(number).click({ force: true });
+    }
+    return new HomePage();
+  }
+
   // addProductsCart(amountProducts: number): HomePage {
-  //   for (let i = 0; i < amountProducts; i++) {
-  //     const number = Math.floor(Math.random() * 5); //Math.floor(Math.random() * 11); << zastąpić tym w przypadku blędu
-  //     this.elements.productCartBtn(number).click({ force: true });
-  //   }
+  // for (let i = 0; i < amountProducts; i++) {
+  //   const number = Math.floor(Math.random() * 5); //Math.floor(Math.random() * 11); << zastąpić tym w przypadku blędu
+  //   this.elements.productCartBtn(number).click({ force: true });
+  // }
 
   //   return new HomePage();
   // }

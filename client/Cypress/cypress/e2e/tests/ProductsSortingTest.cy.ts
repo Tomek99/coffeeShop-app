@@ -21,7 +21,7 @@ describe("user sorting products", () => {
   });
 
   it("should sort from the most relevant", () => {
-    const PRODUCT_NAME: string = "Espresso Italiano Aromatico";
+    const PRODUCT_NAME: string = "Caffe Crema Classico, 1 kg";
 
     const foundProducts = new HomePage()
       .visitHomePage()
