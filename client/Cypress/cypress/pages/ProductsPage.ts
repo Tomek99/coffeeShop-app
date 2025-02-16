@@ -6,7 +6,10 @@ import ProductPage from "./ProductPage";
 
 class ProductsPage {
   private elements = {
-    productViewBtn: (number) => cy.get(`#showProductId${number}`),
+    productViewBtn: (productNumber) =>
+      cy.get(
+        `:nth-child(${productNumber}) > .BtnsProduct_BtnsProduct__Gi5nT > :nth-child(1)`
+      ),
 
     productCartBtn: () =>
       cy.get(`.BtnsProduct_BtnsProduct__Gi5nT > button:nth-child(2)`),
@@ -55,7 +58,7 @@ class ProductsPage {
   //   return new HomePage();
   // }
 
-  openRevelantProductPage(productNumber: number): ProductPage {
+  viewProduct(productNumber): ProductPage {
     this.elements.productViewBtn(productNumber).click({ force: true });
 
     return new ProductPage();

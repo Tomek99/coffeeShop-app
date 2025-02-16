@@ -14,20 +14,16 @@ class ProductPage {
   };
 
   openProductReviews(): ProductPage {
-    this.elements.productReviewsBtn().click();
+    this.elements.productReviewsBtn().click({ force: true });
     return this;
   }
 
-  clickOnThumbUp(): ProductPage {
-    const reviewNumber: number = 0;
-
+  clickOnThumbUp(reviewNumber: number): ProductPage {
     this.elements.thumbUpBtn(reviewNumber).click();
     return this;
   }
 
-  clickOnThumbDown(): ProductPage {
-    const reviewNumber: number = 0;
-
+  clickOnThumbDown(reviewNumber: number): ProductPage {
     this.elements.thumbDownBtn(reviewNumber).click();
     return this;
   }

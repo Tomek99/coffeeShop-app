@@ -10,6 +10,7 @@ const {
   putReviewDecision,
   deleteReview,
   deleteAllReviews,
+  resetThumbsFromUserReview,
 } = require("../controllers/reviewsController");
 
 router.route("").get(getAllReviews);
@@ -21,5 +22,6 @@ router.route("/type-review").put(typeReview);
 router.route("/put-review-decision").put(putReviewDecision);
 router.route("/delete-review").delete(deleteReview);
 router.route("/delete-all-reviews").delete(deleteAllReviews);
+router.route("/reset-thumbs-from-review").put(resetThumbsFromUserReview);
 
 module.exports = router;

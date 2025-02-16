@@ -26,12 +26,10 @@ class BaseTest {
         .visitHomePage()
         .openLoginPage()
         .loginUser("test1@gmail.com", "Test1@gmail")
-        .openProductsPage();
-    } else {
-      new HomePage()
-        .visitHomePage()
         .openProductsPage()
-        .openRevelantProductPage(0);
+        .viewProduct(10);
+    } else {
+      new HomePage().visitHomePage().openProductsPage().viewProduct(10);
     }
   }
 

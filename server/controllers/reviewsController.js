@@ -27,10 +27,9 @@ const deleteAllReviews = asyncHandler(async (req, res) => {
 });
 
 const setReview = asyncHandler(async (req, res) => {
-  //-------Current data
+  //Dodanie recenzji do panelu użytkownika
   const { userId, userName, productId, productName, productImage } = req.body;
   const currentTime = new Date().toISOString();
-  console.log(req.body);
   let userImages = req.body.userImages ? req.body.userImages.split(",") : [];
   const review = await Review.create({
     userId,
@@ -46,6 +45,7 @@ const setReview = asyncHandler(async (req, res) => {
   res.status(200).send(review);
 });
 
+// Klient wystawia ocene recenzji innemu użytkownikowi na zasadzie łapki w górę lub w dół
 const rateReview = asyncHandler(async (req, res) => {
   const { reviewId, userId, rate } = req.body;
 
@@ -73,15 +73,21 @@ const rateReview = asyncHandler(async (req, res) => {
   }
 });
 
+// Klient wystawia recenzje na temat zakupionego produktu
 const typeReview = asyncHandler(async (req, res) => {
   const { reviewId, values } = req.body;
+
   const currentTime = new Date().toISOString();
-  const foundReview = await Review.findByIdAndUpdate(reviewId, {
-    userReviewDate: currentTime,
-    comment: values.comment,
-    rate: values.rate,
-    isUserAddedReview: true,
-  });
+  const foundReview = await Review.findByIdAndUpdate(
+    reviewId,
+    {
+      userReviewDate: currentTime,
+      comment: values.comment,
+      rate: values.rate,
+      isUserAddedReview: true,
+    },
+    { new: true }
+  );
 
   try {
     await Product.findByIdAndUpdate(
@@ -125,6 +131,26 @@ const deleteReview = asyncHandler(async (req, res) => {
   }
 });
 
+//
+const resetThumbsFromUserReview = asyncHandler(async (req, res) => {
+  const { reviewId } = req.body;
+
+  try {
+    const post = await Review.findByIdAndUpdate(
+      reviewId,
+      {
+        usersIdVoted: [],
+        likes: 0,
+        dislikes: 0,
+      },
+      { new: true }
+    );
+    res.status(200).json(post);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = {
   getReviews,
   setReview,
@@ -135,4 +161,5 @@ module.exports = {
   putReviewDecision,
   deleteReview,
   deleteAllReviews,
+  resetThumbsFromUserReview,
 };
