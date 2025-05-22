@@ -11,6 +11,8 @@ const {
   deleteReview,
   deleteAllReviews,
   resetThumbsFromUserReview,
+  setCompletedReviewForTesting,
+  deleteReviewQueryForTesting,
 } = require("../controllers/reviewsController");
 
 router.route("").get(getAllReviews);
@@ -23,5 +25,7 @@ router.route("/put-review-decision").put(putReviewDecision);
 router.route("/delete-review").delete(deleteReview);
 router.route("/delete-all-reviews").delete(deleteAllReviews);
 router.route("/reset-thumbs-from-review").put(resetThumbsFromUserReview);
-
+router
+  .route("/set-completed-review-for-testing")
+  .post(setCompletedReviewForTesting);
 module.exports = router;

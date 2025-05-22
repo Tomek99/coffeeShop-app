@@ -42,7 +42,7 @@ const setReview = asyncHandler(async (req, res) => {
     productImage,
   });
 
-  res.status(200).send(review);
+  res.status(200).send(review.id);
 });
 
 // Klient wystawia ocene recenzji innemu użytkownikowi na zasadzie łapki w górę lub w dół
@@ -76,7 +76,7 @@ const rateReview = asyncHandler(async (req, res) => {
 // Klient wystawia recenzje na temat zakupionego produktu
 const typeReview = asyncHandler(async (req, res) => {
   const { reviewId, values } = req.body;
-
+  console.log(req.body);
   const currentTime = new Date().toISOString();
   const foundReview = await Review.findByIdAndUpdate(
     reviewId,
@@ -123,6 +123,7 @@ const putReviewDecision = asyncHandler(async (req, res) => {
 
 const deleteReview = asyncHandler(async (req, res) => {
   const { id } = req.body;
+  console.log(id);
   try {
     const post = await Review.findByIdAndDelete(id);
     res.status(200).json(post);
@@ -151,6 +152,29 @@ const resetThumbsFromUserReview = asyncHandler(async (req, res) => {
   }
 });
 
+//Dodanie gotowej recenzji do testowania
+const setCompletedReviewForTesting = asyncHandler(async (req, res) => {
+  const { userId } = req.body;
+  const currentTime = new Date().toISOString();
+  const review = await Review.create({
+    userId,
+    userName: "Test Test2",
+    userImages: [],
+    userReviewDate: currentTime,
+    usersIdVoted: [],
+    productId: "63dc0405c2a0e09b2d62f8f0",
+    productName: "Espresso Italiano Aromatico",
+    productImage:
+      "https://res.cloudinary.com/dvoduabha/image/upload/v1679902515/coffee/lavazza/beans/6_EspressoItalianoAromatico_oi2cfv.png",
+    isUserAddedReview: true,
+    isModeratorApprovedReview: "approved",
+    comment: "good WORKING",
+    rate: 5,
+  });
+
+  res.status(200).send(review._id);
+});
+
 module.exports = {
   getReviews,
   setReview,
@@ -162,4 +186,5 @@ module.exports = {
   deleteReview,
   deleteAllReviews,
   resetThumbsFromUserReview,
+  setCompletedReviewForTesting,
 };

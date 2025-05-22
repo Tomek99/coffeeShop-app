@@ -11,8 +11,6 @@ test.describe("Checking clients messages in admin panel", () => {
     message: `Hello world!`,
   };
 
-  const ZERO = 0;
-
   test.beforeEach(async ({ page }) => {
     await BaseTest.addMessage(page, userDataContactPage);
     await BaseTest.loginToAdminPage(page);
