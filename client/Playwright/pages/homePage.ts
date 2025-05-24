@@ -17,7 +17,7 @@ export class BrowserstackHomePage {
     this.cartBtn = page.locator("#cartBtnOpen132");
     this.viewCartBtn = page.getByRole("link", { name: "View my cart" });
     this.userNavBtn = page.locator("#userNavigationBtn0");
-    this.loginBtn = page.getByRole("button", { name: "Log in" });
+    this.loginBtn = page.getByRole("button", { name: "Log in" }).first();
     this.reviewsBtn = page.getByRole("link", { name: "Reviews" }).first();
     this.contactPageBtn = page.getByRole("link", { name: "Contact" }).first();
   }
