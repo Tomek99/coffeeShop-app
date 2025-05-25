@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 
 import { AddressData } from "../interfaces/addressDeliveryInterface";
 import { CompanyData } from "../interfaces/companyDataInterface";
