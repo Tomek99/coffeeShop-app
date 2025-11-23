@@ -19,26 +19,31 @@ test.describe("Checking clients messages in admin panel", () => {
 
   test("should confirm message", async ({ page }) => {
     const adminMessagePage = new AdminMessagePage(page);
+    const message = await page.getByText(userDataContactPage.message);
+    await expect(message).toBeVisible();
 
-    await expect(page.getByText(userDataContactPage.message)).toHaveText(
-      userDataContactPage.message
-    );
-
+    await adminMessagePage.clickOnConfirmMessageBtn();
     await adminMessagePage.clickOnCompletedMessagesBtn();
 
-    await expect(page.getByText(userDataContactPage.message).last()).toHaveText(
-      userDataContactPage.message
-    );
+    const message_2 = await page.getByText(userDataContactPage.message);
+    await expect(message_2.first()).toBeVisible();
   });
 
   test("should ignore message", async ({ page }) => {
     const adminMessagePage = new AdminMessagePage(page);
-
-    await expect(page.getByText(userDataContactPage.message)).toHaveText(
-      userDataContactPage.message
-    );
+    const message = await page.getByText(userDataContactPage.message);
+    await expect(message).toBeVisible();
 
     await adminMessagePage.clickOnIgnoreMessageBtn();
     await expect(page.getByText(userDataContactPage.message)).not.toBeVisible();
+  });
+
+  test('should display a notification "no news"', async ({ page }) => {
+    const adminMessagePage = new AdminMessagePage(page);
+    const message = await page.getByText(userDataContactPage.message);
+    await expect(message).toBeVisible();
+
+    await adminMessagePage.clickOnIgnoreMessageBtn();
+    await expect(page.getByText("No news...")).toBeVisible();
   });
 });

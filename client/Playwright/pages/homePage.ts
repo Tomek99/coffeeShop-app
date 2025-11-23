@@ -10,6 +10,7 @@ export class BrowserstackHomePage {
   private readonly loginBtn: Locator;
   private readonly reviewsBtn: Locator;
   private readonly contactPageBtn: Locator;
+  private readonly cookieAcceptBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -20,10 +21,15 @@ export class BrowserstackHomePage {
     this.loginBtn = page.getByRole("button", { name: "Log in" }).first();
     this.reviewsBtn = page.getByRole("link", { name: "Reviews" }).first();
     this.contactPageBtn = page.getByRole("link", { name: "Contact" }).first();
+    this.cookieAcceptBtn = page.getByLabel("Accept cookies");
   }
 
   async goToHomePage() {
     await this.page.goto(this.url);
+  }
+
+  async clickOnCookieAcceptBtn() {
+    await this.cookieAcceptBtn.click();
   }
 
   async clickOnProductsBtn() {

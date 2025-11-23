@@ -8,7 +8,7 @@ import { LoginPage } from "../pages/loginPage";
 const userId: string = "64ad79b0111e32cf0a6846e9";
 
 test.describe("Thumb up and down when user is logged in", () => {
-  let page;
+  let page: Page;
   let reviewId: string;
 
   test.beforeEach(async ({ browser }) => {
@@ -21,6 +21,7 @@ test.describe("Thumb up and down when user is logged in", () => {
     const productPage = await new ProductPage(page);
 
     await homePage.goToHomePage();
+    await homePage.clickOnCookieAcceptBtn();
     await homePage.clickOnUserNavBtn();
     await homePage.clickOnLoginBtn();
 
@@ -30,7 +31,7 @@ test.describe("Thumb up and down when user is logged in", () => {
 
     await homePage.clickOnProductsBtn();
 
-    await productsPage.clickOnViewProductBtn(4);
+    await productsPage.clickOnViewProductBtn(0);
     await productPage.clickOnProductReviews();
   });
 
@@ -95,11 +96,11 @@ test.describe("Thumb up and down when user is logged in", () => {
 });
 
 test.describe("Thumb up and down when user is NOT logged in", () => {
-  let page;
+  let page: Page;
   let reviewId: string;
 
   test.beforeEach(async ({ browser }) => {
-    page = browser.newPage();
+    page = await browser.newPage();
     reviewId = await ApiTests.addCompletedReviewProduct(page, userId);
 
     const homePage = await new BrowserstackHomePage(page);

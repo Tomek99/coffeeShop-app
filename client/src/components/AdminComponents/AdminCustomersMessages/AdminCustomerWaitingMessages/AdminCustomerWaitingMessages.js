@@ -12,7 +12,8 @@ function AdminCustomerWaitingMessages({ data }) {
     itemsPerPage,
     handleChangePage,
   } = usePaginationHook(0, data, 10, "/admin/customers-messages");
-  return (
+
+  return data.length !== 0 ? (
     <div className={styles.AdminCustomerWaitingMessages}>
       <div data-testid="pendingMessages">
         {data
@@ -24,6 +25,8 @@ function AdminCustomerWaitingMessages({ data }) {
       <Pagination pageCount={pageCount} handleChangePage={handleChangePage} />
       <ScrollToTop pageNumber={pageNumber} />
     </div>
+  ) : (
+    <p className={styles.noMessages}>No news...</p>
   );
 }
 
