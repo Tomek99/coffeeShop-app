@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
 
-export class ApiTests {
+export class ReviewApiService {
   public static async addCompletedReviewProduct(
     page: Page,
     userId: string

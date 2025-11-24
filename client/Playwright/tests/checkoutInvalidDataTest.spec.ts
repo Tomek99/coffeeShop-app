@@ -4,16 +4,18 @@ import { ProductsPage } from "../pages/productsPage";
 import { ViewCartPage } from "../pages/viewCartPage";
 import { LoginPage } from "../pages/loginPage";
 import { OrderPage } from "../pages/orderPage";
-
-import { BaseTest } from "./BaseTest";
 import { deliveryAddressData } from "../data/deliveryAddressData";
 import { OrderSummaryPage } from "../pages/orderSummaryPage";
 import { StripePage } from "../pages/stripePage";
 import { SuccessPage } from "../pages/successPage";
+import { BasicStepsForCheckout } from "../helper/BasicStepsForCheckout";
 
 test.describe("Purchase products with invalid data", () => {
   test.beforeEach(async ({ page }) => {
-    await BaseTest.performBasicStepsForCheckout(page);
+    await BasicStepsForCheckout.navigateToLogin(page);
+    await BasicStepsForCheckout.login(page, "test1@gmail.com", "Test1@gmail");
+    await BasicStepsForCheckout.addProductsToCart(page);
+    await BasicStepsForCheckout.goToCheckout(page);
   });
 
   test("should display an error if the delivery and payment form is omitted", async ({
@@ -24,6 +26,7 @@ test.describe("Purchase products with invalid data", () => {
 
     const errors = await orderPage.getErrors();
     await expect(errors).toHaveCount(10);
+
     await expect(errors.nth(0)).toContainText("Required");
     await expect(errors.nth(1)).toContainText("Required");
   });

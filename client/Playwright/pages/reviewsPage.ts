@@ -15,7 +15,7 @@ export class ReviewsPage {
       .getByRole("button", { name: "Give Feedback" })
       .first();
     this.saveBtn = page.getByRole("button", { name: "Save" });
-    this.textArea = page.getByPlaceholder("Your comments");
+    this.textArea = page.locator("//textarea[@placeholder='Your comment']");
     this.errorMessage = page.getByText("Required");
     this.reviewsBtn = page.locator("//div/a[text()='Reviews']");
     this.closeReviewFormBtn = page

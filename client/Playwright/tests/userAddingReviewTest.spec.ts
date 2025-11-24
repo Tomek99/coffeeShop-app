@@ -3,11 +3,17 @@ import { BrowserstackHomePage } from "../pages/homePage";
 import { ReviewsPage } from "../pages/reviewsPage";
 import { LoginPage } from "../pages/loginPage";
 import Utils from "../utility/Utils";
-import { BaseTest } from "./BaseTest";
 import { userReviewsData } from "../data/userReviewData";
+import { BasicStepsForUserAddingReview } from "../helper/BasicStepsForUserAddingReview";
 
 test.beforeEach(async ({ page }) => {
-  BaseTest.performBasicStepsForUserAddingReview(page);
+  await BasicStepsForUserAddingReview.navigateToLogin(page);
+  await BasicStepsForUserAddingReview.login(
+    page,
+    "test1@gmail.com",
+    "Test1@gmail"
+  );
+  await BasicStepsForUserAddingReview.navigateToUserReviews(page);
 });
 
 test.describe("fill out the review form with valid data", () => {
@@ -15,7 +21,8 @@ test.describe("fill out the review form with valid data", () => {
     test(`select '${userReview.rate}' stars & add comment '${userReview.message}'`, async ({
       page,
     }) => {
-      const reviewsPage = await BaseTest.navigateToFeedbackPage(page);
+      const reviewsPage =
+        await BasicStepsForUserAddingReview.navigateToFeedback(page);
       await reviewsPage.fillTextArea(userReview.message);
       await reviewsPage.giveRating(userReview.rate);
       await reviewsPage.clickOnSaveBtn();
@@ -26,7 +33,9 @@ test.describe("fill out the review form with valid data", () => {
   }
 
   test("fill out the review and close review form", async ({ page }) => {
-    const reviewsPage = await BaseTest.navigateToFeedbackPage(page);
+    const reviewsPage = await BasicStepsForUserAddingReview.navigateToFeedback(
+      page
+    );
     await reviewsPage.fillTextArea(userReviewsData[0].message);
     await reviewsPage.giveRating(userReviewsData[0].rate);
     await reviewsPage.clickOnCloseReviewFormBtn();
@@ -47,14 +56,19 @@ async function checkAsseration(reviewsPage: ReviewsPage, errorsCount: number) {
 
 test.describe("add review product with invalid data", () => {
   test("should display error if user added only comment", async ({ page }) => {
-    const reviewsPage = await BaseTest.navigateToFeedbackPage(page);
+    const reviewsPage = await BasicStepsForUserAddingReview.navigateToFeedback(
+      page
+    );
+
     await reviewsPage.fillTextArea("test");
     await reviewsPage.clickOnSaveBtn();
     await checkAsseration(reviewsPage, 1);
   });
 
   test("should display error if user checked only rating", async ({ page }) => {
-    const reviewsPage = await BaseTest.navigateToFeedbackPage(page);
+    const reviewsPage = await BasicStepsForUserAddingReview.navigateToFeedback(
+      page
+    );
     await reviewsPage.giveRating(4);
     await reviewsPage.clickOnSaveBtn();
     await checkAsseration(reviewsPage, 1);
@@ -63,7 +77,9 @@ test.describe("add review product with invalid data", () => {
   test("should display error if user tries to send an empty form", async ({
     page,
   }) => {
-    const reviewsPage = await BaseTest.navigateToFeedbackPage(page);
+    const reviewsPage = await BasicStepsForUserAddingReview.navigateToFeedback(
+      page
+    );
     await reviewsPage.clickOnSaveBtn();
     await checkAsseration(reviewsPage, 2);
   });

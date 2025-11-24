@@ -1,5 +1,5 @@
 import { test, expect, Page } from "@playwright/test";
-import { ApiTests } from "./ApiTests";
+import { ReviewApiService } from "../services/ReviewApiService";
 import { BrowserstackHomePage } from "../pages/homePage";
 import { ProductsPage } from "../pages/productsPage";
 import { ProductPage } from "../pages/productPage";
@@ -13,7 +13,7 @@ test.describe("Thumb up and down when user is logged in", () => {
 
   test.beforeEach(async ({ browser }) => {
     page = await browser.newPage();
-    reviewId = await ApiTests.addCompletedReviewProduct(page, userId);
+    reviewId = await ReviewApiService.addCompletedReviewProduct(page, userId);
 
     const homePage = await new BrowserstackHomePage(page);
     const loginPage = new LoginPage(page);
@@ -36,7 +36,7 @@ test.describe("Thumb up and down when user is logged in", () => {
   });
 
   test.afterEach(async () => {
-    await ApiTests.deleteReviewProduct(page, reviewId);
+    await ReviewApiService.deleteReviewProduct(page, reviewId);
   });
 
   test("should allow thumb up", async () => {
@@ -101,7 +101,7 @@ test.describe("Thumb up and down when user is NOT logged in", () => {
 
   test.beforeEach(async ({ browser }) => {
     page = await browser.newPage();
-    reviewId = await ApiTests.addCompletedReviewProduct(page, userId);
+    reviewId = await ReviewApiService.addCompletedReviewProduct(page, userId);
 
     const homePage = await new BrowserstackHomePage(page);
     await homePage.goToHomePage();
@@ -109,7 +109,7 @@ test.describe("Thumb up and down when user is NOT logged in", () => {
   });
 
   test.afterEach(async () => {
-    await ApiTests.deleteReviewProduct(page, reviewId);
+    await ReviewApiService.deleteReviewProduct(page, reviewId);
   });
 
   test("should NOT allow thumb up", async () => {
