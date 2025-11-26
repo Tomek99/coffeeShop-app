@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 import HomePage from "../../pages/HomePage";
 import ProductsPage from "../../pages/ProductsPage";
 import LoginPage from "../../pages/LoginPage";
@@ -14,7 +14,7 @@ class BaseTest {
       .openLoginPage()
       .loginUser("test1@gmail.com", "Test1@gmail")
       .openProductsPage()
-      .addProductsCart(numberOfProducts)
+      .addProductCart(2)
       .openCartBar()
       .openViewCartPage()
       .openCheckoutPage();
@@ -26,12 +26,10 @@ class BaseTest {
         .visitHomePage()
         .openLoginPage()
         .loginUser("test1@gmail.com", "Test1@gmail")
-        .openProductsPage();
-    } else {
-      new HomePage()
-        .visitHomePage()
         .openProductsPage()
-        .openRevelantProductPage(0);
+        .viewProduct(10);
+    } else {
+      new HomePage().visitHomePage().openProductsPage().viewProduct(10);
     }
   }
 

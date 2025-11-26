@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 
 class AddressDetails {
   private elements = {
@@ -35,6 +35,9 @@ class AddressDetails {
     cityInputInvoice: () => cy.get('input[name="city"]'),
 
     saveInvoiceFormBtn: () => cy.get('button[type="submit"]').contains("Save"),
+
+    deleteInvoiceBtn: () =>
+      cy.get(".InvoiceItem_buttons__BnBBb > button:nth-child(1)"),
 
     //Delete Address
     addressDeleteBtn: (deleteAddressNumber) =>
@@ -189,7 +192,11 @@ class AddressDetails {
     return this;
   }
 
-  click;
+  clickOnDeleteInvoiceBtn(): AddressDetails {
+    this.elements.deleteInvoiceBtn().last().click();
+    this.elements.confirmDeleteBtn().click();
+    return this;
+  }
 
   clickOnEditBtn(): AddressDetails {
     this.elements.editBtn().click();

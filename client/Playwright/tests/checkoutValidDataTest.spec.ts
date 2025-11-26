@@ -4,7 +4,6 @@ import { ProductsPage } from "../pages/productsPage";
 import { ViewCartPage } from "../pages/viewCartPage";
 import { LoginPage } from "../pages/loginPage";
 import { OrderPage } from "../pages/orderPage";
-import { BaseTest } from "./BaseTest";
 import { OrderSummaryPage } from "../pages/orderSummaryPage";
 import { StripePage } from "../pages/stripePage";
 import { SuccessPage } from "../pages/successPage";
@@ -12,6 +11,7 @@ import { deliveryAddressData } from "../data/deliveryAddressData";
 import { companyInvoiceData } from "../data/companyInvoiceData";
 import { invoiceDetailsData } from "../data/invoiceDetailsData";
 import { recipientDetailsData } from "../data/recipientDetailsData";
+import { BasicStepsForCheckout } from "../helper/BasicStepsForCheckout";
 
 const onlinePayment: string = "Online payment";
 const traditionalPayment: string = "Traditional payment";
@@ -21,7 +21,10 @@ const comment: string = "Test test test";
 test.describe("Purchase products with valid data", () => {
   test.beforeEach(async ({ page }, testInfo) => {
     testInfo.setTimeout(testInfo.timeout + 20000);
-    await BaseTest.performBasicStepsForCheckout(page);
+    await BasicStepsForCheckout.navigateToLogin(page);
+    await BasicStepsForCheckout.login(page, "test1@gmail.com", "Test1@gmail");
+    await BasicStepsForCheckout.addProductsToCart(page);
+    await BasicStepsForCheckout.goToCheckout(page);
   });
 
   test("should place an order as private person", async ({ page }) => {

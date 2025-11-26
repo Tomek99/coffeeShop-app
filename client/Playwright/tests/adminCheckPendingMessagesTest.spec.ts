@@ -1,46 +1,53 @@
 import { test, expect } from "@playwright/test";
 import { AdminLoginPage } from "../pages/adminLoginPage";
-import { BaseTest } from "./BaseTest";
+import { BasicStepsForPendingMessages } from "../helper/BasicStepsForPendingMessages";
 import { AdminMessagePage } from "../pages/adminMessagePage";
 import { UserDataContactPage } from "../types/userDataContactPageType";
 
+const userDataContactPage: UserDataContactPage = {
+  fullName: "Test Test",
+  phoneNumber: "111 222 333",
+  message: `Hello world!`,
+};
+
 test.describe("Checking clients messages in admin panel", () => {
-  const userDataContactPage: UserDataContactPage = {
-    fullName: "Test Test",
-    phoneNumber: "111 222 333",
-    message: `Hello world!`,
-  };
-
-  const ZERO = 0;
-
   test.beforeEach(async ({ page }) => {
-    await BaseTest.addMessage(page, userDataContactPage);
-    await BaseTest.loginToAdminPage(page);
-    await BaseTest.openAdminMessagesPage(page);
+    await BasicStepsForPendingMessages.openContactPage(page);
+    await BasicStepsForPendingMessages.fillContactForm(
+      page,
+      userDataContactPage
+    );
+    await BasicStepsForPendingMessages.loginToAdminPage(page);
+    await BasicStepsForPendingMessages.openAdminMessagesPage(page);
   });
 
   test("should confirm message", async ({ page }) => {
     const adminMessagePage = new AdminMessagePage(page);
+    const message = await page.getByText(userDataContactPage.message);
+    await expect(message).toBeVisible();
 
-    await expect(page.getByText(userDataContactPage.message)).toHaveText(
-      userDataContactPage.message
-    );
-
+    await adminMessagePage.clickOnConfirmMessageBtn();
     await adminMessagePage.clickOnCompletedMessagesBtn();
 
-    await expect(page.getByText(userDataContactPage.message).last()).toHaveText(
-      userDataContactPage.message
-    );
+    const message_2 = await page.getByText(userDataContactPage.message);
+    await expect(message_2.first()).toBeVisible();
   });
 
   test("should ignore message", async ({ page }) => {
     const adminMessagePage = new AdminMessagePage(page);
-
-    await expect(page.getByText(userDataContactPage.message)).toHaveText(
-      userDataContactPage.message
-    );
+    const message = await page.getByText(userDataContactPage.message);
+    await expect(message).toBeVisible();
 
     await adminMessagePage.clickOnIgnoreMessageBtn();
     await expect(page.getByText(userDataContactPage.message)).not.toBeVisible();
+  });
+
+  test('should display a notification "no news"', async ({ page }) => {
+    const adminMessagePage = new AdminMessagePage(page);
+    const message = await page.getByText(userDataContactPage.message);
+    await expect(message).toBeVisible();
+
+    await adminMessagePage.clickOnIgnoreMessageBtn();
+    await expect(page.getByText("No news...")).toBeVisible();
   });
 });

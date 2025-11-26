@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import TeamMember from "./TeamMember/TeamMember";
 import styles from "./OurTeam.module.scss";
-import Member from "../../data/member.json";
+import Members from "../../data/members.json";
 import Header from "../HeaderSection/HeaderSection";
 import BlurScreen from "../ProfileMenu/BlurScreen/BlurScreen";
 function OurTeam() {
   const [isActive, setIsActive] = useState(false);
+  const [showMember, setShowMember] = useState();
+
   function handleBlurScreen() {
     setIsActive(false);
     setShowMember();
     handleScrollBar();
   }
 
-  const [showMember, setShowMember] = useState();
   function handleShowMember(id) {
     setShowMember(id);
     setIsActive(!isActive);
@@ -27,13 +28,13 @@ function OurTeam() {
 
   return (
     <div className={styles.OurTeam}>
-      <Header firstWord="Leadership" />
+      <Header firstWord="Meet" secondWord={"Our Team"} />
       <p className={styles.aboutTeam}>
         We're led by a team who constantly questions, tinkers, and chellenges to
         unlock great creativity around every turn
       </p>
       <div className={styles.team}>
-        {Member.map((item, index) => (
+        {Members.map((item, index) => (
           <TeamMember
             key={index}
             id={index}
@@ -42,7 +43,7 @@ function OurTeam() {
             showMember={showMember}
           />
         ))}
-        {isActive ? <BlurScreen handleBlurScreen={handleBlurScreen} /> : null}
+        {/* {isActive ? <BlurScreen handleBlurScreen={handleBlurScreen} /> : null} */}
       </div>
     </div>
   );

@@ -37,11 +37,13 @@ function AdminUserReviewRatingForm({ item }) {
   return (
     <form className={styles.AdminUserReviewRatingForm}>
       <AdminUserRaitingFormDecision handleDecision={handleDecision} />
-      <AdminUserReviewRatingFormRejectedOptions
-        selectedReason={selectedReason}
-        handleSelectChange={handleSelectChange}
-        handleComment={handleComment}
-      />
+      {decision === "rejected" ? (
+        <AdminUserReviewRatingFormRejectedOptions
+          selectedReason={selectedReason}
+          handleSelectChange={handleSelectChange}
+          handleComment={handleComment}
+        />
+      ) : null}
       {["approved", "rejected"].includes(decision) ? (
         <AdminTextBtn
           handleBtn={handleCheckingReview}

@@ -21,6 +21,8 @@ function AdminCustomerCompletedMessages({ data }) {
     >
       <div className={styles.itemsDiv}>
         {data
+          .slice()
+          .reverse()
           .slice(pagesVisited, pagesVisited + itemsPerPage)
           .map((item, i) => (
             <AdminCustomerMessageItem item={item} key={i} />

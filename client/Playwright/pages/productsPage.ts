@@ -4,6 +4,7 @@ import Utils from "../utility/Utils";
 export class ProductsPage {
   private readonly page: Page;
   private readonly productCartBtn: Locator;
+  private readonly productViewBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -18,8 +19,12 @@ export class ProductsPage {
   }
 
   async clickOnViewProductBtn(productNumber: number) {
-    const locator = this.page.locator(`#showProductId${productNumber}`);
-    await locator.click();
+    await this.page
+      .locator("//div[@class='BtnsProduct_BtnsProduct__Gi5nT']")
+      .nth(productNumber)
+      .getByRole("button")
+      .nth(0)
+      .click();
   }
 
   async addProductToCart(element) {

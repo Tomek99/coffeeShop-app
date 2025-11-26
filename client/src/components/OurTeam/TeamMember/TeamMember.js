@@ -3,33 +3,35 @@ import styles from "./TeamMember.module.scss";
 import { BsArrowRight } from "react-icons/bs";
 import PopupMemberDetails from "./PopupMemberDetails/PopupMemberDetails";
 import PropTypes from "prop-types";
-
+import { FaLinkedin } from "react-icons/fa";
+import { IoLogoTwitter } from "react-icons/io";
 function Team({ item, handleShowMember, showMember, id }) {
   const { url, name, position } = item;
+
+  const gmail = name.replace(/\s/g, "") + "@coffeShop.com";
 
   return (
     <div className={styles.TeamMember}>
       <div className={styles.memberImg}>
         <img src={url} alt="" />
+      </div>
+      <div className={styles.contentMember}>
+        <h3>{name}</h3>
+        <p>
+          <b>{position}</b>
+        </p>
 
-        <button
-          className={styles.btnArrow}
-          onClick={() => handleShowMember(id)}
-        >
-          <BsArrowRight className={styles.iconArrow} />
-        </button>
+        <p>📞 +48 999 999 999</p>
+        <p>✉️ {gmail}</p>
+        <p className={styles.socialMedia}>
+          <a href="http://linkedin.com/" className={styles.socialMediaBtn}>
+            <FaLinkedin />
+          </a>
+          <a href="http://x.com/" className={styles.socialMediaBtn}>
+            <IoLogoTwitter />
+          </a>
+        </p>
       </div>
-      <div className={styles.content} onClick={() => handleShowMember(id)}>
-        <p className={styles.name}>{name}</p>
-        <p className={styles.position}>{position}</p>
-      </div>
-      {showMember === id ? (
-        <PopupMemberDetails
-          id={id}
-          item={item}
-          handleShowMember={handleShowMember}
-        />
-      ) : null}
     </div>
   );
 }

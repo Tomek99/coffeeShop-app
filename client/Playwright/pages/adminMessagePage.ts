@@ -24,14 +24,14 @@ export class AdminMessagePage {
   }
 
   async clickOnCompletedMessagesBtn() {
-    await this.completedMessagesBtn.click();
+    await this.completedMessagesBtn.last().click();
   }
 
   async clickOnConfirmMessageBtn() {
-    await this.confirmMessageBtn.click();
+    await this.confirmMessageBtn.first().click();
   }
 
   async clickOnIgnoreMessageBtn() {
-    await this.ignoreMessageBtn.last().click();
+    await this.ignoreMessageBtn.first().click();
   }
 }
